@@ -117,14 +117,11 @@ exports.config =
     javascripts:
       joinTo:
         "js/app.#{hash}.js": /^app\//
-        "js/vendor.#{hash}.js": /^(vendor|bower_components)/
+        "js/vendor.#{hash}.js": /^(vendor)/
 
       order:
         before: [
-          "vendor/js/underscore.js"
-          "vendor/js/jquery.js"
-          "vendor/js/moment.js"
-          "vendor/js/backbone.js"
+          "vendor/js/vendor.js"
         ]
 
     stylesheets:
