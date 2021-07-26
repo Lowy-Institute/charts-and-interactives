@@ -1,0 +1,130 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/templates/sparklines/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - chart = page
+  
+  - percent = (n) => (n).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - toPoint = (p,i) => !isEmpty(p) ? [ +fx(i), +fy(p) ].join(",") : ""
+  - toPath  = a => a.map((s,i) => isEmpty(s) ? "" : (!i || isEmpty(a[i-1])) ? `M${toPoint(s,i)}` : `L${toPoint(s,i)}` ).filter( e => e != "" ).join(" ")
+
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow
+        .chart-content(class=(chart.config.direction === "row" ? "flex-ch" : "flex-cv"))
+          - ln = chart.series[0].values.length
+          - axes = chart.axes
+          - minY = axes.minY
+          - maxY = axes.maxY
+          - range = maxY - minY
+          - fx = i => 100 * i / (ln-1)
+          - fy = y => 100 * (1 - (y - minY) / range)
+
+          for series, ci in chart.series
+            
+            .series-wrap.flex-1(class=(chart.config.direction === "row" ? "flex-cv" : "flex-ch"))
+              .series-title!= series.title
+              .series-chart.flex-1.relative
+                svg.absolute.inset-0(height="100%" width="100%")
+                  
+                  rect(fill="#fffcfa" height="100%" width="100%")
+
+                  // X-labels
+                  if chart.config.direction === "row"
+                    for x, i in chart.axes.x.values
+                      if (i === 0 || i === chart.axes.x.values.length - 1)
+                        svg.x-label(x=percent(fx(i)) y="100%")
+                          text(dy="22" text-anchor=i==0 ? "start" : "end")= x
+
+                  else if (ci === chart.series.length - 1)
+                    for x, i in chart.axes.x.values
+                      svg.x-label(x=percent(fx(i)) y="100%")
+                        text(dy="22" text-anchor=i==0 ? "start" : "end")= x
+
+
+                  // Data series
+                  - values = series.values
+                  - y0 = values.find(v => !isEmpty(v))
+                  - x0 = values.indexOf(y0)
+                  - yn = values.reverse().find(v => !isEmpty(v))
+                  - xn = x0 + values.filter(v => !isEmpty(v)).length - 1
+                  - values.reverse() // revert reversal (in-place function)
+
+                  svg(
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                  )
+                    path(
+                      fill="none"
+                      stroke="black"
+                      d=toPath(values)
+                    )
+                  
+                  svg(x=percent(fx(x0)) y=percent(fy(y0)))
+                    circle(r="4")
+                    text(
+                      text-anchor="middle"
+                      dy=y0 < range/10 ? "-10" : "20"
+                    )= y0
+                  
+                  svg(x=percent(fx(xn)) y=percent(fy(yn)))
+                    circle(r="4")
+                    text(
+                      text-anchor="middle"
+                      dy=yn < range/10 ? "-10" : "20"
+                    )= yn
+                      
+
+
+      .txt-right.txt-muted.txt-cond
+        .chart-source!= chart.source
+        .chart-notes!= chart.notes
+
+block append css
+  style
+    :sass
+    
+      *
+        box-sizing: border-box
+    
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 2rem
+        align-items: stretch
+        
+      .series-title
+        padding: 1rem
+        
+      .series-wrap
+        padding: 1rem
+        
+      .series-chart
+        height: 100%
+        
+      svg
+        overflow: visible
+
+      path
+        vector-effect: non-scaling-stroke
+        
+      text
+        font-size: 14px

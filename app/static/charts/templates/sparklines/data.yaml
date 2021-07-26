@@ -1,0 +1,68 @@
+title: >
+  Sparklines chart
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+config:
+  direction: row
+
+axes:
+  minY:  0
+  maxY: 5
+  percentage: false
+  rotateX: false
+  x:
+    title: Year
+    values:
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+
+series:
+  -
+    title: Series 1
+    color: "dark"
+    widen: false
+    dashed: true
+    values:
+      - 0
+      - 0
+      - 1
+      - 1
+      - 1
+      - 1
+
+  -
+    title: Series 2
+    color: "highlight"
+    widen: true
+    dashed: false
+    values:
+      - 1
+      - 2
+      - 3
+      - 2
+      - 1
+      - 0
+  -
+    title: Series 3
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 3
+      - 3
+      - 3
+      - 3
+      - 3
+      - 4
