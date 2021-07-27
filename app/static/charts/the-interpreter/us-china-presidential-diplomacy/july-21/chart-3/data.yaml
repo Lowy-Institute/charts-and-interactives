@@ -1,0 +1,158 @@
+title: >
+  Visits by world leaders to the US and China, by region
+
+source: >
+  <b>Source:</b> US Department of State; China’s Ministry of Foreign Affairs; People’s Daily.
+
+notes: >
+  <b>Note:</b> Data include multiple visits by leaders of the same country in a calendar year. Eastern Europe includes Russia and the Caucasus. North America includes the Caribbean
+
+
+charts:
+  - 
+    title: >
+      1990–99
+      
+    axes:
+      min:  0
+      max: 300
+      steps: 11
+      rotateLabels: false
+      percentage: false
+      minorLines: true
+      dotted: [] # Index of dotted gridlines
+
+    series:
+      -
+        title: Pandemic performance
+        values:
+          - Africa
+          - Asia
+          - Middle East
+          - W. Europe
+          - E. Europe
+          - N. America
+          - S. America
+          - Oceania
+      -
+        title: US
+        color: "blue-100"
+        values:
+          - 58
+          - 64
+          - 71
+          - 136
+          - 136
+          - 92
+          - 67
+          - 21
+      -
+        title: China
+        color: "red"
+        values:
+          - 9
+          - 22
+          - 2
+          - 18
+          - 12
+          - 7
+          - 9
+          - 11
+  - 
+    title: >
+      2000–09
+      
+    axes:
+      min:  0
+      max: 300
+      steps: 11
+      rotateLabels: false
+      percentage: false
+      minorLines: true
+      dotted: [] # Index of dotted gridlines
+
+    series:
+      -
+        title: Pandemic performance
+        values:
+          - Africa
+          - Asia
+          - Middle East
+          - W. Europe
+          - E. Europe
+          - N. America
+          - S. America
+          - Oceania
+      -
+        title: US
+        color: "blue-100"
+        values:
+          - 92
+          - 107
+          - 102
+          - 139
+          - 90
+          - 79
+          - 56
+          - 14
+      -
+        title: China
+        color: "red"
+        values:
+          - 47
+          - 145
+          - 14
+          - 57
+          - 56
+          - 18
+          - 14
+          - 29
+  - 
+    title: >
+      2010–19
+      
+    axes:
+      min:  0
+      max: 300
+      steps: 11
+      rotateLabels: false
+      percentage: false
+      minorLines: true
+      dotted: [] # Index of dotted gridlines
+
+    series:
+      -
+        title: Pandemic performance
+        values:
+          - Africa
+          - Asia
+          - Middle East
+          - W. Europe
+          - E. Europe
+          - N. America
+          - S. America
+          - Oceania
+      -
+        title: US
+        color: "blue-100"
+        values:
+          - 83
+          - 90
+          - 63
+          - 96
+          - 65
+          - 34
+          - 25
+          - 16
+      -
+        title: China
+        color: "red"
+        values:
+          - 172
+          - 287
+          - 30
+          - 94
+          - 112
+          - 39
+          - 30
+          - 51
