@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/sparklines/data"
+  - var datapath = "static/charts/misc/poll-vital-interests/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -15,8 +15,8 @@ block append config
 block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
-      .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .title= chart.title
+      .subtitle.txt-muted.txt-tu!= chart.subtitle
       .chart.flex-grow
         .chart-content(class=(chart.config.direction === "row" ? "flex-ch" : "flex-cv"))
           - ln = chart.series[0].values.length
@@ -34,7 +34,7 @@ block page
               .series-chart.flex-1.relative
                 svg.absolute.inset-0(height="100%" width="100%")
                   
-                  rect(fill="#fffcfa" height="100%" width="100%")
+                  rect.chart-bg(height="100%" width="100%")
 
                   // X-labels
                   if chart.config.direction === "row"
@@ -68,23 +68,23 @@ block page
                       d=toPath(values)
                     )
                   
-                  svg(x=percent(fx(x0)) y=percent(fy(y0)))
+                  svg.value(x=percent(fx(x0)) y=percent(fy(y0)))
                     circle(r="4")
                     text(
                       text-anchor="middle"
                       dy=y0 < range/10 ? "-10" : "20"
-                    )= y0
+                    )= (+y0).toFixed(0)
                   
-                  svg(x=percent(fx(xn)) y=percent(fy(yn)))
+                  svg.value(x=percent(fx(xn)) y=percent(fy(yn)))
                     circle(r="4")
                     text(
                       text-anchor="middle"
                       dy=yn < range/10 ? "-10" : "20"
-                    )= yn
+                    )= (+yn).toFixed(0)
                       
 
 
-      .txt-right.txt-muted.txt-cond
+      .txt-left.txt-semi
         .chart-source!= chart.source
         .chart-notes!= chart.notes
 
@@ -92,11 +92,16 @@ block append css
   style
     :sass
     
+      body
+        background: #002b45!important
+        color: white
+    
       *
         box-sizing: border-box
     
       .wrapper
-        height: 550px
+        height: 600px
+        max-width: 1280px
 
       .chart
         box-sizing: border-box
@@ -112,6 +117,10 @@ block append css
         
       .series-title
         padding: 1rem
+        font-size: 14px
+        text-transform: uppercase
+        letter-spacing: 0.08em
+        font-weight: 600
         
       .series-wrap
         padding: 1rem
@@ -119,11 +128,29 @@ block append css
       .series-chart
         height: 100%
         
+      .chart-bg
+        fill: lighten(#002b45,3)
+      
+      .title
+        font-size: 32px
+        font-weight: 600
+      
       svg
         overflow: visible
+        color: #99EDF1
 
       path
         vector-effect: non-scaling-stroke
+        stroke: currentColor
         
       text
+        font-size: 14px
+        fill: white
+        
+      .value text,
+      circle
+        fill: currentColor
+        
+      .chart-source,
+      .chart-notes
         font-size: 14px

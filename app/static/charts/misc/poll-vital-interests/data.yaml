@@ -1,0 +1,136 @@
+title: >
+  Threats to Australia's vital interests
+
+subtitle:
+  
+source: >
+  Source: Lowy Institute Poll
+
+notes:
+
+config:
+  direction: row
+
+axes:
+  minY:  0
+  maxY: 100
+  percentage: false
+  rotateX: false
+  x:
+    title: Year
+    values:
+      - 2006
+      - 2007
+      - 2008
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+series:
+
+  -
+    title: Climate change
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 68.5
+      - 
+      - 65.83
+      - 52.31
+      - 
+      - 
+      - 
+      - 
+      - 46.42
+      -
+      -
+      - 56.56
+      - 58.05
+      - 64.14
+      - 59.09
+      - 61.04
+
+  -
+    title: Terrorism<br>&ensp;
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 72.6
+      - 
+      - 65.53
+      - 67.52
+      - 
+      - 
+      - 
+      - 
+      - 65.1
+      - 
+      - 
+      - 67.47
+      - 65.94
+      - 61.2
+      - 46.32
+      - 50.74
+
+  -
+    title: Economic downturn
+    color: "highlight"
+    widen: false
+    dashed: false
+    values: [,,,,,,,,,,52.83,49.95,51.42,71.28,49.64]
+    
+  -
+    title: Cyberattacks<br>&nbsp;
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      - 51.13
+      -
+      -
+      - 55.21
+      - 57.17
+      - 61.98
+      - 
+      - 61.7
+
+  -
+    title: Foreign interference
+    color: "highlight"
+    widen: false
+    dashed: false
+    values: [,,,,,,,,,,,,41.14,49.39,41.95,48.73]
+
+  -
+    title: COVID-19 / Epidemics
+    color: "dark"
+    widen: false
+    dashed: false
+    values: [,,,,,,,,,,,,,,75.91,59.31]
+
+  -
+    title: Conflict over Taiwan
+    color: "highlight"
+    widen: false
+    dashed: false
+    values: [,,,,,,,,,,,,,,35,52]
