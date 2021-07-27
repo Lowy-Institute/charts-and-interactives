@@ -1,5 +1,5 @@
 title: >
-  Average annual visits by foreign leaders to the US and China, by&nbsp;president
+  Average annual visits to the US and China by world leaders, by&nbsp;presidential&nbsp;term
 
 source: >
   <b>Source:</b> US Department of State; China’s Ministry of Foreign Affairs; People’s Daily.
@@ -34,7 +34,7 @@ series:
       - Donald Trump###2017–19
 
   -
-    title: US presidents
+    title: Average annual visits to the US
     color: "blue-100"
     values:
       - 65.8
@@ -48,7 +48,7 @@ series:
       - 27.3
 
   -
-    title: Chinese presidents
+    title: Average annual visits to China
     color: "red"
     values:
       - 0

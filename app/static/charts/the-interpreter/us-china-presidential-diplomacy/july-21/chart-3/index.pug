@@ -12,6 +12,13 @@ block page
   .wrapper.flex
     .flex.flex-grow.flex-col
       .chart-title!= "Visits by world leaders to the US and China, by&nbsp;region"
+      .row
+        ul.legend.list-bare.txt-left.flex
+          for ax, i in new Array(page.charts[0].series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${page.colors[page.charts[0].series[i].color]}`)
+                span.legend-item-label= page.charts[0].series[i].title
       each chart, ci in page.charts
         .chart-subtitle.txt-muted.txt-tu!= chart.title
         .chart.flex-grow: .chart-content
@@ -96,14 +103,6 @@ block page
                         )
                           =seriesname
       
-      .row
-        ul.legend.list-bare.txt-left.flex
-          for ax, i in new Array(page.charts[0].series.length)
-            if i
-              li.legend-item
-                span.legend-item-box(style=`background: ${page.colors[page.charts[0].series[i].color]}`)
-                span.legend-item-label= page.charts[0].series[i].title
-
       .txt-muted.txt-semi
         .chart-source!= page.source
         .chart-notes!= page.notes
@@ -177,7 +176,7 @@ block append css
         top: 20px
         left: 90px
         right: 20px
-        bottom: 20px
+        bottom: 35px
 
       .chart-title
         font-size: 28px
@@ -209,8 +208,7 @@ block append css
 
       .legend
         font-size: 15px
-        margin-top: 1.25em
-        margin-bottom: .75em
+        margin-bottom: 1em!important
 
       .legend-item
         margin: 4px 8px 4px 0
