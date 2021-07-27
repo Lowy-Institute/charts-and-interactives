@@ -100,7 +100,7 @@ block page
           for ax, i in new Array(n+1)
             li.legend-item
               span.legend-item-box(style=`background: ${chart.colors[chart.series[n-i].color]}`)
-              span.legend-item-label= chart.series[i].title
+              span.legend-item-label= chart.series[n-i].title
 
       .chart-source.txt-muted.txt-semi!= chart.source
       .chart-notes.txt-muted.txt-semi!= chart.notes
@@ -132,21 +132,6 @@ block append css
         font-weight: 600
         font-size: 15px
 
-      .tooltip
-        position: absolute
-        left: 0
-        background: #fffe
-        padding: .75em
-        opacity: 0
-        border-radius: .2em
-        box-shadow: 0 0 5px 0 #0004
-        transition-duration: 0.5s
-        pointer-events: none
-        font-size: 14px
-        text-transform: lowercase
-        max-width: 180px
-        box-sizing: border-box
-
       li
         list-style: none
         margin: 0
@@ -166,7 +151,7 @@ block append css
       .legend-item-box
         position: absolute
         left: 0
-        top: .5em
+        top: .4em
         height: 1em
         width: 1em
         background: black
