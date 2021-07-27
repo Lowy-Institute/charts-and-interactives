@@ -16,7 +16,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .title= chart.title
-      .subtitle.txt-muted.txt-tu!= chart.subtitle
+      .subtitle.txt-muted!= chart.subtitle
       .chart.flex-grow
         .chart-content(class=(chart.config.direction === "row" ? "flex-ch" : "flex-cv"))
           - ln = chart.series[0].values.length
@@ -134,6 +134,9 @@ block append css
       .title
         font-size: 32px
         font-weight: 600
+        
+      .subtitle
+        font-size: 22px
       
       svg
         overflow: visible
