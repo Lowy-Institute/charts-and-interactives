@@ -1,0 +1,228 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/png-disconnected-citizens/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.axes.x.values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0) / (ln - 1)
+        - fy = (y) => (1 - (y - minY) / range)
+        
+        svg(height="100%" width="100%")
+        
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = "$" + (minY + range*(i/steps))/1000 + "M"
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // X-Axis labels
+          g
+            for x, i in chart.axes.x.values
+              svg.x-label(x=toPercent(fx(i)) y="100%")
+                text(
+                  text-anchor=(i === 0 ? "start" : i === chart.axes.x.values.length - 1 ? "end" : "middle")
+                  transform="translate(0 20)"
+                )= x
+
+          // DATA
+          svg(
+            height="100%"
+            width="100%"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          )
+            // SERIES LINES
+            for series, i in chart.series
+              path(
+                fill=chart.colors[chart.series[i].color]
+                d="M" + (series.values.map((y, j) => (
+                  [
+                    100 * fx(j),
+                    100 * fy( _.sum(chart.series.slice(i).map(s => s.values[j])) )
+                  ].join(",")
+                )
+                ).concat(["100,100", "0,100"])
+                ).join(" L") + "Z"
+              )
+      
+          for item, i in chart.series
+            g
+              for val, ix in item.values
+                if val
+                  svg.chart-value(
+                    x=toPercent(fx(ix))
+                    y=toPercent(fy( _.sum(chart.series.slice(i).map(s => s.values[ix]))))
+                    style=`color: ${i ? 'white' : ''}`
+                  )
+                    text(
+                      dy=(i === 0 ? -4 : 16)
+                      text-anchor=(ix === 0 ? "start" : ix === item.values.length - 1 ? "end" : "middle")
+                    )
+                      = "$" + (val/1000).toFixed(1) + "M"
+      
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          - n = chart.series.length - 1
+          for ax, i in new Array(n+1)
+            li.legend-item
+              span.legend-item-box(style=`background: ${chart.colors[chart.series[n-i].color]}`)
+              span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-muted.txt-semi!= chart.source
+      .chart-notes.txt-muted.txt-semi!= chart.notes
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 35px
+        left: 60px
+        right: 20px
+        bottom: 40px
+
+      .chart-title
+        font-size: 26px
+        font-weight: 600
+        max-width: 600px
+
+      .chart-subtitle
+        font-weight: 600
+        font-size: 15px
+
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-bottom: 1.25rem!important
+        flex-wrap: wrap
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-left: 2em
+        font-size: 14px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+        
+        text
+          font-size: 12px
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+
+      @media (max-width: 700px)
+      
+        .chart-content
+          bottom: 30px
+
+        text
+          font-size: 13px
+          
+      @media (max-width: 500px)
+        .legend
+          flex-direction: column
+          font-size: 14px
+          margin-bottom: .5rem!important
+          
+        .chart-title
+          font-size: 18px
+          
+        .legend-item
+          margin-top: 0
+          
+        .x-label
+          display: none
+            
+        .x-label:first-of-type,
+        .x-label:last-of-type
+          display: block
+          
+        .chart-notes,
+        .chart-source
+          font-size: 12px

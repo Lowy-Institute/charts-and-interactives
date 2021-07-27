@@ -1,0 +1,65 @@
+title: >
+  Investment into Papua New Guinea's National&nbsp;Broadcasting&nbsp;Corporation (AUD)
+
+subtitle:
+  
+source: >
+  <b>Source:</b> PNG government, Budget papers, 2015–2021.
+
+notes: >
+  <b>Note:</b> AUD amounts converted at Reserve Bank of Australia average annual exchange rates
+
+axes:
+  minY:  0
+  maxY: 20000
+  stepsY: 6
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  x:
+    title: Year
+    values:
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+
+series:
+      
+  -
+    title: Capital Investment Program
+    color: "blue-300"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 637
+
+  -
+    title: National Television Service
+    color: "blue-200"
+    values:
+      - 3736
+      - 10520
+      - 1496
+      - 1265
+      - 1629
+      - 2034
+
+  -
+    title: NBC Core Grant
+    color: "blue-100"
+    values:
+      - 12235
+      - 8719
+      - 9288
+      - 6479
+      - 6906
+      - 8762
