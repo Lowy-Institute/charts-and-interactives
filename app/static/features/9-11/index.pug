@@ -1,0 +1,61 @@
+extend /partials/layout
+
+block append config
+  - page.url = "https://interactives.lowyinstitute.org/features/9-11/"
+  - page.image = ""
+  - page.title = "9/11 – 20 years on."
+  - page.description = "9/11 – 20 years on.";
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.class = "slide-0"
+
+block page
+  
+  #controls
+    .col.relative
+      .title 20 YEARS ON
+      .subtitle.text-mini
+        | Assessing the global impact of 
+        span.highlight 9/11
+    .btns.col.flex-ch
+      button#back.flex-ch.text-mini.bare BACK
+      button#next.flex-ch.text-mini ENTER
+  
+  #slide-0.landing-slide.fixed.inset-0
+    #collage
+    
+    //- include story selector
+    svg#circles(viewBox="0 0 100 100")
+      each v, i in new Array(6)
+        circle(cx=15 * i, cy="50", r="2", fill="none", stroke="white")
+  
+  #slide-1.landing-slide.fixed.inset-0
+    .content
+      h1.type(data-view="type, in-viewport" data-delay=250)
+        .line Introduction
+      .type.text-mini.mb-4(data-view="type, in-viewport" data-delay=250)
+        .line By Lydia Khalil
+      .delay-1500(fade)
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia reprehenderit sunt voluptatibus perferendis, aut accusamus dicta, velit. Veniam, impedit omnis?
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, eligendi rerum velit quam voluptatem aperiam quasi iste, alias tempore corrupti unde reiciendis cumque molestiae! Consequuntur reprehenderit tempore itaque, esse delectus.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet possimus explicabo, reiciendis incidunt, omnis culpa dicta hic illo nisi cum quo at? Vero doloremque, at odio. Incidunt numquam alias cumque ullam, sequi corporis explicabo ipsum quis! Eveniet, veritatis iste eum.
+        
+  #slide-2.landing-slide.fixed.inset-0
+    .content
+      .text-mini(fade) Ask the experts
+      h1.type(data-view="type, in-viewport" )
+        .line The September 11 attacks changed America,
+      h1.type.mb-8(data-view="type, in-viewport" data-delay=1500)
+        .line.highlight but did they change the world?
+      .fixed(style="left: 25vw; width: 50vw; top: calc(50vh)")
+        include ./partials/_scale
+
+block append css
+  style: include:sass ./styles/_app.sass
+
+block append scripts
+  script
+    include:coffee ./coffee/utils.coffee
+    include:coffee ./coffee/page.coffee
+    include:coffee ./coffee/type.coffee
+  
+  

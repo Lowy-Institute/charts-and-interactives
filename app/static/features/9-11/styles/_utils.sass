@@ -1,0 +1,36 @@
+.relative
+  position: relative
+  
+.hidden
+  display: none
+.block
+  display: block
+.inline-block
+  display: inline-block
+
+.opacity-0
+  opacity: 0
+.opacity-50
+  opacity: 0.5
+.opacity-75
+  opacity: 0.75
+.opacity-100
+  opacity: 1
+
+=margin($i)
+  .m-#{$i}
+    margin: $i * 0.25rem
+    
+  .mx-#{$i}
+    margin-left: $i * 0.25rem
+    margin-right: $i * 0.25rem
+
+  .my-#{$i}
+    margin-top: $i * 0.25rem
+    margin-bottom: $i * 0.25rem
+    
+  .mb-#{$i}
+    margin-bottom: $i * 0.25rem
+
+@for $i from 1 through 8
+  +margin($i)

@@ -1,0 +1,20 @@
+.type
+  overflow: hidden
+  opacity: 0
+  
+  &.split
+    opacity: 1
+    
+  &.visible
+    opacity: 1
+
+.line
+  display: inline
+  
+.word
+  display: inline-block
+  opacity: 0
+  animation: rise 1s forwards
+
+  &:not(:first-child)
+    margin-left: 0.25em
