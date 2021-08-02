@@ -1,6 +1,11 @@
 .landing-slide
   padding: 6rem
-
+  position: relative
+  min-height: 100vh
+  
+  &:first-child
+    // min-height: 50vh
+  
 #controls
   display: flex
   position: fixed
@@ -11,26 +16,25 @@
   bottom: 0
   left: 0
   z-index: 1
+  pointer-events: none
   
   .col:first-child
     align-self: flex-start
+    
+  button
+    pointer-events: all
 
-body:not(.slide-0)
-  #controls 
+  &.compact
     .title
       opacity: 0
     .subtitle
       transform: translate(0,-1.5rem) scale(0.85)
       width: 250px
-    .col:last-child
-      transform: scale(.85)
-      transform-origin: bottom right
 
 .btns
   transition: all .5s ease-out
   
-#next,
-#back
+#menu-button
   display: flex
   height: 4rem
   padding: 1rem 2rem
@@ -50,29 +54,21 @@ body:not(.slide-0)
   width: 500px
   font-size: 18px
   word-break: break-all
-  transition: all .75s ease-out
+  transition: all .5s ease-out
   transform-origin: left
-
-#circles
-  opacity: 0
     
-#collage
-  position: fixed
-  transform-origin: center
-  bottom: 0
+#landing-img
+  position: absolute
   left: 45vw
-  height: 65vh
-  width: 55vw
-  background: url('./img/towers.png')
-  background-size: contain
-  background-repeat: no-repeat
-
-@for $i from 0 through 10
-  #slide-#{$i}
-    display: none
-  .slide-#{$i}
-    #slide-#{$i}
-      display: block
+  bottom: 0
+  
+  img
+    padding-top: 25vh
+    height: 100vh
+    
+#slide-1
+  img
+    filter: grayscale(0.5)
   
 .slide-0
   #back

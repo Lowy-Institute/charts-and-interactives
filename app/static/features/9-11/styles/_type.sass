@@ -14,7 +14,9 @@
 .word
   display: inline-block
   opacity: 0
-  animation: rise 1s forwards
+  
+  .visible &
+    animation: rise 1s forwards
 
   &:not(:first-child)
     margin-left: 0.25em

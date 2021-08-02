@@ -14,14 +14,14 @@ require.register "views/type", (exports, require, module) ->
     initialize: (@data) ->
       @data.duration ?= 2000
       @data.delay ?= 0
-
-    enter: ->
+      @split()
       
+    split: ->
       parent = @el
       data = @data
       
       @lines = qsa ".line", @el
-      
+
       if not @words
         @el.innerHTML = ''
         @lines.forEach (l) ->
@@ -31,10 +31,13 @@ require.register "views/type", (exports, require, module) ->
             e.style.animationDelay = (data.delay + 100*i) + "ms"
             e.textContent = word
             parent.appendChild e
-      
+
       @words = qsa ".word",@el
-      add @el, "split"
-      
+
+    enter: ->
+      console.log 'enter'
+
+
       # repeat = 
       # 
       # @timeout = window.setTimeout =>

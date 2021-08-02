@@ -14,48 +14,58 @@ block page
     .col.relative
       .title 20 YEARS ON
       .subtitle.text-mini
-        | Assessing the global impact of 
+        | Assessing the global impact of
         span.highlight 9/11
-    .btns.col.flex-ch
-      button#back.flex-ch.text-mini.bare BACK
-      button#next.flex-ch.text-mini ENTER
-  
-  #slide-0.landing-slide.fixed.inset-0
-    #collage
-    
-    //- include story selector
-    svg#circles(viewBox="0 0 100 100")
-      each v, i in new Array(6)
-        circle(cx=15 * i, cy="50", r="2", fill="none", stroke="white")
-  
-  #slide-1.landing-slide.fixed.inset-0
-    .content
-      h1.type(data-view="type, in-viewport" data-delay=250)
-        .line Introduction
-      .type.text-mini.mb-4(data-view="type, in-viewport" data-delay=250)
-        .line By Lydia Khalil
-      .delay-1500(fade)
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia reprehenderit sunt voluptatibus perferendis, aut accusamus dicta, velit. Veniam, impedit omnis?
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, eligendi rerum velit quam voluptatem aperiam quasi iste, alias tempore corrupti unde reiciendis cumque molestiae! Consequuntur reprehenderit tempore itaque, esse delectus.
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet possimus explicabo, reiciendis incidunt, omnis culpa dicta hic illo nisi cum quo at? Vero doloremque, at odio. Incidunt numquam alias cumque ullam, sequi corporis explicabo ipsum quis! Eveniet, veritatis iste eum.
         
-  #slide-2.landing-slide.fixed.inset-0
+    button#menu-button.flex-ch.text-mini.col ARTICLES
+
+  #menu.fixed.inset-0.hidden
     .content
-      .text-mini(fade) Ask the experts
+      .text-mini Ask the experts
       h1.type(data-view="type, in-viewport" )
         .line The September 11 attacks changed America,
-      h1.type.mb-8(data-view="type, in-viewport" data-delay=1500)
+      h1.type.mb-8(data-view="type, in-viewport" data-delay=1250)
         .line.highlight but did they change the world?
-      .fixed(style="left: 25vw; width: 50vw; top: calc(50vh)")
-        include ./partials/_scale
+    .mt-8.fade(data-scroll data-scroll-repeat)
+      include ./partials/_scale
+  
+  #scroller(data-scroll-container)
+    
+    #slide-0.landing-slide(data-scroll-section)
+      #landing-img(data-scroll data-scroll-speed="-11")
+        img(src='./img/towers.png')
+          
+    #slide-1.landing-slide(style="min-height: 0; height: 50vh; margin: -3rem 0 4rem" data-scroll-section)
+      .flex.absolute.inset-0
+        img.mx-auto(data-scroll data-scroll-speed="6" width="400" height="auto" src='./img/victims.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="13" width="400" height="auto" src='./img/smoking.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="9" width="400" height="auto" src='./img/firefighter3.jpg')
+      .flex.absolute.inset-0(style="z-index: 10; top: 10vh")
+        img.mx-auto(data-scroll data-scroll-speed="38" width="300" height="auto" src='./img/bush.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="48" width="300" height="auto" src='./img/firefighter.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="54" width="300" height="auto" src='./img/firefighter2.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="36" width="300" height="auto" src='./img/bin-laden.jpg')
+
+      
+    #slide-2.landing-slide(data-scroll-section)
+      .content
+        h1.type(data-view="type, in-viewport" delay="250")
+          .line Introduction
+        .type.text-mini.mb-4(data-view="type, in-viewport" delay="250")
+          .line By Lydia Khalil
+        .delay-1500.fade(data-scroll data-scroll-repeat)
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia reprehenderit sunt voluptatibus perferendis, aut accusamus dicta, velit. Veniam, impedit omnis?
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, eligendi rerum velit quam voluptatem aperiam quasi iste, alias tempore corrupti unde reiciendis cumque molestiae! Consequuntur reprehenderit tempore itaque, esse delectus.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet possimus explicabo, reiciendis incidunt, omnis culpa dicta hic illo nisi cum quo at? Vero doloremque, at odio. Incidunt numquam alias cumque ullam, sequi corporis explicabo ipsum quis! Eveniet, veritatis iste eum.
 
 block append css
   style: include:sass ./styles/_app.sass
 
 block append scripts
   script
-    include:coffee ./coffee/utils.coffee
-    include:coffee ./coffee/page.coffee
-    include:coffee ./coffee/type.coffee
+    include ./scripts/locomotive-scroll.js
+    include:coffee ./scripts/utils.coffee
+    include:coffee ./scripts/page.coffee
+    include:coffee ./scripts/type.coffee
   
   
