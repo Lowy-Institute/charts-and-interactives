@@ -1,41 +1,25 @@
-svg#scale(overflow='visible' viewbox='0 0 943 100')
-  style.
-    .st0,
-    .st1 path{fill:#002b45;stroke:white;stroke-width:.5;stroke-miterlimit:10;cursor:pointer;}
-    .st1 text{fill:white;pointer-events:none;}
-    .label,.hex{transition: all .4s;}
-    .label{opacity:0;}
-    .node:hover .label{opacity:1;}
-    .node:hover .hex path{fill:#001525;}
-  g.st0
-    path(d='M0,50 h943')
-    path(d='M461.5,40 v20')
-    //- path(d='M768.2,5 v24.5')
-    //- path(d='M.2,5 v24.5')
-  g.st1
-    - w = 943
-    - r = 35
-    for dx,i in [1,2,3,4,6,9]
-      svg.node.fade(
-        data-scroll
-        data-scroll-repeat
-        y="50"
-        x=`${w * dx/10}`
-        transform-origin=`${r} 50`
-        style=`animation-delay: ${500 * i}ms`
-      )
-        g.label
-          path(d=`M${r},0 v-100`)
-          text.text-micro(fade x=`${10+r}` y="-94") Author name
-          text.text-mini(fade x=`${10+r}` y="-78") Article Title
-        g.hex
-          path(d=`M0,0 l${r},-${r} ${r},${r} -${r},${r}z`)
-          text(x=r dy=6 text-anchor="middle")= i+1
-        //- transform-origin=`${70.7 + dx/2} 50`
+- page.essays = data.getOne("static/features/9-11/data/essays").essays
 
-  svg.text-micro.opacity-75(y="100%" fill="white" overflow='visible')
-    text.delay-000(fade text-anchor="start") Strongly
-      tspan(x="0" dy="16") disagree
-    text.delay-1000(fade x="50%" text-anchor="middle") Neutral
-    text.delay-2000(fade x="100%" text-anchor="end") Strongly
-    text.delay-2000(fade x="100%" dy="16" text-anchor="end") agree
+#scale.flex.flex-1
+  .col.flex-col.text-micro.txt-right.txt-muted
+    .label.flex-cv Strongly<br>disagree
+    .spacer.flex-1
+    .label.flex-cv Disagree
+    .spacer.flex-1
+    .label.flex-cv Neutral
+    .spacer.flex-1
+    .label.flex-cv Agree
+    .spacer.flex-1
+    .label.flex-cv Strongly<br>agree
+  .col.flex-col.relative.flex-1
+    for item, i in page.essays
+      a.node.absolute.bare(
+        fade
+        class=(i % 2 ? "left" : "right")
+        href="/features/9-11/essays/placeholder"
+        style=`animation-delay: ${300 * i}ms; top: ${10*item.scale}%;`
+      )
+        .linkage
+        .card
+          .text-micro.txt-muted= item.author
+          .text-mini= item.title

@@ -6,3 +6,4 @@ require.register "utils", (exports, require, module) ->
 
     add:    (e,c) -> e.classList.add(c)
     remove: (e,c) -> e.classList.remove(c)
+    toggle: (e,c) -> e.classList.toggle(c)

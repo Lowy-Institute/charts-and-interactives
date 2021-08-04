@@ -1,0 +1,34 @@
+extend /partials/layout
+
+block append config
+  - page.image = "http://interactives.lowyinstitute.org/features/9-11/img/thumbnail.jpg"
+  - page.essay = data.getOne("static/features/9-11/data/essays").essays.find(e => e.title === title)
+  - essay = page.essay
+
+block prepend head
+  - page.url = "https://interactives.lowyinstitute.org/features/9-11/"
+  - page.url += "essays/" + page.essay.href
+  - page.metaTitle = `${page.essay.title} - 9/11 – Lowy Insitute`
+
+block page
+  
+  include _logo
+  include _mixins
+  
+  aside
+    include _menu
+
+  article
+    h1= page.essay.title
+    block body
+
+block append css
+  style
+    include:sass ../styles/_app.sass
+    include:sass ../styles/_article.sass
+    
+block append scripts
+  script
+    include:coffee ../scripts/utils.coffee
+    include:coffee ../scripts/base.coffee
+    include:coffee ../scripts/type.coffee

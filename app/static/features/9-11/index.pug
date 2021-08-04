@@ -6,57 +6,61 @@ block append config
   - page.title = "9/11 – 20 years on."
   - page.description = "9/11 – 20 years on.";
   - page.metaTitle = `${page.title} - Lowy Institute`
-  - page.class = "slide-0"
+  - page.class = "landing"
 
 block page
   
-  #controls
-    .col.relative
-      .title 20 YEARS ON
-      .subtitle.text-mini
-        | Assessing the global impact of
-        span.highlight 9/11
-        
-    button#menu-button.flex-ch.text-mini.col ARTICLES
-
-  #menu.fixed.inset-0.hidden
-    .content
-      .text-mini Ask the experts
-      h1.type(data-view="type, in-viewport" )
-        .line The September 11 attacks changed America,
-      h1.type.mb-8(data-view="type, in-viewport" data-delay=1250)
-        .line.highlight but did they change the world?
-    .mt-8.fade(data-scroll data-scroll-repeat)
-      include ./partials/_scale
+  include ./partials/_logo
+  include ./partials/_mixins
+  
+  button#scroll-button.flex-ch.text-mini.opacity-0 
+    | Jump to<br>essays
+    +arrow(90)
+  
+  #titles.relative
+    .subtitle.text-mini
+      | Assessing the impact of 9/11<br>
+      span.txt-muted 20 Years on
   
   #scroller(data-scroll-container)
     
     #slide-0.landing-slide(data-scroll-section)
-      #landing-img(data-scroll data-scroll-speed="-11")
+      #landing-img(
+        data-scroll
+        data-scroll-speed="-11"
+        data-scroll-repeat
+        data-scroll-call="hide"
+      )
         img(src='./img/towers.png')
-          
-    #slide-1.landing-slide(style="min-height: 0; height: 50vh; margin: -3rem 0 4rem" data-scroll-section)
+
+    #slide-1.landing-slide(data-scroll-section)
       .flex.absolute.inset-0
-        img.mx-auto(data-scroll data-scroll-speed="6" width="400" height="auto" src='./img/victims.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="13" width="400" height="auto" src='./img/smoking.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="9" width="400" height="auto" src='./img/firefighter3.jpg')
-      .flex.absolute.inset-0(style="z-index: 10; top: 10vh")
-        img.mx-auto(data-scroll data-scroll-speed="38" width="300" height="auto" src='./img/bush.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="48" width="300" height="auto" src='./img/firefighter.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="54" width="300" height="auto" src='./img/firefighter2.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="36" width="300" height="auto" src='./img/bin-laden.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="1" width="400" height="auto" src='./img/smoking.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="3" width="400" height="auto" src='./img/victims.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="2" width="400" height="auto" src='./img/firefighter3.jpg')
+      .flex.absolute.inset-0(style="z-index: 1; top: 10vh")
+        img.mx-auto(data-scroll data-scroll-speed="18" width="300" height="auto" src='./img/bush.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="28" width="300" height="auto" src='./img/firefighter.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="34" width="300" height="auto" src='./img/firefighter2.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="26" width="300" height="auto" src='./img/bin-laden.jpg')
 
       
     #slide-2.landing-slide(data-scroll-section)
-      .content
+      .content(data-scroll data-scroll-repeat)
         h1.type(data-view="type, in-viewport" delay="250")
           .line Introduction
         .type.text-mini.mb-4(data-view="type, in-viewport" delay="250")
           .line By Lydia Khalil
-        .delay-1500.fade(data-scroll data-scroll-repeat)
+        .delay-1500.fade.opacity-0(data-scroll data-scroll-offset="20%")
           p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia reprehenderit sunt voluptatibus perferendis, aut accusamus dicta, velit. Veniam, impedit omnis?
           p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, eligendi rerum velit quam voluptatem aperiam quasi iste, alias tempore corrupti unde reiciendis cumque molestiae! Consequuntur reprehenderit tempore itaque, esse delectus.
           p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet possimus explicabo, reiciendis incidunt, omnis culpa dicta hic illo nisi cum quo at? Vero doloremque, at odio. Incidunt numquam alias cumque ullam, sequi corporis explicabo ipsum quis! Eveniet, veritatis iste eum.
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam sint cum modi fugiat officiis quae alias fuga illum aliquid accusantium!
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestias necessitatibus animi, soluta molestiae, dignissimos ab libero aliquid pariatur nesciunt quas. Illum voluptatem officia officiis fuga cumque iure labore, in omnis ratione explicabo. Optio vero, ullam. Enim tempora, soluta eum!
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet possimus explicabo, reiciendis incidunt, omnis culpa dicta hic illo nisi cum quo at? Vero doloremque. Incidunt numquam alias cumque ullam, sequi corporis explicabo ipsum quis! Eveniet, veritatis iste eum.
+
+    #slide-3.landing-slide.flex-cv(data-scroll-section)
+      include ./partials/_menu
 
 block append css
   style: include:sass ./styles/_app.sass
@@ -65,7 +69,8 @@ block append scripts
   script
     include ./scripts/locomotive-scroll.js
     include:coffee ./scripts/utils.coffee
-    include:coffee ./scripts/page.coffee
+    include:coffee ./scripts/base.coffee
+    include:coffee ./scripts/landing.coffee
     include:coffee ./scripts/type.coffee
   
   

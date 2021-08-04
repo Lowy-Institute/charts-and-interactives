@@ -32,3 +32,37 @@ article,
 
 svg
   overflow: visible
+  
+  button &
+    height: 1em
+    fill: currentColor
+
+a
+  &:hover
+    color: inherit
+  &.bare
+    text-decoration: none
+
+#logo
+  position: fixed
+  color: white
+  top: 2rem
+  left: 2rem
+  z-index: 200
+  
+  .landing &
+    opacity: 0
+    transition: opacity .75s
+
+h1
+  font-size: 3rem
+  font-family: "Semi"
+  font-weight: 400
+  line-height: 1
+  
+  article &
+    font-weight: 500
+    line-height: 1.2
+    
+  #menu &
+    font-size: 2.5rem

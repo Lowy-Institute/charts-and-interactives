@@ -1,0 +1,14 @@
+#menu.inset-0
+  #menu-modal.absolute.inset-0.flex.hidden
+    button#menu-button.bare.flex-cv.text-micro.items-center
+      .mb-2 menu
+      +arrow
+    #question.flex-cv
+      .text-mini.txt-muted.mb-2 Question
+      h1.type(data-view="type, in-viewport" data-norepeat)
+        .line September 11 changed America,
+      h1.type.mb-8(data-view="type, in-viewport" data-delay=1100 data-callback="showScale" data-norepeat)
+        .line but did it change the world?
+    #scale-wrap.hidden.flex-1(fade)
+      #scale-title.text-mini.mx-12.mb-2 Expert responses
+      include _scale

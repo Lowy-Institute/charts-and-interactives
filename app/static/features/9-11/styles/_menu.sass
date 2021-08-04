@@ -1,0 +1,164 @@
+$h-card: 34px
+
+#menu
+  z-index: 100
+  position: fixed
+  pointer-events: none
+  color: white
+
+#menu-button
+  position: absolute
+  left: 2rem
+  bottom: 1rem
+  padding: 1rem 2rem
+  pointer-events: all
+  z-index: 1
+  
+#menu-modal
+  background: linear-gradient(-135deg, $blue-light, $blue-dark)
+  animation: fadein 0.4s forwards
+  padding: 2rem 3rem
+  pointer-events: all
+
+#scale
+  justify-content: center
+  height: 95%
+  padding-left: 3rem
+
+  .col
+    &:first-child
+      padding: 0 2rem
+      border-right: 1px solid
+  
+  .label
+    flex: 1
+    font-weight: 400
+    letter-spacing: 0.2em
+    
+  .node
+    padding: 0 1rem
+    transition: all .3s
+    transform: translate(0,-$h-card)
+    transform-origin: left center
+    
+    &:hover
+
+      .linkage
+        &:before
+          transform: rotate(45deg) scale(1.2)
+          background: $blue-light
+      
+      .card
+        background: #fff1
+    
+  .linkage
+    position: absolute
+    width: 2rem
+    height: 1px
+    background: white
+    top: 50%
+    left: 0
+    
+    &:before
+      content: ''
+      position: absolute
+      top: -7px
+      left: -8px
+      width: 13px
+      height: 13px
+      border: 1px solid
+      background: $blue-lowy
+      border-radius: 2px
+      transform: rotate(45deg)
+      transition: all .3s
+    
+  .card
+    padding: .5rem .75rem
+    border-radius: 4px
+    margin-left: 1rem
+    
+    &:hover
+      color: white
+
+//#scale
+  .node
+    &.left
+      .linkage
+        left: -2rem
+        &:before
+          left: unset
+          right: -8px
+      .card
+        position: relative
+        right: 100%
+
+// When on homepage
+
+.landing
+
+  #menu
+    position: absolute
+    
+  #menu-modal
+    background: none
+    display: flex
+    
+  #menu-button
+    display: none
+
+
+// When collapsed
+aside
+
+  #menu-button.hidden
+    
+  #menu-modal.hidden
+    display: flex
+    width: 190px
+    padding: 0
+    
+    #question,
+    #scale-title
+      display: none
+      
+    #scale
+      display: none
+      position: relative
+      padding-left: 1rem
+      height: 30%
+      top: 34%
+      
+      .col
+        &:first-child
+          border-right: none
+      
+      
+      .label
+        display: none
+        
+      .card
+        opacity: 0
+        width: 220px
+        border-radius: 4px
+        transform: translate(0,-$h-card)
+        box-shadow: 0 0 25px rgba(black, 0.3)
+        background: white
+        color: $blue-lowy
+
+      .linkage
+        width: 0
+        top: 0
+        
+      .node
+        transform: none
+        
+        &:hover
+          .card
+            opacity: 1
+            
+        
+      @for $i from 1 through 6
+        .node:nth-child(#{$i})
+          top: ($i - 1) * 20% !important
+
+    

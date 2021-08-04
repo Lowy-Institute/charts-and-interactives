@@ -13,6 +13,7 @@ require.register "views/type", (exports, require, module) ->
 
     initialize: (@data) ->
       @data.duration ?= 2000
+      @data.stagger ?= 100
       @data.delay ?= 0
       @split()
       
@@ -28,25 +29,28 @@ require.register "views/type", (exports, require, module) ->
           l.textContent.split(' ').forEach (word,i) ->
             e = document.createElement 'span'
             add e, "word"
-            e.style.animationDelay = (data.delay + 100*i) + "ms"
+            e.style.animationDelay = (data.delay + i*data.stagger) + "ms"
             e.textContent = word
             parent.appendChild e
 
       @words = qsa ".word",@el
 
     enter: ->
-      console.log 'enter'
+      @shown = true
+      if @data.callback is 'showScale' then @showScale()
 
+    showScale: ->
+      scale = qs "#scale-wrap"
+      wait = @data.delay + @words.length * @data.stagger
+      
+      callback = () ->
+        remove scale,"hidden"
 
-      # repeat = 
-      # 
-      # @timeout = window.setTimeout =>
-      #   @interval = window.setInterval(repeat, @data.duration / total)
-      # , @data.delay
+      setTimeout callback, wait
 
     exit: ->
-      return unless @words
-      console.log "exit", @words
-      @words.forEach (w) -> ""
+      return unless @shown and @data.norepeat?
+      @words.forEach (w) ->
+        w.style.animationDelay = '0s'
 
   module.exports = TypeView
