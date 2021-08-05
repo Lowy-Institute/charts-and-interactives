@@ -2,8 +2,11 @@ $(document).ready =>
   
   {qs, qsa, add, remove, toggle} = require "utils"
 
-  menu = qs '#menu-modal'
-  menubtn = qs '#menu-button'
+  menu = qs '#menu'
+  modal = qs '#menu-modal'
+  btn = qs '#menu-button'
+  btnarr = qs '#menu-button g'
+  btntxt = qs '#menu-button .word'
 
   body = document.body
   vw = window.innerWidth
@@ -13,6 +16,8 @@ $(document).ready =>
     vw = window.innerWidth
     vh = window.innerHeight
 
-  menubtn.onclick = () -> 
+  btn.onclick = () -> 
     if not body.classList.contains "landing"
-      toggle menu,"hidden"
+      toggle menu,"collapsed"
+      toggle modal,"hidden"
+      btntxt.textContent = if btntxt.textContent is "menu" then "close" else "menu"      

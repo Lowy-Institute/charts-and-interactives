@@ -2,7 +2,7 @@ extend /partials/layout
 
 block append config
   - page.image = "http://interactives.lowyinstitute.org/features/9-11/img/thumbnail.jpg"
-  - page.essay = data.getOne("static/features/9-11/data/essays").essays.find(e => e.title === title)
+  - page.essay = data.getOne("static/features/9-11/data/essays").essays.find(e => e.author === author)
   - essay = page.essay
 
 block prepend head
@@ -15,12 +15,26 @@ block page
   include _logo
   include _mixins
   
+  #submenu.fixed.flex-ch.text-mini.txt-center(style="top:0;left:240px;right: 50px; border-bottom: 1px solid; background: white")
+    a.flex-1.bare(href="#title-anchor") Ask the expert
+    a.flex-1.bare(href="#qanda-anchor") Challenge the expert
+  
   aside
     include _menu
 
-  article
+  article#title-anchor
     h1= page.essay.title
+    .text-mini.mb-4= "By " + page.essay.author
+    p.opacity-50
+      | In response to the question: 
+      em The September 11 attacks certainly changed America, but did they change the world?
     block body
+    hr.my-20#qanda-anchor
+    h1.type.wrappable(data-view="type, in-viewport" data-norepeat)
+      .line Challenge the expert
+    p.opacity-50 Lydia Khalil, Lowy Institute's resident expert on terrorism and extremism, challenges our contributor's key arguments.
+    block qanda
+      
 
 block append css
   style

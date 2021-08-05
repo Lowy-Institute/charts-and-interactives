@@ -34,15 +34,18 @@ block page
         img(src='./img/towers.png')
 
     #slide-1.landing-slide(data-scroll-section)
-      .flex.absolute.inset-0
+      .flex.absolute.inset-0(style="z-index: 1; top: 0%; height: 400px")
         img.mx-auto(data-scroll data-scroll-speed="1" width="400" height="auto" src='./img/smoking.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="3" width="400" height="auto" src='./img/victims.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="2" width="400" height="auto" src='./img/firefighter3.jpg')
-      .flex.absolute.inset-0(style="z-index: 1; top: 10vh")
-        img.mx-auto(data-scroll data-scroll-speed="18" width="300" height="auto" src='./img/bush.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="28" width="300" height="auto" src='./img/firefighter.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="34" width="300" height="auto" src='./img/firefighter2.jpg')
-        img.mx-auto(data-scroll data-scroll-speed="26" width="300" height="auto" src='./img/bin-laden.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="5" width="400" height="auto" src='./img/victims.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="3" width="400" height="auto" src='./img/firefighter3.jpg')
+      .flex.absolute.inset-0(style="z-index: 1; top: 25%; height: 300px")
+        img.mx-auto(data-scroll data-scroll-speed="8" width="300" height="auto" src='./img/bush.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="12" width="300" height="auto" src='./img/bin-laden.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="14" width="300" height="auto" src='./img/cave.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="8" width="300" height="auto" src='./img/situation.jpg')
+      .flex.absolute.inset-0(style="top: 50%; height: 400px")
+        img.mx-auto(data-scroll data-scroll-speed="1" width="500" height="auto" src='./img/afghan.jpg')
+        img.mx-auto(data-scroll data-scroll-speed="3" width="500" height="auto" src='./img/girl.jpg')
 
       
     #slide-2.landing-slide(data-scroll-section)

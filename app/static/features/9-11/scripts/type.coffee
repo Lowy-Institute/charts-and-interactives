@@ -52,5 +52,6 @@ require.register "views/type", (exports, require, module) ->
       return unless @shown and @data.norepeat?
       @words.forEach (w) ->
         w.style.animationDelay = '0s'
+        w.style.animationDuration = '0s'
 
   module.exports = TypeView
