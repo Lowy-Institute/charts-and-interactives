@@ -1,0 +1,55 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
+  - page.class = "page-0 page-menu"
+  - page.title = "Fortress Australia"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = "https://interactives.lowyinstitute.org/features/fortress-australia/img/thumbnail.jpg"
+  - page.issues = data.getOne("static/features/fortress-australia/data").issues
+
+block page
+  include partials/header
+
+  .container.h-screen.flex
+    .col-1-2.num-lf.pv-md
+      .txt-center
+        .txt-sm.txt-tu.ph-sm.pv-xs.hidden-sm Lowy Institute
+
+        .txt-xxl.ph-sm.pv-sm
+          | Fortress Australia
+        .txt-xl.ph-sm.pv-sm.txt-muted
+          | At what cost?
+
+        .pv-sm.active
+          .stripe-lt
+
+        .ph-xl.intro-description.txt-sans.mxw.pv-xs.txt-mmd
+          :marked
+            Lowy Institute experts discuss the costs and benefits of the ‘Fortress Australia’ approach to managing the pandemic by closing Australia’s borders to all but returning citizens.
+            
+        .pv-sm
+
+        a.txt-sm.mx-auto.txt-dk.txt-bare(
+          href="./report/Fortress Australia.pdf"
+          download
+        ) DOWNLOAD PDF
+
+    .col-1-2.bg-dk.txt-ff.pv-md
+      .block.txt-center
+        .txt-sm.txt-tu.ph-sm.pv-sm.txt-hl Topics
+        .block
+          ul.list-bare.txt-links
+            for issue in page.issues
+              li
+                a.txt-bare(href=`issues/${issue.href}`)
+                  != issue.titleShort
+
+block append css
+  style
+    include:sass ./styles/_base.sass
+    include:sass ./styles/_typography.sass
+    include:sass ./styles/_styles.sass
+    include:sass ./styles/_responsive.sass

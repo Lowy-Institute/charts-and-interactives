@@ -1,0 +1,76 @@
+//-
+  This layout is used to construct the issue page. It in turn extends the
+  default `layout` defined below.
+
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.class = "issue"
+  - page.image = "http://interactives.lowyinstitute.org/features/fortress-australia/img/thumbnail.jpg"
+  - page.issues = data.getOne("static/features/fortress-australia/data").issues
+  - issue = page.issues.find(e => e.author === author)
+
+block prepend head
+  - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
+  - page.url += "issues/" + issue.href
+  - page.metaTitle = `${issue.titleShort} - Fortress Australia – Lowy Insitute`
+
+block page
+
+  include header
+  
+  #progress
+
+  .h-screen.flex.txt-center
+    .col-1-2
+      .fill
+        .row
+          .col-fw.p-md
+            .txt-xxl.pv-xs.ph-xl!= issue.titleLong
+            .txt-sm.txt-tu.pv-sm!= issue.author
+              <br>
+              span.txt-mt!= issue.position
+
+        .row.bg-dk
+          .col-fw.ph-xl.pv-md.txt-ff.txt-lg-lh
+            block introduction
+
+    .col-1-2.bg-lt.txt-ff
+      .col-fw.frame
+        .img-pan
+          img.bg-img(src=`/features/fortress-australia/img/${issue.href}.jpg`)
+        .caption.txt-ff
+          block caption
+
+  article.container
+    block content
+
+  .container
+    ul.link-grid.list-bare.txt-ff
+      li.col-fw.txt-sm.txt-tu.txt-hl.pv-sm Explore more topics
+      for p in page.issues
+        if p.href != issue.href
+
+          li.col-1-3
+            a.txt-bare.pv-md.ph-xs(
+              href=`/features/fortress-australia/issues/${issue.href}`
+            )
+              span.txt-md!= issue.titleShort
+        else
+          
+          li#active.col-1-3
+            .pv-md.ph-xs
+              span.txt-md!= issue.titleShort
+
+block append css
+  style
+    include:sass ../styles/_base.sass
+    include:sass ../styles/_typography.sass
+    include:sass ../styles/_styles.sass
+    include:sass ../styles/_responsive.sass
+
+block append scripts
+  script
+    include:coffee ../coffee/scroller.coffee
+    include:coffee ../coffee/counter.coffee

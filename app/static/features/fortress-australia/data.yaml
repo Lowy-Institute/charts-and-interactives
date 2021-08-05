@@ -1,0 +1,11 @@
+# This content fills both the menu of links on the first page and the footer
+# of links on the issue template.
+
+issues:
+  - href: "smaller-australia"
+    author: Michael Fullilove
+    position: Executive Director
+    titleLong: >
+      Fortress Australia:<br>A smaller Australia
+    titleShort: >
+      A smaller Australia

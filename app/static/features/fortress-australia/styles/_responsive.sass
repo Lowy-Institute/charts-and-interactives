@@ -1,0 +1,287 @@
+@import app/static/features/fortress-australia/styles/_vars.sass
+
+@media (max-width: 1320px)
+  .container,
+  .scroll-item .row
+    max-width: none
+
+@media (max-width: 1280px), (max-height: 920px)
+  .txt-xxl
+    font-size: 48px
+  .txt-xl,
+  .txt-title
+    font-size: 32px
+  .txt-lg,
+  .txt-lg-lh
+    font-size: 26px
+  .txt-md
+    font-size: 21px
+  .txt-mmd
+    font-size: 19px
+  .txt-expert-content
+    padding: 20px 40px
+  .txt-border
+    padding-right: 0
+
+  .txt-links
+    font-size: 28px
+    line-height: 48px
+
+  #header
+    line-height: 56px
+    height: 56px
+
+    .header-logo
+      padding: 16px 0
+
+  #footer, .pager .pager-link
+    height: 25px
+    //line-height: 48px
+
+@media (max-width: 1000px), (max-height: 750px)
+  .txt-xxl
+    font-size: 44px
+  .txt-xl,
+  .txt-title
+    font-size: 28px
+  .txt-lg,
+  .txt-lg-lh
+    font-size: 24px
+  .txt-md
+    font-size: 17px
+  .txt-mmd
+    font-size: 16px
+  .txt-expert-content
+    padding: 20px
+  .txt-links
+    font-size: 26px
+    line-height: 40px
+
+@media (max-width: 800px), (max-height: 625px)
+  .hidden-sm,
+  .page-issue .header-logo,
+  .header-page,
+  .scroll-prompt,
+  .social-share-label,
+  #footer
+    display: none
+
+  .page-issue #header .header-title
+    line-height: 16px
+    text-align: left
+    padding: 12px 0px
+    max-width: 120px
+    margin-left: 0
+
+  #header .social-share
+    display: flex
+    float: right
+
+  #header:before
+    margin: 0 -8px
+
+  #scroller
+    scroll-snap-type: none
+
+  .scroll-item
+    height: auto
+    //scroll-snap-align: none
+    border-top: 1px solid rgba(#fff, 0.2)
+    margin-top: -1px
+
+  .row
+    flex-direction: column
+    height: auto !important
+    display: block
+
+    .col-1-3,
+    .col-2-3,
+    .col-1-2
+      width: 100%
+
+  .fd-r
+    flex-direction: column
+
+  .bg-dk > .txt-border
+    //margin: -16px 0 48px
+
+    &:last-child
+      margin-bottom: 16px
+
+  .scroll-item > .row,
+  .scroll-item > .container
+    padding: 0
+
+  .img-pan
+    max-height: 240px
+
+  .fill
+    height: auto
+
+  br
+    display: inline
+    padding-left: 0.4em
+
+  hr
+    margin: 0.4em 0
+
+  .map-caption,
+  .flags-caption
+    position: static
+    text-align: center
+    max-width: 300px
+    background-color: transparent
+
+  .p-md, .p-lg
+    padding: 16px
+
+  .pv-md, .pv-lg
+    padding-top: 16px
+    padding-bottom: 16px
+
+  .ph-md, .ph-lg, .ph-xl
+    padding-left: 16px
+    padding-right: 16px
+
+  .p-xs, .pv-xs
+    padding-top: 4px
+    padding-bottom: 4px
+
+  .p-xs, .ph-xs
+    padding-left: 4px
+    padding-right: 4px
+
+  .txt-xxl
+    font-size: 32px
+  .txt-xl,
+  .txt-links
+    font-size: 24px
+  .txt-lg,
+  .txt-lg-lh
+    font-size: 20px
+  .txt-md
+    font-size: 17px
+  body
+    font-size: 16px
+
+  #scroller .txt-sm
+    font-size: 13px
+
+  .caption
+    font-size: 12px
+    bottom: 12px
+
+  #header
+    padding: 0 8px
+
+  #header,
+  #footer
+    &:before
+      mix-blend-mode: normal
+      border-color: rgba($color-dk, 0.1)
+
+  .container
+    padding: 0 8px
+
+  .link-grid li a > span
+    border: none
+
+  .txt-source
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    padding-right: 40px
+    max-width: 280px
+
+    em
+      margin-right: -40px
+      position: absolute
+      right: 0
+      top: 0
+      margin: 0
+
+    p
+      display: inline
+
+  #scroll-item-1,
+  #scroll-item-2,
+  #scroll-item-3
+    margin-top: 20px
+    padding-top: 12px
+    position: relative
+
+    &:before
+      content: ""
+      position: absolute
+      left: 16px
+      right: 16px
+      border-top: 1px solid $color-lt
+      top: 0
+
+  .page-issue .bg-dk
+    //background: transparent
+
+    &.txt-ff,
+    .txt-ff
+      //color: $color-dk
+
+  .row > .bg-hl,
+  .row > .bg-lt
+    //border-left: 16px solid #fff
+    //border-right: 16px solid #fff
+    box-sizing: border-box
+
+  .txt-expert-content .block
+    max-height: none
+
+  .price-tag
+    background-size: 400px
+
+  .link-grid
+    height: auto
+
+    li
+      height: 80px
+      width: 100%
+
+      span
+        margin: 0
+
+@media print
+  html, body
+    display: block
+    overflow: visible
+    height: auto
+
+  #footer,
+  .social-share
+    display: none !important
+
+  #scroller
+    height: auto
+    overflow: visible
+
+  .txt-hl, .txt-dk, .txt-lt, .txt-ff
+    color: $color-dk
+
+  .bg-hl, .bg-dk, .bg-lt, .bg-ff
+    background: $color-ff
+    border-top: 1px solid $color-lt
+    border-bottom: 1px solid $color-lt
+    margin: -1px 0 0
+
+  .scroll-item
+    height: 13cm
+    page-break-inside: avoid
+
+  .row
+    padding: 0
+
+    > div + div
+      border-left: 1px solid $color-lt
+
+  #scroll-item-12 .col-1-2.bg-lt
+    border-left: none
+
+@media print
+  size: A4 portrait

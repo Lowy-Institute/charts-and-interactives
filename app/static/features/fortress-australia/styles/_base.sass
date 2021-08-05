@@ -1,0 +1,69 @@
+@import app/static/features/fortress-australia/styles/_vars.sass
+
+*
+  box-sizing: border-box
+
+body
+  font-family: "Semi"
+  font-size: 18px
+  line-height: 1.4
+  overflow: hidden
+  font-weight: 400
+  color: $color-dk
+  font-feature-settings: "liga" 0
+  text-rendering: geometricPrecision
+  
+a
+  transition: color 300ms
+
+  svg
+    transition: fill 300ms
+
+  &:hover,
+  &:hover svg,
+  &:focus
+    color: $color-hl
+    fill: $color-hl
+
+li
+  margin-bottom: 0
+  line-height: inherit
+
+p, pre, dl, dd, ul, ol, svg
+  margin-bottom: 1em
+
+.container
+  max-width: 1200px
+  margin: auto
+  width: 100%
+
+header
+  top: 0
+  width: 100%
+  height: 64px
+  line-height: 64px
+  transition: all 300ms
+  margin: auto
+  background: $color-ff
+  border-bottom: 1px solid $color-lt
+
+  .header-logo,
+  .header-page
+    width: 80px
+    line-height: 12px
+    padding: 20px 0
+
+  .social-share
+    float: right
+
+  .header-logo
+    float: left
+
+  // &:before
+  //   content: ""
+  //   position: absolute
+  //   left: 0
+  //   right: 0
+  //   bottom: 0
+  //   z-index: 10
+  //   mix-blend-mode: darken
