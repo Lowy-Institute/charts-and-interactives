@@ -162,7 +162,7 @@ block page
                 span.legend-item-label= chart.series[i].title
 
       //- .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      //- .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-notes.txt-muted <b>Figure 2:</b> The US Department of Defense “Battle Force 2045” plan would rebalance its fleet away from larger ships, such as aircraft carriers and cruisers, to more numerous but smaller and cheaper vessels.
     
   
 block append css
@@ -170,7 +170,7 @@ block append css
     :sass
     
       .wrapper
-        height: 550px
+        height: 575px
 
       .chart
         box-sizing: border-box
@@ -251,7 +251,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 2em
+        margin-top: .5rem
         font-size: 15px
         
       .chart-value

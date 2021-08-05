@@ -133,8 +133,7 @@ block page
                 span.legend-item-label
                   = i === 2 ? "US Pacific Fleet" : chart.series[i].title
 
-      //- .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      //- .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-notes.txt-muted <b>Figure 3:</b> Warship tonnage launched by the major sea-going navies in the Indo-Pacific between 2016 and 2020 shows that approximately 60 per cent of the US Navy's ships are assigned to the Pacific Fleet.
     
   
 block append css
@@ -142,7 +141,7 @@ block append css
     :sass
   
       .wrapper
-        height: 550px
+        height: 575px
 
       .chart
         box-sizing: border-box
@@ -218,7 +217,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 2em
+        margin-top: .5rem
         font-size: 15px
         
       .chart-value
