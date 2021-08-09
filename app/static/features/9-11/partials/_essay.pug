@@ -12,6 +12,8 @@ block prepend head
 
 block page
   
+  - const slugify = s => s.toLowerCase().replace(/[^\w\s]/g,"").split(/\s/).join("-")
+  
   include _logo
   include _mixins
   
@@ -34,6 +36,11 @@ block page
       .line Challenge the expert
     p.opacity-50 Lydia Khalil, Lowy Institute's resident expert on terrorism and extremism, challenges our contributor's key arguments.
     block qanda
+    hr.my-20
+    .profile.flex
+      img.profile-img(src=`../../img/authors/${slugify(page.essay.author)}.jpg` width="200")
+      p.profile-text.ml-4!= page.essay.bio
+    
       
 
 block append css

@@ -3,10 +3,8 @@ $(document).ready =>
   {qs, qsa, add, remove, toggle} = require "utils"
 
   logo = qs '#logo'
-  scale = qs '#scale'
   titles = qs '#titles'
   img = qs '#landing-img'
-  menu = qs '#menu-modal'
   scrollbtn = qs '#scroll-button'
 
   body = document.body
@@ -42,5 +40,5 @@ $(document).ready =>
         if dy is my
           scrollbtn.style.opacity = 0
       
-      scrollbtn.onclick = () -> scroll.scrollTo scale, {duration: 500}
+      scrollbtn.onclick = () -> scroll.scrollTo qs("#slide-3"), {duration: 500}
     return
