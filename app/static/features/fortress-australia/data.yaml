@@ -1,6 +1,3 @@
-# This content fills both the menu of links on the first page and the footer
-# of links on the issue template.
-
 issues:
   - href: "smaller-australia"
     author: Michael Fullilove
@@ -9,3 +6,93 @@ issues:
       Fortress Australia:<br>A smaller Australia
     titleShort: >
       A smaller Australia
+      
+  - href: "isolation-nation"
+    author: Alex Oliver
+    position: Former Research Director
+    titleLong: >
+      Australia risks regressing to an isolation nation
+    titleShort: >
+      Regressing to an isolation nation
+      
+  - href: "australia-the-outlier"
+    author: Hervé Lemahieu
+    position: Research Director
+    titleLong: >
+      Australia the outlier in global COVID responses
+    titleShort: >
+      Australia the outlier
+      
+  - href: "arithmetic-of-isolation"
+    author: John Edwards
+    position: Senior Fellow
+    titleLong: >
+      The arithmetic of isolation
+    titleShort: >
+      The arithmetic of isolation
+
+  - href: "politics-of-borders"
+    author: Natasha Kassam
+    position: Director, Public Opinion and Foreign Policy Program
+    titleLong: >
+      The politics of borders and national identity
+    titleShort: >
+      The politics of borders and national identity
+
+  - href: "china"
+    author: Richard McGregor
+    position: Senior Fellow
+    titleLong: >
+      China’s diplomacy leaves Australia flat-footed
+    titleShort: >
+      China’s diplomacy leaves Australia flat-footed
+
+  - href: "pacific"
+    author: Jonathan Pryke
+    position: Director, Pacific Islands Program
+    titleLong: >
+      Closed borders have devastating impact on the Pacific
+    titleShort: >
+      A devastating impact on the Pacific
+
+  - href: "asia"
+    author: Ben Bland
+    position: Director, Southeast Asia Program
+    titleLong: >
+      In Asia, there is no substitute for showing up
+    titleShort: >
+      No substitute for showing up
+
+  - href: "not-just-yet"
+    author: Alexandre Dayant
+    position: Research Fellow, Pacific Islands Program
+    titleLong: >
+      Why we should not open our international borders just yet
+    titleShort: >
+      Don't open up just yet
+
+  - href: "immigration"
+    author: Sam Roggeveen
+    position: Director, International Security Program
+    titleLong: >
+      The long-term risks of Australia’s COVID immigration pause
+    titleShort: >
+      The long-term risks of slowed immigration
+
+  - href: "squandering-success"
+    author: Peter Cai
+    position: Project Director, Australia-China Relations
+    titleLong: >
+      Border closures risk squandering Australia’s successful pandemic management
+    titleShort: >
+      Closures risk squandering our success
+
+  - href: "immigration"
+    author: Lydia Khalil
+    position: Research Fellow, West Asia Program
+    titleLong: >
+      Fortress Australia undermines fundamental Australian liberties
+    titleShort: >
+      Undermining our fundamental liberties
+      
+      

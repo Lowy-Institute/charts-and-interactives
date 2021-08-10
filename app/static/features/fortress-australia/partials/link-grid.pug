@@ -1,0 +1,16 @@
+ul.link-grid.list-bare.txt-ff
+  if issue
+    li.col-fw.txt-center.txt-sm.txt-tu.pv-sm(style="grid-column-start: 1; grid-column-end: 3;")
+      | Explore more topics
+  for p in page.issues
+    li.txt-tu(id=(p.href === issue && issue.href ? "active" : ""))
+      if p.href !== (issue && issue.href)
+        a.txt-bare.flex-col(
+          href=`/features/fortress-australia/issues/${p.href}`
+        )
+          span.txt-micro.opacity-50.pv-xs!= p.author
+          span.txt-mini!= p.titleShort
+      else
+        .flex-col
+          span.txt-micro.opacity-50.pv-xs!= p.author
+          span.txt-mini!= p.titleShort

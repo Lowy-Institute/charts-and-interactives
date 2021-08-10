@@ -3,8 +3,16 @@
 *
   box-sizing: border-box
 
+html,
+body,
+body.embed-false
+  width: 100vw
+  height: 100vh
+  overflow-x: hidden
+  overflow-y: inherit
+
 body
-  font-family: "Semi"
+  font-family: "Sans"
   font-size: 18px
   line-height: 1.4
   overflow: hidden
@@ -30,8 +38,9 @@ li
   line-height: inherit
 
 p, pre, dl, dd, ul, ol, svg
-  margin-bottom: 1em
+  margin-bottom: 1.7em
 
+article,
 .container
   max-width: 1200px
   margin: auto
@@ -40,11 +49,10 @@ p, pre, dl, dd, ul, ol, svg
 header
   top: 0
   width: 100%
-  height: 64px
-  line-height: 64px
+  height: $h-nav
+  line-height: $h-nav
   transition: all 300ms
   margin: auto
-  background: $color-ff
   border-bottom: 1px solid $color-lt
 
   .header-logo,

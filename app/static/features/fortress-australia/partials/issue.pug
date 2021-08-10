@@ -21,47 +21,32 @@ block page
   include header
   
   #progress
-
-  .h-screen.flex.txt-center
-    .col-1-2
-      .fill
-        .row
-          .col-fw.p-md
-            .txt-xxl.pv-xs.ph-xl!= issue.titleLong
-            .txt-sm.txt-tu.pv-sm!= issue.author
-              <br>
-              span.txt-mt!= issue.position
-
-        .row.bg-dk
-          .col-fw.ph-xl.pv-md.txt-ff.txt-lg-lh
+    
+  .container
+    .landing-block.h-screen.flex-col.txt-center
+      .flex.flex-1
+        .flex-cv.flex-1
+          .txt-xxl.pv-xs.ph-xl!= issue.titleLong
+          .txt-sm.txt-tu.pv-sm!= issue.author
+            <br>
+            span.txt-mt!= issue.position
+        .flex-cv.flex-1.txt-ff.txt-lg-lh.bg-dk
+          .ph-xl.pv-md
             block introduction
 
-    .col-1-2.bg-lt.txt-ff
-      .col-fw.frame
-        .img-pan
-          img.bg-img(src=`/features/fortress-australia/img/${issue.href}.jpg`)
+      .flex-1.flex-ch.relative.overflow-hidden
+        img.absolute.inset-0(src=`/features/fortress-australia/img/${issue.href}.jpg`)
+        //- .img-pan
         .caption.txt-ff
           block caption
 
-  article.container
+
+  article
     block content
 
   .container
-    ul.link-grid.list-bare.txt-ff
-      li.col-fw.txt-sm.txt-tu.txt-hl.pv-sm Explore more topics
-      for p in page.issues
-        if p.href != issue.href
+    include link-grid
 
-          li.col-1-3
-            a.txt-bare.pv-md.ph-xs(
-              href=`/features/fortress-australia/issues/${issue.href}`
-            )
-              span.txt-md!= issue.titleShort
-        else
-          
-          li#active.col-1-3
-            .pv-md.ph-xs
-              span.txt-md!= issue.titleShort
 
 block append css
   style
@@ -69,6 +54,8 @@ block append css
     include:sass ../styles/_typography.sass
     include:sass ../styles/_styles.sass
     include:sass ../styles/_responsive.sass
+    include:sass ../styles/_article.sass
+    include:sass ../styles/_link-grid.sass
 
 block append scripts
   script
