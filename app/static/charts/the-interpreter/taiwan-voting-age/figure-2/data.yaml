@@ -1,0 +1,42 @@
+title: >
+  Lowering the voting age in Taiwan
+
+source: >
+  Source: <a href="http://teds.nccu.edu.tw/main.php">Taiwan’s Election and Democratization Study (TEDS), 2021</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Percentage who agree or strongly agree the voting age should be lowered, by age group
+
+axes:
+  minX:  0
+  maxX: 60
+  stepsX: 7
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - 18–19
+      - 20–29
+      - 30–39
+      - 40–49
+      - 50–59
+      - 60+
+
+  -
+    title: Percentage
+    color: "blue-100"
+    values:
+      - 49.28
+      - 42.30
+      - 45.89
+      - 41.38
+      - 41.59
+      - 49.12

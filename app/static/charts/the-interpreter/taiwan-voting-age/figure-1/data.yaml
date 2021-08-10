@@ -1,0 +1,59 @@
+title: >
+  Lowering the voting age in Taiwan
+
+source: >
+  Source: <a href="http://teds.nccu.edu.tw/main.php">Taiwan’s Election and Democratization Study (TEDS), 2021</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Should the voting age of elections for government officials from 20 to 18?
+
+
+axes:
+  minX:  0
+  maxX: 100
+  stepsX: 6
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - KMT voters
+      - DPP voters
+      - Overall
+
+  -
+    title: Strongly agree
+    color: "blue-100"
+    values:
+      - 3.13
+      - 9.83
+      - 6.18
+
+  -
+    title: Agree
+    color: "blue-200"
+    values:
+      - 28.33
+      - 48.48
+      - 38.57
+  -
+    title: Disagree
+    color: "red-light"
+    values:
+      - 37.87
+      - 32.06
+      - 37.21
+  -
+    title: Strongly disagree
+    color: "red"
+    values:
+      - 30.67
+      - 9.64
+      - 18.04
