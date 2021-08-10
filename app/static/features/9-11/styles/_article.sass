@@ -5,22 +5,54 @@ body,
 body.embed-false
   background: white
   color: $blue-dark
+  height: unset
 
 article
   padding: 6rem 0
   padding-left: 190px
+  font-weight: 300
 
 #submenu
+  top: 0
+  left: 240px
+  right: 50px
   z-index: 10
   padding: 0.25rem
+  background: white
+  border-bottom: 1px solid
   
   a
     padding: 0.25rem
     transition: all .3s
     
+    &.current
+      background: rgba($blue-light, 0.1)
     &:hover
-      background: rgba($blue-dark, 0.1)
+      background: rgba($blue-light, 0.2)
 
 .profile
   font-size: 16px
   font-weight: 300
+
+#essay
+  p
+    line-height: 1.8
+
+#qanda
+  h3
+    font-size: 1rem
+    font-weight: 600
+
+  p
+    &:not(:last-child)
+      margin-bottom: 2.25em
+
+
+@media (max-width: $screen-tablet)
+  article
+    padding: 8rem 1rem
+    
+  #submenu
+    top: 4rem
+    left: 0
+    right: 0

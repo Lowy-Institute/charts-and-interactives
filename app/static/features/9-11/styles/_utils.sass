@@ -56,3 +56,17 @@
 
 .bold
   font-weight: bold
+.fw-400
+  font-weight: 400
+
+
+.show-sm
+  display: none
+  
+@media (max-width: $screen-tablet)
+  .hide-sm
+    display: none
+  .show-sm
+    display: initial
+  .col-sm
+    flex-direction: column

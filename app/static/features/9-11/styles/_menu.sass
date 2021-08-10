@@ -1,5 +1,19 @@
 $h-card: 34px
 
+#logo
+  position: fixed
+  color: white
+  top: 2rem
+  left: 2rem
+  z-index: 200
+  
+  .wordmark
+    width: 80px
+  
+  .landing &
+    opacity: 0
+    transition: opacity .75s
+
 #menu
   z-index: 100
   position: fixed
@@ -187,4 +201,49 @@ aside
         .node:nth-child(#{$i})
           top: ($i - 1) * 20% !important
 
+
+@media (max-width: $screen-tablet)
+  
+  #logo
+    top: 1rem
+    left: 1rem
     
+    .wordmark
+      width: auto
+  
+  #menu-modal
+    flex-direction: column
+    padding: 1rem
+    
+    aside &.hidden
+      height: 4rem
+      padding: 0
+      width: 100%
+      
+  #menu-button
+    top: 1rem
+    right: 1rem
+    padding: 1rem
+    left: unset
+    
+  #scale
+    padding-left: 0
+    
+    .col:first-child
+      padding: 0
+      width: 2rem
+      
+    .node
+      position: relative
+      top: auto!important
+      padding: 0 0 0 .5rem
+      
+    .label
+      transform: rotate(-90deg)
+      margin-left: -1.5rem
+      
+    .linkage
+      width: 1.25rem
+      
+    .card
+      padding: .75rem 0 .75rem .5rem

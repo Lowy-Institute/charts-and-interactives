@@ -3,51 +3,14 @@
   position: relative
   min-height: 100vh
   
-#titles
-  display: flex
+#title
   position: fixed
-  align-items: flex-end
-  justify-content: space-between
-  width: 100%
-  bottom: 8rem
-  left: 3rem
   z-index: 1
+  left: 3rem
+  bottom: 3rem
+  width: 290px
+  font-size: 26px
   pointer-events: none
-  
-  .title
-    font-size: 42px
-    font-weight: 700
-    letter-spacing: 0.16em
-    transition: all .3s ease-out
-    padding-bottom: .5rem
-    position: relative
-    
-    &:after
-      content: ''
-      position: absolute
-      width: 100%
-      left: 0
-      bottom: 0
-      height: 1px
-      background: #fff
-      animation: grow-y 1.5s infinite alternate ease-out
-    
-  .subtitle
-    position: absolute
-    top: calc(100% - 1rem)
-    width: 290px
-    font-size: 26px
-    // word-break: break-all
-    transition: all .5s ease-out
-    transform-origin: left
-
-  &.compact
-
-    .title
-      opacity: 0
-    .subtitle
-      transform: translate(0,-1.5rem) scale(0.8)
-      width: 260px
     
 #landing-img
   position: absolute
@@ -58,7 +21,7 @@
     padding-top: 25vh
     height: 100vh
 
-#scroll-button
+.scroll-button
   position: fixed
   bottom: 3rem
   right: 3rem
@@ -66,6 +29,10 @@
   border: none
   transition: opacity .75s, transform .3s
   z-index: 2
+  
+  &.disabled
+    opacity: 0
+    pointer-events: none
   
   &:hover
     background: none
@@ -81,11 +48,42 @@
 #slide-1
   z-index: 1
   min-height: 0
-  height: 130vh
-  margin-bottom: -6rem
+  height: 100vh
+  // margin-bottom: -6rem
   
   img
     filter: grayscale(0.5)
 
 #slide-3
   padding-bottom: 1rem
+
+
+@media (max-width: $screen-tablet)
+  
+  #landing-img
+    left: 0
+    
+    img
+      padding-top: 40vh
+    
+  #title
+    top: 3rem
+    right: 3rem
+    bottom: unset
+    width: unset
+    
+  .landing-slide
+    padding: 2rem 1rem
+
+  .scroll-button
+    display: none    
+
+  #slide-1
+    display: none
+    
+  #slide-3
+    .absolute.inset-0
+      position: unset
+    
+
+      

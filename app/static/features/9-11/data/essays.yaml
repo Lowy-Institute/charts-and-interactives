@@ -1,27 +1,27 @@
 essays:
   - href: "bacevich"
-    scale: 1
+    scale: .75
     title: The folly of US primacy was exposed
     author: Andrew Bacevich
   - href: "cox"
-    scale: 2
+    scale: 8
     title: Other major changes are still inevitable
     author: Michael Cox
-  - href: "lieveb"
-    scale: 3
+  - href: "lieven"
+    scale: 1.75
     title: 9/11 changed Middle Eastern geopolitics, not the world
     author: Anatol Lieven
   - href: "sun"
-    scale: 4
+    scale: 2.75
     title: Just a bump in our global political trajectory
     author: Yun Sun
   - href: "sky"
-    scale: 7
+    scale: 9
     title: The rapid demise of democracy
     author: Emma Sky
     bio: >
       <b><em>Emma Sky</em></b> is the founding Director of Yale’s International Leadership Center. She is a lecturer at the Jackson Institute where she teaches great power competition, global affairs and Middle East politics. She is a member of the Wilton Park Advisory Council and a trustee of the HALO Trust. She is the author of the highly acclaimed The Unravelling: High Hopes and Missed Opportunities in Iraq (2015) and In a Time of Monsters: Travelling in a Middle East in Revolt (2019).
   - href: "pandith"
-    scale: 9
+    scale: 5
     title: Title for the sixth and final essay
     author: Farah Pandith
