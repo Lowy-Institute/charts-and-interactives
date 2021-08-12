@@ -1,0 +1,41 @@
+title: >
+  Articles by themes and media outlets
+
+source: >
+
+notes: >
+
+subtitle: >
+  Number of articles per case
+
+axes:
+  minX:  0
+  maxX: 300
+  stepsX: 4
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Media Today
+      - Daily Chinese Herald
+      - Australian Chinese Daily
+
+  -
+    title: Case 1
+    color: "blue-100"
+    values:
+      - 268
+      - 115
+      - 94
+  -
+    title: Case 2
+    color: "blue-200"
+    values:
+      - 17
+      - 3
+      - 4

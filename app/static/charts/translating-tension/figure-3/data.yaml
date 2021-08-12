@@ -1,0 +1,56 @@
+title: >
+  Framing the bilateral relationship in Chinese-language media
+
+source: >
+
+notes: >
+
+subtitle: >
+  Top 10 media sources for each case organisation
+
+
+axes:
+  minX:  0
+  maxX: 100
+  stepsX: 5
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Australian Chinese Daily
+      - Media Today
+      - Daily Chinese Herald
+
+  -
+    title: Canberra-leaning
+    color: "blue-100"
+    values:
+      - 79.59
+      - 70.18
+      - 66.10
+  -
+    title: Neutral
+    color: "blue-400"
+    values:
+      - 8.16
+      - 8.07
+      - 4.24
+  -
+    title: Beijing-leaning
+    color: "red-200"
+    values:
+      - 12.24
+      - 21.40
+      - 29.66
+  -
+    title: Advertorial
+    color: "text"
+    values:
+      - 0
+      - 0.35
+      - 0

@@ -1,0 +1,155 @@
+title: >
+  Top 10 news sources for Chinese media companies
+
+source: >
+
+notes: >
+  For <em>Media Today</em>, ‘other’ includes 9 News, Daily Telegraph, Reuters, BBC Chinese, South China Morning Post. For <em>Daily Chinese Herald</em> and <em>Australian Chinese Daily</em>, ‘other’ includes In Daily, The Straits Times, Sina News, The Australian, The New Daily, Reuters, The Diplomat, and The Guardian
+
+subtitle: >
+  Top 10 media sources for each case organisation
+
+
+axes:
+  minX:  0
+  maxX: 100
+  stepsX: 5
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Australian Chinese Daily
+      - Daily Chinese Herald
+      - Media Today
+
+  -
+    title: The ABC
+    color: "dark"
+    values:
+      - 43.43
+      - 16.10
+      - 10
+  -
+    title: 9 News
+    color: "blue-100"
+    values:
+      - 8.08
+      - 2.54
+      - 0
+  -
+    title: Australian Financial Review
+    color: "blue-200"
+    values:
+      - 7.07
+      - 26.27
+      - 5.25
+  -
+    title: News.com.au
+    color: "blue-300"
+    values:
+      - 6.06
+      - 3.39
+      - 6.35
+  -
+    title: The Guardian 
+    color: "blue-400"
+    values:
+      - 4.04
+      - 0
+      - 3.87
+  -
+    title: SBS
+    color: "yellow-light"
+    values:
+      - 4.04
+      - 0
+      - 0
+  -
+    title: The Sydney Morning Herald
+    color: "yellow"
+    values:
+      - 3.03
+      - 16.10
+      - 10.5
+  -
+    title: Bloomberg
+    color: "orange-light"
+    values:
+      - 3.03
+      - 0
+      - 0
+  -
+    title: The Canberra Times
+    color: "orange"
+    values:
+      - 3.03
+      - 0
+      - 0
+  -
+    title: MarketScreener
+    color: "red-100"
+    values:
+      - 3.03
+      - 0
+      - 0
+  -
+    title: Global Times
+    color: "red-200"
+    values:
+      - 0
+      - 6.78
+      - 3.31
+  -
+    title: The Australian
+    color: "red-300"
+    values:
+      - 0
+      - 5.08
+      - 0
+  -
+    title: The Age
+    color: "red-400"
+    values:
+      - 0
+      - 3.39
+      - 3.31
+  -
+    title: Daily Mail
+    color: "red-500"
+    values:
+      - 0
+      - 3.39
+      - 11.3
+  -
+    title: Sky News
+    color: "teal-500"
+    values:
+      - 0
+      - 1.69
+      - 0
+  -
+    title: 7 News
+    color: "teal-400"
+    values:
+      - 0
+      - 0
+      - 5
+  -
+    title: Herald Sun
+    color: "teal-300"
+    values:
+      - 0
+      - 0
+      - 4.42
+  -
+    title: Other
+    color: "teal-200"
+    values:
+      - 15.15
+      - 15.25
+      - 36.74

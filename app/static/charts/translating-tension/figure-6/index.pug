@@ -1,0 +1,136 @@
+extend /partials/layout
+
+block append config
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  
+block page
+  .wrapper.flex.p-lg
+    .flex.flex-grow.flex-col
+      .chart-title.p-md
+        :marked
+          Standard operating procedure of news production at _Daily Chinese Herald_ and _Media&nbsp;Today_
+      //- .chart-subtitle.txt-muted!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        .flex-ch(data-view="in-viewport")
+          .item.flex-1.flex-col.fade-in
+            svg.fade-in(width="75" viewBox="0 -25 800 775" fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="round")
+              path(d="M623 668l33 13 36-8 3 35-30 39-27-17-15-62zM338 6l23 6-12 9-11-15zM181 124l22 12 3-15-3-10 16 1 15-33 36-21 25 20 29 10-6-16 24-41 41-7-6-19 16 12 75 11-31 52 27 23 45 20 20 17 17-7 16-48-1-51 11-33 12 3 13 31 7 37 14-5 17 17 1 30 15 25 2 25 50 30 16 43 25 8 2 21 31 26 11 31 11 58-21 83-15 11-32 70-4 42-45 8-27 33-26-17-1-15-29 25-39-11-36-31-14-39-18 1-1-37-9 25-4-48-35 43-17-39-24-29-49-15-98 18-41 21-12 20-69-1-33 23-35 5-32-20 13-22v-39l-14-50-16-31-13-58 15 17-17-40 5-41 59-40 23-1 63-22 28-31 2-25z")
+            .p-md Select news stories from Australian media for translation
+          svg.arrow.fade-in.delay-1000(width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M5 12h14M12 5l7 7-7 7")
+          .item.flex-1.flex-col.fade-in.delay-1000
+            svg.fade-in(width="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5")
+              path(d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z")
+            .p-md Upload the translated news onto a shared folder for editorialisation
+          svg.arrow.fade-in.delay-2000(width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M5 12h14M12 5l7 7-7 7")
+          .item.flex-1.flex-col.fade-in.delay-2000
+            svg.fade-in(width="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linejoin="round")
+              circle(cx="12" cy="12" r="10")
+              path(d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z")
+            .p-md Published news is circulated within Australia and beyond
+    
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 450px
+        background: #002b45
+        color: white
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 0
+        left: 10px
+        right: 16px
+        bottom: 10px
+
+      .chart-title
+        font-size: 28px
+        font-weight: 600
+        margin-bottom: 2rem
+        
+      .item
+        text-align: center
+        
+      .fade-in
+        opacity: 0
+        transition-duration: 1s
+        
+        .visible &
+          opacity: 1
+      
+      .delay-1000
+        transition-delay: 1s 
+        
+      .delay-2000
+        transition-delay: 2s
+        
+      @media (max-width: 700px)
+      
+        .wrapper
+          svg
+            margin: 0
+      
+        .chart-title
+          font-size: 18px
+          margin-bottom: 1rem
+          border-bottom: 1px solid #ffffff55
+        
+        .flex-ch
+          flex-direction: column
+          
+        .arrow
+          transform: rotate(90deg)
+          transform-origin: center
+          
+        .item
+          flex-direction: row
+          text-align: left
+          font-size: 16px
+          width: 100%
+          
+          svg
+            min-width: 50px
+            max-width: 50px
+        
+      @media (max-width: 650px)
+      
+        .p-md
+          padding: 1.25rem
+      
+        .item
+          svg
+            min-width: 40px
+            max-width: 40px
+      
+      
+      @media (max-width: 450px)
+      
+        .arrow
+          transform: rotate(90deg) scale(.75)
+        
+        .p-lg
+          padding: 1.5rem
+          
+        .p-md
+          padding: .75rem
+          
+        .item
+          svg
+            min-width: 30px
+            max-width: 30px
+            
+      @media (max-width: 330px)
+
+        .p-lg
+          padding: 1rem
+          
+        .p-md
+          padding: .5rem
