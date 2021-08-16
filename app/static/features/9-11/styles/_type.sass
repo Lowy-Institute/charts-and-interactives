@@ -1,5 +1,7 @@
 .type
-  white-space: nowrap
+  // white-space: nowrap
+  display: flex
+  flex-wrap: wrap
   overflow: hidden
   opacity: 0
   
@@ -22,11 +24,10 @@
   .visible &
     animation: rise 1s forwards
 
-  &:not(:first-child)
-    margin-left: 0.25em
+  &:not(:last-child)
+    margin-right: 0.25em
 
 @media (max-width: $screen-tablet)
   .type,
   .word
-    display: inline
     white-space: normal

@@ -11,10 +11,12 @@ $(document).ready =>
   body = document.body
   vw = window.innerWidth
   vh = window.innerHeight
+  isMobile = vw <= 800
   
   window.onresize = () ->
     vw = window.innerWidth
     vh = window.innerHeight
+    isMobile = vw <= 800
   
   do ->
     scroll = new LocomotiveScroll({
@@ -40,12 +42,15 @@ $(document).ready =>
         if !scrolled and dy > 0
           add scrollbtns[0], "disabled"
 
-        if dy / vh > 1.3
-          logo.style.opacity = 1
-          remove scrollbtns[1], "disabled"
+        if dy / vh > .5
+          if isMobile or dy / vh > 1.3
+            logo.style.opacity = 1
+            remove scrollbtns[1], "disabled"
 
         else
           logo.style.opacity = 0
+          if isMobile
+            add scrollbtns[1], "disabled"
           
         if dy is my
           add scrollbtns[1], "disabled"

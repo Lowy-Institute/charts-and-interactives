@@ -13,12 +13,14 @@ block page
   include ./partials/_logo
   include ./partials/_mixins
   
-  button.scroll-button.flex-ch.text-mini
+  button.scroll-button.flex-ch.text-mini.hide-sm
     span.label Scroll<br>down
     +arrow(90)
     
   button.scroll-button.flex-ch.text-mini.disabled
-    span.label Jump to<br>essays
+    span.label
+      span.hide-sm Jump to<br>
+      span essays
     +arrow(90)
   
   #title.relative.text-mini

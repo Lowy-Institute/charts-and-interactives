@@ -60,25 +60,35 @@ $h-card: 34px
   padding: 2rem 3rem
   pointer-events: all
 
+#question
+  flex: 0.5
+  padding-right: 2rem
+  border-right: 1px solid $muted
+  
 #scale
   justify-content: center
-  height: 95%
-  padding-left: 3rem
+  height: 100%
+  margin: 0 2rem
 
   .col
     &:first-child
       padding: 0 2rem
       border-right: 1px solid
   
+  .agree .label
+    bottom: 3rem
+  .disagree .label
+    top: 3rem
+    
   .label
     flex: 1
     font-weight: 400
     letter-spacing: 0.2em
+    left: 0rem
     
   .node
-    padding: 0 1rem
+    padding: 0.5rem 1rem
     transition: all .3s
-    transform: translate(0,-$h-card)
     transform-origin: left center
     
     &:hover
@@ -98,6 +108,7 @@ $h-card: 34px
     background: white
     top: 50%
     left: 0
+    display: none
     
     &:before
       content: ''
@@ -115,7 +126,8 @@ $h-card: 34px
   .card
     padding: .5rem .75rem
     border-radius: 4px
-    margin-left: 1rem
+    margin-left: 5rem
+    transition: background .3s
     
     &:hover
       color: white
@@ -205,15 +217,26 @@ aside
 @media (max-width: $screen-tablet)
   
   #logo
-    top: 1rem
+    top: .75rem
     left: 1rem
     
+    &::before
+      content: ''
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 70px
+      pointer-events: none
+      background: #002b45
+      z-index: -1
+
     .wordmark
       width: auto
   
   #menu-modal
     flex-direction: column
-    padding: 1rem
+    padding: 0
     
     aside &.hidden
       height: 4rem
@@ -226,8 +249,13 @@ aside
     padding: 1rem
     left: unset
     
+  #question
+    border-right: none
+    padding-bottom: 1.5rem
+    
   #scale
     padding-left: 0
+    margin: 0
     
     .col:first-child
       padding: 0
@@ -236,14 +264,41 @@ aside
     .node
       position: relative
       top: auto!important
-      padding: 0 0 0 .5rem
+      padding: .5rem
       
     .label
-      transform: rotate(-90deg)
-      margin-left: -1.5rem
+      position: relative
+      display: inline-block
+      padding: 1em 0
+      
+      &:after
+        content: ''
+        position: absolute
+        right: 0
+        height: 1px
+        top: calc(50% - 1px)
+        background: rgba($muted, 0.5)
+      
+    .agree .label
+      top: -.75em
+      bottom: unset
+      
+      &:after
+        left: 70px
+
+    .disagree .label
+      top: 0.25em
+      
+      &:after
+        left: 95px
       
     .linkage
       width: 1.25rem
       
     .card
-      padding: .75rem 0 .75rem .5rem
+      margin-left: 0
+      
+    .divider
+      display: none
+      
+    

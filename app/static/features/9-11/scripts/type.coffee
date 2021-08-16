@@ -40,11 +40,12 @@ require.register "views/type", (exports, require, module) ->
       if @data.callback is 'showScale' then @showScale()
 
     showScale: ->
-      scale = qs "#scale-wrap"
-      wait = @data.delay + @words.length * @data.stagger
+      nodes = qsa ".node"
+      wait = 0 # @data.delay + @words.length * @data.stagger
       
       callback = () ->
-        remove scale,"hidden"
+        nodes.forEach (n) ->
+          remove n,"show-sm"
 
       setTimeout callback, wait
 
@@ -52,6 +53,5 @@ require.register "views/type", (exports, require, module) ->
       return unless @shown and @data.norepeat?
       @words.forEach (w) ->
         w.style.animationDelay = '0s'
-        w.style.animationDuration = '0s'
 
   module.exports = TypeView

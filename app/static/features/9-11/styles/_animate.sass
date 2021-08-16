@@ -2,6 +2,10 @@
 .is-inview.fade
   opacity: 0
   animation: fadein 1.5s forwards
+  
+[slide]
+  opacity: 0
+  animation: slide 0.75s forwards
 
 [burst]
 .is-inview.burst
@@ -44,3 +48,8 @@
 @keyframes bounce
   to
     transform: translateY(20%)
+    
+@keyframes slide
+  to
+    opacity: 1
+    transform: translateY(0)

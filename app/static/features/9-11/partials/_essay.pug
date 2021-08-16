@@ -1,6 +1,7 @@
 extend /partials/layout
 
 block append config
+  - page.class = "essay"
   - page.image = "http://interactives.lowyinstitute.org/features/9-11/img/thumbnail.jpg"
   - page.essay = data.getOne("static/features/9-11/data/essays").essays.find(e => e.author === author)
   - essay = page.essay
@@ -16,12 +17,13 @@ block page
   
   include _logo
   include _mixins
-  
+    
   #submenu.fixed.flex-ch.text-mini.txt-center
+    #progress.absolute
     a.flex-1.bare.current(href="#title-anchor")
       span.hide-sm Ask the expert
       span.show-sm Essay
-    a.flex-1.bare(href="#qanda-anchor") Challenge
+    a.flex-1.bare(href="#qanda-anchor") Challenge 
       span.hide-sm the expert
   
   aside
@@ -42,7 +44,7 @@ block page
     #qanda
       block qanda
     hr.my-20
-    .profile.flex.col-sm
+    .profile.flex
       img.profile-img(src=`../../img/authors/${slugify(page.essay.author)}.jpg` width="200")
       p.profile-text.ml-4!= page.essay.bio
     

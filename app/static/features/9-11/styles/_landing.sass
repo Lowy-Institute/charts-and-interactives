@@ -60,6 +60,9 @@
 
 @media (max-width: $screen-tablet)
   
+  #scroller
+    padding-bottom: 4rem
+    
   #landing-img
     left: 0
     
@@ -76,14 +79,34 @@
     padding: 2rem 1rem
 
   .scroll-button
-    display: none    
+    top: 0
+    right: 0
+    bottom: unset
+    z-index: 1000
+    flex-direction: row
+    padding: .75rem 1rem
+    height: 70px
+    
+    .arrow
+      position: relative
+      left: unset
+      top: unset
+      padding-left: .5rem
 
   #slide-1
     display: none
     
   #slide-3
-    .absolute.inset-0
-      position: unset
+    min-height: 0
+    height: auto
     
+    #menu,
+    #menu-modal,
+    #scale-wrap
+      position: relative
+      top: auto
+      left: auto
+      right: auto
+      bottom: auto
 
       

@@ -17,16 +17,19 @@ article
   left: 240px
   right: 50px
   z-index: 10
-  padding: 0.25rem
+  padding: 0.25rem 0
   background: white
   border-bottom: 1px solid
   
   a
-    padding: 0.25rem
-    transition: all .3s
+    padding: 0.3rem
+    transition: all .2s
     
     &.current
-      background: rgba($blue-light, 0.1)
+      background: rgba($blue-light, 1)
+      color: white
+    &.current:hover
+      background: rgba($blue-light, 0.95)
     &:hover
       background: rgba($blue-light, 0.2)
 
@@ -47,6 +50,12 @@ article
     &:not(:last-child)
       margin-bottom: 2.25em
 
+#progress
+  left: 0
+  top: calc(100% - 2px)
+  height: 4px
+  z-index: 20
+  background: #004b78
 
 @media (max-width: $screen-tablet)
   article
@@ -56,3 +65,6 @@ article
     top: 4rem
     left: 0
     right: 0
+    
+  .profile
+    flex-direction: column

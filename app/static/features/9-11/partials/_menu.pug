@@ -5,11 +5,9 @@
       .label close
       +arrow
     #question.flex-cv
-      .text-mini.txt-muted.mb-2 Question
-      h1.type(data-view="type, in-viewport" data-norepeat)
-        .line September 11 changed America,
-      h1.type.mb-8(data-view="type, in-viewport" data-delay=1100 data-callback="showScale" data-norepeat)
-        .line but did it change the world?
-    #scale-wrap.hidden.flex-1(fade)
-      #scale-title.text-mini.mx-12.mb-2 Expert responses
+      .fw-400.text-micro.txt-muted.mb-2 Essay Question
+      h1.type(data-view="type, in-viewport" data-norepeat data-callback="showScale")
+        .line September 11 changed America, but did it change the&nbsp;world?
+    #scale-wrap.flex-1(fade)
+      //- #scale-title.text-mini.mx-12.mb-2 Expert responses
       include _scale

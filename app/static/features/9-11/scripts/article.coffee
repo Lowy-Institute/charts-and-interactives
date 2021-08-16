@@ -4,11 +4,8 @@ $(document).ready =>
 
   current = 0
   links = qsa '#submenu a'
+  progress = qs '#progress'
   sections = qsa '[data-section]'
-  
-  window.onscroll = onscroll
-  window.addEventListener "scroll", onscroll
-  document.addEventListener "scroll", onscroll
   
   links.forEach (link) ->
     link.addEventListener "click", () ->
@@ -17,17 +14,23 @@ $(document).ready =>
       $("html, body").animate { scrollTop: target.offsetTop }
   
   onscroll = () ->
-    console.log current
+
     y = window.scrollY
     j = current
+    
+    progress.style.width = (100 * y / (document.body.offsetHeight - window.innerHeight)) + "%"
+    
     sections.forEach (s,i) ->
-      if s.offsetTop > y then j = i
+      if y > (s.offsetTop - 10) then j = i
 
     if j isnt current
-      add submenu[j],"current"
-      remove submenu[current],"current"
+      add links[j],"current"
+      remove links[current],"current"
       current = j
   
   console.log links
     
     
+  window.onscroll = onscroll
+  # window.addEventListener "scroll", onscroll
+  # document.addEventListener "scroll", onscroll
