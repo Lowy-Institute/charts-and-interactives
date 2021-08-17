@@ -47,12 +47,26 @@
   .ml-#{$i}
     margin-left: $i * 0.25rem
 
-@for $i from 1 through 12
+@for $i from 0 through 12
   +margin($i)
+
+.pl-8
+  padding-left: 2rem
+  
+.border-l-soft
+  border-left: 1px solid $muted
 
 .my-20
   margin-top: 5rem
   margin-bottom: 5rem
+  
+.float-left
+  float: left
+.float-right
+  float: right
+  
+.whitespace-nowrap
+  white-space: nowrap
 
 .bold
   font-weight: bold

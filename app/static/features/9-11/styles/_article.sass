@@ -8,13 +8,13 @@ body.embed-false
   height: unset
 
 article
-  padding: 6rem 0
-  padding-left: 190px
+  padding: 6rem 0 10rem
+  padding-left: 170px
   font-weight: 300
 
 #submenu
   top: 0
-  left: 240px
+  left: 220px
   right: 50px
   z-index: 10
   padding: 0.25rem 0
@@ -36,6 +36,12 @@ article
 .profile
   font-size: 16px
   font-weight: 300
+  align-items: flex-start
+  
+  img
+    padding: 0 1rem .25rem 0
+    object-fit: contain
+    width: 220px
 
 #essay
   p
@@ -45,10 +51,11 @@ article
   h3
     font-size: 1rem
     font-weight: 600
+    font-style: italic
+    font-family: "Sans"
 
-  p
-    &:not(:last-child)
-      margin-bottom: 2.25em
+  p + h3
+    margin-top: 3em
 
 #progress
   left: 0
@@ -56,6 +63,32 @@ article
   height: 4px
   z-index: 20
   background: #004b78
+
+#next
+  color: white
+  position: fixed
+  left: 170px
+  right: 0
+  bottom: 0
+  top: unset
+  pointer-events: none
+  
+  &.visible .node
+    transform: translateY(0)
+  
+  .node
+    margin: auto
+    width: 675px
+    display: block
+    max-width: 100%
+    padding: 1rem 2rem
+    pointer-events: all
+    transition: all .5s
+    background: darken($blue-light, 4)
+    transform: translateY(100%)
+    
+    &:hover
+      background: $blue-light
 
 @media (max-width: $screen-tablet)
   article

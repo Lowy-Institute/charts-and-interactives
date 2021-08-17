@@ -3,8 +3,10 @@ extend /partials/layout
 block append config
   - page.class = "essay"
   - page.image = "http://interactives.lowyinstitute.org/features/9-11/img/thumbnail.jpg"
-  - page.essay = data.getOne("static/features/9-11/data/essays").essays.find(e => e.author === author)
-  - essay = page.essay
+  - page.data = data.getOne("static/features/9-11/data/essays")
+  - page.essay = page.data.essays.find(e => e.author === author)
+  - page.index = page.data.essays.findIndex(e => e === page.essay)
+  - page.next = page.data.essays[page.index === 5 ? 0 : page.index + 1]
 
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/9-11/"
@@ -15,7 +17,6 @@ block page
   
   - const slugify = s => s.toLowerCase().replace(/[^\w\s]/g,"").split(/\s/).join("-")
   
-  include _logo
   include _mixins
     
   #submenu.fixed.flex-ch.text-mini.txt-center
@@ -28,25 +29,41 @@ block page
   
   aside
     include _menu
+    include _logo
 
   article(data-section)#title-anchor
     h1= page.essay.title
-    .text-mini.mb-4= "By " + page.essay.author
+    .mini-profile.flex.items-center.my-6
+      img.thumbnail(src=`../../img/authors/${slugify(page.essay.author)}-thumb.jpg` width="50" height="50")
+      .col.mx-4
+        .text-mini.mb-0= page.essay.author
+        .text-mini.txt-muted.mb-0!= page.essay.position
+    hr
     p.opacity-50.fw-400.mb-8
       | In response to the question: 
       em The September 11 attacks certainly changed America, but did they change the world?
     #essay
       block body
-    hr#qanda-anchor.my-20(data-section)
+    hr#qanda-anchor.my-20(data-section style="border-bottom: 3px solid #002b45")
     h1.type.wrappable(data-view="type, in-viewport" data-norepeat)
       .line Challenge the expert
     p.opacity-50.fw-400.mb-8 Lydia Khalil, Lowy Institute's resident expert on terrorism and extremism, challenges our contributor's key arguments.
+    hr
     #qanda
       block qanda
     hr.my-20
-    .profile.flex
-      img.profile-img(src=`../../img/authors/${slugify(page.essay.author)}.jpg` width="200")
-      p.profile-text.ml-4!= page.essay.bio
+    .profile
+      img.profile-img.float-left(src=`../../img/authors/${slugify(page.essay.author)}.jpg` width="220")
+      p.profile-text!= page.essay.bio
+      
+  #next.fixed.inset-0
+    a.node.bare.relative(href=`/features/9-11/essays/${page.next.href}`)
+      .card.flex
+        em.text-mini.fw-400 Next<br>article
+        .flex-cv.pl-8.ml-8.border-l-soft
+          .text-micro.txt-muted= page.next.author
+          .text-mini= page.next.title
+          //- .absolute.icon.icon-right-arrow(style="right: 2rem")
     
       
 

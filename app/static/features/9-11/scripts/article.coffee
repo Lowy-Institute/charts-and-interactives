@@ -3,9 +3,20 @@ $(document).ready =>
   {qs, qsa, add, remove, toggle} = require "utils"
 
   current = 0
+  next = qs '#next'
   links = qsa '#submenu a'
   progress = qs '#progress'
   sections = qsa '[data-section]'
+  
+  body = document.body
+  vw = window.innerWidth
+  vh = window.innerHeight
+  dh = body.offsetHeight
+
+  window.onresize = () ->
+    vw = window.innerWidth
+    vh = window.innerHeight
+    dh = body.offsetHeight
   
   links.forEach (link) ->
     link.addEventListener "click", () ->
@@ -18,7 +29,7 @@ $(document).ready =>
     y = window.scrollY
     j = current
     
-    progress.style.width = (100 * y / (document.body.offsetHeight - window.innerHeight)) + "%"
+    progress.style.width = (100 * y / (dh - vh)) + "%"
     
     sections.forEach (s,i) ->
       if y > (s.offsetTop - 10) then j = i
@@ -27,10 +38,8 @@ $(document).ready =>
       add links[j],"current"
       remove links[current],"current"
       current = j
-  
-  console.log links
-    
-    
+      
+    if y > (dh - 2 * vh)
+      add next, "visible"
+
   window.onscroll = onscroll
-  # window.addEventListener "scroll", onscroll
-  # document.addEventListener "scroll", onscroll

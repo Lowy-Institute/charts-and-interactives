@@ -2,6 +2,7 @@ $(document).ready =>
   
   {qs, qsa, add, remove, toggle} = require "utils"
 
+  logo = qs '#logo'
   menu = qs '#menu'
   modal = qs '#menu-modal'
   btn = qs '#menu-button'
@@ -20,4 +21,4 @@ $(document).ready =>
     if not body.classList.contains "landing"
       toggle menu,"collapsed"
       toggle modal,"hidden"
-      btntxt.textContent = if btntxt.textContent is "menu" then "close" else "menu"      
+      toggle logo, "alt"

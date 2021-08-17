@@ -10,8 +10,8 @@ block append config
 
 block page
   
-  include ./partials/_logo
   include ./partials/_mixins
+  include ./partials/_logo
   
   button.scroll-button.flex-ch.text-mini.hide-sm
     span.label Scroll<br>down
@@ -24,6 +24,8 @@ block page
     +arrow(90)
   
   #title.relative.text-mini
+    //- .text-mini.txt-muted Lowy Institute
+    hr(style="border-color: #969ba4")
     | Assessing the impact of 9/11<br>
     span.txt-muted 20 Years on
   
@@ -60,12 +62,27 @@ block page
         .type.text-mini.mb-4(data-view="type, in-viewport" delay="250")
           .line By Lydia Khalil
         .delay-1500.fade.opacity-0(data-scroll data-scroll-offset="20%")
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia reprehenderit sunt voluptatibus perferendis, aut accusamus dicta, velit. Veniam, impedit omnis?
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, eligendi rerum velit quam voluptatem aperiam quasi iste, alias tempore corrupti unde reiciendis cumque molestiae! Consequuntur reprehenderit tempore itaque, esse delectus.
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet possimus explicabo, reiciendis incidunt, omnis culpa dicta hic illo nisi cum quo at? Vero doloremque, at odio. Incidunt numquam alias cumque ullam, sequi corporis explicabo ipsum quis! Eveniet, veritatis iste eum.
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam sint cum modi fugiat officiis quae alias fuga illum aliquid accusantium!
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestias necessitatibus animi, soluta molestiae, dignissimos ab libero aliquid pariatur nesciunt quas. Illum voluptatem officia officiis fuga cumque iure labore, in omnis ratione explicabo. Optio vero, ullam. Enim tempora, soluta eum!
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet possimus explicabo, reiciendis incidunt, omnis culpa dicta hic illo nisi cum quo at? Vero doloremque. Incidunt numquam alias cumque ullam, sequi corporis explicabo ipsum quis! Eveniet, veritatis iste eum.
+          :marked
+            In 2001, Afghanistan was ruled by the Taliban. They governed the country through rigid interpretations of Islamic law and were known for their human rights abuses and abhorrent attitudes and rules restricting the freedom of women. They had also given sanctuary to Al-Qaeda, a transnational jihadist terrorist organisation that had opposed the United States and its military presence in the Muslim world. It was from the mountains of Afghanistan and the border cities along the Afghanistan–Pakistan border that Osama bin Laden and senior Al-Qaeda operatives conceived of and launched the September 11 attacks against the United States — hijacking domestic aircraft and flying them into targets including the World Trade Centre towers in New York and the Pentagon in Washington, DC. It was the most successful and spectacular terrorist attack ever conducted. It was also the largest attack by a foreign entity on US soil, at a time when the United States was, arguably, at the peak of its power. 
+
+            In response, on 7 October, the United States launched Operation Enduring Freedom to rid Afghanistan of the Taliban and Al-Qaeda and begin the process of transitioning to an elected Afghan government so that the country would never again be used as a terrorist safe haven. This response began a two decade campaign of military involvement in Afghanistan where the mission expanded into nation-building and reconstruction. It also spawned the Global War on Terror (GWOT), a US-led military and intelligence effort that spanned several conflicts and campaigns. 
+
+            However, Operation Enduring Freedom never managed to completely route the Taliban. Four US presidential administrations, multiple Afghan governments, trillions of dollars and many thousands of lives later, freedom has not endured in Afghanistan, but the Taliban certainly has. In a cruel symmetry, almost exactly 20 years to the day — after US President Joe Biden announced the unconditional withdrawal of US troops following years-long negotiations with Taliban forces — the Taliban is once again in control of the country. 
+
+            The world is now left asking, what was it all for? The US and allied forces campaign waged over the last 20 years has, dishearteningly, left Afghanistan back where it was two decades ago. The United States’ interventions in Afghanistan — despite gains made in expanding rights for women, and educational and economic opportunities — did not achieve their broader strategic goals and laid bare the limits of American military power. 
+
+            Al-Qaeda, too, had world-changing ambitions when it carried out the September 11 attacks. For Al-Qaeda, the attacks were not merely an act of vengeance against the United States, they were part of a broader campaign of violence targeting the United States and its allies to undermine the nation state system, which, they believed, would usher in a global caliphate to unite the world’s Muslims. However, like the United States’ Operation Enduring Freedom and the GWOT, bin Laden’s broader geostrategic aims remain unfulfilled. But did the 9/11 attacks and the ensuing GWOT have other far-reaching consequences? 
+
+            The coordinated operation committed by Al-Qaeda against the United States on September 11, 2001 was an extraordinary attack and a major point in history. It is often perceived as a world-defining event — similar to the assassination of Archduke Franz Ferdinand, the launch of Sputnik, or the fall of the Berlin Wall. But what legacy did the September 11 attacks have if the strategic objectives of neither the United States nor Al-Qaeda were met? Did the aftermath of the spectacular, coordinated attacks and the ensuing GWOT create a paradigm shift in the international system that still reverberates today? And if so, how? If not, what were the more significant effects and trends that have shaped international relations and global power politics today? Did the GWOT not only upend US foreign and national security policy, but have deeper, more far-reaching consequences on global affairs? How did the 9/11 attacks and the GWOT affect global issues beyond the realm of counterterrorism?
+
+            These are the questions we posed to six experts, asking them to assess the legacy of the 9/11 attacks 20 years on.  
+
+            In many ways, the world has moved on from 9/11. There are new preoccupations and challenges. The consequences of great power competition between the United States and China, the COVID pandemic, disinformation and democratic decline, and the imperatives of addressing climate change, along with the territorial defeat of the Islamic State caliphate in 2017, have all shifted the GWOT down the priority list. And yet, the world still lives under the long shadow of the September 11 attacks and the consequences of the GWOT. 
+
+            Preoccupation with counterterrorism and military interventions as part of the GWOT overrode a number of concerns and priorities of governments around the world. The GWOT was one of the few mechanisms that animated global organisations and actions. At the same time, there have been momentous global transformations — including rapid advances in technology, a rise in neoliberalism’s effect on inequality, and significant shifts in the global balance of power — that may have obscured or abrogated the influence of 9/11 and the GWOT on the world that exists today. Given their undeniable significance, it is important to properly situate the 9/11 attacks and the GWOT and understand their impact on global affairs with the hindsight of two decades. 
+
+            We asked our experts, “Did 9/11 define our world? If so, how? If not, what did?” And in our Challenge the Experts round, we delved deeper into the rationales and reasons for their responses. These are their answers.
+
 
     #slide-3.landing-slide.flex-cv(data-scroll-section)
       include ./partials/_menu

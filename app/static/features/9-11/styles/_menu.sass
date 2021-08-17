@@ -3,9 +3,39 @@ $h-card: 34px
 #logo
   position: fixed
   color: white
-  top: 2rem
-  left: 2rem
+  top: 1.5rem
+  left: 1.5rem
   z-index: 200
+  
+  .secondary
+    display: none
+    transition: all .3s
+
+    &:hover
+      color: white
+  
+  @media (max-width: $screen-tablet)
+
+    .landing &::before
+      content: ''
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 70px
+      pointer-events: none
+      border-bottom: 1px solid $muted
+      background: lighten($blue-lowy, 5)
+      z-index: -1
+    
+  @media (min-width: $screen-tablet)
+      
+    &.alt
+      .primary
+        display: none
+      .secondary
+        display: block  
+        opacity: 0
   
   .wordmark
     width: 80px
@@ -22,29 +52,27 @@ $h-card: 34px
 
 #menu-button
   position: absolute
-  left: 2rem
+  left: 1.5rem
   bottom: 1rem
   padding: 1rem 2rem
   pointer-events: all
   z-index: 1
   
+  path
+    &:first-child
+      opacity: 0
+    
+  
   .label
     transition: all .2s
     position: absolute
-    top: -.5em
+    top: 0
     
     &:first-child
       opacity: 0
       transform: translateY(1em)
-  
-  g
-    transform: rotate(-180deg)
-    transition: all .2s
     
   .collapsed &
-    
-    g
-      transform: rotate(0deg)
       
     .label
       &:first-child
@@ -53,6 +81,12 @@ $h-card: 34px
       &:nth-child(2)
         opacity: 0
         transform: translateY(-1em)
+        
+    path
+      &:first-child
+        opacity: 1
+      &:nth-child(2)
+        opacity: 0
   
 #menu-modal
   background: linear-gradient(-135deg, $blue-light, $blue-dark)
@@ -91,7 +125,9 @@ $h-card: 34px
     transition: all .3s
     transform-origin: left center
     
-    &:hover
+    &:hover,
+    &:focus
+      color: white
 
       .linkage
         &:before
@@ -128,21 +164,6 @@ $h-card: 34px
     border-radius: 4px
     margin-left: 5rem
     transition: background .3s
-    
-    &:hover
-      color: white
-
-//#scale
-  .node
-    &.left
-      .linkage
-        left: -2rem
-        &:before
-          left: unset
-          right: -8px
-      .card
-        position: relative
-        right: 100%
 
 // When on homepage
 
@@ -161,12 +182,10 @@ $h-card: 34px
 
 // When collapsed
 aside
-
-  #menu-button.hidden
     
   #menu-modal.hidden
     display: flex
-    width: 190px
+    width: 170px
     padding: 0
     
     #question,
@@ -219,24 +238,14 @@ aside
   #logo
     top: .75rem
     left: 1rem
-    
-    &::before
-      content: ''
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      height: 70px
-      pointer-events: none
-      background: #002b45
-      z-index: -1
 
     .wordmark
       width: auto
   
   #menu-modal
     flex-direction: column
-    padding: 0
+    padding: 6rem 1rem 2rem
+    overflow: auto
     
     aside &.hidden
       height: 4rem
@@ -244,14 +253,36 @@ aside
       width: 100%
       
   #menu-button
-    top: 1rem
-    right: 1rem
-    padding: 1rem
+    position: fixed
+    top: 0
+    right: 0
     left: unset
+    bottom: unset
+    padding: .6rem 1.25rem
+    
+    #menu:not(.collapsed) &
+    
+      &::before
+        content: ''
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        height: 70px
+        pointer-events: none
+        border-bottom: 1px solid $muted
+        background: lighten($blue-lowy, 5)
+        z-index: -1
+    
+    .label
+      display: none
     
   #question
     border-right: none
     padding-bottom: 1.5rem
+    
+    .label
+      display: none
     
   #scale
     padding-left: 0
@@ -287,10 +318,11 @@ aside
         left: 70px
 
     .disagree .label
-      top: 0.25em
+      top: 1em
       
       &:after
         left: 95px
+        top: calc(50% - 12px)
       
     .linkage
       width: 1.25rem
