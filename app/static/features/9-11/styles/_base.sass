@@ -40,7 +40,8 @@ svg
     fill: currentColor
 
 a
-  &:hover
+  &:hover,
+  &:focus
     color: inherit
   &.bare
     text-decoration: none
@@ -64,6 +65,19 @@ h1
 h2
   font-size: 1.8rem
 
+blockquote
+  border-top: none
+  border-bottom: none
+  border-left: 2px solid $blue-light
+  padding: .5em 1.5em
+  font-style: italic
+  font-weight: 500
+  margin: 1.25em 0 1.25em 2em
+  font-size: 20px
+  color: inherit
+  float: right
+  width: 40%
+
 .thumbnail
   height: 4.5rem
   width: 4.5rem
@@ -71,6 +85,10 @@ h2
   border: 2px solid rgba($muted, 0.75)
   object-fit: cover
   
+
+[fold]
+  overflow: hidden
+  transition: max-height .4s
 
 @media (max-width: $screen-tablet)
   

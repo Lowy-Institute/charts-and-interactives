@@ -3,10 +3,9 @@
     button#menu-button.bare.flex-cv.text-micro.items-center.fw-400
       .label menu
       .label close
-      svg(width='38' height='38' viewbox="0 0 24 24" style="height: 2.5rem")
-        path(d="M3,8H21a1,1,0,0,0,0-2H3A1,1,0,0,0,3,8Zm18,8H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm0-5H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Z")
-        path(d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z")
-      //- +arrow
+      svg(width='38' height='38' viewbox="0 0 24 24" style="height: 2.5rem" stroke="currentColor" stroke-width="1")
+        path(d="M0,6 h24 M0,12 h24 M0,18 h24")
+        path(d="M6,6 L18,18 M18,6 L6,18")
     #question.flex-cv
       .label.fw-400.text-micro.txt-muted.mb-2 Essay Question
       h1.type(data-view="type, in-viewport" data-norepeat data-callback="showScale")

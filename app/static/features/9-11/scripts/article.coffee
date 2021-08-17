@@ -1,6 +1,6 @@
 $(document).ready =>
 
-  {qs, qsa, add, remove, toggle} = require "utils"
+  {qs, qsa, add, has, remove, toggle} = require "utils"
 
   current = 0
   next = qs '#next'
@@ -41,5 +41,7 @@ $(document).ready =>
       
     if y > (dh - 2 * vh)
       add next, "visible"
+    else if has next, "visible"
+      remove next, "visible"
 
   window.onscroll = onscroll

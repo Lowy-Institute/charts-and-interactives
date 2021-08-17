@@ -6,13 +6,15 @@ $h-card: 34px
   top: 1.5rem
   left: 1.5rem
   z-index: 200
+  font-weight: 600
+  letter-spacing: .05em
+  font-size: 13px
   
-  .secondary
-    display: none
-    transition: all .3s
-
-    &:hover
-      color: white
+  .landing &
+    top: 2.5rem
+    left: 2.5rem
+    .text-highlight
+      display: none
   
   @media (max-width: $screen-tablet)
 
@@ -27,18 +29,16 @@ $h-card: 34px
       border-bottom: 1px solid $muted
       background: lighten($blue-lowy, 5)
       z-index: -1
-    
-  @media (min-width: $screen-tablet)
-      
-    &.alt
-      .primary
-        display: none
-      .secondary
-        display: block  
-        opacity: 0
   
   .wordmark
     width: 80px
+    
+  .text-highlight
+    width: 120px
+    transition: color .3s
+    
+  &:hover .text-highlight
+    color: lighten($highlight, 30)
   
   .landing &
     opacity: 0
@@ -185,7 +185,7 @@ aside
     
   #menu-modal.hidden
     display: flex
-    width: 170px
+    width: 160px
     padding: 0
     background: $blue-lowy
     

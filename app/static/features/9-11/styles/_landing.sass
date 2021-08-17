@@ -8,9 +8,14 @@
   z-index: 1
   left: 3rem
   bottom: 3rem
-  width: 290px
-  font-size: 26px
-  pointer-events: none
+  width: 280px
+  font-size: 32px
+  
+#subtitle
+  font-size: 14px
+  font-weight: 500
+  letter-spacing: 0.2em
+  line-height: 1.4
     
 #landing-img
   position: absolute
@@ -54,9 +59,26 @@
   img
     filter: grayscale(0.5)
 
+#slide-2
+  p:last-child
+    margin-bottom: 1.4em
+  
 #slide-3
   padding-bottom: 1rem
 
+#submenu
+  width: 100%
+  border: 1px solid $muted
+  padding: .25rem
+  
+  a
+    padding: .5rem 1rem
+    transition: background .3s
+    
+    &:hover
+      background: rgba(white, .25)
+    &:first-child
+      border-right: 1px solid $muted
 
 @media (max-width: $screen-tablet)
   
