@@ -1,5 +1,8 @@
 extend /partials/layout
 
+block prepend head
+  meta(name="format-detection" content="date=no")
+  
 block append config
   - page.url = "https://interactives.lowyinstitute.org/features/9-11/"
   - page.image = ""
@@ -25,11 +28,11 @@ block page
   
   #title.relative.text-mini
     .text-mini.mb-4 Lowy Institute
-    | September 11<br>
+    .bare Septembe&zwj;r 11<br>
     span.txt-muted(style="letter-spacing: .2em") 20 Years on
-    hr.hide-sm(style="border-color: #969ba4")
+    hr(style="border-color: #969ba4")
     #subtitle
-      .mb-2 Six experts reflect on the legacy of September 11 in response to the question:<br>
+      .mb-2 Six experts reflect on the legacy of Septembe&zwj;r 11 in response to the question:<br>
       em Did 9/11 define our world?
   
   #scroller(data-scroll-container)

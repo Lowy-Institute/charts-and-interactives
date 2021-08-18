@@ -17,8 +17,11 @@ $h-card: 34px
       display: none
   
   @media (max-width: $screen-tablet)
+    
+    .landing &
+      display: none
 
-    .landing &::before
+    //.landing &::before
       content: ''
       position: fixed
       top: 0
@@ -237,7 +240,7 @@ aside
 @media (max-width: $screen-tablet)
   
   #logo
-    top: .75rem
+    top: 1rem
     left: 1rem
 
     .wordmark

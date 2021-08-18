@@ -41,6 +41,7 @@ $(document).ready =>
       
       if dy > 0
         add scrollbtns[0], "disabled"
+        add title, "no-ptr"
       else
         remove scrollbtns[0], "disabled"
 

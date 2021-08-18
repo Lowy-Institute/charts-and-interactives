@@ -10,6 +10,7 @@
   bottom: 3rem
   width: 280px
   font-size: 32px
+  text-decoration: none!important
   
 #subtitle
   font-size: 14px
@@ -34,10 +35,6 @@
   border: none
   transition: opacity .75s, transform .3s
   z-index: 2
-  
-  &.disabled
-    opacity: 0
-    pointer-events: none
   
   &:hover
     background: none
@@ -66,10 +63,11 @@
 #slide-3
   padding-bottom: 1rem
 
-#submenu
+.landing #submenu
   width: 100%
   border: 1px solid $muted
   padding: .25rem
+  position: relative
   
   a
     padding: .5rem 1rem
@@ -86,16 +84,24 @@
     padding-bottom: 4rem
     
   #landing-img
-    left: 0
+    left: 15%
     
     img
-      padding-top: 40vh
+      padding-top: 50vh
     
   #title
-    top: 3rem
-    right: 3rem
+    top: 2rem
+    right: 2rem
     bottom: unset
-    width: unset
+    width: 240px
+    font-size: 26px
+    text-align: center
+    
+    .mb-4
+      margin-bottom: 0.5rem
+    
+  #subtitle
+    font-size: 12px
     
   .landing-slide
     padding: 2rem 1rem
@@ -114,6 +120,27 @@
       left: unset
       top: unset
       padding-left: .5rem
+      
+  .landing
+
+    #slide-3,
+    #menu-modal
+      padding-top: 1rem
+      padding-bottom: 2rem
+    
+    #submenu
+      width: 95%
+      margin: auto
+      flex-direction: column
+      margin-top: 1rem
+      
+      a
+        width: 100%
+        padding: .75rem 1rem
+
+        &:first-child
+          border-right: none
+          border-bottom: 1px solid #969ba4
 
   #slide-1
     display: none
