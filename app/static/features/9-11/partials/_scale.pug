@@ -8,6 +8,7 @@
       - len = page.essays.filter(p => p.scale).length
       a.node.bare.show-sm(
         slide
+        rel="prefetch"
         href=`/features/9-11/essays/${item.href}`
         style=`animation-delay: ${50 * (len - i)}ms; transform: translateY(${50}%)`
       )
@@ -20,6 +21,7 @@
     for item, i in page.essays.filter(p => !p.scale)
       a.node.bare.show-sm(
         slide
+        rel="prefetch"
         href=`/features/9-11/essays/${item.href}`
         style=`animation-delay: ${50 * (i+1)}ms; transform: translateY(${-50}%)`
       )
