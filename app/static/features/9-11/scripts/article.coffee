@@ -32,7 +32,7 @@ $(document).ready =>
     progress.style.width = (100 * y / (dh - vh)) + "%"
     
     sections.forEach (s,i) ->
-      if y > (s.offsetTop - 10) then j = i
+      if y > (s.offsetTop - 200) then j = i
 
     if j isnt current
       add links[j],"current"
