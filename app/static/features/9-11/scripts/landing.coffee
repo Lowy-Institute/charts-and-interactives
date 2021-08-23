@@ -4,6 +4,7 @@ $(document).ready =>
 
   logo = qs '#logo'
   title = qs '#title'
+  credits = qs '#credits'
   img = qs '#landing-img'
   scrollbtns = qsa '.scroll-button'
   scrollbtn = qs '[scroll-to-menu]'
@@ -38,18 +39,20 @@ $(document).ready =>
       
       img.style.opacity = 1 - dy / (vh * 0.8)
       title.style.opacity = 1 - dy / (vh * 0.4)
+      credits.style.opacity = 1 - dy / (vh * 0.4)
       
       if dy > 0
-        add scrollbtns[0], "disabled"
         add title, "no-ptr"
-      else
-        remove scrollbtns[0], "disabled"
 
+      if not isMobile
+        if dy / vh > .1 then add scrollbtns[0], "disabled"
+        else remove scrollbtns[0], "disabled"
+        
       if dy / vh > .5
         if isMobile or dy / vh > 1.3
           logo.style.opacity = 1
-          remove scrollbtns[1], "disabled"
-
+          remove scrollbtns[1], "disabled"  
+          
       else
         logo.style.opacity = 0
         if isMobile

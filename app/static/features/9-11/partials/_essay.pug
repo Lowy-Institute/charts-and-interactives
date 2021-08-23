@@ -48,7 +48,10 @@ block page
     hr#qanda-anchor.my-20(data-section style="border-bottom: 3px solid #002b45")
     h1.type.wrappable(data-view="type, in-viewport" data-norepeat)
       .line Challenge the expert
-    p.opacity-50.fw-400.mb-8 Lydia Khalil, Lowy Institute's resident expert on terrorism and extremism, challenges our contributor's key arguments.
+    p.opacity-50.fw-400.mb-8
+      | Lydia Khalil, Lowy Institute's resident expert on terrorism and extremism, challenges 
+      span= page.essay.author
+      | 's key arguments.
     hr
     #qanda
       block qanda

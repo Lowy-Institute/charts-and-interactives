@@ -15,9 +15,10 @@ block page
   
   include ./partials/_mixins
   include ./partials/_logo
+  include ./partials/_credits
   
-  button.scroll-button.flex-ch.text-mini.hide-sm
-    span.label Scroll<br>down
+  button.scroll-button.flex-ch.text-mini.mr-3.hide-sm
+    span.label Scroll down
     +arrow(90)
     
   button.scroll-button.flex-ch.text-mini.disabled.hidden
@@ -26,17 +27,17 @@ block page
       span essays
     +arrow(90)
   
-  #title.relative.text-mini
+  #title.text-mini
     .text-mini.mb-4 Lowy Institute
     .bare Septembe&zwj;r 11<br>
-    span.txt-muted(style="letter-spacing: .2em") 20 Years on
+    span(style="letter-spacing: .2em;opacity:.65") 20 Years on
     hr(style="border-color: #969ba4")
     #subtitle
       em.block.mb-2 Did 9/&zwj;11 define our world?<br>
-      span Six experts reflect on the legacy of Septembe&zwj;r 11
+      span(style="letter-spacing:.29em;opacity:.65") Six experts debate the legacy of Septembe&zwj;r 11
   
   #scroller(data-scroll-container)
-    
+        
     #slide-0.landing-slide(data-scroll-section)
       #landing-img(
         data-scroll
@@ -86,7 +87,7 @@ block page
 
             Preoccupation with counterterrorism and military interventions as part of the GWOT overrode a number of concerns and priorities of governments around the world. The GWOT was one of the few mechanisms that animated global cooperation. At the same time, there have been momentous global transformations — including rapid advances in technology, a rise in neoliberalism’s effect on the rise of inequality, and significant shifts in the global balance of power — that may have obscured or abrogated the influence of 9/11 and the GWOT on the world that exists today. Given their undeniable significance, it is important to properly situate the 9/11 attacks and the GWOT and understand their impact on global affairs with the hindsight of two decades. 
 
-            We asked our experts, “Did 9/11 define our world? If so, how? If not, what did?” And in our Challenge the Experts round, we delved deeper into the rationales and reasons for their responses. These are their answers.
+            We asked our experts, “Did 9/11 define our world? If so, how? If not, what did?” Below each of their responses to this question, editor Lydia Khalil challenges the experts with questions that delve deeper into their rationales and reasons.
 
         #submenu.fixed.flex-ch.text-mini.txt-center.content
           a.flex-1.bare.current(unfold href="#") Read more
