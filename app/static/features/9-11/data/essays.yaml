@@ -1,44 +1,36 @@
 essays:
   
-  - href: "bin-laden-plan"
-    scale: 1
-    title: The world was changed by Bin Laden’s horrific plan
-    author: Farah Pandith
-    position: Senior Fellow,<br>Harvard Kennedy School
-    bio: >
-      <b><em>Farah Pandith</b></em> is a Senior Fellow, Future of Diplomacy Project, Belfer Center for Science and International Affairs, Harvard University’s Kennedy School of Government, an adjunct senior fellow at the Council on Foreign Relations, the former State Department Special Representative to Muslim Communities, and author of ‘How We Win: How Cutting-Edge Entrepreneurs, Political Visionaries, Enlightened Business Leaders, and Social Media Mavens Can Defeat the Extremist Threat’.
-  
-  - href: "undermined-trust"
-    scale: 1
-    title: 9/11 undermined trust in the competence of government
-    author: Michael Cox
-    position: Emeritus Professor,<br>London School of Economics
-    bio: >
-      <b><em>Professor Michael Cox</b></em> is Emeritus Professor of International Relations at the London School of Economics, and co-founded LSE IDEAS a foreign policy centre based at the LSE which aims to bring the academic and policy words together. He is currently Visiting Professor at the Catholic University in Milan and is the author, editor, and co-editor of several books, including most recently ‘The Post-Cold War World’ (2018) a new centennial edition of Keynes’s ‘The Economic Consequences of the Peace’ (2019), a reissue of E. H. Carr’s 1945 classic ‘Nationalism and After’ (2021) and forthcoming ‘Agonies of Empire: American Power from Clinton to Biden’.
-  
   - href: "decline-of-democracy"
     scale: 1
     title: The decline of democracy
     author: Emma Sky
     position: Founding Director,<br>Yale International Leadership Center
     bio: >
-      <b><em>Emma Sky</em></b> is the founding Director of Yale’s International Leadership Center. She is a lecturer at the Jackson Institute where she teaches great power competition, global affairs and Middle East politics. She is a member of the Wilton Park Advisory Council and a trustee of the HALO Trust. She is the author of the highly acclaimed The Unravelling: High Hopes and Missed Opportunities in Iraq (2015) and In a Time of Monsters: Travelling in a Middle East in Revolt (2019).
-  
-  - href: "shattering-of-illusions"
-    scale: 0
-    title: The shattering of illusions
-    author: Andrew Bacevich
-    position: Emeritus Professor,<br>Boston University
+      <b><em>Emma Sky</em></b> is the founding Director of Yale’s International Leadership Center. She is a lecturer at the Jackson Institute where she teaches great power competition, global affairs, and Middle East politics. She is a member of the Wilton Park Advisory Council and a trustee of the HALO Trust. She is the author of the highly acclaimed <em>The Unravelling: High Hopes and Missed Opportunities in Iraq</em> (2015) and <em>In a Time of Monsters: Travels through a Middle East in Revolt</em> (2019).
+      
+  - href: "undermined-trust"
+    scale: 1
+    title: 9/11 undermined trust in the competence of government
+    author: Michael Cox
+    position: Emeritus Professor,<br>London School of Economics
     bio: >
-      <b><em>Andrew Bacevich</b></em> is President of the Quincy Institute for Responsible Statecraft. He grew up in Indiana, graduated from West Point and Princeton, served in the army, became an academic and is now a writer. He is the author, co-author, or editor of more than a dozen books, the latest being After the Apocalypse: America’s Role in a World Transformed. He is Professor Emeritus of International Relations and History at Boston University and has held fellowships at the Paul H. Nitze School of Advanced International Studies, the John F. Kennedy School of Government, the Council on Foreign Relations, and the American Academy in Berlin.
+      <b><em>Professor Michael Cox</b></em> is Emeritus Professor of International Relations at the London School of Economics, and co-founded LSE IDEAS, a foreign policy centre based at the LSE which aims to bring the academic and policy words together. He is currently Visiting Professor at the Catholic University in Milan and is the author, editor, and co-editor of several books, including most recently <em>The Post-Cold War World</em> (2018), a new centennial edition of Keynes’ <em>The Economic Consequences of the Peace</em> (2019), a reissue of E. H. Carr’s 1945 classic </em>Nationalism and After</em> (2021), and forthcoming <em>Agonies of Empire: American Power from Clinton to Biden</em>.
+
+  - href: "bin-laden-plan"
+    scale: 1
+    title: The world was changed by bin Laden’s horrific plan
+    author: Farah Pandith
+    position: Senior Fellow,<br>Harvard Kennedy School
+    bio: >
+      <b><em>Farah Pandith</b></em> is a Senior Fellow, Future of Diplomacy Project, Belfer Center for Science and International Affairs, Harvard University’s Kennedy School of Government, an adjunct Senior Fellow at the Council on Foreign Relations, the former State Department Special Representative to Muslim Communities, and author of <em>How We Win: How Cutting-Edge Entrepreneurs, Political Visionaries, Enlightened Business Leaders, and Social Media Mavens Can Defeat the Extremist Threat</em> (2019).
   
   - href: "limited-impacts"
     scale: 0
     title: Limited impacts on global geopolitics
     author: Anatol Lieven
-    position: Professor,<br>Georgetown University
+    position: Senior Research Fellow,<br>The Quincy Institute
     bio: >
-      <b><em>Anatol Lieven</b></em> is Professor at Georgetown University School of Foreign Service, Qatar, visiting professor in the War Studies Department of King’s College London, and a senior fellow of the New America Foundation in Washington, DC. He was previously a journalist in South Asia and the former Soviet Union, and is the author of several books on the latter region. He is also the author of ‘America Right or Wrong: An Anatomy of American Nationalism’. He has a BA in history and a PhD in political science from the University of Cambridge.
+      <b><em>Anatol Lieven</b></em> is Senior Research Fellow on Russia and Europe at the Quincy Institute for Responsible Statecraft. He was formerly Professor at Georgetown University School of Foreign Service in Qatar, Visiting Professor in the War Studies Department of King’s College London, and Senior Fellow of the New America Foundation in Washington, DC. He was previously a journalist in South Asia and the former Soviet Union, and is the author of several books on the latter region. He is also the author of <em>America Right or Wrong: An Anatomy of American Nationalism</em> (2012). He has a BA in history and a PhD in political science from the University of Cambridge.
   
   - href: "chinas-rise"
     scale: 0
@@ -46,4 +38,12 @@ essays:
     author: Yun Sun
     position: Senior Fellow,<br>Stimson Center
     bio: >
-      <b><em>Yun Sun</b></em> is a Senior Fellow and Co-Director of the East Asia Program and Director of the China Program at the Stimson Center. Her expertise is in Chinese foreign policy, US-China relations and China’s relations with neighbouring countries and authoritarian regimes. She was previously a Visiting Fellow at the Brookings Institution and China Analyst for the International Crisis Group based in Beijing
+      <b><em>Yun Sun</b></em> is a Senior Fellow and Co-Director of the East Asia Program and Director of the China Program at the Stimson Center. Her expertise is in Chinese foreign policy, US–China relations, and China’s relations with neighbouring countries and authoritarian regimes. She was previously a Visiting Fellow at the Brookings Institution and China Analyst for the International Crisis Group, based in Beijing.
+
+  - href: "shattering-of-illusions"
+    scale: 0
+    title: The shattering of illusions
+    author: Andrew Bacevich
+    position: Emeritus Professor,<br>Boston University
+    bio: >
+      <b><em>Andrew Bacevich</b></em> is President of the Quincy Institute for Responsible Statecraft. He grew up in Indiana, graduated from West Point and Princeton, served in the army, became an academic, and is now a writer. He is the author, co-author, or editor of more than a dozen books, the latest being <em>After the Apocalypse: America’s Role in a World Transformed</em> (2021). He is Professor Emeritus of International Relations and History at Boston University and has held fellowships at the Paul H. Nitze School of Advanced International Studies, the John F. Kennedy School of Government, the Council on Foreign Relations, and the American Academy in Berlin.
