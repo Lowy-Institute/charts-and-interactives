@@ -14,18 +14,18 @@ block page
   //- include partials/header
 
   .h-screen.flex.bg-dk.txt-ff
-    .col-1-3.num-lf.pv-md.border-r.txt-center.flex-cv
-      .d
+    .col-2-5.num-lf.pv-md.border-r.txt-center.flex-cv
+      div
         .txt-mini.pv-xs Lowy Institute
-        .title.txt-tu.ph-xl.pv-sm Fortress Australia
+        .title.txt-tu.ph-xl.pv-sm Fortress<br>Australia
         .subtitle.ph-sm.pv-sm.txt-muted.hidden At what cost?
           
-        .stripes.pv-sm.active.relative.overflow-hidden
+        .stripes.mv-md.pv-sm.active.relative.overflow-hidden
           .absolute.inset-0.flex-ch
-            for bar in new Array(20)
+            for bar in new Array(30)
               .border-r.ph-xs.pv-xs
 
-        .ph-xl.intro-description.txt-sans.mxw.pv-sm.txt-mmd
+        .ph-xxl.intro-description.txt-sans.mxw.pv-sm.txt-mmd
           :marked
             Lowy Institute experts discuss the costs and benefits of the ‘Fortress Australia’ approach to managing the pandemic by closing Australia’s borders to all but returning citizens.
             
@@ -36,7 +36,7 @@ block page
         //-   download
         //- ) DOWNLOAD PDF
 
-    .col-2-3.bg-dk.txt-ff
+    .col-3-5.bg-dk.txt-ff
       include ./partials/link-grid
       //.block.txt-center
         .txt-sm.txt-tu.ph-sm.pv-sm.txt-hl Topics
