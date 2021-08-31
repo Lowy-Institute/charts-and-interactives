@@ -2,6 +2,7 @@ $(document).ready =>
   
   {qs, qsa, add, remove, toggle} = require "utils"
 
+  pdf = qs '#pdf'
   logo = qs '#logo'
   title = qs '#title'
   credits = qs '#credits'
@@ -38,6 +39,7 @@ $(document).ready =>
       dy = args.scroll.y
       
       img.style.opacity = 1 - dy / (vh * 0.8)
+      pdf.style.opacity = 1 - dy / (vh * 0.4)
       title.style.opacity = 1 - dy / (vh * 0.4)
       credits.style.opacity = 1 - dy / (vh * 0.4)
       
