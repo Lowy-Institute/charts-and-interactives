@@ -11,7 +11,7 @@ block append config
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/9-11/"
   - page.url += "essays/" + page.essay.href
-  - page.metaTitle = `${page.essay.title} - 9/11 debates – Lowy Insitute`
+  - page.metaTitle = `${page.essay.title} by ${page.essay.author} - 9/11 debates – Lowy Insitute`
   - page.description = "Six experts debate the legacy of September 11, twenty years on."
 
 block page
