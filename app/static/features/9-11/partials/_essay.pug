@@ -2,7 +2,7 @@ extend /partials/layout
 
 block append config
   - page.class = "essay"
-  - page.image = "https://interactives.lowyinstitute.org/features/9-11/img/thumb.jpg"
+  - page.image = "https://interactives.lowyinstitute.org/features/9-11/img/thumb.png"
   - page.data = data.getOne("static/features/9-11/data/essays")
   - page.essay = page.data.essays.find(e => e.author === author)
   - page.index = page.data.essays.findIndex(e => e === page.essay)
@@ -11,8 +11,8 @@ block append config
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/9-11/"
   - page.url += "essays/" + page.essay.href
-  - page.metaTitle = `${page.essay.title} - 9/11 – Lowy Insitute`
-  - page.description = "Six experts reflect on the legacy of September 11, twenty years on."
+  - page.metaTitle = `${page.essay.title} - Did 9/11 define our world? – Lowy Insitute`
+  - page.description = "Six experts debate the legacy of September 11, twenty years on."
 
 block page
   
