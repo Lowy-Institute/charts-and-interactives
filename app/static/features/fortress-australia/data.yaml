@@ -1,98 +1,84 @@
 issues:
-  - href: "smaller-australia"
-    author: Michael Fullilove
-    position: Executive Director
-    titleLong: >
-      Fortress Australia:<br>A smaller Australia
-    titleShort: >
-      A smaller Australia
-      
-  - href: "isolation-nation"
-    author: Alex Oliver
-    position: Former Research Director
-    titleLong: >
-      Australia risks regressing to an isolation nation
-    titleShort: >
-      Regressing to an isolation nation
-      
-  - href: "australia-the-outlier"
+  - href: ""
     author: Hervé Lemahieu
     position: Research Director
-    titleLong: >
-      Australia the outlier in global COVID responses
-    titleShort: >
-      Australia the outlier
+    theme: Introduction
+    title: >
+      Overcoming the Covid winner’s&nbsp;curse
       
-  - href: "arithmetic-of-isolation"
-    author: John Edwards
-    position: Senior Fellow
-    titleLong: >
-      The arithmetic of isolation
-    titleShort: >
-      The arithmetic of isolation
+  - href: "article/smaller-australia"
+    author: Michael Fullilove
+    position: Executive Director
+    theme: Theme
+    title: >
+      Fortress Australia is a smaller&nbsp;Australia
 
-  - href: "politics-of-borders"
-    author: Natasha Kassam
-    position: Director, Public Opinion and Foreign Policy Program
-    titleLong: >
-      The politics of borders and national identity
-    titleShort: >
-      The politics of borders and national identity
+  - href: "article/singapores-pivot"
+    author: Emma Connors
+    position: Southeast Asia Correspondent, The Australian Financial Review
+    theme: Singapore’s pivot
+    title: >
+      Prospects beyond the fortress&nbsp;state
 
-  - href: "china"
+  - href: "article/foreign-policy"
     author: Richard McGregor
     position: Senior Fellow
-    titleLong: >
-      China’s diplomacy leaves Australia flat-footed
-    titleShort: >
-      China’s diplomacy leaves Australia flat-footed
+    theme: Foreign policy
+    title: >
+      China gains from Australia’s interrupted&nbsp;diplomacy
 
-  - href: "pacific"
+  - href: "article/economy"
+    author: John Edwards
+    position: Senior Fellow
+    theme: National Economy
+    title: >
+      The arithmetic of&nbsp;isolation
+
+  - href: "article/pacific-islands"
     author: Jonathan Pryke
     position: Director, Pacific Islands Program
-    titleLong: >
-      Closed borders have devastating impact on the Pacific
-    titleShort: >
-      A devastating impact on the Pacific
+    theme: Pacific Islands
+    title: >
+      Australia must lead a Pacific&nbsp;re-opening
 
-  - href: "asia"
+  - href: "article/southeast-asia"
     author: Ben Bland
     position: Director, Southeast Asia Program
-    titleLong: >
-      In Asia, there is no substitute for showing up
-    titleShort: >
-      No substitute for showing up
+    theme: Southeast Asia
+    title: >
+      There is no substitute for showing&nbsp;up
 
-  - href: "not-just-yet"
-    author: Alexandre Dayant
-    position: Research Fellow, Pacific Islands Program
-    titleLong: >
-      Why we should not open our international borders just yet
-    titleShort: >
-      Don't open up just yet
-
-  - href: "immigration"
-    author: Sam Roggeveen
-    position: Director, International Security Program
-    titleLong: >
-      The long-term risks of Australia’s COVID immigration pause
-    titleShort: >
-      The long-term risks of slowed immigration
-
-  - href: "squandering-success"
-    author: Peter Cai
-    position: Project Director, Australia-China Relations
-    titleLong: >
-      Border closures risk squandering Australia’s successful pandemic management
-    titleShort: >
-      Closures risk squandering our success
-
-  - href: "immigration"
+  - href: "article/civil-liberties"
     author: Lydia Khalil
     position: Research Fellow, West Asia Program
-    titleLong: >
-      Fortress Australia undermines fundamental Australian liberties
-    titleShort: >
-      Undermining our fundamental liberties
+    theme: Civil liberties
+    title: >
+      Covid response has undermined rights and&nbsp;liberties
+
+  - href: "article/public-opinion"
+    author: Natasha Kassam
+    position: Director, Public Opinion and Foreign Policy Program
+    theme: Public opinion
+    title: >
+      Border politics are&nbsp;shifting
+
+  - href: "article/expats-view"
+    author: Jenny Hayward-Jones
+    position: Nonresident Fellow, Pacific Islands Program
+    theme: An expatriate’s view
+    title: >
+      Alienation from Australia rankles in the vaccine&nbsp;era
+
+  - href: "article/immigration"
+    author: Sam Roggeveen
+    position: Director, International Security Program
+    theme: immigration
+    title: >
+      Surmounting Australia’s Covid immigration&nbsp;pause
       
-      
+  - href: "article/open-borders"
+    author: Alex Oliver
+    position: Former Research Director
+    theme: Open borders
+    title: >
+      Australia must change the way it measures Covid&nbsp;success

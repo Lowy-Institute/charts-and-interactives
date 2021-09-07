@@ -9,12 +9,12 @@ block append config
   - page.class = "issue"
   - page.image = "http://interactives.lowyinstitute.org/features/fortress-australia/img/thumbnail.jpg"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
-  - issue = page.issues.find(e => e.author === author)
+  - issue = page.issues.find(e => e.author === "Hervé Lemahieu")
 
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
-  - page.url += "issues/" + issue.href
-  - page.metaTitle = `${issue.titleShort} - Fortress Australia – Lowy Insitute`
+  - page.url += issue.href
+  - page.metaTitle = `${issue.title} - Fortress Australia – Lowy Insitute`
 
 block page
 
@@ -46,7 +46,6 @@ block page
 
   .container
     include link-grid
-
 
 block append css
   style

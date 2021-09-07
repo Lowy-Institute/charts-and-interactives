@@ -3,49 +3,52 @@ extend /partials/layout
 block append config
   - page.includeFonts = false
   - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
-  - page.class = "page-0 page-menu"
+  - page.class = "page-0 page-menu bg-dk txt-ff"
   - page.title = "Fortress Australia"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
   - page.image = "https://interactives.lowyinstitute.org/features/fortress-australia/img/thumbnail.jpg"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
+  - issue = page.issues.find(e => e.author === "Hervé Lemahieu")
 
 block page
   //- include partials/header
 
-  .h-screen.flex.bg-dk.txt-ff
-    .col-2-5.num-lf.pv-md.border-r.txt-center.flex-cv
-      div
-        .txt-mini.pv-xs Lowy Institute
-        .title.txt-tu.ph-xl.pv-sm Fortress<br>Australia
-        .subtitle.ph-sm.pv-sm.txt-muted.hidden At what cost?
-          
-        .stripes.mv-md.pv-sm.active.relative.overflow-hidden
-          .absolute.inset-0.flex-ch
-            for bar in new Array(30)
-              .border-r.ph-xs.pv-xs
+  .h-screen.flex-ch.bg-dk.txt-ff
+    .title-block.flex-cv.txt-center.z1.relative.p-md
+      .txt-mini.pv-xs.fw600 Lowy Institute
+      .title.txt-tu.pv-sm Beyond<br>Fortress<br>Australia
+      .subtitle.pv-sm.txt-muted.hidden At what cost?
+    .stripes.mv-md.pv-sm.absolute.inset-0.overflow-hidden
+      .bars.absolute.inset-0.flex-ch
+        for bar in new Array(60)
+          .h-full.border-r.ph-xs.pv-xs
 
-        .ph-xxl.intro-description.txt-sans.mxw.pv-sm.txt-mmd
-          :marked
-            Lowy Institute experts discuss the costs and benefits of the ‘Fortress Australia’ approach to managing the pandemic by closing Australia’s borders to all but returning citizens.
-            
-        //- .pv-sm
-        //- 
-        //- a.txt-sm.mx-auto.txt-dk.txt-bare(
-        //-   href="./report/Fortress Australia.pdf"
-        //-   download
-        //- ) DOWNLOAD PDF
+  .h-screen.flex.bg-dk.txt-ff.border-t
+    .col-2-5.num-lf.pv-md.border-r.txt-center.flex-cv
+        h1 Introduction
+        p.txt-micro Hervé Lemahieu
+        .gradient-overlay
+          .scroller
+            .scroller-inner
+              .ph-xl.pv-md.txt-sans.mxw.txt-mmd.txt-left
+                :marked
+                  I put down my robe, picked up my diploma. Took hold of my sweetheart and away we did drive. Straight for the hills, the black hills of Dakota. Sure was glad to get out of there alive. And the locusts sang, well, it give me a chill. Yeah, the locusts sang such a sweet melody. And the locusts sang with a high whinin’ trill. Yeah, the locusts sang and they was singing for me. Singing for me, well, singing for me.
+
+                  When they get a scapegoat by the throat, it's hard labour and cold beans. If ya get away real quick, You'll be eatin from the poison peanut machine. Well, I sing by night, wander by day. I'm on the road and it looks like I'm here to stay.
+
+                  Forgetful heart. Lost your power of recall. Every little detail. You don't remember at all. The times we knew. Who would remember better then you.
+
+                  Trails of troubles. Roads of battles. Paths of victory. We shall walk.
+
+                  I dreamed I saw St. Augustine. Alive with fiery breath. And I dreamed I was amongst the ones. That put him out to death. Oh, I awoke in anger. So alone and terrified. I put my fingers against the glass. And bowed my head and cried.
+
+                  I rolled and I tumbled, I cried the whole night long. I rolled and I tumbled, I cried the whole night long. Woke up this mornin', I must have bet my money wrong.
+
+                  When she sees me will she know what I've been through? Will old times start to feelin' like new? When I get there will our love still feel so true? Yet all I have, I'll be a-bringin' it to you. Oh bessie, sing them old-time blues.
 
     .col-3-5.bg-dk.txt-ff
       include ./partials/link-grid
-      //.block.txt-center
-        .txt-sm.txt-tu.ph-sm.pv-sm.txt-hl Topics
-        .block
-          ul.list-bare.txt-links
-            for issue in page.issues
-              li
-                a.txt-bare(href=`issues/${issue.href}`)
-                  != issue.titleShort
 
 block append css
   style
@@ -54,3 +57,6 @@ block append css
     include:sass ./styles/_styles.sass
     include:sass ./styles/_responsive.sass
     include:sass ./styles/_link-grid.sass
+    include:sass ./styles/_animation.sass
+    include:sass ./styles/_scroller.sass
+    include:sass ./styles/_landing.sass

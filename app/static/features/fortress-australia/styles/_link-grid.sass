@@ -2,21 +2,24 @@
 
 .link-grid
   display: grid
+  grid-template-rows: repeat(6, 1fr)
   grid-template-columns: 1fr 1fr
   height: 100%
 
-  li#active
-    background: $color-dk
-
   li
-    // float: left
     position: relative
+    
+    &:not(:last-child)
+      border-bottom: 1px solid #fff2
+
+    &:nth-child(odd)
+      border-right: 1px solid #fff2
 
     a > span
       transition: all 450ms cubic-bezier(0.7, 0.7, 0.3, 1)
 
     > *
-      padding: 1.5rem 3rem      
+      padding: 0 2rem      
       
     a
       display: block
@@ -28,16 +31,27 @@
       position: relative
       z-index: 1
       box-sizing: border-box
-      transition: all 250ms cubic-bezier(0.7, 0.7, 0.3, 1)  
+      transition: all 250ms cubic-bezier(0.7, 0.7, 0.3, 1)
 
       &:hover,
       &:focus
         color: $color-ff
-        background-color: $color-dk
-
-    @for $i from 1 through 13
-      $ratio: 1 - ($i) / 13
-
-      &:nth-child(#{$i})
-        background: mix($color-dk, $color-hl, $ratio * 100%)
+        background-color: rgba(white, .05)
         
+      &.active
+        pointer-events: none
+        background-color: rgba(white, .03)
+
+        &:hover
+          background: darken($color-dk, 2)
+
+.tag
+  padding: 2px 6px
+  border-radius: .25em
+  font-size: 11px
+  letter-spacing: .08em
+
+@each $color in $spectrum
+  $i: index($spectrum, $color) - 1
+  .tag-#{$i}
+    background: $color

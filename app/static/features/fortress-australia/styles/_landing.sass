@@ -1,0 +1,21 @@
+@import app/static/features/fortress-australia/styles/_vars.sass
+
+.title-block
+  // background: $color-dk
+  // text-shadow: .2em .2em 2px $color-dk, -.2em -.2em 2px $color-dk, -.2em .2em 2px $color-dk, .2em -.2em 2px $color-dk, .2em 0 2px $color-dk, -.2em 0 2px $color-dk, 0 .2em 2px $color-dk, 0 -.2em 2px $color-dk
+  > * 
+    position: relative
+    
+    &:before
+      content: ''
+      position: absolute
+      top: 10%
+      left: 20%
+      width: 60%
+      height: 80%
+      border-radius: 30%
+      background: $color-dk
+      box-shadow: 2px 0 2rem $color-dk, -2px 0 2rem $color-dk
+      z-index: -1
+      opacity: .9
+      
