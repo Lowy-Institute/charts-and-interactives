@@ -12,7 +12,6 @@ block append config
   - issue = page.issues.find(e => e.author === "Hervé Lemahieu")
 
 block page
-  //- include partials/header
 
   .h-screen.flex-ch.bg-dk.txt-ff
     .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/landing.jpg')`)
@@ -25,7 +24,7 @@ block page
         for bar in new Array(40)
           .bar.h-full.border-r.ph-xs.pv-xs
 
-  .h-screen.flex.bg-dk.txt-ff.border-t
+  #introduction.h-screen.flex.bg-dk.txt-ff.border-t
     .col-2-5.num-lf.pv-md.border-r.txt-center.flex-cv
         h1 Introduction
         p.txt-micro Hervé Lemahieu

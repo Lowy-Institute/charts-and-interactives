@@ -1,5 +1,5 @@
 issues:
-  - href: ""
+  - href: "#introduction"
     author: Hervé Lemahieu
     position: Research Director
     theme: Introduction
@@ -10,13 +10,18 @@ issues:
     author: Michael Fullilove
     position: Executive Director
     theme: Overview
+    credit: >
+      <a href="https://images.defence.gov.au/">Department of Defence</a>
     title: >
       Fortress Australia is a smaller&nbsp;Australia
 
   - href: "article/singapores-pivot"
     author: Emma Connors
-    position: Southeast Asia Correspondent, The Australian Financial Review
+    position: >
+      Southeast Asia Correspondent,<br>The Australian Financial Review
     theme: Singapore’s pivot
+    credit: >
+      <a href="https://unsplash.com/@victorhwn725">Victor He / Unsplash</a>
     title: >
       Prospects beyond the fortress&nbsp;state
 
@@ -24,6 +29,8 @@ issues:
     author: Richard McGregor
     position: Senior Fellow
     theme: Foreign policy
+    credit: >
+      <a href="https://www.flickr.com/photos/apec2013/10102412734/in/photolist-goHvkU-goHBZX-Zwik2S-Zwikoo-goJ66F-goJ8kw-goHKWt-eVyQuz-Hr72xM-hypqZj-QVhZbj-2km3Bee-2mc8HnW-mkxihc-2m9RAZd-2aQP9pN-raXAQb-ofeAuT-21yEbVN-8beuQu-yKiWbf-2db6MK9-GESSAv-TuYhXS-T9SVvb-SLJXUv-akFpzg-akFp8K-TuYi2Q-bxFq7a-crFsBE-crFsZy-2hAt5uN-aUaT6T-rpxmKL-bjLxBb-26eu84n-bjLxGA-8beuDh-ZwijCf-Zwik5s-akJeNm-Zg4L9z-mBYNxb-GESSH4-bxFqar-DtDGsE-8beuSs-bxFqqF-bxFqnR/"> APEX 2013 / Flickr</a>
     title: >
       China gains from Australia’s interrupted&nbsp;diplomacy
 
@@ -31,6 +38,8 @@ issues:
     author: John Edwards
     position: Senior Fellow
     theme: National Economy
+    credit: >
+      <a href="https://commons.wikimedia.org/wiki/File:Australian_Treasury.JPG">Adz / Wikimedia</a>
     title: >
       The arithmetic of&nbsp;isolation
 
@@ -38,6 +47,8 @@ issues:
     author: Jonathan Pryke
     position: Director, Pacific Islands Program
     theme: Pacific Islands
+    credit: >
+      <a href="https://images.defence.gov.au/">Department of Defence</a>
     title: >
       Australia must lead a Pacific&nbsp;re-opening
 
@@ -45,6 +56,8 @@ issues:
     author: Ben Bland
     position: Director, Southeast Asia Program
     theme: Southeast Asia
+    credit: >
+      <a href="https://images.defence.gov.au/">Department of Defence</a>
     title: >
       There is no substitute for showing&nbsp;up
 
@@ -52,6 +65,8 @@ issues:
     author: Lydia Khalil
     position: Research Fellow, West Asia Program
     theme: Civil liberties
+    credit: >
+      <a href="https://unsplash.com/@paulvanlieshouthunt">Paul-Alain Hunt / Unsplash</a>
     title: >
       Covid response has undermined rights and&nbsp;liberties
 
@@ -59,6 +74,8 @@ issues:
     author: Natasha Kassam
     position: Director, Public Opinion and Foreign Policy Program
     theme: Public opinion
+    credit: >
+      <a href="https://commons.wikimedia.org/wiki/Category:Protest_outside_the_ALP_caucus_in_Balmain#/media/File:Protesters_outside_Balmain_Town_Hall_4.jpg">Hpeterswald / Wikimedia</a>
     title: >
       Border politics are&nbsp;shifting
 
@@ -66,6 +83,8 @@ issues:
     author: Jenny Hayward-Jones
     position: Nonresident Fellow, Pacific Islands Program
     theme: An expatriate’s view
+    credit: >
+      <a href="https://unsplash.com/@diana_pole">Diana Polekhina / Unsplash</a>
     title: >
       Alienation from Australia rankles in the vaccine&nbsp;era
 
@@ -73,6 +92,8 @@ issues:
     author: Sam Roggeveen
     position: Director, International Security Program
     theme: Demographics
+    credit: >
+      <a href="https://unsplash.com/@rezauliandrian">Reza Aulia / Unsplash</a>
     title: >
       Surmounting Australia’s Covid immigration&nbsp;pause
       
@@ -80,5 +101,7 @@ issues:
     author: Alex Oliver
     position: Former Research Director
     theme: Open borders
+    credit: >
+      <a href="https://images.defence.gov.au/">Department of Defence</a>
     title: >
       Australia must change the way it measures Covid&nbsp;success

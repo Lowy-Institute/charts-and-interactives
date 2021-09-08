@@ -30,8 +30,7 @@ block page
         .title.txt-tu.pv-sm!= issue.title
         .txt-mini.pv-xs.fw600!= issue.author
         .txt-mini.pv-xxs.fw600.opacity-75!= issue.position
-        .img-caption.txt-micro.fw700.opacity-75
-          block caption
+        .img-caption.txt-micro.fw700.opacity-75!= "Photo: " + issue.credit
 
       .stripes.mv-md.pv-sm.absolute.inset-0.overflow-hidden
         //- .bars.absolute.inset-0.flex-ch
