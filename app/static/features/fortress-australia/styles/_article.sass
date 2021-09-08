@@ -31,4 +31,30 @@ article
     max-width: 700px
     
   .cover-img
-    filter: brightness(0.75)
+    filter: brightness(0.7)
+    
+  blockquote
+    border-top: none
+    border-bottom: none
+    border-left: 2px solid $color-dk
+    padding: .5em 1.5em
+    font-style: italic
+    font-weight: 500
+    margin: 1.25em -25% 1.25em 2em
+    font-size: 20px
+    color: inherit
+    float: right
+    width: 40%
+    
+    p
+      line-height: 1.4
+
+@media (max-width: $screen-tablet)
+  
+  .article
+
+    blockquote
+      float: none
+      width: 100%
+      margin-left: 0
+      margin-right: 0
