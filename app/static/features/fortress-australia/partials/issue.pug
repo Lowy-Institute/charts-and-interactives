@@ -23,17 +23,18 @@ block page
   
   .container
       
-    .h-screen.flex-ch.bg-dk.txt-ff
-      .title-block.flex-cv.txt-center.z1.relative.p-md
+    .h-screen.flex-ch.bg-dk.txt-ff.relative
+      .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/${issue.href}.jpg')`)
+      .title-block.flex-cv.txt-center.z1.p-md
         .tag.txt-micro.fw700!= issue.theme
         .title.txt-tu.pv-sm!= issue.title
         .txt-mini.pv-xs.fw600!= issue.author
         .txt-mini.pv-xs.fw600.opacity-50!= issue.position
-        block introduction
-        block caption
+        .img-caption.txt-micro.fw700
+          block caption
 
       .stripes.mv-md.pv-sm.absolute.inset-0.overflow-hidden
-        .bars.absolute.inset-0.flex-ch
+        //- .bars.absolute.inset-0.flex-ch
           for bar in new Array(60)
             .h-full.border-r.ph-xs.pv-xs
 

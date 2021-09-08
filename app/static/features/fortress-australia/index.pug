@@ -15,14 +15,15 @@ block page
   //- include partials/header
 
   .h-screen.flex-ch.bg-dk.txt-ff
+    .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/landing.jpg')`)
     .title-block.flex-cv.txt-center.z1.relative.p-md
       .txt-mini.pv-xs.fw600 Lowy Institute
       .title.txt-tu.pv-sm Beyond<br>Fortress<br>Australia
       .subtitle.pv-sm.txt-muted.hidden At what cost?
-    .stripes.mv-md.pv-sm.absolute.inset-0.overflow-hidden
+    .stripes.active.mv-md.pv-sm.absolute.inset-0.overflow-hidden
       .bars.absolute.inset-0.flex-ch
-        for bar in new Array(60)
-          .h-full.border-r.ph-xs.pv-xs
+        for bar in new Array(40)
+          .bar.h-full.border-r.ph-xs.pv-xs
 
   .h-screen.flex.bg-dk.txt-ff.border-t
     .col-2-5.num-lf.pv-md.border-r.txt-center.flex-cv
