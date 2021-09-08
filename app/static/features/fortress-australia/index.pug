@@ -3,7 +3,7 @@ extend /partials/layout
 block append config
   - page.includeFonts = false
   - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
-  - page.class = "page-0 page-menu bg-dk txt-ff"
+  - page.class = "landing bg-dk txt-ff"
   - page.title = "Fortress Australia"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
@@ -12,13 +12,20 @@ block append config
   - issue = page.issues.find(e => e.author === "Hervé Lemahieu")
 
 block page
+  
+  a#pdf.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+    .icon.icon-download
+    .label.txt-micro.ph-sm Download PDF
 
   .h-screen.flex-ch.bg-dk.txt-ff
     .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/landing.jpg')`)
     .title-block.flex-cv.txt-center.z1.relative.p-md
-      .txt-mini.pv-xs.fw600 Lowy Institute
-      .title.txt-tu.pv-sm Beyond<br>Fortress<br>Australia
-      .subtitle.pv-sm.txt-muted.hidden At what cost?
+      .upper.pv-xs.fw700 Lowy Institute
+      .title.txt-tu.pv-sm.mb-4 Beyond<br>Fortress<br>Australia
+      a.flex-cv.txt-bare(href="#introduction")
+        .txt-micro Scroll to Enter
+        svg(viewBox="0 0 10 10" height="10" stroke="currentColor" fill="none")
+          path(d="M0,5 L5,10 L10,5")
     .stripes.active.pv-sm.absolute.inset-0.overflow-hidden
       .bars.absolute.inset-0.flex-ch
         for bar in new Array(40)

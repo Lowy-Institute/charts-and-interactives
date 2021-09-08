@@ -18,7 +18,6 @@ block prepend head
 
 block page
   
-  //- include header
   #progress
   
   .container
@@ -31,12 +30,6 @@ block page
         .txt-mini.pv-xs.fw600!= issue.author
         .txt-mini.pv-xxs.fw600.opacity-75!= issue.position
         .img-caption.txt-micro.fw700.opacity-75!= "Photo: " + issue.credit
-
-      .stripes.mv-md.pv-sm.absolute.inset-0.overflow-hidden
-        //- .bars.absolute.inset-0.flex-ch
-          for bar in new Array(60)
-            .h-full.border-r.ph-xs.pv-xs
-
 
     article
       block content
