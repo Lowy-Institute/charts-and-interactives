@@ -5,24 +5,12 @@
   background: $color-hl
 .bg-dk
   background: $color-dk
+.bg-sdk
+  background: lighten($color-dk, 3)
 .bg-lt
   background: $color-lt
 .bg-ff
   background: $color-ff
-.bg-ffs
-  box-shadow: -32px 0 $color-ff, 32px 0 $color-ff
-  line-height: 1.5
-  padding: 6px 0
-  transform: translate3d(0, 40px, 0)
-  color: transparent !important
-  opacity: 0
-
-  .active &
-    transition: all 800ms, color 800ms 300ms
-    opacity: 1
-    box-shadow: -8px 0 $color-ff, 8px 0 $color-ff
-    transform: translate3d(0, 0, 0)
-    color: $color-dk !important
 
 .txt-hl
   color: lighten($color-hl, 2)

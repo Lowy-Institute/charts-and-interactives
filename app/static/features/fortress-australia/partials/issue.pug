@@ -6,10 +6,10 @@ extend /partials/layout
 
 block append config
   - page.includeFonts = false
-  - page.class = "issue"
+  - page.class = "article"
   - page.image = "http://interactives.lowyinstitute.org/features/fortress-australia/img/thumbnail.jpg"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
-  - issue = page.issues.find(e => e.author === "Hervé Lemahieu")
+  - issue = page.issues.find(e => e.author === author)
 
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
@@ -17,35 +17,39 @@ block prepend head
   - page.metaTitle = `${issue.title} - Fortress Australia – Lowy Insitute`
 
 block page
-
-  include header
   
+  //- include header
   #progress
-    
+  
   .container
-    .landing-block.h-screen.flex-col.txt-center
-      .flex.flex-1
-        .flex-cv.flex-1
-          .txt-xxl.pv-xs.ph-xl!= issue.titleLong
-          .txt-sm.txt-tu.pv-sm!= issue.author
-            <br>
-            span.txt-mt!= issue.position
-        .flex-cv.flex-1.txt-ff.txt-lg-lh.bg-dk
-          .ph-xl.pv-md
-            block introduction
+      
+    .h-screen.flex-ch.bg-dk.txt-ff
+      .title-block.flex-cv.txt-center.z1.relative.p-md
+        .tag.txt-micro.fw700!= issue.theme
+        .title.txt-tu.pv-sm!= issue.title
+        .txt-mini.pv-xs.fw600!= issue.author
+        .txt-mini.pv-xs.fw600.opacity-50!= issue.position
+        block introduction
+        block caption
 
-      .flex-1.flex-ch.relative.overflow-hidden
-        img.absolute.inset-0(src=`/features/fortress-australia/img/${issue.href}.jpg`)
-        //- .img-pan
-        .caption.txt-ff
-          block caption
+      .stripes.mv-md.pv-sm.absolute.inset-0.overflow-hidden
+        .bars.absolute.inset-0.flex-ch
+          for bar in new Array(60)
+            .h-full.border-r.ph-xs.pv-xs
 
 
-  article
-    block content
+    article
+      block content
+      hr
+      block bio
 
-  .container
-    include link-grid
+    footer.bg-dk.flex-cv.txt-ff
+      .txt-center.bg-sdk.p-lg
+        .txt-micro.fw500 Continue reading
+        .txt-mini.fw600 Beyond Fortress Australia
+        
+      .h-screen.border-t
+        include link-grid
 
 block append css
   style
@@ -55,8 +59,11 @@ block append css
     include:sass ../styles/_responsive.sass
     include:sass ../styles/_article.sass
     include:sass ../styles/_link-grid.sass
+    include:sass ../styles/_animation.sass
+    include:sass ../styles/_scroller.sass
+    include:sass ../styles/_landing.sass
 
 block append scripts
   script
-    include:coffee ../coffee/scroller.coffee
-    include:coffee ../coffee/counter.coffee
+    include:coffee ../coffee/utils.coffee
+    include:coffee ../coffee/article.coffee
