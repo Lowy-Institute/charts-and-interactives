@@ -1,7 +1,3 @@
-//-
-  This layout is used to construct the issue page. It in turn extends the
-  default `layout` defined below.
-
 extend /partials/layout
 
 block append config
@@ -44,6 +40,17 @@ block page
       .h-screen.border-t
         include link-grid
 
+    .btn-wrap
+      a#pdf.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+        .icon.icon-download
+        .label.txt-micro.ph-sm Download PDF
+      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+        .icon.icon-twitter
+        .label.txt-micro.ph-sm Share to Twitter
+      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+        .icon.icon-facebook
+        .label.txt-micro.ph-sm Share to Facebook
+
 block append css
   style
     include:sass ../styles/_base.sass
@@ -51,6 +58,7 @@ block append css
     include:sass ../styles/_styles.sass
     include:sass ../styles/_responsive.sass
     include:sass ../styles/_article.sass
+    include:sass ../styles/_button.sass
     include:sass ../styles/_link-grid.sass
     include:sass ../styles/_animation.sass
     include:sass ../styles/_scroller.sass
