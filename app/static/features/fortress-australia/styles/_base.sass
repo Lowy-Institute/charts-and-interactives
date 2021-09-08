@@ -50,11 +50,14 @@ article,
 header
   top: 0
   width: 100%
+  margin: auto
   height: $h-nav
   line-height: $h-nav
   transition: all 300ms
-  margin: auto
-  border-bottom: 1px solid $color-lt
+  transform: translateY(-100%)
+  
+  &.visible
+    transform: translateY(0)
 
   .header-logo,
   .header-page
@@ -64,6 +67,9 @@ header
 
   .social-share
     float: right
+    
+    .icon
+      color: white
 
   .header-logo
     float: left

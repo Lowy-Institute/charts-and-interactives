@@ -15,7 +15,24 @@ block prepend head
 block page
   
   #progress
+    
+  include ../partials/header
   
+  //- a#logo.txt-mini.fw600.txt-bare.fixed(href="/features/fortress-australia")  
+    .wordmark Lowy<br>Institute
+    .txt-hl Fortress<br>Australia
+
+    .btn-wrap
+      a#pdf.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+        .icon.icon-download
+        .label.txt-micro.ph-sm Download PDF
+      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+        .icon.icon-twitter
+        .label.txt-micro.ph-sm Share to Twitter
+      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+        .icon.icon-facebook
+        .label.txt-micro.ph-sm Share to Facebook
+
   .container
       
     .h-screen.flex-ch.bg-dk.txt-ff.relative
@@ -33,23 +50,11 @@ block page
       block bio
 
     footer.bg-dk.flex-cv.txt-ff
-      .txt-center.bg-sdk.p-lg
-        .txt-micro.fw500 Continue reading
-        .txt-mini.fw600 Beyond Fortress Australia
+      .txt-center.bg-sdk.p-sm
+        .txt-mini.fw600 Continue reading
         
       .h-screen.border-t
         include link-grid
-
-    .btn-wrap
-      a#pdf.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
-        .icon.icon-download
-        .label.txt-micro.ph-sm Download PDF
-      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
-        .icon.icon-twitter
-        .label.txt-micro.ph-sm Share to Twitter
-      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
-        .icon.icon-facebook
-        .label.txt-micro.ph-sm Share to Facebook
 
 block append css
   style
