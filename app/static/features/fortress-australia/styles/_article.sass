@@ -1,7 +1,7 @@
 @import app/static/features/fortress-australia/styles/_vars.sass
 
 #progress
-  top: 0
+  top: $h-nav
   left: 0
   right: 0
   height: 6px
@@ -25,8 +25,9 @@ article
   color: black
   padding: 4rem
   line-height: 1.7
-  max-width: 750px
   font-family: "Sans"
+  max-width: 100%
+  width: 750px
 
 .article
   
@@ -60,7 +61,13 @@ article
 
 @media (max-width: $screen-tablet)
   
+  article
+    padding: 4rem 2rem
+    
   .article
+    
+    .title
+      font-size: 30px
 
     blockquote
       float: none

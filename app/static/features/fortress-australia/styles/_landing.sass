@@ -1,7 +1,7 @@
 @import app/static/features/fortress-australia/styles/_vars.sass
 
 .title-block
-  text-shadow: .2em .2em 1rem rgba($color-dk, .2), -.2em -.2em 1rem rgba($color-dk, .2), -.2em .2em 1rem rgba($color-dk, .2), .2em -.2em 1rem rgba($color-dk, .2), .2em 0 1rem rgba($color-dk, .2), -.2em 0 1rem rgba($color-dk, .2), 0 .2em 1rem rgba($color-dk, .2), 0 -.2em 1rem rgba($color-dk, .2)
+  text-shadow: .2em .2em 1rem rgba(black, .15), -.2em -.2em 1rem rgba(black, .15), -.2em .2em 1rem rgba(black, .15), .2em -.2em 1rem rgba(black, .15), .2em 0 1rem rgba(black, .15), -.2em 0 1rem rgba(black, .15), 0 .2em 1rem rgba(black, .15), 0 -.2em 1rem rgba(black, .15)
 
 
 .landing
@@ -14,3 +14,26 @@
       fill: none
       stroke: white
       
+@media (max-width: $screen-tablet)
+  
+  #pdf
+    display: none
+  
+  #introduction
+    height: auto
+    padding: 3rem 0 1rem
+    
+    .col-2-5
+      border-right: 0
+    
+    .scroller
+      height: auto
+    .scroller-inner
+      top: unset
+      left: unset
+      right: unset
+      bottom: unset
+      padding: 0
+      position: relative
+    .gradient-overlay:after
+      display: none

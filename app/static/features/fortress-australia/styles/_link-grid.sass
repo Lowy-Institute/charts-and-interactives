@@ -55,3 +55,17 @@
   $i: index($spectrum, $color) - 1
   .tag-#{$i}
     background: $color
+
+@media (max-width: $screen-tablet)
+
+  .link-grid
+    grid-template-rows: repeat(12, 1fr)
+    grid-template-columns: 100%
+    
+    li
+      &:nth-child(odd)
+        border-right: none
+    
+    a
+      padding: 1.25rem 1rem
+    

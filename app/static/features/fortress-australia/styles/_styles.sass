@@ -234,6 +234,31 @@
 .border-t
   border-top: 1px solid
 
+.border-v-lt
+  border-top: 1px solid #fff2
+  border-bottom: 1px solid #fff2
+
 @keyframes prompt
   to
     color: $color-dk
+
+.show-sm
+  display: none
+
+@media (max-width: $screen-tablet)
+  
+  .h-auto-sm
+    height: auto
+
+  .show-sm
+    display: block
+
+  .hide-sm
+    display: none
+
+  .flex-swap
+    flex-direction: column
+    
+    .col
+      width: 100%
+      flex-basis: 100%

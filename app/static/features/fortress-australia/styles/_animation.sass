@@ -22,3 +22,13 @@
     transform: translateX(10%)
   to
     transform: translateX(-10%)
+
+@media (max-width: $screen-tablet)
+
+  .stripes
+    left: -100%
+    right: -100%
+    
+    &.active
+      .bars
+        animation: stripe 45s infinite linear alternate

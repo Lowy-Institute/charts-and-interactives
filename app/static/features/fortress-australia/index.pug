@@ -34,8 +34,8 @@ block page
         for bar in new Array(40)
           .bar.h-full.border-r.ph-xs.pv-xs
 
-  #introduction.h-screen.flex.bg-dk.txt-ff.border-t
-    .col-2-5.num-lf.pv-md.border-r.txt-center.flex-cv
+  #introduction.h-screen.flex.bg-dk.txt-ff.border-t.flex-swap
+    .col.col-2-5.num-lf.pv-md.border-r.txt-center.flex-cv
         h1 Introduction
         p.txt-micro Hervé Lemahieu
         .gradient-overlay
@@ -57,7 +57,9 @@ block page
 
                   When she sees me will she know what I've been through? Will old times start to feelin' like new? When I get there will our love still feel so true? Yet all I have, I'll be a-bringin' it to you. Oh bessie, sing them old-time blues.
 
-    .col-3-5.bg-dk.txt-ff
+    .col.col-3-5.bg-dk.txt-ff
+      .txt-center.bg-sdk.p-sm.border-v-lt.show-sm
+        .txt-mini.fw600 Articles
       include ./partials/link-grid
 
 block append css

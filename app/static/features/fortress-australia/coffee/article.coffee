@@ -9,6 +9,8 @@ $(document).ready =>
   vw = window.innerWidth
   vh = window.innerHeight
   dh = body.offsetHeight
+  y = 0
+  yp = 0
   
   
   window.onresize = () ->
@@ -17,14 +19,21 @@ $(document).ready =>
     dh = body.offsetHeight
   
   onScroll = () ->
+    yp = y
     y = window.scrollY
     progress.style.width = (100 * y / (dh - vh)) + "%"
     
-    if y < (dh - vh - 140)
-      if not has header, "visible" 
+    if vw >= 1000
+      if y < (dh - vh - 140)
+        if not has header, "visible"
+          add header, "visible"
+      else
+        remove header, "visible"
+
+    if vw < 1000
+      if yp > y
         add header, "visible"
-    else
-      remove header, "visible"
-    
+      else remove header, "visible"
+        
   
   window.onscroll = onScroll

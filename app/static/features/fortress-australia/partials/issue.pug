@@ -16,7 +16,7 @@ block prepend head
 
 block page
   
-  #progress
+  //- #progress
     
   include ../partials/header
 
@@ -26,7 +26,7 @@ block page
       .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/${issue.href}.jpg')`)
       .title-block.flex-cv.txt-center.z1.p-md
         .tag.txt-micro.fw700!= issue.theme
-        .title.txt-tu.pv-sm!= issue.title
+        .title.txt-tu.pv-sm!= issue.title.replace("&nbsp;", " ")
         .txt-mini.pv-xs.fw600!= issue.author
         .txt-mini.pv-xxs.fw600.opacity-75!= issue.position
         .img-caption.txt-micro.fw700.opacity-75!= "Photo: " + issue.credit
@@ -37,10 +37,10 @@ block page
       block bio
 
     footer.bg-dk.flex-cv.txt-ff
-      .txt-center.bg-sdk.p-sm
+      .txt-center.bg-sdk.p-sm.border-v-lt
         .txt-mini.fw600 Continue reading
-        
-      .h-screen.border-t
+
+      .h-screen.h-auto-sm
         include link-grid
 
 block append css
