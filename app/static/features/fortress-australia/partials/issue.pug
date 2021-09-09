@@ -9,14 +9,13 @@ block append config
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
   - page.url += issue.href
+  - page.description = ""
   - page.socialTitle = `${issue.title} - Escaping Fortress Australia`.replace("&nbsp;", " ")
   - page.metaTitle = `${issue.title} - Lowy Institute`
   - page.title = page.metaTitle
   - page.image = `https://interactives.lowyinstitute.org/features/fortress-australia/img/${issue.href}.jpg`
 
 block page
-  
-  //- #progress
     
   include ../partials/header
 
