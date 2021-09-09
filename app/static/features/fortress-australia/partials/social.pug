@@ -12,7 +12,7 @@
       "https://twitter.com/share?url=",
       encodeURIComponent(page.url),
       "&text=",
-      encodeURIComponent(page.socialTitle),
+      encodeURIComponent(page.socialTitle || page.metaTitle),
       "&via=LowyInstitute"
     ].join("")
   )

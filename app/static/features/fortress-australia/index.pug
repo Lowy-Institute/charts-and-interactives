@@ -6,8 +6,8 @@ block append config
   - page.class = "landing bg-dk txt-ff"
   - page.title = "Fortress Australia"
   - page.metaTitle = `${page.title} - Lowy Institute`
-  - page.description = ""
-  - page.image = "https://interactives.lowyinstitute.org/features/fortress-australia/img/landing.jpg"
+  - page.description = "Lowy Institute experts explore the ramifications of the country’s ‘Fortress Australia’ policy approach to the pandemic."
+  - page.image = "https://interactives.lowyinstitute.org/features/fortress-australia/img/thumb.jpg"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
 
 block page
@@ -18,6 +18,8 @@ block page
   )
     .icon.icon-download
     .label.txt-micro.ph-sm Download PDF
+    
+  include ./partials/social
 
   .h-screen.flex-ch.bg-dk.txt-ff
     .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/landing.jpg')`)
