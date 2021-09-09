@@ -5,12 +5,13 @@ block append config
   - page.class = "article"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
   - issue = page.issues.find(e => e.author === author)
+  - index = page.issues.findIndex(e => e.author === author)
 
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
   - page.url += issue.href
   - page.description = ""
-  - page.socialTitle = `${issue.title} - Escaping Fortress Australia`.replace("&nbsp;", " ")
+  - page.socialTitle = `${issue.title} - Beyond Fortress Australia`.replace("&nbsp;", " ")
   - page.metaTitle = `${issue.title} - Lowy Institute`
   - page.title = page.metaTitle
   - page.image = `https://interactives.lowyinstitute.org/features/fortress-australia/img/${issue.href}.jpg`
@@ -25,7 +26,9 @@ block page
       .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/${issue.href}.jpg')`)
       .title-block.flex-cv.txt-center.z1.p-md
         if !issue.hideTag
-          .tag.txt-micro.fw700!= issue.theme
+          .tag.txt-micro.fw700(
+            class=`tag-${index % 2 ? (index-1)/2 + 6 : index / 2}`
+          )!= issue.theme
         .title.txt-tu.pv-sm!= issue.title.replace("&nbsp;", " ")
         .txt-mini.pv-xs.fw600!= issue.author
         .img-caption.txt-micro.fw700.opacity-75!= "Photo: " + issue.credit
