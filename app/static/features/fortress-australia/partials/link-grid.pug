@@ -5,6 +5,6 @@ ul.link-grid.list-bare.txt-ff.bg-dk
         href=`/features/fortress-australia/${p.href}`
         class=(p.href === (issue && issue.href) ? "active" : "")
       )
-        span.tag.txt-micro.fw700(class=`tag-${i}`)!= p.theme
+        span.tag.txt-micro.fw700(class=`tag-${i % 2 ? (i-1)/2 + 6 : i / 2}`)!= p.theme
         span.txt-mini.pv-xs.lead-tight!= p.title
         span.txt-micro.opacity-50!= p.author
