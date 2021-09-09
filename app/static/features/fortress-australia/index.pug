@@ -7,13 +7,16 @@ block append config
   - page.title = "Fortress Australia"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
-  - page.image = "https://interactives.lowyinstitute.org/features/fortress-australia/img/thumbnail.jpg"
+  - page.image = "https://interactives.lowyinstitute.org/features/fortress-australia/img/landing.jpg"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
   - issue = page.issues.find(e => e.author === "Hervé Lemahieu")
 
 block page
   
-  a#pdf.btn-wrap.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
+  a#pdf.active.btn-wrap.slide-btn.flex-ch.txt-bare.fw600(
+    download
+    href="/features/fortress-australia/report/Fortress Australia.pdf"
+  )
     .icon.icon-download
     .label.txt-micro.ph-sm Download PDF
 
@@ -21,7 +24,7 @@ block page
     .cover-img.absolute.inset-0(style=`background-image: url('/features/fortress-australia/img/landing.jpg')`)
     .title-block.flex-cv.txt-center.z1.relative.p-md
       .upper.pv-xs.fw700 Lowy Institute
-      .title.txt-tu.pv-sm.mb-4 Beyond<br>Fortress<br>Australia
+      .title.txt-tu.pv-sm.mb-4 Escaping<br>Fortress<br>Australia
       a.flex-cv.txt-bare(href="#introduction")
         .txt-micro Scroll to Enter
         svg(viewBox="0 0 10 10" height="10" stroke="currentColor" fill="none")

@@ -3,35 +3,22 @@ extend /partials/layout
 block append config
   - page.includeFonts = false
   - page.class = "article"
-  - page.image = "http://interactives.lowyinstitute.org/features/fortress-australia/img/thumbnail.jpg"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
   - issue = page.issues.find(e => e.author === author)
 
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/fortress-australia/"
   - page.url += issue.href
-  - page.metaTitle = `${issue.title} - Fortress Australia – Lowy Insitute`
+  - page.socialTitle = `${issue.title} - Escaping Fortress Australia`.replace("&nbsp;", " ")
+  - page.metaTitle = `${issue.title} - Lowy Institute`
+  - page.title = page.metaTitle
+  - page.image = `https://interactives.lowyinstitute.org/features/fortress-australia/img/${issue.href}.jpg`
 
 block page
   
   #progress
     
   include ../partials/header
-  
-  //- a#logo.txt-mini.fw600.txt-bare.fixed(href="/features/fortress-australia")  
-    .wordmark Lowy<br>Institute
-    .txt-hl Fortress<br>Australia
-
-    .btn-wrap
-      a#pdf.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
-        .icon.icon-download
-        .label.txt-micro.ph-sm Download PDF
-      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
-        .icon.icon-twitter
-        .label.txt-micro.ph-sm Share to Twitter
-      a.slide-btn.flex-ch.txt-bare.fw600(href="/features/fortress-australia/report/Fortress Australia.pdf" download)
-        .icon.icon-facebook
-        .label.txt-micro.ph-sm Share to Facebook
 
   .container
       

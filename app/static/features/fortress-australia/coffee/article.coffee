@@ -20,11 +20,11 @@ $(document).ready =>
     y = window.scrollY
     progress.style.width = (100 * y / (dh - vh)) + "%"
     
-    if y > 0 and y < (dh - vh - 140)
+    if y < (dh - vh - 140)
       if not has header, "visible" 
         add header, "visible"
-    else if has header, "visible"
-        remove header, "visible"
+    else
+      remove header, "visible"
     
   
   window.onscroll = onScroll
