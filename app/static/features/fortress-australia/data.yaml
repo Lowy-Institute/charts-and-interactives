@@ -1,8 +1,9 @@
 issues:
-  - href: "#introduction"
+  - href: "executive-summary"
     author: Hervé Lemahieu
     position: Research Director
-    theme: Introduction
+    theme: Executive Summary
+    hideTag: true
     title: >
       Overcoming the Covid winner’s&nbsp;curse
 
@@ -18,9 +19,12 @@ issues:
   - href: "article/smaller-australia"
     author: Michael Fullilove
     position: Executive Director
-    theme: Overview
+    theme: Fortress Australia
+    hideTag: true
     credit: >
       <a href="https://images.defence.gov.au/">Department of Defence</a>
+    menuTitle: >
+      A smaller Australia
     title: >
       Fortress Australia is a smaller&nbsp;Australia
       
