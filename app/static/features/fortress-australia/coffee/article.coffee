@@ -35,5 +35,4 @@ $(document).ready =>
         add header, "visible"
       else remove header, "visible"
         
-  
   window.onscroll = onScroll
