@@ -1,0 +1,42 @@
+- 
+  ranks = [
+    {rank: 2, name: "State Grid"},
+    {rank: 4, name: "Petro China"},
+    {rank: 5, name: "Sinopec"},
+    {rank: 13, name: "China State Construction"},
+    {rank: 20, name: "IC Bank of China"},
+    {rank: 25, name: "China Construction Bank"}
+  ]
+
+.slide.bg-hl
+  .posr.fw.fh
+    .posa.flex.fw.fh
+      .slide-inner.mx-auto
+        .type.txt-lg.txt-dk.mx-auto.pv-lg(
+          data-view="type, in-viewport"
+          data-duration=600
+        )
+          .line.txt-mono.bg-ff State Business
+
+          .fade-in.posa(style="bottom: 0; right: 0")
+            strong.txt-sans.pv-xs.ph-sm.bg-dka.txt-tu.txt-ff.fade-in.delay-18 Global Fortune 500, 2021
+
+    .flex.txt-center.mx-auto(data-view="in-viewport" style="padding: 19em 0 0 2em; width: 860px")
+      each v,i in new Array(2)
+        .flex.flex-col.flex-1
+          each vv,j in new Array(3)
+            .type.txt-md.txt-ff(
+              data-view="type, in-viewport"
+              data-duration=800
+              data-delay=500*(4*i + j)
+            )
+              .line.hide.txt-mono.bg-dk!= `#${ranks[3*i + j].rank}&emsp;${ranks[3*i + j].name}`
+
+
+    .posa.txt-roman.txt-sm.txt-sans.fade-in.delay-10(
+      style="bottom: 0"
+      data-view="type, in-viewport"
+      data-duration=3000
+      data-delay=600
+    )
+      
