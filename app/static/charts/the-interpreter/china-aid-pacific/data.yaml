@@ -1,0 +1,66 @@
+title: >
+  China aid to the Pacific
+
+source: >
+  Source: Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/" target="_blank">Pacific Aid Map</a>
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 300
+  stepsY: 7
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+
+  -
+    title: Grant
+    color: "grey-interpreter"
+    values:
+      - 13.65573318
+      - 30.79465021
+      - 38.12968157
+      - 25.50858094
+      - 46.57842471
+      - 58.51292584
+      - 58.65416075
+      - 92.62213303
+      - 118.0872369
+      - 145.4761192
+      - 56.33316533
+
+  -
+    title: Loan
+    color: "orange"
+    values:
+      - 49.91592232
+      - 64.09438313
+      - 78.70692448
+      - 101.1498034
+      - 130.5355491
+      - 141.3026419
+      - 175.3222774
+      - 194.6784828
+      - 111.1011275
+      - 100.9549975
+      - 113.2536994

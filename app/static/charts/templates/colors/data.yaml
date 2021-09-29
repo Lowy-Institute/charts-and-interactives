@@ -15,6 +15,7 @@ colors:
   teal-500: "#00E7FD"
   teal-600: "#31EDFF"
   grey: "#B7C1CE"
+  grey-interpreter: "#31363B"
   red: "#ff1f2f"
   red-dark: "#990f02"
   red-light: "#F59894"
