@@ -56,7 +56,7 @@ series:
 
   -
     title: China
-    color: "red-light"
+    color: "red"
     values:
       - 9.53
       - 19.23

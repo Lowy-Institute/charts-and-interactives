@@ -52,7 +52,7 @@ charts:
 
       -
         title: China
-        color: "red-light"
+        color: "red"
         values:
           - 50
           - 58
@@ -121,7 +121,7 @@ charts:
 
       -
         title: China
-        color: "red-light"
+        color: "red"
         values:
           - 86
           - 89
