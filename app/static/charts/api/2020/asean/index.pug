@@ -258,18 +258,19 @@ block append css
         max-width: 180px
         box-sizing: border-box
 
-      @media (max-width: 600px)
+      @media (max-width: 625px)
         .legend
           flex-wrap: wrap
           justify-content: flex-start
           max-width: 380px
           margin: auto
         .label text
-          transform: translateY(-50px)
+          display: none
         .legend-item
           flex: 1 0 50%
           box-sizing: border-box
           margin: 0
+          font-size: 12px
         .chart-content
           left: 4px
           right: 4px
@@ -277,3 +278,14 @@ block append css
           transform: scaleY(1.3) translateY(-2px)
         .chart-notes
           display: none
+          
+      text
+        font-size: 11px!important
+        
+        &.country-labels
+          transform: translateY(-2px)
+        
+      .chart-content
+        left: 20px
+        right: 14px
+        
