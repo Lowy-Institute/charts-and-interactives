@@ -106,14 +106,6 @@ block page
                     transform="translate(-16, 5)"
                   )
                     =chart.series[0].values[i]
-      
-      //-.row
-        ul.legend.list-bare.txt-left.flex.flex-ch
-          for ax, i in new Array(chart.series.length)
-            if i
-              li.legend-item
-                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
-                span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-muted.txt-semi!= chart.notes
         .chart-notes!= chart.source
@@ -124,7 +116,7 @@ block append css
     :sass
   
       .wrapper
-        height: 700px
+        height: 670px
 
       .chart
         box-sizing: border-box
