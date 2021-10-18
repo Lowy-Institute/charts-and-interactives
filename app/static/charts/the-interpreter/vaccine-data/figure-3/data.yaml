@@ -1,0 +1,65 @@
+title: >
+  Bilateral and COVAX donations as % of total&nbsp;donations
+
+subtitle: >
+  Top 10 countries by pledge or actual donation
+
+source: >
+  <b>Source:</b> <em><a target="_blank" href="https://www.thinkglobalhealth.org/article/billions-committed-millions-delivered">Think Global Health</a></em> and authors’ calculations 
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+axes:
+  minX:  0
+  maxX: 100
+  stepsX: 5
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Spain
+      - Germany
+      - Canada
+      - France
+      - Italy
+      - United States
+      - United Kingdom
+      - Japan
+      - China
+      - Australia
+
+  -
+    title: COVAX
+    color: "grey-interpreter"
+    values:
+      - 92.2556743
+      - 88.0829901
+      - 77.9521363
+      - 75.574357
+      - 74.3959504
+      - 73.3694779
+      - 63.1479753
+      - 51.5214109
+      - 0
+      - 0
+
+  -
+    title: Bilateral
+    color: "orange"
+    values:
+      - 7.7443257
+      - 11.9170099
+      - 22.0478637
+      - 24.425643
+      - 25.6040496
+      - 26.6305221
+      - 36.8520247
+      - 48.4785891
+      - 100
+      - 100

@@ -1,0 +1,70 @@
+title: >
+  COVAX AMC assured&nbsp;resources
+
+subtitle: >
+  Top 20 donors, USD per capita*
+
+source: >
+  <b>Source:</b> <em><a target="_blank" href="https://www.gavi.org/sites/default/files/covid/covax/COVAX-AMC-Donors-Table.pdf">Gavi</a></em>, <em><a target="_blank" href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a></em> and authors’ calculations 
+
+notes: >
+  * As of 6 August 2021
+
+axes:
+  minX:  0
+  maxX: 30
+  stepsX: 7
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Sweden
+      - Norway
+      - Switzerland
+      - Iceland
+      - Germany
+      - Kuwait
+      - United Kingdom
+      - United States
+      - Canada
+      - Japan
+      - Italy
+      - Liechtenstein
+      - Netherlands
+      - Saudi Arabia
+      - South Korea
+      - Australia
+      - France
+      - Qatar
+      - Luxembourg
+      - Denmark
+
+  -
+    title: Series 1
+    color: "grey-interpreter"
+    values:
+      - 29.03497868
+      - 25.79757975
+      - 18.58758666
+      - 17.47437092
+      - 12.75320612
+      - 11.55120429
+      - 10.74667959
+      - 10.51319172
+      - 10.08723541
+      - 7.933309679
+      - 7.78564999
+      - 5.228211429
+      - 4.83314189
+      - 4.244400504
+      - 4.093153628
+      - 3.877739977
+      - 3.581775812
+      - 3.412359018
+      - 3.150529131
+      - 2.752308413
