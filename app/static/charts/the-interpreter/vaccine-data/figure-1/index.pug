@@ -11,7 +11,7 @@ block append config
 block page
   .wrapper.flex.txt-center
     .flex.flex-grow.flex-col
-      .chart-title= chart.title
+      .chart-title!= chart.title
       .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
@@ -89,17 +89,8 @@ block page
                     transform="translate(-16, 5)"
                   )
                     =chart.series[0].values[i]
-      
-      //-.row
-        ul.legend.list-bare.txt-left.flex.flex-ch
-          for ax, i in new Array(chart.series.length)
-            if i
-              li.legend-item
-                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
-                span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-muted.txt-semi!= chart.source
-        //- span.chart-notes!= chart.notes
     
   
 block append css

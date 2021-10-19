@@ -1,14 +1,14 @@
 title: >
-  COVAX AMC assured&nbsp;resources
+  Donor funding to&nbsp;COVAX
 
 subtitle: >
-  Top 20 donors, USD per capita*
+  USD per capita, top 20 donor governments to COVAX&nbsp;AMC*
 
 source: >
   <b>Source:</b> <em><a target="_blank" href="https://www.gavi.org/sites/default/files/covid/covax/COVAX-AMC-Donors-Table.pdf">Gavi</a></em>, <em><a target="_blank" href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a></em> and authors’ calculations 
 
 notes: >
-  * As of 6 August 2021
+  * The COVAX Advanced Market Commitment assists 92 lower-income countries access vaccines through Official Development Assistance, as well as contributions from the private sector and philanthropy. Donor funding reflects assured resources as at 6 August 2021.
 
 axes:
   minX:  0
