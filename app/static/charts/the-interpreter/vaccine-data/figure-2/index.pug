@@ -69,7 +69,7 @@ block page
                       x=toPercent(x0)
                       width=toPercent(fx(v))
                       height="100%"
-                      fill=(i === 6 ? "#f80" : chart.colors[chart.series[ci].color])
+                      fill=(i === 3 ? "#f80" : chart.colors[chart.series[ci].color])
                     )
                     text.chart-value(
                       x=toPercent(x0 + fx(v > 5 ? v/2 : v+ 1))
@@ -214,6 +214,4 @@ block append css
           font-size: 13px
         .y-label text
           transform: translate(-10px, 6px)
-        .x-label:nth-of-type(even)
-          display: none
           

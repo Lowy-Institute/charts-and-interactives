@@ -1,14 +1,14 @@
 title: >
-  Domestic doses administered* to doses delivered abroad
+  Domestic doses administered to doses delivered abroad
 
 subtitle: >
-  Ratio, top 20 countries by pledge or actual donation
+  Ratio, top 20 countries by total pledge or actual donation
 
 source: >
   <b>Source:</b> <em><a target="_blank" href="https://www.thinkglobalhealth.org/article/billions-committed-millions-delivered">Think Global Health</a></em>, <em><a target="_blank" href="https://github.com/owid/covid-19-data/tree/master/public/data">Our World in Data</a></em>, <em><a target="_blank" href="https://indopacifichealthsecurity.dfat.gov.au/vaccine-sharing">Australian Department of Foreign Affairs and Trade</a></em> and authors’ calculations 
 
 notes: >
-  * Latest data available as of 15 October 2021
+  * Latest data available as of 21 October 2021
 
 axes:
   minX:  0
@@ -26,10 +26,10 @@ series:
       - United States
       - Austria
       - UAE
+      - Australia
       - Denmark
       - Japan
       - Norway
-      - Australia
       - Sweden
       - United Kingdom
       - France
@@ -48,23 +48,23 @@ series:
     title: Series 1
     color: "grey-interpreter"
     values:
-      - 2.717749824
-      - 5.258452061
-      - 6.360003416
-      - 7.017072277
-      - 7.626873947
-      - 8.300656425
-      - 8.767665841
-      - 10.67586753
-      - 11.24078692
-      - 13.51168557
-      - 16.49136182
+      - 2.757226539
+      - 5.39882023
+      - 6.441259317
+      - 6.727714509
+      - 7.027579887
+      - 7.851036292
+      - 8.325592152
+      - 10.82787045
+      - 11.29251086
+      - 13.64660118
+      - 16.54944674
       - 16.79323253
-      - 19.68460377
-      - 19.82953014
-      - 30.4159033
-      - 34.24885396
-      - 44.63754788
-      - 89.51020754
+      - 19.88728018
+      - 19.89792477
+      - 30.66726106
+      - 34.7591596
+      - 44.79824924
+      - 91.9099675
       - 0
       - 0
