@@ -11,7 +11,7 @@ block append config
 block page
   .wrapper.flex.txt-center
     .flex.flex-grow.flex-col
-      .chart-title= chart.title
+      .chart-title!= chart.title
       .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
@@ -214,4 +214,8 @@ block append css
           font-size: 13px
         .y-label text
           transform: translate(-10px, 6px)
+          
+      @media (max-width: 400px)
+        .x-label:nth-child(even)
+          display: none
           
