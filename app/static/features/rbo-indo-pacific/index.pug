@@ -1,0 +1,64 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/"
+  - page.class = "landing"
+  - page.title = "The Indo-Pacific and the Rules Based Order"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/img/thumb.jpg"
+  - page.issues = data.getOne("static/features/rbo-indo-pacific/data").issues
+  - page.data = data.getOne("static/features/rbo-indo-pacific/data").essays
+
+block page
+  
+  a#pdf.active.btn-wrap.slide-btn.flex-ch.txt-bare.fw600(
+    download
+    href="/features/rbo-indo-pacific/report/Lowy Institute – Fortress Australia.pdf"
+  )
+    .icon.icon-download
+    .label.txt-micro.ph-sm Download PDF
+    
+  include ./partials/_social
+
+  .h-screen.flex-ch.bg-dk.txt-ff
+    .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/landing.jpg')`)
+    .title-block.flex-cv.txt-center.z1.relative.p-md
+      .upper.pv-xs.fw700 Lowy Institute
+      .title.txt-tu.pv-sm.mb-4 Beyond<br>Fortress<br>Australia
+      a.flex-cv.txt-bare(href="#introduction")
+        .txt-micro Scroll to Enter
+        svg(viewBox="0 0 10 10" height="10" stroke="currentColor" fill="none")
+          path(d="M0,5 L5,10 L10,5")
+
+
+  include ./partials/_pagemenu
+  +pagemenu(["Introduction", "Articles"])
+  
+  section#introduction
+    h1 Introduction
+    p.txt-micro Ben Scott
+      :marked
+        The reality of living in a pandemic has dawned on Australia. Covid cases at the time of writing are high and still climbing. The virus is here to stay. Equally clear is that ring-fencing the country from the world — the ‘Fortress Australia’ policy — is no longer viable. 
+
+        A pivot in Australia’s Covid public health response from de facto elimination to vaccination and adaptation creates the conditions to begin addressing the consequences of more than 18 months of unprecedented isolation. 
+
+        The strategic and foreign policy implications of Australia’s border policies are an important, if often overlooked, dimension of the Covid debate. This series of essays by Lowy Institute experts explores the broader policy trade-offs of Fortress Australia, and the ways forward.
+
+  section#articles
+    h2 Articles
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto atque obcaecati maiores, laudantium aspernatur odit? Laboriosam, a. Minima, voluptas.
+    include ./partials/_link-grid
+
+block append css
+  style
+    include:sass ./styles/_base.sass
+    include:sass ./styles/_typography.sass
+    include:sass ./styles/_styles.sass
+    include:sass ./styles/_responsive.sass
+    include:sass ./styles/_link-grid.sass
+    include:sass ./styles/_animation.sass
+    include:sass ./styles/_button.sass
+    include:sass ./styles/_scroller.sass
+    include:sass ./styles/_landing.sass

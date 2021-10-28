@@ -1,0 +1,71 @@
+extend /partials/layout
+
+block append config
+  - page.class = "essay"
+  - page.image = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/img/thumb.png"
+  - page.data = data.getOne("static/features/rbo-indo-pacific/data").essays
+  - essay = page.data.find(e => e.author === author)
+  - index = page.data.findIndex(e => e.author === author)
+
+block prepend head
+  - page.url = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/"
+  - page.url += "essays/" + essay.href
+  - page.metaTitle = `${essay.title} - The Indo-Pacific and the Rules Based Order – Lowy Insitute`
+  - page.description = ""
+
+block page
+  
+  - const slugify = s => s.toLowerCase().replace(/[^\w\s]/g,"").split(/\s/).join("-")
+  
+  #submenu.fixed.flex-ch.text-mini.txt-center
+    #progress.absolute
+    a.flex-1.bare.current(href="#title-anchor")
+      span.hide-sm Ask the expert
+      span.show-sm Essay
+    a.flex-1.bare(href="#qanda-anchor") Challenge 
+      span.hide-sm the expert
+  
+  aside
+    .text-mini Lowy Insitute
+    //- include _menu
+    //- include _logo
+
+  article(data-section)#title-anchor
+    h1= essay.title
+    .mini-profile.flex.items-center.my-6
+      img.thumbnail(src=`../../img/authors/${slugify(essay.author)}-thumb.jpg` width="50" height="50")
+      .col.mx-4
+        .text-mini.mb-0= essay.author
+        .text-mini.txt-muted.mb-0!= essay.position
+    hr
+    p.opacity-50.fw-400.mb-8
+      | In response to the question: 
+      em September 11 changed America, but did it change the world?
+    #essay
+      block body
+    hr#qanda-anchor.my-20(data-section style="border-bottom: 3px solid #002b45")
+    h1.type.wrappable(data-view="type, in-viewport" data-norepeat)
+      .line Challenge the expert
+    p.opacity-50.fw-400.mb-8
+      | Lydia Khalil, Lowy Institute’s resident expert on terrorism and extremism, challenges 
+      span= essay.author
+      | ’s key arguments.
+    hr
+    #qanda
+      block qanda
+    hr.my-20
+    .profile
+      img.profile-img.float-left(src=`../../img/authors/${slugify(essay.author)}.jpg` width="220")
+      p.profile-text!= essay.bio
+
+
+block append css
+  style
+    include:sass ../styles/_app.sass
+    include:sass ../styles/_article.sass
+    
+block append scripts
+  script
+    include:coffee ../coffee/utils.coffee
+    include:coffee ../coffee/base.coffee
+    include:coffee ../coffee/article.coffee

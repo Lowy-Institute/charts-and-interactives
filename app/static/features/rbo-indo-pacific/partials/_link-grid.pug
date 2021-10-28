@@ -1,0 +1,8 @@
+ul.link-grid.list-bare
+  for p, i in page.data
+    li.txt-tu
+      a.txt-bare.flex-col(
+        href=`/features/rbo-indo-pacific/${p.href}`
+      )
+        span.txt-mini.pv-xs.lead-tight!= p.title
+        span.txt-micro.opacity-50!= p.author

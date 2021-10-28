@@ -1,0 +1,65 @@
+@import app/static/features/fortress-australia/styles/_vars.sass
+  
+.landing
+  
+  a:focus,
+  a:hover
+    color: inherit
+    
+    svg
+      fill: none
+      stroke: white
+      
+  #introduction
+    .col-2-5
+      justify-content: flex-end
+      padding-bottom: 0
+      
+  #read-more
+    z-index: 2
+    align-self: center
+    padding: .5rem 1.5rem
+    margin: 0 0 1rem
+    border-radius: .25em
+    display: inline-flex
+    transition: background .3s
+    background: lighten($color-dk, 5)
+    
+    &:hover
+      background: lighten($color-dk, 10)
+  
+  .social-share
+    top: 4rem
+    left: .5rem
+    height: 7.5rem
+    flex-direction: column
+    position: fixed
+    z-index: 10
+    
+    [download]
+      display: none
+  
+@media (max-width: $screen-tablet)
+  
+  #pdf,
+  .social-share
+    display: none
+  
+  #introduction
+    height: auto
+    padding: 3rem 0 0
+    
+    .col-2-5
+      border-right: 0
+    
+    .scroller
+      height: auto
+    .scroller-inner
+      top: unset
+      left: unset
+      right: unset
+      bottom: unset
+      padding: 0
+      position: relative
+    .gradient-overlay:after
+      display: none

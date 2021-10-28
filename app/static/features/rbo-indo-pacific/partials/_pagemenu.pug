@@ -1,0 +1,7 @@
+- const slugify = s => s.toLowerCase().replace(/\s/g, "-")
+
+mixin pagemenu(links)
+  #page-menu
+    each link in links
+      button.txt-h3
+        a(href=slugify(link))= link

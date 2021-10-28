@@ -1,0 +1,44 @@
+@import app/static/features/fortress-australia/styles/_vars.sass
+
+.scroller
+  margin: 0 1rem
+  padding: 0
+  overflow-y: auto
+  position: relative
+  height: 67vh
+  
+  &::-webkit-scrollbar
+    width: 4px
+
+  &::-webkit-scrollbar-track
+    background: none
+
+  &::-webkit-scrollbar-thumb
+    background: #ffffff55
+    border-radius: 2px
+
+.scroller-inner
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  position: absolute
+  
+  .ph-xl
+    @media (max-height: 625px)
+      padding-left: 4rem
+      padding-right: 4rem
+
+.gradient-overlay
+  position: relative
+  
+  &:after
+    content: ''
+    position: absolute
+    top: 95%
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(rgba($color-dk, 0), rgba($color-dk, 1))
+    pointer-events: none
+    

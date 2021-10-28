@@ -1,0 +1,126 @@
+@import app/static/features/fortress-australia/styles/_vars.sass
+
+*
+  box-sizing: border-box
+
+html,
+body,
+body.embed-false
+  width: auto
+  height: auto
+  overflow-x: hidden
+  overflow-y: initial
+  scroll-behavior: smooth
+  overscroll-behavior: none
+
+body
+  font-family: "Sans"
+  font-size: 18px
+  line-height: 1.4
+  font-weight: 400
+  color: $color-dk
+  font-feature-settings: "liga" 0
+  text-rendering: geometricPrecision
+  
+  &::-webkit-scrollbar
+    width: 0
+    
+  &.article
+    
+    &::-webkit-scrollbar
+      width: 4px
+    
+    &::-webkit-scrollbar-track
+      background: transparent
+
+    &::-webkit-scrollbar-thumb
+      background: $color-dk
+  
+a
+  transition: color 300ms
+
+  svg
+    transition: fill 300ms
+
+  &:hover,
+  &:hover svg,
+  &:focus
+    color: $color-hl
+    fill: $color-hl
+
+li
+  margin-bottom: 0
+  line-height: inherit
+
+p, pre, dl, dd, ul, ol, svg
+  margin-bottom: 1.7em
+
+.container
+  max-width: 100%
+  margin: 0 auto
+  width: 1200px
+
+header
+  top: 0
+  width: 100%
+  margin: auto
+  height: $h-nav
+  line-height: $h-nav
+  transition: all 300ms
+  transform: translateY(-100%)
+  
+  a
+    &:hover,
+    &:focus
+      color: inherit
+  
+  &.visible
+    transform: translateY(0)
+
+  .header-logo
+    position: relative
+    width: 80px
+    line-height: 14px
+    padding: 17px 14px
+    z-index: 1
+
+  .social-share
+    position: relative
+    padding: 10px 14px
+    float: right
+    z-index: 1
+    
+    .icon
+      color: white
+
+  .header-logo
+    float: left
+
+.cover-img
+  background-size: cover
+  filter: brightness(0.7)
+  background-position: center
+
+.title-block
+  align-items: center
+  text-shadow: .2em .2em 1rem rgba(black, .15), -.2em -.2em 1rem rgba(black, .15), -.2em .2em 1rem rgba(black, .15), .2em -.2em 1rem rgba(black, .15), .2em 0 1rem rgba(black, .15), -.2em 0 1rem rgba(black, .15), 0 .2em 1rem rgba(black, .15), 0 -.2em 1rem rgba(black, .15)
+
+@media (max-width: $screen-tablet)
+  
+  header
+    padding: 0 1.5rem!important
+    .container
+      position: relative
+    .header-logo
+      display: none
+    .header-title
+      left: 0
+      text-align: left
+    .social-share
+      right: 0
+      padding-right: 0 
+      position: absolute
+  
+  body.article
+    &::-webkit-scrollbar
+      width: 0

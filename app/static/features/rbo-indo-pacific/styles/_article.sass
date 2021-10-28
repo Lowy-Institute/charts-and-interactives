@@ -1,0 +1,117 @@
+@import app/static/features/9-11/styles/_vars.sass
+
+html,
+body,
+body.embed-false
+  background: white
+  color: $blue-dark
+  height: unset
+
+article
+  padding: 6rem 0 10rem
+  padding-left: 160px
+  font-weight: 300
+
+#submenu
+  top: 0
+  left: 210px
+  right: 50px
+  z-index: 10
+  padding: 0.25rem 0
+  background: white
+  border: none
+  border-bottom: 1px solid
+  width: unset
+  
+  a
+    padding: 0.3rem
+    transition: all .2s
+    
+    &.current
+      background: rgba($blue-light, 1)
+      color: white
+    &.current:hover
+      background: rgba($blue-light, 0.95)
+    &:hover
+      background: rgba($blue-light, 0.2)
+
+.profile
+  font-size: 16px
+  font-weight: 300
+  align-items: flex-start
+  
+  img
+    padding: 0 1rem .25rem 0
+    object-fit: contain
+    width: 220px
+
+#essay
+  p
+    line-height: 1.8
+  blockquote p
+    line-height: 1.4
+
+#qanda
+  h3
+    font-size: 1rem
+    font-weight: 600
+    font-style: italic
+    font-family: "Sans"
+
+  p + h3
+    margin-top: 3em
+
+#progress
+  left: 0
+  top: calc(100% - 2px)
+  height: 4px
+  z-index: 20
+  background: #004b78
+
+#next
+  color: white
+  position: fixed
+  left: 160px
+  right: 0
+  bottom: 0
+  top: unset
+  pointer-events: none
+  
+  &.visible .node
+    transform: translateY(0)
+  
+  .node
+    margin: auto
+    width: 675px
+    display: block
+    max-width: 100%
+    padding: 1rem 2rem
+    pointer-events: all
+    transition: all .5s
+    background: darken($blue-light, 4)
+    transform: translateY(100%)
+    
+    &:hover
+      background: $blue-light
+
+@media (max-width: $screen-tablet)
+  html,
+  body,
+  body.embed-false
+    overscroll-behavior: none
+  
+  article
+    padding: 8rem 1rem
+    background: white
+    
+  #submenu
+    top: 4rem
+    left: 0
+    right: 0
+    
+  .profile
+    flex-direction: column
+    
+  #next
+    left: 0
+  
