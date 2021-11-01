@@ -1,10 +1,10 @@
-@import app/static/features/9-11/styles/_vars.sass
+@import app/static/features/rbo-indo-pacific/styles/_vars.sass
 
 html,
 body,
 body.embed-false
   background: white
-  color: $blue-dark
+  color: $color-dk
   height: unset
 
 article
@@ -28,12 +28,12 @@ article
     transition: all .2s
     
     &.current
-      background: rgba($blue-light, 1)
+      background: rgba($color-lt, 1)
       color: white
     &.current:hover
-      background: rgba($blue-light, 0.95)
+      background: rgba($color-lt, 0.95)
     &:hover
-      background: rgba($blue-light, 0.2)
+      background: rgba($color-lt, 0.2)
 
 .profile
   font-size: 16px
@@ -88,11 +88,11 @@ article
     padding: 1rem 2rem
     pointer-events: all
     transition: all .5s
-    background: darken($blue-light, 4)
+    background: darken($color-lt, 4)
     transform: translateY(100%)
     
     &:hover
-      background: $blue-light
+      background: $color-lt
 
 @media (max-width: $screen-tablet)
   html,

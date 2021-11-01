@@ -1,65 +1,25 @@
-@import app/static/features/fortress-australia/styles/_vars.sass
-  
-.landing
-  
-  a:focus,
-  a:hover
-    color: inherit
+.title
+  .txt-sm
+    font-size: 5vh
+    line-height: 1
+  .txt-xl
+    font-size: 16vh
+    line-height: 1
     
-    svg
-      fill: none
-      stroke: white
-      
-  #introduction
-    .col-2-5
-      justify-content: flex-end
-      padding-bottom: 0
-      
-  #read-more
-    z-index: 2
-    align-self: center
-    padding: .5rem 1.5rem
-    margin: 0 0 1rem
-    border-radius: .25em
-    display: inline-flex
-    transition: background .3s
-    background: lighten($color-dk, 5)
-    
-    &:hover
-      background: lighten($color-dk, 10)
+  @media (orientation: portrait)
+    .txt-sm
+      font-size: 5vw
+    .txt-xl
+      font-size: 18vw
   
-  .social-share
-    top: 4rem
-    left: .5rem
-    height: 7.5rem
-    flex-direction: column
-    position: fixed
-    z-index: 10
-    
-    [download]
-      display: none
+  div:not(:first-child),
+  div:not(:last-child)
+    padding-top: 1.5vh
+    padding-bottom: 1.5vh
   
-@media (max-width: $screen-tablet)
+
+section
+  padding-top: 5rem
   
-  #pdf,
-  .social-share
-    display: none
-  
-  #introduction
-    height: auto
-    padding: 3rem 0 0
-    
-    .col-2-5
-      border-right: 0
-    
-    .scroller
-      height: auto
-    .scroller-inner
-      top: unset
-      left: unset
-      right: unset
-      bottom: unset
-      padding: 0
-      position: relative
-    .gradient-overlay:after
-      display: none
+  &:last-child
+    padding-bottom: 5rem

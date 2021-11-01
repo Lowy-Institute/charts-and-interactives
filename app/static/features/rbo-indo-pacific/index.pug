@@ -22,12 +22,15 @@ block page
     
   include ./partials/_social
 
-  .h-screen.flex-ch.bg-dk.txt-ff
-    .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/landing.jpg')`)
-    .title-block.flex-cv.txt-center.z1.relative.p-md
-      .upper.pv-xs.fw700 Lowy Institute
-      .title.txt-tu.pv-sm.mb-4 Beyond<br>Fortress<br>Australia
-      a.flex-cv.txt-bare(href="#introduction")
+  .h-screen-min.flex-ch.bg-dk.txt-ff
+    //- .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/landing.jpg')`)
+    h1.title.flex-cv.txt-center.above.relative.p-4
+      .txt-sm The
+      .txt-xl Indo-Pacific
+      .txt-sm and the
+      .txt-xl Rules-based
+      .txt-xl order
+      //- a.flex-cv.txt-bare(href="#introduction")
         .txt-micro Scroll to Enter
         svg(viewBox="0 0 10 10" height="10" stroke="currentColor" fill="none")
           path(d="M0,5 L5,10 L10,5")
@@ -36,29 +39,34 @@ block page
   include ./partials/_pagemenu
   +pagemenu(["Introduction", "Articles"])
   
-  section#introduction
-    h1 Introduction
-    p.txt-micro Ben Scott
-      :marked
-        The reality of living in a pandemic has dawned on Australia. Covid cases at the time of writing are high and still climbing. The virus is here to stay. Equally clear is that ring-fencing the country from the world — the ‘Fortress Australia’ policy — is no longer viable. 
-
-        A pivot in Australia’s Covid public health response from de facto elimination to vaccination and adaptation creates the conditions to begin addressing the consequences of more than 18 months of unprecedented isolation. 
-
-        The strategic and foreign policy implications of Australia’s border policies are an important, if often overlooked, dimension of the Covid debate. This series of essays by Lowy Institute experts explores the broader policy trade-offs of Fortress Australia, and the ways forward.
-
-  section#articles
-    h2 Articles
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto atque obcaecati maiores, laudantium aspernatur odit? Laboriosam, a. Minima, voluptas.
-    include ./partials/_link-grid
+  .container
+    section#introduction
+      h2 Introduction
+      p.txt-micro Ben Scott
+        :marked
+          Ramblin’ outa the wild West. Leavin’ the towns I love the best. Thought I’d seen some ups and downs. ’Til I come into New York town. People goin’ down to the ground. Buildings goin’ up to the sky.
+          
+          I can’t see my reflection in the waters. I can’t speak the sounds that show no pain. I can’t hear the echo of my footsteps. Or can’t remember the sound of my own name. Yes, and only if my own true love was waitin’. Yes, and if I could hear her heart a-softly poundin’. Only if she was lyin’ by me. Then I’d lie in my bed once again.
+          
+          As I was walkin', I saw a sign there. And that sign said, "No Tresspassin'" But on the other side it didn't say nothin'. Now that side was made for you and me!
+          
+          Another ragged beggar blowin’ ya a kiss. Life is short and it don’t last long. They`ll hang you in the morning and sing ya a song. Wiggle, wiggle, wiggle like a gypsy queen. Wiggle, wiggle, wiggle all dressed in green. Wiggle, wiggle, wiggle ’til the moon is blue. Wiggle ’til the moon sees you.
+          
+          The tempest may howl and the loud thunder roar. And gathering storms may arise, But calm is my feeling, at rest is my soul, The tears are all wiped from my eyes.
+          
+          Let the bird sing, let the bird fly. One day the man in the moon went home and the river went dry. Let the bird sing, let the bird fly. The man in the moon went home and the river went dry.
+          
+          I woke in the mornin’, wand’rin’. Wasted and worn out. I woke in the mornin’, wand’rin’. Wasted and worn out. Wishin’ my long-lost lover. Will walk to me, talk to me. Tell me what it’s all about.
+          
+    hr.py-8.my-0
+    section#articles
+      h2 Articles
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto atque obcaecati maiores, laudantium aspernatur odit? Laboriosam, a. Minima, voluptas.
+      include ./partials/_link-grid
 
 block append css
   style
-    include:sass ./styles/_base.sass
-    include:sass ./styles/_typography.sass
-    include:sass ./styles/_styles.sass
-    include:sass ./styles/_responsive.sass
+    include:sass ./styles/_app.sass
     include:sass ./styles/_link-grid.sass
-    include:sass ./styles/_animation.sass
-    include:sass ./styles/_button.sass
-    include:sass ./styles/_scroller.sass
+    include:sass ./styles/_page-menu.sass
     include:sass ./styles/_landing.sass

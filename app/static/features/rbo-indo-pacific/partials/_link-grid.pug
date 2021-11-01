@@ -1,8 +1,12 @@
 ul.link-grid.list-bare
   for p, i in page.data
-    li.txt-tu
-      a.txt-bare.flex-col(
+    li
+      a.txt-bare.flex-swap(
         href=`/features/rbo-indo-pacific/${p.href}`
+        class=(i > 2 ? "rhs" : "lhs")
       )
-        span.txt-mini.pv-xs.lead-tight!= p.title
-        span.txt-micro.opacity-50!= p.author
+        .thumbnail.flex-1s(style="background-image: url('/features/rbo-indo-pacific/img/articles/forge-coalitions.jpg')")
+        .meta.flex-col
+          h4.lead-tight.m-0!= p.title
+          .txt-micro.fw600.opacity-50.txt-nowrap.mb-2!= p.author
+          p.txt-sm!= p.summary

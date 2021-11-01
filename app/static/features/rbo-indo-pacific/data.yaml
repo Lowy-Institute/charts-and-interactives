@@ -1,7 +1,42 @@
 essays:
-  
+      
+  - href: "asean-digital-order"
+    title: ASEAN can shape its digital order
+    summary: Don’t steal, don’t lift. Twenty years of schoolin’. And they put you on the day shift.
+    author: Elina Noor
+    position: King Lear,<br>Shakespeare Center
+    themes: 
+      - Southeast Asia
+      - Digital economy
+    bio: >
+      <b><em>Name name</b></em> is a etc etc. She has written many books. Images like those found here: https://economysea.withgoogle.com/
+      
+  - href: "asian-minilateralism"
+    title: Pay attention to Asian minilateralism
+    summary: Get dressed, get blessed. Try to be a success. Please her, please him, buy gifts. 
+    author: Charmaine Willoughby
+    position: King Lear,<br>Shakespeare Center
+    themes: 
+      - Philippine armed forces
+      - South China Sea
+      - Scarborough shoal
+    bio: >
+      <b><em>Name name</b></em> is a etc etc. She has written many books.
+      
+  - href: "asian-minilateralism"
+    title: Sustainable Development instead of Great Power Competition
+    summary: Ah get born, keep warm. Short pants, romance, learn to dance.
+    author: Wing T Woo
+    position: King Lear,<br>Shakespeare Center
+    themes: 
+      - Sustainable development
+      - Southeast Asia
+    bio: >
+      <b><em>Name name</b></em> is a etc etc. She has written many books.
+
   - href: "forge-coalitions"
     title: How to forge coalitions
+    summary: Try to avoid the scandals. Don’t wanna be a bum. You better chew gum. The pump don’t work. ’Cause the vandals took the handles.
     author: Hoang This Ha
     position: King Lear,<br>Shakespeare Center
     themes: 
@@ -14,6 +49,7 @@ essays:
       
   - href: "many-orders"
     title: There are many orders
+    summary: Look out kid. They keep it all hid. Better jump down a manhole. Light yourself a candle. Don’t wear sandals. 
     author: Evan Laksmana
     position: King Lear,<br>Shakespeare Center
     themes: 
@@ -21,37 +57,3 @@ essays:
       
     bio: >
       <b><em>Name name</b></em> is a etc etc. She has written many books
-      
-  - href: "asean-digital-order"
-    title: ASEAN can shape its digital order
-    author: Elina Noor
-    position: King Lear,<br>Shakespeare Center
-    themes: 
-      - Southeast Asia
-      - Digital economy  
-    bio: >
-      <b><em>Name name</b></em> is a etc etc. She has written many books. Images like those found here: https://economysea.withgoogle.com/
-      
-  - href: "asian-minilateralism"
-    title: Pay attention to Asian minilateralism
-    author: Charmaine Willoughby
-    position: King Lear,<br>Shakespeare Center
-    themes: 
-      - Philippine armed forces
-      - South Chna Sea
-      - Scarborough shoal
-    bio: >
-      <b><em>Name name</b></em> is a etc etc. She has written many books.
-      
-  - href: "asian-minilateralism"
-    title: Sustainable Development instead of Great Power Competition
-    author: Wing T Woo
-    position: King Lear,<br>Shakespeare Center
-    themes: 
-      - Sustainable development
-      - Southeast Asia
-    bio: >
-      <b><em>Name name</b></em> is a etc etc. She has written many books.
-
-      
-      

@@ -1,26 +1,26 @@
-@import app/static/features/fortress-australia/styles/_vars.sass
-
 h1,h2,h3
-  font-family: "Semi"
   text-transform: uppercase
-  
+  font-weight: 700
+
 h1
+  font-family: "Semi"
   font-size: 3rem
-  font-weight: 400
   line-height: 1
-  
-  article &
-    font-weight: 500
-    line-height: 1.2
-    
-  #menu &
-    font-size: 2.5rem
+
+h2,h3,h4
+  font-family: "Cond"
 
 h2
   font-size: 2rem
   
 h3
-  font-size: 1.3rem
+  font-size: 1.5rem
+  
+h4
+  text-transform: none
+  font-size: 1.5rem
+  letter-spacing: 0
+  font-weight: 600
 
 p > a
   text-decoration: none
@@ -34,17 +34,13 @@ strong, .txt-tu, .caption
   font-style: normal
   letter-spacing: 0.02em
 
-.title
-  font-size: 50px
-  letter-spacing: 0.15em
-
 .txt-sans
   font-family: Sans, sans-serif
 
 .txt-cond
   font-family: Cond, sans-serif
 
-.upper,
+.uppercase,
 .txt-mini,
 .txt-micro
   text-transform: uppercase
@@ -56,28 +52,15 @@ strong, .txt-tu, .caption
 .txt-micro
   font-size: 13px
   
-// Font size
+// Sizes
 .txt-xxl
   font-size: 60px
-  line-height: 1
-  font-weight: 200
-  letter-spacing: -0.01em
 .txt-xl
   font-size: 40px
-  line-height: 1
-  margin: -4px 0 4px
-  letter-spacing: -0.01em
-.txt-lg-lh
-  font-size: 28px
-  line-height: 1.5
-  margin: 0
-  letter-spacing: -0.01em
 .txt-lg
   font-size: 28px
 .txt-md
   font-size: 24px
-.txt-mmd
-  font-size: 20px
 .txt-sm
   font-size: 14px
   font-family: Sans, sans-serif
@@ -100,3 +83,9 @@ strong, .txt-tu, .caption
   font-weight: 500
 .fw400
   font-weight: 400
+
+.txt-nowrap
+  white-space: nowrap
+
+.bare
+  text-decoration: none!important
