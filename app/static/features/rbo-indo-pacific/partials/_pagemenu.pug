@@ -2,6 +2,7 @@
 
 mixin pagemenu(links)
   #page-menu.txt-center
+    #progress
     .links.flex.container
       each link in links
         a.bare(href=`#${slugify(link)}`)

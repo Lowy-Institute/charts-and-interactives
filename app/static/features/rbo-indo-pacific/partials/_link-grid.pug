@@ -1,12 +1,11 @@
-ul.link-grid.list-bare
+ul.link-grid.list-bare.bg-dk.txt-ff
   for p, i in page.data
-    li
+    li(class=(i > 2 ? "rhs" : "lhs"))
       a.txt-bare.flex-swap(
         href=`/features/rbo-indo-pacific/${p.href}`
-        class=(i > 2 ? "rhs" : "lhs")
       )
-        .thumbnail.flex-1s(style="background-image: url('/features/rbo-indo-pacific/img/articles/forge-coalitions.jpg')")
+        .thumbnail(style="background-image: url('/features/rbo-indo-pacific/img/articles/forge-coalitions.jpg')")
         .meta.flex-col
-          h4.lead-tight.m-0!= p.title
-          .txt-micro.fw600.opacity-50.txt-nowrap.mb-2!= p.author
+          h4.lead-tight.mb-1!= p.title
+          .txt-micro.fw600.opacity-50.mb-2!= p.author
           p.txt-sm!= p.summary
