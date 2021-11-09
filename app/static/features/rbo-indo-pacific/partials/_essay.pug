@@ -37,7 +37,7 @@ block page
     section
       block body
         
-    hr#challenge-the-expert.my-20(style="border-bottom: 3px solid #002b45")
+    hr#q-a.my-20(style="border-bottom: 3px solid #002b45")
       
     h1.type.wrappable
       .line Challenge the expert
@@ -47,7 +47,7 @@ block page
       | ’s key arguments.
     hr
       
-    section#q-a
+    section
       block qanda
         
     hr.my-20
@@ -55,7 +55,10 @@ block page
       img.profile-img.float-left(src=`../../img/authors/${slugify(essay.author)}.jpg` width="220")
       p.profile-text!= essay.bio
     
-    section#menu  
+    hr.my-20#menu(style="border-bottom: 3px solid #002b45")
+    section
+      h1 Menu
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam voluptatibus earum atque molestiae ipsa expedita ullam nulla nemo tempora praesentium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, molestias.
       include _link-grid
 
 
@@ -70,4 +73,3 @@ block append scripts
   script
     include:coffee ../coffee/utils.coffee
     include:coffee ../coffee/base.coffee
-    include:coffee ../coffee/article.coffee

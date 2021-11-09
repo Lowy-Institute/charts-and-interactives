@@ -4,6 +4,9 @@ mixin pagemenu(links)
   #page-menu.txt-center.flex.items-center
     #progress
     .links.flex
-      each link in links
-        a.bare(href=`#${slugify(link)}`)
+      each link, i in links
+        a.bare(
+          href=`#${slugify(link)}`
+          class=!i ? "active" : ""
+        )
           h3= link
