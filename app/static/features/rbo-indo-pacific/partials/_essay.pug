@@ -15,53 +15,55 @@ block prepend head
 
 block page
   
-  - const slugify = s => s.toLowerCase().replace(/[^\w\s]/g,"").split(/\s/).join("-")
-  
-  #submenu.fixed.flex-ch.text-mini.txt-center
-    #progress.absolute
-    a.flex-1.bare.current(href="#title-anchor")
-      span.hide-sm Ask the expert
-      span.show-sm Essay
-    a.flex-1.bare(href="#qanda-anchor") Challenge 
-      span.hide-sm the expert
-  
-  aside
-    .text-mini Lowy Insitute
-    //- include _menu
-    //- include _logo
+  include _logo
+  include _pagemenu
 
-  article(data-section)#title-anchor
-    h1= essay.title
-    .mini-profile.flex.items-center.my-6
-      img.thumbnail(src=`../../img/authors/${slugify(essay.author)}-thumb.jpg` width="50" height="50")
-      .col.mx-4
-        .text-mini.mb-0= essay.author
-        .text-mini.txt-muted.mb-0!= essay.position
-    hr
+  article
+  
+    section#landing
+      h1= essay.title
+      .mini-profile.flex.items-center.my-6
+        img.thumbnail(src=`../../img/authors/${slugify(essay.author)}-thumb.jpg` width="50" height="50")
+        .col.mx-4
+          .text-mini.mb-0= essay.author
+          .text-mini.txt-muted.mb-0!= essay.position
+
+    +pagemenu(["Essay", "Q&A", "Menu"], true)
+    
+    hr#essay
     p.opacity-50.fw-400.mb-8
-      | In response to the question: 
-      em September 11 changed America, but did it change the world?
-    #essay
+      | In response to the article <em><a href="https://www.foreignaffairs.com/articles/united-states/2021-01-12/how-america-can-shore-asian-order" target="_blank">How America Can Shore up Asian Order</a></em>
+    
+    section
       block body
-    hr#qanda-anchor.my-20(data-section style="border-bottom: 3px solid #002b45")
-    h1.type.wrappable(data-view="type, in-viewport" data-norepeat)
+        
+    hr#challenge-the-expert.my-20(style="border-bottom: 3px solid #002b45")
+      
+    h1.type.wrappable
       .line Challenge the expert
     p.opacity-50.fw-400.mb-8
-      | Lydia Khalil, Lowy Institute’s resident expert on terrorism and extremism, challenges 
+      | Ben Scott, Director of the Lowy Institute’s Rules-Based Order Project, challenges 
       span= essay.author
       | ’s key arguments.
     hr
-    #qanda
+      
+    section#q-a
       block qanda
+        
     hr.my-20
     .profile
       img.profile-img.float-left(src=`../../img/authors/${slugify(essay.author)}.jpg` width="220")
       p.profile-text!= essay.bio
+    
+    section#menu  
+      include _link-grid
 
 
 block append css
   style
     include:sass ../styles/_app.sass
+    include:sass ../styles/_link-grid.sass
+    include:sass ../styles/_page-menu.sass
     include:sass ../styles/_article.sass
     
 block append scripts

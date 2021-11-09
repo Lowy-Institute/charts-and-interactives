@@ -9,31 +9,6 @@ body.embed-false
 
 article
   padding: 6rem 0 10rem
-  padding-left: 160px
-  font-weight: 300
-
-#submenu
-  top: 0
-  left: 210px
-  right: 50px
-  z-index: 10
-  padding: 0.25rem 0
-  background: white
-  border: none
-  border-bottom: 1px solid
-  width: unset
-  
-  a
-    padding: 0.3rem
-    transition: all .2s
-    
-    &.current
-      background: rgba($color-lt, 1)
-      color: white
-    &.current:hover
-      background: rgba($color-lt, 0.95)
-    &:hover
-      background: rgba($color-lt, 0.2)
 
 .profile
   font-size: 16px
@@ -45,47 +20,11 @@ article
     object-fit: contain
     width: 220px
 
-#essay
-  p
-    line-height: 1.8
-  blockquote p
-    line-height: 1.4
-
-#qanda
-  h3
-    font-size: 1rem
-    font-weight: 600
-    font-style: italic
-    font-family: "Sans"
-
-  p + h3
-    margin-top: 3em
-
-#next
-  color: white
-  position: fixed
-  left: 160px
-  right: 0
-  bottom: 0
-  top: unset
-  pointer-events: none
+p
+  line-height: 1.8
   
-  &.visible .node
-    transform: translateY(0)
-  
-  .node
-    margin: auto
-    width: 675px
-    display: block
-    max-width: 100%
-    padding: 1rem 2rem
-    pointer-events: all
-    transition: all .5s
-    background: darken($color-lt, 4)
-    transform: translateY(100%)
-    
-    &:hover
-      background: $color-lt
+blockquote p
+  line-height: 1.4
 
 @media (max-width: $screen-tablet)
   html,
@@ -104,7 +43,3 @@ article
     
   .profile
     flex-direction: column
-    
-  #next
-    left: 0
-  

@@ -1,9 +1,9 @@
-- const slugify = s => s.toLowerCase().replace(/\s/g, "-")
+- const slugify = s => s.toLowerCase().replace(/[\s&]/g, "-")
 
 mixin pagemenu(links)
-  #page-menu.txt-center
+  #page-menu.txt-center.flex.items-center
     #progress
-    .links.flex.container
+    .links.flex
       each link in links
         a.bare(href=`#${slugify(link)}`)
           h3= link
