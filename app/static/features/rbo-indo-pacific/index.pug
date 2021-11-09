@@ -13,17 +13,18 @@ block append config
 
 block page
   
-  a#pdf.active.btn-wrap.slide-btn.flex-ch.txt-bare.fw600(
+  //- a#pdf.active.btn-wrap.slide-btn.flex-ch.txt-bare.fw600(
     download
     href="/features/rbo-indo-pacific/report/Lowy Institute – Fortress Australia.pdf"
-  )
+    )
     .icon.icon-download
     .label.txt-micro.ph-sm Download PDF
     
   include ./partials/_social
 
   .h-screen-min.flex-ch.bg-dk.txt-ff
-    //- .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/landing.jpg')`)
+    .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/bg.gif')`)
+    .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/globe.png')`)
     h1.title.flex-cv.txt-center.above.relative.p-4
       .txt-sm The
       .txt-xl Indo-Pacific
@@ -73,7 +74,7 @@ block page
     hr.py-8.my-0
     section#articles
       h2 Articles
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto atque obcaecati maiores, laudantium aspernatur odit? Laboriosam, a. Minima, voluptas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto atque obcaecati maiores, laudantium aspernatur odit? Laboriosam, a. Minima, voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ab maiores incidunt cum numquam amet itaque.
       include ./partials/_link-grid
 
 block append css
@@ -82,3 +83,8 @@ block append css
     include:sass ./styles/_link-grid.sass
     include:sass ./styles/_page-menu.sass
     include:sass ./styles/_landing.sass
+    
+block append scripts
+  script
+    include:coffee ./coffee/utils.coffee
+    include:coffee ./coffee/base.coffee

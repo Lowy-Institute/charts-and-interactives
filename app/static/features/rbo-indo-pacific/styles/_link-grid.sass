@@ -7,8 +7,8 @@
   grid-template-rows: repeat(6, 1fr)
   grid-auto-flow: column
   padding: 1rem 3rem!important
-  min-height: 700px
-  height: 90vh
+  border: 1px solid
+  height: 720px
   width: 110%
   left: -5%
   
@@ -51,8 +51,11 @@
 
     &:hover,
     &:focus
-      color: $color-ff
-      background: rgba($color-ff, .1)
+      color: lighten($color-dk, 10)
+      background: rgba($color-hl, .075)
+      
+      .thumbnail
+        filter: saturate(0)
       
     &.active
       pointer-events: none
