@@ -22,15 +22,20 @@ block page
     
   //- include ./partials/_social
 
-  .h-screen-min.flex-ch.bg-dk.txt-ff
+  .h-screen-min.flex-cv.bg-dk.txt-ff
     .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/bg.gif')`)
     .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/globe.png')`)
-    h1.title.flex-cv.txt-center.above.relative.p-4
-      .txt-sm The
-      .txt-xl Indo-Pacific
-      .txt-sm and the
-      .txt-xl Rules-based
-      .txt-xl order
+    .title.relative.above
+      h1.flex-cv.txt-center.m-0
+        .txt-sm The
+        .txt-xl Indo-Pacific
+        .txt-xl Operating
+        .txt-xl.pb-0 System
+      .container.txt-center
+        hr
+        h2.flex-cv
+          em.txt-sm How can America shore up the order?
+      
       //- a.flex-cv.txt-bare(href="#introduction")
         .txt-micro Scroll to Enter
         svg(viewBox="0 0 10 10" height="10" stroke="currentColor" fill="none")
