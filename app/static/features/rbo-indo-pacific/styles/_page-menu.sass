@@ -21,12 +21,8 @@
     &:hover
       background: rgba($color-ff, 0.2)
       color: $color-ff
-      
-  .essay &
-    margin-left: -5%
-    width: 110%
     
-  .landing & .links
+  & .links
     width: 900px
     margin: auto
     
@@ -38,3 +34,16 @@
   z-index: 20
   background: $color-hl
   position: absolute
+
+@media (max-width: $screen-tablet)
+  #page-menu
+    
+    .essay &
+      margin-left: -1rem
+      width: calc(100% + 2rem)
+      
+    h3
+      font-size: 1.25rem
+    .links
+      a
+        padding: 0.5rem 0.25rem

@@ -8,17 +8,28 @@ body.embed-false
   height: unset
 
 article
-  padding: 6rem 0 10rem
+  padding: 6rem 0
 
-.profile
-  font-size: 16px
-  font-weight: 300
-  align-items: flex-start
+.landing-block
+  padding: 3rem
+  text-shadow: 0 0 2rem $color-dk
   
-  img
-    padding: 0 1rem .25rem 0
-    object-fit: contain
-    width: 220px
+.profile-block
+  padding: 3rem
+  text-shadow: 0 0 2rem $color-dk
+  border-top: 1px solid $color-border
+  border-bottom: 1px solid $color-border
+  background-image: url('../../img/noise.png')
+  
+.profile-text
+  font-size: 24px
+  font-weight: 300
+
+.profile-image
+  object-fit: cover
+  object-position: center
+  margin: 0 2rem
+  box-shadow: 0 0 2rem rgba(black, .75)
 
 p
   line-height: 1.8
@@ -33,13 +44,14 @@ blockquote p
     overscroll-behavior: none
   
   article
-    padding: 8rem 1rem
+    padding: 0 1rem
     background: white
     
-  #submenu
-    top: 4rem
-    left: 0
-    right: 0
+  .profile-block
+    padding: 2rem
+    margin-left: -1rem
+    width: calc(100% + 2rem)
+    flex-direction: column-reverse
     
-  .profile
-    flex-direction: column
+  .profile-block
+    flex-direction: column-reverse

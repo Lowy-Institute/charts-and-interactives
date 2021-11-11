@@ -17,30 +17,38 @@ block page
   
   include _logo
   include _pagemenu
-
-  article
   
-    section#landing
-      h1= essay.title
-      .mini-profile.flex.items-center.my-6
-        img.thumbnail(src=`../../img/authors/${slugify(essay.author)}-thumb.jpg` width="50" height="50")
+  #splash.h-screen.flex-cv(
+    style="background-image: url('../../img/essays/many-orders.jpg'); background-size: cover; background-position: center"
+    )
+      .landing-block.flex.items-center.txt-ff.container
         .col.mx-4
-          .text-mini.mb-0= essay.author
-          .text-mini.txt-muted.mb-0!= essay.position
-
-    +pagemenu(["Essay", "Q&A", "Menu"], true)
+          h1.txt-xxl.lead-tightest= essay.title
+          h3= essay.author
     
-    hr#essay
-    p.opacity-50.fw-400.mb-8
+  .profile-block.bg-dk.txt-ff
+    .container.flex.items-center
+      img.profile-image(src=`../../img/authors/${slugify(essay.author)}.jpg` width="200" height="180")
+      .flex-col
+        .txt-mini.fw700.txt-lt About the author
+        p.profile-text!= essay.bio
+  +pagemenu(["Essay", "Challenge", "Menu"], true)
+  
+    
+  article.relative.above
+
+    #essay.mb-16
+    
+    //- p.opacity-50.fw-400.mb-8
       | In response to the article <em><a href="https://www.foreignaffairs.com/articles/united-states/2021-01-12/how-america-can-shore-asian-order" target="_blank">How America Can Shore up Asian Order</a></em>
     
     section
+      h1 Essay
       block body
         
-    hr#q-a.my-20(style="border-bottom: 3px solid #002b45")
+    hr#challenge.my-20(style="border-bottom: 3px solid #002b45")
       
-    h1.type.wrappable
-      .line Challenge the expert
+    h1 Challenge the expert
     p.opacity-50.fw-400.mb-8
       | Ben Scott, Director of the Lowy Institute’s Rules-Based Order Project, challenges 
       span= essay.author
@@ -49,17 +57,14 @@ block page
       
     section
       block qanda
-        
-    hr.my-20
-    .profile
-      img.profile-img.float-left(src=`../../img/authors/${slugify(essay.author)}.jpg` width="220")
-      p.profile-text!= essay.bio
     
     hr.my-20#menu(style="border-bottom: 3px solid #002b45")
     section
       h1 Menu
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam voluptatibus earum atque molestiae ipsa expedita ullam nulla nemo tempora praesentium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, molestias.
       include _link-grid
+
+  include _footer
 
 
 block append css
