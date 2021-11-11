@@ -8,8 +8,8 @@
   grid-auto-flow: column
   padding: 1rem 2.5rem!important
   border: 1px solid
-  margin-left: -5%
-  width: 110%
+  margin-left: -7.5%
+  width: 115%
   
   &:before
     content: ''
@@ -51,23 +51,28 @@
     .thumbnail
       flex-basis: 0
       flex-grow: 0.4
+      transition: all .3s
+      filter: brightness(1.1)
+      
 
     &:hover,
     &:focus
-      color: lighten($color-dk, 10)
-      background: rgba($color-hl, .075)
+      color: $color-ff
+      background: rgba($color-hl, .25)
       
       .thumbnail
-        filter: saturate(0)
+        filter: brightness(1.3)
+        box-shadow: 0 0 2rem rgba(black, 0)
       
     &.active
       pointer-events: none
   
   .thumbnail
-    background-position: center
+    background-position: bottom
     background-size: cover
-    border-radius: 2px
     height: 100%
+    min-height: 120px
+    box-shadow: 0 0 2rem rgba(black, 0.25)
 
 .link-grid
   .lhs

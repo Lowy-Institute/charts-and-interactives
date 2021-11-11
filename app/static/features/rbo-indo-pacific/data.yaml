@@ -10,7 +10,17 @@ essays:
       - Images like those found here economysea.withgoogle.com/
     bio: >
       <b><em>Elina Noor</b></em> is Director, Political-Security Affairs and Deputy Director, Asia Society Policy Institute in Washington, DC.
-      
+
+  - href: "sustainable-development"
+    title: Sustainable Development instead of Great Power Competition
+    summary: A multipolar order would be better for Southeast Asia.
+    author: Wing Thye Woo
+    themes: 
+      - Sustainable development
+      - Southeast Asia
+    bio: >
+      <b><em>Wing Thye Woo</b></em> is Research Professor at Sunway University, Kuala Lumpur; Vice-President for Asia at the UN Sustainable Development Solutions Network, New York City; and Distinguished Professor Emeritus at University of California Davis.
+
   - href: "asian-minilateralism"
     title: Pay attention to Asian minilateralism
     summary: Investing in human resources is essential.
@@ -22,15 +32,15 @@ essays:
     bio: >
       <b><em>Charmaine Misalucha-Willoughby</b></em> is Associate Professor of International Studies at De La Salle University, Manila.
       
-  - href: "sustainable-development"
-    title: Sustainable Development instead of Great Power Competition
-    summary: A multipolar order would be better for Southeast Asia.
-    author: Wing Thye Woo
+  - href: "many-orders"
+    title: There are many orders
+    summary: Regional order starts with domestic legitimacy.
+    author: Evan Laksmana
     themes: 
-      - Sustainable development
-      - Southeast Asia
+      - Indonesia
+      
     bio: >
-      <b><em>Wing Thye Woo</b></em> is Research Professor at Sunway University, Kuala Lumpur; Vice-President for Asia at the UN Sustainable Development Solutions Network, New York City; and Distinguished Professor Emeritus at University of California Davis.
+      <b><em>Evan A. Laksmana</b></em> is Senior Research Fellow with the Centre on Asia and Globalisation at the National University of Singapore’s Lee Kuan Yew School of Public Policy.
 
   - href: "forge-coalitions"
     title: How to forge coalitions
@@ -42,13 +52,3 @@ essays:
       - Vietnam
       - Infrastructure
       - Mekong
-      
-  - href: "many-orders"
-    title: There are many orders
-    summary: Regional order starts with domestic legitimacy.
-    author: Evan Laksmana
-    themes: 
-      - Indonesia
-      
-    bio: >
-      <b><em>Evan A. Laksmana</b></em> is Senior Research Fellow with the Centre on Asia and Globalisation at the National University of Singapore’s Lee Kuan Yew School of Public Policy.
