@@ -2,13 +2,13 @@ extend /partials/layout
 
 block append config
   - page.class = "essay"
-  - page.image = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/img/thumb.png"
-  - page.data = data.getOne("static/features/rbo-indo-pacific/data").essays
+  - page.image = "https://interactives.lowyinstitute.org/features/indo-pacific-operating-system/img/thumb.png"
+  - page.data = data.getOne("static/features/indo-pacific-operating-system/data").essays
   - essay = page.data.find(e => e.author === author)
   - index = page.data.findIndex(e => e.author === author)
 
 block prepend head
-  - page.url = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/"
+  - page.url = "https://interactives.lowyinstitute.org/features/indo-pacific-operating-system/"
   - page.url += "essays/" + essay.href
   - page.metaTitle = `${essay.title} - The Indo-Pacific and the Rules Based Order – Lowy Insitute`
   - page.description = ""

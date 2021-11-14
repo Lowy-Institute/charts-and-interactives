@@ -2,20 +2,20 @@ extend /partials/layout
 
 block append config
   - page.includeFonts = false
-  - page.url = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/"
+  - page.url = "https://interactives.lowyinstitute.org/features/indo-pacific-operating-system/"
   - page.class = "landing"
   - page.title = "The Indo-Pacific and the Rules Based Order"
   - page.metaTitle = `${page.title} - Lowy Institute`
   - page.description = ""
-  - page.image = "https://interactives.lowyinstitute.org/features/rbo-indo-pacific/img/thumb.jpg"
-  - page.issues = data.getOne("static/features/rbo-indo-pacific/data").issues
-  - page.data = data.getOne("static/features/rbo-indo-pacific/data").essays
+  - page.image = "https://interactives.lowyinstitute.org/features/indo-pacific-operating-system/img/thumb.jpg"
+  - page.issues = data.getOne("static/features/indo-pacific-operating-system/data").issues
+  - page.data = data.getOne("static/features/indo-pacific-operating-system/data").essays
 
 block page
   
   //- a#pdf.active.btn-wrap.slide-btn.flex-ch.txt-bare.fw600(
     download
-    href="/features/rbo-indo-pacific/report/Lowy Institute – Fortress Australia.pdf"
+    href="/features/indo-pacific-operating-system/report/Lowy Institute – Fortress Australia.pdf"
     )
     .icon.icon-download
     .label.txt-micro.ph-sm Download PDF
@@ -23,8 +23,8 @@ block page
   //- include ./partials/_social
 
   .h-screen-min.flex-cv.bg-dk.txt-ff
-    .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/bg.gif')`)
-    .cover-img.absolute.inset-0(style=`background-image: url('/features/rbo-indo-pacific/img/globe.png')`)
+    .cover-img.absolute.inset-0(style=`background-image: url('/features/indo-pacific-operating-system/img/bg.gif')`)
+    .cover-img.absolute.inset-0(style=`background-image: url('/features/indo-pacific-operating-system/img/globe.png')`)
     .title.relative.above
       h1.flex-cv.txt-center.m-0
         .txt-sm The
