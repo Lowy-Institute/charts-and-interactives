@@ -21,6 +21,13 @@ block page
     .label.txt-micro.ph-sm Download PDF
     
   //- include ./partials/_social
+  
+  #embargo.fixed.flex-cv.txt-lg.bg-dk.txt-ff.h-screen.w-screen(style="z-index: 100")
+    .container.mx-auto.txt-center.txt-ff.mb-8 The contents of this Lowy Institute digital feature are embargoed. By entering the site, you agree to not share this page or its contents until 10:30pm Tuesday 16 November 2021.
+    .txt-mini.fw700.bg-ff.txt-dk.p-4.mx-auto(
+      style="cursor: pointer"
+      onclick="this.parentElement.style.display = 'none'"
+    ) Accept
 
   .h-screen-min.flex-cv.bg-dk.txt-ff
     .cover-img.absolute.inset-0(style=`background-image: url('/features/indo-pacific-operating-system/img/bg.gif')`)
@@ -80,7 +87,7 @@ block page
     hr.py-8.my-0
     section#articles
       h2 Articles
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto atque obcaecati maiores, laudantium aspernatur odit? Laboriosam, a. Minima, voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ab maiores incidunt cum numquam amet itaque.
+      p Five essays from experts from, or based in, Southeast Asia provide a sense of the region’s complexity and the nuance with which any effort to shore up – or rebuild – regional order must grapple. 
       include ./partials/_link-grid
       
   include ./partials/_footer
