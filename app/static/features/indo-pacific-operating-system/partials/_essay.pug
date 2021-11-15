@@ -8,8 +8,8 @@ block append config
 
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/indo-pacific-operating-system/"
+  - page.image = `${page.url}img/essays/${essay.href}.jpg`
   - page.url += "essays/" + essay.href
-  - page.image = `${page.url}.jpg`
   - page.metaTitle = `${essay.title} - The Indo-Pacific Operating System – Lowy Insitute`
   - page.description = ""
   
