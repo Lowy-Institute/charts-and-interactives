@@ -11,7 +11,7 @@ block prepend head
   - page.image = `${page.url}img/essays/${essay.href}.jpg`
   - page.url += "essays/" + essay.href
   - page.metaTitle = `${essay.title} - The Indo-Pacific Operating System – Lowy Insitute`
-  - page.description = essay.summary
+  - page.description = essay.summary + " Essay by " + essay.author + "."
 
 block page
   
