@@ -2,7 +2,6 @@ extend /partials/layout
 
 block append config
   - page.class = "essay"
-  - page.image = "https://interactives.lowyinstitute.org/features/indo-pacific-operating-system/img/thumb.png"
   - page.data = data.getOne("static/features/indo-pacific-operating-system/data").essays
   - essay = page.data.find(e => e.author === author)
   - index = page.data.findIndex(e => e.author === author)
@@ -10,37 +9,41 @@ block append config
 block prepend head
   - page.url = "https://interactives.lowyinstitute.org/features/indo-pacific-operating-system/"
   - page.url += "essays/" + essay.href
-  - page.metaTitle = `${essay.title} - The Indo-Pacific and the Rules Based Order – Lowy Insitute`
+  - page.image = `${page.url}.jpg`
+  - page.metaTitle = `${essay.title} - The Indo-Pacific Operating System – Lowy Insitute`
   - page.description = ""
+  
 
 block page
   
   include _logo
   include _pagemenu
+  include _social
   
   #splash.h-screen.flex-cv(
     style=`background-image: url('../../img/essays/${essay.href}.jpg')`
     )
       .landing-block.flex.items-center.txt-ff.container
         .col.mx-4
-          h1.txt-xxl.lead-tightest= essay.title
+          -
+            long = essay.title.split(/\s/g)
+              .filter(s => s.length > 10).length
+          h1.txt-xxl.lead-tightest(class=long ? "long" : "")= essay.title
           h3= essay.author
     
   .profile-block.bg-dk.txt-ff
-    .container.flex.items-center
+    .container.flex.flex-swap.items-center
       img.profile-image(src=`../../img/authors/${slugify(essay.author)}.jpg` width="200" height="180")
       .flex-col
         .txt-mini.fw700.txt-lt About the author
         p.profile-text!= essay.bio
+
   +pagemenu(["Essay", "Challenge", "Menu"], true)
   
     
   article.relative.above
 
     #essay.mb-16
-    
-    //- p.opacity-50.fw-400.mb-8
-      | In response to the article <em><a href="https://www.foreignaffairs.com/articles/united-states/2021-01-12/how-america-can-shore-asian-order" target="_blank">How America Can Shore up Asian Order</a></em>
     
     section
       h1 Essay
@@ -65,7 +68,6 @@ block page
       include _link-grid
 
   include _footer
-
 
 block append css
   style

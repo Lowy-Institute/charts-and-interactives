@@ -10,6 +10,7 @@ $(document).ready =>
   dh = body.offsetHeight
   
   links = qsa '#page-menu .links a'
+  social = qs '#socials'
   sections = Array.from(links).map((l) -> qs(l.getAttribute "href"))
   
   window.onresize = () ->
@@ -41,3 +42,8 @@ $(document).ready =>
       add links[j],"active"
       remove links[current],"active"
       current = j
+      
+    if y > 10 and not has social, "invert"
+      add social, "invert"
+    else if y < 10 and has social, "invert"
+      remove social, "invert"

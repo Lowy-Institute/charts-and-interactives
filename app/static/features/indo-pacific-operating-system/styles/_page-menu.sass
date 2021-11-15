@@ -36,14 +36,25 @@
   position: absolute
 
 @media (max-width: $screen-tablet)
+  #logo
+    top: 0
+    left: 0
+    right: 0
+    background: $color-dk
+    border-bottom: 1px solid $color-border
+    
+    h3
+      font-size: 14px
+    
   #page-menu
     
     .essay &
-      margin-left: -1rem
-      width: calc(100% + 2rem)
+      top: 2rem
       
     h3
       font-size: 1.25rem
+
     .links
       a
         padding: 0.5rem 0.25rem
+        margin-top: 0.25rem

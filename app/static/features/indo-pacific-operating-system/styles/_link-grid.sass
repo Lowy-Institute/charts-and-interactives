@@ -92,15 +92,21 @@
 
 @media (max-width: $screen-tablet)
   .link-grid
+    margin-left: -.5rem
+    width: calc(100% + 1rem)
+    
+    .flex-swap
+      flex-direction: row
+  
+@media (max-width: 750px)
+  
+  .link-grid
     display: flex
     flex-direction: column
     padding: 1rem!important
     border: none
     color: $color-dk
     background: $color-lt
-    width: 100%
-    margin-left: -.5rem
-    width: calc(100% + 1rem)
     
     &:hover
     a:hover
@@ -111,7 +117,7 @@
       display: none
     
     .thumbnail
-      padding: 50px 50%
+      padding: 75px 50%
       margin-top: .5rem
     
     li
@@ -122,6 +128,9 @@
           border-bottom: 1px solid $color-border
         .flex-swap
           flex-direction: column-reverse
+        .meta,
+        .thumbnail
+          flex-basis: 100%
         .meta
           padding: 0
           
