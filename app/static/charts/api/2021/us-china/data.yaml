@@ -1,5 +1,5 @@
 title: >
-  United States vs China
+  United States <sub>vs</sub> China
 
 source: >
   <b>Source:</b> <a href="https://power.lowyinstitute.org/" target="_blank">Lowy Institute Asia Power Index</a>
@@ -36,24 +36,24 @@ series:
     title: China
     color: red
     values:
-      - 24.08
-      - 61.92
-      - 92.49
-      - 66.84
-      - 70.60
-      - 85.72
-      - 91.13
-      - 98.93
+      - 24.05327222
+      - 57.67374438
+      - 91.15208067
+      - 66.77889289
+      - 74.4339408
+      - 75.16277274
+      - 89.75869743
+      - 98.95125732
 
   -
     title: United States
     color: blue-100
     values:
-      - 85.14
-      - 84.17
-      - 87.66
-      - 93.53
-      - 86.27
-      - 75.46
-      - 74.89
-      - 61.74
+      - 83.42537843
+      - 85.01265283
+      - 90.69113126
+      - 91.65337685
+      - 86.93981983
+      - 80.48033602
+      - 90.36589334
+      - 51.05196533

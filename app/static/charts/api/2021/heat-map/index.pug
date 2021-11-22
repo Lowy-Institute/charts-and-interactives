@@ -1,0 +1,82 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/api/2021/heat-map/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  - red = "#ff4050"
+  - redtxt = "#990f02"
+  - green = "#16B56F"
+  - greentxt = "#006500"
+  
+block page
+  .wrapper
+    h1.txt-center= chart.title
+    h2.txt-center.txt-tu.txt-muted= chart.subtitle
+    table.mx-auto(cellspacing=0)
+      thead
+        tr
+          th Country
+          th 2019
+          th 2020
+          th 2021
+      tbody
+        for country,i in chart.series[0].values
+          tr
+            td= country
+            for v,j in chart.series[1].values[i]
+              - v = +v
+              - color = Math.abs(v) < 0.1 ? "" : v > 0 ? greentxt : redtxt
+              - bgcolor = v > 0 ? green : red
+              - ratio = (255 * (v > 0 ? v / 1.8 : v / -3.5)).toFixed(0)
+              - intensity = ("0" + (+ratio).toString(16)).slice(-2)
+              td(
+                style=`background-color: ${bgcolor}${intensity}; color: ${color};`
+              )
+                span= (v).toFixed(1)
+
+block append css
+  style
+    :sass
+      html,
+      body
+        height: auto
+        overflow: auto
+        
+      h1
+        font-size: 26px
+        font-weight: 500
+        text-transform: uppercase
+        margin-bottom: 0.2rem
+        
+      h2
+        margin-bottom: 1em
+        font-weight: 600
+        font-size: 15px
+      
+      h1,h2
+        font-family: "Sans"
+        
+      table
+        border-bottom: 1px solid
+        
+      th
+        border-top: 1px solid
+        border-bottom: 1px solid
+        padding: 6px 1rem 4px
+
+      td,th
+        text-align: right
+        font-size: 14px
+        
+      td
+        padding: 3px 1rem 3px 2.5rem
+        
+        span
+          opacity: 1
+        
+      .wrapper
+        padding: 2rem 0

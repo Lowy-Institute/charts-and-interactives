@@ -1,0 +1,46 @@
+title: >
+  Annual score changes across eight measures of China’s power (2021)
+
+subtitle: >
+  Lorem.
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  min: -4
+  max: 8
+  steps: 4
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Resilience
+      - Economic Relationships
+      - Defence Networks
+      - Military Capability
+      - Economic Capability 
+      - Diplomatic Influence
+      - Cultural Influence 
+      - Future Resources
+
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 3.8
+      - 0
+      - 0
+      - 0
+      - -1.3
+      - -1.4
+      - -4.3
+      - -10.6

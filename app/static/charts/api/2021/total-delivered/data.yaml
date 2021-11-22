@@ -1,0 +1,48 @@
+title: >
+  COVID-19 vaccine doses delivered abroad
+
+subtitle: >
+  Total donations
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  minX:  0
+  maxX: 100000000
+  stepsX: 6
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - United States
+      - China
+      - Japan
+      - India
+      - Australia
+      # - South Korea
+      # - New Zealand
+      # - Singapore
+      # - Cambodia
+
+  -
+    title: Series 1
+    color: "blue-100"
+    values:
+      - 91908170
+      - 38957000
+      - 24557700
+      - 6750000
+      - 3147770
+      # - 1570000
+      # - 830800
+      # - 364800
+      # - 200000

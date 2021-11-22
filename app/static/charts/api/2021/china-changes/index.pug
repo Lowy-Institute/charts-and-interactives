@@ -1,0 +1,212 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/api/2021/china-changes/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  
+block page
+  .wrapper.flex.txt-center
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      //- .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - min = axes.min
+        - max = axes.max
+        - range = (max - min)
+        - zero = 0.333333
+        - fx = (i) => (i + 0.5) / (ln + 0.75)
+        - fy = (y) => Math.abs(y) / range
+        
+        svg(height="100%" width="100%")
+        
+          // X-Axis labels
+          svg(width="100%" y="0")
+            - let steps = chart.axes.steps - 1
+            for n, i in new Array(steps+1)
+              - y = i / (steps)
+              svg.txt-wide.x-label(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-12 4)")
+                  = ((min + range*(i/steps))).toFixed(0)
+                
+          // X-Axis minor lines
+          if chart.axes.minorLines
+            svg(width="100%")
+              for n, i in new Array(steps+1)
+                - x = (i / steps)
+                svg
+                  line(
+                    y1=toPercent(x)
+                    x1="0%"
+                    y2=toPercent(x)
+                    x2="100%"
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // Chart rects
+          g.bars
+            - const n = chart.series[0].values.length
+            for undef, i in new Array(n)
+              svg(
+                x=toPercent(fx(i))
+                width=toPercent(fx(0))
+                height="100%"
+              )   
+                - vals = chart.series.filter((s, i) => i).map(s => s.values[i])
+                - y0 = 0
+
+                for v, j in vals
+                  - ci = j + 1
+
+                  if v > 0
+                    rect(
+                      y=toPercent(zero - fy(v))
+                      height=toPercent(fy(v))
+                      width="100%"
+                      fill=chart.colors[chart.series[ci].color]
+                    )
+                  else
+                    rect.txt-muted(
+                      y=toPercent(zero)
+                      height=toPercent(fy(v))
+                      width="100%"
+                      fill="currentColor"
+                    )
+
+                  // Category labels
+                  svg.y-label.txt-tu.txt-sm(x='50%' y=toPercent(zero + (v > 0 ? 0.05 : -0.12)))
+                    text(text-anchor="middle")
+                      each str,j in chart.series[0].values[i].split(" ")
+                        tspan(x=0 dy=j*10)= str
+                      
+                  text.chart-value(
+                    x="50%"
+                    y=toPercent(zero + fy(v > 0 ? 1.67 : 0))
+                    text-anchor="middle"
+                    style=`color: "#31363B"`
+                    transform="translate(0 -8)"
+                    class=(v ? "" : "nullish")
+                  )
+                    =(+v > 0 ? "+" : "") + (v ? v : "——")
+
+                  - y0 += fx(v)
+          
+          line(stroke="currentColor" y1=toPercent(zero) y2=toPercent(zero) x1="0" x2="100%")
+          
+      //- .chart-source.txt-muted.txt-semi!= chart.source
+    
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 475px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 68px
+        left: 130px
+        right: 50px
+        bottom: 30px
+
+      .chart-title
+        font-size: 28px
+        font-weight: 500
+        text-transform: uppercase
+        width: 600px
+        margin: auto
+        
+      .chart-subtitle
+        font-weight: 600
+        font-size: 15px
+        margin-bottom: 1.5rem
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin: 1rem 0 0
+
+      .legend-item
+        margin: 4px 8px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-source
+        margin-top: 1rem 
+        
+      .chart-value
+        font-size: 16px
+        &.nullish
+          letter-spacing: -0.08em
+        
+      .chart-source,
+      .chart-notes
+        font-size: 15px
+        
+        b
+          font-weight: 500
+        
+      .y-label text
+        font-size: 10px
+        font-weight: 600
+        letter-spacing: 0.03em
+          
+      @media (max-width: 800px)
+        .y-label
+          text
+            font-size: 8px
+      
+      @media (max-width: 400px)
+      
+        .chart-content
+          left: 110px
+          right: 30px
+      
+        text
+          font-size: 13px
+        .legend
+          flex-wrap: wrap
+
+        .chart-title
+          font-size: 22px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          font-size: 13px
+        .y-label text
+          transform: translate(-10px, 6px)
+        .x-label:nth-of-type(even)
+          display: none
+          

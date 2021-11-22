@@ -32,3 +32,5 @@ colors:
   yellow-dark: "#f2b000"
   yellow-light: "#ffe18f"
   text: "#4b4f56"
+  transparent: "transparent"
+  white: "#ffffff"

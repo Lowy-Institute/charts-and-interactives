@@ -1,0 +1,82 @@
+title: >
+  Changes in international reputations around COVID-19 handling
+
+subtitle: >
+  Point difference in survey results between 2020 and 2021
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  minX: -50
+  maxX: 50
+  stepsX: 11
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - United States
+      - China
+      - Russia
+      - Singapore
+      - Brunei
+      - Pakistan
+      - Philippines
+      - Laos
+      - New Zealand
+      - Bangladesh
+      - Cambodia
+      - Thailand
+      - Sri Lanka
+      - Taiwan
+      - Indonesia
+      - Mongolia
+      - Nepal
+      - Malaysia
+      - Vietnam
+      - Japan
+      - Papua New Guinea
+      - North Korea
+      - South Korea
+      - Australia
+      - India
+      - Myanmar
+
+  -
+    title: Series 1
+    color: "blue-100"
+    values:
+      - 47.04968944
+      - 26.83998928
+      - 21.57069503
+      - 18.79459101
+      - 15.16191843
+      - 9.217538106
+      - 7.115480338
+      - 1.809910956
+      - 1.742160279
+      - 1.644804263
+      - 0.842044135
+      - -0.201307037
+      - -0.68442011
+      - -1.870748299
+      - -3.147250417
+      - -3.213317847
+      - -4.921602787
+      - -6.083042973
+      - -6.300813008
+      - -8.839043748
+      - -9.102787456
+      - -9.815552237
+      - -10.6296665
+      - -16.63763066
+      - -18.81533101
+      - -48.44318986

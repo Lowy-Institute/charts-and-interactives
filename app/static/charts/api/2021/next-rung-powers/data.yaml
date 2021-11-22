@@ -1,0 +1,83 @@
+title: >
+  Top 5 middle powers
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  As a percent of China's power (2018–21)
+
+axes:
+  minY: 40
+  maxY: 60
+  stepsY: 5
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+  -
+    title: Japan
+    color: "dark"
+    widen: false
+    dashed: false
+    values:
+      - 57
+      - 56
+      - 54
+      - 52
+
+  -
+    title: India
+    color: "orange"
+    widen: false
+    dashed: false
+    values:
+      - 55
+      - 54
+      - 52
+      - 51
+  -
+    title: Russia
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 47
+      - 47
+      - 44
+      - 44
+  -
+    title: South Korea
+    color: "blue-100"
+    widen: false
+    dashed: false
+    values:
+      - 44
+      - 43
+      - 42
+      - 40
+  -
+    title: Australia
+    color: "blue-300"
+    widen: false
+    dashed: false
+    values:
+      - 42
+      - 41
+      - 43
+      - 41

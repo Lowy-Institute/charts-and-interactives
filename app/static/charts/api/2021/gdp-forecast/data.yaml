@@ -1,0 +1,80 @@
+title: >
+  2030 GDP forecast adjustment
+
+subtitle: >
+  Adjustments in pre- and post-pandemic GDP forecasts for 2030 (%)
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  minX: -40
+  maxX: 10
+  stepsX: 11
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Taiwan
+      - United States
+      - Singapore
+      - Japan
+      - Nepal
+      - Vietnam
+      - New Zealand
+      - South Korea 
+      - Russia
+      - Australia
+      - China
+      - Mongolia
+      - Pakistan
+      - Bangladesh
+      - Indonesia
+      - Brunei
+      - Malaysia
+      - Papua New Guinea
+      - Thailand
+      - India
+      - Sri Lanka
+      - Cambodia
+      - Philippines
+      - Laos
+      - Myanmar
+
+  -
+    title: Series 1
+    color: "blue-100"
+    values:
+      - 7.2
+      - 3.0
+      - 0.6
+      - -0.5
+      - -0.6
+      - -1.2
+      - -2.3
+      - -2.5
+      - -3.0
+      - -3.3
+      - -3.4
+      - -5.3
+      - -5.8
+      - -6.4
+      - -6.9
+      - -7.1
+      - -7.2
+      - -9.1
+      - -9.5
+      - -11.0
+      - -11.1
+      - -12.4
+      - -15.5
+      - -18.9
+      - -39.5

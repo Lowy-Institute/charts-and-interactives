@@ -1,0 +1,48 @@
+title: >
+  COVID-19 vaccine doses delivered abroad
+
+subtitle: >
+  Donations per capita
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  minX:  0
+  maxX: 0.3
+  stepsX: 4
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - United States
+      - Japan
+      - New Zealand
+      - Australia
+      - Singapore
+      # - South Korea
+      # - China
+      # - Cambodia
+      # - India
+
+  -
+    title: Series 1
+    color: "blue-100"
+    values:
+      - 0.280003362
+      - 0.194493434
+      - 0.168964816
+      - 0.124102346
+      - 0.063959952
+      # - 0.030362162
+      # - 0.02787192
+      # - 0.012131107
+      # - 0.004939924
