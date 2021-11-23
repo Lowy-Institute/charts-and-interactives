@@ -13,12 +13,12 @@ block append config
 block page
   .wrapper.flex-col.txt-center
     .chart-title COVID-19 vaccine doses delivered abroad
-    .flex.flex-row
+    //- .flex.flex-row
+    //-   for chart, index in [total, capita]
+    .flex.flex-grow.flex-col
       for chart, index in [total, capita]
-        .chart-subtitle.flex-1.txt-tu!= chart.subtitle + "(Top 5)"
-    .flex.flex-grow
-      for chart, index in [total, capita]
-        .chart.flex-grow.flex-1: .chart-content
+        .chart-subtitle.txt-tu!= chart.subtitle + "(Top 5)"
+        .chart.flex-grow: .chart-content
           - ln = chart.series[0].values.length
           - axes = chart.axes
           - minX = axes.minX
@@ -101,7 +101,7 @@ block append css
   style
     :sass
       .wrapper
-        height: 300px
+        height: 450px
 
       .chart
         box-sizing: border-box
@@ -112,7 +112,7 @@ block append css
         top: 0px
         left: 110px
         right: 60px
-        bottom: 40px
+        bottom: 50px
 
       .chart-title
         font-size: 28px
