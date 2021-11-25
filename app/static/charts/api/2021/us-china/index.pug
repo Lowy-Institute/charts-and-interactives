@@ -15,7 +15,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title!= chart.title
-      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - viewBox = 400
         - r0   = viewBox/2
@@ -173,9 +173,6 @@ block append css
         font-size: 26px
         text-transform: uppercase
         font-weight: 500
-        
-        sub
-          vertical-align: baseline
         
       .chart-subtitle
         font-weight: 600

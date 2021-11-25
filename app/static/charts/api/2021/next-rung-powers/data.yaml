@@ -8,12 +8,12 @@ notes: >
   <b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  As a percent of China's power (2018–21)
+  As a percentage of China's power (2018–21)
 
 axes:
   minY: 40
-  maxY: 60
-  stepsY: 5
+  maxY: 55
+  stepsY: 4
   rotateX: false
   percentage: true
   minorLines: true

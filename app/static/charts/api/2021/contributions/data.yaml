@@ -1,0 +1,50 @@
+title: >
+  Contributions to global responses to the COVID-19 pandemic in 2021
+
+subtitle: >
+  Top 10 countries by survey result,&nbsp;0-100
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  minX:  0
+  maxX: 100
+  stepsX: 6
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - New Zealand
+      - Taiwan
+      - United States
+      - Japan
+      - Singapore
+      - South Korea
+      - Australia
+      - Vietnam
+      - Brunei
+      - India
+
+  -
+    title: Series 1
+    color: "blue-100"
+    values:
+      - 100
+      - 99.41860465
+      - 88.27098079
+      - 80.54968288
+      - 79.06976744
+      - 67.93145655
+      - 58.72093023
+      - 56.68604651
+      - 53.91120507
+      - 53.48837209

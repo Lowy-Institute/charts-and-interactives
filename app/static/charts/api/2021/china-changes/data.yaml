@@ -12,10 +12,10 @@ notes: >
 
 axes:
   min: -4
-  max: 8
-  steps: 4
+  max: 10
+  steps: 8
   percentage: false
-  minorLines: true
+  minorLines: false
   dotted: [] # Index of dotted gridlines
   reverse: false
 

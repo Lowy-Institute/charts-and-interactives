@@ -12,12 +12,12 @@ block append config
   
 block page
   .wrapper.flex-col.txt-center
-    .chart-title COVID-19 vaccine doses delivered abroad
+    .chart-title COVID-19 vaccine doses delivered in the region
     //- .flex.flex-row
     //-   for chart, index in [total, capita]
     .flex.flex-grow.flex-col
       for chart, index in [total, capita]
-        .chart-subtitle.txt-tu!= chart.subtitle + "(Top 5)"
+        .chart-subtitle.txt-tu.txt-muted!= chart.subtitle + "(Top 5)"
         .chart.flex-grow: .chart-content
           - ln = chart.series[0].values.length
           - axes = chart.axes
@@ -25,7 +25,7 @@ block page
           - maxX = axes.maxX
           - range = maxX - minX
           - fx = (x) => (x - minX) / range
-          - fy = (i) => (i + 0.7) / ln
+          - fy = (i) => (i + 0.6) / ln
           
           svg(height="100%" width="100%")
           
@@ -80,7 +80,7 @@ block page
                         x=toPercent(x0 + fx(v + (!index ? MILLION : .005) ))
                         y="50%"
                         text-anchor="start"
-                        transform="translate(0 4.5)"
+                        transform="translate(2 4.5)"
                       )
                         = (v / (!index ? MILLION : 1)).toFixed(2) + (!index ? "M" : "")
 
@@ -93,6 +93,8 @@ block page
                       transform="translate(-16, 5)"
                     )
                       =chart.series[0].values[i]
+                      
+              line(x1=0 x2=0 y1=0 y2="100%" stroke="#2D6993" stroke-width="2")
 
     //.chart-source.txt-muted.txt-semi!= chart.source
     
@@ -101,7 +103,8 @@ block append css
   style
     :sass
       .wrapper
-        height: 450px
+        height: 500px
+        width: 380px
 
       .chart
         box-sizing: border-box
@@ -110,20 +113,19 @@ block append css
       .chart-content
         position: absolute
         top: 0px
-        left: 110px
-        right: 60px
-        bottom: 50px
+        left: 100px
+        right: 40px
+        bottom: 30px
 
       .chart-title
-        font-size: 28px
+        font-size: 22px
         font-weight: 500
         text-transform: uppercase
-        margin-bottom: 0.5rem
         
       .chart-subtitle
         font-weight: 600
         font-size: 15px
-        margin: 0 0 1rem
+        margin: 1rem 0 .5rem
 
       li
         list-style: none

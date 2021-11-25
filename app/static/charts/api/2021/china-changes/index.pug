@@ -19,14 +19,14 @@ block page
         - min = axes.min
         - max = axes.max
         - range = (max - min)
-        - zero = 0.333333
+        - zero = 0.28888
         - fx = (i) => (i + 0.5) / (ln + 0.75)
         - fy = (y) => Math.abs(y) / range
         
         svg(height="100%" width="100%")
         
           // X-Axis labels
-          svg(width="100%" y="0")
+          //svg(width="100%" y="0")
             - let steps = chart.axes.steps - 1
             for n, i in new Array(steps+1)
               - y = i / (steps)
@@ -80,14 +80,17 @@ block page
                     )
 
                   // Category labels
-                  svg.y-label.txt-tu.txt-sm(x='50%' y=toPercent(zero + (v > 0 ? 0.05 : -0.12)))
-                    text(text-anchor="middle")
+                  svg.y-label.txt-tu.txt-sm(x='50%' y=toPercent(zero + (v > 0 ? 0.05 : -0.065)))
+                    text.txt-right(
+                      text-anchor=i ? "end" : "middle"
+                      transform=i ? "rotate(90)" : ""
+                    )
                       each str,j in chart.series[0].values[i].split(" ")
-                        tspan(x=0 dy=j*10)= str
+                        tspan(x=-2*j dy=j*10)= str
                       
                   text.chart-value(
                     x="50%"
-                    y=toPercent(zero + fy(v > 0 ? 1.67 : 0))
+                    y=toPercent(zero + fy(v > 0 ? 1.7 : 0))
                     text-anchor="middle"
                     style=`color: "#31363B"`
                     transform="translate(0 -8)"
@@ -108,6 +111,7 @@ block append css
   
       .wrapper
         height: 475px
+        width: 325px
 
       .chart
         box-sizing: border-box
@@ -115,16 +119,15 @@ block append css
 
       .chart-content
         position: absolute
-        top: 68px
-        left: 130px
-        right: 50px
-        bottom: 30px
+        top: 30px
+        left: 0px
+        right: 0px
+        bottom: 0px
 
       .chart-title
-        font-size: 28px
+        font-size: 22px
         font-weight: 500
         text-transform: uppercase
-        width: 600px
         margin: auto
         
       .chart-subtitle
@@ -166,7 +169,7 @@ block append css
         margin-top: 1rem 
         
       .chart-value
-        font-size: 16px
+        font-size: 12px
         &.nullish
           letter-spacing: -0.08em
         
@@ -179,7 +182,7 @@ block append css
         
       .y-label text
         font-size: 10px
-        font-weight: 600
+        font-weight: 500
         letter-spacing: 0.03em
           
       @media (max-width: 800px)
