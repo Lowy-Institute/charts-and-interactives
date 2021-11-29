@@ -96,7 +96,7 @@ block append css
     
       .wrapper
         height: 550px
-        width: 600px
+        max-width: 600px
         margin: auto
 
       .chart
@@ -141,6 +141,6 @@ block append css
       .chart-value
         font-size: 10px
         font-weight: 600
-      
-        .chart-content:hover &
-          opacity: 1
+
+        @media (max-width: 400px)
+          display: none
