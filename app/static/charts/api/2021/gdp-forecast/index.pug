@@ -9,11 +9,12 @@ block append config
   - chart = page
   
 block page
-  .wrapper.flex.txt-center
+  .wrapper.flex
     .flex.flex-grow.flex-col
       .chart-title-wrap.ph-lg
         .chart-title!= chart.title
         .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
+        .chart-note ASEAN country
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -23,6 +24,21 @@ block page
         - range = maxX - minX
         - fx = (x) => (x - minX) / range
         - fy = (i) => (i + 0.7) / ln
+        - baseColor = "#969ba4"
+        - highlight = "#2D6993"
+        -
+          ASEAN = [
+            "Brunei",
+            "Cambodia",
+            "Indonesia",
+            "Laos",
+            "Malaysia",
+            "Myanmar",
+            "Philippines",
+            "Singapore",
+            "Thailand",
+            "Vietnam"
+          ]
         
         svg(height="100%" width="100%")
         
@@ -71,14 +87,14 @@ block page
                       x=toPercent(zero)
                       width=toPercent(fx(v) - zero)
                       height="100%"
-                      fill=(i === 81 ? "#f80" : chart.colors[chart.series[ci].color])
+                      fill=(ASEAN.includes(chart.series[0].values[i]) ? highlight : baseColor)
                     )
                   else
                     rect(
                       x=toPercent(fx(v))
                       width=toPercent(zero - fx(v))
                       height="100%"
-                      fill=(i === 1 ? "#f80" : chart.colors[chart.series[ci].color])
+                      fill=(ASEAN.includes(chart.series[0].values[i]) ? highlight : baseColor)
                     )
 
                   text.chart-value(
@@ -86,7 +102,7 @@ block page
                     y="50%"
                     text-anchor=v > 0 ? "start" : "end"
                     transform=`translate(${v > 0 ? 8 : -8} 4.5)`
-                    style=`color: "#31363B"`
+                    fill=(ASEAN.includes(chart.series[0].values[i]) ? highlight : baseColor)
                   )
                     = v.toFixed(1) + (axes.percentage ? "%" : "")
 
@@ -97,10 +113,11 @@ block page
                     text(
                       text-anchor=(v > 0 ? "end" : "start")
                       transform=`translate(${v > 0 ? -12 : 12}, 5)`
+                      fill=(ASEAN.includes(chart.series[0].values[i]) ? highlight : baseColor)
                     )
                       =chart.series[0].values[i]
 
-            line(x1="80%" x2="80%" y1="0%" y2="100%" stroke="#2D6993" stroke-width=2)
+            line(x1="80%" x2="80%" y1="0%" y2="100%" stroke=highlight stroke-width=2)
 
       //- .chart-source.txt-muted.txt-semi!= chart.source
     
@@ -111,6 +128,7 @@ block append css
   
       .wrapper
         height: 600px
+        position: relative
 
       .chart
         box-sizing: border-box
@@ -121,7 +139,7 @@ block append css
         top: -11rem
         left: 130px
         right: 50px
-        bottom: 0px
+        bottom: 30px
 
       .chart-title-wrap
         width: 220px
@@ -137,7 +155,24 @@ block append css
         text-align: left
         font-weight: 600
         font-size: 15px
-        margin-bottom: 1.5rem
+
+      .chart-note 
+        position: absolute 
+        bottom: 0
+        right: 22%
+        line-height: 0
+        color: #2D6993
+        z-index: 1
+        font-size: 12px
+        font-weight: 600
+        display: inline-flex 
+        align-items: center
+
+        &:before
+          content: ''
+          background: #2D6993
+          padding: .5rem
+          margin-right: .5rem
 
       li
         list-style: none
@@ -164,7 +199,6 @@ block append css
 
       text
         font-size: 13px
-        fill: currentColor
 
       svg
         overflow: visible
@@ -182,7 +216,6 @@ block append css
       .chart-value
         transition-duration: .4s
         pointer-events: none
-        fill: #2D6993
           
       @media (max-width: 400px)
       

@@ -1,0 +1,48 @@
+title: >
+  Distribution of respondents by Fake News Score
+
+subtitle: >
+  Subtitle goes here
+
+source: >
+  Calculations by Ateneo Policy Center Staff
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+axes:
+  minY: 0
+  maxY: 20
+  stepsY: 5
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  - title: Pandemic performance
+    values:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+
+  - title: Category 1
+    color: "grey-interpreter"
+    values:
+      - 0.05
+      - 0.31
+      - 1.68
+      - 5.91
+      - 17.94
+      - 18.14
+      - 17.87
+      - 16.47
+      - 14.17
+      - 7.46

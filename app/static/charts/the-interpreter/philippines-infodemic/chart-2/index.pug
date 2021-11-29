@@ -1,0 +1,246 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/philippines-infodemic/chart-2/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  - colors = []
+  
+block page
+  .wrapper.flex
+    .flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + .25) / (ln + 0.2)
+        - fy = (y) => (y - minY) / range
+        
+        svg(height="100%" width="100%")
+        
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY - 1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // Chart rects
+          g
+          
+            for seriesname, i in chart.series[0].values
+              svg(
+                x=toPercent(fx(i))
+                y=toPercent(fy(minY))
+                width=toPercent(fx(0))
+                height="100%"
+              )
+              
+                g.bars
+
+                  for set, j in chart.series.filter( (s, i) => i )
+                    - y = set.values[i]
+                    - w = 3 / (chart.series.length - 1)
+                  
+                    rect(
+                      x=toPercent(j*w)
+                      y=toPercent(fy(maxY) - fy(y))
+                      width=toPercent(w)
+                      height=toPercent(fy(y))
+                      fill=chart.colors[set.color]
+                      style=`color: ${chart.colors[set.color]}`
+                      data-series=seriesname
+                    )
+
+                    text.chart-value(
+                      x=(j*w)
+                      y=toPercent(fy(maxY) - fy(y))
+                      text-anchor="middle"
+                      transform=`translate(${w/2} -10)`
+                      style=`color: ${chart.colors[set.color]}`
+                    )
+                      = y + (axes.percentage ? "%" : "")
+
+                    // X-Axis labels
+                    svg.x-label(x="50%" y="100%")
+                      text(
+                        text-anchor="middle"
+                        transform="translate(0 20)"
+                      )
+                        =seriesname
+
+      .txt-center.txt-tu.x-title Fake news score
+
+      ul.legend.list-bare.txt-left.flex.flex-ch
+        for ax, i in new Array(chart.series.length)
+          if i
+            li.legend-item
+              span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+              span.legend-item-label= chart.series[i].title
+
+      .txt-xs.txt-muted.txt-center
+        .chart-source!= chart.source
+      
+      .tooltip
+      
+  script.
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nCategories = 4;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.x-label text');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let box = el.getBoundingClientRect();
+        let val = vals[i].innerHTML;
+        let ser = el.dataset.series;
+        let cat = legendItems[i % nCategories].innerHTML;
+        
+        tooltip.style.left = box.left + 'px';
+        tooltip.style.top = box.top - 2 + 'px';
+        tooltip.style.opacity = 1;
+        
+        tooltip.innerHTML = val + " of respondents from " + cat + " recieved a Fake News Score of " + ser;
+        
+      });
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+    }
+    
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+        max-width: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 50px
+        left: 40px
+        right: 40px
+        bottom: 30px
+
+        @media (pointer: fine)
+
+          &:hover rect
+            transition: all .4s
+            opacity: 0.8
+
+            &:hover
+              opacity: 1
+
+      .chart-content > svg
+        border-bottom: 1px solid #bbb
+
+      .chart-title
+        font-size: 24px
+        font-weight: 500
+
+      .x-title
+        font-size: 12px
+        font-weight: 600
+        margin-bottom: 1rem
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .1em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 11px
+        max-width: 120px
+        line-height: 1.2
+        transform: translate(-50%, -100%)
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 14px
+        flex-wrap: wrap
+        margin-bottom: 0.5rem
+
+      .legend-item
+        margin: 0 8px
+        padding-right: 0
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 12px
+        fill: currentColor
+
+      svg
+        overflow: visible
+
+      rect
+        transform-box: fill-box
+        transform-origin: center
+        
+      .chart-notes,
+      .chart-source
+        margin-left: 2em
+        font-size: 13px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none

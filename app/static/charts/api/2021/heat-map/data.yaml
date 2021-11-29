@@ -2,7 +2,7 @@ title: >
   COVID-19: a race to the bottom
 
 subtitle: >
-  Year-on-year changes in comprehensive power
+  Year-on-year points changes in comprehensive power
 
 source: >
   <b>Source:</b> Lorem ipsum.
@@ -11,8 +11,7 @@ notes: >
   <b>Notes:</b> Lorem ipsum.
 
 series:
-  -
-    title: Category
+  - title: Category
     values:
       - Malaysia
       - Japan
@@ -41,8 +40,7 @@ series:
       - Brunei
       - United States
 
-  -
-    title: Change
+  - title: Change
     values:
       - [1.2, -2.1, -2.4]
       - [-0.3, -1.5, -2.4]
