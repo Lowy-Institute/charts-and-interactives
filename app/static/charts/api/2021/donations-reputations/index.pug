@@ -1,0 +1,183 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/api/2021/donations-reputations/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  -
+    transforms = {
+      "ne": "translate(-2 -7)",
+      "se": "translate(-2 7)",
+      "s": "translate(10 26)",
+      "w": "translate(-20 0)",
+    }
+
+    anchors = {
+      "w": "end",
+      "s": "middle",
+    }
+  
+block page
+  .wrapper.flex.txt-center
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      .chart-subtitle.txt-ffa.txt-italic!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - rangeX = maxX - minX
+        - rangeY = maxY - minY
+        - fx = (x) => (x - minX) / rangeX
+        - fy = (y) => 1 - (y - minY) / rangeY
+        - r = 4
+        - color = chart.colors[chart.series[1].color]
+        
+        svg(height="100%" width="100%")
+
+          for l, i in new Array(axes.stepsX - 1)
+            - v = maxX * (i + 1) / axes.stepsX
+            - d = fx(v)
+            - x = toPercent(d)
+            line(x1=x x2=x y1=0 y2="100%" stroke="#eee2")
+            text(x=x y="100%" dy="12" text-anchor="middle")= v.toFixed(2)
+
+          for l, i in new Array(axes.stepsY - 1)
+            - d = fy(maxY * (i + 1) / axes.stepsY)
+            - y = toPercent(d)
+            line(y1=y y2=y x1=0 x2="100%" stroke="#eee2")
+            //- text(y=y dy=3 dx="-4" text-anchor="end")= (100 * (1 - d)).toFixed(0)
+
+          
+          svg(y=toPercent(fy(chart.series[1].values[9][0])) x=0)
+            line(y1=7 y2=20 x1=0 x2=0 stroke=color)
+
+          for country, i in chart.series[0].values
+            - pos = chart.series[2].values[i]
+            - v = chart.series[1].values[i]
+            - x = toPercent(fx(v[1]))
+            - y = toPercent(fy(v[0]))
+            svg(x=x y=y)
+              rect(
+                x=-r y=-r width=2*r height=2*r
+                transform="rotate(45)"
+                fill="#f80"
+              )
+              text.chart-value.txt-tu(
+                x=2.25*r
+                y="4"
+                text-anchor=(anchors[pos])
+                transform=(transforms[pos])
+                style=`color: ${chart.colors[chart.series[1].color]}`
+              )
+                = country
+
+          svg.axis-label(y="50%" x="-40")
+            g(transform="rotate(-90)")
+              text.txt-ffa(text-anchor="middle") Perceived contribution to global responses to Covid-19
+          svg.axis-label(y="50%" x="-20")
+            g(transform="rotate(-90)")
+              path(d="M45,-3 h60" stroke="currentColor")
+              path(d="M-45,-3 h-40" stroke="currentColor")
+              text(x="180" text-anchor="end") World leading
+              text(text-anchor="middle") Constructive
+              text(x="-180" text-anchor="start") Counterproductive
+    
+      .txt-ffa.axis-label Per capita vaccine donations
+
+
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        max-width: 475px
+        height: 500px
+        padding: 2rem 3rem
+        background: #31363B
+        fill: white
+        color: white
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 10px
+        left: 20px
+        right: 10px
+        bottom: 20px
+
+      .chart-title
+        font-size: 22px
+        font-weight: 400
+        text-transform: uppercase
+        
+      .chart-subtitle
+        font-weight: 400
+        font-size: 16px
+        margin-top: .25rem
+        margin-bottom: 1rem
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin: 1rem 0 0
+
+      .legend-item
+        margin: 4px 8px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      .axis-label 
+        color: #eee8
+        font-size: 11px
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+
+      text 
+        font-size: 10px
+        
+      .chart-source
+        margin-top: 1rem 
+        
+      .chart-source,
+      .chart-notes
+        font-size: 15px
+
+      .chart-value 
+        font-size: 10px
+        font-weight: 600
+
+      .txt-ffa
+        color: rgba(white, 0.8)
+
+      @media (max-width: 400px)
+        text
+          font-size: 9px

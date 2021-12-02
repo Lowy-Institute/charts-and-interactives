@@ -17,7 +17,7 @@ block page
     //-   for chart, index in [total, capita]
     .flex.flex-grow.flex-col
       for chart, index in [total, capita]
-        .chart-subtitle.txt-tu.txt-muted!= chart.subtitle + "(Top 5)"
+        .chart-subtitle.txt-tu.txt-muted!= chart.subtitle + ", top 5 countries"
         .chart.flex-grow: .chart-content
           - ln = chart.series[0].values.length
           - axes = chart.axes
@@ -123,8 +123,8 @@ block append css
         text-transform: uppercase
         
       .chart-subtitle
-        font-weight: 600
-        font-size: 15px
+        font-weight: 500
+        font-size: 14px
         margin: 1rem 0 .5rem
 
       li

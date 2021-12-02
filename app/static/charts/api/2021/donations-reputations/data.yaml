@@ -1,0 +1,67 @@
+title: >
+  Giving more doses per capita pays off
+
+subtitle: >
+  Per capita vaccine donations to the region and Asia Power Index survey results
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  minX: 0
+  maxX: 0.3
+  minY: 0
+  maxY: 100
+  stepsX: 6
+  stepsY: 5
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  - title: Category
+    values:
+      - New Zealand
+      - Singapore
+      - South Korea
+      - Japan
+      - China
+      - United States
+      - Australia
+      - Brunei
+      - Cambodia
+      - Russia
+      - India
+
+  - title: Values
+    color: "white"
+    values:
+      - [100.0, 0.17]
+      - [79.07, 0.06]
+      - [67.93, 0.03]
+      - [80.55, 0.19]
+      - [40.25, 0.03]
+      - [88.27, 0.28]
+      - [58.72, 0.12]
+      - [53.91, 0.00]
+      - [45.03, 0.01]
+      - [42.23, 0.00]
+      - [53.49, 0.00]
+
+  - title: Positions
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - "w"
+      - 0
+      - "ne"
+      - 0
+      - "s"
+      - "se"

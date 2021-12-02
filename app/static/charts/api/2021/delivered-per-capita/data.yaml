@@ -1,5 +1,5 @@
 title: >
-  COVID-19 vaccine doses delivered in the region
+  COVID-19 vaccine doses delivered to the region
 
 subtitle: >
   Donations per capita
@@ -11,7 +11,7 @@ notes: >
   <b>Notes:</b> Lorem ipsum.
 
 axes:
-  minX:  0
+  minX: 0
   maxX: 0.3
   stepsX: 4
   percentage: false
@@ -20,8 +20,7 @@ axes:
   reverse: false
 
 series:
-  -
-    title: Category
+  - title: Category
     values:
       - United States
       - Japan
@@ -33,8 +32,7 @@ series:
       # - Cambodia
       # - India
 
-  -
-    title: Series 1
+  - title: Series 1
     color: "blue-100"
     values:
       - 0.280003362
