@@ -41,12 +41,13 @@ block page
         
         svg(height="100%" width="100%")
 
-          for l, i in new Array(axes.stepsX - 1)
-            - v = maxX * (i + 1) / axes.stepsX
+          for l, i in new Array(axes.stepsX + 1)
+            - v = maxX * (i) / axes.stepsX
             - d = fx(v)
             - x = toPercent(d)
-            line(x1=x x2=x y1=0 y2="100%" stroke="#eee2")
-            text(x=x y="100%" dy="12" text-anchor="middle")= v.toFixed(2)
+            if (i && i < 6)
+              line(x1=x x2=x y1=0 y2="100%" stroke="#eee2")
+            text(x=x y="100%" dy="12" text-anchor="middle")= v.toFixed(v ? 2 : 0)
 
           for l, i in new Array(axes.stepsY - 1)
             - d = fy(maxY * (i + 1) / axes.stepsY)
@@ -90,6 +91,8 @@ block page
               text(x="-180" text-anchor="start") Counterproductive
     
       .txt-ffa.axis-label Per capita vaccine donations
+      .txt-ffa.chart-source!= chart.source
+
 
 
   
@@ -122,33 +125,10 @@ block append css
         text-transform: uppercase
         
       .chart-subtitle
-        font-weight: 400
-        font-size: 16px
+        font-weight: 300
+        font-size: 14px
         margin-top: .25rem
         margin-bottom: 1rem
-
-      li
-        list-style: none
-        margin: 0
-        padding: 4px 16px 4px 24px
-
-      .legend
-        font-size: 15px
-        margin: 1rem 0 0
-
-      .legend-item
-        margin: 4px 8px
-        padding-right: 0
-        position: relative
-        white-space: nowrap
-
-      .legend-item-box
-        position: absolute
-        left: 0
-        top: .5em
-        height: 1em
-        width: 1em
-        background: black
 
       .axis-label 
         color: #eee8
@@ -166,10 +146,7 @@ block append css
         
       .chart-source
         margin-top: 1rem 
-        
-      .chart-source,
-      .chart-notes
-        font-size: 15px
+        font-size: 10px
 
       .chart-value 
         font-size: 10px

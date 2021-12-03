@@ -1,11 +1,11 @@
 title: >
-  Giving more doses per capita pays off
+  Giving more doses per capita pays&nbsp;off
 
 subtitle: >
   Per capita vaccine donations to the region and Asia Power Index survey results
 
 source: >
-  <b>Source:</b> Lorem ipsum.
+  Sources: <a href="https://www.thinkglobalhealth.org/article/billions-committed-millions-delivered">Think Global Health</a>, <a href="https://power.lowyinstitute.org/">2021 Lowy Institute Asia Power Index</a> and author’s calculations
 
 notes: >
   <b>Notes:</b> Lorem ipsum.
@@ -16,7 +16,7 @@ axes:
   minY: 0
   maxY: 100
   stepsX: 6
-  stepsY: 5
+  stepsY: 4
   percentage: false
   minorLines: true
   dotted: [] # Index of dotted gridlines

@@ -1,14 +1,14 @@
 title: >
-  COVID-19 vaccine doses delivered to the region
+  COVID-19 vaccine doses delivered to the&nbsp;region
 
 subtitle: >
   Donations per capita
 
 source: >
-  <b>Source:</b> Lorem ipsum.
+  Sources: <a href="https://www.thinkglobalhealth.org/article/billions-committed-millions-delivered">Think Global Health</a>, <a href="https://data.worldbank.org/indicator/SP.POP.TOTL">World Bank</a> and author’s calculations.
 
 notes: >
-  <b>Notes:</b> Lorem ipsum.
+  * Reflects vaccine donation data as of 28 October 2021
 
 axes:
   minX: 0
@@ -33,7 +33,7 @@ series:
       # - India
 
   - title: Series 1
-    color: "blue-100"
+    color: "white"
     values:
       - 0.280003362
       - 0.194493434
