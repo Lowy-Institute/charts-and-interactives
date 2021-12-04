@@ -91,9 +91,8 @@ block page
               text(x="-180" text-anchor="start") Counterproductive
     
       .txt-ffa.axis-label Per capita vaccine donations
+      .txt-ffa.chart-notes!= chart.notes
       .txt-ffa.chart-source!= chart.source
-
-
 
   
 block append css
@@ -145,9 +144,12 @@ block append css
       text 
         font-size: 10px
         
-      .chart-source
-        margin-top: 1rem 
+      .chart-source,
+      .chart-notes
         font-size: 10px
+
+      .chart-notes
+        margin-top: 1rem 
 
         a
           color: white 

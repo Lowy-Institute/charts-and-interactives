@@ -8,7 +8,7 @@ source: >
   Sources: <a href="https://www.thinkglobalhealth.org/article/billions-committed-millions-delivered">Think Global Health</a>, <a href="https://power.lowyinstitute.org/">2021 Lowy Institute Asia Power Index</a> and author’s calculations.
 
 notes: >
-  <b>Notes:</b> Lorem ipsum.
+  * Reflects vaccine donation data as of 28 October 2021
 
 axes:
   minX: 0
