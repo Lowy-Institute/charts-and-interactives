@@ -1,0 +1,46 @@
+title: >
+  COVID cases in Sweden and Australia
+
+source: >
+  <strong>Source:</strong> Lowy Institute
+
+notes: >
+  <strong>Notes:</strong> data from January 2022
+
+subtitle: >
+  New cases per million - 7 day snapshot
+
+axes:
+  minY:  0
+  maxY: 5000
+  stepsY: 5
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [1, 3] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+
+    values:
+      - 1 Jan
+      - 8 Jan
+      - 15 Jan
+      - 22 Jan
+  -
+    title: AUSTRALIA
+    color: "dark"
+    values:
+      - 899.42
+      - 2822.452
+      - 4174.991
+      - 2607.802
+  -
+    title: SWEDEN
+    color: "highlight"
+    values:
+      - 583.104
+      - 1432.289
+      - 2020.68
+      - 3144.523
