@@ -1,0 +1,50 @@
+title: >
+  Grouped bar chart
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  minY:  -40
+  maxY: 80
+  stepsY: 5
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [1, 3] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+
+    values:
+      - X Label 1
+      - X Label 2
+      - X Label 3
+  -
+    title: Category 1
+    color: "dark"
+    values:
+      - -29
+      - 0
+      - 0
+  -
+    title: Category 2
+    color: "highlight"
+    values:
+      - 0
+      - 48
+      - 0
+  -
+    title: Category 3
+    color: "red"
+    values:
+      - 0
+      - 0
+      - 56

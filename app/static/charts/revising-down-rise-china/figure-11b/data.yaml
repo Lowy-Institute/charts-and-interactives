@@ -1,0 +1,171 @@
+title: >
+  China relative to the US
+
+source: >
+  <b>Source:</b> authors’ calculations, IMF World Economic Outlook October 2021, OECD Long Term Growth Forecasts (2018)
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Baseline projection, 2020 = 100
+
+axes:
+  minY:  0
+  maxY: 200
+  stepsY: 5
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Years
+    values:
+      - 2020
+      - null
+      - null
+      - null
+      - null
+      - 2025
+      - null
+      - null
+      - null
+      - null
+      - 2030
+      - null
+      - null
+      - null
+      - null
+      - 2035
+      - null
+      - null
+      - null
+      - null
+      - 2040
+      - null
+      - null
+      - null
+      - null
+      - 2045
+      - null
+      - null
+      - null
+      - null
+      - 2050
+
+  -
+    title: Total GDP
+    color: "highlight"
+    widen: true
+    dashed: false
+    values:
+      - 115
+      - 117
+      - 119
+      - 124
+      - 128
+      - 132
+      - 135
+      - 138
+      - 140
+      - 142
+      - 144
+      - 144
+      - 145
+      - 145
+      - 146
+      - 146
+      - 146
+      - 146
+      - 145
+      - 145
+      - 145
+      - 144
+      - 144
+      - 143
+      - 143
+      - 142
+      - 142
+      - 141
+      - 140
+      - 139
+      - 139
+  -
+    title: GDP per capita
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 34
+      - 35
+      - 35
+      - 36
+      - 36
+      - 37
+      - 37
+      - 37
+      - 38
+      - 38
+      - 38
+      - 38
+      - 39
+      - 39
+      - 39
+      - 39
+      - 40
+      - 40
+      - 40
+      - 40
+      - 40
+      - 41
+  -
+    title: GDP per worker
+    color: "grey-300"
+    widen: false
+    dashed: false
+    values:
+      - 31
+      - 32
+      - 32
+      - 34
+      - 35
+      - 36
+      - 38
+      - 39
+      - 40
+      - 41
+      - 42
+      - 43
+      - 44
+      - 44
+      - 45
+      - 46
+      - 46
+      - 47
+      - 47
+      - 48
+      - 48
+      - 49
+      - 49
+      - 49
+      - 50
+      - 50
+      - 50
+      - 51
+      - 51
+      - 51
+      - 52
+  

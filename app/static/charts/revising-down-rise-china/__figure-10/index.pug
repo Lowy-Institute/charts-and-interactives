@@ -1,0 +1,130 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/revising-down-rise-china/figure-10/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+    .page-title.txt-center= page.title 
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[0]
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted.txt-tu= chart.subtitle 
+
+        .chart.flex-grow: .chart-content
+          - scale = chart.scale
+          - fx = (i) => (i + 0.5) / (chart.axes[1].values.length + 0.5)
+          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(6)
+                - y = 1 - (i / 4)
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+                     
+            g
+              for y, i in chart.axes[1].values
+                - label = chart.axes[0].values[i]
+                svg(
+                  x=toPercent(fx(i))
+                  y=toPercent(1 - fy(y))
+                  width=toPercent(fx(0))
+                  height=toPercent(fy(y))
+                )
+                  rect(
+                    fill=label.red ? "#00ff00" : "#ff4050" | label.highlight ? "#ff9fa7" : "#ff4050"
+                    width="100%"
+                    height="100%"
+                  )
+
+                  text.chart-value(
+                    x="50%"
+                    y=-8
+                    text-anchor="middle"
+                  )
+                    = y + "%"
+
+                  svg(x="50%" y="100%")
+                    text(
+                      text-anchor="end"
+                      transform="translate(18 18)"
+                    )
+              text(x="15%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: grey-400") Actual
+              text(x="85%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: grey-400") UN projection                  
+
+
+    .chart-source.txt-muted.txt-center
+      != page.source
+
+block append css
+  style
+    :sass
+      .page-title
+        /* margin-bottom: 25px */
+
+      .wrapper
+        height: 700px
+        max-width: 700px
+
+      .col-wrap
+        margin: 0
+
+      .col-md
+        padding: 0 1em
+        width: 50%
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 36px
+        right: 12px
+        bottom: 24px
+
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+        height: 20px
+        min-height: 100%
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+
+      .chart-title
+        max-width: 320px
+        margin: 0 auto 
+        font-size: 20px
+
+      .chart-subtitle
+        height: 0
+        margin: 0 0 50px 0
+        font-size: 15px
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 8px 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+
+      @media screen and (max-width: 600px)
+        .col-wrap
+          display: block
+        .col-md
+          width: 100%
+          height: 100%

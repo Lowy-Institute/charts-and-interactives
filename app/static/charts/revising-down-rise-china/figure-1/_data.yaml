@@ -1,0 +1,144 @@
+title: >
+  Figure 1: Chart Title
+
+source: >
+  <b>Source: </b>Source
+
+notes: >
+  <b>1/</b> Example<br>
+  <b>2/</b> Example<br>
+
+charts:
+  - 
+    title: >
+      China's sources of economic growth
+
+    source: >
+      <b>Source:</b> Author’s calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+    #notes: >
+      #<b>Notes:</b> Lorem ipsum
+
+    subtitle: >
+      Average annual % growth by source
+
+    axes:
+      minY:  0
+      maxY: 12
+      stepsY: 7
+      rotateX: false
+      percentage: true
+      minorLines: false
+      dotted: [] # Index of dotted gridlines
+      reverse: false
+
+    series:
+      -
+        title: Year
+        values:
+          - 1980s
+          - 1990s
+          - 2000s
+          - 2010s
+
+      -
+        title: Business capital
+        color: "dark"
+        values:
+          - 1
+          - 2.4
+          - 4.5
+          - 3.8
+      -
+        title: Public capital
+        color: "blue-100"
+        values:
+          - 0.5
+          - 1
+          - 1
+          - 0.9
+      -
+        title: Housing
+        color: "highlight"
+        values:
+          - 0.1
+          - 0.4
+          - 1
+          - 0.8
+      -
+        title: Education
+        color: "yellow"
+        values:
+          - 0.7
+          - 1
+          - 0.3
+          - 0.6
+      -
+        title: Labour growth
+        color: "grey-300"
+        values:
+         - 3.1
+         - 1.1
+         - 0.6
+         - 0.3
+      -
+        title: Productivity growth
+        color: "green"
+        values:
+          - 3.8
+          - 4.5
+          - 3.2
+          - 1
+
+  -
+    title: >
+      China's high investment rate
+
+    source: >
+      <b>Source:</b> Author’s calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+    #notes: >
+      #<b>Notes:</b> Lorem ipsum
+
+    subtitle: >
+      Real investment as a share of GDP
+
+    axes:
+      minY:  0
+      maxY: 50
+      stepsY: 6
+      rotateX: false
+      percentage: true
+      minorLines: false
+      dotted: [] # Index of dotted gridlines
+      reverse: false
+
+    series:
+      -
+        title: Year
+        values:
+          - China (2015-19)
+          - South Korea (1976-80)
+          - Taiwan (1971-75)
+
+      -
+        title: Business
+        color: "dark"
+        values:
+          - 15
+          - 15
+          - 9
+      -
+        title: Public
+        color: "blue-100"
+        values:
+          - 17
+          - 6
+          - 12
+      -
+        title: Housing
+        color: "highlight"
+        values:
+          - 13
+          - 7
+          - 5

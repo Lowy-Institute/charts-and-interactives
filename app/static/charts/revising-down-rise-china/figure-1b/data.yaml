@@ -1,0 +1,51 @@
+title: >
+  China's high investment rate
+
+source: >
+  <b>Source:</b> Author’s calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Real investment as a share of GDP
+
+axes:
+  minY:  0
+  maxY: 50
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - China (2015-19)
+      - South Korea (1976-80)
+      - Taiwan (1971-75)
+
+  -
+    title: Business
+    color: "dark"
+    values:
+      - 15
+      - 15
+      - 9
+  -
+    title: Public
+    color: "blue-100"
+    values:
+      - 17
+      - 6
+      - 12
+  -
+    title: Housing
+    color: "highlight"
+    values:
+      - 13
+      - 7
+      - 5

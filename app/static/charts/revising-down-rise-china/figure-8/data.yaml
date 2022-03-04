@@ -1,0 +1,79 @@
+title: >
+  China's sources of economic growth
+
+source: >
+  <b>Source:</b> Author’s calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Average annual % growth by source
+
+axes:
+  minY:  0
+  maxY: 8
+  stepsY: 5
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Pre-COVID trend
+      - 2020s
+      - 2030s
+      - 2040s
+
+  -
+    title: Business capital
+    color: "dark"
+    values:
+      - 2.8
+      - 1.8
+      - 1.3
+      - 0.9
+  -
+    title: Public capital
+    color: "blue-100"
+    values:
+      - 0.9
+      - 0.7
+      - 0.4
+      - 0.4
+  -
+    title: Housing
+    color: "highlight"
+    values:
+      - 0.6
+      - 0.4
+      - 0.2
+      - 0.1
+  -
+    title: Education
+    color: "yellow"
+    values:
+      - 0.6
+      - 0.3
+      - 0.4
+      - 0.4
+  -
+    title: Labour growth
+    color: "grey-300"
+    values:
+      - 0.1
+      - 0
+      - 0
+      - 0
+  -
+    title: Productivity growth
+    color: "green"
+    values:
+      - 1.4
+      - 1.2
+      - 0.9
+      - 0.9

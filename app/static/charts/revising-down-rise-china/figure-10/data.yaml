@@ -1,0 +1,43 @@
+title: >
+  Figure 10: Productivity growth in East Asia from a similar point of development to China today
+
+source: >
+  <b>Source:</b> authors’ calculations, using baseline growth accounting model (see appendix)
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  TFP growth over next thirty years, average % per annum
+
+axes:
+  minY:  0
+  maxY: 4
+  stepsY: 5
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Japan
+      - Taiwan
+      - Korea
+      - China (current)
+      - China (for 5% growth)
+      - China (for 7% growth)
+
+  -
+    title: Category 1
+    color: "highlight"
+    values:
+      - 2.8
+      - 2.3
+      - 1.7
+      - 1.3
+      - 2.3
+      -	3.8

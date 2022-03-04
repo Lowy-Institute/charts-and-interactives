@@ -1,0 +1,47 @@
+title: >
+  Figure 1: Pacific countries are among those most vulnerable to BRI-related debt problems
+
+source: >
+  Source: Government documents and IMF for Pacific countries; for all other
+  countries, Eugenio Cerutti and Haonan Zhou, “The Chinese Banking System: Much
+  More than a Domestic Giant”, VoxEU.org, 9 February 2018,
+  https://voxeu.org/article/chinese-banking-system
+
+charts:
+  -
+    title: >
+      Panel B: Three Pacific countries are among those most heavily indebted
+      to China
+
+    scale:
+      minY: 0
+      maxY: 4
+      
+    axes:
+      -
+        title: Countries
+        values:
+          - text: Laos
+          - text: Djibouti
+          - text: Congo
+          - text: Tonga
+          - text: Cambodia
+            highlight: true
+          - text: Samoa
+            highlight: true
+          - text: Vanuatu
+          - text: Seychelles
+          - text: Togo
+      -
+        title: "Debt owed to China (% of GDP)"
+        values:
+          - 45.12121201
+          - 34.23020172
+          - 28.38361931
+          - 26.72
+          - 24.23814964
+          - 19.90
+          - 17
+          - 15.67526054
+          - 14.05309486
+          - 13.32592487

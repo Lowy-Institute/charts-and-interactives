@@ -1,0 +1,250 @@
+title: >
+  Housing investment share of GDP
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Real GDP per capita, indexed (2019 = 100)
+
+axes:
+  minY:  0
+  maxY: 16
+  stepsY: 9
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [1,3,5,7,9] # Index of dotted gridlines
+  reverse: true
+  guideLine: "" # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2000
+      - 2001
+      - 2002
+      - 2003
+      - 2004
+      - 2005
+      - 2006
+      - 2007
+      - 2008
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019	
+      - 2020
+      - 2021
+      - 2022
+      - 2023
+      - 2024
+      - 2025
+      - 2026
+      - 2027
+      - 2028
+      - 2029
+      - 2030
+      - 2031
+      - 2032
+      - 2033
+      - 2034
+      - 2035
+      - 2036
+      - 2037
+      - 2038
+      - 2039
+      - 2040
+      - 2041
+      - 2042
+      - 2043
+      - 2044
+      - 2045
+      - 2046
+      - 2047
+      - 2048
+      - 2049
+      - 2050
+  -
+    title: Actual
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 7
+      - 7
+      - 7
+      - 9
+      - 8
+      - 10
+      - 10
+      - 11
+      - 9
+      - 12
+      - 11
+      - 14
+      - 14
+      - 14
+      - 13
+      - 13
+      - 14
+      - 13
+      - 13
+      - 13
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+  -
+    title: Baseline growth
+    color: "highlight"
+    widen: false
+    dashed: true
+    values:
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - 13
+      - 12
+      - 11
+      - 11
+      - 11
+      - 10
+      - 10
+      - 10
+      - 9
+      - 9
+      - 8
+      - 8
+      - 8
+      - 7
+      - 7
+      - 7
+      - 7
+      - 6
+      - 6
+      - 6
+      - 6
+      - 6
+      - 5
+      - 5
+      - 5
+      - 5
+      - 5
+      - 5
+      - 5
+      - 5
+      - 4
+      - 4 
+      
+  -
+    title: Best case growth
+    color: "dark"
+    widen: false
+    dashed: true
+    values:
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - 13
+      - 12
+      - 11
+      - 11
+      - 11
+      - 11
+      - 10
+      - 10
+      - 10
+      - 9
+      - 9
+      - 9
+      - 8
+      - 8
+      - 8
+      - 8
+      - 7
+      - 7
+      - 7
+      - 6
+      - 6
+      - 6
+      - 6
+      - 5
+      - 5
+      - 5
+      - 5
+      - 5
+      - 4
+      - 4
+      - 4
+      - 4 
