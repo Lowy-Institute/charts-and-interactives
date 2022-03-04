@@ -15,25 +15,35 @@ block page
         .chart-subtitle.txt-muted.txt-tu= chart.subtitle 
 
         .chart.flex-grow: .chart-content
+
           - scale = chart.scale
+          - minY = scale.minY
+          - maxY = scale.maxY
+          - range = maxY - minY
+          - baseline = (scale.datum + maxY) / range
+
+          //- I've split fy (y position of the rect) and fh (height of the rect) into two equations. Positive and negative values need to be treated differently, hence the ternary statement in fy()
+          - fh = (y) => Math.abs(y) / range
+          - fy = (y) => y < 0 ? baseline : (baseline - fh(y))
           - fx = (i) => (i + 0.6) / (chart.axes[1].values.length + 0.6)
-          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+
           svg(height="100%" width="100%")
             svg(height="100%")
-              for n, i in new Array(7)
-                - y = 1 - (i / 4)
+              //- This must have been an older template as the number of steps on the y-axis was hard-coded in multiple places. I've replaced those hard-coded values with a new variable "scale.steps", which I've defined in data.yaml
+              for n, i in new Array(scale.steps)
+                - y = 1 - (i / (scale.steps - 1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+                    = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY)
                      
             g
               for y, i in chart.axes[1].values
                 - label = chart.axes[0].values[i]
                 svg(
                   x=toPercent(fx(i))
-                  y=toPercent(1 - fy(y))
+                  y=toPercent(fy(y))
                   width=toPercent(fx(0))
-                  height=toPercent(fy(y))
+                  height=toPercent(fh(y))
                 )
                   rect(
                     fill=label.highlight ? "#ff4050" : "#539ed4"
@@ -54,6 +64,9 @@ block page
                       transform="translate(18 18)"
                     )
 
+                //- Add a new baseline
+                line(x1="0" x2="100%" y1=toPercent(baseline) y2=toPercent(baseline) stroke="#ccc")
+
     .chart-source.txt-muted.txt-center
       != page.source
 
@@ -64,7 +77,7 @@ block append css
         /* margin-bottom: 25px */
 
       .wrapper
-        height: 700px
+        height: 500px
         max-width: 700px
 
       .col-wrap
@@ -85,7 +98,6 @@ block append css
         bottom: 24px
 
       .chart-content > svg
-        border-bottom: 1px solid #ccc
         height: 20px
         min-height: 100%
 
@@ -109,7 +121,7 @@ block append css
         margin: 12px 8px 0
 
       .chart-value
-        opacity: 0
+        //- opacity: 0
         transition: opacity 300ms
 
       text
