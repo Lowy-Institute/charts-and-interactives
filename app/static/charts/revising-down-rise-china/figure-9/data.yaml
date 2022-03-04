@@ -1,0 +1,57 @@
+chart:
+  title: >
+    Figure 9: Sources of future growth deceleration to 2050
+
+  subtitle: >
+    Baseline projection to 2050 relative to recent trend growth, % per annum
+
+  source: >
+    <b>Source:</b> author’s calculations based on UN Population Division, Penn
+    World Tables 10.0 and IMF
+
+  axes:
+    minY: 0
+    maxY: 7
+    datum: 0
+    steps: 8
+
+  series:
+    - title: "Pre-Covid trend"
+      color: "blue-100"
+      offset: 0
+      value: 6.4
+
+    - title: "Business capital"
+      color: "red"
+      offset: 4.82
+      value: -1.5
+
+    - title: "Labour growth"
+      color: "red"
+      offset: 3.92
+      value: -0.9
+
+    - title: "Public capital"
+      color: "red"
+      offset: 3.49
+      value: -0.43
+
+    - title: "Housing"
+      color: "red"
+      offset: 3.1
+      value: -0.39
+
+    - title: "Productivity growth"
+      color: "red"
+      offset: 2.7
+      value: -0.4
+
+    - title: "Education"
+      color: "red"
+      offset: 2.5
+      value: -0.2
+
+    - title: "Future growth"
+      color: "blue-300"
+      offset: 0
+      value: 2.5

@@ -1,0 +1,143 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/revising-down-rise-china/figure-9/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+//- For Ian to do: add horizontal flow lines; resolve x-labels (hint: svg <text> element is bad at automatic line flows. Try implement this using flex and regular <div> elements below the main <svg> element. That will make life easier).
+
+block page
+  .wrapper.flex.flex-col
+    .page-title.txt-center= page.title 
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.chart
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted.txt-tu= chart.subtitle 
+
+        .chart.flex-grow: .chart-content
+          - scale = chart.axes
+          - minY = scale.minY
+          - maxY = scale.maxY
+          - range = maxY - minY
+
+          //- See if you can reverse engineer the fy() function I've done here and compare with the one in figure 2. 
+          - fh = (v) => Math.abs(v) / range
+          - fy = (v, offset) => 1 - fh(v) - fh(offset || 0)
+          - fx = (i) => (i + 0.6) / (chart.series.length + 0.6)
+
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(scale.steps)
+                - y = 1 - (i / (scale.steps - 1))
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = (scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY)) + "%"
+                     
+            g
+              for item, i in chart.series
+                - v = item.value
+                - o = item.offset
+                svg(
+                  x=toPercent(fx(i))
+                  width=toPercent(fx(0))
+                  height="100%"
+                )
+                  rect(
+                    fill=page.colors[item.color]
+                    y=toPercent(fy(v,o))
+                    height=toPercent(fh(v))
+                    width="100%"
+                  )
+
+                  text.chart-value(
+                    x="50%"
+                    y=toPercent(fy(v,o))
+                    text-anchor="middle"
+                    dy=-8
+                  )
+                    = v + "%"
+
+                  text.x-axis(
+                    x="50%"
+                    y="100%"
+                    text-anchor="middle"
+                    transform="translate(0 18)"
+                  )= item.title
+
+            //- Baseline
+            line(x1="0" x2="100%" y1=toPercent(fy(0)) y2=toPercent(fy(0)) stroke="#ccc")
+
+    .chart-source.txt-muted.txt-center
+      != page.source
+
+block append css
+  style
+    :sass
+      .page-title
+        /* margin-bottom: 25px */
+
+      .wrapper
+        height: 500px
+        max-width: 700px
+
+      .col-wrap
+        margin: 0
+
+      .col-md
+        padding: 0 1em
+        width: 50%
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 36px
+        right: 12px
+        bottom: 24px
+
+      .chart-content > svg
+        height: 20px
+        min-height: 100%
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+
+      .chart-title
+        // max-width: 320px
+        margin: 0 auto 
+        font-size: 20px
+
+      .chart-subtitle
+        height: 0
+        margin: 0 0 50px 0
+        font-size: 15px
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 8px 0
+
+      .chart-value
+        //- opacity: 0
+        transition: opacity 300ms
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+
+      @media screen and (max-width: 600px)
+        .col-wrap
+          display: block
+        .col-md
+          width: 100%
+          height: 100%
