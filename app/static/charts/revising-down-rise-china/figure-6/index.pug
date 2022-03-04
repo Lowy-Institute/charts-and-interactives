@@ -19,9 +19,14 @@ block page
         - axes = chart.axes
         - minY = axes.minY
         - maxY = axes.maxY
-        - range = maxY - minY
-        - fx = (i) => (i + 0.4) / (ln - 0.2)
-        - fy = (y) => (y - minY) / range
+        - rangeY = maxY - minY 
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - rangeX = maxX - minX
+
+        //- Simplified mapping functions
+        - fx = (i) => (i - minX) / rangeX
+        - fy = (y) => (y - minY) / rangeY
         
         svg(height="100%" width="100%")
         
@@ -32,7 +37,7 @@ block page
               - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+                  = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
             svg(y="50%")
               text.y-label Produxtivity growh per year (%)
                 
@@ -52,13 +57,13 @@ block page
                   )
 
           // X-Axis labels
-          for x, i in chart.series[0].values
-            if [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0].includes(x)
-              svg.x-label(x=toPercent(fx(i)) y="100%")
-                text(
-                  text-anchor=axes.rotateX ? "end" : "middle"
-                  transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
-                )=x
+          //- No need to manually add each axis tick. Use similar logic as for y-axis using max, min, steps.
+          for x, i in new Array(chart.axes.stepsX + 1)
+            svg.x-label(x=toPercent(fx(i / chart.axes.stepsX)) y="100%")
+              text(
+                text-anchor=axes.rotateX ? "end" : "middle"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+              )= (minX + rangeX * (i / chart.axes.stepsX)).toFixed(1)
               
           // OPTIONAL GUIDE LINE
           if !isEmpty(axes.guideLine)
@@ -87,43 +92,17 @@ block page
                   stroke-width=(item.widen ? 6 : 3)
                   stroke-linejoin=(item.dashed ? "": "round")
                   stroke-linecap=(item.dashed ? "": "round")
-                  points=(item.values.map( (y, ix) => {
-                    return isEmpty(y) ? "" : [
-                      (100 * fx(ix)).toFixed(3),
-                      (100 * fy(maxY + minY - y)).toFixed(3)
-                    ].join(" ");
-                  })).filter( e => e ).join(",")
+                  points=item.values.map((v) => `${100 * fx(v.x)},${100 * (1 - fy(v.y))}`).join(" ")
                 )
+                //- Replaced the javascript logic to generate "points" string, as described in email.
           
-          for item, i in chart.series
-            g
-              for val, ix in item.values
-                if true
-                  circle(
-                    r=3
-                    cx=toPercent(fx(ix))
-                    cy=toPercent(fy(maxY + minY - val))
-                    fill=chart.colors[chart.series[i].color]
-                    stroke='#fff'
-                    stroke-width=1
-                  )
-                svg.chart-value(
-                  x=toPercent(fx(ix))
-                  y=toPercent(fy(maxY + minY - val))
-                  style=`color: ${chart.colors[chart.series[i].color]}`
-                )
-                  text(
-                    y=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? -12 : 24)
-                    text-anchor="middle"
-                    fill=chart.colors[chart.series[i].color]
-                  )
-                    = val && !( i==3 && ([5,6,13,14,15].includes(ix)) ) && !(i==1 && ix==4) ? val.toFixed(1) : ""
+          //- Too much data to show values in chart. Removed.
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
           - l = chart.series.length
           for ax, i in new Array(l)
-            if (l-i)==1 || (l-i)==2 || (l-i)==3
+            if i
               li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[l-i].color]}`)
                 span.legend-item-label= chart.series[l-i].title
