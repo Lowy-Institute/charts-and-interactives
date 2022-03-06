@@ -6,14 +6,14 @@ chart:
     Baseline projection to 2050 relative to recent trend growth, % per annum
 
   source: >
-    <b>Source:</b> author’s calculations based on UN Population Division, Penn
-    World Tables 10.0 and IMF
+    <b>Source:</b> authors’ calculations, using baseline growth accounting model (see appendix)
 
   axes:
     minY: 0
     maxY: 7
     datum: 0
     steps: 8
+    guideLine: "2"
 
   series:
     - title: "Pre-Covid trend"
