@@ -23,6 +23,7 @@ block page
         - minX = axes.minX
         - maxX = axes.maxX
         - rangeX = maxX - minX
+        - stepsX = axes.stepsX
 
         //- Simplified mapping functions
         - fx = (i) => (i - minX) / rangeX
@@ -57,13 +58,16 @@ block page
                   )
 
           // X-Axis labels
-          //- No need to manually add each axis tick. Use similar logic as for y-axis using max, min, steps.
-          for x, i in new Array(chart.axes.stepsX + 1)
-            svg.x-label(x=toPercent(fx(i / chart.axes.stepsX)) y="100%")
+          for x, i in new Array(stepsX + 1)
+            svg.x-label(x=toPercent(fx(i * rangeX / stepsX)) y="100%")
+              //- The issue here was what value was sent to fx()
+              //- now uses a regexp to format number with commas
+              - value = (minX + rangeX * (i / stepsX)).toFixed(0)
+              - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
               text(
                 text-anchor=axes.rotateX ? "end" : "middle"
                 transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
-              )= (minX + rangeX * (i / chart.axes.stepsX)).toFixed(1)
+              )= formatted
               
           // OPTIONAL GUIDE LINE
           if !isEmpty(axes.guideLine)
@@ -76,6 +80,35 @@ block page
               stroke-linejoin="round"
               stroke-linecap="round"
             )
+
+          //- Too much data to show values in chart. Removed.
+          svg(height="100%" width="100%")
+            // BUBBLES
+            //- draw bubbles first (paint below the series lines)
+            //- Note this is now wrapped in it's own svg element.
+            //- The svg which wraps the polylines must set a preserveAspectRatio attribute,
+            //- as path strings only take absolute coordinates, not percentages.
+            //- When plotting circles though, you can work directly with percentages for cx/cy.
+            //- Your circles were being drawn as ellipses because the chart line svg is doesn't preserve the aspect ratio and gets warped.
+            //- https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio
+            for series, s in chart.series
+              g
+                for v, i in chart.series[5].values
+                  - x = toPercent(fx(v[0]))
+                  - y = toPercent(1 - fy(v[1]))
+                  - r = v[2]*chart.axes.rScaleFactor
+                  - color = chart.colors[chart.series[5].color]
+                  circle(
+                    r=r
+                    cx=x
+                    cy=y
+                    fill=color+"22"
+                    stroke=color+"44"
+                    stroke-width=1
+                    data-x=v[0]
+                    data-y=v[1]
+                    data-r=v[2]
+                  )
 
           // CHART LINES
           svg(
@@ -97,29 +130,6 @@ block page
                   points=item.values.map((v) => `${100 * fx(v.x)},${100 * (1 - fy(v.y))}`).join(" ")
                 )
                 //- Replaced the javascript logic to generate "points" string, as described in email.
-          
-            //- Too much data to show values in chart. Removed.
-
-            // BUBBLES
-            //- pulling in data ok, but shapes are elliptical, not circular...
-            for series, s in chart.series
-              g
-                for v, i in chart.series[5].values
-                  - x = toPercent(fx(v[0]))
-                  - y = toPercent(fy(v[1]))
-                  - r = v[2]*chart.axes.rScaleFactor
-                  - color = chart.colors[chart.series[5].color]
-                  circle(
-                    r=r
-                    cx=x
-                    cy=y
-                    fill=color+"dd"
-                    stroke=color
-                    stroke-width=1
-                    data-x=v[0]
-                    data-y=v[1]
-                    data-r=v[2]
-                  )
 
           //- test plot circle
           //-g
