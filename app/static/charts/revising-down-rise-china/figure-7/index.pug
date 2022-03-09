@@ -149,7 +149,7 @@ block page
                 span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      //-.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -279,6 +279,7 @@ block append css
       .chart-notes, .chart-source
         margin-left: 2em
         font-size: 15px
+        margin-top: 1em
         
       .chart-value
         opacity: 0
@@ -286,7 +287,7 @@ block append css
         pointer-events: none
       
       .chart-content:hover .chart-value
-        opacity: 1
+        opacity: 0
 
       .x-label 
           display: none  

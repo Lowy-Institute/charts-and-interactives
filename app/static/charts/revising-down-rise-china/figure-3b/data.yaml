@@ -78,9 +78,10 @@ series:
       - 2050
   -
     title: Actual
-    color: "highlight"
+    color: "blue-200"
     widen: false
     dashed: false
+    dotted: false
     values:
       - 1159.640523
       - 1233.900548
@@ -135,9 +136,10 @@ series:
       - null
   -
     title: Baseline growth
-    color: "highlight"
+    color: "blue-200"
     widen: false
     dashed: true
+    dotted: false
     values:
       - null
       - null
@@ -193,9 +195,10 @@ series:
       
   -
     title: Best case growth
-    color: "dark"
+    color: "blue-200"
     widen: false
-    dashed: true
+    dashed: false
+    dotted: true
     values:
       - null
       - null

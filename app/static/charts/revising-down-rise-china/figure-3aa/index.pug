@@ -1,19 +1,19 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/revising-down-rise-china/figure-10/data"
+  - var datapath = "static/charts/revising-down-rise-china/figure-3aa/data"
+  - var colorpath = "static/charts/templates/colors/data" 
   - _.extend(page, data.getOne(datapath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
   .wrapper.flex.flex-col
-    .page-title.txt-center= page.title
+    .page-title.txt-center= page.title 
     .col-wrap.txt-center.flex-grow.flex.txt-sm
-
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
         .chart-title= chart.title
-        .chart-subtitle.txt-muted= chart.subtitle
+        .chart-subtitle.txt-muted.txt-tu= chart.subtitle 
 
         .chart.flex-grow: .chart-content
           - scale = chart.scale
@@ -21,12 +21,11 @@ block page
           - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
           svg(height="100%" width="100%")
             svg(height="100%")
-              for n, i in new Array(5)
-                - y = 1 - (i / 4)
+              for n, i in new Array(7)
+                - y = 1 - (i / 6)
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
-
+                    = scale.minY + (i/6) * (scale.maxY - scale.minY)
             g
               for y, i in chart.axes[1].values
                 - label = chart.axes[0].values[i]
@@ -37,9 +36,9 @@ block page
                   height=toPercent(fy(y))
                 )
                   rect(
-                    fill=label.highlight ? "#002a45" : "#539ed4"
                     width="100%"
                     height="100%"
+                    fill=chart.axes[1].color
                   )
 
                   text.chart-value(
@@ -47,37 +46,37 @@ block page
                     y=-8
                     text-anchor="middle"
                   )
-                    = y.toFixed(1)
-
-                  svg(x="50%" y="100%")
-                    text(
-                      text-anchor="end"
-                      transform="rotate(-45) translate(-6 12)"
-                      class=label.highlight ? "txt-bold" : ""
+                    = y + "%"
+            
+                  text.x-label(
+                    text-anchor="middle" 
+                    transform="translate(0 20)"
+                    y=100 + "%"
                     )
-                      =label.text
-            svg(y="50%")
-              text(
-                text-anchor="middle"
-                y=-36
-                transform="rotate(-90)"
-              )
-                = chart.axes[1].title
+                     =chart.axes[0].values[i]
 
-    //- .chart-source.txt-muted
+            svg(viewBox="0 0 158.4 105.22" preserveAspectRatio="none")
+              polyline(fill="none" stroke="#ed7d31" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.5 15 3.5 12.5 7 10 10 8 13.5 6 17 4.5 20 3 23.5 2 26.5 1.5 30 1 33 0.5 36.5 0.5 40 0.5 43 1 46.5 2 49.5 3 53 4.5 56.5 6 59.5 8.5 63 11.5")
+              polyline(fill="none" stroke="#ed7d31" stroke-width="1"  stroke-dasharray="5,3" stroke-linecap="round" stroke-linejoin="round" points="63.15 11.83 68.72 18.01 73.04 23.19 78.65 30.2 82.95 35.4 88.22 42.67 92.37 47.99 98.3 54.76 102.41 60.12 108.59 66.65 113.29 71.49 124.67 82.37 131.43 88.3 136.86 92.31 144.37 97.26 150.16 100.68 158.17 104.77")
+
+            text(x="15%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: grey-400") Actual
+            text(x="85%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: grey-400") UN projection                  
+
+    .chart-source.txt-muted.txt-center
       != page.source
 
 block append css
   style
     :sass
       .page-title
-        margin-bottom: 12px
+        /* margin-bottom: 25px */
 
       .wrapper
-        height: 520px
+        height: 550px
+        max-width: 700px
 
       .col-wrap
-        margin: 0 -1em
+        margin: 0
 
       .col-md
         padding: 0 1em
@@ -91,7 +90,7 @@ block append css
         top: 20px
         left: 36px
         right: 12px
-        bottom: 72px
+        bottom: 24px
 
       .chart-content > svg
         border-bottom: 1px solid #ccc
@@ -104,10 +103,13 @@ block append css
 
       .chart-title
         max-width: 320px
-        margin: auto
+        margin: 0 auto 
+        font-size: 20px
 
       .chart-subtitle
         height: 0
+        margin: 0 0 50px 0
+        font-size: 15px
 
       .chart-source
         font-size: 14px
@@ -117,9 +119,6 @@ block append css
       .chart-value
         opacity: 0
         transition: opacity 300ms
-
-        .chart:hover &
-          opacity: 1
 
       text
         font-size: 14px
@@ -133,4 +132,4 @@ block append css
           display: block
         .col-md
           width: 100%
-          height: 232px
+          height: 100%

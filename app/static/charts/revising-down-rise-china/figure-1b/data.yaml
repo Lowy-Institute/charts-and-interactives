@@ -37,14 +37,14 @@ series:
       - 9
   -
     title: Public
-    color: "blue-100"
+    color: "highlight"
     values:
       - 17
       - 6
       - 12
   -
     title: Housing
-    color: "highlight"
+    color: "blue-300"
     values:
       - 13
       - 7

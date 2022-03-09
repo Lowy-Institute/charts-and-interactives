@@ -107,6 +107,9 @@ block page
               li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
+          li.legend-item
+            span.legend-item-box
+            span.legend-item-label Overall
 
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
@@ -226,6 +229,13 @@ block append css
         height: 1em
         width: 1em
         background: black
+
+      .legend-item:last-child .legend-item-box
+        background: 0 50% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21.56 5.72'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%23002b45%3B%7D%3C/style%3E%3C/defs%3E%3Ccircle class='a' cx='10.78' cy='2.86' r='2.86'/%3E%3Crect class='a' y='1.75' width='21.56' height='2.21' rx='1.01'/%3E%3C/svg%3E");
+        width: 2em
+
+      .legend-item:last-child .legend-item-label
+        margin-left: 1em
 
       text
         font-size: 14px

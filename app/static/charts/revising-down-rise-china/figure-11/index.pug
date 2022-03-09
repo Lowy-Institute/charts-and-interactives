@@ -1,8 +1,10 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/revising-down-rise-china/figure-3a/data"
+  - var datapath = "static/charts/revising-down-rise-china/figure-11/data"
+  - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
 block page
@@ -12,96 +14,29 @@ block page
 
     .col-wrap.txt-center.flex-grow.flex.txt-sm
       .col-md.flex-grow.flex.flex-col
-        - chart = page.charts[0]
-        - scale = chart.scale
-        - fx = (i, len) => (i) / (len - 1)
-        - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
-
-        .chart-title= chart.title
-        .chart-subtitle.txt-muted.txt-sm= chart.subtitle
 
         .chart.flex-grow: .chart-content
-          svg(height="100%" width="100%")
-            svg(height="100%" width="100%")
-              for j in [0,1]
-                for n, i in new Array(scale.ticks[j])
-                  - y = 1 - (i / (scale.ticks[j]-1))
-                  if j == 0
-                    svg(y=toPercent(y))
-                      text(text-anchor="end" transform="translate(-8 4)")
-                        = (scale.minY[j] + (i/(scale.ticks[j]-1)) * (scale.maxY[j] - scale.minY[j])).toFixed(0)
-                  else
-                    svg(y=toPercent(y) x="100%")
-                      text(transform="translate(8 4)")
-                        = (scale.minY[j] + (i/(scale.ticks[j]-1)) * (scale.maxY[j] - scale.minY[j])).toFixed(1)
+          iframe(frameborder="0" height="600px" src=" https://charts.lowyinstitute.org/charts/translating-tension/figure-2/" width="100%")
+         
 
-            svg(width="100%" y="100%")
-              for year, i in chart.axes[0].values
-                svg(x=toPercent(fx(i, chart.axes[0].values.length)))
-                  text(
-                    text-anchor="middle"
-                    transform="translate(0 20)"
-                  )
-                    = year
+      .col-md.flex-grow.flex.flex-col
 
-            svg(
-              width="100%"
-              height="100%"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            )
-              for item, i in chart.legend
-                if i==0 || i==1
-                  - var ii = 2 - i
-                  path(
-                    fill=chart.colors[i]
-                    d="M" + (chart.axes[1].values.map((y, ix, a) => (
-                      [
-                        100 * fx(ix, a.length),
-                        100 * fy(scale.maxY[item.scale] - _.sum(y.slice(0,ii)), item.scale)
-                      ].join(" ")
-                    )
-                    ).concat(["100 100", "0 100"])
-                    ).join("L") + "Z"
-                  )            
-              for item, i in chart.legend
-                if i==2 || i==3
+        .chart.flex-grow: .chart-content
+          <iframe frameborder="0" height="600px" src=" https://charts.lowyinstitute.org/charts/translating-tension/figure-2/" width="100%"></iframe></p>
+    
 
-                  polyline(
-                    fill="none"
-                    stroke=chart.colors[i]
-                    stroke-width=4
-                    stroke-dasharray=(i==3 ? 6 : 0)
-                    points=(chart.axes[1].values.map((y, ix, a) => (
-                      [
-                        100 * fx(ix, a.length),
-                        100 * fy(scale.maxY[item.scale] - y[i], item.scale)
-                      ].join(" ")
-                    ))).join(",")
-                  )
-              
-
-        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
-          for item, i in chart.legend
-            li.legend-item
-              span.legend-item-box(style=`
-                background: ${i==0 || i==2 || i==3 ? 'none' : chart.colors[i]};
-                border-top: ${i==2 ? '2.5px solid #ff4050' : i==3 ? '2.5px dashed #ff4050' : ''};
-                top: ${i==2 || i==3 ? '7px' : ''};`
-              )
-              span.legend-item-label!= item.name
-              
     .flex.br-top
       .chart-notes.txt-muted
         !=page.notes
       .chart-source.txt-muted
         !=page.source
 
+
 block append css
   style
     :sass
       .wrapper
-        height: 800px
+        height: 550px
         overflow: visible
         position: relative
 
@@ -118,8 +53,8 @@ block append css
 
       .chart-content
         position: absolute
-        top: 20px
-        bottom: 45px
+        top: 50px
+        bottom: 15px
         .col-md:first-child &
           left: 60px
           right: 15px
@@ -127,12 +62,15 @@ block append css
           left: 10px
           right: 60px
           
-      .chart-content > svg
+      //.chart-content > svg
         border-bottom: 1px solid #ccc
 
       .page-title
         margin-bottom: 0px
         font-size: 18px
+        
+      .x-labels text
+        font-size: 12px
 
       .chart-title,
       .chart-subtitle
@@ -161,11 +99,6 @@ block append css
         max-width: 100%
         font-size: 13px
         margin: auto
-        min-height: 3em
-        .col-md:first-child &
-          padding-left: 30px
-        .col-md:last-child &
-          padding-right: 30px
           
       .legend-item
         margin: 4px 8px 0

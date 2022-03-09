@@ -81,6 +81,7 @@ series:
     color: "highlight"
     widen: false
     dashed: false
+    dotted: false
     values:
       - 1083
       - 1154
@@ -138,6 +139,7 @@ series:
     color: "highlight"
     widen: false
     dashed: true
+    dotted: false
     values:
       - null
       - null
@@ -193,9 +195,10 @@ series:
       
   -
     title: Best case growth
-    color: "dark"
+    color: "highlight"
     widen: false
-    dashed: true
+    dashed: false
+    dotted: true
     values:
       - null
       - null

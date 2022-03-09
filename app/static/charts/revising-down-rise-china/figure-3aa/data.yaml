@@ -1,0 +1,125 @@
+title: >
+
+#source: >
+  #<b>Source:</b> author’s calculations based on UN Population Division, Penn World Tables 10.0 and IMF
+
+#subtitle: >
+  #Millions, actual and projected
+
+charts:
+  -
+    title: China’s working age population
+    #subtitle: Millions, actual and projected
+    scale:
+      minY:  000
+      maxY: 1200
+    axes:
+      -
+        title: Category
+        values:
+          - 2000
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - 2010
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - 2020
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - 2030
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - 2040
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - null
+          - 2050
+      -
+        title: "Opinion"
+        color: "#539ed4"
+        values:
+          - 463.0108987
+          - 481.8861971
+          - 502.3501044
+          - 523.1751289
+          - 544.3699439
+          - 565.8727323
+          - 587.1331039
+          - 608.3757788
+          - 629.9377003
+          - 651.7279135
+          - 673.8107079
+          - 695.2827194
+          - 716.5344471
+          - 737.8791124
+          - 759.3297274
+          - 780.8005667
+          - 802.2750409
+          - 823.6242318
+          - 844.4822201
+          - 864.686269
+          - 884.1478079
+          - 900.6707898
+          - 916.7074442
+          - 932.2273523
+          - 947.2577826
+          - 961.7827178
+          - 973.4502424
+          - 984.5493657
+          - 995.0968142
+          - 1005.109227
+          - 1014.603156	
+          - 1021.684324
+          - 1028.237973
+          - 1034.254745
+          - 1039.782159
+          - 1044.810608
+          - 1048.025075
+          - 1050.769136
+          - 1053.048858
+          - 1054.884136
+          - 1056.280744
+          - 1055.872745
+          - 1055.037579
+          - 1053.809701
+          - 1052.519849
+          - 1051.142178
+          - 1048.091721
+          - 1044.989755
+          - 1041.798107
+          - 1038.557933
+          - 1035.257469

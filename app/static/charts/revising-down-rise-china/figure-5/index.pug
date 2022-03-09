@@ -36,9 +36,11 @@ block page
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
+              - value = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
+              - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
               svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
+                text(text-anchor="end" transform="translate(-8 4)")= formatted
+
             svg(y="50%")
               text.y-label Produxtivity growh per year (%)
                 
@@ -91,8 +93,8 @@ block page
             //- When plotting circles though, you can work directly with percentages for cx/cy.
             //- Your circles were being drawn as ellipses because the chart line svg is doesn't preserve the aspect ratio and gets warped.
             //- https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio
-            for series, s in chart.series
-              g
+            g
+              for series, s in chart.series
                 for v, i in chart.series[5].values
                   - x = toPercent(fx(v[0]))
                   - y = toPercent(1 - fy(v[1]))
@@ -123,17 +125,13 @@ block page
                 polyline(
                   fill="none"
                   stroke=chart.colors[chart.series[i].color]
-                  stroke-dasharray=(item.dashed ? 10 : "" | item.dotted ? 5 : "")
-                  stroke-width=(item.widen ? 6 : 3)
-                  stroke-linejoin=(item.dashed ? "": "round" | item.dotted ? "": "round")
-                  stroke-linecap=(item.dashed ? "": "round" | item.dotted ? "": "round")
+                  stroke-dasharray=(item.dashed ? 12 : "" | item.dotted ? 1+",6" : "")
+                  stroke-width=(item.widen ? 5 : 3)
+                  stroke-linejoin=(item.dashed ? "" : "round" | item.dotted ? "round" : "")
+                  stroke-linecap=(item.dashed ? "round" : "" | item.dotted ? "round" : "")
                   points=item.values.map((v) => `${100 * fx(v.x)},${100 * (1 - fy(v.y))}`).join(" ")
                 )
                 //- Replaced the javascript logic to generate "points" string, as described in email.
-
-          //- test plot circle
-          //-g
-            circle(r="20" cx="90%" cy="12%" fill="#ccc" stroke="#bbb" stroke-width="1")
 
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -141,7 +139,8 @@ block page
           for ax, i in new Array(l)
             if i
               li.legend-item
-                span.legend-item-box(style=`background: ${chart.colors[chart.series[l-i].color]}`)
+                //span.legend-item-box(style=`background: ${chart.colors[chart.series[l-i].color]}`)
+                span.legend-item-box
                 span.legend-item-label= chart.series[l-i].title
 
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
@@ -159,6 +158,7 @@ block append css
       .chart
         box-sizing: border-box
         position: relative
+        margin-left: 20px
 
       .chart-content
         position: absolute
@@ -169,6 +169,7 @@ block append css
 
       .chart-content > svg
         border-bottom: 1px solid #bbb
+        border-left: 1px solid #bbb
 
       .chart-title
         margin: auto
@@ -196,7 +197,7 @@ block append css
         box-sizing: border-box
         
       .y-label
-        transform: rotate(-90deg) translate(-1.5rem, -3rem)
+        transform: rotate(-90deg) translate(-4.5rem, -4.8rem)
 
       li
         list-style: none
@@ -217,10 +218,32 @@ block append css
       .legend-item-box
         position: absolute
         left: 0
-        top: .5em
-        height: 1em
-        width: 1em
+        top: .75em
+        height: .5em
+        width: 2em
         background: black
+
+      .legend-item:nth-child(1) .legend-item-box
+        background: #B7C1CEdd !important
+        border: 1px solid #B7C1CE
+        width: 0.5em
+        border-radius: 50%
+        height: 0.5em
+        top: .65em
+      .legend-item:nth-child(2) .legend-item-box
+        background: #539ed4 !important
+      .legend-item:nth-child(3) .legend-item-box
+        background: 0 50% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27.02 3'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%23ec1e24%3B%7D%3C/style%3E%3C/defs%3E%3Cpath class='a' d='M25.51 0h0a1.5 1.5 0 0 1 0 3h0a1.5 1.5 0 0 1 0-3Zm-6 0h0a1.5 1.5 0 0 1 0 3h0a1.5 1.5 0 0 1 0-3Zm-6 0h0a1.5 1.5 0 0 1 0 3h0a1.5 1.5 0 0 1 0-3Zm-6 0h0a1.5 1.5 0 0 1 0 3h0a1.5 1.5 0 0 1 0-3Zm-6 0h0a1.5 1.5 0 0 1 0 3h0a1.5 1.5 0 0 1 0-3Z'/%3E%3C/svg%3E")
+      .legend-item:nth-child(4) .legend-item-box
+        background: 0 50% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 33.01 3.02'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:none%3B%7D.b%7Bclip-path:url(%23a)%3B%7D.c%7Bfill:%23ec1e24%3B%7D%3C/style%3E%3CclipPath id='a' transform='translate(-166 -312.38)'%3E%3Crect class='a' y='0.38' width='557' height='327'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg class='b'%3E%3Cpath class='c' d='M188.5 312.38h4a1.5 1.5 0 0 1 0 3h-4a1.5 1.5 0 0 1 0-3Zm-21 0h9a1.5 1.5 0 0 1 0 3h-9a1.5 1.5 0 0 1 0-3Zm21 0h9a1.5 1.5 0 0 1 0 3h-9a1.5 1.5 0 0 1 0-3Z' transform='translate(-166 -312.38)'/%3E%3C/g%3E%3C/svg%3E")
+      .legend-item:nth-child(5) .legend-item-box
+        background: #ff4050 !important
+
+      .legend-item-label
+        margin-left: 1em
+
+      .legend-item:nth-child(1) .legend-item-label
+        margin-left: -0.5em
 
       polyline
         vector-effect: non-scaling-stroke
@@ -235,14 +258,17 @@ block append css
       .chart-notes, .chart-source
         margin-left: 2em
         font-size: 15px
-        
+      
+      .chart-source
+        margin-top: 12px
+
       .chart-value
         opacity: 0
         transition-duration: .4s
         pointer-events: none
         
       circle
-        opacity: .5
+        opacity: .4
         transition-duration: .4s
         
       .gridlines

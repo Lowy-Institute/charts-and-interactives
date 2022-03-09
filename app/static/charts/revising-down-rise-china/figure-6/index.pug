@@ -97,7 +97,12 @@ block page
                 //- Replaced the javascript logic to generate "points" string, as described in email.
           
           //- Too much data to show values in chart. Removed.
-      
+      .row(style='line-height:1.1;padding-bottom:0.5em')
+        text 
+          | Relative level of development <br/>
+          | (output per worker as a share of the US level at the time)
+
+
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
           - l = chart.series.length
@@ -159,7 +164,7 @@ block append css
         box-sizing: border-box
         
       .y-label
-        transform: rotate(-90deg) translate(-1.5rem, -3rem)
+        transform: rotate(-90deg) translate(-4.5rem, -3rem)
 
       li
         list-style: none
