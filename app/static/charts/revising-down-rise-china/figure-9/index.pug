@@ -7,8 +7,6 @@ block append config
   - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
-//- For Ian to do: add horizontal flow lines; resolve x-labels (hint: svg <text> element is bad at automatic line flows. Try implement this using flex and regular <div> elements below the main <svg> element. That will make life easier).
-
 block page
   .wrapper.flex.flex-col
     .page-title.txt-center= page.title 

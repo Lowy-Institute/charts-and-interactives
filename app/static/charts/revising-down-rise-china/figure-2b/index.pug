@@ -34,7 +34,7 @@ block page
                 - y = 1 - (i / (scale.steps - 1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY) + ".0%"
+                    = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY) + "%"
                      
             g
               for y, i in chart.axes[1].values

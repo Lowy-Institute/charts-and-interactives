@@ -48,11 +48,21 @@ block page
                   )
                     = y + "%"
 
-                  svg(x="50%" y="100%")
+                  //-svg(x="50%" y="100%")
                     text(
                       text-anchor="end"
                       transform="translate(18 18)"
                     )
+
+              svg(width="100%" y="100%")
+                for year, i in chart.axes[2].values
+                  svg(x=toPercent(fx(i, chart.axes[2].values.length)))
+                    text(
+                      text-anchor="middle"
+                      transform="translate(0 20)"
+                    )
+                      = year
+
               text(x="15%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: grey-400") Actual
               text(x="85%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: grey-400") UN projection                  
 

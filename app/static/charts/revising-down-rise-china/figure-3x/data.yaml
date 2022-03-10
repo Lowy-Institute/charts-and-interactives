@@ -1,0 +1,26 @@
+title: >
+
+#source: >
+  #<b>Source:</b> author’s calculations based on UN Population Division, Penn World Tables 10.0 and IMF
+
+#subtitle: >
+  #Millions, actual and projected
+
+charts:
+  -
+    title: Urban population growth
+    #subtitle: Millions, actual and projected
+    scale:
+      ticks: [8,7]
+      minY: [0,0]
+      maxY: [1200,25]
+      datum: 0
+    legend:
+      - name: null
+        scale: 0
+      - name: Urban population (LHS)
+        scale: 0
+      - name: Annual change (RHS)
+        scale: 1
+      - name: UN projection
+        scale: 1
