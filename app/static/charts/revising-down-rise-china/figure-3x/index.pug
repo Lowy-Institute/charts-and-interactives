@@ -128,8 +128,8 @@ block page
               rect(x="6.57" y="50.33" width="2" height="45" fill="#539ed4")
               rect(x="3.28" y="51.83" width="2" height="43.5" fill="#539ed4")
               rect(y="53.83" width="2" height="41.5" fill="#539ed4")
-              path(fill="none" stroke="#ff4050" stroke-linecap="round" stroke-linejoin="round" d="M1.25,15.08C9.53,8,19.66,1.85,30.75,1.08c5.08-.88,11.14-.91,16,1,6,1.47,12.4,4.74,16.5,9.5")
-              path(fill="none" stroke="#ff4050" stroke-dasharray="6,3" stroke-dashoffset="2" stroke-linecap="round" stroke-linejoin="round" d="M161.23,107.18c-42.7-18.28-66-61.43-96.66-94.2")
+              path(fill="none" stroke="#ff4050" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1.25,15.08C9.53,8,19.66,1.85,30.75,1.08c5.08-.88,11.14-.91,16,1,6,1.47,12.4,4.74,16.5,9.5")
+              path(fill="none" stroke="#ff4050" stroke-width="1.5" stroke-dasharray="6,3" stroke-dashoffset="2" stroke-linecap="round" stroke-linejoin="round" d="M161.23,107.18c-42.7-18.28-66-61.43-96.66-94.2")
               line(x1="0" x2="100%" y1="95.33" y2="95.33" stroke="#ccc" stroke-width=".5")
 
         ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
@@ -137,10 +137,10 @@ block page
             span.legend-item-box
             span.legend-item-label Urban population (LHS)
           li.legend-item
-            span.legend-item-box(style="background: none; border-top: 3px solid #ff4050;")
+            span.legend-item-box
             span.legend-item-label Annual change (RHS)
           li.legend-item
-            span.legend-item-box(style="background: none; border-top: 3px dashed #ff4050;")
+            span.legend-item-box
             span.legend-item-label UN projection
 
     .chart-source.txt-muted.txt-center
@@ -234,6 +234,14 @@ block append css
         width: .75em
         background: #539ed4
         top: .6em
+
+      .legend-item:nth-child(2) .legend-item-box
+        background: none
+        border-top: 4px solid #ff4050
+
+      .legend-item:nth-child(3) .legend-item-box
+        background: none
+        border-top: 4px dashed #ff4050
 
       .legend-item:nth-child(1) .legend-item-label
          margin-left: -.5em
