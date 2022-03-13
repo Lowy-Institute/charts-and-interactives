@@ -2,10 +2,10 @@ title: >
   Figure 5: China's public capital trajectory in global perspective
 
 source: >
-  <b>Source:</b>  Author’s calculations based on IMF Investment and Capital Stock 2021 Database and Penn World Tables 10.0
+  <b>Source:</b>  authors' calculations based on IMF Investment and Capital Stock 2021 Database and Penn World Tables 10.0
 
 notes: >
-  <b>Notes:</b> * Excludes outlier observations including small states, resource rich economies, and post-WWII recovery years in Europe
+  <b>Notes:</b> * excludes outlier observations including small states, resource rich economies, and post-WWII recovery years in Europe
 
 subtitle: >
   Public capital per worker at a given level of development over time
@@ -4019,3 +4019,4 @@ series:
       - [ 2937.300891, 1520.962378, 4 ]
       - [ 2763.024749, 1521.408197, 4 ]
       - [ 4364.055078, 1486.784457, 4 ]
+      

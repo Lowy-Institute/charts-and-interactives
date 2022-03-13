@@ -33,7 +33,7 @@ block page
                 - y = 1 - (i / (scale.steps - 1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = (scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY)) + "%"
+                    = (scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY)) + ".0%"
                      
             g
               for item, i in chart.series
@@ -154,6 +154,9 @@ block append css
 
       svg
         overflow: visible
+
+      .column-title li:first-child,.column-title li:last-child
+        font-weight: bold
 
 
       @media screen and (max-width: 600px)

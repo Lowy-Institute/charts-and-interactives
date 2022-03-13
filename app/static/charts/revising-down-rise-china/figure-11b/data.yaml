@@ -2,13 +2,13 @@ title: >
   China relative to the US
 
 source: >
-  <b>Source:</b> authors’ calculations, IMF World Economic Outlook October 2021, OECD Long Term Growth Forecasts (2018)
+  <b>Source:</b> authors’ projections, IMF World Economic Outlook October 2021, OECD Long Term Growth Forecasts (2018)
 
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
-#subtitle: >
-  #Baseline projection, 2020 = 100
+subtitle: >
+  Baseline projection, China as a % of US level
 
 axes:
   minY:  0

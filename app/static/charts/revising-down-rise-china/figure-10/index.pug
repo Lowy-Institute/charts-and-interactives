@@ -31,7 +31,7 @@ block page
               - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+                  = minY + range*(i/steps) + (axes.percentage ? ".0%" : "")
                 
           // Y-Axis minor lines
           if chart.axes.minorLines

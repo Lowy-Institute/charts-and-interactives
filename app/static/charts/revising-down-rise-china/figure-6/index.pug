@@ -39,7 +39,7 @@ block page
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
             svg(y="50%")
-              text.y-label Produxtivity growh per year (%)
+              text.y-label Productivity growh per year (%)
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -112,7 +112,7 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[l-i].color]}`)
                 span.legend-item-label= chart.series[l-i].title
 
-      //- .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       //- .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       //- .tooltip

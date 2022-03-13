@@ -6,7 +6,7 @@ chart:
     Baseline projection to 2050 relative to recent trend growth, % per annum
 
   source: >
-    <b>Source:</b> authors’ calculations, using baseline growth accounting model (see appendix)
+    <b>Source:</b> authors’ projections, using baseline growth accounting model (see appendix)
 
   axes:
     minY: 0

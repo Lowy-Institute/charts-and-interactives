@@ -42,7 +42,7 @@ block page
                 text(text-anchor="end" transform="translate(-8 4)")= formatted
 
             svg(y="50%")
-              text.y-label Produxtivity growh per year (%)
+              text.y-label Public capital per worker (2017 $PPP)
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -70,6 +70,9 @@ block page
                 text-anchor=axes.rotateX ? "end" : "middle"
                 transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
               )= formatted
+
+          svg(y="100%" x="50%" text-anchor="middle")
+            text.x-label2 Output per worker (2017 $PPP)
               
           // OPTIONAL GUIDE LINE
           if !isEmpty(axes.guideLine)
@@ -197,7 +200,7 @@ block append css
         box-sizing: border-box
         
       .y-label
-        transform: rotate(-90deg) translate(-4.5rem, -4.8rem)
+        transform: rotate(-90deg) translate(-4.3rem, -4.7rem)
 
       li
         list-style: none
@@ -206,7 +209,7 @@ block append css
 
       .legend
         font-size: 15px
-        margin-bottom: .75em
+        margin-top: .25em
         flex-direction: row-reverse
 
       .legend-item
@@ -281,6 +284,9 @@ block append css
       .chart-content:hover circle,
         opacity: .4
 
+      .x-label2
+        transform: translate(0,3em)
+
       @media (max-width: 700px)
         
         .x-label text
@@ -303,6 +309,21 @@ block append css
         .chart-source
           text-align: center
           font-size: 13px
+
+        .y-label
+          transform: rotate(-90deg) translate(-6.3rem, -4.3rem)
+
+        .x-label:nth-child(2n) text
+          display: none
+         
+        .x-label:nth-child(1n) text
+          transform: rotate(0deg) translate(-8px, 14px)
+
+        circle
+          opacity: 0.1
+
+        .legend-item
+          margin: 0
           
       @media print
         .wrapper
