@@ -59,13 +59,24 @@ block page
                     = y + "%"
 
                   svg(x="50%" y="100%")
-                    text(
+                    text.label(
                       text-anchor="end"
                       transform="translate(18 18)"
                     )
 
                 //- Add a new baseline
                 line(x1="0" x2="100%" y1=toPercent(baseline) y2=toPercent(baseline) stroke="#ccc")
+    .row
+      ul.legend.list-bare.txt-left.flex.flex-ch
+            li.legend-item
+              span.legend-item-box
+              span.legend-item-label China (2019)
+            li.legend-item
+              span.legend-item-box
+              span.legend-item-label Korea (1980)
+            li.legend-item
+              span.legend-item-box
+              span.legend-item-label Taiwan (1975)
 
     .chart-source.txt-muted.txt-center
       != page.source
@@ -130,6 +141,12 @@ block append css
 
       svg
         overflow: visible
+      
+      .legend
+        margin: 0 40px 0 100px;
+      .legend-item 
+        margin: 0
+        padding: 0 40px
 
       @media screen and (max-width: 600px)
         .col-wrap
