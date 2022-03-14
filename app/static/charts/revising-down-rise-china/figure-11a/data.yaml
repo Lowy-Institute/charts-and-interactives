@@ -9,7 +9,7 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Baseline projection, 2020 = 100
+  Baseline projection in PPP terms, 2020 = 100
 
 axes:
   minY:  0
