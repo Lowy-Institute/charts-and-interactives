@@ -8,7 +8,7 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Baseline projection, China as a % of US level
+  Baseline projection in PPP terms, China as a % of US level
 
 axes:
   minY:  0
