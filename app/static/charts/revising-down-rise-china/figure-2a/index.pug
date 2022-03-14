@@ -15,9 +15,11 @@ block page
         .chart-subtitle.txt-muted.txt-tu= chart.subtitle 
 
         .chart.flex-grow: .chart-content
-          - scale = chart.scale
-          - fx = (i) => (i + 0.5) / (chart.axes[1].values.length + 0.5)
+          - fx = (i) => (i + 0.5) / (chart.axes[0].values.length + 0.5)
           - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+          - scale = chart.scale
+          - ticksX = scale.ticksX
+
           svg(height="100%" width="100%")
             svg(height="100%")
               for n, i in new Array(5)
@@ -27,8 +29,7 @@ block page
                     = scale.minY + (i/4) * (scale.maxY - scale.minY)
                      
             g
-              for y, i in chart.axes[1].values
-                - label = chart.axes[0].values[i]
+              for y, i in chart.axes[0].values
                 svg(
                   x=toPercent(fx(i))
                   y=toPercent(1 - fy(y))
@@ -36,7 +37,7 @@ block page
                   height=toPercent(fy(y))
                 )
                   rect(
-                    fill=label.highlight ? "#ff9fa7" : "#ff4050"
+                    fill=i > chart.highlightFromIndex ? "#ff9fa7" : "#ff4050"
                     width="100%"
                     height="100%"
                   )
@@ -48,23 +49,15 @@ block page
                   )
                     = y + "%"
 
-                  svg(x="50%" y="100%")
-                    text(
-                      text-anchor="middle"
-                      transform="translate(0 18)"
-                    )= label.text
+                  if !(i % ticksX.step)
+                    svg(x="50%" y="100%")
+                      text(
+                        text-anchor="middle"
+                        transform="translate(0 18)"
+                      )= ticksX.min + ticksX.step * (i / ticksX.step)
 
-              //- svg(width="100%" y="100%")
-                for year, i in chart.axes[2].values
-                  svg(x=toPercent(fx(i, chart.axes[2].values.length)))
-                    text(
-                      text-anchor="middle"
-                      transform="translate(0 20)"
-                    )
-                      = year
-
-              text(x="15%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: #ff4050") Actual
-              text(x="85%" y="5%" text-anchor="middle" style="font-style: italic; font-size:16px; fill: #ff9fa7") UN projection                  
+              text.italic(x="15%" y="5%" text-anchor="middle" style="font-size:16px; fill: #ff4050") Actual
+              text.italic(x="85%" y="5%" text-anchor="middle" style="font-size:16px; fill: #ff9fa7") UN projection                  
 
 
     .chart-source.txt-muted.txt-center
