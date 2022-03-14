@@ -60,23 +60,24 @@ block page
 
                   svg(x="50%" y="100%")
                     text.label(
-                      text-anchor="end"
-                      transform="translate(18 18)"
-                    )
+                      text-anchor="middle"
+                      transform="translate(0 18)"
+                    )= label.text
 
                 //- Add a new baseline
                 line(x1="0" x2="100%" y1=toPercent(baseline) y2=toPercent(baseline) stroke="#ccc")
-    .row
+
+    //- .row
       ul.legend.list-bare.txt-left.flex.flex-ch
-            li.legend-item
-              span.legend-item-box
-              span.legend-item-label China (2019)
-            li.legend-item
-              span.legend-item-box
-              span.legend-item-label Korea (1980)
-            li.legend-item
-              span.legend-item-box
-              span.legend-item-label Taiwan (1975)
+        li.legend-item
+          span.legend-item-box
+          span.legend-item-label China (2019)
+        li.legend-item
+          span.legend-item-box
+          span.legend-item-label Korea (1980)
+        li.legend-item
+          span.legend-item-box
+          span.legend-item-label Taiwan (1975)
 
     .chart-source.txt-muted.txt-center
       != page.source
