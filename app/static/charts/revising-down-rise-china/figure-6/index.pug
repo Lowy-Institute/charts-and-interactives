@@ -104,7 +104,7 @@ block page
 
 
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
           - l = chart.series.length
           for ax, i in new Array(l)
             if i
@@ -236,7 +236,7 @@ block append css
         .chart-content
           bottom: 40px
         .legend
-          flex-direction: column
+          /* flex-direction: column
         .chart-title
           font-size: 18px
         .chart-subtitle

@@ -101,7 +101,7 @@ block page
             circle(r="5" cx="82.105%" cy="80.0%" fill="#002b45" stroke="#fff" stroke-width="0")
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -165,7 +165,7 @@ block append css
     :sass
   
       .wrapper
-        height: 650px
+        height: 550px
 
       .chart
         box-sizing: border-box
@@ -273,7 +273,7 @@ block append css
         .chart-content
           bottom: 40px
         .legend
-          flex-direction: column
+          /* flex-direction: column
         .chart-title
           font-size: 18px
         .chart-subtitle

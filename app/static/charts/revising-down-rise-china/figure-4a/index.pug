@@ -121,7 +121,7 @@ block page
       .row
         p Years before/after reaching same level of real output per worker as China today
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
           - l = chart.series.length
           for ax, i in new Array(l)
             if (l-i)==1 || (l-i)==2 || (l-i)==3 || (l-i)==4 || (l-i)==5 || (l-i)==6
@@ -262,7 +262,7 @@ block append css
         .chart-content
           bottom: 40px
         .legend
-          flex-direction: column
+          /* flex-direction: column
         .chart-title
           font-size: 18px
         .chart-subtitle
