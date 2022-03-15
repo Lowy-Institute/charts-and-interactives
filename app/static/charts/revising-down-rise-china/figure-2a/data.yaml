@@ -7,110 +7,19 @@ subtitle: >
   Millions, actual and projected
 
 charts:
-  -
-    title: China’s working age population
+  - title: China’s working age population
     subtitle: Millions, actual and projected
+    highlightFromIndex: 29
     scale:
-      minY:  600
+      minY: 600
       maxY: 1000
+      ticksX:
+        min: 1990
+        max: 2050
+        step: 10
+
     axes:
-      -
-        title: Category
-        values:
-          - text: 1990
-          - text: null
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text: 2000
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text: 2010
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text:
-          - text: 2020
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text: 2030
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text: 2040
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text:
-            highlight: true
-          - text: 2050
-            highlight: true
-      -
-        title: "Opinion"
+      - title: "Opinion"
         values:
           - 774.155508
           - 784.916098
@@ -173,67 +82,3 @@ charts:
           - 811.4832205
           - 801.1280167
           - 790.904954
-      -
-        title: Years
-        values:
-          - 1990
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - 2000
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - 2010
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - 2020
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - 2030
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - 2040
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - null
-          - 2050
