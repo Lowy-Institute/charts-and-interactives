@@ -23,27 +23,27 @@ chart:
 
     - title: "Business capital"
       color: "red"
-      offset: 4.82
+      offset: 4.88
       value: -1.5
 
     - title: "Labour growth"
       color: "red"
-      offset: 3.92
+      offset: 3.95
       value: -0.9
 
     - title: "Public capital"
       color: "red"
-      offset: 3.49
-      value: -0.43
+      offset: 3.52
+      value: -0.4
 
     - title: "Housing"
       color: "red"
-      offset: 3.1
-      value: -0.39
+      offset: 3.12
+      value: -0.4
 
     - title: "Productivity growth"
       color: "red"
-      offset: 2.7
+      offset: 2.72
       value: -0.4
 
     - title: "Education"
