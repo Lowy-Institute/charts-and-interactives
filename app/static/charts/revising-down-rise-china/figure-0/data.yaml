@@ -78,7 +78,7 @@ series:
       - 2050
   -
     title: Actual
-    color: "highlight"
+    color: "blue-100"
     widen: false
     dashed: false
     dotted: false
@@ -136,7 +136,7 @@ series:
       - null
   -
     title: Projected
-    color: "highlight"
+    color: "blue-100"
     widen: false
     dashed: false
     dotted: true
