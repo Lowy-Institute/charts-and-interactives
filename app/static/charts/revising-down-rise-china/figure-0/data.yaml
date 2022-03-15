@@ -1,5 +1,5 @@
 title: >
-  Figure 1: China likely will not pull much ahead of the US
+  Figure 1: Revising down the rise of China
 
 source: >
   <b>Source:</b> authors' projections, IMF World Economic Outlook October 2021, and OECD Long-Term Growth Forecasts (2018)
@@ -8,12 +8,12 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  China's GDP relative to US, baseline projection in nominal USD
+  China's projected GDP relative to US, nominal USD
 
 axes:
   minY:  0
-  maxY: 140
-  stepsY: 8
+  maxY: 250
+  stepsY: 6
   rotateX: false
   percentage: true
   minorLines: true
@@ -135,11 +135,11 @@ series:
       - null
       - null
   -
-    title: Projected
+    title: Our baseline projection
     color: "blue-100"
     widen: false
-    dashed: false
-    dotted: true
+    dashed: true
+    dotted: false
     values:
       - null
       - null
@@ -192,4 +192,62 @@ series:
       - 115
       - 115
       - 115
+  -
+    title: China with 5% growth
+    color: "blue-100"
+    widen: false
+    dashed: false
+    dotted: true
+    values:
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - 74
+      - 74
+      - 77
+      - 81
+      - 85
+      - 89
+      - 94
+      - 99
+      - 104
+      - 109
+      - 114
+      - 118
+      - 123
+      - 128
+      - 134
+      - 139
+      - 145
+      - 150
+      - 156
+      - 163
+      - 168
+      - 174
+      - 180
+      - 187
+      - 193
+      - 200
+      - 208
+      - 215
+      - 223
+      - 231
   
