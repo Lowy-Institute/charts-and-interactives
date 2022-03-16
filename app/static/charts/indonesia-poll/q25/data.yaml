@@ -1,0 +1,59 @@
+title: >
+  Most important international organisation to Indonesia
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  min:  0
+  max: 45
+  steps: 10
+  rotateLabels: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+    values:
+      - UN
+      - ASEAN
+      - Don’t know
+      - Organization of Islamic Cooperation
+      - APEC
+      - Non-aligned movement
+      - G20
+
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 41
+      - 30
+      - 12
+      - 5
+      - 4
+      - 3
+      - 3
+
+  -
+    title: 2011
+    color: "orange"
+    values:
+      - 34
+      - 40
+      - 12
+      - 1
+      - 7
+      - 3
+      - 4
+
+
+

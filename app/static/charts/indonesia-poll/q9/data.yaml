@@ -1,0 +1,43 @@
+title: >
+  Economic optimism
+
+#source: >
+  #<b>Source:</b> authors' calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+
+axes:
+  minY:  0
+  maxY: 90
+  stepsY: 10
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2021
+      - 2011
+
+  -
+    title: Very optimistic
+    color: "blue-100"
+    values:
+      - 12
+      - 16
+
+  -
+    title: optimistic
+    color: "orange"
+    values:
+      - 71
+      - 63
+
+

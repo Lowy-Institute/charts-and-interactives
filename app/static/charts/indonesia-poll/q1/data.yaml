@@ -1,0 +1,44 @@
+title: >
+  Indonesia's direction
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  min:  0
+  max: 90
+  steps: 10
+  rotateLabels: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+    values:
+      - Right direction
+      - Wrong direction
+      - Don't know
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 80
+      - 11
+      - 9
+
+  -
+    title: 2011
+    color: "orange"
+    values:
+      - 68
+      - 24
+      - 7
+

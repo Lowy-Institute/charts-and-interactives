@@ -1,0 +1,59 @@
+title: >
+  Foreign government investment
+
+#source: >
+  #<b>Source:</b> authors' calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+
+axes:
+  minY:  0
+  maxY: 60
+  stepsY: 7
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Saudi Arabia
+      - Japan
+      - Singapore
+      - United States
+      - Australia
+      - Malaysia
+      - Netherlands
+      - China
+
+  -
+    title: Strongly in favour
+    color: "blue-100"
+    values:
+      - 15
+      - 11
+      - 8
+      - 7
+      - 6
+      - 6
+      - 4
+      - 4
+
+  -
+    title: In favour
+    color: "orange"
+    values:
+      - 42
+      - 42
+      - 46
+      - 35
+      - 35
+      - 41
+      - 33
+      - 26

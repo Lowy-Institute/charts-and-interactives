@@ -1,0 +1,46 @@
+title: >
+  Attitudes to democracy
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  min:  0
+  max: 90
+  steps: 10
+  rotateLabels: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+    values:
+      - Democracy is preferable to any other kind of government
+      - In some circumstances, a non-democratic government can be preferable
+      - For someone like me, it doesn't matter what kind of government we have
+  -
+    title: 2011
+    color: "blue-100"
+    values:
+      - 62
+      - 16
+      - 16
+
+
+  -
+    title: 2021
+    color: "orange"
+    values:
+      - 60
+      - 20
+      - 18
+
+
