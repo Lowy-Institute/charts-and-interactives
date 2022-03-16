@@ -103,13 +103,22 @@ block page
                   - y = toPercent(1 - fy(v[1]))
                   - r = v[2]*chart.axes.rScaleFactor
                   - color = chart.colors[chart.series[5].color]
-                  circle(
+                  //- circle(
                     r=r
                     cx=x
                     cy=y
                     fill=color+"22"
                     stroke=color+"44"
                     stroke-width=1
+                    data-x=v[0]
+                    data-y=v[1]
+                    data-r=v[2]
+                   )
+                   //- faster render on SVG by moving styles to CSS
+                  circle(
+                    r=r
+                    cx=x
+                    cy=y
                     data-x=v[0]
                     data-y=v[1]
                     data-r=v[2]
@@ -274,6 +283,9 @@ block append css
       circle
         opacity: .4
         transition-duration: .4s
+        fill: #B7C1CE22
+        stroke: #B7C1CE44
+        stroke-width: 1
         
       .gridlines
         transition-duration: .4s
