@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/indonesia-poll/q12/data"
+  - var datapath = "static/charts/indonesia-poll/q39/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -134,7 +134,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + "%" + " were " + "'" + cat + "'" + " of investment by " + ser;
+        tooltip.innerHTML = val + "%" + " said " + ser + " handled Covid-19 " + "'" + cat + "'" ;
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;

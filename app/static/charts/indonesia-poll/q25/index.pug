@@ -11,9 +11,10 @@ block append config
   
 block page
   .wrapper.flex
-    .flex.flex-grow.flex-col
+    .txt-left.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
+      .chart-subtitle.p-sm!= chart.subtitle
+      hr
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -81,7 +82,7 @@ block page
                       transform=`translate(0 6)`
                       style="color: white"
                     )
-                      = v + (axes.percentage ? "%" : "")
+                      = v + (axes.percentage ? "" : "")
 
                     // X-Axis labels
                     svg.x-label(y="50%")
@@ -106,7 +107,8 @@ block page
       
   script.
     /* --- USER TO UPDATE --- */
-    const enableTooltips = true;
+     const enableTooltips = true;
+    const nLegendItems = 7;
     const nCategories = 2;
     /* --------------------- */
     
@@ -135,7 +137,7 @@ block page
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = val + " of " + ser + " were " + cat;
+        tooltip.innerHTML = val + "%" + " said " + ser + " was most important in " + cat;
         
       });
       el.addEventListener('mouseleave', () => { 
@@ -163,13 +165,15 @@ block append css
         bottom: 40px
 
       .chart-title
-        font-size: 28px
-        font-weight: 600
+        /* margin: auto
+        font-size: 24px
+        padding-left: 1rem
         
       .chart-subtitle
-        font-weight: 600
-        height: 10px
-        font-size: 15px
+        /* font-weight: 600
+        height: 12px
+        margin-top: -12px
+        font-size: 16px
         
       .tooltip
         position: absolute
@@ -229,6 +233,9 @@ block append css
           
       line
         vector-effect: non-scaling-stroke
+
+      hr
+        margin: 24px 0 16px
 
       @media (max-width: 700px)
         //.chart-content

@@ -7,15 +7,15 @@ title: >
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
-#subtitle: >
-  #Subtitle goes here
+subtitle: >
+  Is Indonesia going in the right direction?
 
 axes:
   min:  0
   max: 90
   steps: 10
   rotateLabels: false
-  percentage: false
+  percentage: true
   minorLines: true
   dotted: [] # Index of dotted gridlines
 

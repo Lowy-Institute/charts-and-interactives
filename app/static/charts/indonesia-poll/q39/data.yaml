@@ -1,0 +1,61 @@
+title: >
+  COVID handling by country
+
+#source: >
+  #<b>Source:</b> authors' calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Overall, how well or badly do you think each of the following countries have handled the COVID-19 coronavirus outbreak so far?
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Australia
+      - Indonesia
+      - China
+      - US
+      - UK
+      - India
+      - Malaysia
+      - Singapore
+
+  -
+    title: Very well
+    color: "blue-100"
+    values:
+      - 21
+      - 32
+      - 20
+      - 24
+      - 23
+      - 12
+      - 20
+      - 25
+
+  -
+    title: Fairly well
+    color: "orange"
+    values:
+      - 58
+      - 51
+      - 49
+      - 53
+      - 56
+      - 42
+      - 59
+      - 57
+

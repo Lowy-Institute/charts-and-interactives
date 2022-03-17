@@ -7,13 +7,13 @@ title: >
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
-#subtitle: >
-  
+subtitle: >
+  Of possible threats to the vital interests of Indonesia in the next ten years, do you see this as critical, important but not critical, or not an important threat at all?
 
 axes:
   minX:  0
-  maxX: 120
-  stepsX: 7
+  maxX: 100
+  stepsX: 6
   percentage: true
   minorLines: true
   dotted: [1,3,5,7,9,11,13] # Index of dotted gridlines
@@ -23,7 +23,7 @@ series:
   -
     title: Category
     values:
-      - Indonesia being broken up into several different countries
+      - Indonesia being broken up into different countries
       - International terrorism
       - Food shortages
       - COVID-19 and other potential epidemics

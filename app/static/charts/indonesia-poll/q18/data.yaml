@@ -7,13 +7,14 @@ title: >
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
-#subtitle: >
+subtitle: >
+  Thinking about Indonesia’s place in the world, which of the following do you think Indonesia belongs to?
   
 
 axes:
   minX:  0
-  maxX: 120
-  stepsX: 7
+  maxX: 100
+  stepsX: 6
   percentage: true
   minorLines: true
   dotted: [1,3,5,7,9,11,13] # Index of dotted gridlines

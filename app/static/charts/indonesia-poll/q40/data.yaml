@@ -1,0 +1,34 @@
+title: >
+
+#source: >
+  #<b>Source:</b> authors’ calculations based on UN Population Division
+
+subtitle: >
+
+charts:
+  - title: Source of COVID-19 pandemic
+    subtitle: From what you have seen or heard, which of the following do you think is the most likely cause of the COVID-19 pandemic?
+    scale:
+      minY: 0
+      maxY: 40
+      datum: 0
+      steps: 5
+
+    axes:
+      - title: Category
+        values:
+          - text: An act of God
+          - text: Human contact with an infected animal
+          - text: A laboratory leak in a foreign country
+          - text: A domestic problem or issue
+          - text: Don’t know
+
+      - title: "workforce growth"
+        values:
+          - 37
+          - 22
+          - 12
+          - 8
+          - 19
+
+

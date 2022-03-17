@@ -10,9 +10,10 @@ block append config
   
 block page
   .wrapper.flex
-    .txt-center.flex.flex-grow.flex-col
+    .txt-left.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-subtitle.p-sm!= chart.subtitle
+      hr
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -77,7 +78,9 @@ block page
                       transform="translate(0 4.5)"
                       style=`color: ${(j < 3 ? "white" : "")}`
                     )
-                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+                      //-= v.toFixed(0) + (axes.percentage ? "%" : "")
+                      //- removed % symbol from hover
+                      = v.toFixed(0) + (axes.percentage ? "" : "")
 
                   - y -= fy(v)
                     
@@ -105,9 +108,9 @@ block page
   script.
 
     /* --- USER TO UPDATE --- */
-    const enableTooltips = false;
-    const nLegendItems = 3;
-    const nSeries = 3;
+    const enableTooltips = true;
+    const nLegendItems = 2;
+    const nSeries = 2;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -131,7 +134,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.innerHTML = val +"%"  + " felt " + "'" + cat + "'" + " in " + ser;
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -167,14 +170,15 @@ block append css
         border-bottom: 1px solid #bbb
 
       .chart-title
-        margin: auto
-        font-size: 20px
+        /* margin: auto
+        font-size: 24px
+        padding-left: 1rem
         
       .chart-subtitle
-        font-weight: 600
-        height: 10px
-        margin-top: -10px
-        font-size: 15px
+        /* font-weight: 600
+        height: 12px
+        margin-top: -12px
+        font-size: 16px
         
       .tooltip
         position: absolute

@@ -1,0 +1,70 @@
+title: >
+  Levels of foreign investment in Indonesia 
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Do you think the Indonesian government is currently allowing too much, too little or the right amount of investment from foreign countries? 
+
+axes:
+  minY:  0
+  maxY: 10
+  stepsY: 6
+  rotateX: false
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+
+  -
+    title: Allowing too much
+    color: "blue-100"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1
+  -
+    title: Allowing too little
+    color: "orange"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1
+  -
+    title: Allowing the right amount
+    color: "grey"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1
+  -
+    title: Not sure
+    color: "yellow"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1

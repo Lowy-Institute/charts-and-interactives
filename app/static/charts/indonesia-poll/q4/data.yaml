@@ -7,8 +7,9 @@ title: >
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
-#subtitle: >
-
+subtitle: >
+  Thinking about world events, how safe do you feel?
+  
 axes:
   minY:  0
   maxY: 120

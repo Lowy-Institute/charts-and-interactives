@@ -1,0 +1,67 @@
+title: >
+  Effort to combat climate change
+
+#source: >
+  #<b>Source:</b> authors' calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  For each of these countries, do you think they have done too much, too little, or about the right amount in their effort to combat climate change?
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Indonesia
+      - Australia
+      - United States
+      - China
+      - India
+      - Japan
+
+
+  -
+    title: Too much
+    color: "blue-100"
+    values:
+      - 24
+      - 18
+      - 25
+      - 19
+      - 15
+      - 22
+
+  -
+    title: Too little
+    color: "orange"
+    values:
+      - 39
+      - 46
+      - 39
+      - 48
+      - 56
+      - 40
+
+  -
+    title: Right amount
+    color: "grey"
+    values:
+      - 37
+      - 37
+      - 37
+      - 33
+      - 29
+      - 38
+
