@@ -257,8 +257,10 @@ block append css
 
       @media screen and (max-width: 800px)
         .wrapper
-          height: 1350px
+          height: 550px
           /* margin: 0
+        .chart
+          margin-left: 10px
         .chart-content
           left: 60px!important
           right: 60px!important
@@ -285,4 +287,12 @@ block append css
           .col-md:first-child &,
           .col-md:last-child &
             padding: 0
+
+        .legend
+          padding: 0 2em !important
             
+      @media (max-width: 450px)
+        .wrapper
+          height: 1250px
+        text
+          font-size: 12px
