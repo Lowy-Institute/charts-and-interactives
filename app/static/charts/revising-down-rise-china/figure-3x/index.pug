@@ -61,17 +61,17 @@ block page
 
             //- X-axis labels
             svg(width="100%" y="102%")
-              svg(x="0.00%")
+              svg.x-label(x="0.00%")
                 text(text-anchor="middle" transform="translate(0 20)") 2000
-              svg(x="20.00%")
+              svg.x-label(x="20.00%")
                 text(text-anchor="middle" transform="translate(0 20)") 2010
-              svg(x="40.00%")
+              svg.x-label(x="40.00%")
                 text(text-anchor="middle" transform="translate(0 20)") 2020
-              svg(x="60.00%")
+              svg.x-label(x="60.00%")
                 text(text-anchor="middle" transform="translate(0 20)") 2030
-              svg(x="80.00%")
+              svg.x-label(x="80.00%")
                 text(text-anchor="middle" transform="translate(0 20)") 2040
-              svg(x="100.00%")
+              svg.x-label(x="100.00%")
                 text(text-anchor="middle" transform="translate(0 20)") 2050
 
             //- chart columns & lines         
@@ -254,7 +254,7 @@ block append css
         overflow: visible
 
       .y-label-l
-        transform: rotate(-90deg) translate(-3em, -2.5rem)
+        transform: rotate(-90deg) translate(-3em, -3rem)
       .y-label-r
         transform: rotate(-90deg) translate(-3em, 2.5rem)
 
@@ -264,3 +264,10 @@ block append css
         .col-md
           width: 100%
           height: 100%
+
+
+      @media (max-width: 450px)
+        .x-label text
+          transform: rotate(-90deg) translate(-28px,8px)
+        .legend
+          margin-top: 50px
