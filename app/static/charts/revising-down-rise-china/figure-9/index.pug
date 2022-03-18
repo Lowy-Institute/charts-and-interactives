@@ -57,7 +57,7 @@ block page
                     text-anchor="middle"
                     dy=-8
                   )
-                    = v + "%"
+                    = v
 
                   //-text.x-axis(
                     x="50%"
@@ -178,3 +178,9 @@ block append css
 
         .chart-source
           margin: 120px 8px 0
+
+      @media (max-width: 450px)
+        text
+          font-size: 12px
+        .x-label li
+          padding: 3px

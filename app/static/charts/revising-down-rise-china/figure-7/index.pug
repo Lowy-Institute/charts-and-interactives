@@ -136,14 +136,30 @@ block page
             tspan Xi era begins
             tspan(dx="-5.7em" dy="1.5em") (2013)
 
-          text.mobile(x="3%" y="1%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") Reform & opening (1978)
-          text.mobile(x="34%" y="1%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") Deng’s Southern Tour (1992)
-          text.mobile(x="56%" y="1%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") WTO entry (2001)
-          text.mobile(x="85%" y="1%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") Xi era begins (2013)
+          text.mobile(x="8%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555")
+            tspan Reform and 
+            tspan(dx="-1em" dy="-5.5em") opening (1978)
+          text.mobile(x="39%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555")
+            tspan Deng’s Southern
+            tspan(dx="-1em" dy="-6.5em") Tour (1992)
+          text.mobile(x="61%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#333")
+            tspan WTO entry
+            tspan(dx="-1em" dy="-4.5em") (2001)
+          text.mobile(x="90%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#333")
+            tspan Xi era begins
+            tspan(dx="-1em" dy="-5.5em") (2013)
+
+          //-text.mobile(x="3%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") Reform & opening (1978)
+          //-text.mobile(x="34%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") Deng’s Southern Tour (1992)
+          //-text.mobile(x="56%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") WTO entry (2001)
+          //-text.mobile(x="85%" y="-60%" text-anchor="middle" style="font-style: italic; font-size:15px; fill:#555") Xi era begins (2013)
 
           line(x1="30.55%" y1="0" x2="30.5%" y2="100%" style="stroke: #555; stroke-width: 0.5")
           line(x1="52.36%" y1="0" x2="52.36%" y2="100%" style="stroke: #555; stroke-width: 0.5")
           line(x1="81.45%" y1="0" x2="81.45%" y2="100%" style="stroke: #555; stroke-width: 0.5")
+          line.mobile(x1="30.55%" y1="-60%" x2="30.5%" y2="100%" style="stroke: #555; stroke-width: 0.5")
+          line.mobile(x1="52.36%" y1="-60%" x2="52.36%" y2="100%" style="stroke: #555; stroke-width: 0.5")
+          line.mobile(x1="81.45%" y1="-60%" x2="81.45%" y2="100%" style="stroke: #555; stroke-width: 0.5")
 
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -313,11 +329,19 @@ block append css
 
         tspan
           display: none
-        text.mobile
+        text.mobile,text.mobile tspan
           display: block
           text-anchor: start
           writing-mode: vertical-rl
           text-orientation: mixed
+
+        line
+          display: none
+        line.mobile
+          display: block
+        
+        .chart-subtitle
+          margin-bottom: 140px
           
       @media (max-width: 450px)
         .chart-content

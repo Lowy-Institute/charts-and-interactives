@@ -58,8 +58,8 @@ block page
                   )
                     = y + "%"
 
-                  svg(x="50%" y="100%")
-                    text.label(
+                  svg.x-label(x="50%" y="100%")
+                    text(
                       text-anchor="middle"
                       transform="translate(0 18)"
                     )= label.text
@@ -155,3 +155,10 @@ block append css
         .col-md
           width: 100%
           height: 100%
+
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(8px, 32px)
+
+        .chart-source
+          margin: 36px 8px 0
