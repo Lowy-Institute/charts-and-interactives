@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/indonesia-poll/q1/data"
+  - var datapath = "static/charts/indonesia-poll/q29/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -82,9 +82,7 @@ block page
                       transform=`translate(0 6)`
                       style="color: white"
                     )
-                      //-= v.toFixed(0) + (axes.percentage ? "%" : "")
-                      //- removed % symbol from hover
-                      = v.toFixed(0) + (axes.percentage ? "" : "")
+                      = v + (axes.percentage ? "" : "")
 
                   // X-Axis labels
                   svg.x-label(y="50%")
@@ -109,7 +107,8 @@ block page
       
   script.
     /* --- USER TO UPDATE --- */
-    const enableTooltips = true;
+     const enableTooltips = true;
+    const nLegendItems = 9;
     const nCategories = 2;
     /* --------------------- */
     
@@ -138,7 +137,7 @@ block page
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = val +"%" + " said Indonesia was going in the " + "'" +ser +"'" + " in " + cat;
+        tooltip.innerHTML = val + "%" + " said " + "'" + ser + "'" + " in " + cat;
         
       });
       el.addEventListener('mouseleave', () => { 
@@ -161,7 +160,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 112px
+        left: 160px
         right: 20px
         bottom: 40px
 

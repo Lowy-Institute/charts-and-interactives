@@ -1,0 +1,65 @@
+title: >
+  Leading military power in Asia
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Do you personally think China or the United States will be the leading military power in Asia in 20 years’ time, or will it be another country?
+
+axes:
+  min:  0
+  max: 70
+  steps: 8
+  rotateLabels: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: countries
+    values:
+      - US
+      - China
+      - Japan
+      - Indonesia
+      - Australia
+      - Malaysia
+      - Another country
+      - Don't know
+      - Refused
+
+  -
+    title: 2011
+    color: "blue-100"
+    values:
+      - 58
+      - 25
+      - 0
+      - 0
+      - 0
+      - 0
+      - 1
+      - 13
+      - 1
+
+  -
+    title: 2021
+    color: "orange"
+    values:
+      - 36
+      - 22
+      - 6
+      - 2
+      - 1
+      - 1
+      - 4
+      - 36
+      - 1
+
+
+

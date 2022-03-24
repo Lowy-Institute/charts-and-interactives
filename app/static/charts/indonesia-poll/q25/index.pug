@@ -84,13 +84,13 @@ block page
                     )
                       = v + (axes.percentage ? "" : "")
 
-                    // X-Axis labels
-                    svg.x-label(y="50%")
-                      text(
-                        text-anchor="end"
-                        transform=`translate(-10 6)`
-                      )
-                        =seriesname
+                  // X-Axis labels
+                  svg.x-label(y="50%")
+                    text(
+                      text-anchor="end"
+                      transform=`translate(-10 6)`
+                    )
+                      =seriesname
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch

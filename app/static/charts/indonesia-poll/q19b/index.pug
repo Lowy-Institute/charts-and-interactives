@@ -1,0 +1,265 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/indonesia-poll/q19b/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-left.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.p-sm!= chart.subtitle
+      hr
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0.6) / (ln + 0.25)
+        - fy = (y) => (y - minY) / range
+        
+        svg(height="100%" width="100%" viewBox="-1 -1 2 2" style="transform: rotate(-90deg)")
+
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = (minY + range*(i/steps) + (axes.percentage ? "%" : ""))
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // X-Axis labels
+          for x, i in chart.series[0].values
+            svg.x-label(x=toPercent(fx(i)) y="100%")
+              text(
+                text-anchor=axes.rotateX ? "end" : "middle"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 24)" : "translate(0 20)"
+              )=x
+              
+          // OPTIONAL GUIDE LINE
+          if !isEmpty(axes.guideLine)
+            - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
+            line(
+              x1="0" y1=y x2="100" y2=y
+              stroke="#333"
+              stroke-width=.25
+              stroke-dasharray=(false ? 1 : "")
+            )
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+
+      .tooltip
+
+  script.
+
+    const svgEl = document.querySelector('svg');
+    const slices = [
+      { percent: 0.62, color: '#2D6993' },
+      { percent: 0.34, color: '#ff8800' },
+      { percent: 0.03, color: '#B7C1CE' },
+      { percent: 0.01, color: '#ffc52b' },
+    ];
+    let cumulativePercent = 0;
+    
+    function getCoordinatesForPercent(percent) {
+      const x = Math.cos(2 * Math.PI * percent);
+      const y = Math.sin(2 * Math.PI * percent);
+      return [x, y];
+    }
+    
+    slices.forEach(slice => {
+      // destructuring assignment sets the two variables at once
+      const [startX, startY] = getCoordinatesForPercent(cumulativePercent);
+      
+      // each slice starts where the last slice ended, so keep a cumulative percent
+      cumulativePercent += slice.percent;
+      
+      const [endX, endY] = getCoordinatesForPercent(cumulativePercent);
+    
+      // if the slice is more than 50%, take the large arc (the long way around)
+      const largeArcFlag = slice.percent > .5 ? 1 : 0;
+    
+    	// create an array and join it just for code readability
+      const pathData = [
+        `M ${startX} ${startY}`, // Move
+        `A 1 1 0 ${largeArcFlag} 1 ${endX} ${endY}`, // Arc
+        `L 0 0`, // Line
+      ].join(' ');
+    
+      // create a <path> and append it to the <svg> element
+      const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      pathEl.setAttribute('d', pathData);
+      pathEl.setAttribute('fill', slice.color);
+      svgEl.appendChild(pathEl);
+    });
+    
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nLegendItems = 2;
+    const nCategories = 7;
+    /* --------------------- */
+    
+    const tooltip = document.querySelector('.tooltip');
+    const chart = document.querySelectorAll('.chart-content');
+    const recs = document.querySelectorAll('path');
+    const cats = document.querySelectorAll('.y-label text');
+    const sers = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        recs.forEach( (r, i) => addHoverEventListeners(r, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let v = el.dataset.v;
+        let s = sers[el.dataset.s].innerHTML.trim();
+        let c = cats[el.dataset.c].innerHTML.trim();
+        let box = el.getBoundingClientRect();
+
+        tooltip.innerHTML = v + "% " + " said " + "'" + s +"'" + " to " + "'" + c + "'";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+
+
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 50px
+        right: 20px
+        bottom: 40px
+
+      .chart-content > svg
+        border-left: 1px solid #bbb
+
+      .chart-title
+        /* margin: auto
+        font-size: 24px
+        padding-left: 1rem
+        
+      .chart-subtitle
+        /* font-weight: 600
+        height: 12px
+        margin-top: -12px
+        font-size: 16px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-top: 1.5em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-right: 2em
+        font-size: 15px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+
+      .txt-muted
+        color: #767676
+
+      hr
+        margin: 24px 0 16px

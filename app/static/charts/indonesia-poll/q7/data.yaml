@@ -1,0 +1,58 @@
+title: >
+  Globalisation
+
+#source: >
+  #<b>Source:</b> authors' calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Do you believe that globalisation, especially the increasing connections of our economy with others around the world, is mostly good or mostly bad for Indonesia? 
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2021
+      - 2011
+      - 2006
+
+
+  -
+    title: Mostly good
+    color: "blue-100"
+    values:
+      - 62
+      - 67
+      - 61
+
+
+  -
+    title: Mostly bad
+    color: "orange"
+    values:
+      - 7
+      - 26
+      - 31
+
+
+  -
+    title: Don't know
+    color: "grey"
+    values:
+      - 31
+      - 7
+      - 8
+
+

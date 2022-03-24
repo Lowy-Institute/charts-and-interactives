@@ -1,0 +1,39 @@
+title: >
+  Knowledge of regional security partnerships
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Have you heard about the partnership between Japan, Australia, the US and India called the Quadrilateral Security Dialogue, and Australia’s plan to buy nuclear powered submarines under the AUKUS deal with the US and UK?
+
+axes:
+  minX:  0
+  maxX: 100
+  stepsX: 6
+  percentage: true
+  minorLines: true
+  dotted: [1,3,5,7,9,11,13] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - AUKUS
+      - Quad
+  -
+    title: Heard of
+    color: "blue-100"
+    values:
+      - 11
+      - 7
+  -
+    title: Not heard of
+    color: "orange"
+    values:
+      - 89
+      - 93
