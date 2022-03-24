@@ -25,11 +25,11 @@ series:
     title: Year
     values:
       - Saudi Arabia
-      - Japan
       - Singapore
+      - Japan
+      - Malaysia
       - United States
       - Australia
-      - Malaysia
       - Netherlands
       - China
 
@@ -38,10 +38,10 @@ series:
     color: "blue-100"
     values:
       - 15
-      - 11
       - 8
-      - 7
+      - 11
       - 6
+      - 7
       - 6
       - 4
       - 4
@@ -51,10 +51,10 @@ series:
     color: "orange"
     values:
       - 42
-      - 42
       - 46
-      - 35
-      - 35
+      - 42
       - 41
+      - 35
+      - 35
       - 33
       - 26

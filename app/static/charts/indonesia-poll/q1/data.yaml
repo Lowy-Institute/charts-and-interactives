@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Is Indonesia going in the right direction?
+  Overall, do you personally think that things in Indonesia are going in the right direction or in the wrong direction?
 
 axes:
   min:  0
@@ -27,18 +27,17 @@ series:
       - Wrong direction
       - Don't know
   -
-    title: 2021
-    color: "blue-100"
-    values:
-      - 80
-      - 11
-      - 9
-
-  -
     title: 2011
     color: "orange"
     values:
       - 68
       - 24
       - 7
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 80
+      - 11
+      - 9
 

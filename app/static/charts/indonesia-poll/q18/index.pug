@@ -137,7 +137,7 @@ block page
         let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
 
-        tooltip.innerHTML = v + "% " + " said " + "'" + s +"'" + " to " + "'" + c + "'";
+        tooltip.innerHTML = "In 2021, " + v + "% " + " said " + " belonged to " + "'" + c + "'";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;

@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Overall, how optimistic are you about Indonesia’s economic performance over the next five years?
+  Overall, how optimistic are you about Indonesia’s economic performance over the next five years? 
 
 axes:
   minY:  0
@@ -24,21 +24,21 @@ series:
   -
     title: Year
     values:
-      - 2021
       - 2011
+      - 2021
 
   -
     title: Very optimistic
     color: "blue-100"
     values:
-      - 12
       - 16
+      - 12
 
   -
     title: optimistic
     color: "orange"
     values:
-      - 71
       - 63
+      - 71
 
 
