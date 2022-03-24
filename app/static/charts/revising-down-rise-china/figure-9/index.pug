@@ -39,6 +39,7 @@ block page
               for item, i in chart.series
                 - v = item.value
                 - o = item.offset
+                //- label = chart.series.title
                 svg(
                   x=toPercent(fx(i))
                   width=toPercent(fx(0))
@@ -59,12 +60,12 @@ block page
                   )
                     = v
 
-                  //-text.x-axis(
-                    x="50%"
-                    y="100%"
-                    text-anchor="middle"
-                    transform="translate(0 18)"
-                  //-)= item.title
+                  text.x-axis(
+                    x="0"
+                    y="0"
+                    text-anchor="end"
+                    transform="rotate(-45 0 0) translate(-140, 180)"
+                  )= item.title
 
             //- Baseline
             line(x1="0" x2="100%" y1=toPercent(fy(0)) y2=toPercent(fy(0)) stroke="#ccc")
@@ -78,7 +79,7 @@ block page
             line(x1="65.12%" x2="76.74%" y1="61.43%" y2="61.43%" stroke="#ccc")
             line(x1="76.74%" x2="95.35%" y1="64.29%" y2="64.29%" stroke="#ccc")
 
-          .column-title
+          //-.column-title
             ul.list-bare.flex-ch.x-label
               for item, i in chart.series
                 li
@@ -159,6 +160,9 @@ block append css
       .column-title li:first-child,.column-title li:last-child
         font-weight: bold
 
+      .chart-source
+          margin: 80px 8px 0
+
 
       @media screen and (max-width: 600px)
         .col-wrap
@@ -177,7 +181,7 @@ block append css
           padding: 8px
 
         .chart-source
-          margin: 120px 8px 0
+          margin: 100px 8px 0
 
       @media (max-width: 450px)
         text
@@ -188,3 +192,6 @@ block append css
           padding: 0
         .chart-subtitle
           margin: 0 0 80px 0
+
+        .chart-source
+          margin: 80px 8px 0

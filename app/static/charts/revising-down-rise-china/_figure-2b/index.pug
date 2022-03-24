@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/revising-down-rise-china/figure-2a/data"
+  - var datapath = "static/charts/revising-down-rise-china/figure-2b/data"
   - _.extend(page, data.getOne(datapath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
 
@@ -15,29 +15,38 @@ block page
         .chart-subtitle.txt-muted.txt-tu= chart.subtitle 
 
         .chart.flex-grow: .chart-content
-          - fx = (i) => (i + 0.5) / (chart.axes[0].values.length + 0.5)
-          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+
           - scale = chart.scale
-          - ticksX = scale.ticksX
+          - minY = scale.minY
+          - maxY = scale.maxY
+          - range = maxY - minY
+          - baseline = (scale.datum + maxY) / range
+
+          //- I've split fy (y position of the rect) and fh (height of the rect) into two equations. Positive and negative values need to be treated differently, hence the ternary statement in fy()
+          - fh = (y) => Math.abs(y) / range
+          - fy = (y) => y < 0 ? baseline : (baseline - fh(y))
+          - fx = (i) => (i + 0.6) / (chart.axes[1].values.length + 0.6)
 
           svg(height="100%" width="100%")
             svg(height="100%")
-              for n, i in new Array(5)
-                - y = 1 - (i / 4)
+              //- This must have been an older template as the number of steps on the y-axis was hard-coded in multiple places. I've replaced those hard-coded values with a new variable "scale.steps", which I've defined in data.yaml
+              for n, i in new Array(scale.steps)
+                - y = 1 - (i / (scale.steps - 1))
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+                    = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY) + "%"
                      
             g
-              for y, i in chart.axes[0].values
+              for y, i in chart.axes[1].values
+                - label = chart.axes[0].values[i]
                 svg(
                   x=toPercent(fx(i))
-                  y=toPercent(1 - fy(y))
+                  y=toPercent(fy(y))
                   width=toPercent(fx(0))
-                  height=toPercent(fy(y))
+                  height=toPercent(fh(y))
                 )
                   rect(
-                    fill=i > chart.highlightFromIndex ? "#ff9fa7" : "#ff4050"
+                    fill=label.highlight ? "#ff4050" : "#539ed4"
                     width="100%"
                     height="100%"
                   )
@@ -49,16 +58,25 @@ block page
                   )
                     = y + "%"
 
-                  if !(i % ticksX.step)
-                    svg.x-label(x="50%" y="100%")
-                      text(
-                        text-anchor="middle"
-                        transform="translate(0 18)"
-                      )= ticksX.min + ticksX.step * (i / ticksX.step)
+                  svg(x="50%" y="100%")
+                    text.label(
+                      text-anchor="end"
+                      transform="translate(18 18)"
+                    )
 
-              text.italic(x="15%" y="4%" text-anchor="middle" style="font-size:16px; fill: #ff4050") Actual
-              text.italic(x="85%" y="4%" text-anchor="middle" style="font-size:16px; fill: #ff9fa7") UN projection                  
-
+                //- Add a new baseline
+                line(x1="0" x2="100%" y1=toPercent(baseline) y2=toPercent(baseline) stroke="#ccc")
+    .row
+      ul.legend.list-bare.txt-left.flex.flex-ch
+            li.legend-item
+              span.legend-item-box
+              span.legend-item-label China (2019)
+            li.legend-item
+              span.legend-item-box
+              span.legend-item-label Korea (1980)
+            li.legend-item
+              span.legend-item-box
+              span.legend-item-label Taiwan (1975)
 
     .chart-source.txt-muted.txt-center
       != page.source
@@ -91,7 +109,6 @@ block append css
         bottom: 24px
 
       .chart-content > svg
-        border-bottom: 1px solid #ccc
         height: 20px
         min-height: 100%
 
@@ -100,22 +117,22 @@ block append css
         padding: 0 24px
 
       .chart-title
-        max-width: 320px
+        // max-width: 320px
         margin: 0 auto 
         font-size: 20px
 
       .chart-subtitle
         height: 0
-        margin: 0 0 80px 0
+        margin: 0 0 50px 0
         font-size: 15px
 
       .chart-source
         font-size: 14px
         max-width: 800px
-        margin: 24px 8px 0
+        margin: 12px 8px 0
 
       .chart-value
-        opacity: 0
+        //- opacity: 0
         transition: opacity 300ms
 
       text
@@ -124,6 +141,12 @@ block append css
 
       svg
         overflow: visible
+      
+      .legend
+        margin: 0 40px 0 100px;
+      .legend-item 
+        margin: 0
+        padding: 0 40px
 
       @media screen and (max-width: 600px)
         .col-wrap
@@ -131,7 +154,3 @@ block append css
         .col-md
           width: 100%
           height: 100%
-
-        .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)

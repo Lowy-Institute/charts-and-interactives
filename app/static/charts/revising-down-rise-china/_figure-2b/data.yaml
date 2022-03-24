@@ -1,0 +1,30 @@
+title: >
+
+source: >
+  <b>Source:</b> authors’ calculations based on UN Population Division
+  World Tables 10.0 and IMF
+
+subtitle: >
+  Millions, actual and projected
+
+charts:
+  - title: Contrasting East Asian demographics
+    subtitle: Annual % workforce growth - next 30 years
+    scale:
+      minY: -1
+      maxY: 2
+      datum: 0
+      steps: 4
+
+    axes:
+      - title: Category
+        values:
+          - text: China (2019)
+            highlight: true
+          - text: Korea (1980)
+          - text: Taiwan (1975)
+      - title: "workforce growth"
+        values:
+          - -0.78
+          - 1.44
+          - 1.64
