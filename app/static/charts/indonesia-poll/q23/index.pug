@@ -184,7 +184,7 @@ block append css
         bottom: 40px
 
       .chart-content > svg
-        border-left: 1px solid #bbb
+        /* border-left: 1px solid #bbb
 
       .chart-title
         /* margin: auto
@@ -193,7 +193,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         
@@ -262,3 +262,17 @@ block append css
 
       hr
         margin: 24px 0 16px
+
+      @media (max-width: 700px)
+        .legend-item
+          white-space: unset
+
+      @media (max-width: 450px)
+        .chart-content
+          position: absolute
+          top: 10px
+          left: 20px
+          right: 20px
+          bottom: 10px   
+        .x-label:nth-of-type(even)
+          display: none

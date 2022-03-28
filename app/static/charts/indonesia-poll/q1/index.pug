@@ -31,7 +31,7 @@ block page
             - steps = chart.axes.steps-1
             for n, i in new Array(steps+1)
               - y = (i / (steps))
-              svg(x=toPercent(y))
+              svg.y-label(x=toPercent(y))
                 text(text-anchor="middle" transform="translate(0 20)")
                   = min + range*(i/steps) + (axes.percentage ? "%" : "")
                 
@@ -131,14 +131,14 @@ block page
         
         let box = el.getBoundingClientRect();
         let val = vals[i].innerHTML.trim();
-        let ser = series[Math.floor(i/nCategories)].innerHTML.trim();
+        let ser = series[Math.floor(i/nCategories)].innerHTML.trim().toLowerCase();
         let cat = legendItems[i%nCategories].innerHTML;
         
         tooltip.style.left = box.left - 90 + 'px';
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = " In " + cat + ", " + val +"%" + " said Indonesia was going in the " + "'" + ser+"'";
+        tooltip.innerHTML = " In " + cat + ", " + val +"%" + " said Indonesia was going in the " + ser;
         
       });
       el.addEventListener('mouseleave', () => { 
@@ -172,7 +172,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         
@@ -187,7 +187,6 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        text-transform: lowercase
         max-width: 180px
 
       li
@@ -262,3 +261,7 @@ block append css
           font-size: 13px
         .chart-value
           display: none
+        .y-label
+          display: none
+        .y-label:nth-child(2n+1)
+          display: block

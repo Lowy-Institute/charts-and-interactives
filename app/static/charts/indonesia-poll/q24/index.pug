@@ -171,7 +171,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         
@@ -243,10 +243,13 @@ block append css
           bottom: 80px
           top: 30px
           
-          
         text
           font-size: 13px
-          
+
+      @media (max-width: 700px)
+        .chart-content
+          left: 80px
+
       @media (max-width: 450px)
         .legend-item
           width: min-content
@@ -260,3 +263,4 @@ block append css
           font-size: 13px
         .chart-value
           display: none
+        
