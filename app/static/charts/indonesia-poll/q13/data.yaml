@@ -42,15 +42,6 @@ series:
       - 1
       - 1
   -
-    title: Allowing too little
-    color: "orange"
-    widen: false
-    dashed: true
-    values:
-      - 1
-      - 1
-      - 1
-  -
     title: Allowing the right amount
     color: "grey"
     widen: false
@@ -60,8 +51,17 @@ series:
       - 1
       - 1
   -
+    title: Allowing too little
+    color: "orange"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1
+  -
     title: Not sure
-    color: "yellow"
+    color: "grey-200"
     widen: false
     dashed: true
     values:

@@ -30,7 +30,7 @@ series:
       - 2021
   -
     title: Indonesia
-    color: "blue-200"
+    color: "teal"
     widen: false
     dashed: false
     dotted: false
@@ -70,7 +70,7 @@ series:
       - 55
   -
     title: China
-    color: "highlight"
+    color: "red"
     widen: false
     dashed: false
     dotted: false
@@ -90,7 +90,7 @@ series:
       - 66
   -
     title: India
-    color: "blue-200"
+    color: "dark"
     widen: false
     dashed: false
     dotted: false
@@ -100,7 +100,7 @@ series:
       - 41
   -
     title: Vietnam
-    color: "green"
+    color: "red-dark"
     widen: false
     dashed: false
     dotted: false
@@ -110,7 +110,7 @@ series:
       - 39
   -
     title: United Kingdom
-    color: "green"
+    color: "grey-200"
     widen: false
     dashed: false
     dotted: false
@@ -120,7 +120,7 @@ series:
       - 59
   -
     title: Russia
-    color: "green"
+    color: "purple"
     widen: false
     dashed: false
     dotted: false
@@ -130,7 +130,7 @@ series:
       - 47
   -
     title: South Korea
-    color: "green"
+    color: "highlight"
     widen: false
     dashed: false
     dotted: false

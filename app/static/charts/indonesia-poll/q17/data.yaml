@@ -29,7 +29,7 @@ series:
       - 2021
   -
     title: China
-    color: "blue-200"
+    color: "red"
     widen: false
     dashed: false
     dotted: false
@@ -47,7 +47,7 @@ series:
       - 43 
   -
     title: Australia
-    color: "grey"
+    color: "yellow"
     widen: false
     dashed: false
     dotted: false
@@ -56,7 +56,7 @@ series:
       - 34
   -
     title: Japan
-    color: "yellow"
+    color: "grey"
     widen: false
     dashed: false
     dotted: false
@@ -74,7 +74,7 @@ series:
       - 23
   -
     title: Vietnam
-    color: "green"
+    color: "red-dark"
     widen: false
     dashed: false
     dotted: false
@@ -83,7 +83,7 @@ series:
       - 17
   -
     title: India
-    color: "blue-200"
+    color: "dark"
     widen: false
     dashed: false
     dotted: false
@@ -101,7 +101,7 @@ series:
       - 15
   -
     title: North Korea
-    color: "green"
+    color: "red-light"
     widen: false
     dashed: false
     dotted: false

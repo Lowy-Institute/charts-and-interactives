@@ -129,9 +129,9 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
-        let val = vals[i].innerHTML;
+        let val = vals[i].innerHTML.trim();
         let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
-        let cat = legendItems[i % nLegendItems].innerHTML;
+        let cat = legendItems[i % nLegendItems].innerHTML.toLowerCase();
         let box = el.getBoundingClientRect();
         
         tooltip.innerHTML = "In 2021, " + val + "%" + " were " + "'" + cat + "'" + "  of a company, bank or investment fund from " + ser + "buying a controlling stake in a major Indonesian company";
@@ -176,7 +176,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         
@@ -191,7 +191,6 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        text-transform: lowercase
         max-width: 180px
         box-sizing: border-box
 
@@ -245,15 +244,14 @@ block append css
         .x-label text
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 14px)
-
+        .legend
+          margin-top: 50px
         text
           font-size: 13px
           
       @media (max-width: 450px)
         .chart-content
           bottom: 40px
-        .legend
-          margin-top: 70px
         .chart-title
           font-size: 18px
         .chart-subtitle

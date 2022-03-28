@@ -41,7 +41,7 @@ series:
 
   -
     title: Some confidence
-    color: "orange"
+    color: "highlight"
     values:
       - 27
       - 40
@@ -51,7 +51,7 @@ series:
 
   -
     title: Not too much confidence
-    color: "grey"
+    color: "orange-light"
     values:
       - 3
       - 6
@@ -61,7 +61,7 @@ series:
 
   -
     title: No confidence at all
-    color: "yellow"
+    color: "orange"
     values:
       - null
       - 1

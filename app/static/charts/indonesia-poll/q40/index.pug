@@ -36,7 +36,7 @@ block page
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
                     = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY) + "%"
-                     
+
             g
               for y, i in chart.axes[1].values
                 - label = chart.axes[0].values[i]
@@ -54,10 +54,12 @@ block page
 
                   text.chart-value(
                     x="50%"
-                    y=-8
+                    y="50%"
                     text-anchor="middle"
+                    transform="translate(0 4.5)" 
+                    style="color: white"
                   )
-                    = y + "%"
+                    = y
 
                   svg(x="50%" y="100%")
                     text.label(
@@ -84,6 +86,48 @@ block page
       != page.source
 
     .tooltip
+
+  script.
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nLegendItems = 5;
+    const nCategories = 1;
+    /* --------------------- */
+    
+    const tooltip = document.querySelector('.tooltip');
+    const chart = document.querySelectorAll('.chart-content');
+    const recs = document.querySelectorAll('rect');
+    const cats = document.querySelectorAll('.y-label text');
+    const sers = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        recs.forEach( (r, i) => addHoverEventListeners(r, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let v = el.dataset.v;
+        let s = sers[el.dataset.s].innerHTML.trim();
+        let c = cats[el.dataset.c].innerHTML.trim();
+        let box = el.getBoundingClientRect();
+        
+        tooltip.innerHTML = v + "% " + " said they were " + "'" + s + "'" + " about " + "'" + c + "'";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+  
 
 block append css
   style
@@ -124,9 +168,23 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
+
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        max-width: 180px
+        box-sizing: border-box
 
       .chart-source
         font-size: 14px
@@ -134,8 +192,12 @@ block append css
         margin: 12px 8px 0
 
       .chart-value
-        //- opacity: 0
-        transition: opacity 300ms
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
 
       text,.legend-item
         font-size: 14px

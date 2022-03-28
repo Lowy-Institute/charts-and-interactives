@@ -44,7 +44,7 @@ series:
       - 1
   -
     title: Some confidence
-    color: "orange"
+    color: "highlight"
     widen: false
     dashed: true
     values:
@@ -54,7 +54,7 @@ series:
       - 1
   -
     title: Not too much confidence
-    color: "grey"
+    color: "yellow"
     widen: false
     dashed: true
     values:
@@ -64,7 +64,7 @@ series:
       - 1
   -
     title: No confidence at all
-    color: "yellow"
+    color: "orange"
     widen: false
     dashed: true
     values:

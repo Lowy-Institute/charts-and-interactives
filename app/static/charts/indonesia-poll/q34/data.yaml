@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Would you support or oppose Indonesia forming partnerships/minilaterals with other middle powers and neighbours depending on different issues and interests?
+  Would you support or oppose Indonesia forming partnerships or minilaterals with other middle powers and neighbours depending on different issues and interests?
 
 axes:
   minY:  0
@@ -52,7 +52,7 @@ series:
       - 1
   -
     title: Don’t know
-    color: "grey"
+    color: "grey-200"
     widen: false
     dashed: true
     values:

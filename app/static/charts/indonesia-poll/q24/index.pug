@@ -129,15 +129,15 @@ block page
       el.addEventListener('mouseover', () => {
         
         let box = el.getBoundingClientRect();
-        let val = vals[i].innerHTML;
-        let ser = series[Math.floor(i/nCategories)].innerHTML;
+        let val = vals[i].innerHTML.trim();
+        let ser = series[Math.floor(i/nCategories)].innerHTML.trim().toLowerCase();
         let cat = legendItems[i%nCategories].innerHTML;
         
         tooltip.style.left = box.left - 90 + 'px';
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = val + "%" + " said " + "'" + ser + "'" + " in " + cat;
+        tooltip.innerHTML = "In " + cat + ", " + val + "%" + " said " + " '"+ ser +"'";
         
       });
       el.addEventListener('mouseleave', () => { 
@@ -186,7 +186,6 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        text-transform: lowercase
         max-width: 180px
 
       li

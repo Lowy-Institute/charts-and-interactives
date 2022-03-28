@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Thinking about what Indonesian foreign policy should be trying to achieve, how important are each of the following?
+  Thinking about what Indonesian foreign policy should be trying to achieve, I am going to read a list of goals, and ask you to tell me how important each one is for Indonesia. Please say whether you think each issue is very important, fairly important, not very important or not at all important. 
 
 axes:
   minX:  0
@@ -37,7 +37,7 @@ series:
       - Tackling climate change
       - Promoting peace and conflict resolution
       - Promoting democracy in other countries
-      - Advocate for Muslim communities in other countries
+      - Advocating for Muslim communities in other countries
       - Promoting gender equality internationally
       - Building close relations with the United States
       - Building close relations with Australia
@@ -69,7 +69,7 @@ series:
 
   -
     title: Fairly important
-    color: "orange"
+    color: "highlight"
     values:
       - 28
       - 28
@@ -93,7 +93,7 @@ series:
 
   -
     title: Not very important
-    color: "grey"
+    color: "orange-light"
     values:
       - 4
       - 5
@@ -116,8 +116,8 @@ series:
       - 22
 
   -
-    title: No at all important
-    color: "yellow"
+    title: Not at all important
+    color: "orange"
     values:
       - 2
       - 3
@@ -141,7 +141,7 @@ series:
 
   -
     title: Don’t know
-    color: "highlight"
+    color: "grey"
     values:
       - 3
       - 2

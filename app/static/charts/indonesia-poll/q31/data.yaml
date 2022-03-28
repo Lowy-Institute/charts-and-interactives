@@ -54,7 +54,7 @@ series:
       - 1
   -
     title: Indonesia should support China
-    color: "grey"
+    color: "yellow"
     widen: false
     dashed: true
     values:
@@ -64,7 +64,7 @@ series:
       - 1
   -
     title: Don’t know
-    color: "yellow"
+    color: "grey"
     widen: false
     dashed: true
     values:

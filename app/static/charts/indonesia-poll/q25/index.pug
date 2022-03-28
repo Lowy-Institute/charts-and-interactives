@@ -129,7 +129,7 @@ block page
       el.addEventListener('mouseover', () => {
         
         let box = el.getBoundingClientRect();
-        let val = vals[i].innerHTML;
+        let val = vals[i].innerHTML.trim();
         let ser = series[Math.floor(i/nCategories)].innerHTML;
         let cat = legendItems[i%nCategories].innerHTML;
         
@@ -137,7 +137,7 @@ block page
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = val + "%" + " said " + ser + " was most important in " + cat;
+        tooltip.innerHTML = "In " + cat + ", " + val + "%" + " said " + ser + " was the most important international organisation to Indonesia";
         
       });
       el.addEventListener('mouseleave', () => { 
@@ -160,7 +160,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 235px
+        left: 315px
         right: 20px
         bottom: 40px
 
@@ -186,7 +186,6 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        text-transform: lowercase
         max-width: 180px
 
       li

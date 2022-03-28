@@ -134,11 +134,11 @@ block page
       el.addEventListener('mouseover', () => {
         
         let v = el.dataset.v;
-        let s = sers[el.dataset.s].innerHTML.trim();
-        let c = cats[el.dataset.c].innerHTML.trim();
+        let s = sers[el.dataset.s].innerHTML.trim().toLowerCase();
+        let c = cats[el.dataset.c].innerHTML.trim().toLowerCase();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = "in 2021, " + v + "% " + " saw " + "'" + c +"'" + " as " +"'" + s +"'" + " to the vital interests of Indonesia in the next ten years";
+        tooltip.innerHTML = "In 2021, " + v + "% " + " saw " + c + " as " +"'" + s +"'" + " to the vital interests of Indonesia in the next ten years";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -157,7 +157,7 @@ block append css
     :sass
   
       .wrapper
-        height: 550px
+        height: 650px
 
       .chart
         box-sizing: border-box
@@ -177,7 +177,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         
@@ -238,7 +238,7 @@ block append css
         opacity: 1
 
       hr
-        margin: 24px 0 16px
+        margin: 0 0 16px
           
       @media (max-width: 400px)
         text

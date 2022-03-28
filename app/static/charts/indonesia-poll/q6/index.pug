@@ -134,7 +134,7 @@ block page
       el.addEventListener('mouseover', () => {
         
         let v = el.dataset.v;
-        let s = sers[el.dataset.s].innerHTML.trim();
+        let s = sers[el.dataset.s].innerHTML.trim().toLowerCase();
         let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
         

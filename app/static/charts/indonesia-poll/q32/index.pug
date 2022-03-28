@@ -134,11 +134,11 @@ block page
       el.addEventListener('mouseover', () => {
         
         let v = el.dataset.v;
-        let s = sers[el.dataset.s].innerHTML.trim();
+        let s = sers[el.dataset.s].innerHTML.trim().toLowerCase();
         let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = v + "% " + " said " + "'" +"'" + s +"'" + " in " + c +"'";
+        tooltip.innerHTML =  "In " + c + ", " + v + "% " + " said " +"'" + s +"'";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -177,7 +177,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         

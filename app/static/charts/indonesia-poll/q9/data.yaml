@@ -36,7 +36,7 @@ series:
 
   -
     title: optimistic
-    color: "orange"
+    color: "highlight"
     values:
       - 63
       - 71

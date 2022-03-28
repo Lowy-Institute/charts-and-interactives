@@ -38,21 +38,21 @@ series:
 
   -
     title: Safe
-    color: "orange"
+    color: "highlight"
     values:
       - 39
       - 63
       - 68
   -
     title: Unsafe
-    color: "grey"
+    color: "orange-light"
     values:
       - 50
       - 27
       - 23
   -
     title: Very unsafe
-    color: "yellow"
+    color: "orange"
     values:
       - 4
       - 3

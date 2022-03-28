@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Do you think the Quadrilateral Security Dialogue and Australia’s plan to buy nuclear powered submarines under the AUKUS deal will make Indonesia more or less safe?
+  Do you think the Quad will make Indonesia more or less safe, or do you think it won’t affect Indonesia’s safety? Do you think Australia's plan to buy nuclear powered submarines will make Indonesia more or less safe, or do you think it won’t affect Indonesia’s safety? 
 
 axes:
   minX:  0
@@ -23,8 +23,8 @@ series:
   -
     title: Category
     values:
-      - AUKUS
-      - Quad
+      - Australia's plan to buy nuclear-powered submarines
+      - The Quad
   -
     title: More safe
     color: "blue-100"
@@ -33,19 +33,19 @@ series:
       - 21
   -
     title: Makes no difference
-    color: "orange"
+    color: "grey"
     values:
       - 24
       - 22
   -
     title: Less safe
-    color: "grey"
+    color: "orange"
     values:
       - 28
       - 13
   -
     title: Don’t know
-    color: "yellow"
+    color: "grey-200"
     values:
       - 40
       - 44

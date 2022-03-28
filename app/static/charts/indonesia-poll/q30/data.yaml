@@ -24,7 +24,7 @@ series:
     title: Category
     values:
       - China
-      - United States
+      - The United States
   -
     title: Concerned
     color: "blue-100"
@@ -32,7 +32,7 @@ series:
       - 33
       - 19
   -
-    title: Not Concerned
+    title: Not concerned
     color: "orange"
     values:
       - 67

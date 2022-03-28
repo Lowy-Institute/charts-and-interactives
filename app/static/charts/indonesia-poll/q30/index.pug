@@ -134,11 +134,11 @@ block page
       el.addEventListener('mouseover', () => {
         
         let v = el.dataset.v;
-        let s = sers[el.dataset.s].innerHTML.trim();
+        let s = sers[el.dataset.s].innerHTML.trim().toLowerCase();
         let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = v + "% " + " said they were " + "'" + s + "'" + " about " + "'" + c + "'";
+        tooltip.innerHTML = v + "% " + " said they were " + "'" + s + "'" + " about the influence of " + c + " on Indonesia";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;

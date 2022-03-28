@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  How important do you think the following issues are as priorities for Indonesia? 
+  You said that Indonesia promoting peace and conflict resolution is a 'very' or 'fairly' important foreign policy goal. How important do you think the following issues are as priorities for Indonesia?
 
 axes:
   minX:  0
@@ -23,15 +23,15 @@ series:
   -
     title: Category
     values:
-      - Play a larger role in the Islamic world
-      - Deploy Indonesian peacekeepers to other countries
+      - Playing a larger role in the Islamic world
+      - Deploying Indonesian peacekeepers to other countries
       - Creating an independent Palestinian state
       - Pushing ASEAN to manage the South China Sea dispute
       - Providing foreign aid to developing countries
       - Addressing the Rohingya issue
       - Protecting Uyghur communities in China
       - Supporting an inclusive government in Afghanistan
-      - Play a leadership role in resolving the Myanmar crisis
+      - laying a leadership role in resolving the Myanmar crisis
       - Helping to mediate US-China competition
       - Supporting democratic movement in Hong Kong
 
@@ -53,7 +53,7 @@ series:
 
   -
     title: Fairly important
-    color: "orange"
+    color: "highlight"
     values:
       - 44
       - 51

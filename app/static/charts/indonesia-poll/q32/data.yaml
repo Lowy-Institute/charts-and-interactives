@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Which statement about the problem of global warming comes closest to your own point of view?
+  Now about global warming. There is a controversy over what the countries of the world, including Australia, should do about the problem of global warming. I’m going to read you three statements. Please tell me which statement comes closest to your own point of view.
 
 axes:
   minX:  0
@@ -23,23 +23,23 @@ series:
   -
     title: Category
     values:
-      - 2021
       - 2011
+      - 2021
   -
     title: The problem of global warming should be addressed, but its effects will be gradual, so we can deal with the problem gradually by taking steps that are low in cost
     color: "blue-100"
     values:
-      - 38
       - 48
+      - 38
   -
-    title: Global warming is a serious and pressing problem. We should begin taking steps now even if this involves significant costs
+    title: Global warming is a serious and pressing problem, we should begin taking steps now even if this involves significant costs
     color: "orange"
     values:
-      - 36
       - 31
+      - 36
   -
     title: Until we are sure that global warming is really a problem, we should not take any steps that would have economic costs
     color: "grey"
     values:
-      - 31
       - 13
+      - 26

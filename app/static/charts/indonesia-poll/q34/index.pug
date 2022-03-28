@@ -27,7 +27,7 @@ block page
         svg(height="100%" width="100%" viewBox="-1 -1 2 2" style="transform: rotate(-90deg)")
 
           // Y-Axis labels
-          svg(height="100%")
+          // svg(height="100%")
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
@@ -36,7 +36,7 @@ block page
                   = (minY + range*(i/steps) + (axes.percentage ? "%" : ""))
                 
           // Y-Axis minor lines
-          if chart.axes.minorLines
+          // if chart.axes.minorLines
             svg(height="100%")
               for n, i in new Array(steps)
                 - y = (i / steps)
@@ -51,7 +51,7 @@ block page
                   )
 
           // X-Axis labels
-          for x, i in chart.series[0].values
+          // for x, i in chart.series[0].values
             svg.x-label(x=toPercent(fx(i)) y="100%")
               text(
                 text-anchor=axes.rotateX ? "end" : "middle"
@@ -59,7 +59,7 @@ block page
               )=x
               
           // OPTIONAL GUIDE LINE
-          if !isEmpty(axes.guideLine)
+          // if !isEmpty(axes.guideLine)
             - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
             line(
               x1="0" y1=y x2="100" y2=y
@@ -67,6 +67,9 @@ block page
               stroke-width=.25
               stroke-dasharray=(false ? 1 : "")
             )
+          .tooltip(style="left: 278.83px;top: 188.752px;")
+            span In 2021, 37%  said United States had done The right amount to combat climate change
+
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
           for ax, i in new Array(chart.series.length)
@@ -78,7 +81,12 @@ block page
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 
-      .tooltip
+      .hover-label-1
+        span(style='position: absolute; left: 60%; top: 44%; color:#fff;') 35%
+      .hover-label-2
+        span(style='position: absolute; left: 58%; top: 61%; color:#fff;') 13%
+      .hover-label-3
+        span(style='position: absolute; left: 38%; top: 52%; color:#fff;') 52%
 
   script.
 
@@ -86,7 +94,7 @@ block page
     const slices = [
       { percent: 0.35, color: '#2D6993' },
       { percent: 0.13, color: '#ff8800' },
-      { percent: 0.52, color: '#B7C1CE' },
+      { percent: 0.52, color: '#5E646C' },
     ];
     let cumulativePercent = 0;
     
@@ -120,55 +128,33 @@ block page
       pathEl.setAttribute('d', pathData);
       pathEl.setAttribute('fill', slice.color);
       svgEl.appendChild(pathEl);
+
+      //const rectEl = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      //rectEl.setAttribute('fill', slice.color);
+      //svgEl.appendChild(rectEl);
     });
     
-  script.
-
-
-    /* --- USER TO UPDATE --- */
-    const enableTooltips = true;
-    const nLegendItems = 2;
-    const nCategories = 7;
-    /* --------------------- */
-    
-    const tooltip = document.querySelector('.tooltip');
-    const chart = document.querySelectorAll('.chart-content');
-    const recs = document.querySelectorAll('path');
-    const cats = document.querySelectorAll('.y-label text');
-    const sers = document.querySelectorAll('.legend-item-label');
-    
-    if (enableTooltips) {
-      window.addEventListener('DOMContentLoaded', () => {
-        recs.forEach( (r, i) => addHoverEventListeners(r, i) );  
-      });
-    }
-        
-    function addHoverEventListeners(el, i) {
-      el.addEventListener('mouseover', () => {
-        
-        let v = el.dataset.v;
-        let s = sers[el.dataset.s].innerHTML.trim();
-        let c = cats[el.dataset.c].innerHTML.trim();
-        let box = el.getBoundingClientRect();
-
-        tooltip.innerHTML = v + "% " + " said " + "'" + s +"'" + " to " + "'" + c + "'";
-        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
-        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
-        tooltip.style.opacity = 1;
-        
-      });
-      
-      el.addEventListener('mouseleave', () => { 
-        tooltip.style.opacity = 0;
-      });
-      
-    }
+  
 
 
 block append css
   style
     :sass
-    
+      rect
+        width: 0.23px
+        height: 0.125px
+        fill: white 
+
+      rect:nth-of-type(1)
+        x: 10%
+        y: 20%
+      rect:nth-of-type(2)
+        x: -30%
+        y: 10%
+      rect:nth-of-type(3)
+        x: -10%
+        y: -25%
+
       .wrapper
         height: 550px
 
@@ -193,7 +179,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         
@@ -211,6 +197,9 @@ block append css
         text-transform: lowercase
         max-width: 180px
         box-sizing: border-box
+
+      .chart-content:hover .tooltip
+        opacity: 1
 
       li
         list-style: none

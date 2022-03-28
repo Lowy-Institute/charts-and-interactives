@@ -129,12 +129,12 @@ block page
     function addHoverEventListeners(el, i) {
       el.addEventListener('mouseover', () => {
         
-        let val = vals[i].innerHTML;
-        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
-        let cat = legendItems[i % nLegendItems].innerHTML;
+        let val = vals[i].innerHTML.trim();
+        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML.trim();
+        let cat = legendItems[i % nLegendItems].innerHTML.toLowerCase();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + "%" + " said " + "'" + cat + "'" + " in "  + ser;
+        tooltip.innerHTML = "In "  + ser + ", " + val + "%" + " said globalisation was " + "'" + cat + "'" + " for Indonesia";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -191,7 +191,6 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        text-transform: lowercase
         max-width: 180px
         box-sizing: border-box
 

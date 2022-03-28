@@ -29,7 +29,7 @@ series:
       - Food shortages
       - A severe downturn in the domestic economy
       - Social religious intolerance (ethnicity/religion/SARA)
-      - Foreign intervention/conspiracy/meddling
+      - Foreign intervention / conspiracy / meddling
       - Internal unrest
       - International financial instability
       - Foreign workers coming to Indonesia
@@ -39,7 +39,7 @@ series:
       - Instability in the South China Sea
       - A military conflict between the US and China
   -
-    title: Critical threat
+    title: A critical threat
     color: "blue-100"
     values:
       - 67
@@ -59,7 +59,7 @@ series:
       - 41
   -
     title: An important but not critical threat
-    color: "orange"
+    color: "highlight"
     values:
       - 19
       - 21
@@ -78,7 +78,7 @@ series:
       - 30
   -
     title: Not an important threat at all
-    color: "grey"
+    color: "orange"
     values:
       - 8
       - 10
@@ -97,7 +97,7 @@ series:
       - 18 
   -
     title: Don’t know
-    color: "yellow"
+    color: "grey"
     values:
       - 6
       - 6
@@ -116,7 +116,7 @@ series:
       - 11
   -
     title: Refuse to answer
-    color: "highlight"
+    color: "grey-200"
     values:
       - 1
       - 1

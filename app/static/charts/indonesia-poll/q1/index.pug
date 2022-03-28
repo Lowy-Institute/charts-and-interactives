@@ -130,15 +130,15 @@ block page
       el.addEventListener('mouseover', () => {
         
         let box = el.getBoundingClientRect();
-        let val = vals[i].innerHTML;
-        let ser = series[Math.floor(i/nCategories)].innerHTML;
+        let val = vals[i].innerHTML.trim();
+        let ser = series[Math.floor(i/nCategories)].innerHTML.trim();
         let cat = legendItems[i%nCategories].innerHTML;
         
         tooltip.style.left = box.left - 90 + 'px';
         tooltip.style.top = box.top + 10 + 'px';
         tooltip.style.opacity = 1;
         
-        tooltip.innerHTML = " In " + cat + ", " + val +"%" + " said Indonesia was going in the " + "'" +ser +"'";
+        tooltip.innerHTML = " In " + cat + ", " + val +"%" + " said Indonesia was going in the " + "'" + ser+"'";
         
       });
       el.addEventListener('mouseleave', () => { 

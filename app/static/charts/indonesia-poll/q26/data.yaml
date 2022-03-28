@@ -43,7 +43,7 @@ series:
       - 1
   -
     title: Optimistic
-    color: "orange"
+    color: "highlight"
     widen: false
     dashed: true
     values:
@@ -52,7 +52,7 @@ series:
       - 1
   -
     title: Pessimistic
-    color: "grey"
+    color: "orange-light"
     widen: false
     dashed: true
     values:
@@ -61,7 +61,7 @@ series:
       - 1
   -
     title: Very pessimistic
-    color: "yellow"
+    color: "orange"
     widen: false
     dashed: true
     values:

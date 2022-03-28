@@ -48,7 +48,7 @@ series:
 
   -
     title: In favour
-    color: "orange"
+    color: "highlight"
     values:
       - 42
       - 46
