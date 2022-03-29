@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/indonesia-poll/q5/data"
+  - var datapath = "static/charts/indonesia-poll/q5.1/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -23,9 +23,8 @@ block page
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
-        - fx = (i) => (i + 0.4) / (ln - 0.2)
+        - fx = (i) => (i + 0.2) / (ln - 0.15)
         - fy = (y) => (y - minY) / range
-        
         
         svg(height="100%" width="100%")
         
@@ -101,12 +100,10 @@ block page
 
           for item, i in chart.series
             g
-              
               for val, ix in item.values
-
                 if !isNull(val)
                   circle(
-                    r=4
+                    r=5
                     cx=toPercent(fx(ix))
                     cy=toPercent(fy(maxY + minY - val))
                     fill=chart.colors[chart.series[i].color]
@@ -127,11 +124,13 @@ block page
                     = val && !( i==3 && ([5,6,13,14,15].includes(ix)) ) && !(i==1 && ix==4) ? val.toFixed(0) : "" 
                     //-change above line  to val.toFixed(1) to show decimal place
 
-                  //-text= chart.series[i].title
+                  text.country-id(
+                    y=4
+                    x=20
+                    text-anchor="start"
+                  )
+                    = chart.series[i].title + " " + chart.series[i].values[0] + " > " + chart.series[i].values[1] + " > " + chart.series[i].values[2]
                   //-adds country name with each circle
-                  
-
-
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
@@ -146,8 +145,6 @@ block page
       //- .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       //- .tooltip
-
- 
 
 block append css
   style
@@ -241,7 +238,7 @@ block append css
         font-size: 15px
         
       .chart-value
-        opacity: 0
+        opacity: 1
         transition-duration: .4s
         pointer-events: none
         
@@ -261,6 +258,11 @@ block append css
 
       .chart-value:hover
         opacity: 1
+      
+      .country-id
+        display: none
+      .chart-value:nth-of-type(3) .country-id
+        display: block
 
       hr
         margin: 24px 0 16px
