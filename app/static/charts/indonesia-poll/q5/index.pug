@@ -7,6 +7,7 @@ block append config
   - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
   - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - isNull = (val) => (val === undefined || val == null || val <= 0)
   - chart = page
   
 block page
@@ -24,6 +25,7 @@ block page
         - range = maxY - minY
         - fx = (i) => (i + 0.4) / (ln - 0.2)
         - fy = (y) => (y - minY) / range
+
         
         svg(height="100%" width="100%")
         
@@ -95,16 +97,16 @@ block page
                       (100 * fy(maxY + minY - y)).toFixed(3)
                     ].join(" ");
                   })).filter( e => e ).join(",")
-                )
+                )          
 
           for item, i in chart.series
             g
               
               for val, ix in item.values
 
-                if true
+                if !isNull(val)
                   circle(
-                    r=4
+                    r=5
                     cx=toPercent(fx(ix))
                     cy=toPercent(fy(maxY + minY - val))
                     fill=chart.colors[chart.series[i].color]
@@ -120,11 +122,16 @@ block page
                     y=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? -12 : 24)
                     text-anchor="end"
                     fill=chart.colors[chart.series[i].color]
+                    x=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? 16 : 0)
                   )
                     = val && !( i==3 && ([5,6,13,14,15].includes(ix)) ) && !(i==1 && ix==4) ? val.toFixed(0) : "" 
                     //-change above line  to val.toFixed(1) to show decimal place
 
-                
+                  //-text= chart.series[i].title
+                  //-adds country name with each circle
+                  
+
+
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
@@ -234,7 +241,7 @@ block append css
         font-size: 15px
         
       .chart-value
-        opacity: 0
+        opacity: 1
         transition-duration: .4s
         pointer-events: none
         

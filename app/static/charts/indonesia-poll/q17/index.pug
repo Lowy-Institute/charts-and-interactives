@@ -7,6 +7,7 @@ block append config
   - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
   - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - isNull = (val) => (val === undefined || val == null || val <= 0)
   - chart = page
   
 block page
@@ -99,9 +100,9 @@ block page
           for item, i in chart.series
             g
               for val, ix in item.values
-                if true
+                if !isNull(val)
                   circle(
-                    r=4
+                    r=5
                     cx=toPercent(fx(ix))
                     cy=toPercent(fy(maxY + minY - val))
                     fill=chart.colors[chart.series[i].color]
