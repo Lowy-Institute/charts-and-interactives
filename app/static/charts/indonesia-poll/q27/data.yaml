@@ -32,17 +32,6 @@ series:
       - Indonesia is doing enough to pressure China to improve human rights
 
   -
-    title: 2021
-    color: "blue-100"
-    values:
-      - 43
-      - 40
-      - 48
-      - 60
-      - 40
-      - 54
-
-  -
     title: 2011
     color: "orange"
     values:
@@ -53,5 +42,14 @@ series:
       - 36
       - 49
 
-
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 43
+      - 40
+      - 48
+      - 60
+      - 40
+      - 54
 

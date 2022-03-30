@@ -70,6 +70,7 @@ block page
                       height=toPercent(fy(v))
                       width="100%"
                       fill=chart.colors[chart.series[ci].color]
+                      
                     )
                     text.chart-value(
                       x="50%"
@@ -105,6 +106,7 @@ block page
       
       .tooltip
 
+
   script.
 
     /* --- USER TO UPDATE --- */
@@ -130,11 +132,11 @@ block page
       el.addEventListener('mouseover', () => {
         
         let val = vals[i].innerHTML.trim();
-        let ser = series[ Math.floor(i/nLegendItems)].innerHTML;
-        let cat = legendItems[i % nLegendItems].innerHTML;
+        let ser = series[ Math.floor(i/nLegendItems)].innerHTML.trim();
+        let cat = legendItems[i % nLegendItems].innerHTML.trim().toLowerCase();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = "In " + ser + ", " + val + "%" + " said they felt " + "'" + cat + "'";
+        tooltip.innerHTML = "In " + ser + ", " + val + "%" + " said they felt " + cat ;
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -191,7 +193,6 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        text-transform: lowercase
         max-width: 180px
         box-sizing: border-box
 

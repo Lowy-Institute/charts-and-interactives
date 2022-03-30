@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  To what extent to do you trust the following to be an accurate and fair source of information?
+  To what extent do you trust the following to be an accurate and fair source of information?
 
 axes:
   minX:  0
@@ -28,7 +28,7 @@ series:
       - Police
       - Scientists or experts
       - Friends and family
-      - Religious organisations / leaders
+      - Religious organisations/leaders
       - Local government
       - Political elites/parties
       - Television and radio news

@@ -23,7 +23,7 @@ series:
   -
     title: countries
     values:
-      - US
+      - United States
       - China
       - Japan
       - Indonesia
@@ -35,7 +35,7 @@ series:
 
   -
     title: 2011
-    color: "blue-100"
+    color: "orange"
     values:
       - 58
       - 25
@@ -49,7 +49,7 @@ series:
 
   -
     title: 2021
-    color: "orange"
+    color: "blue-100"
     values:
       - 36
       - 22

@@ -1,5 +1,5 @@
 title: >
-  COVID handling by country
+  Covid-19 handling by country
 
 #source: >
   #<b>Source:</b> authors' calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Overall, how well or badly do you think each of the following countries have handled the Covid-19 coronavirus outbreak so far? 
+  Overall, how well or badly do you think each of the following countries has handled the Covid-19 outbreak so far? 
 
 axes:
   minY:  0

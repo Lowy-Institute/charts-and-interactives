@@ -33,6 +33,8 @@ block page
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+            svg(y="50%")
+              text.y-label Total: 'strongly in favour' and 'in favour'
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -134,7 +136,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML.toLowerCase();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = "In 2021, " + val + "%" + " were " + "'" + cat + "'" + "  of a company, bank or investment fund from " + ser + "buying a controlling stake in a major Indonesian company";
+        tooltip.innerHTML = "In 2021, " + val + "%" + " were " + "'" + cat + "'" + "  of a company, bank or investment fund from " + ser + " buying a controlling stake in a major Indonesian company";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -158,6 +160,7 @@ block append css
       .chart
         box-sizing: border-box
         position: relative
+        margin-left: 1rem
 
       .chart-content
         position: absolute
@@ -193,6 +196,10 @@ block append css
         font-size: 14px
         max-width: 180px
         box-sizing: border-box
+      
+      .y-label
+        transform: rotate(-90deg) translate(0rem, -3.5rem)
+        text-anchor: middle
 
       li
         list-style: none

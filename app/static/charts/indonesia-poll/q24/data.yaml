@@ -12,8 +12,8 @@ subtitle: >
 
 axes:
   min:  0
-  max: 90
-  steps: 10
+  max: 70
+  steps: 8
   rotateLabels: false
   percentage: true
   minorLines: true
@@ -28,7 +28,7 @@ series:
       - For someone like me, it doesn't matter what kind of government we have
   -
     title: 2011
-    color: "blue-100"
+    color: "orange"
     values:
       - 62
       - 16
@@ -37,7 +37,7 @@ series:
 
   -
     title: 2021
-    color: "orange"
+    color: "blue-100"
     values:
       - 60
       - 20

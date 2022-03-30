@@ -16,7 +16,6 @@ axes:
   stepsY: 10
   rotateX: false
   percentage: true
-  minorLines: false
   dotted: [] # Index of dotted gridlines
   reverse: false
 
@@ -35,7 +34,7 @@ series:
       - 12
 
   -
-    title: optimistic
+    title: Optimistic
     color: "highlight"
     values:
       - 63

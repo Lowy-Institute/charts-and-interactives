@@ -6,8 +6,8 @@ title: >
 subtitle: >
 
 charts:
-  - title: Source of COVID-19 pandemic
-    subtitle: From what you have seen or heard, which of the following do you think is the most likely cause of the COVID-19 pandemic?
+  - title: Source of Covid-19 pandemic
+    subtitle: From what you have seen or heard, which of the following do you think is the most likely cause of the Covid-19 pandemic?
     scale:
       minY: 0
       maxY: 40

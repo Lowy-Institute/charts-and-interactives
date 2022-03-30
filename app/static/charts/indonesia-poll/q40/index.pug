@@ -37,6 +37,12 @@ block page
                   text(text-anchor="end" transform="translate(-8 4)")
                     = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY) + "%"
 
+            //- minor lines added manually
+            line(x1="0" x2="100%" y1="75%"  y2="75%" stroke="#ddd")
+            line(x1="0" x2="100%" y1="50%"  y2="50%" stroke="#ddd")
+            line(x1="0" x2="100%" y1="25%"  y2="25%" stroke="#ddd")
+            line(x1="0" x2="100%" y1="0%"  y2="0%" stroke="#ddd")      
+
             g
               for y, i in chart.axes[1].values
                 - label = chart.axes[0].values[i]

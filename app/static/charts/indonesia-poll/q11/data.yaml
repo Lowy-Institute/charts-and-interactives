@@ -13,6 +13,7 @@ charts:
       maxY: 30
       datum: 0
       steps: 4
+      minorLines: true
 
     axes:
       - title: Category

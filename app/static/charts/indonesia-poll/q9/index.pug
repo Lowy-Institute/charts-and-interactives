@@ -131,7 +131,7 @@ block page
         
         let val = vals[i].innerHTML.trim();
         let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
-        let cat = legendItems[i % nLegendItems].innerHTML;
+        let cat = legendItems[i % nLegendItems].innerHTML.toLowerCase();
         let box = el.getBoundingClientRect();
         
         tooltip.innerHTML = "In " + ser+", " + val +"%"  + " said they felt " + "'" + cat + "'" + " about Indonesia’s economic performance over the next five years";

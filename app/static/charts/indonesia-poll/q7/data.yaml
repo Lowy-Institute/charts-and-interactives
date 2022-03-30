@@ -16,7 +16,7 @@ axes:
   stepsY: 6
   rotateX: false
   percentage: true
-  minorLines: false
+  minorLines: true
   dotted: [] # Index of dotted gridlines
   reverse: false
 
@@ -24,35 +24,35 @@ series:
   -
     title: Year
     values:
-      - 2021
-      - 2011
       - 2006
+      - 2011
+      - 2021
 
 
   -
     title: Mostly good
     color: "blue-100"
     values:
-      - 62
-      - 67
       - 61
+      - 67
+      - 62
 
 
   -
     title: Mostly bad
     color: "orange"
     values:
-      - 7
-      - 26
       - 31
+      - 26
+      - 7
 
 
   -
     title: Don't know
     color: "grey"
     values:
-      - 31
-      - 7
       - 8
+      - 7
+      - 31
 
 

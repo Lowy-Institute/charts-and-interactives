@@ -80,7 +80,7 @@ block page
                       y="50%"
                       text-anchor="middle"
                       transform="translate(0 4.5)"
-                      style=`color: ${(j < 3 ? "white" : "")}`
+                      style=`color: ${(j != 4 ? "white" : "")}`
                     )
                       //-= v.toFixed(0) + (axes.percentage ? "%" : "")
                       //- removed % symbol from hover
@@ -109,8 +109,8 @@ block page
       
       .tooltip
 
-  script.
 
+  script.
 
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;

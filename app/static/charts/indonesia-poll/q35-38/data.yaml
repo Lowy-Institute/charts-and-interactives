@@ -8,7 +8,7 @@ title: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Have you heard about the partnership between Japan, Australia, the US and India called the Quadrilateral Security Dialogue, and Australia’s plan to buy nuclear powered submarines under the AUKUS deal with the US and UK?
+  Have you heard about the partnership between Japan, Australia, the United States and India called the Quadrilateral Security Dialogue, and Australia’s plan to buy nuclear-powered submarines under the AUKUS deal with the United States and United Kingdom?
 
 axes:
   minX:  0
@@ -23,7 +23,7 @@ series:
   -
     title: Category
     values:
-      - Australia’s plan to buy nuclear powered submarines (AUKUS)
+      - Australia’s plan to buy nuclear-powered submarines (AUKUS)
       - The Quadrilateral Security Dialogue (Quad)
   -
     title: Heard of

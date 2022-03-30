@@ -80,7 +80,7 @@ block page
                       y="50%"
                       text-anchor="middle"
                       transform="translate(0 4.5)"
-                      style=`color: ${(j < 3 ? "white" : "")}`
+                      style=`color: ${(j < 4 ? "white" : "")}`
                     )
                       //-= v.toFixed(0) + (axes.percentage ? "%" : "")
                       //- removed % symbol from hover
@@ -134,11 +134,11 @@ block page
       el.addEventListener('mouseover', () => {
         
         let v = el.dataset.v;
-        let s = sers[el.dataset.s].innerHTML.trim();
+        let s = sers[el.dataset.s].innerHTML.trim().toLowerCase();
         let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = "In 2021, " + v + "% " + " said that " + c + " would make Indonesia " +"'" + s +"'";
+        tooltip.innerHTML = "In 2021, " + v + "% " + " said that " + c + " would make Indonesia " + s;
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -166,7 +166,7 @@ block append css
       .chart-content
         position: absolute
         top: 0
-        left: 64px
+        left: 340px
         right: 20px
         bottom: 30px
 
@@ -177,7 +177,7 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
         

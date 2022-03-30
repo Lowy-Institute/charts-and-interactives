@@ -36,7 +36,11 @@ block page
                 svg(y=toPercent(y))
                   text(text-anchor="end" transform="translate(-8 4)")
                     = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY) + "%"
-                     
+
+            //- minor lines added manually
+            line(x1="0" x2="100%" y1="33%"  y2="33%" stroke="#ddd")
+            line(x1="0" x2="100%" y1="66%"  y2="66%" stroke="#ddd")
+            line(x1="0" x2="100%" y1="0%"  y2="0%" stroke="#ddd")      
             g
               for y, i in chart.axes[1].values
                 - label = chart.axes[0].values[i]
@@ -46,12 +50,13 @@ block page
                   width=toPercent(fx(0))
                   height=toPercent(fh(y))
                 )
+
                   rect(
                     fill=label.highlight ? "#ff4050" : "#2D6993"
                     width="100%"
                     height="100%"
                   )
-
+              
                   text.chart-value(
                     x="50%"
                     y="50%"
@@ -68,6 +73,7 @@ block page
 
                 //- Add a new baseline
                 line(x1="0" x2="100%" y1=toPercent(baseline) y2=toPercent(baseline) stroke="#ccc")
+                
 
     //- .row
       ul.legend.list-bare.txt-left.flex.flex-ch
