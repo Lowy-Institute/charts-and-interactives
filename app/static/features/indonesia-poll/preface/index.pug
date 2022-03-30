@@ -1,0 +1,28 @@
+extend ../partials/issue
+
+block append config
+  - issue = { href: "preface", title: "Preface" }
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/indonesia-poll/"
+  - page.title = "Indonesia Poll 2021"
+  - page.metaTitle = `About - Lowy Institute`
+  - page.description = ""
+  - page.image = "https://interactives.lowyinstitute.org/features/indonesia-poll/img/thumb.jpg"
+
+block content
+  :marked
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente placeat fugit omnis debitis voluptatibus esse, in cupiditate aliquam nesciunt nam asperiores nihil vitae molestias, quisquam repudiandae? Obcaecati expedita at laudantium minima illo ipsa et consectetur. Ipsum error recusandae maxime dolor deserunt provident tempora dicta perspiciatis quaerat dolorum? Eaque libero reiciendis provident quibusdam beatae? Quasi illum dolores, possimus sequi quo non officia ut, aut tempore qui nesciunt? Commodi corrupti neque ullam perferendis nemo excepturi! Quam, facilis ratione debitis quidem inventore adipisci itaque illo reprehenderit exercitationem quis incidunt maxime, nisi quo aut hic quia? Quasi sapiente eaque porro maxime nisi dicta odio, repellendus in quae asperiores distinctio recusandae ducimus. Dolore inventore sint vitae incidunt veritatis? Unde inventore ratione nisi et earum quo dolore tempore, quis laborum laboriosam accusantium tempora atque hic assumenda dolor perferendis illo vel! Dicta assumenda quae voluptatibus dolorem cupiditate iste? Rerum accusantium, explicabo suscipit nesciunt repellat, beatae tenetur id commodi nulla assumenda perferendis velit consectetur non illum facilis tempora laudantium rem provident, quas dignissimos nihil autem culpa? Iste expedita vero rerum at dolores quis veniam in laudantium, maxime illum nisi sunt modi officia quod ea accusamus perferendis porro ullam ad quibusdam hic voluptatem delectus? Eaque accusamus eos sit quidem.
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, quo animi quos non ex, labore laboriosam aliquam, repellendus et sit sed eum tenetur tempore voluptas velit distinctio temporibus neque mollitia nesciunt voluptatem corporis ea similique quod. Numquam in maxime atque eligendi, sit dolorem, eum, quos quaerat unde nihil corporis! Aliquid eligendi eius vel provident aut eum, illo deleniti optio minus numquam veniam sit animi vitae fuga quisquam molestiae eveniet, nesciunt totam? Ipsam nostrum labore laboriosam deleniti maiores tenetur quia quibusdam consequatur dolorum! Placeat itaque at vitae delectus dolorem, incidunt reprehenderit deleniti quas ut sequi libero dolor esse, tempora reiciendis! Aspernatur eum dicta alias iure maxime beatae quas amet minus numquam sunt. Saepe quidem dicta fugit ab, deserunt facere, quibusdam omnis ut nostrum incidunt temporibus! Laborum, quos sapiente sint veritatis nesciunt vero error tempore harum tenetur quasi itaque. Doloremque, voluptatum officia!
+
+block append css
+  style
+    include:sass ../styles/_base.sass
+    include:sass ../styles/_typography.sass
+    include:sass ../styles/_styles.sass
+    include:sass ../styles/_responsive.sass
+    include:sass ../styles/_link-grid.sass
+    include:sass ../styles/_animation.sass
+    include:sass ../styles/_button.sass
+    include:sass ../styles/_scroller.sass
+    include:sass ../styles/_landing.sass

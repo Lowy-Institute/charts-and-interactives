@@ -1,0 +1,72 @@
+@import app/static/features/indonesia-poll/styles/_vars.sass
+
+$icon-size: 34px
+
+.social-share
+  top: 0
+  right: 0
+  flex-direction: column
+  position: fixed
+  display: flex
+  z-index: 10
+
+  .landing &
+    position: absolute
+    color: $color-ff
+
+  .article &
+    color: $color-dk
+
+    .label
+      display: none
+
+  .divider
+    display: inline
+    border-right: 1px solid rgba(white, 0.5)
+    margin-right: 0.25rem
+    
+  .icon
+    margin: 2px
+    width: $icon-size
+    height: $icon-size
+    line-height: $icon-size
+    font-size: $icon-size / 2
+    border-radius: 50%
+    transition: all 300ms
+    display: inline-block
+    box-sizing: border-box
+    color: inherit
+
+    &:hover
+      color: inherit
+      background-color: lighten($color-dk, 7)
+
+  .label
+    position: absolute
+    white-space: nowrap
+    right: -$icon-size/2
+    top: 0
+    z-index: -1
+    background: lighten($color-dk, 4)
+    opacity: 1
+    color: white
+    border-radius: 8px
+    transition: all .3s
+    transform: translateX(-16px)
+    padding: 0 $icon-size * 1.25 0 $icon-size * 0.25
+      
+    .icon:hover &,
+    &:hover
+      background: lighten($color-dk, 7)
+
+
+@media (max-width: $screen-tablet)
+
+  #pdf,
+  .social-share
+    display: none
+
+  .social-share  
+    right: 0
+    padding-right: 0 
+    position: absolute
