@@ -23,11 +23,11 @@ charts:
           - text: China
           - text: Singapore
           - text: Our own model
-          - text: Can’t choose
           - text: Malaysia
           - text: Australia
           - text: Other
           - text: India
+          - text: Can’t choose
 
       - title: "workforce growth"
         values:
@@ -36,9 +36,9 @@ charts:
           - 13
           - 12
           - 9
-          - 9
           - 3
           - 3
           - 2
           - 1
+          - 9
 

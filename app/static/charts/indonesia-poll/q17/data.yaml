@@ -99,12 +99,3 @@ series:
     values:
       - 12
       - 15
-  -
-    title: North Korea
-    color: "red-light"
-    widen: false
-    dashed: false
-    dotted: false
-    values:
-      - 23
-      - null

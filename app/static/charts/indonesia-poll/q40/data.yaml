@@ -1,7 +1,7 @@
 title: >
 
-#source: >
-  #<b>Source:</b> authors’ calculations based on UN Population Division
+source: >
+  * When asked to nominate which country, 11.7% of respondents say China, whereas 0.2% say the United States.
 
 subtitle: >
 
@@ -19,7 +19,7 @@ charts:
         values:
           - text: An act of God
           - text: Human contact with an infected animal
-          - text: A laboratory leak in a foreign country
+          - text: A laboratory leak in a foreign country*
           - text: A domestic problem or issue
           - text: Don’t know
 
