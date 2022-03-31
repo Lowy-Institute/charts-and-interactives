@@ -1,0 +1,9 @@
+ul.link-grid.list-bare.txt-ff.bg-dk
+  for p,i in page.issues
+    li.txt-tu(class=(p.href === issue && issue.href ? "active" : ""))
+      a.txt-bare.flex(
+        href=`/features/indonesia-poll/topic/${p.href}`
+        class=(p.href === (issue && issue.href) ? "active" : "")
+      )
+        span.tag.txt-micro.fw700(class=`tag-${i}`)
+        span.txt-mini.pv-xs.lead-tight!= p.menuTitle || p.title

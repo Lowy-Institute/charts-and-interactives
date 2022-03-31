@@ -1,0 +1,61 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.class = "article"
+  - page.issues = data.getOne("static/features/indonesia-poll/data").issues
+  - issue = page.issues.find(e => e.href === href)
+  - index = page.issues.findIndex(e => e.href === href)
+
+block prepend head
+  - page.url = "https://interactives.lowyinstitute.org/features/indonesia-poll/"
+  - page.url += issue.href
+  - page.description = "Lorem Ipsum"
+  - page.socialTitle = `${issue.title} - Indonesia Poll 2021`.replace("&nbsp;", " ")
+  - page.metaTitle = `${issue.title} - Lowy Institute`
+  - page.title = page.metaTitle
+  - page.image = `https://interactives.lowyinstitute.org/features/indonesia-poll/img/${issue.href}.jpg`
+
+block page
+    
+  include ../partials/header
+
+  .container
+      
+    .w-article.flex-ch.relative.bg-dk.txt-ff
+      .title-block.txt-center.z1.p-md
+        .title.txt-tu.pv-sm!= issue.title.replace("&nbsp;", " ")
+
+    article
+      block content
+      hr
+      block bio
+
+    aside.h-screen.h-auto-sm.flex-col.mx-auto.txt-ff.bg-dk
+      .txt-center.opacity-75.p-sm.border-v-lt
+        .txt-mini.fw600 All topics
+      .relative.flex-grow
+        include link-grid
+
+      include footer
+
+block append css
+  style
+    include:sass ../styles/_base.sass
+    include:sass ../styles/_typography.sass
+    include:sass ../styles/_styles.sass
+    include:sass ../styles/_responsive.sass
+    include:sass ../styles/_header.sass
+    include:sass ../styles/_article.sass
+    include:sass ../styles/_button.sass
+    include:sass ../styles/_link-grid.sass
+    include:sass ../styles/_animation.sass
+    include:sass ../styles/_navigation.sass
+    include:sass ../styles/_scroller.sass
+    include:sass ../styles/_chart.sass
+    include:sass ../styles/_landing.sass
+
+block append scripts
+  script
+    include:coffee ../coffee/utils.coffee
+    include:coffee ../coffee/article.coffee
