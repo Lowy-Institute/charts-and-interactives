@@ -115,10 +115,12 @@ block page
     const phrase = "In {{category}}, {{value}}% {{variant}}."
     const variant = (response) =>
       response === "Don't know"
-        ? "were unsure about this question"
+        ? "said they didn't know"
+        : response === "Refused"
+        ? "refused to answer"
         : "said {{response}} will be the leading military power in Asia in 20 years’ time"
-  
-  
+
+
 block append css
   style
     include:sass ../_tooltip.sass

@@ -12,8 +12,8 @@ subtitle: >
 
 axes:
   min:  0
-  max: 70
-  steps: 8
+  max: 60
+  steps: 7
   rotateLabels: false
   percentage: true
   minorLines: true
@@ -29,7 +29,7 @@ series:
       - Japan
       - Indonesia
       - None
-      - Don’t know
+      - Don't know
       - Refused
 
 

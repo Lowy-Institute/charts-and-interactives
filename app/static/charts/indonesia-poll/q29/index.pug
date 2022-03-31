@@ -73,6 +73,10 @@ block page
                       height=toPercent(thickness)
                       width=toPercent(fx(v))
                       fill=chart.colors[set.color]
+                      data-value=v
+                      data-category=set.title
+                      data-response=seriesname
+                      data-tooltip
                     )
 
                     text.chart-value(
@@ -104,50 +108,22 @@ block page
       .chart-notes!= chart.notes
       
       .tooltip
-      
+
+  script(src="../tooltip.js")        
   script.
-    /* --- USER TO UPDATE --- */
-     const enableTooltips = true;
-    const nLegendItems = 9;
-    const nCategories = 2;
-    /* --------------------- */
-    
-    const chart = document.querySelectorAll('.chart-content');
-    const rects = document.querySelectorAll('rect');
-    const vals = document.querySelectorAll('.chart-value');
-    const series = document.querySelectorAll('.x-label');
-    const tooltip = document.querySelector('.tooltip');
-    const legendItems = document.querySelectorAll('.legend-item-label');
-    
-    if (enableTooltips) {
-      window.addEventListener('DOMContentLoaded', () => {
-        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
-      });
-    }
-        
-    function addHoverEventListeners(el, i) {
-      el.addEventListener('mouseover', () => {
-        
-        let box = el.getBoundingClientRect();
-        let val = vals[i].innerHTML.trim();
-        let ser = series[Math.floor(i/nCategories)].innerHTML;
-        let cat = legendItems[i%nCategories].innerHTML;
-        
-        tooltip.style.left = box.left - 90 + 'px';
-        tooltip.style.top = box.top + 10 + 'px';
-        tooltip.style.opacity = 1;
-        
-        tooltip.innerHTML = "In " + cat + ", " + val + "%" + " said " + ser + " will be the leading economic power in Asia in 20 years’ time";
-        
-      });
-      el.addEventListener('mouseleave', () => { 
-        tooltip.style.opacity = 0;
-      });
-    }
-    
-  
+    const phrase = "In {{category}}, {{value}}% {{variant}}."
+    const variant = (response) =>
+      response === "None"
+        ? "said no country will be the leading economic power in Asia in 20 years’ time"
+        : response === "Don't know"
+        ? "said they didn't know"
+        : response === "Refused"
+        ? "refused to answer"
+        : "said {{response}} will be the leading economic power in Asia in 20 years’ time"    
+
 block append css
   style
+    include:sass ../_tooltip.sass  
     :sass
     
       .wrapper
@@ -174,19 +150,6 @@ block append css
         /* height: 12px
         margin-top: -12px
         font-size: 16px
-        
-      .tooltip
-        position: absolute
-        left: 0
-        background: #fffe
-        padding: .75em
-        opacity: 0
-        border-radius: .2em
-        box-shadow: 0 0 5px 0 #0004
-        transition-duration: 0.5s
-        pointer-events: none
-        font-size: 14px
-        max-width: 180px
 
       li
         list-style: none
