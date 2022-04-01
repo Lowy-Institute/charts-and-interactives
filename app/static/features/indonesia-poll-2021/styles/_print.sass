@@ -1,20 +1,23 @@
 @media print
+
   #enter,
+  #progress,
   .social-share
     display: none!important
 
   header
     padding: 2.5rem
-    // display: none
 
-  .h-screen
-    height: 297mm
+  .chart
+    break-inside: avoid
   
   .landing
 
+    .h-screen
+      height: 297mm
+
     .title-block
       margin-top: 7rem
-      // display: none
 
     h1
       margin-bottom: 3rem
@@ -34,4 +37,11 @@
     .h-screen.border-t
       border: none
 
-  
+  .article
+    aside,
+    header,
+    footer
+      display: none!important
+
+    article
+      padding: 4rem!important
