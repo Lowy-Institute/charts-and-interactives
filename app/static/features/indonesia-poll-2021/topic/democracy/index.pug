@@ -1,0 +1,19 @@
+extend ../../partials/issue
+
+block prepend config
+  include ../../partials/chart
+  - href = "democracy"
+    
+block endnote
+block content
+  :marked
+    Indonesian activists and academic experts are increasingly concerned about
+    democratic backsliding in their country amid global evidence of a decline in the
+    quality of democracy. Indonesians themselves are broadly as committed to
+    democracy as they were a decade ago. Six in ten believe that ‘democracy is
+    preferable to any other kind of government’, a very slight decline since 2011.
+    There has also been a modest increase in the proportion of people who believe
+    that ‘in some circumstances, a non-democratic government can be preferable’, up
+    to 20% from 16% in 2011.
+
+  +chart(24)

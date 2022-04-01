@@ -1,0 +1,42 @@
+@import app/static/features/indonesia-poll-2021/styles/_vars.sass
+
+.scroller
+  margin: 0 1rem
+  padding: 0
+  overflow-y: auto
+  position: relative
+  height: 100%
+  
+  &::-webkit-scrollbar
+    width: 4px
+
+  &::-webkit-scrollbar-track
+    background: none
+
+  &::-webkit-scrollbar-thumb
+    background: #ffffff55
+    border-radius: 2px
+
+.scroller-inner
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  position: absolute
+  
+  .ph-xl
+    max-width: $w-article
+
+.gradient-overlay
+  position: relative
+  
+  &:after
+    content: ''
+    position: absolute
+    top: 95%
+    left: 0
+    right: 0
+    bottom: -1px
+    background: linear-gradient(rgba($color-dk, 0), rgba($color-dk, 1))
+    pointer-events: none
+    
