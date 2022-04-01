@@ -25,27 +25,9 @@ series:
     values:
       - United States
       - China
-      - Japan
       - Indonesia
-      - Australia
-      - Malaysia
-      - Another country
+      - Japan
       - Don't know
-      - Refused
-
-  -
-    title: 2011
-    color: "orange"
-    values:
-      - 58
-      - 25
-      - 0
-      - 0
-      - 0
-      - 0
-      - 1
-      - 13
-      - 1
 
   -
     title: 2021
@@ -53,13 +35,18 @@ series:
     values:
       - 36
       - 22
-      - 6
       - 2
       - 1
-      - 1
-      - 4
       - 36
-      - 1
 
+  -
+    title: 2011
+    color: "orange"
+    values:
+      - 58
+      - 25
+      - 1
+      - 11
+      - 11
 
 
