@@ -23,78 +23,81 @@ block page
         - fx = (x) => (x - minX) / range
         - fy = (i) => (i + 0.7) / ln
         
-        svg(height="100%" width="100%")
-        
-          // X-Axis labels
-          svg(width="100%" y="100%")
-            - let steps = chart.axes.stepsX-1
-            for n, i in new Array(steps+1)
-              - x = i / (steps)
-              svg.x-label(x=toPercent(x))
-                text(text-anchor="middle" transform="translate(0 18)")
-                  = (minX + range*(i/steps)).toFixed(0) + (axes.percentage ? "%" : "")
-                
-          // X-Axis minor lines
-          if chart.axes.minorLines
-            svg(width="100%")
-              for n, i in new Array(steps+1)
-                - x = (i / steps)
-                svg
-                  line(
-                    x1=toPercent(x)
-                    y1="0%"
-                    x2=toPercent(x)
-                    y2="100%"
-                    stroke="#5552"
-                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
-                  )
+        .chart-container(height="100%" width="100%")
 
           // Chart rects
-          g.bars
+          .bars
             - const n = chart.series[0].values.length
-            for undef, i in new Array(n)
-              svg(
-                y=toPercent(fy(i)-fy(-0.15) )
-                height=toPercent(fy(0))
-                width="100%"
-              )   
-                - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
-                - vals = axes.reverse ? vals.reverse() : vals
-                - x0 = 0
-
-                for v, j in vals
-                  - ci = axes.reverse ? vals.length-j : j+1
-
-                  if v > 0
-                    rect(
-                      x=toPercent(x0)
-                      width=toPercent(fx(v))
-                      height="100%"
-                      fill=chart.colors[chart.series[ci].color]
-                      data-v=v
-                      data-c=i
-                      data-s=j
-                    )
-                    text.chart-value(
-                      x=toPercent(x0 + fx(v/2))
-                      y="50%"
-                      text-anchor="middle"
-                      transform="translate(0 4.5)"
-                      style=`color: ${(j < 3 ? "white" : "")}`
-                    )
-                      //-= v.toFixed(0) + (axes.percentage ? "%" : "")
-                      //- removed % symbol from hover
-                      = v.toFixed(0) + (axes.percentage ? "" : "")
-
-                  - x0 += fx(v)
-                    
+            
+              for undef, i in new Array(n)
                 // Y-Axis labels
-                svg.y-label(x="0%" y="50%")
-                  text(
-                    text-anchor="end"
-                    transform="translate(-16, 5)"
-                  )
-                    =chart.series[0].values[i]
+                .y-label.flex-wrap.flex-ch
+                  .bar-label
+                    p
+                      = chart.series[0].values[i]
+
+                  .bar-content
+                    svg(
+                      y=toPercent(fy(i)-fy(-0.15) )
+                      width="100%" 
+                      height="20px"
+                    )   
+                      - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                      - vals = axes.reverse ? vals.reverse() : vals
+                      - x0 = 0
+
+                      for v, j in vals
+                        - ci = axes.reverse ? vals.length-j : j+1
+
+                        if v > 0
+                          rect(
+                            x=toPercent(x0)
+                            width=toPercent(fx(v))
+                            height=toPercent(fy(16))
+                            fill=chart.colors[chart.series[ci].color]
+                            data-v=v
+                            data-c=i
+                            data-s=j
+                          )
+                          text.chart-value(
+                            x=toPercent(x0 + fx(v/2))
+                            y="12%"
+                            text-anchor="middle"
+                            transform="translate(0 12)"
+                            style=`color: ${(j != 3 ? "white" : "")}`
+                          )
+                            //-= v.toFixed(0) + (axes.percentage ? "%" : "")
+                            //- removed % symbol from hover
+                            = v.toFixed(0) + (axes.percentage ? "" : "")
+
+                        - x0 += fx(v)
+                      
+          .axis-container
+            .axis-spacer
+            .axis
+              // X-Axis labels
+              svg.x-axis(width="100%" y="100%" height="16px")
+                - let steps = chart.axes.stepsX-1
+                for n, i in new Array(steps+1)
+                  - x = i / (steps)
+                  svg.x-label(x=toPercent(x))
+                    text(text-anchor="middle" transform="translate(0 18)")
+                      = (minX + range*(i/steps)).toFixed(0) + (axes.percentage ? "%" : "")
+
+              // X-Axis minor lines
+              if chart.axes.minorLines
+                svg.x-minor(width="100%" height="16px")
+                  for n, i in new Array(steps+1)
+                    - x = (i / steps)
+                    svg
+                      line(
+                        x1=toPercent(x)
+                        y1="0%"
+                        x2=toPercent(x)
+                        y2="100%"
+                        stroke="#5552"
+                        stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                      )   
       
       .row
         ul.legend.txt-left.flex.flex-ch.flex-wrap
@@ -121,7 +124,7 @@ block page
     const tooltip = document.querySelector('.tooltip');
     const chart = document.querySelectorAll('.chart-content');
     const recs = document.querySelectorAll('rect');
-    const cats = document.querySelectorAll('.y-label text');
+    const cats = document.querySelectorAll('.y-label .bar-label');
     const sers = document.querySelectorAll('.legend-item-label');
     
     if (enableTooltips) {
@@ -135,10 +138,10 @@ block page
         
         let v = el.dataset.v;
         let s = sers[el.dataset.s].innerHTML.trim().toLowerCase();
-        let c = cats[el.dataset.c].innerHTML.trim().toLowerCase();
+        let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = "In 2021, " + v + "% " + " saw " + c + " as " +"'" + s +"'" + " to the vital interests of Indonesia in the next ten years";
+        tooltip.innerHTML = v + "%" + " said" + c + " was " + s ;
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -157,7 +160,7 @@ block append css
     :sass
   
       .wrapper
-        height: 650px
+        height: 750px
 
       .chart
         box-sizing: border-box
@@ -166,18 +169,15 @@ block append css
       .chart-content
         position: absolute
         top: 0
-        left: 375px
+        left: 10px
         right: 20px
         bottom: 30px
 
       .chart-title
-        /* margin: auto
         font-size: 24px
         padding-left: 1rem
         
       .chart-subtitle
-        /* font-weight: 600
-        /* height: 12px
         margin-top: -12px
         font-size: 16px
         
@@ -238,27 +238,68 @@ block append css
         opacity: 1
 
       hr
-        margin: 0 0 16px
+        margin: 24px 0 16px
+
+      .y-label
+        clear: left
+        min-height: 32px
+
+      .axis-container
+        width: 100%
+
+      .bar-label,.axis-spacer
+        font-size: 14px
+        float: left
+        width: 45%
+        /* min-height: 32px
+        text-align: right
+        align-items: center
+
+      .bar-label p
+        padding: 0 1em
+
+      .bar-content,.axis
+        float: right
+        width: 55%
           
-      @media (max-width: 400px)
-        text
-          font-size: 13px
-        .chart-content
-          bottom: 20px
-          left: 80px
-        .legend
-          flex-wrap: wrap
-        .legend-item
-          margin: 0px 8px;
-        .chart-title
-          font-size: 22px
-        .chart-subtitle
-          font-size: 14px
-        .chart-notes,
-        .chart-source
-          font-size: 13px
-        .y-label text
-          transform: translate(-10px, 6px)
-        .x-label:nth-of-type(even)
-          display: none
-          
+      @media (max-width: 450px)
+        .wrapper
+          height: 800px
+
+        @media (max-width: 450px)
+          .wrapper
+            height: 1060px
+          text
+            font-size: 13px
+          .chart-content
+            bottom: 20px
+          .legend
+            flex-wrap: wrap
+          .legend-item
+            margin: 0px 8px
+          .chart-title
+            font-size: 22px
+          .chart-subtitle
+            font-size: 14px
+            height: 64px
+          .chart-notes,
+          .chart-source
+            font-size: 13px
+
+          .bar-label
+            font-size: 14px
+            float: left
+            width: 100%
+            min-height: 20px
+            text-align: left
+
+          .bar-label p
+            padding: .4em 0 .2em 0
+
+          .bar-content,.axis
+            float: left
+            width: 100%
+
+          @media (max-width: 375px)
+            .wrapper
+              height: 1120px
