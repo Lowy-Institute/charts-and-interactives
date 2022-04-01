@@ -28,7 +28,6 @@ series:
       - 2011
       - 2021
 
-
   -
     title: Mostly good
     color: "blue-100"
@@ -37,7 +36,6 @@ series:
       - 67
       - 62
 
-
   -
     title: Mostly bad
     color: "orange"
@@ -45,7 +43,6 @@ series:
       - 31
       - 26
       - 7
-
 
   -
     title: Don't know

@@ -25,11 +25,11 @@ series:
     values:
       - The United Nations
       - The Association of Southeast Asian Nations (ASEAN)
-      - Don’t know
       - Organisation of Islamic Cooperation
       - Asia-Pacific Economic Cooperation (APEC)
       - Non-aligned movement
       - G20
+      - Don’t know
 
   -
     title: 2011
@@ -37,11 +37,11 @@ series:
     values:
       - 34
       - 40
-      - 12
       - 1
       - 7
       - 3
       - 4
+      - 12
     
   -
     title: 2021
@@ -49,11 +49,12 @@ series:
     values:
       - 41
       - 30
-      - 12
       - 5
       - 4
       - 3
       - 3
+      - 12
+
 
 
 

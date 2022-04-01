@@ -23,14 +23,14 @@ series:
   -
     title: Category
     values:
-      - Playing a larger role in the Islamic world
       - Deploying Indonesian peacekeepers to other countries
+      - Playing a larger role in the Islamic world
+      - Providing foreign aid to developing countries
       - Creating an independent Palestinian state
       - Pushing ASEAN to manage the South China Sea dispute
-      - Providing foreign aid to developing countries
       - Addressing the Rohingya issue
-      - Protecting Uyghur communities in China
       - Supporting an inclusive government in Afghanistan
+      - Protecting Uyghur communities in China
       - Playing a leadership role in resolving the Myanmar crisis
       - Helping to mediate US-China competition
       - Supporting democratic movement in Hong Kong
@@ -39,14 +39,14 @@ series:
     title: Very important
     color: "blue-100"
     values:
-      - 38
       - 36
+      - 38
+      - 26
       - 34
       - 29
-      - 26
       - 25
-      - 22
       - 21
+      - 22
       - 19
       - 19
       - 18
@@ -55,14 +55,14 @@ series:
     title: Fairly important
     color: "highlight"
     values:
-      - 44
       - 51
+      - 44
+      - 54
       - 45
       - 47
-      - 54
+      - 48
       - 48
       - 44
-      - 48
       - 47
       - 43
       - 44
