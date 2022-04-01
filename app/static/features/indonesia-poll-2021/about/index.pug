@@ -1,0 +1,88 @@
+extend ../partials/issue
+
+block append config
+  - issue = { href: "about", title: "About the Poll" }
+  - page.includeFonts = false
+  - page.url = "https://interactives.lowyinstitute.org/features/indonesia-poll-2021/"
+  - page.title = "Indonesia Poll 2021"
+  - page.metaTitle = `About - Lowy Institute`
+  - page.description = ""
+  - page.image = "https://interactives.lowyinstitute.org/features/indonesia-poll-2021/img/thumb.jpg"
+  - page.issues = data.getOne("static/features/indonesia-poll-2021/data").issues
+
+block content
+  :marked
+    ### Metholodogy
+
+    _Lowy Institute Indonesia Poll 2021 — Charting their own course: How Indonesians
+    see the world_ reports the results of a national survey of 3000 Indonesian
+    adults conducted between 29 November and 24 December 2021. The questionnaire was
+    developed by the authors, using the baseline of the Lowy Institute’s 2011
+    Indonesia Poll. The order of questions in the questionnaire was different from
+    the order presented in this report.
+
+    The survey was conducted by Ipsos in Indonesia using a stratified random
+    door-to-door sample with maximum 40 minutes length of interview across 33
+    provinces (i.e. all provinces of Indonesia excluding Kalimantan Utara). Quotas
+    were set for each province, with broad age group and gender quotas, according to
+    data from the Indonesian Central Agency on Statistics from 2020. Interviewers
+    continued to seek respondents until each quota was filled and applied a Kish
+    Grid where there was the possibility of having more than one member of a
+    household that met the sample criteria. This technique ensures that respondents
+    in the household are selected randomly. Face-to-face surveys continue to be the
+    most reliable means of achieving accurate, nationally representative samples in
+    Indonesia, particularly when there is a question of internet and phone access
+    across a large and dispersed population.
+
+    On a simple random sample of 3000 responses, the approximate margin of error is
+    1.8%, which means there is a 95% chance that responses from the sample fall
+    within a range of 1.8% either side of the notional collective response of the
+    whole population. Since these samples were stratified (by state/territory, age
+    group and gender), the error figure is a guide only. Where the results for a
+    sub-sample are reported, the margin of error is greater. The sampling method
+    employed means that results are generalisable to the national population and
+    sampling errors and confidence intervals can be calculated.
+
+    Data quality checks for the survey included checks for ‘speeding’ (completing
+    the survey rapidly when using computer-assisted programming) and
+    ‘straight-lining’ (providing the same answer to every question of a bank of
+    items with the same response options). Pilot interviews were conducted prior to
+    fieldwork commencing and approximately 30% of respondents were called back by
+    telephone to confirm that they had completed the survey as a part of quality
+    control measures.
+
+    While the sample is nationally representative and clearly aligns with the 2020
+    Indonesian census data in terms of age, socio-economic status and location, the
+    sample appears to over-represent respondents that identify with PDI-P as a party
+    and say that they voted for President Joko Widodo in the 2019 presidential
+    election. This may reflect a level of social desirability bias in the
+    respondents.
+
+    ### Acknowledgements
+
+    Several questions in this report were modelled on those developed by other
+    polling organisations, including the Pew Research Center, Australian Election
+    Study, ANUPoll, and the Chicago Council on Global Affairs. Fieldwork was managed
+    by Ambrosius Kenny and Dede Udayana from Ipsos Indonesia. John Davis of OmniPoll
+    and Djayadi Hanan provided independent consulting and reviewed the questionnaire
+    design. Edward Aspinall, Santo Darmosumarto, Greg Fealy, Dewi Fortuna Anwar,
+    Frega Inkiriwang and Rizal Sukma provided feedback on the preliminary survey
+    questions anddesign. Xuyang Dong, Teesta Prakash and Clare Caldwell of the Lowy
+    Institute assisted in the preparation of the report. Ian Bruce and Brody Smith
+    designed the report website.
+
+    This survey and report were funded by the Australian Department of Foreign
+    Affairs and Trade. The views, information and advice expressed in this report
+    are those of the authors and do not necessarily reflect the views of the Lowy
+    Institute or the Australian government.
+block append css
+  style
+    include:sass ../styles/_base.sass
+    include:sass ../styles/_typography.sass
+    include:sass ../styles/_styles.sass
+    include:sass ../styles/_responsive.sass
+    include:sass ../styles/_link-grid.sass
+    include:sass ../styles/_animation.sass
+    include:sass ../styles/_button.sass
+    include:sass ../styles/_scroller.sass
+    include:sass ../styles/_landing.sass

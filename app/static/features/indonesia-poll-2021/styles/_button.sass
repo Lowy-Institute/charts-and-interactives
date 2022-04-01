@@ -1,0 +1,45 @@
+@import app/static/features/indonesia-poll-2021/styles/_vars.sass
+
+.btn-wrap
+  z-index: 10
+  top: 1.5rem
+  left: 1.5rem
+  position: fixed
+  
+  a
+    &:hover,
+    &:focus
+      color: white
+
+.slide-btn
+  transition: all .3s
+  pointer-events: none
+  border-radius: 2rem
+  border: 1px solid transparent
+  
+  .icon
+    width: 2.5rem
+    height: 2.5rem
+    border: 1px solid
+    border-radius: 50%
+    line-height: 2.5rem
+    text-align: center
+    pointer-events: all
+  
+  .label
+    opacity: 0
+    color: white
+    transition: all .3s
+    transform: translateX(-16px)
+    
+  &.active
+    background: lighten($color-dk, 5)
+  &:hover
+    background: lighten($color-dk, 10)
+    
+  &:hover,
+  &.active
+    .label
+      opacity: 1
+      pointer-events: all
+      transform: translateX(0)
