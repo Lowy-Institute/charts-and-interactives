@@ -17,8 +17,8 @@
   svg
     transform-style: preserve-3d
     max-width: $w-content
-    margin: auto
     position: absolute
+    margin: 0 auto
     top: 40%
     left: 0
     right: 0
@@ -67,15 +67,22 @@ body.landing
     
     &:hover
       background: lighten($color-dk, 10)
-  
+
+@media (max-height: $screen-short), (max-width: 1200px)
+  // body.landing
+  .col-3-5,
+  .col-2-5
+    width: 50%
+    flex-basis: 50%
+
 @media (max-width: $screen-tablet)
   
   #introduction
     height: auto
     padding: 3rem 0 0
     
-    .col-2-5
-      border-right: 0
+    .col-3-5
+      border-right: none
     
     .scroller
       height: auto
@@ -88,3 +95,12 @@ body.landing
       position: relative
     .gradient-overlay:after
       display: none
+
+
+  #map-wrap
+    svg
+      top: 60%
+
+  body.landing
+    .title
+      margin-top: 7rem

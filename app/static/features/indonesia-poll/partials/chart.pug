@@ -2,7 +2,7 @@
   baseurl = "https://interactives.lowyinstitute.org/charts/indonesia-poll"
   charts = [
     {id:  1, title: "Indonesia's direction"},
-    {id:  4, title: "Feelings of safety4"},
+    {id:  4, title: "Feelings of safety"},
     {id:  5, title: "Trust in global powers"},
     {id:  6, title: "Confidence in world leaders", height: 650},
     {id:  9, title: "Economic optimism"},
@@ -13,6 +13,7 @@
     {id: 17, title: "Countries that pose a threat to Indonesia"},
     {id: 18, title: "Indonesia's place in the world"},
     {id: 19, title: "Confidence in Indonesian institutions"},
+    {id: "19b", title: "Confidence in TNI to defend"},
     {id: 20, title: "Goals of Indonesian foreign policy", height: 650},
     {id: 21, title: "Peace and conflict resolution goals"},
     {id: 23, title: "Indonesia's diplomatic style"},
@@ -22,7 +23,7 @@
     {id: 32, title: "Global warming"},
     {id: 33, title: "Effort to combat climate change"},
     {id: 34, title: "Support for joining minilaterals"},
-    {id: 37, title: "Australia's regional security plans"},
+    {id: "37-38", title: "Australia's regional security plans"},
     {id: 39, title: "COVID handling by country"},
     {id: 40, title: "Source of COVID-19 pandemic"},
     {id: 41, title: "Trust in sources of information"},
@@ -33,6 +34,7 @@ mixin chart(id)
   
   if chart
     iframe.chart(
+      id=`q${id}`
       src=`${baseurl}/q${id}`
       height=`${chart.height || 500}px`
       frameborder="0"
@@ -40,3 +42,4 @@ mixin chart(id)
 
   else 
     - console.error(`Error: Chart q${id} does not exist!`)
+    .border.flex-cv.txt-center.txt-tu(style=`height: 500px`)= "Chart: " + id

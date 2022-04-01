@@ -17,12 +17,13 @@ block page
   .h-screen
     #map-wrap.absolute.inset-0
       include ./img/drawing-stacked.svg
-    .title-block.flex-col.relative.p-md.h-full
-      h1.title.txt-tu.txt-xl.txt-center
+    .title-block.flex-col.relative.p-md.h-full.txt-center
+      h1.title.txt-tu.txt-xl
         | Charting their own course
       h2.subtitle.txt-md.txt-tu.opacity-75
-        em How Indonesians see the world
-      a.flex-cv.txt-bare.txt-muted(href="#introduction")
+        em How Indonesians see the&nbsp;world
+      .txt-sm.opacity-50: em Ben Bland, Evan Laksmana and Natasha Kassam
+      a.absolute.bottom-8.flex-cv.txt-bare.txt-muted(href="#introduction")
         .txt-nano Enter
         svg(viewBox="0 0 10 10" height="10" stroke="currentColor" fill="none")
           path(d="M0,5 L5,10 L10,5")
@@ -30,25 +31,22 @@ block page
   #introduction.h-screen.flex-col.bg-dk.txt-ff.border-t
     .flex.flex-swap.flex-grow
       .col.col-3-5.pt-16.pb-4.border-r.txt-center.flex-col
-        h1 Preface
-        p.txt-micro Natasha Kassam
+        h1 Introduction
         .gradient-overlay.mb-4.flex-grow
           .scroller
             .scroller-inner
               .ph-xl.pv-md.txt-sans.mxw.txt-mmd.txt-left
                 :marked
-                  As Asia is buffeted by intensifying great power rivalries, there is growing pressure on Indonesia from outsiders trying to influence its alignment and direction of travel. There are also growing expectations that a more prosperous and confident Indonesia will take a greater leadership role in regional and global affairs.
-                  
+                  As Asia is buffeted by intensifying great power rivalries, Indonesia faces competing pressures from the outside world on its alignment and direction of travel. There are also growing expectations that a more prosperous and confident Indonesia will take a greater leadership role in regional and global affairs.
+
                   This is not the first time that Indonesia has had to make its own way in a bitterly contested world.
-                  
-                  As Indonesia threw off the shackles of Dutch colonialism, founding father Mohammad Hatta asked in 1948 if Indonesians “only have to choose between Russia and America?” His answer was no. He declared that “we must remain the subject who reserves the right to decide our own destiny.”
-                  
-                  Hatta called for Indonesia to “row between two reefs” — one of the most enduring images of Indonesia’s quest to navigate a polarising, turbulent world — and laid out Indonesia’s “independent and active” principle of foreign policy. For almost 75 years, Indonesian leaders have never abandoned that principle, even if they implemented foreign policies seemingly inimical to it from time to time.
+
+                  As Indonesia threw off the shackles of Dutch colonialism, founding father Mohammad Hatta asked in 1948 if Indonesians “have to choose between Russia and America?” His answer was no. He declared that “we must remain the subject who reserves the right to decide our own destiny.”  
                   
               a#read-more.txt-micro.txt-bare.fw600.flex-ch(
-                href="/features/indonesia-poll/article/executive-summary"
+                href="/features/indonesia-poll/introduction"
               )
-                | Read more
+                | Continue reading
       .col.col-2-5.flex-col
         .txt-center.opacity-75.p-sm.border-v-lt
           .txt-mini.fw600 Topics

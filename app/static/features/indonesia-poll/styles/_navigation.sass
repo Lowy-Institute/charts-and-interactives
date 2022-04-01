@@ -3,8 +3,8 @@
 $icon-size: 34px
 
 .social-share
-  top: 0
-  right: 0
+  top: 1rem
+  right: 1rem
   flex-direction: column
   position: fixed
   display: flex
@@ -61,12 +61,21 @@ $icon-size: 34px
 
 
 @media (max-width: $screen-tablet)
-
-  #pdf,
+  
   .social-share
-    display: none
+    flex-direction: row
+    right: 0.5rem
 
-  .social-share  
-    right: 0
-    padding-right: 0 
-    position: absolute
+    .article &
+      top: 6px
+
+    .icon
+      margin: 0 6px
+      line-height: $h-nav-sm
+      font-size: $h-nav-sm / 2
+
+    .icon-download
+      opacity: 0.75
+
+    .label
+      display: none

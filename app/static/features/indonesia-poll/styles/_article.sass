@@ -1,8 +1,5 @@
 @import app/static/features/indonesia-poll/styles/_vars.sass
 
-.landing-block
-  padding-top: $h-nav
-
 .img-caption
   position: absolute
   background: black
@@ -22,6 +19,7 @@ article
 article,
 .w-article
   margin: 0 auto
+  max-width: 100%
   width: $w-article
 
 aside
@@ -35,9 +33,6 @@ aside
   
   .title
     font-size: 28px
-    
-  // .title-block
-  //   border-top: 1px solid #fff4
 
     .tag
       font-size: 13px
@@ -72,7 +67,7 @@ aside
 @media (max-width: $screen-tablet)
   
   article
-    padding: 4rem 2rem
+    padding: 4rem 1.25rem
     
   .article
 
@@ -81,3 +76,9 @@ aside
       width: 100%
       margin-left: 0
       margin-right: 0
+
+@media (max-height: $screen-short), (max-width: $screen-tablet)
+
+  .article
+    aside
+      height: auto

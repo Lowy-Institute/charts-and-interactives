@@ -20,24 +20,22 @@ block page
     
   include ../partials/header
 
-  .container
-      
-    .w-article.flex-ch.relative.bg-dk.txt-ff
-      .title-block.txt-center.z1.p-md
-        .title.txt-tu.pv-sm!= issue.title.replace("&nbsp;", " ")
+  .w-article.sm-w-full.flex-ch.relative.bg-dk.txt-ff.z100
+    .title-block.txt-center.z1.p-md
+      .title.txt-tu.pv-sm!= issue.title.replace("&nbsp;", " ")
 
+  .container
     article
       block content
-      hr
-      block bio
+      block endnote
 
-    aside.h-screen.h-auto-sm.flex-col.mx-auto.txt-ff.bg-dk
-      .txt-center.opacity-75.p-sm.border-v-lt
-        .txt-mini.fw600 All topics
-      .relative.flex-grow
-        include link-grid
+  aside.container.relative.h-screen.flex-col.mx-auto.txt-ff.bg-dk.z100
+    .txt-center.opacity-75.p-sm.border-v-lt
+      .txt-mini.fw600 All topics
+    .relative.flex-grow
+      include link-grid
 
-      include footer
+    include footer
 
 block append css
   style

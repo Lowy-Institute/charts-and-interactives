@@ -28,10 +28,6 @@ header
       height: 0
       overflow: hidden
 
-  // .visible &
-    // .wordmark
-      // height: 30px
-
 #progress
   top: 0
   left: 0
@@ -43,11 +39,20 @@ header
 @media (max-width: $screen-tablet)
   
   header
-    padding: 0 1.5rem!important
-    .container
-      position: relative
-    .header-logo
-      display: none
+    padding: 6px 1rem 0
+    height: $h-nav-sm
+    box-sizing: content-box
+
+    .article &
+      background: white
+      box-shadow: 1px 4px 8px 0px white
+
+      #header-logo
+        width: auto
+        line-height: $h-nav-sm
+
     .header-title
       left: 0
       text-align: left
+      width: auto
+  
