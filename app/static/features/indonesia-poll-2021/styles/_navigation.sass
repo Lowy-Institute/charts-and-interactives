@@ -39,7 +39,12 @@ $icon-size: 34px
 
     &:hover
       color: inherit
-      background-color: lighten($color-dk, 7)
+
+      .landing &
+        background-color: lighten($color-dk, 7)
+
+      .article &
+        background-color: darken($color-ff, 7)
 
   .label
     position: absolute
@@ -73,6 +78,10 @@ $icon-size: 34px
       margin: 0 6px
       line-height: $h-nav-sm
       font-size: $h-nav-sm / 2
+
+      &:hover
+        color: $color-hl
+        background-color: transparent
 
     .icon-download
       opacity: 0.75
