@@ -1,6 +1,5 @@
 #chart-40
-  &.chart-wrapper
-    height: 400px
+  height: 400px
 
   .chart-content
     position: absolute
@@ -85,14 +84,9 @@
   .bar-content, .axis
     float: right
     width: 65%
-      
-  @media (max-width: 450px)
-    &.chart-wrapper
-      height: 800px
 
   @media (max-width: 450px)
-    &.chart-wrapper
-      height: 960px
+    height: 450px
     text
       font-size: 13px
     .chart-content
@@ -105,7 +99,6 @@
       font-size: 22px
     .chart-subtitle
       font-size: 14px
-      height: 40px
     .chart-notes,
     .chart-source
       font-size: 13px
@@ -123,7 +116,3 @@
     .bar-content,.axis
       float: left
       width: 100%
-
-  @media (max-width: 375px)
-    &.chart-wrapper
-      height: 1060px
