@@ -1,0 +1,55 @@
+title: >
+  Attitudes to China
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  
+  Please say whether you strongly agree, agree, disagree or strongly disagree with the following statements (% that strongly agree or agree). 
+
+axes:
+  min:  0
+  max: 70
+  steps: 8
+  rotateLabels: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+    values:
+      - China’s growth has been good for Indonesia
+      - The US should give China a larger say in regional affairs
+      - China’s aim is to dominate Asia
+      - Indonesia should join with other countries to limit China’s influence
+      - Indonesia’s interests would not be harmed if China gained more power/influence
+      - Indonesia is doing enough to pressure China to improve human rights
+
+  -
+    title: 2011
+    color: "orange"
+    values:
+      - 54
+      - 41
+      - 45
+      - 50
+      - 36
+      - 49
+
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 43
+      - 40
+      - 48
+      - 60
+      - 40
+      - 54
+

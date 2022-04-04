@@ -1,0 +1,58 @@
+title: >
+  Indonesia's diplomatic style
+
+subtitle: >
+  Which of the following diplomatic approaches should shape Indonesia’s foreign
+  policy?
+
+axes:
+  minY: 0
+  maxY: 10
+  stepsY: 6
+  rotateX: false
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  - title: Year
+    values:
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+
+  - title:
+      Being firm but polite, even if it causes some friction with other
+      countries
+    color: "blue-100"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1
+  - title:
+      Engaging with other countries in a patient way, seeking consensus through
+      consultation
+    color: "orange"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1
+  - title:
+      Defending Indonesia’s interests at all costs, even if it involves
+      confrontation with other countries
+    color: "grey"
+    widen: false
+    dashed: true
+    values:
+      - 1
+      - 1
+      - 1

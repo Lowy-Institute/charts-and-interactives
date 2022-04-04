@@ -1,0 +1,105 @@
+block append config
+  -
+    colors = data.getOne("static/charts/templates/colors/data").colors
+    chart = data.getOne("static/features/indonesia-poll-2021/charts/q6/data")
+    toPercent = (n) => (n * 100).toFixed(2) + "%"
+  
+#chart-6.chart-wrapper
+  .txt-left.flex.flex-grow.flex-col
+    .chart-title= chart.title
+    .chart-subtitle.p-sm!= chart.subtitle
+    hr
+    .chart.flex-grow: .chart-content
+      - ln = chart.series[0].values.length
+      - axes = chart.axes
+      - minX = axes.minX
+      - maxX = axes.maxX
+      - range = maxX - minX
+      - fx = (x) => (x - minX) / range
+      - fy = (i) => (i + 0.7) / ln
+      
+      .chart-container(height="100%" width="100%")
+
+        // Chart rects
+        .bars
+          - const n = chart.series[0].values.length
+          
+            for undef, i in new Array(n)
+              // Y-Axis labels
+              .y-label.flex-wrap.flex-ch
+                .bar-label
+                  p
+                    = chart.series[0].values[i]
+
+                .bar-content
+                  svg(
+                    y=toPercent(fy(i)-fy(-0.15) )
+                    width="100%" 
+                    height="20px"
+                  )   
+                    - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                    - vals = axes.reverse ? vals.reverse() : vals
+                    - x0 = 0
+
+                    for v, j in vals
+                      - ci = axes.reverse ? vals.length-j : j+1
+
+                      if v > 0
+                        rect(
+                          x=toPercent(x0)
+                          width=toPercent(fx(v))
+                          height=toPercent(fy(12))
+                          fill=colors[chart.series[ci].color]
+                          data-value=v
+                          data-c=i
+                          data-s=j
+                          data-category=chart.series[0].values[i]
+                          data-response=chart.series[j+1].title
+                          data-tooltip=6
+                        )
+                        text.chart-value(
+                          x=toPercent(x0 + fx(v/2))
+                          y="12%"
+                          text-anchor="middle"
+                          transform="translate(0 12)"
+                          style=`color: ${(j != 4 ? "white" : "")}`
+                        )
+                          = v.toFixed(0) + (axes.percentage ? "" : "")
+
+                      - x0 += fx(v)
+                    
+        .axis-container
+          .axis-spacer
+          .axis
+            // X-Axis labels
+            svg.x-axis(width="100%" y="100%" height="16px")
+              - let steps = chart.axes.stepsX-1
+              for n, i in new Array(steps+1)
+                - x = i / (steps)
+                svg.x-label(x=toPercent(x))
+                  text(text-anchor="middle" transform="translate(0 18)")
+                    = (minX + range*(i/steps)).toFixed(0) + (axes.percentage ? "%" : "") 
+    
+    .row
+      ul.legend.txt-left.flex.flex-ch.flex-wrap
+        for ax, i in new Array(chart.series.length)
+          if i
+            li.legend-item
+              span.legend-item-box(style=`background: ${colors[chart.series[i].color]}`)
+              span.legend-item-label= chart.series[i].title
+
+  style
+    include:sass ./style.sass
+
+  script.
+    window.addEventListener("initCharts", () => {
+      tooltip.phrases["6"] = {
+        phrase: "{{value}}% {{variant}}.",
+        variant: (response) =>
+          response === "Never heard of"
+            ? "said they had never heard of {{category}}"
+            : response === "Don't know / refused"
+            ? "said they didn't know, or refused to answer"
+            : "said they had {{response}} in {{category}} to do the right thing regarding world affairs"
+      }
+    })

@@ -1,0 +1,60 @@
+title: >
+  Most important international organisation to Indonesia
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Thinking about which international organisations are most important to Indonesia, please say which one of the following international organisations you personally think is the most important to Indonesia.
+
+axes:
+  min:  0
+  max: 45
+  steps: 10
+  rotateLabels: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+    values:
+      - The United Nations
+      - The Association of Southeast Asian Nations (ASEAN)
+      - Organisation of Islamic Cooperation
+      - Asia-Pacific Economic Cooperation (APEC)
+      - Non-aligned movement
+      - G20
+      - Don’t know
+
+  -
+    title: 2011
+    color: "orange"
+    values:
+      - 34
+      - 40
+      - 1
+      - 7
+      - 3
+      - 4
+      - 12
+    
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 41
+      - 30
+      - 5
+      - 4
+      - 3
+      - 3
+      - 12
+
+
+
+

@@ -1,0 +1,48 @@
+title: >
+  Feelings of safety
+
+subtitle: >
+  Thinking about world events, how safe do you feel?
+
+axes:
+  minY: 0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  - title: Year
+    values:
+      - 2006
+      - 2011
+      - 2021
+
+  - title: Very safe
+    color: "blue-100"
+    values:
+      - 4
+      - 5
+      - 6
+
+  - title: Safe
+    color: "highlight"
+    values:
+      - 39
+      - 63
+      - 68
+  - title: Unsafe
+    color: "orange-light"
+    values:
+      - 50
+      - 27
+      - 23
+  - title: Very unsafe
+    color: "orange"
+    values:
+      - 4
+      - 3
+      - 3

@@ -1,0 +1,50 @@
+title: >
+  Covid-19 handling by country
+
+subtitle: >
+  Overall, how well or badly do you think each of the following countries has
+  handled the Covid-19 outbreak so far?
+
+axes:
+  minY: 0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  - title: Year
+    values:
+      - Indonesia
+      - Singapore
+      - Malaysia
+      - Australia
+      - UK
+      - US
+      - China
+      - India
+  - title: Very well
+    color: "blue-100"
+    values:
+      - 32
+      - 25
+      - 20
+      - 21
+      - 23
+      - 24
+      - 20
+      - 12
+  - title: Fairly well
+    color: "highlight"
+    values:
+      - 51
+      - 57
+      - 59
+      - 58
+      - 56
+      - 53
+      - 49
+      - 42

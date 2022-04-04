@@ -1,0 +1,112 @@
+block append config
+  -
+    colors = data.getOne("static/charts/templates/colors/data").colors
+    chart = data.getOne("static/features/indonesia-poll-2021/charts/q27/data")
+    toPercent = (n) => (n * 100).toFixed(2) + "%"
+  
+#chart-27.chart-wrapper
+  .txt-left.flex.flex-grow.flex-col
+    .chart-title= chart.title
+    .chart-subtitle.p-sm!= chart.subtitle
+    hr
+    .chart.flex-grow: .chart-content
+      - ln = chart.series[0].values.length
+      - axes = chart.axes
+      - min = axes.min
+      - max = axes.max
+      - range = max - min
+      - fx = (x) => (x - min) / range
+      - fy = (i) => (i + 0.5) / (ln - 0.1)
+      
+      .chart-container(height="100%" width="100%")
+                
+        // Chart rects
+        .bars
+          for seriesname, i in chart.series[0].values
+            // Y-Axis labels
+            .x-label.flex-wrap.flex-ch
+              .bar-label
+                p
+                  =seriesname
+
+              .bar-content
+          
+                svg(
+                  x="0"
+                  y=toPercent(fy(i) - fy(-0.1))
+                  height="60px"
+                  width="100%"
+                )
+
+                  g.bars
+                    - series = chart.series.filter( (s, i) => i )
+                    for set, j in series 
+                      - v = set.values[i]
+                      - thickness = .75 / series.length
+
+                      rect(
+                        y=toPercent(j*thickness)
+                        x=0
+                        height=toPercent(thickness)
+                        width=toPercent(fx(v))
+                        fill=colors[set.color]
+                        data-value=v
+                        data-category=set.title
+                        data-response=seriesname
+                        data-tooltip=27
+                      )
+
+                      text.chart-value(
+                        y=toPercent(j*thickness + thickness/2)
+                        x=toPercent(fx(v/2))
+                        text-anchor="middle"
+                        transform=`translate(0 6)`
+                        style="color: white"
+                      )
+                        = v + (axes.percentage ? "" : "")
+
+        .axis-container
+          .axis-spacer
+          .axis       
+
+            // Y-Axis labels
+            svg.x-axis(width="100%" y="100%" height="16px")
+              - steps = chart.axes.steps-1
+              for n, i in new Array(steps+1)
+                - y = (i / (steps))
+                svg.x-label(x=toPercent(y))
+                  text(text-anchor="middle" transform="translate(0 20)")
+                    = min + range*(i/steps) + (axes.percentage ? "%" : "")
+
+            // X-Axis minor lines
+            if chart.axes.minorLines
+              div.x-minor(
+                style="height:430px; border-right:1px solid #5552; position:relative; top:-450px; width:100%; z-index: -1"
+                )
+                for n, i in new Array(steps)
+                  - x = (i / steps)
+                  div(
+                      style="width:14%; border-left:1px solid #5552; float: left; height:100%"
+                    ) &nbsp;          
+    
+    .row
+      ul.legend.list-bare.txt-left.flex.flex-ch
+        for ax, i in new Array(chart.series.length)
+          if i
+            li.legend-item
+              span.legend-item-box(style=`background: ${colors[chart.series[i].color]}`)
+              span.legend-item-label= chart.series[i].title
+
+  style
+    include:sass ./style.sass
+
+  script.
+    window.addEventListener("initCharts", () => {
+      tooltip.phrases["27"] = {
+        phrase: "In {{category}}, {{value}}% {{variant}}.",
+        variant: (response) =>
+          response === "Don't know"
+            ? "were unsure about this question"
+            : "said {{response}}"   
+      }
+    })

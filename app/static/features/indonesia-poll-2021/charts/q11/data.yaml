@@ -1,0 +1,38 @@
+charts:
+  - title: Economic model for Indonesia
+    subtitle:
+      In your opinion, which one of these countries, if any, do you think should
+      be a model for Indonesia’s future economic development?
+    scale:
+      minY: 0
+      maxY: 30
+      datum: 0
+      steps: 4
+      minorLines: true
+
+    axes:
+      - title: Category
+        values:
+          - text: Japan
+          - text: United States
+          - text: China
+          - text: Singapore
+          - text: Our own model
+          - text: Malaysia
+          - text: Australia
+          - text: Other
+          - text: India
+          - text: Can’t choose
+
+      - title: "workforce growth"
+        values:
+          - 26
+          - 20
+          - 13
+          - 12
+          - 9
+          - 3
+          - 3
+          - 2
+          - 1
+          - 9

@@ -1,0 +1,117 @@
+block append config
+  -
+    colors = data.getOne("static/charts/templates/colors/data").colors
+    chart = data.getOne("static/features/indonesia-poll-2021/charts/q29/data")
+    toPercent = (n) => (n * 100).toFixed(2) + "%"
+  
+#chart-29.chart-wrapper
+  .txt-left.flex.flex-grow.flex-col
+    .chart-title= chart.title
+    .chart-subtitle.p-sm!= chart.subtitle
+    hr
+    .chart.flex-grow: .chart-content
+      - ln = chart.series[0].values.length
+      - axes = chart.axes
+      - min = axes.min
+      - max = axes.max
+      - range = max - min
+      - fx = (x) => (x - min) / range
+      - fy = (i) => (i + 0.7) / (ln - 0.1)
+      
+      svg(height="100%" width="100%")
+                
+        // Y-Axis labels
+        svg(height="100%" y="100%")
+          - steps = chart.axes.steps-1
+          for n, i in new Array(steps+1)
+            - y = (i / (steps))
+            svg(x=toPercent(y))
+              text(text-anchor="middle" transform="translate(0 20)")
+                = min + range*(i/steps) + (axes.percentage ? "%" : "")
+              
+        // Y-Axis minor lines
+        if chart.axes.minorLines
+          svg(height="100%")
+            for n, i in new Array(steps + 1)
+              - x = (i / steps)
+              svg
+                line(
+                  y1="0%"
+                  x1=toPercent(x)
+                  y2="100%"
+                  x2=toPercent(x)
+                  stroke="#5554"
+                  stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                )
+
+        // Chart rects
+        g
+        
+          for seriesname, i in chart.series[0].values
+            svg(
+              x="0"
+              y=toPercent(fy(i) - fy(-0.1))
+              height=toPercent(fy(0))
+              width="100%"
+            )
+            
+              g.bars
+                - series = chart.series.filter( (s, i) => i )
+                for set, j in series 
+                  - v = set.values[i]
+                  - thickness = 1 / series.length
+                
+                  rect(
+                    y=toPercent(j*thickness)
+                    x=0
+                    height=toPercent(thickness)
+                    width=toPercent(fx(v))
+                    fill=colors[set.color]
+                    data-value=v
+                    data-category=set.title
+                    data-response=seriesname
+                    data-tooltip=29
+                  )
+
+                  text.chart-value(
+                    y=toPercent(j*thickness + thickness/2)
+                    x=toPercent(fx(v/2))
+                    text-anchor="middle"
+                    transform=`translate(0 6)`
+                    style="color: white"
+                  )
+                    = v + (axes.percentage ? "" : "")
+
+                // X-Axis labels
+                svg.x-label(y="50%")
+                  text(
+                    text-anchor="end"
+                    transform=`translate(-10 6)`
+                  )
+                    =seriesname
+    
+    .row
+      ul.legend.list-bare.txt-left.flex.flex-ch
+        for ax, i in new Array(chart.series.length)
+          if i
+            li.legend-item
+              span.legend-item-box(style=`background: ${colors[chart.series[i].color]}`)
+              span.legend-item-label= chart.series[i].title
+
+  style
+    include:sass ./style.sass
+
+  script.
+    window.addEventListener("initCharts", () => {
+      tooltip.phrases["29"] = {
+        phrase: "{{value}}% {{variant}}.",
+        variant: (response) =>
+          response === "None"
+            ? "said no country will be the leading economic power in Asia in 20 years’ time"
+            : response === "Don't know"
+            ? "said they didn't know"
+            : response === "Refused"
+            ? "refused to answer"
+            : "said {{response}} will be the leading economic power in Asia in 20 years’ time"  
+      }
+    })

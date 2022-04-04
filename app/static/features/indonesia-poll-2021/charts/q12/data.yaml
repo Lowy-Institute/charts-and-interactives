@@ -1,0 +1,52 @@
+title: >
+  Foreign investment
+
+subtitle: >
+  Are you in favour or opposed to a company, bank or investment fund from the
+  following country buying a controlling stake in a major Indonesian company?
+
+axes:
+  minY: 0
+  maxY: 60
+  stepsY: 7
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  - title: Year
+    values:
+      - Saudi Arabia
+      - Singapore
+      - Japan
+      - Malaysia
+      - United States
+      - Australia
+      - Netherlands
+      - China
+
+  - title: Strongly in favour
+    color: "blue-100"
+    values:
+      - 15
+      - 8
+      - 11
+      - 6
+      - 7
+      - 6
+      - 4
+      - 4
+
+  - title: In favour
+    color: "highlight"
+    values:
+      - 42
+      - 46
+      - 42
+      - 41
+      - 35
+      - 35
+      - 33
+      - 26

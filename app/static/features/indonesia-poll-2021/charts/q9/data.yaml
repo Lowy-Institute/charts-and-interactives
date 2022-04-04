@@ -1,0 +1,43 @@
+title: >
+  Economic optimism
+
+#source: >
+  #<b>Source:</b> authors' calculations based on IMF Investment and Capital Stock Dataset 2021, Penn World Tables 10.0, Herd (2020), and CEIC Data
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Overall, how optimistic are you about Indonesia’s economic performance over the next five years? 
+
+axes:
+  minY:  0
+  maxY: 90
+  stepsY: 10
+  rotateX: false
+  percentage: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2011
+      - 2021
+
+  -
+    title: Very optimistic
+    color: "blue-100"
+    values:
+      - 16
+      - 12
+
+  -
+    title: Optimistic
+    color: "highlight"
+    values:
+      - 63
+      - 71
+
+

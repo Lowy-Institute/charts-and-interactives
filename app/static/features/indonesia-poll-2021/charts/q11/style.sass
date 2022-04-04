@@ -1,0 +1,75 @@
+#chart-11
+
+  &.chart-wrapper
+    height: 550px
+
+  .col-wrap
+    margin: 0
+
+  .col-md
+    padding: 0 1em
+    width: 50%
+
+  .chart
+    position: relative
+    margin-bottom: 60px
+
+  .chart-content
+    position: absolute
+    top: 20px
+    left: 36px
+    right: 12px
+    bottom: 24px
+
+  .chart-content > svg
+    height: 20px
+    min-height: 100%
+
+
+  .chart-title
+    font-size: 24px
+    padding-left: 1rem
+    
+  .chart-subtitle
+    margin-top: -12px
+    font-size: 16px
+
+  .chart-source
+    font-size: 14px
+    max-width: 800px
+    margin: 12px 8px 0
+
+  .chart-value
+    opacity: 0
+    transition-duration: .4s
+    pointer-events: none
+  
+  .chart-content:hover .chart-value
+    opacity: 1
+
+  text
+    font-size: 14px
+    fill: currentColor
+
+  svg
+    overflow: visible
+  
+  .legend
+    margin: 0 40px 0 100px;
+  .legend-item 
+    margin: 0
+    padding: 0 40px
+
+  hr
+    margin: 24px 0 16px
+
+  .label
+    transform: rotate(-45deg) translate(-5px, 20px)
+    text-anchor: end
+
+  @media screen and (max-width: 600px)
+    .col-wrap
+      display: block
+    .col-md
+      width: 100%
+      height: 100%

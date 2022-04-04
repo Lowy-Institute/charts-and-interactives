@@ -1,0 +1,43 @@
+title: >
+  Role of regional security partnerships
+
+subtitle: >
+  Do you think the Quad will make Indonesia more or less safe, or do you think
+  it won’t affect Indonesia’s safety? Do you think Australia's plan to buy
+  nuclear-powered submarines will make Indonesia more or less safe, or do you
+  think it won’t affect Indonesia’s safety?
+
+axes:
+  minX: 0
+  maxX: 100
+  stepsX: 6
+  percentage: true
+  minorLines: true
+  dotted: [1, 3, 5, 7, 9, 11, 13] # Index of dotted gridlines
+  reverse: false
+
+series:
+  - title: Category
+    values:
+      - Australia's plan to buy nuclear-powered submarines
+      - The Quad
+  - title: More safe
+    color: "blue-100"
+    values:
+      - 10
+      - 21
+  - title: Makes no difference
+    color: "grey"
+    values:
+      - 24
+      - 22
+  - title: Less safe
+    color: "orange"
+    values:
+      - 28
+      - 13
+  - title: Don't know
+    color: "grey-200"
+    values:
+      - 40
+      - 44

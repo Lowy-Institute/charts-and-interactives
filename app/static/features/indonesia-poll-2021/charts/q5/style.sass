@@ -1,0 +1,119 @@
+#chart-5
+  height: 550px
+
+  .chart
+    margin-left: 1rem
+
+  .chart-content
+    position: absolute
+    top: 20px
+    left: 65px
+    right: 20px
+    bottom: 40px
+
+  .chart-content > svg
+    border-bottom: 1px solid #bbb
+
+  .chart-title
+    /* margin: auto
+    font-size: 24px
+    padding-left: 1rem
+    
+  .chart-subtitle
+    /* font-weight: 600
+    height: 12px
+    margin-top: -12px
+    font-size: 16px
+    
+  .y-label
+    transform: rotate(-90deg) translate(0rem, -3.5rem)
+    text-anchor: middle
+
+  li
+    list-style: none
+    margin: 0
+    padding: 4px 16px 4px 24px
+
+  .legend
+    font-size: 15px
+    margin-bottom: .75em
+    flex-direction: row-reverse
+
+  .legend-item
+    margin: 4px 8px 0
+    padding-right: 0
+    position: relative
+    white-space: nowrap
+
+  .legend-item-box
+    position: absolute
+    left: 0
+    top: .75em
+    height: .5em
+    width: .5em
+    background: black
+
+
+  polyline
+    vector-effect: non-scaling-stroke
+
+  text
+    font-size: 14px
+    fill: currentColor
+
+  svg
+    overflow: visible
+    
+  .chart-notes, .chart-source
+    margin-left: 2em
+    font-size: 15px
+    
+  .chart-value
+    opacity: 0
+    transition-duration: .4s
+    pointer-events: none
+    
+  circle
+    opacity: 1
+    transition-duration: .4s
+    
+  .gridlines
+    transition-duration: .4s
+  
+  .chart-content:hover .gridlines
+    opacity: 1
+
+  .chart-content:hover .chart-value,
+  .chart-content:hover circle,
+    opacity: 1
+
+  .chart-value:hover
+    opacity: 1
+
+  hr
+    margin: 24px 0 16px
+
+  @media (max-width: 700px)
+    
+    .x-label text
+      text-anchor: end
+      transform: rotate(-45deg) translate(-8px, 14px)
+
+    text
+      font-size: 13px
+      
+  @media (max-width: 500px)
+    .chart-content
+      bottom: 40px
+    .chart-title
+      font-size: 18px
+    .chart-subtitle
+      font-size: 14px
+    .chart-notes,
+    .chart-source
+      text-align: center
+      font-size: 13px
+      
+  @media print
+    .chart-wrapper
+      margin: 100px auto!important

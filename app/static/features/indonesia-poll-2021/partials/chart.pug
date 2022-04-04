@@ -1,52 +1,106 @@
--
-  baseurl = "https://interactives.lowyinstitute.org/charts/indonesia-poll"
-  charts = [
-    {id:  1, title: "Indonesia's direction"},
-    {id:  4, title: "Feelings of safety"},
-    {id:  5, title: "Trust in global powers"},
-    {id:  6, title: "Confidence in world leaders", height: 650},
-    {id:  7, title: "Globalisation"},
-    {id:  9, title: "Economic optimism"},
-    {id: 11, title: "Ecomonic model for Indonesia"},
-    {id: 12, title: "Foreign government investment"},
-    {id: 13, title: "Levels of foreign investment in Indonesia "},
-    {id: 16, title: "Threats to Indonesia's vital interests", height: 750},
-    {id: 17, title: "Countries that pose a threat to Indonesia"},
-    {id: 18, title: "Indonesia's place in the world"},
-    {id: 19, title: "Confidence in Indonesian institutions"},
-    {id: "19b", title: "Confidence in TNI to defend"},
-    {id: 20, title: "Goals of Indonesian foreign policy", height: 650},
-    {id: 21, title: "Peace and conflict resolution goals"},
-    {id: 23, title: "Indonesia's diplomatic style"},
-    {id: 24, title: "Attitudes to democracy"},
-    {id: 25, title: "Most important international organisation"},
-    {id: 26, title: "Optimism about ASEAN's future"},
-    {id: 27, title: "Attitudes to China"},
-    {id: 28, title: "Leading military power"},
-    {id: 29, title: "Leading economic power"},
-    {id: 30, title: "Foreign interference", height: 400},
-    {id: 31, title: "US-China military conflict"},
-    {id: 32, title: "Global warming"},
-    {id: 33, title: "Effort to combat climate change"},
-    {id: 34, title: "Support for joining minilaterals"},
-    {id: "35-38", title: "Knowledge of regional security partnerships"},
-    {id: "37-38", title: "Australia's regional security plans"},
-    {id: 39, title: "COVID handling by country"},
-    {id: 40, title: "Source of COVID-19 pandemic"},
-    {id: 41, title: "Trust in sources of information"},
-  ]
-    
-mixin chart(id)
-  - chart = charts.find((c) => c.id === id)
-  
-  if chart
-    iframe.chart(
-      id=`q${id}`
-      src=`${baseurl}/q${id}`
-      height=`${chart.height || 550}px`
-      frameborder="0"
-      )
+//- Pug doesn't allow dynamic include paths,
+//- so we're forced to handle these manually...
 
+mixin chart(id) 
+  if id === 1
+    //- Indonesia's direction
+    //- include ../charts/q1/index
+  else if id === 4
+    //- Feelings of safety
+    include ../charts/q4/index
+  else if id === 5
+    //- Trust in global powers
+    include ../charts/q5/index
+  else if id === 6
+    //- Confidence in world leaders
+    include ../charts/q6/index
+  else if id === 7
+    //- Globalisation
+    include ../charts/q7/index
+  else if id === 9
+    //- Economic optimism
+    include ../charts/q9/index
+  else if id === 11
+    //- Ecomonic model for Indonesia
+    include ../charts/q11/index
+  else if id === 12
+    //- Foreign government investment
+    include ../charts/q12/index
+  else if id === 13
+    //- Levels of foreign investment in Indonesia 
+    include ../charts/q13/index
+  else if id === 16
+    //- Threats to Indonesia's vital interests
+    include ../charts/q16/index
+  else if id === 17
+    //- Countries that pose a threat to Indonesia
+    include ../charts/q17/index
+  else if id === 18
+    //- Indonesia's place in the world
+    include ../charts/q18/index
+  else if id === 19
+    //- Confidence in Indonesian institutions
+    include ../charts/q19/index
+  //- else if id === "19b"
+    //- Confidence in TNI to defend
+    include ../charts/q19b/index
+  else if id === 20
+    //- Goals of Indonesian foreign policy
+    include ../charts/q20/index
+  else if id === 21
+    //- Peace and conflict resolution goals
+    include ../charts/q21/index
+  else if id === 23
+    //- Indonesia's diplomatic style
+    include ../charts/q23/index
+  else if id === 24
+    //- Attitudes to democracy
+    include ../charts/q24/index
+  else if id === 25
+    //- Most important international organisation
+    include ../charts/q25/index
+  else if id === 26
+    //- Optimism about ASEAN's future
+    include ../charts/q26/index
+  else if id === 27
+    //- Attitudes to China
+    include ../charts/q27/index
+  else if id === 28
+    //- Leading military power
+    include ../charts/q28/index
+  else if id === 29
+    //- Leading economic power
+    include ../charts/q29/index
+  else if id === 30
+    //- Foreign interference
+    include ../charts/q30/index
+  else if id === 31
+    //- US-China military conflict
+    iframe(class="chart-wrapper" id="q31" src="https://interactives.lowyinstitute.org/charts/indonesia-poll/q31" height="550px" frameborder="0" width="100%")
+  else if id === 32
+    //- Global warming
+    include ../charts/q32/index
+  else if id === 33
+    //- Effort to combat climate change
+    include ../charts/q33/index
+  else if id === 34
+    //- Support for joining minilaterals
+    iframe(class="chart-wrapper" id="q34" src="https://interactives.lowyinstitute.org/charts/indonesia-poll/q34" height="550px" frameborder="0" width="100%")
+  //- else if id === "35-38"
+    //- Knowledge of regional security partnerships
+    include ../charts/q35-38/index
+  else if id === "37-38"
+    //- Australia's regional security plans
+    include ../charts/q37-38/index
+  else if id === 39
+    //- COVID handling by country
+    include ../charts/q39/index
+  else if id === 40
+    //- Source of COVID-19 pandemic
+    include ../charts/q40/index
+  else if id === 41
+    //- Trust in sources of information
+    include ../charts/q41/index
   else 
     - console.error(`Error: Chart q${id} does not exist!`)
     .border.flex-cv.txt-center.txt-tu(style=`height: 500px`)= "Chart: " + id

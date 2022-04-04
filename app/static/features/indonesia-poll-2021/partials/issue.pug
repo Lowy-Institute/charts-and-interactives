@@ -1,11 +1,12 @@
 extend /partials/layout
 
 block append config
-  - page.includeFonts = false
-  - page.class = "article"
-  - page.issues = data.getOne("static/features/indonesia-poll-2021/data").issues
-  - issue = page.issues.find(e => e.href === href)
-  - index = page.issues.findIndex(e => e.href === href)
+  - 
+    page.includeFonts = false
+    page.class = "article"
+    page.issues = data.getOne("static/features/indonesia-poll-2021/data").issues
+    issue = page.issues.find(e => e.href === href)
+    index = page.issues.findIndex(e => e.href === href)
 
 block prepend head
   - page.url = `https://interactives.lowyinstitute.org/features/indonesia-poll-2021/topics/${issue.href}`
@@ -21,12 +22,14 @@ block page
 
   .w-article.sm-w-full.flex-ch.relative.bg-dk.txt-ff.z100
     .title-block.txt-center.z1.p-md
-      .title.txt-tu.pv-sm!= issue.title.replace("&nbsp;", " ")
+      h1.title.txt-tu.pv-sm!= issue.title.replace("&nbsp;", " ")
 
   .container
     article
       block content
       block endnote
+
+  .tooltip
 
   aside.container.relative.h-screen.flex-col.mx-auto.txt-ff.bg-dk.z100
     .txt-center.opacity-75.p-sm.border-v-lt
@@ -50,10 +53,11 @@ block append css
     include:sass ../styles/_navigation.sass
     include:sass ../styles/_scroller.sass
     include:sass ../styles/_chart.sass
-    include:sass ../styles/_landing.sass
+    include:sass ../styles/_tooltip.sass
     include:sass ../styles/_print.sass
 
 block append scripts
   script
     include:coffee ../coffee/utils.coffee
     include:coffee ../coffee/article.coffee
+    include ../coffee/tooltip.js

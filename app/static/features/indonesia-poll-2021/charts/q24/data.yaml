@@ -1,0 +1,36 @@
+title: >
+  Attitudes to democracy
+
+subtitle: >
+  I am now going to read you three statements about democracy. Please say which
+  one of the three statements comes closest to your own personal views about
+  democracy.
+
+axes:
+  min: 0
+  max: 70
+  steps: 8
+  rotateLabels: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  - title: Pandemic performance
+    values:
+      - Democracy is preferable to any other kind of government
+      - In some circumstances, a non-democratic government can be preferable
+      - For someone like me, it doesn't matter what kind of government we have
+  - title: 2011
+    color: "orange"
+    values:
+      - 62
+      - 16
+      - 16
+
+  - title: 2021
+    color: "blue-100"
+    values:
+      - 60
+      - 20
+      - 18

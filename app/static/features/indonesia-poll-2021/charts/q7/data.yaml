@@ -1,0 +1,45 @@
+title: >
+  Globalisation
+
+subtitle: >
+  Do you believe that globalisation, especially the increasing connections of
+  our economy with others around the world, is mostly good or mostly bad for
+  Indonesia?
+
+axes:
+  minY: 0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  - title: Year
+    values:
+      - 2006
+      - 2011
+      - 2021
+
+  - title: Mostly good
+    color: "blue-100"
+    values:
+      - 61
+      - 67
+      - 62
+
+  - title: Mostly bad
+    color: "orange"
+    values:
+      - 31
+      - 26
+      - 7
+
+  - title: Don't know
+    color: "grey"
+    values:
+      - 8
+      - 7
+      - 31

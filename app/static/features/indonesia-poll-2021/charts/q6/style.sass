@@ -1,0 +1,100 @@
+#chart-6
+  padding: 0 1.5rem
+
+  .chart-title
+    font-size: 24px
+    padding-left: 1rem
+    
+  .chart-subtitle
+    font-size: 16px
+
+  li
+    list-style: none
+    margin: 0
+    padding: 4px 16px 4px 24px
+
+  .legend
+    font-size: 15px
+    margin: 14px 8px 0
+
+  .legend-item
+    margin: 4px 8px
+    padding-right: 0
+    position: relative
+    white-space: nowrap
+
+  .legend-item-box
+    position: absolute
+    left: 0
+    top: .5em
+    height: 1em
+    width: 1em
+    background: black
+
+  text
+    font-size: 14px
+    fill: currentColor
+
+  svg
+    overflow: visible
+    
+  .chart-value
+    opacity: 0
+    transition-duration: .4s
+    pointer-events: none
+  
+  .chart-content:hover .chart-value
+    opacity: 1
+
+  hr
+    margin: 24px 0 16px
+
+  .y-label
+    clear: left
+    min-height: 32px
+
+  .axis-container
+    width: 100%
+
+  .bar-label,.axis-spacer
+    font-size: 14px
+    float: left
+    width: 45%
+    align-items: center
+    line-height: 1.2
+    margin: 0.25rem 0
+
+  .bar-label p
+    padding: 0 1em
+
+  .bar-content,.axis
+    float: right
+    width: 55%
+
+  @media (max-width: 450px)
+    text
+      font-size: 13px
+    .chart-content
+      bottom: 20px
+    .legend
+      flex-wrap: wrap
+    .legend-item
+      margin: 0px 8px
+    .chart-title
+      font-size: 22px
+    .chart-subtitle
+      font-size: 14px
+    .chart-notes,
+    .chart-source
+      font-size: 13px
+    .bar-label
+      font-size: 14px
+      float: left
+      width: 100%
+      min-height: 20px
+      text-align: left
+    .bar-label p
+      padding: .4em 0 .2em 0
+    .bar-content,.axis
+      float: left
+      width: 100%

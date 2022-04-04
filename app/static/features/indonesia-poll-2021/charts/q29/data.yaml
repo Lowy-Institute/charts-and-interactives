@@ -1,0 +1,64 @@
+title: >
+  Leading economic power in Asia
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Do you personally think China or the United States will be the leading economic power in Asia in 20 years’ time, or will it be another country?
+
+axes:
+  min:  0
+  max: 60
+  steps: 7
+  rotateLabels: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: countries
+    values:
+      - China
+      - United States
+      - Another country
+      - Japan
+      - Indonesia
+      - None
+      - Don't know
+      - Refused
+
+
+  -
+    title: 2011
+    color: "orange"
+    values:
+      - 52
+      - 23
+      - 1
+      - 6
+      - 2
+      - 0
+      - 0
+      - 0
+
+  -
+    title: 2021
+    color: "blue-100"
+    values:
+      - 31
+      - 25
+      - 4
+      - 0
+      - 0
+      - 2
+      - 36
+      - 1
+
+
+
+
