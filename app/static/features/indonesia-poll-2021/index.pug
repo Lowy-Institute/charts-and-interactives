@@ -14,7 +14,7 @@ block page
     
   include partials/header
 
-  .h-screen
+  .h-screen.overflow-hidden.relative
     #map-wrap.absolute.inset-0
       include ./img/drawing.svg
     .title-block.flex-col.relative.p-md.h-full.txt-center
@@ -28,7 +28,7 @@ block page
         svg(viewBox="0 0 10 10" height="10" stroke="currentColor" fill="none")
           path(d="M0,5 L5,10 L10,5")
 
-  #introduction.h-screen.flex-col.bg-dk.txt-ff.border-t
+  #introduction.h-screen.relative.z1.flex-col.border-t
     .flex.flex-swap.flex-grow
       .col.col-3-5.pt-16.pb-4.border-r.txt-center.flex-col
         h1 Introduction
