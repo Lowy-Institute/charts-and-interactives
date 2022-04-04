@@ -78,7 +78,12 @@ block page
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 
-      .tooltip
+      .hover-label-1
+        span 46%
+      .hover-label-2
+        span 34%
+      .hover-label-3
+        span 20%
 
   script.
 
@@ -263,6 +268,25 @@ block append css
       hr
         margin: 24px 0 16px
 
+      .hover-label-1,.hover-label-2,.hover-label-3
+        position: absolute
+        color: #fff
+        /* background-color: #fff
+        /* opacity: .8
+        padding: .2em .4em
+      .hover-label-1:hover,.hover-label-2:hover,.hover-label-3:hover
+        opacity: 1
+      .hover-label-1
+        left: 56%
+        top: 47%
+      .hover-label-2
+        left: 44%
+        top: 52%
+      .hover-label-3
+        left: 44%
+        top: 41%
+        color: #000
+
       @media (max-width: 700px)
         .legend-item
           white-space: unset
@@ -276,3 +300,16 @@ block append css
           bottom: 10px   
         .x-label:nth-of-type(even)
           display: none
+
+        .hover-label-1
+          left: 58%
+          top: 50%
+        .hover-label-2
+          left: 51%
+          top: 59%
+        .hover-label-3
+          left: 32%
+          top: 57%
+        .hover-label-1 span,.hover-label-2 span,.hover-label-3 span
+          font-size: 13px
+        

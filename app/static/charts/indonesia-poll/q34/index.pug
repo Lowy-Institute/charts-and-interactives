@@ -67,8 +67,8 @@ block page
               stroke-width=.25
               stroke-dasharray=(false ? 1 : "")
             )
-          .tooltip(style="left: 278.83px;top: 188.752px;")
-            span In 2021, 37%  said United States had done The right amount to combat climate change
+          //-.tooltip(style="left: 278.83px;top: 188.752px;")
+            span 
 
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
@@ -82,11 +82,11 @@ block page
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 
       .hover-label-1
-        span(style='position: absolute; left: 60%; top: 44%; color:#fff;') 35%
+        span 35%
       .hover-label-2
-        span(style='position: absolute; left: 58%; top: 61%; color:#fff;') 13%
+        span 13%
       .hover-label-3
-        span(style='position: absolute; left: 38%; top: 52%; color:#fff;') 52%
+        span 52%
 
   script.
 
@@ -252,10 +252,40 @@ block append css
       hr
         margin: 24px 0 16px
 
+      .hover-label-1,.hover-label-2,.hover-label-3
+        position: absolute
+        color: #fff
+        /* background-color: #fff
+        /* opacity: .8
+        padding: .2em .4em
+      .hover-label-1:hover,.hover-label-2:hover,.hover-label-3:hover
+        opacity: 1
+      .hover-label-1
+        left: 58%
+        top: 48%
+      .hover-label-2
+        left: 58%
+        top: 61%
+      .hover-label-3
+        left: 38%
+        top: 52%
+
       @media (max-width: 450px)
         .chart-content
           position: absolute
           top: 10px
           left: 20px
           right: 20px
-          bottom: 10px   
+          bottom: 10px
+
+        .hover-label-1
+          left: 58%
+          top: 55%
+        .hover-label-2
+          left: 58%
+          top: 66%
+        .hover-label-3
+          left: 31%
+          top: 60%
+        .hover-label-1 span,.hover-label-2 span,.hover-label-3 span
+          font-size: 13px

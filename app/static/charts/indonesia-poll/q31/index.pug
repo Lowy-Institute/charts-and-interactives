@@ -78,7 +78,14 @@ block page
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 
-      .tooltip
+      .hover-label-1
+        span 84%
+      .hover-label-2
+        span 4%
+      .hover-label-3
+        span 1%
+      .hover-label-4
+        span 10%
 
   script.
 
@@ -264,10 +271,48 @@ block append css
       hr
         margin: 24px 0 16px
 
+      .hover-label-1,.hover-label-2,.hover-label-3,.hover-label-4
+        position: absolute
+        color: #fff
+        /* background-color: #fff
+        /* opacity: .8
+        padding: .2em .4em
+      .hover-label-1:hover,.hover-label-2:hover,.hover-label-3:hover,.hover-label-4:hover
+        opacity: 1
+      .hover-label-1
+        left: 51%
+        top: 56%
+      .hover-label-2
+        left: 39%
+        top: 45%
+      .hover-label-3
+        left: 41%
+        top: 43%
+        color: #000
+      .hover-label-4
+        left: 46%
+        top: 42%
+        color: #000
+
       @media (max-width: 450px)
         .chart-content
           position: absolute
           top: 10px
           left: 20px
           right: 20px
-          bottom: 10px   
+          bottom: 10px
+
+        .hover-label-1
+          left: 51%
+          top: 58%
+        .hover-label-2
+          left: 34%
+          top: 51%
+        .hover-label-3
+          left: 35%
+          top: 49%
+        .hover-label-4
+          left: 41%
+          top: 49%
+        .hover-label-1 span,.hover-label-2 span,.hover-label-3 span,.hover-label-4 span
+          font-size: 13px
