@@ -9,7 +9,6 @@ block append config
   - chart = page
   - colors = []
   
-  
 block page
   .wrapper.flex
     .txt-left.flex.flex-grow.flex-col
@@ -23,79 +22,82 @@ block page
         - max = axes.max
         - range = max - min
         - fx = (x) => (x - min) / range
-        - fy = (i) => (i + 0.7) / (ln - 0.1)
+        - fy = (i) => (i + 0.5) / (ln - 0.1)
         
-        svg(height="100%" width="100%")
+        .chart-container(height="100%" width="100%")
                   
-          // Y-Axis labels
-          svg(height="100%" y="100%")
-            - steps = chart.axes.steps-1
-            for n, i in new Array(steps+1)
-              - y = (i / (steps))
-              svg(x=toPercent(y))
-                text(text-anchor="middle" transform="translate(0 20)")
-                  = min + range*(i/steps) + (axes.percentage ? "%" : "")
-                
-          // Y-Axis minor lines
-          if chart.axes.minorLines
-            svg(height="100%")
-              for n, i in new Array(steps + 1)
-                - x = (i / steps)
-                svg
-                  line(
-                    y1="0%"
-                    x1=toPercent(x)
-                    y2="100%"
-                    x2=toPercent(x)
-                    stroke="#5554"
-                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+          // Chart rects
+          .bars
+            for seriesname, i in chart.series[0].values
+              // Y-Axis labels
+              .x-label.flex-wrap.flex-ch
+                .bar-label
+                  p
+                    =seriesname
+
+                .bar-content
+            
+                  svg(
+                    x="0"
+                    y=toPercent(fy(i) - fy(-0.1))
+                    height="60px"
+                    width="100%"
                   )
 
-          // Chart rects
-          g
-          
-            for seriesname, i in chart.series[0].values
-              svg(
-                x="0"
-                y=toPercent(fy(i) - fy(-0.1))
-                height=toPercent(fy(0))
-                width="100%"
-              )
-              
-                g.bars
-                  - series = chart.series.filter( (s, i) => i )
-                  for set, j in series 
-                    - v = set.values[i]
-                    - thickness = 1 / series.length
-                  
-                    rect(
-                      y=toPercent(j*thickness)
-                      x=0
-                      height=toPercent(thickness)
-                      width=toPercent(fx(v))
-                      fill=chart.colors[set.color]
-                      data-value=v
-                      data-category=set.title
-                      data-response=seriesname
-                      data-tooltip
-                    )
+                    g.bars
+                      - series = chart.series.filter( (s, i) => i )
+                      for set, j in series 
+                        - v = set.values[i]
+                        - thickness = .75 / series.length
 
-                    text.chart-value(
-                      y=toPercent(j*thickness + thickness/2)
-                      x=toPercent(fx(v/2))
-                      text-anchor="middle"
-                      transform=`translate(0 6)`
-                      style="color: white"
-                    )
-                      = v + (axes.percentage ? "" : "")
+                        rect(
+                          y=toPercent(j*thickness)
+                          x=0
+                          height=toPercent(thickness)
+                          width=toPercent(fx(v))
+                          fill=chart.colors[set.color]
+                          data-value=v
+                          data-category=set.title
+                          data-response=seriesname
+                          data-tooltip
+                        )
 
-                  // X-Axis labels
-                  svg.x-label(y="50%")
-                    text(
-                      text-anchor="end"
-                      transform=`translate(-10 6)`
-                    )
-                      =seriesname
+                        text.chart-value(
+                          y=toPercent(j*thickness + thickness/2)
+                          x=toPercent(fx(v/2))
+                          text-anchor="middle"
+                          transform=`translate(0 6)`
+                          style="color: white"
+                        )
+                          = v + (axes.percentage ? "" : "")
+
+          .axis-container
+            .axis-spacer
+            .axis       
+
+              // Y-Axis labels
+              svg.x-axis(width="100%" y="100%" height="16px")
+                - steps = chart.axes.steps-1
+                for n, i in new Array(steps+1)
+                  - y = (i / (steps))
+                  svg.x-label(x=toPercent(y))
+                    text(text-anchor="middle" transform="translate(0 20)")
+                      = min + range*(i/steps) + (axes.percentage ? "%" : "")
+
+              // Y-Axis minor lines
+              if chart.axes.minorLines
+                svg.x-minor(width="100%" height="16px")
+                  for n, i in new Array(steps + 1)
+                    - x = (i / steps)
+                    svg
+                      line(
+                        y1="0%"
+                        x1=toPercent(x)
+                        y2="100%"
+                        x2=toPercent(x)
+                        stroke="#5554"
+                        stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                      )           
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -110,14 +112,14 @@ block page
       
       .tooltip
       
-  script(src="../tooltip.js")    
+  script(src="../tooltip.js")
   script.
     
     const phrase = "In {{category}}, {{value}}% {{variant}}."
     const variant = (response) =>
       response === "Don't know"
         ? "were unsure about this question"
-        : "said {{response}}"        
+        : "said {{response}}"    
   
 block append css
   style
@@ -125,7 +127,7 @@ block append css
     :sass
     
       .wrapper
-        height: 550px
+        height: 700px
 
       .chart
         box-sizing: border-box
@@ -134,7 +136,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 510px
+        left: 20px
         right: 20px
         bottom: 40px
 
@@ -145,10 +147,10 @@ block append css
         
       .chart-subtitle
         /* font-weight: 600
-        height: 12px
+        /* height: 12px
         margin-top: -12px
         font-size: 16px
-
+        
       li
         list-style: none
         margin: 0
@@ -197,18 +199,41 @@ block append css
       hr
         margin: 24px 0 16px
 
+      .axis-container
+        width: 100%
+
+      .bar-label,.axis-spacer
+        font-size: 14px
+        float: left
+        width: 30%
+        /* min-height: 32px
+        text-align: right
+        align-items: center
+
+      .bar-label p
+        padding: 0 1em 2em 1em
+
+      .bar-content,.axis
+        float: right
+        width: 70%
+
       @media (max-width: 700px)
-        .chart-content
-          left: 80px
+        //.chart-content
+          left: 40px
           right: 5px
           bottom: 80px
           top: 30px
           
-          
         text
           font-size: 13px
-          
+
+      @media (max-width: 700px)
+        .chart-content
+          /*left: 80px
+
       @media (max-width: 450px)
+        .wrapper
+          height: 850px
         .legend-item
           width: min-content
         .chart-title
@@ -221,3 +246,16 @@ block append css
           font-size: 13px
         .chart-value
           display: none
+
+        .bar-label
+          font-size: 14px
+          float: left
+          width: 100%
+          min-height: 20px
+          text-align: left
+        .bar-label p
+          padding: .4em 0 .2em 0
+        .bar-content,.axis
+          float: left
+          width: 100%
+        
