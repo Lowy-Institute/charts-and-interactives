@@ -1,0 +1,25 @@
+.tooltip
+  position: fixed
+  z-index: 120
+  left: 0
+  width: 190px
+  background: rgba(white, 0.97)
+  padding: .75em
+  opacity: 0
+  border-radius: .2em
+  box-shadow: 0 0 5px 0 #0004
+  transition: opacity 0.4s, transform 0.2s
+  pointer-events: none
+  font-size: 13px
+  line-height: 1.25
+  font-weight: 400
+  transform: translate(-50%, calc(-100% - 8px))
+
+  &.active
+    opacity: 1
+
+  &.right
+    transform: translate(8px, -50%)
+
+  &.left
+    transform: translate(calc(-100% - 8px), -50%)
