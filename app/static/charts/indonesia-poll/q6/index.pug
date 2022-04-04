@@ -220,45 +220,38 @@ block append css
       .bar-content,.axis
         float: right
         width: 55%
-          
+
       @media (max-width: 450px)
         .wrapper
-          height: 800px
+          height: 960px
+        text
+          font-size: 13px
+        .chart-content
+          bottom: 20px
+        .legend
+          flex-wrap: wrap
+        .legend-item
+          margin: 0px 8px
+        .chart-title
+          font-size: 22px
+        .chart-subtitle
+          font-size: 14px
+          height: 40px
+        .chart-notes,
+        .chart-source
+          font-size: 13px
+        .bar-label
+          font-size: 14px
+          float: left
+          width: 100%
+          min-height: 20px
+          text-align: left
+        .bar-label p
+          padding: .4em 0 .2em 0
+        .bar-content,.axis
+          float: left
+          width: 100%
 
-        @media (max-width: 450px)
+        @media (max-width: 320px)
           .wrapper
-            height: 960px
-          text
-            font-size: 13px
-          .chart-content
-            bottom: 20px
-          .legend
-            flex-wrap: wrap
-          .legend-item
-            margin: 0px 8px
-          .chart-title
-            font-size: 22px
-          .chart-subtitle
-            font-size: 14px
-            height: 40px
-          .chart-notes,
-          .chart-source
-            font-size: 13px
-
-          .bar-label
-            font-size: 14px
-            float: left
-            width: 100%
-            min-height: 20px
-            text-align: left
-
-          .bar-label p
-            padding: .4em 0 .2em 0
-
-          .bar-content,.axis
-            float: left
-            width: 100%
-
-          @media (max-width: 375px)
-            .wrapper
-              height: 1060px
+            height: 1060px
