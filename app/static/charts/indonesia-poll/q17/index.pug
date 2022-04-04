@@ -35,8 +35,8 @@ block page
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + range*(i/steps) + (axes.percentage ? "%" : "")
-            //svg(y="50%")
-              text.y-label Million square metres
+            svg(y="50%")
+              text.y-label Poses a threat
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
