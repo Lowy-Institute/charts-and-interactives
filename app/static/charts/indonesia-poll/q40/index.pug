@@ -2,109 +2,129 @@ extend /partials/layout
 
 block append config
   - var datapath = "static/charts/indonesia-poll/q40/data"
+  - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
-
+  - chart = page
+  
 block page
-  .wrapper.flex.flex-col
-    .page-title.txt-center= page.title 
-    .col-wrap.txt-left.flex-grow.flex
-      .col-md.flex-grow.flex.flex-col
-        - chart = page.charts[0]
-        .chart-title= chart.title
-        .chart-subtitle.p-sm!= chart.subtitle
-        hr
+  .wrapper.flex
+    .txt-left.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.p-sm!= chart.subtitle
+      hr
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - range = maxX - minX
+        - fx = (x) => (x - minX) / range
+        - fy = (i) => (i + 0.7) / ln
+        
+        .chart-container(height="100%" width="100%")
 
-        .chart.flex-grow: .chart-content
+          // Chart rects
+          .bars
+            - const n = chart.series[0].values.length
+            
+              for undef, i in new Array(n)
+                // Y-Axis labels
+                .y-label.flex-wrap.flex-ch
+                  .bar-label
+                    p
+                      = chart.series[0].values[i]
 
-          - scale = chart.scale
-          - minY = scale.minY
-          - maxY = scale.maxY
-          - range = maxY - minY
-          - baseline = (scale.datum + maxY) / range
+                  .bar-content
+                    svg(
+                      y=toPercent(fy(i)-fy(-0.15) )
+                      width="100%" 
+                      height="20px"
+                    )   
+                      - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                      - vals = axes.reverse ? vals.reverse() : vals
+                      - x0 = 0
 
-          //- I've split fy (y position of the rect) and fh (height of the rect) into two equations. Positive and negative values need to be treated differently, hence the ternary statement in fy()
-          - fh = (y) => Math.abs(y) / range
-          - fy = (y) => y < 0 ? baseline : (baseline - fh(y))
-          - fx = (i) => (i + 0.6) / (chart.axes[1].values.length + 0.6)
+                      for v, j in vals
+                        - ci = axes.reverse ? vals.length-j : j+1
 
-          svg(height="100%" width="100%")
-            svg(height="100%")
-              //- This must have been an older template as the number of steps on the y-axis was hard-coded in multiple places. I've replaced those hard-coded values with a new variable "scale.steps", which I've defined in data.yaml
-              for n, i in new Array(scale.steps)
-                - y = 1 - (i / (scale.steps - 1))
-                svg(y=toPercent(y))
-                  text(text-anchor="end" transform="translate(-8 4)")
-                    = scale.minY + (i / (scale.steps - 1)) * (scale.maxY - scale.minY) + "%"
+                        if v > 0
+                          rect(
+                            x=toPercent(x0)
+                            width=toPercent(fx(v))
+                            height=toPercent(fy(6))
+                            fill=chart.colors[chart.series[ci].color]
+                            data-v=v
+                            data-c=i
+                            data-s=j
+                          )
+                          text.chart-value(
+                            x=toPercent(x0 + fx(v/2))
+                            y="12%"
+                            text-anchor="middle"
+                            transform="translate(0 15)"
+                            style=`color: ${(j != 4 ? "white" : "")}`
+                          )
+                            //-= v.toFixed(0) + (axes.percentage ? "%" : "")
+                            //- removed % symbol from hover
+                            = v.toFixed(0) + (axes.percentage ? "" : "")
 
-            //- minor lines added manually
-            line(x1="0" x2="100%" y1="75%"  y2="75%" stroke="#ddd")
-            line(x1="0" x2="100%" y1="50%"  y2="50%" stroke="#ddd")
-            line(x1="0" x2="100%" y1="25%"  y2="25%" stroke="#ddd")
-            line(x1="0" x2="100%" y1="0%"  y2="0%" stroke="#ddd")      
+                        - x0 += fx(v)
+                      
+          .axis-container
+            .axis-spacer
+            .axis
+              // X-Axis labels
+              svg.x-axis(width="100%" y="100%" height="16px")
+                - let steps = chart.axes.stepsX-1
+                for n, i in new Array(steps+1)
+                  - x = i / (steps)
+                  svg.x-label(x=toPercent(x))
+                    text(text-anchor="middle" transform="translate(0 18)")
+                      = (minX + range*(i/steps)).toFixed(0) + (axes.percentage ? "%" : "")
 
-            g
-              for y, i in chart.axes[1].values
-                - label = chart.axes[0].values[i]
-                svg(
-                  x=toPercent(fx(i))
-                  y=toPercent(fy(y))
-                  width=toPercent(fx(0))
-                  height=toPercent(fh(y))
-                )
-                  rect(
-                    fill=label.highlight ? "#ff4050" : "#2D6993"
-                    width="100%"
-                    height="100%"
-                  )
+              // X-Axis minor lines
+              if chart.axes.minorLines
+                svg.x-minor(width="100%" height="16px")
+                  for n, i in new Array(steps+1)
+                    - x = (i / steps)
+                    svg
+                      line(
+                        x1=toPercent(x)
+                        y1="0%"
+                        x2=toPercent(x)
+                        y2="100%"
+                        stroke="#5552"
+                        stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                      )   
+      
+      //-.row
+        ul.legend.txt-left.flex.flex-ch.flex-wrap
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
 
-                  text.chart-value(
-                    x="50%"
-                    y="50%"
-                    text-anchor="middle"
-                    transform="translate(0 4.5)" 
-                    style="color: white"
-                  )
-                    = y
-
-                  svg(x="50%" y="100%")
-                    text.label(
-                      text-anchor="middle"
-                    )= label.text
-
-                //- Add a new baseline
-                line(x1="0" x2="100%" y1=toPercent(baseline) y2=toPercent(baseline) stroke="#ccc")
-
-    //-.row
-      ul.legend.list-bare.txt-left.flex.flex-ch
-        li.legend-item
-          span.legend-item-label An act of God
-        li.legend-item
-          span.legend-item-label Human contact with an infected animal
-        li.legend-item
-          span.legend-item-label A laboratory leak in a foreign country
-        li.legend-item
-          span.legend-item-label A domestic problem or issue
-        li.legend-item
-          span.legend-item-label Don’t know
- 
-    .chart-source.txt-muted.txt-center
-      = page.source
-
-    .tooltip
+      .chart-source.txt-center.txt-muted.txt-cond!= chart.source
+        span.chart-notes= chart.notes
+      
+      .tooltip
 
   script.
 
+
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nLegendItems = 5;
-    const nCategories = 1;
+    const nLegendItems = 4;
+    const nCategories = 6;
     /* --------------------- */
     
     const tooltip = document.querySelector('.tooltip');
     const chart = document.querySelectorAll('.chart-content');
     const recs = document.querySelectorAll('rect');
-    const cats = document.querySelectorAll('.y-label text');
+    const cats = document.querySelectorAll('.y-label .bar-label');
     const sers = document.querySelectorAll('.legend-item-label');
     
     if (enableTooltips) {
@@ -117,11 +137,11 @@ block page
       el.addEventListener('mouseover', () => {
         
         let v = el.dataset.v;
-        let s = sers[el.dataset.s].innerHTML.trim();
+        let s = sers[el.dataset.s].innerHTML.trim().toLowerCase();
         let c = cats[el.dataset.c].innerHTML.trim();
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = v + "% " + " said they were " + "'" + s + "'" + " about " + "'" + c + "'";
+        tooltip.innerHTML = v + "%" + " had " + "'" + s + "'" + " in " + "'" + c + "'";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -133,51 +153,34 @@ block page
       });
       
     }
+    
   
-
 block append css
   style
     :sass
-      .page-title
-        /* margin-bottom: 25px */
-
+  
       .wrapper
-        height: 550px
-
-      .col-wrap
-        margin: 0
-
-      .col-md
-        padding: 0 1em
-        width: 50%
+        height: 400px
 
       .chart
+        box-sizing: border-box
         position: relative
-        margin-bottom: 160px
 
       .chart-content
         position: absolute
-        top: 20px
-        left: 36px
-        right: 12px
-        bottom: 24px
-
-      .chart-content > svg
-        height: 20px
-        min-height: 100%
-
+        top: 0
+        left: 10px
+        right: 20px
+        bottom: 30px
 
       .chart-title
-        /* margin: auto
         font-size: 24px
         padding-left: 1rem
         
       .chart-subtitle
-        /* font-weight: 600
-        /* height: 12px
         margin-top: -12px
         font-size: 16px
-
+        
       .tooltip
         position: absolute
         left: 0
@@ -192,11 +195,40 @@ block append css
         max-width: 180px
         box-sizing: border-box
 
-      .chart-source
-        font-size: 14px
-        max-width: 800px
-        margin: 12px 8px 0
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
 
+      .legend
+        font-size: 15px
+        margin: 8px 0
+
+      .legend-item
+        margin: 4px 8px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-left: 2em
+        font-size: 15px
+        
       .chart-value
         opacity: 0
         transition-duration: .4s
@@ -205,31 +237,69 @@ block append css
       .chart-content:hover .chart-value
         opacity: 1
 
-      text,.legend-item
-        font-size: 14px
-        fill: currentColor
-
-      svg
-        overflow: visible
-      
-      .legend
-        margin: 0 40px 0 100px;
-      .legend-item 
-        margin: 0
-        padding: 0 40px
-
       hr
         margin: 24px 0 16px
 
-      .label
-        transform: rotate(-45deg) translate(-5px, 20px)
-        text-anchor: end
+      .y-label
+        clear: left
+        min-height: 32px
 
-      @media screen and (max-width: 600px)
-        .col-wrap
-          display: block
-        .col-md
-          width: 100%
-          height: 100%
-        .label 
-          font-size: 13px
+      .axis-container
+        width: 100%
+
+      .bar-label,.axis-spacer
+        font-size: 14px
+        float: left
+        width: 35%
+        /* min-height: 32px
+        text-align: right
+        align-items: center
+
+      .bar-label p
+        padding: 0 1em
+
+      .bar-content,.axis
+        float: right
+        width: 65%
+          
+      @media (max-width: 450px)
+        .wrapper
+          height: 800px
+
+        @media (max-width: 450px)
+          .wrapper
+            height: 960px
+          text
+            font-size: 13px
+          .chart-content
+            bottom: 20px
+          .legend
+            flex-wrap: wrap
+          .legend-item
+            margin: 0px 8px
+          .chart-title
+            font-size: 22px
+          .chart-subtitle
+            font-size: 14px
+            height: 40px
+          .chart-notes,
+          .chart-source
+            font-size: 13px
+
+          .bar-label
+            font-size: 14px
+            float: left
+            width: 100%
+            min-height: 20px
+            text-align: left
+
+          .bar-label p
+            padding: .4em 0 .2em 0
+
+          .bar-content,.axis
+            float: left
+            width: 100%
+
+          @media (max-width: 375px)
+            .wrapper
+              height: 1060px
