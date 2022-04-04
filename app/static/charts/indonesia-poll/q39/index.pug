@@ -70,6 +70,10 @@ block page
                       height=toPercent(fy(v))
                       width="100%"
                       fill=chart.colors[chart.series[ci].color]
+                      data-value=v
+                      data-category=chart.series[0].values[i]
+                      data-response=chart.series[j+1].title
+                      data-tooltip
                     )
                     text.chart-value(
                       x="50%"
@@ -105,51 +109,18 @@ block page
       
       .tooltip
 
+  script(src="../tooltip.js")
   script.
 
-    /* --- USER TO UPDATE --- */
-    const enableTooltips = true;
-    const nLegendItems = 2;
-    const nSeries = 8;
-    /* --------------------- */
-    
-    const chart = document.querySelectorAll('.chart-content');
-    const rects = document.querySelectorAll('rect');
-    const vals = document.querySelectorAll('.chart-value');
-    const series = document.querySelectorAll('.x-label');
-    const tooltip = document.querySelector('.tooltip');
-    const legendItems = document.querySelectorAll('.legend-item-label');
-    
-    if (enableTooltips) {
-      window.addEventListener('DOMContentLoaded', () => {
-        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
-      });
-    }
-        
-    function addHoverEventListeners(el, i) {
-      el.addEventListener('mouseover', () => {
-        
-        let val = vals[i].innerHTML.trim();
-        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
-        let cat = legendItems[i % nLegendItems].innerHTML.toLowerCase();
-        let box = el.getBoundingClientRect();
-        
-        tooltip.innerHTML = "In 2021, " + val + "% " + " said " + ser + " had handled the Covid-19 outbreak " + "'" + cat + "'" ;
-        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
-        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
-        tooltip.style.opacity = 1;
-        
-      });
-      
-      el.addEventListener('mouseleave', () => { 
-        tooltip.style.opacity = 0;
-      });
-      
-    }
-    
+    const phrase = "In 2021, {{value}}% {{variant}}."
+    const variant = (response) =>
+      response === "Don't know"
+        ? "didn't know whether globalisation was good or bad"
+        : "said they think {{category}} has handled the Covid-19 outbreak {{response}} so far"    
   
 block append css
   style
+    include:sass ../_tooltip.sass
     :sass
   
       .wrapper
@@ -180,21 +151,6 @@ block append css
         margin-top: -12px
         font-size: 16px
         
-      .tooltip
-        position: absolute
-        left: 0
-        background: #fffe
-        padding: .75em
-        opacity: 0
-        border-radius: .2em
-        box-shadow: 0 0 5px 0 #0004
-        transition-duration: 0.5s
-        pointer-events: none
-        font-size: 14px
-        /* text-transform: lowercase
-        max-width: 180px
-        box-sizing: border-box
-
       li
         list-style: none
         margin: 0
