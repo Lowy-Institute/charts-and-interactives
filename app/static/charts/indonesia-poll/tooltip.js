@@ -6,7 +6,7 @@ const rm = (el, c) => el.classList.remove(c)
 let vw, vh
 
 const uppers =
-  /^([A-Z]{2,}|University|Australian*|China|Chinese|United States|India|Indonesia|Russia|Japan[ese]*|English|Taiwan[ese]*|Hong Kong|North Korea[n]*|United Kingdom|Xi|Jacinda|Vladimir|Scott|Boris|Anthony|Kim|Joko|Narendra|G20|Malaysia|Singapore|Netherlands|Saudi Arabia)\b/
+  /^([A-Z]{2,}|University|Australian*|China|Chinese|United States|India|Indonesia[n]*|Russia|Japan[ese]*|English|Taiwan[ese]*|Hong Kong|North Korea[n]*|United Kingdom|Xi|Jacinda|Vladimir|Scott|Boris|Anthony|Kim|Joko|Narendra|G20|Malaysia|Singapore|Netherlands|Saudi Arabia[n]*|United Arab Emirates|Tentara|Badan|Kementerian|Kepolisian)\b/
 
 const formatPhrase = (str) => {
   return str

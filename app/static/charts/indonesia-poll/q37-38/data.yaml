@@ -44,7 +44,7 @@ series:
       - 28
       - 13
   -
-    title: Don’t know
+    title: Don't know
     color: "grey-200"
     values:
       - 40

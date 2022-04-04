@@ -115,7 +115,7 @@ series:
       - 11
       - 11
   -
-    title: Refuse to answer
+    title: Refused to answer
     color: "grey-200"
     values:
       - 1

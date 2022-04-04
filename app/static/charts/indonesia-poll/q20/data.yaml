@@ -140,7 +140,7 @@ series:
       - 9
 
   -
-    title: Don’t know
+    title: Don't know
     color: "grey"
     values:
       - 2
