@@ -24,10 +24,10 @@
     right: 0
 
   @for $i from 10 through 1
-    $intensity: 1 + $i * 0.225
+    $intensity: 1 + $i * 0.275
     .level-#{$i}
-      fill: rgba(1 * $intensity, 43 * $intensity, 69 * $intensity, 0.9)
-      transform: translateZ($intensity * $intensity *  -.4px)
+      fill: rgba(10 * $intensity, 43 * $intensity, 69 * $intensity, 0.9)
+      transform: translateZ($intensity * $intensity *  -.3px)
 
 body.landing
   background-color: $color-dk

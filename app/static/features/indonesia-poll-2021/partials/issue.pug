@@ -8,13 +8,12 @@ block append config
   - index = page.issues.findIndex(e => e.href === href)
 
 block prepend head
-  - page.url = "https://interactives.lowyinstitute.org/features/indonesia-poll-2021/"
-  - page.url += issue.href
-  - page.description = "Lorem Ipsum"
-  - page.socialTitle = `${issue.title} - Indonesia Poll 2021`.replace("&nbsp;", " ")
-  - page.metaTitle = `${issue.title} - Lowy Institute`
+  - page.url = `https://interactives.lowyinstitute.org/features/indonesia-poll-2021/topics/${issue.href}`
+  - page.socialTitle = `${issue.title} - Indonesia Poll 2021`
+  - page.description = issue.description
+  - page.metaTitle = page.socialTitle
   - page.title = page.metaTitle
-  - page.image = `https://interactives.lowyinstitute.org/features/indonesia-poll-2021/img/${issue.href}.jpg`
+  - page.image = `https://interactives.lowyinstitute.org/features/indonesia-poll-2021/img/thumb.jpg`
 
 block page
     
