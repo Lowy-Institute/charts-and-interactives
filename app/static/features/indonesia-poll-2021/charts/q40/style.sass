@@ -1,19 +1,12 @@
 #chart-40
-  height: 400px
-
-  .chart-content
-    position: absolute
-    top: 0
-    left: 10px
-    right: 20px
-    bottom: 30px
+  
+  padding: 0 1.5rem 0 .5rem
 
   .chart-title
     font-size: 24px
     padding-left: 1rem
     
   .chart-subtitle
-    margin-top: -12px
     font-size: 16px
 
   li
@@ -23,10 +16,10 @@
 
   .legend
     font-size: 15px
-    margin: 8px 0
+    margin: 16px auto 0
 
   .legend-item
-    margin: 4px 8px
+    margin: 2px 8px
     padding-right: 0
     position: relative
     white-space: nowrap
@@ -47,7 +40,7 @@
     overflow: visible
     
   .chart-notes, .chart-source
-    margin-left: 2em
+    margin-top: 2em
     font-size: 15px
     
   .chart-value
@@ -64,6 +57,7 @@
   .y-label
     clear: left
     min-height: 32px
+    border-bottom: 0px solid #eee
 
   .axis-container
     width: 100%
@@ -75,18 +69,19 @@
     font-size: 14px
     float: left
     width: 35%
-    text-align: right
     align-items: center
+    line-height: 1.2
+    margin: 0.25rem 0
 
   .bar-label p
     padding: 0 1em
+    word-break: break-word
 
   .bar-content, .axis
     float: right
     width: 65%
 
   @media (max-width: 450px)
-    height: 450px
     text
       font-size: 13px
     .chart-content
@@ -102,17 +97,14 @@
     .chart-notes,
     .chart-source
       font-size: 13px
-
     .bar-label
       font-size: 14px
       float: left
       width: 100%
       min-height: 20px
       text-align: left
-
     .bar-label p
       padding: .4em 0 .2em 0
-
     .bar-content,.axis
       float: left
       width: 100%
