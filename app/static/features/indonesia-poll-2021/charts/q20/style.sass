@@ -1,4 +1,5 @@
 #chart-20
+
   padding: 0 1.5rem
 
   .chart-title
@@ -38,6 +39,10 @@
   svg
     overflow: visible
     
+  .chart-notes, .chart-source
+    margin-left: 2em
+    font-size: 15px
+  
   .chart-value
     opacity: 0
     transition-duration: .4s
@@ -52,6 +57,7 @@
   .y-label
     clear: left
     min-height: 32px
+    border-bottom: 1px solid #eee
 
   .axis-container
     width: 100%
@@ -66,6 +72,7 @@
 
   .bar-label p
     padding: 0 1em
+    word-break: break-word
 
   .bar-content,.axis
     float: right

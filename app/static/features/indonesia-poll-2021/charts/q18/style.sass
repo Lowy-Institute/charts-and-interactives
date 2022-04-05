@@ -1,22 +1,13 @@
 #chart-18
-  &.chart-wrapper
-    height: 450px
 
-  .chart-content
-    position: absolute
-    top: 0
-    left: 10px
-    right: 20px
-    bottom: 30px
+  padding: 0 1.5rem 0 .5rem
 
   .chart-title
     font-size: 24px
     padding-left: 1rem
     
   .chart-subtitle
-    margin-top: -12px
     font-size: 16px
-
 
   li
     list-style: none
@@ -25,7 +16,7 @@
 
   .legend
     font-size: 15px
-    margin: 8px 0
+    margin: 16px auto 0
 
   .legend-item
     margin: 4px 8px
@@ -66,6 +57,7 @@
   .y-label
     clear: left
     min-height: 32px
+    border-bottom: 1px solid #eee
 
   .axis-container
     width: 100%
@@ -78,11 +70,11 @@
 
   .bar-label p
     padding: 0 1em
+    word-break: break-word
 
   .bar-content,.axis
     float: right
     width: 75%
-      
 
   @media (max-width: 700px)
     &.chart-wrapper
