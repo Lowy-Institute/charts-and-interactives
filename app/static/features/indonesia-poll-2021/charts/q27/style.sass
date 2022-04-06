@@ -1,23 +1,11 @@
 #chart-27
-  height: 750px
-
-  .chart
-    box-sizing: border-box
-    position: relative
-
-  .chart-content
-    position: absolute
-    top: 20px
-    left: 20px
-    right: 20px
-    bottom: 40px
+  padding: 0 1.5rem 0 .5rem
 
   .chart-title
     font-size: 24px
     padding-left: 1rem
     
   .chart-subtitle
-    margin-top: -12px
     font-size: 16px
     
   li
@@ -27,7 +15,7 @@
 
   .legend
     font-size: 15px
-    margin-bottom: .75em
+    margin: 16px auto 0
 
   .legend-item
     margin: 4px 8px 0
@@ -51,8 +39,8 @@
     overflow: visible
     
   .chart-notes, .chart-source
+    margin-top: 2em
     font-size: 15px
-    margin-right: auto
     
   .chart-value
     opacity: 0
@@ -79,36 +67,37 @@
 
   .bar-label p
     padding: 0 1em 2em 1em
+    word-break: break-word
     background-color: #fff
 
   .bar-content,.axis
     float: right
     width: 70%
 
-  @media (max-width: 700px)
-    height: 850px
-
+  @media (max-width: 450px)
+    text
+      font-size: 13px
+    .chart-content
+      bottom: 20px
+    .legend
+      flex-wrap: wrap
     .legend-item
-      width: min-content
+      margin: 0px 8px
     .chart-title
-      font-size: 18px
+      font-size: 22px
     .chart-subtitle
       font-size: 14px
     .chart-notes,
     .chart-source
-      text-align: center
       font-size: 13px
-    .chart-value
-      display: none
-
     .bar-label
       font-size: 14px
       float: left
       width: 100%
       min-height: 20px
+      text-align: left
     .bar-label p
       padding: .4em 0 .2em 0
     .bar-content,.axis
       float: left
       width: 100%
-    
