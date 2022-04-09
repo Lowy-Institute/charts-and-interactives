@@ -31,7 +31,7 @@
     "jstransformer-marked": "^1.0.1",
     "lodash": "^3.2.0",
     "marked": "^0.8.2",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "moment": "^2.24.0",
     "postcss-brunch": "^2.1.0",
     "pugjs-brunch": "https://github.com/stephenhutchings/pugjs-brunch.git",
