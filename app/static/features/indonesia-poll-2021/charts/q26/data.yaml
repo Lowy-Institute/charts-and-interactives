@@ -70,7 +70,7 @@ series:
       - 1
   -
     title: Don’t know
-    color: "highlight"
+    color: "grey"
     widen: false
     dashed: true
     values:
