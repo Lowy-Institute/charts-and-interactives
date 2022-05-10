@@ -1,5 +1,5 @@
 title: >
-  Total Members of Parliaments
+  Total members of Australian parliaments - federal, states and territories
 
 source: >
   <b>Source:</b> Author’s calculations
@@ -466,7 +466,7 @@ series:
       - 418
   -
     title: Independents & minor parties
-    color: "green"
+    color: "grey"
     widen: false
     dashed: false
     values:
