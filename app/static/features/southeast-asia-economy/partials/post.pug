@@ -6,7 +6,7 @@ block append config
     page.includeFonts = false
     page.class = "postpage"
     page.posts = data.getOne(`static/features/${slug}/data`).posts
-    post = page.posts.find(p => p && p.href === href)
+    post = page.posts.find(p => p && p.href === href) 
     index = page.posts.findIndex(p => p && p.href === href)
 
 block prepend head
