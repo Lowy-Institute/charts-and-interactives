@@ -1,0 +1,82 @@
+$w-gallery: 1250px
+
+.post-gallery
+  flex: 1
+  display: grid
+  padding: 1rem
+  gap: 2rem
+  grid-template-columns: repeat(6, 1fr)
+  justify-content: center
+  background: white
+  transition: all 0.5s, color 0.2s
+  border-bottom: 1px solid
+  max-width: $w-gallery
+  margin-left: auto
+  margin-right: auto
+  z-index: 10
+
+  .post
+    align-items: center
+
+    a
+      &:hover
+        color: currentColor
+
+    *
+      transition: all 0.5s, color 0.2s
+
+  img
+    width: 150px
+    height: 200px
+    background-color: #002b45
+    overflow: hidden
+    border-radius: 0.25rem
+    transform-origin: top
+
+  h3
+    margin: 0 0 0.25em
+    padding-top: 1rem
+    border-top: 1px solid transparent
+
+  .caption
+    line-height: 20px
+
+  &.scrolling
+    transform: translateY(-245px)
+
+    h3
+      border-top-color: currentColor
+      transform: translateY(40px)
+
+    img,
+    .caption
+      opacity: 0
+
+  .homepage &
+    position: sticky
+    top: 65px
+
+  .postpage &
+    position: fixed
+    width: 100%
+    max-width: none
+    color: white
+    background: #002b45
+    transform: translateY(-100%)
+    pointer-events: none
+
+    a
+      width: 150px
+
+    &.active
+      transform: translateY(0)
+      pointer-events: all
+
+  .postpage .invert + &
+    color: black
+    background: white
+
+
+@media (max-width: $w-gallery)
+  .post-gallery
+    justify-content: flex-start

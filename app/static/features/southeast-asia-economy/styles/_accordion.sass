@@ -1,0 +1,51 @@
+details
+  padding: 1rem 0 0
+  line-height: 1.5
+  position: relative
+
+  &:last-child
+    padding-bottom: 1rem
+    border-bottom: 1px solid rgba(black, 0.25)
+
+  &[open]
+    .details-inner
+      opacity: 1
+
+    summary
+      margin-bottom: 1.5rem
+
+      &::after
+        transform: rotate(45deg)
+
+  .details-inner
+    opacity: 0
+    color: #969ba4
+    transition: all 1s
+
+  summary
+    color: black
+    position: relative
+    padding: 1rem 4rem 0 0
+    cursor: pointer
+    user-select: none
+    transition: all 0.2s, margin 0.2s
+    border-top: 1px solid rgba(black, 0.25)
+
+    &::marker,
+    &::-webkit-details-marker
+      content: ''
+      display: none
+
+    &::after
+      content: "+"
+      color: #969ba4
+      font-weight: 200
+      position: absolute
+      top: 50%
+      right: 1rem
+      line-height: 0
+      font-size: 2rem
+      margin-top: 0.5rem
+      transition: all .3s
+      vertical-align: middle
+      transform-origin: 50%
