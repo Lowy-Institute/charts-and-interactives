@@ -1,6 +1,6 @@
 $(document).ready =>
 
-  {qs, add, remove} = require "utils"
+  {qs, add, remove, toggle} = require "utils"
 
   gallery = qs ".post-gallery"
   header = qs "header"
