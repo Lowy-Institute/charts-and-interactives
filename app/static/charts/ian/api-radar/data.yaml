@@ -1,0 +1,64 @@
+title: >
+  Overall Diplomatic Influence Score
+
+source: >
+  <strong>Source:</strong> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">Lowy Institute Asia Power Index</a>)
+
+notes: >
+  <strong>Notes:</strong> data from January 2022
+
+subtitle: >
+  Chinese and American influence in ASEAN countries (2022)
+
+axes:
+  min:  0
+  max: 100
+  steps: 6
+  percentage: false
+  grid: true
+  rotate: 0
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Country
+    values:
+      - Brunei
+      - Cambodia
+      - Indonesia
+      - Lao PDR
+      - Malaysia
+      - Myanmar
+      - Philippines
+      - Singapore
+      - Thailand
+      - Vietnam
+
+  -
+    title: China
+    color: red
+    values:
+      - 56
+      - 73
+      - 53
+      - 75
+      - 65
+      - 71
+      - 59
+      - 61
+      - 67
+      - 65
+  -
+    title: United States
+    color: highlight
+    values:
+      - 44
+      - 27
+      - 47
+      - 25
+      - 35
+      - 29
+      - 41
+      - 39
+      - 33
+      - 35
