@@ -1,0 +1,39 @@
+extend /partials/layout
+
+block append config
+  - slug = "southeast-asia-economy"
+  - page.url = `https://interactives.lowyinstitute.org/features/${slug}/`
+  - page.class = "homepage scroller"
+  - page.title = "Southeast Asia Economy Debate"
+  - page.metaTitle = `${page.title} - Lowy Institute`
+  - page.description = ""
+  - page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/thumb.jpg`
+  - page.posts = data.getOne(`static/features/${slug}/data`).posts
+
+block page
+
+  include partials/header
+  include partials/gallery
+
+  main
+    article
+      include partials/introduction
+
+  include partials/footer
+  
+block append css
+  style
+    include:sass ./styles/_base.sass
+    include:sass ./styles/_utils.sass
+    include:sass ./styles/_layout.sass
+    include:sass ./styles/_header.sass
+    include:sass ./styles/_button.sass
+    include:sass ./styles/_footer.sass
+    include:sass ./styles/_gallery.sass
+    include:sass ./styles/_scroller.sass
+    include:sass ./styles/_typography.sass
+
+block append scripts
+  script
+    include:coffee ./scripts/utils.coffee
+    include:coffee ./scripts/home.coffee

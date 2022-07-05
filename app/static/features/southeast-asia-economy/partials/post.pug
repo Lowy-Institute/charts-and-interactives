@@ -1,0 +1,51 @@
+extend /partials/layout
+
+block append config
+  - 
+    slug = "southeast-asia-economy"
+    page.includeFonts = false
+    page.class = "postpage"
+    page.posts = data.getOne(`static/features/${slug}/data`).posts
+    post = page.posts.find(p => p && p.href === href) 
+    index = page.posts.findIndex(p => p && p.href === href)
+
+block prepend head
+  - 
+    page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/post-${index}.jpg`
+    page.url = `https://interactives.lowyinstitute.org/features/${slug}/posts/${post.href}`
+    page.socialTitle = `${post.title} - Lowy Institute`
+    page.description = post.description
+    page.metaTitle = page.socialTitle
+    page.title = page.metaTitle
+
+block page
+    
+  include ../partials/header
+  include ../partials/gallery
+  include ../partials/title-block
+  +title-block(post, index)
+
+  main
+    article
+      block content
+
+  include ../partials/footer
+
+block append css
+  style
+    include:sass ../styles/_base.sass
+    include:sass ../styles/_utils.sass
+    include:sass ../styles/_layout.sass
+    include:sass ../styles/_header.sass
+    include:sass ../styles/_button.sass
+    include:sass ../styles/_footer.sass
+    include:sass ../styles/_gallery.sass
+    include:sass ../styles/_scroller.sass
+    include:sass ../styles/_accordion.sass
+    include:sass ../styles/_typography.sass
+    include:sass ../styles/_title-block.sass
+
+block append scripts
+  script
+    include:coffee ../scripts/utils.coffee
+    include:coffee ../scripts/post.coffee

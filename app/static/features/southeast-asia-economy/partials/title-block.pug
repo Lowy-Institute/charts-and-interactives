@@ -1,0 +1,10 @@
+mixin title-block(post, i)
+
+  section.title-block
+    .flex.w-title-block
+      .col-text
+        h1!= post.title
+        p.caption!= post.bioLong
+
+      .col-image
+        img(src=`/features/${slug}/img/post-${i}.jpg`)

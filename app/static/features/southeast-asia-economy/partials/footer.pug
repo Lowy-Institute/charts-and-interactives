@@ -1,0 +1,32 @@
+
+mixin icon-ext
+  svg(width="12" height="12" viewBox="0 0 12 13" fill="white")
+    path(d="M1 2.125H6.25V3.375H1.625V11.625H8.375V5H9.625V12.875H0.375V2.125H1Z M10.3753 2.28067L10.3807 5.11987H11.6202L11.6277 0.125L6.6328 0.132444V1.37197L9.51083 1.37741L4.95001 5.93823L5.8339 6.82211L10.3753 2.28067Z")
+
+- slug = "southeast-asia-economy"
+- filepath = `${slug}/report/FILENAME.pdf`
+
+footer
+
+  .footer-summary.w-content.txt-center.txt-muted
+    | Special thanks to all contributors. This debate feature is coordinated by the 
+    a(href="https://www.lowyinstitute.org/about/programs-and-projects/southeast-asia-program") The Southeast Asia Program
+    |  at the 
+    a(href="https://www.lowyinstitute.org/") Lowy Institute
+    | .
+
+  .footer-links.w-title-block
+
+    .flex-col
+      h5.mb-3 Articles
+      .post-links
+        for p in page.posts
+          a(href=`/features/${slug}/post/${p.href}`)= p.title
+
+    .flex-col
+      a#download.txt-bare.p-4(download href=`/features/${filepath}`)
+        h5 Download PDF
+          span.icon.icon-download.ml-2
+      .flex-ch
+        h5.p-4 Share
+        include socials

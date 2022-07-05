@@ -1,0 +1,32 @@
+header
+  display: flex
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
+  padding: 1rem
+  position: sticky
+  justify-content: space-between
+  background: white
+  transition: all 0.5s
+
+  a
+    &:hover
+      color: currentColor
+
+  .postpage &
+    border-bottom: 1px solid rgba(black, 0.25)
+
+    &:not(.invert)
+      color: white
+      background: #002b45
+      border-bottom-color: transparent
+      text-rendering: geometricPrecision
+
+#menu-toggle
+  border-radius: 2rem
+  border: 0.5px solid white
+  padding: 1em 1em
+  background: #002b45
+  color: white
+
