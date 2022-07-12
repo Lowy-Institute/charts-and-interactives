@@ -23,6 +23,8 @@ block page
   include ../partials/header
   include ../partials/gallery
   include ../partials/title-block
+  
+  +gallery("fixed collapse")
   +title-block(post, index)
 
   main
@@ -48,4 +50,4 @@ block append css
 block append scripts
   script
     include:coffee ../scripts/utils.coffee
-    include:coffee ../scripts/post.coffee
+    include:coffee ../scripts/scroll.coffee

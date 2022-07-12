@@ -1,19 +1,53 @@
-$w-gallery: 1250px
+$w-gallery: 1100px
+$w-mobile: 450px
 
 .post-gallery
   flex: 1
-  display: grid
+  top: 65px
   padding: 1rem
-  gap: 2rem
-  grid-template-columns: repeat(6, 1fr)
   justify-content: center
-  background: white
   transition: all 0.5s, color 0.2s
   border-bottom: 1px solid
-  max-width: $w-gallery
+  width: 100%
   margin-left: auto
   margin-right: auto
   z-index: 10
+  background: #002b45
+  color: white
+
+  .gallery-inner
+    max-width: $w-gallery
+    display: grid
+    gap: 2rem
+    grid-template-columns: repeat(6, 1fr)
+    margin: auto
+    padding-bottom: 2rem
+
+  &.relative
+    top: 0
+    position: relative
+    
+  &.sticky
+    position: sticky
+
+  &.fixed
+    position: fixed
+    width: 100%
+
+  &.invert
+    color: black
+    background: white
+
+  &.collapse
+    transform: translateY(-100%)
+
+    h3
+      border-top-color: currentColor
+      transform: translateY(40px)
+
+    img,
+    .caption
+      opacity: 0
 
   .post
     align-items: center
@@ -28,6 +62,7 @@ $w-gallery: 1250px
   img
     width: 150px
     height: 200px
+    min-width: 150px
     background-color: #002b45
     overflow: hidden
     border-radius: 0.25rem
@@ -41,42 +76,43 @@ $w-gallery: 1250px
   .caption
     line-height: 20px
 
-  &.scrolling
-    transform: translateY(-245px)
-
-    h3
-      border-top-color: currentColor
-      transform: translateY(40px)
-
-    img,
-    .caption
-      opacity: 0
-
-  .homepage &
-    position: sticky
-    top: 65px
-
-  .postpage &
-    position: fixed
-    width: 100%
-    max-width: none
-    color: white
-    background: #002b45
-    transform: translateY(-100%)
-    pointer-events: none
-
-    a
-      width: 150px
-
-    &.active
-      transform: translateY(0)
-      pointer-events: all
-
-  .postpage .invert + &
-    color: black
-    background: white
-
-
 @media (max-width: $w-gallery)
   .post-gallery
     justify-content: flex-start
+    cursor: grab
+
+    // &::before
+    //   content: ""
+    //   background: linear-gradient(90deg, #002b45 1rem, #002b4500 0, #002b4500 calc(100% - 0), #002b45 calc(100% - 1rem))
+    //   top: 0
+    //   left: 0
+    //   width: 100%
+    //   height: 100%
+    //   position: absolute
+    //   z-index: 2
+    //   pointer-events: none
+
+    .gallery-inner
+      gap: 1rem
+      scroll-snap-type: x mandatory
+
+    .post
+      scroll-snap-align: center
+      padding-left: 0rem
+
+    img
+      width: 225px
+      min-width: 225px
+      height: 300px
+
+@media (max-width: $w-mobile)
+
+  .post-gallery
+    .post
+      opacity: 0.5
+      filter: grayscale(1)
+      transition: opacity 0.5s
+
+      &.active
+        opacity: 1
+        filter: none

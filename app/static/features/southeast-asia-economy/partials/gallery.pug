@@ -1,7 +1,10 @@
-aside.post-gallery.scroller.flex-grow
-  for p,i in page.posts
-    .post.flex-col
-      a.txt-bare.flex-col.flex-1(href=`/features/${slug}/post/${p.href}`)
-        img(src=`/features/${slug}/img/post-${i}.jpg`)
-        h3!= p.title
-        .caption.txt-muted #{p.author}, #{p.bioShort}
+mixin gallery(classes)
+
+  aside.post-gallery(class=`${classes}`)
+    .gallery-inner.scroller.flex-grow
+      for p,i in page.posts
+        .post.flex-col
+          a.txt-bare.flex-col.flex-1(href=`/features/${slug}/post/${p.href}`)
+            img(src=`/features/${slug}/img/post-${i}.jpg`)
+            h3!= p.title
+            .caption.txt-muted #{p.author}, #{p.bioShort}

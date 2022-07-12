@@ -23,9 +23,9 @@ footer
         for p in page.posts
           a(href=`/features/${slug}/post/${p.href}`)= p.title
 
-    .flex-col
+    .flex-col.footer-actions
       a#download.txt-bare.p-4(download href=`/features/${filepath}`)
-        h5 Download PDF
+        h5.flex-ch Download PDF
           span.icon.icon-download.ml-2
       .flex-ch
         h5.p-4 Share
