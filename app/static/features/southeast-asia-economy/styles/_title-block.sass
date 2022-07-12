@@ -1,9 +1,10 @@
 $w-text: 450px
+$w-title-block: 740px
 
 .title-block
   background: #002b45
   color: white
-  padding: 8rem 0
+  padding: 8rem 1rem
 
   .col-text
     max-width: $w-text
@@ -18,4 +19,28 @@ $w-text: 450px
     height: 280px
     box-shadow: 0 0 4rem #0008
     border-radius: 0.25rem
+
+@media (max-width: $w-title-block)
+  .title-block
+    padding: 1rem 1.5rem
+
+    > .flex
+      flex-direction: column-reverse
+      align-items: flex-start
+
+    .col-text
+      margin: 2rem auto 4rem
+
+    .col-image
+      width: $w-text
+      max-width: 100%
+      margin: auto
+
+    h1
+      margin-bottom: 1rem
+
+    img
+      width: 100%
+      height: 250px
+      box-shadow: 0 1rem 1rem #0004
 

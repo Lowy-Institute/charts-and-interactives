@@ -1,20 +1,40 @@
 extend /partials/layout
 
 block append config
-  - slug = "southeast-asia-economy"
-  - page.url = `https://interactives.lowyinstitute.org/features/${slug}/`
-  - page.class = "homepage scroller"
-  - page.title = "Southeast Asia Economy Debate"
-  - page.metaTitle = `${page.title} - Lowy Institute`
-  - page.description = ""
-  - page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/thumb.jpg`
-  - page.posts = data.getOne(`static/features/${slug}/data`).posts
+  - 
+    slug = "southeast-asia-economy"
+    page.url = `https://interactives.lowyinstitute.org/features/${slug}/`
+    page.class = "homepage"
+    page.title = "Southeast Asia Economy Debate"
+    page.metaTitle = `${page.title} - Lowy Institute`
+    page.description = ""
+    page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/thumb.jpg`
+    page.posts = data.getOne(`static/features/${slug}/data`).posts
+
+    authorList = page.posts.map((p,i,a) =>
+      (i === a.length - 1 ? "and " : "" ) +
+      `<a href='/features/${slug}/post/${p.href}'>${p.author}</a>`
+    ).join(", ")
+
 
 block page
 
   include partials/header
-  include partials/gallery
 
+  section.title-block
+    .flex.w-title-block
+      .col-text
+        h1 Does Southeast Asia need a new development model?
+        p.caption!= "A Lowy Institute debate, with contributions from local experts " + authorList
+
+      //- .grid-3-2
+        for p,i in page.posts
+          img(width="100" height="100" src=`/features/${slug}/img/authors/${p.href}.jpg`)
+
+  include partials/gallery
+  +gallery("relative")
+  +gallery("fixed collapse")
+  
   main
     article
       include partials/introduction
@@ -32,8 +52,9 @@ block append css
     include:sass ./styles/_gallery.sass
     include:sass ./styles/_scroller.sass
     include:sass ./styles/_typography.sass
+    include:sass ./styles/_title-block.sass
 
 block append scripts
   script
     include:coffee ./scripts/utils.coffee
-    include:coffee ./scripts/home.coffee
+    include:coffee ./scripts/scroll.coffee

@@ -7,21 +7,23 @@ header
   padding: 1rem
   position: sticky
   justify-content: space-between
-  background: white
   transition: all 0.5s
+  background: #002b45
+  color: white
+  border-bottom: 1px solid transparent
+  text-rendering: geometricPrecision
+
+  &.invert
+    color: #002b45
+    background: white
+    text-rendering: auto
 
   a
     &:hover
       color: currentColor
 
-  .postpage &
-    border-bottom: 1px solid rgba(black, 0.25)
-
-    &:not(.invert)
-      color: white
-      background: #002b45
-      border-bottom-color: transparent
-      text-rendering: geometricPrecision
+  .postpage &.invert
+    border-bottom-color: rgba(black, 0.25)
 
 #menu-toggle
   border-radius: 2rem

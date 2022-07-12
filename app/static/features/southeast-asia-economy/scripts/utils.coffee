@@ -8,3 +8,5 @@ require.register "utils", (exports, require, module) ->
     has:    (e,c) -> e.classList.contains(c)
     remove: (e,c) -> e.classList.remove(c)
     toggle: (e,c) -> e.classList.toggle(c)
+
+    rect: (e) ->  e.getBoundingClientRect()

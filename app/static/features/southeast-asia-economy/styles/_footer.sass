@@ -1,3 +1,5 @@
+$w-footer: 900px
+
 footer
   position: relative
   padding: 0 2rem 2rem
@@ -44,3 +46,29 @@ footer
     line-height: 1.75em
     border-radius: 1.75em
     display: inline-block
+
+@media (max-width: $w-footer)
+
+  .footer-links
+    flex-direction: column
+    text-align: center
+
+    .post-links
+      display: flex
+      flex-direction: column
+      align-items: center
+      line-height: 2.5
+
+      a
+        margin-right: 0
+
+    .footer-actions
+      margin-top: 2rem
+      align-items: center
+
+      h5.p-4
+        padding: 1.5rem 0
+
+  .icon,
+  .socials .icon
+      font-size: 1.75rem
