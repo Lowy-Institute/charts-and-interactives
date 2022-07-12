@@ -30,7 +30,7 @@
     "js-yaml": "^3.14.1",
     "jstransformer-marked": "^1.1.0",
     "lodash": "^3.2.0",
-    "marked": "^0.8.2",
+    "marked": "^4.0.10",
     "minimist": "^1.2.6",
     "moment": "^2.29.2",
     "postcss-brunch": "^2.1.0",
