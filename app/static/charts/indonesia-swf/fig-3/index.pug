@@ -1,0 +1,271 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/indonesia-swf/fig-3/data"
+  - var colorpath = "static/charts/templates/colors/data" 
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+    .page-title.txt-center= page.title 
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[0]
+        - scale = chart.scale
+        - fx = (i, len) => (i) / (len - 1)
+        - fy = (y, s) => (y - scale.minY[s]) / (scale.maxY[s] - scale.minY[s])
+
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted.txt-sm= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            //- Y-axis labels, left & right
+            svg(height="100%" width="100%")
+              svg(y="85.71%")
+                text(text-anchor="end" transform="translate(-8 4)") 0
+              svg(y="71.43%")
+                text(text-anchor="end" transform="translate(-8 4)") 200
+              svg(y="57.14%")
+                text(text-anchor="end" transform="translate(-8 4)") 400
+              svg(y="42.86%")
+                text(text-anchor="end" transform="translate(-8 4)") 600
+              svg(y="28.57%")
+                text(text-anchor="end" transform="translate(-8 4)") 800
+              svg(y="14.29%")
+                text(text-anchor="end" transform="translate(-8 4)") 1000
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 1200
+              svg(y="100.00%" x="100%")
+                text(transform="translate(8 4)") -5
+              svg(y="83.33%" x="100%")
+                text(transform="translate(8 4)") 0
+              svg(y="66.67%" x="100%")
+                text(transform="translate(8 4)") 5
+              svg(y="50.00%" x="100%")
+                text(transform="translate(8 4)") 10
+              svg(y="33.33%" x="100%")
+                text(transform="translate(8 4)") 15
+              svg(y="16.67%" x="100%")
+                text(transform="translate(8 4)") 20
+              svg(y="0.00%" x="100%")
+                text(transform="translate(8 4)") 25
+
+            //-  svg(y="50%" x="0%")
+                text.y-label-l Millions of people
+              svg(y="50%" x="100%")
+                text.y-label-r Millions of people
+
+            //- X-axis labels
+            svg(width="100%" y="102%")
+              svg.x-label(x="0.00%")
+                text(text-anchor="middle" transform="translate(0 20)") 2000
+              svg.x-label(x="20.00%")
+                text(text-anchor="middle" transform="translate(0 20)") 2010
+              svg.x-label(x="40.00%")
+                text(text-anchor="middle" transform="translate(0 20)") 2020
+              svg.x-label(x="60.00%")
+                text(text-anchor="middle" transform="translate(0 20)") 2030
+              svg.x-label(x="80.00%")
+                text(text-anchor="middle" transform="translate(0 20)") 2040
+              svg.x-label(x="100.00%")
+                text(text-anchor="middle" transform="translate(0 20)") 2050
+
+            //- chart columns & lines         
+            //-svg(fill="none" height="100%" width="100%" viewBox="0 0 166.25 108.08" preserveAspectRatio="none")
+            svg(fill="none" height="90%" width="100%" viewBox="0 -10 166.25 111" preserveAspectRatio="none")
+              rect(x="164.25" y="2.33" width="2" height="93" fill="#539ed4")
+              rect(x="160.97" y="1.83" width="2" height="93.5" fill="#539ed4")
+              rect(x="157.68" y="1.83" width="2" height="93.5" fill="#539ed4")
+              rect(x="154.4" y="1.33" width="2" height="94" fill="#539ed4")
+              rect(x="151.11" y="1.33" width="2" height="94" fill="#539ed4")
+              rect(x="147.83" y="0.83" width="2" height="94.5" fill="#539ed4")
+              rect(x="144.54" y="0.83" width="2" height="94.5" fill="#539ed4")
+              rect(x="141.26" y="0.83" width="2" height="94.5" fill="#539ed4")
+              rect(x="137.97" y="0.33" width="2" height="95" fill="#539ed4")
+              rect(x="134.69" y="0.33" width="2" height="95" fill="#539ed4")
+              rect(x="131.4" y="0.33" width="2" height="95" fill="#539ed4")
+              rect(x="128.12" y="0.33" width="2" height="95" fill="#539ed4")
+              rect(x="124.83" y="0.83" width="2" height="94.5" fill="#539ed4")
+              rect(x="121.55" y="0.83" width="2" height="94.5" fill="#539ed4")
+              rect(x="118.26" y="1.33" width="2" height="94" fill="#539ed4")
+              rect(x="114.98" y="1.33" width="2" height="94" fill="#539ed4")
+              rect(x="111.69" y="1.83" width="2" height="93.5" fill="#539ed4")
+              rect(x="108.41" y="2.33" width="2" height="93" fill="#539ed4")
+              rect(x="105.12" y="2.83" width="2" height="92.5" fill="#539ed4")
+              rect(x="101.84" y="3.33" width="2" height="92" fill="#539ed4")
+              rect(x="98.55" y="4.33" width="2" height="91" fill="#539ed4")
+              rect(x="95.27" y="4.83" width="2" height="90.5" fill="#539ed4")
+              rect(x="91.98" y="5.83" width="2" height="89.5" fill="#539ed4")
+              rect(x="88.7" y="6.83" width="2" height="88.5" fill="#539ed4")
+              rect(x="85.41" y="7.83" width="2" height="87.5" fill="#539ed4")
+              rect(x="82.13" y="8.83" width="2" height="86.5" fill="#539ed4")
+              rect(x="78.84" y="10.33" width="2" height="85" fill="#539ed4")
+              rect(x="75.56" y="11.83" width="2" height="83.5" fill="#539ed4")
+              rect(x="72.27" y="12.83" width="2" height="82.5" fill="#539ed4")
+              rect(x="68.99" y="14.33" width="2" height="81" fill="#539ed4")
+              rect(x="65.7" y="15.83" width="2" height="79.5" fill="#539ed4")
+              rect(x="62.42" y="17.83" width="2" height="77.5" fill="#539ed4")
+              rect(x="59.13" y="19.33" width="2" height="76" fill="#539ed4")
+              rect(x="55.85" y="21.33" width="2" height="74" fill="#539ed4")
+              rect(x="52.56" y="23.33" width="2" height="72" fill="#539ed4")
+              rect(x="49.28" y="25.33" width="2" height="70" fill="#539ed4")
+              rect(x="45.99" y="27.33" width="2" height="68" fill="#539ed4")
+              rect(x="42.7" y="28.83" width="2" height="66.5" fill="#539ed4")
+              rect(x="39.42" y="30.83" width="2" height="64.5" fill="#539ed4")
+              rect(x="36.14" y="32.83" width="2" height="62.5" fill="#539ed4")
+              rect(x="32.85" y="34.83" width="2" height="60.5" fill="#539ed4")
+              rect(x="29.57" y="36.83" width="2" height="58.5" fill="#539ed4")
+              rect(x="26.28" y="38.83" width="2" height="56.5" fill="#539ed4")
+              rect(x="22.99" y="40.83" width="2" height="54.5" fill="#539ed4")
+              rect(x="19.71" y="42.83" width="2" height="52.5" fill="#539ed4")
+              rect(x="16.43" y="44.33" width="2" height="51" fill="#539ed4")
+              rect(x="13.14" y="46.33" width="2" height="49" fill="#539ed4")
+              rect(x="9.86" y="48.33" width="2" height="47" fill="#539ed4")
+              rect(x="6.57" y="50.33" width="2" height="45" fill="#539ed4")
+              rect(x="3.28" y="51.83" width="2" height="43.5" fill="#539ed4")
+              rect(y="53.83" width="2" height="41.5" fill="#539ed4")
+              path(fill="none" stroke="#ff4050" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1.25,15.08C9.53,8,19.66,1.85,30.75,1.08c5.08-.88,11.14-.91,16,1,6,1.47,12.4,4.74,16.5,9.5")
+              path(fill="none" stroke="#ff4050" stroke-width="1.5" stroke-dasharray="6,3" stroke-dashoffset="2" stroke-linecap="round" stroke-linejoin="round" d="M161.23,107.18c-42.7-18.28-66-61.43-96.66-94.2")
+              line(x1="0" x2="100%" y1="95.33" y2="95.33" stroke="#ccc" stroke-width=".5")
+
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          li.legend-item
+            span.legend-item-box
+            span.legend-item-label Urban population (LHS)
+          li.legend-item
+            span.legend-item-box
+            span.legend-item-label Annual change (RHS)
+          li.legend-item
+            span.legend-item-box
+            span.legend-item-label UN projection
+
+    .chart-source.txt-muted.txt-center
+      != page.source
+
+block append css
+  style
+    :sass
+      .page-title
+        /* margin-bottom: 25px */
+
+      .wrapper
+        height: 550px
+        max-width: 700px
+
+      .col-wrap
+        margin: 0
+
+      .col-md
+        padding: 0 1em
+        width: 50%
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 36px
+        right: 12px
+        bottom: 24px
+        margin: 0 1em
+
+      .chart-content > svg
+        border-left: 1px solid #ccc
+        border-right: 1px solid #ccc
+        height: 20px
+        min-height: 100%
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+
+      .chart-title,.page-title
+        /* max-width: 320px
+        margin: 0 auto 
+        font-size: 20px
+
+      .chart-subtitle
+        height: 0
+        margin: 0 0 50px 0
+        font-size: 15px
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 8px 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-top: .8em;
+        flex-direction: flex
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .9em
+        height: .75em
+        width: 2em
+        background: black
+
+      .legend-item-label
+        margin-left: 1em
+
+      .legend-item:nth-child(1) .legend-item-box
+        width: .75em
+        background: #539ed4
+        top: .6em
+
+      .legend-item:nth-child(2) .legend-item-box
+        background: none
+        border-top: 4px solid #ff4050
+
+      .legend-item:nth-child(3) .legend-item-box
+        background: none
+        border-top: 4px dashed #ff4050
+
+      .legend-item:nth-child(1) .legend-item-label
+         margin-left: -.5em
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+
+      .y-label-l
+        transform: rotate(-90deg) translate(-3em, -3rem)
+      .y-label-r
+        transform: rotate(-90deg) translate(-3em, 2.5rem)
+
+      @media screen and (max-width: 600px)
+        .col-wrap
+          display: block
+        .col-md
+          width: 100%
+          height: 100%
+
+
+      @media (max-width: 450px)
+        .x-label text
+          transform: rotate(-90deg) translate(-28px,8px)
+        .legend
+          margin-top: 50px

@@ -1,0 +1,127 @@
+title: >
+  Figure 2. GDP growth
+
+source: >
+  <strong>Source:</strong> IMF World Economic Outlook database.
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  GDP in 2000=100, constant prices
+
+axes:
+  minY:  100
+  maxY: 400
+  stepsY: 4
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Years
+    values:
+      - 2000
+      - null
+      - 2002
+      - null
+      - 2004
+      - null
+      - 2006
+      - null
+      - 2008
+      - null
+      - 2010
+      - null
+      - 2012
+      - null
+      - 2014
+      - null
+      - 2016
+      - null
+      - 2018
+      - null
+
+  -
+    title: Emerging and developing Asia
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 100	
+      - 106.036	
+      - 113.0937562	
+      - 122.478276	
+      - 132.8019699	
+      - 145.1180246	
+      - 159.7212514	
+      - 177.5892678	
+      - 190.492904	
+      - 204.989414	
+      - 224.6991462	
+      - 242.38971	
+      - 259.2648816	
+      - 277.0711937	
+      - 296.064424	
+      - 316.2856241	
+      - 337.8341637	
+      - 360.195407	
+      - 383.330758	
+      - 403.6127884
+  -
+    title: Emerging market and developing economies
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 100	
+      - 103.619	
+      - 108.243516	
+      - 115.7328848	
+      - 124.8572655	
+      - 133.7283742	
+      - 144.3062886	
+      - 156.4005986	
+      - 165.2294124	
+      - 169.8938387	
+      - 182.4404987	
+      - 194.0674317	
+      - 204.6421661	
+      - 214.8701815	
+      - 224.9733775	
+      - 234.6742295	
+      - 245.0257098	
+      - 256.6497294	
+      - 268.5274789	
+      - 278.476422
+  -
+    title: indonesia
+    color: "green"
+    widen: false
+    dashed: false
+    values:
+      - 100	
+      - 103.643	
+      - 108.3058986	
+      - 113.4829205	
+      - 119.1922463	
+      - 125.9778608	
+      - 132.907903	
+      - 141.3409094	
+      - 151.8594999	
+      - 158.9999336	
+      - 169.1409493	
+      - 179.5769459	
+      - 190.4054357	
+      - 200.9862658	
+      - 211.0496481	
+      - 221.340429	
+      - 232.4804928	
+      - 244.2672537	
+      - 256.9056415	
+      - 269.7997356
+  

@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/templates/line/data"
+  - var datapath = "static/charts/indonesia-swf/fig-2/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -141,9 +141,9 @@ block page
 
 
     /* --- USER TO UPDATE --- */
-    const enableTooltips = true;
-    const nLegendItems = 4;
-    const nSeries = 5;
+    const enableTooltips = false;
+    const nLegendItems = 6;
+    const nSeries = 7;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -237,17 +237,17 @@ block append css
         margin-bottom: .75em
 
       .legend-item
-        margin: 4px 8px 0
+        margin: 4px 24px 0
         padding-right: 0
         position: relative
         white-space: nowrap
 
       .legend-item-box
         position: absolute
-        left: 0
-        top: .5em
-        height: 1em
-        width: 1em
+        left: -1em
+        top: .85em
+        height: .25em
+        width: 2em
         background: black
 
       polyline
@@ -261,7 +261,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 2em
+        margin: 1em 2em 0 0
         font-size: 15px
         
       .chart-value
@@ -270,7 +270,8 @@ block append css
         pointer-events: none
       
       .chart-content:hover .chart-value
-        opacity: 1
+        opacity: 0
+
 
       @media (max-width: 700px)
         
@@ -290,6 +291,7 @@ block append css
           font-size: 18px
         .chart-subtitle
           font-size: 14px
+          margin-bottom: 50px
         .chart-notes,
         .chart-source
           text-align: center

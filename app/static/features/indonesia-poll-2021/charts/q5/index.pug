@@ -112,13 +112,17 @@ block append config
                 y=toPercent(fy(maxY + minY - val))
                 style=`color: ${colors[chart.series[i].color]}`
               )
+                //- x=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? 16 : 0)
+                //- y=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? -12 : 24)
+                //- x=( (ix== 0) ? -12 : 28 | (i!= 1) && (ix== 1) ? -4 : 28 )
+                //- y=( (ix== 0) ? 12 : 2 | (i!= 1) && (ix== 1) ? -12 : 2 )
                 text(
+                  x=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? 16 : 0)
                   y=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? -12 : 24)
                   text-anchor="end"
                   fill=colors[chart.series[i].color]
-                  x=( (i != 1) && !(i==3 && [11,12].includes(ix)) ? 16 : 0)
                 )
-                  = val && !( i==3 && ([5,6,13,14,15].includes(ix)) ) && !(i==1 && ix==4) ? val.toFixed(0) : "" 
+                  = val ? val.toFixed(0) : "" 
                   //-change above line  to val.toFixed(1) to show decimal place
 
                 //-text= chart.series[i].title
