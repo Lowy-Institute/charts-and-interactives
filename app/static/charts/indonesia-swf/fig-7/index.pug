@@ -15,122 +15,335 @@ block page
       .chart-title= chart.title
       .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
-        - ln = chart.series[0].values.length
-        - axes = chart.axes
-        - minY = axes.minY
-        - maxY = axes.maxY
-        - range = maxY - minY
-        - fx = (i) => (i + 0.6) / (ln + 0.25)
-        - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
-        
-          // Y-Axis labels
-          svg(height="100%")
-            - let steps = chart.axes.stepsY-1
-            for n, i in new Array(steps+1)
-              - y = 1 - (i / (steps))
-              svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
-                
-          // Y-Axis minor lines
-          if chart.axes.minorLines
+
+          // CHART 1: fig-7a
+          svg(height="40%" width="32%" x="1%" y="0")
+            text.sub-chart-title( x="41%" y="0%") Adhi Karya
             svg(height="100%")
-              for n, i in new Array(steps)
-                - y = (i / steps)
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(0 4)") 0
+              svg(y="83.33%")
+                text(text-anchor="end" transform="translate(0 4)") 1
+              svg(y="66.67%")
+                text(text-anchor="end" transform="translate(0 4)") 2
+              svg(y="50.00%")
+                text(text-anchor="end" transform="translate(0 4)") 3
+              svg(y="33.33%")
+                text(text-anchor="end" transform="translate(0 4)") 4
+              svg(y="16.67%")
+                text(text-anchor="end" transform="translate(0 4)") 5
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(0 4)") 6
+              svg(height="100%")
                 svg
-                  line(
-                    x1="0%"
-                    y1=toPercent(y)
-                    x2="100%"
-                    y2=toPercent(y)
-                    stroke="#5552"
-                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
-                  )
-
-          // X-Axis labels
-          for x, i in chart.series[0].values
-            svg.x-label(x=toPercent(fx(i)) y="100%")
-              text(
-                text-anchor=axes.rotateX ? "end" : "middle"
-                transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
-              )=x
+                  line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+                svg
+                  line(x1="0%" y1="16.67%" x2="100%" y2="16.67%" stroke="#5552" stroke-dasharray="")
+                svg
+                  line(x1="0%" y1="33.33%" x2="100%" y2="33.33%" stroke="#5552" stroke-dasharray="")
+                svg
+                  line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+                svg
+                  line(x1="0%" y1="66.67%" x2="100%" y2="66.67%" stroke="#5552" stroke-dasharray="")
+                svg
+                  line(x1="0%" y1="83.33%" x2="100%" y2="83.33%" stroke="#5552" stroke-dasharray="")
+                svg
+                  line(x1="0%" y1="100.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+              svg(class="x-label" x="6.49%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2012
+              svg(class="x-label" x="17.30%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2013
+              svg(class="x-label" x="28.11%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2014
+              svg(class="x-label" x="38.92%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2015
+              svg(class="x-label" x="49.73%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2016
+              svg(class="x-label" x="60.54%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2017
+              svg(class="x-label" x="71.35%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2018
+              svg(class="x-label" x="82.16%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2019
+              svg(class="x-label" x="92.97%" y="102%")
+                text(text-anchor="middle" transform="translate(0 20)") 2020
+              svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+                polyline(fill="none" stroke="#539ed4" stroke-dasharray="" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 5.56570771666666,17.2972972972973 12.036440866666664,28.10810810810811 17.146024966666662,38.91891891891892 62.55122238333334,49.729729729729726 55.13121358333334,60.54054054054053 36.21990736666667,71.35135135135134 36.80108301666667,82.16216216216216 27.616228233333338,92.97297297297297 2.779712066666666")
               
-          // OPTIONAL GUIDE LINE
-          if !isEmpty(axes.guideLine)
-            - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
-            line(
-              x1="0" y1=y x2="100" y2=y
-              stroke="#333"
-              stroke-width=.25
-              stroke-dasharray=(false ? 1 : "")
-            )
 
-          // CHART LINES
-          svg(
-            height="100%"
-            width="100%"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          )
-            // SERIES LINES
-            for item, i in chart.series
-              if i
-                polyline(
-                  fill="none"
-                  stroke=chart.colors[chart.series[i].color]
-                  stroke-dasharray=(item.dashed ? 10 : "")
-                  stroke-width=(item.widen ? 6 : 3)
-                  stroke-linejoin=(item.dashed ? "": "round")
-                  stroke-linecap=(item.dashed ? "": "round")
-                  points=(item.values.map( (y, ix) => {
-                    return isEmpty(y) ? "" : [
-                      100 * fx(ix),
-                      100 * fy(maxY + minY - y)
-                    ].join(" ");
-                  })).join(",")
-                )
-      
-          for item, i in chart.series
-            g
-              for val, ix in item.values
-                if false
-                  circle(
-                    r=7
-                    cx=toPercent(fx(ix))
-                    cy=toPercent(fy(maxY + minY - val))
-                    fill=chart.colors[chart.series[i].color]
-                    stroke='#fff'
-                    stroke-width=0
-                  )
-                svg.chart-value(
-                  x=toPercent(fx(ix))
-                  y=toPercent(fy(maxY + minY - val))
-                  style=`color: ${chart.colors[chart.series[i].color]}`
-                )
-                  if false
-                    rect(
-                      y=(i % 2 == 0 ? -12 : 24) - 12
-                      height=14
-                      width=24
-                      x=-12
-                      fill="#fff"
-                    )
-                  text(
-                    y=(i % 1 == 0 ? -12 : 24)
-                    text-anchor="middle"
-                    fill=chart.colors[chart.series[i].color]
-                  )
-                    = val
-      
-      .row
-        ul.legend.txt-left.flex.flex-ch.flex-wrap
-          for ax, i in new Array(chart.series.length)
-            if i
-              li.legend-item
-                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
-                span.legend-item-label= chart.series[i].title
+          // CHART 2: fig-7b
+          svg(height="40%" width="32%" x="35%" y="0")
+            text.sub-chart-title( x="37%" y="0%") Hutama Karya
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(0 4)") 0
+              svg(y="83.33%")
+                text(text-anchor="end" transform="translate(0 4)") 1
+              svg(y="66.67%")
+                text(text-anchor="end" transform="translate(0 4)") 2
+              svg(y="50.00%")
+                text(text-anchor="end" transform="translate(0 4)") 3
+              svg(y="33.33%")
+                text(text-anchor="end" transform="translate(0 4)") 4
+              svg(y="16.67%")
+                text(text-anchor="end" transform="translate(0 4)") 5
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(0 4)") 6
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="16.67%" x2="100%" y2="16.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="33.33%" x2="100%" y2="33.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="66.67%" x2="100%" y2="66.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="83.33%" x2="100%" y2="83.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                  line(x1="0%" y1="100.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+            svg(class="x-label" x="6.49%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2012
+            svg(class="x-label" x="17.30%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2013
+            svg(class="x-label" x="28.11%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2014
+            svg(class="x-label" x="38.92%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2015
+            svg(class="x-label" x="49.73%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2016
+            svg(class="x-label" x="60.54%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2017
+            svg(class="x-label" x="71.35%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2018
+            svg(class="x-label" x="82.16%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2019
+            svg(class="x-label" x="92.97%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2020
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              polyline(fill="none" stroke="#990f02" stroke-dasharray="" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 2.9552906666666727,17.2972972972973 0.7654467166666734,28.10810810810811 15.862351199999999,38.91891891891892 77.54343998333333,49.729729729729726 63.62898143333333,60.54054054054053 21.64982969999999,71.35135135135134 15.351152683333336,82.16216216216216 50.13556498333334,92.97297297297297 58.4949477")
+
+          // CHART 3: fig-7c
+          svg(height="40%" width="32%" x="69%" y="0")
+            text.sub-chart-title( x="39%" y="0%") Jasa Marga
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(0 4)") 0
+              svg(y="83.33%")
+                text(text-anchor="end" transform="translate(0 4)") 1
+              svg(y="66.67%")
+                text(text-anchor="end" transform="translate(0 4)") 2
+              svg(y="50.00%")
+                text(text-anchor="end" transform="translate(0 4)") 3
+              svg(y="33.33%")
+                text(text-anchor="end" transform="translate(0 4)") 4
+              svg(y="16.67%")
+                text(text-anchor="end" transform="translate(0 4)") 5
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(0 4)") 6
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="16.67%" x2="100%" y2="16.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="33.33%" x2="100%" y2="33.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="66.67%" x2="100%" y2="66.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="83.33%" x2="100%" y2="83.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                  line(x1="0%" y1="100.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+            svg(class="x-label" x="6.49%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2012
+            svg(class="x-label" x="17.30%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2013
+            svg(class="x-label" x="28.11%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2014
+            svg(class="x-label" x="38.92%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2015
+            svg(class="x-label" x="49.73%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2016
+            svg(class="x-label" x="60.54%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2017
+            svg(class="x-label" x="71.35%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2018
+            svg(class="x-label" x="82.16%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2019
+            svg(class="x-label" x="92.97%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2020
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              polyline(fill="none" stroke="#B7C1CE" stroke-dasharray="" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 74.51625593333334,17.2972972972973 73.16125699999999,28.10810810810811 70.19261976666668,38.91891891891892 67.18007431666668,49.729729729729726 62.0928995,60.54054054054053 44.77560953333333,71.35135135135134 48.6611077,82.16216216216216 45.01372905,92.97297297297297 46.647115850000006")
+              
+          // CHART 4: fig-7d
+          svg(height="40%" width="32%" x="1%" y="51%")
+            text.sub-chart-title( x="19%" y="0%") Pembangunan Perumahan
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(0 4)") 0
+              svg(y="83.33%")
+                text(text-anchor="end" transform="translate(0 4)") 1
+              svg(y="66.67%")
+                text(text-anchor="end" transform="translate(0 4)") 2
+              svg(y="50.00%")
+                text(text-anchor="end" transform="translate(0 4)") 3
+              svg(y="33.33%")
+                text(text-anchor="end" transform="translate(0 4)") 4
+              svg(y="16.67%")
+                text(text-anchor="end" transform="translate(0 4)") 5
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(0 4)") 6
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="16.67%" x2="100%" y2="16.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="33.33%" x2="100%" y2="33.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="66.67%" x2="100%" y2="66.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="83.33%" x2="100%" y2="83.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                  line(x1="0%" y1="100.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+            svg(class="x-label" x="6.49%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2012
+            svg(class="x-label" x="17.30%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2013
+            svg(class="x-label" x="28.11%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2014
+            svg(class="x-label" x="38.92%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2015
+            svg(class="x-label" x="49.73%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2016
+            svg(class="x-label" x="60.54%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2017
+            svg(class="x-label" x="71.35%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2018
+            svg(class="x-label" x="82.16%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2019
+            svg(class="x-label" x="92.97%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2020
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              polyline(fill="none" stroke="#ffc52b" stroke-dasharray="" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 30.59953936666666,17.2972972972973 12.407626766666668,28.10810810810811 14.782325850000003,38.91891891891892 54.38711026666666,49.729729729729726 68.45079688333334,60.54054054054053 67.77427823333333,71.35135135135134 62.98684250000001,82.16216216216216 59.753074533333326,92.97297297297297 53.04075441666667")
+
+          // CHART 5: fig-7e
+          svg(height="40%" width="32%" x="35%" y="51%")
+            text.sub-chart-title( x="35%" y="0%") Waskita Karya
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(0 4)") 0
+              svg(y="83.33%")
+                text(text-anchor="end" transform="translate(0 4)") 1
+              svg(y="66.67%")
+                text(text-anchor="end" transform="translate(0 4)") 2
+              svg(y="50.00%")
+                text(text-anchor="end" transform="translate(0 4)") 3
+              svg(y="33.33%")
+                text(text-anchor="end" transform="translate(0 4)") 4
+              svg(y="16.67%")
+                text(text-anchor="end" transform="translate(0 4)") 5
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(0 4)") 6
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="16.67%" x2="100%" y2="16.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="33.33%" x2="100%" y2="33.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="66.67%" x2="100%" y2="66.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="83.33%" x2="100%" y2="83.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                  line(x1="0%" y1="100.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+            svg(class="x-label" x="6.49%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2012
+            svg(class="x-label" x="17.30%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2013
+            svg(class="x-label" x="28.11%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2014
+            svg(class="x-label" x="38.92%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2015
+            svg(class="x-label" x="49.73%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2016
+            svg(class="x-label" x="60.54%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2017
+            svg(class="x-label" x="71.35%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2018
+            svg(class="x-label" x="82.16%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2019
+            svg(class="x-label" x="92.97%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2020
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              polyline(fill="none" stroke="#68389a" stroke-dasharray="" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 47.19372718333333,17.2972972972973 55.212675366666666,28.10810810810811 43.291275133333336,38.91891891891892 64.61173316666667,49.729729729729726 55.631687166666666,60.54054054054053 44.96336785,71.35135135135134 44.89789301666667,82.16216216216216 46.499711233333336,92.97297297297297 10.51011945")
+
+          // CHART 6: fig-7f
+          
+          svg(height="40%" width="32%" x="69%" y="51%")
+            text.sub-chart-title( x="35%" y="0%") Wijaya Karya
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(0 4)") 0
+              svg(y="83.33%")
+                text(text-anchor="end" transform="translate(0 4)") 1
+              svg(y="66.67%")
+                text(text-anchor="end" transform="translate(0 4)") 2
+              svg(y="50.00%")
+                text(text-anchor="end" transform="translate(0 4)") 3
+              svg(y="33.33%")
+                text(text-anchor="end" transform="translate(0 4)") 4
+              svg(y="16.67%")
+                text(text-anchor="end" transform="translate(0 4)") 5
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(0 4)") 6
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="16.67%" x2="100%" y2="16.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="33.33%" x2="100%" y2="33.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="66.67%" x2="100%" y2="66.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="83.33%" x2="100%" y2="83.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="100.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+            svg(class="x-label" x="6.49%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2012
+            svg(class="x-label" x="17.30%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2013
+            svg(class="x-label" x="28.11%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2014
+            svg(class="x-label" x="38.92%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2015
+            svg(class="x-label" x="49.73%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2016
+            svg(class="x-label" x="60.54%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2017
+            svg(class="x-label" x="71.35%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2018
+            svg(class="x-label" x="82.16%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2019
+            svg(class="x-label" x="92.97%" y="102%")
+              text(text-anchor="middle" transform="translate(0 20)") 2020
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              polyline(fill="none" stroke="#16B56F" stroke-dasharray="" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 51.840875016666665,17.2972972972973 51.615933150000004,28.10810810810811 63.38978851666667,38.91891891891892 56.58930388333333,49.729729729729726 75.20035193333334,60.54054054054053 64.62966854999999,71.35135135135134 59.32431288333333,82.16216216216216 62.79514465,92.97297297297297 48.51969416666667")
+
 
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
@@ -138,7 +351,6 @@ block page
       .tooltip
 
   script.
-
 
     /* --- USER TO UPDATE --- */
     const enableTooltips = false;
@@ -186,7 +398,7 @@ block append css
     :sass
     
       .wrapper
-        height: 500px
+        height: 700px
 
       .chart
         box-sizing: border-box
@@ -195,12 +407,12 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
+        left: 20px
         right: 20px
-        bottom: 40px
+        bottom: 20px
 
       .chart-content > svg
-        border-bottom: 1px solid #bbb
+        border-bottom: 0px solid #bbb
 
       .chart-title
         margin: auto
@@ -234,10 +446,10 @@ block append css
 
       .legend
         font-size: 15px
-        margin: 0 5em .75em 8em
+        margin-bottom: .75em
 
       .legend-item
-        margin: 2px 12px 0
+        margin: 4px 24px 0
         padding-right: 0
         position: relative
         white-space: nowrap
@@ -261,7 +473,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin: 1em 2em 0 0
+        margin: 0
         font-size: 15px
         
       .chart-value
@@ -272,22 +484,36 @@ block append css
       .chart-content:hover .chart-value
         opacity: 0
 
+      .bars svg rect
+        fill: #ffc52b
 
-      @media (max-width: 700px)
+      .x-label text
+        text-anchor: end
+        transform: rotate(-90deg) translate(0px, 14px)
+
+      .sub-chart-title 
+        font-size: 15px
+        font-weight: bold
+
+      @media (max-width: 650px)
         
-        .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)
-
         text
           font-size: 13px
+
+        .x-label
+          display: none
+        .x-label:nth-child(2n)
+          display: block
+
+        .sub-chart-title,x-label
+          font-size: 13px
+          font-weight: normal
           
       @media (max-width: 450px)
         .chart-content
           bottom: 40px
         .legend
           flex-direction: column
-          margin: 0
         .chart-title
           font-size: 18px
         .chart-subtitle
@@ -297,3 +523,6 @@ block append css
         .chart-source
           text-align: center
           font-size: 13px
+
+        
+

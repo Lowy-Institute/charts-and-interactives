@@ -1,0 +1,53 @@
+title: >
+  Wijaya Karya
+
+#source: >
+  #<strong>Source:</strong> IMF World Economic Outlook database.
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #GDP in 2000=100, constant prices
+
+axes:
+  minY: 0
+  maxY: 6
+  stepsY: 7
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Years
+    values:
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+
+  -
+    title: Wijaya Karya                                  
+    color: "green"
+    widen: true
+    dashed: false
+    values:
+      - 2.889547499
+      - 2.903044011
+      - 2.196612689
+      - 2.604641767
+      - 1.487978884
+      - 2.122219887
+      - 2.440541227
+      - 2.232291321
+      - 3.08881835
+ 
