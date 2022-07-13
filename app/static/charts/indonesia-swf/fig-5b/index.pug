@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/indonesia-swf/fig-4/data"
+  - var datapath = "static/charts/indonesia-swf/fig-5b/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -19,7 +19,7 @@ block page
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
-        - fx = (i) => (i + 0.4) / (ln + 0.75)
+        - fx = (i) => (i + 0.6) / (ln + 0.75)
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
@@ -31,9 +31,18 @@ block page
               - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
-              svg(y="50%")
-                text.y-label Trillion rupiah
+                  = minY + range*(i/steps)
+
+          svg(y="100%" x="100%")
+            text(transform="translate(8 4)") 0
+          svg(y="75%" x="100%")
+            text(transform="translate(8 4)") 5
+          svg(y="50%" x="100%")
+            text(transform="translate(8 4)") 10
+          svg(y="25%" x="100%")
+            text(transform="translate(8 4)") 15
+          svg(y="0" x="100%")
+            text(transform="translate(8 4)") 20
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -56,7 +65,7 @@ block page
             for undef, i in new Array(n)
               svg(
                 x=toPercent(fx(i))
-                width=toPercent(fx(0))
+                width=toPercent(fx(0-0.2))
                 height="100%"
               )   
                 - y = 1
@@ -84,15 +93,18 @@ block page
                   - y -= fy(v)
                     
                 // X-Axis labels
-                svg.x-label(x="50%" y="100%")
-                  text(
-                    text-anchor=axes.rotateX ? "end" : "middle"
-                    transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
-                  )
-                    =chart.series[0].values[i]
-      
+
+          svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+            polyline(fill="none" stroke="#16B56F" stroke-dasharray="" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 58.39763257499999,17.2972972972973 54.227168944999995,28.10810810810811 56.613400219999995,38.91891891891892 59.455991125,49.729729729729726 36.83685595,60.54054054054053 35.88074650000001,71.35135135135134 14.707370199999998,82.16216216216216 20.126546750000003,92.97297297297297 24.1095993")
+
+          .column-title
+            ul.list-bare.flex-ch.x-label
+              for undef, i in new Array(n)
+                li
+                  =chart.series[0].values[i]
+
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
+        ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -102,14 +114,14 @@ block page
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
-      .tooltip
+      //.tooltip
 
   script.
 
 
     /* --- USER TO UPDATE --- */
-    const enableTooltips = false;
-    const nLegendItems = 6;
+    const enableTooltips = true;
+    const nLegendItems = 4;
     const nSeries = 6;
     /* --------------------- */
     
@@ -146,14 +158,14 @@ block page
       });
       
     }
-    
+
   
 block append css
   style
     :sass
   
       .wrapper
-        height: 450px
+        height: 550px
 
       .chart
         box-sizing: border-box
@@ -163,7 +175,7 @@ block append css
         position: absolute
         top: 20px
         left: 50px
-        right: 20px
+        right: 50px
         bottom: 40px
 
       .chart-content > svg
@@ -178,6 +190,9 @@ block append css
         height: 10px
         margin-top: -10px
         font-size: 15px
+
+      .chart-source
+        margin-top: 1em
         
       .tooltip
         position: absolute
@@ -194,11 +209,6 @@ block append css
         max-width: 180px
         box-sizing: border-box
 
-      .y-label
-        transform: rotate(-90deg) translate(-2.5rem, -2.2rem)
-        color: #4b4f56
-        font-size: 15px
-
       li
         list-style: none
         margin: 0
@@ -209,17 +219,17 @@ block append css
         margin-bottom: .75em
 
       .legend-item
-        margin: 4px 8px 0
+        margin: 4px 24px 0
         padding-right: 0
         position: relative
         white-space: nowrap
 
       .legend-item-box
         position: absolute
-        left: 0
-        top: .5em
-        height: 1em
-        width: 1em
+        left: -1em
+        top: .85em
+        height: .25em
+        width: 2em
         background: black
 
       text
@@ -241,6 +251,15 @@ block append css
       .chart-content:hover .chart-value
         opacity: 1
 
+      ul.x-label
+        padding: 4px 16px;
+        align-items: baseline
+        margin: 0 22px
+
+      .x-label li
+        font-size: 14px
+        width: 16%
+
       @media (max-width: 700px)
         
         .x-label text
@@ -249,19 +268,36 @@ block append css
 
         text
           font-size: 13px
+
+        .x-label 
+          padding: 0
+
+        .x-label li
+          writing-mode: vertical-rl
+          text-orientation: mixed
+          width: 12%
+          padding: 8px
+
+        .chart-source
+          margin: 120px 8px 0
           
       @media (max-width: 450px)
         .chart-content
           bottom: 40px
         .legend
-          /* flex-direction: column
-          flex-wrap: wrap;
-          /* height: 90px;
+          flex-direction: column
         .chart-title
           font-size: 18px
         .chart-subtitle
           font-size: 14px
+          margin-bottom: 50px
         .chart-notes,
         .chart-source
           text-align: center
           font-size: 13px
+
+
+        ul.x-label
+          margin: 0 4px
+          padding: 10px
+

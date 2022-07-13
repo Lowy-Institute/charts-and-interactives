@@ -1,0 +1,49 @@
+title: >
+  Figure 3. Indonesian government’s infrastructure budget
+
+source: >
+  <strong>Source:</strong> Author’s calculation based on data from Indonesia’s Ministry of Finance and Bank Indonesia.
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #TFP growth over next thirty years, average % per annum
+
+axes:
+  minY:  0
+  maxY: 400
+  stepsY: 5
+  rotateX: false
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+
+  -
+    title: Amount (left)
+    color: "blue-100"
+    values:
+      - 114.2
+      - 145.5
+      - 155.9
+      - 157.4
+      - 256.1
+      - 269.1
+      - 381.2
+      - 394
+      - 394.1

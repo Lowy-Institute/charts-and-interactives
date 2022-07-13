@@ -1,0 +1,86 @@
+title: >
+  Figure 5. Indonesia’s state enterprise assets
+
+source: >
+  <strong>Source:</strong> Author’s calculation based on data from Indonesia’s Ministry of Finance and Bank Indonesia.
+
+notes: >
+  <strong>Note:</strong> State enterprises refer to corporations in which the government owns 51% or more of the capital and which are under the Ministry of State-Owned Enterprises.
+
+#subtitle: >
+  #GDP in 2000=100, constant prices
+
+axes:
+  minY: 30
+  maxY: 65
+  stepsY: 8
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Years
+    values:
+      - 1995	
+      - null
+      - null
+      - null
+      - null
+      - 2000
+      - null
+      - null
+      - null
+      - null
+      - 2005
+      - null
+      - null
+      - null
+      - null
+      - 2010
+      - null
+      - null
+      - null
+      - null
+      - 2015
+      - null
+      - null
+      - null
+      - null
+      - 2020
+
+  -
+    title: 'Assets/GDP (right)'
+    color: "dark"
+    widen: false
+    dashed: false
+    values:
+      - 58
+      - 52
+      - 56
+      - 38
+      - 46
+      - 57
+      - 45
+      - 47
+      - 53
+      - 47
+      - 43
+      - 40
+      - 41
+      - 36
+      - 37
+      - 36
+      - 38
+      - 41
+      - 44
+      - 43
+      - 50
+      - 52
+      - 53
+      - 55
+      - 55
+      - 60
