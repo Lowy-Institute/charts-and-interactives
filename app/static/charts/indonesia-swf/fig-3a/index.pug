@@ -62,7 +62,7 @@ block page
             text.y-label Trillion rupiah
 
           // Y-Axis labels - right
-          svg(height="100%" x="100%")
+          svg.y-right(height="100%" x="101%")
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
@@ -330,6 +330,10 @@ block append css
 
         text
           font-size: 13px
+
+        .y-right text
+          transform: translate(.75rem,0)
+
           
       @media (max-width: 450px)
         .chart-content
@@ -340,7 +344,6 @@ block append css
           font-size: 18px
         .chart-subtitle
           font-size: 14px
-          margin-bottom: 50px
         .chart-notes,
         .chart-source
           text-align: center

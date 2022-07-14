@@ -125,7 +125,7 @@ block page
                     = val
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -285,13 +285,10 @@ block append css
       @media (max-width: 450px)
         .chart-content
           bottom: 40px
-        .legend
-          flex-direction: column
         .chart-title
           font-size: 18px
         .chart-subtitle
           font-size: 14px
-          margin-bottom: 50px
         .chart-notes,
         .chart-source
           text-align: center
