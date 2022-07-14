@@ -32,8 +32,8 @@ block page
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + range*(i/steps) + (axes.percentage ? "%" : "")
-              svg(y="50%")
-                text.y-label Trillion rupiah
+            svg(y="50%")
+              text.y-label Trillion rupiah
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
