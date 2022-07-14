@@ -4,9 +4,7 @@ mixin title-block(post, i)
     .flex.w-title-block
       .col-text
         h1!= post.title
-        .flex-ch
-          img(src=`/features/${slug}/img/authors/${href}.jpg` alt=caption)
-          p.caption!= post.bioLong
+        p.caption!= post.bioLong
 
       .col-image
         img(src=`/features/${slug}/img/post-${i}.jpg`)
