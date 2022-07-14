@@ -1,0 +1,75 @@
+$break-max: 1300px
+$break-min: 1025px
+
+figure
+
+  &.profile
+    width: 175px
+
+    img
+      padding-right: 1rem
+
+  &.floating
+    position: absolute
+
+  &.left
+    right: 100%
+    margin-right: 10rem
+
+  &.right
+    left: 100%
+    margin-left: 10rem
+
+  figcaption
+    color: #969ba4
+    margin-top: 1em
+    line-height: 1.3
+    font-style: italic
+
+    a
+      margin-top: 0.25em
+      display: block
+      font-style: normal
+      color: #666b74
+
+  @media (max-width: $break-max)
+
+    &.profile
+      width: 150px
+
+    &.left
+      margin-right: 4rem
+
+    &.right
+      margin-left: 4rem
+
+  @media (max-width: $break-min)
+    display: flex
+    align-items: center
+    padding: 1rem 0
+    margin: 1.5rem 0
+    border-top: 1px solid #969ba4 
+    border-bottom: 1px solid #969ba4
+
+    figcaption
+      flex-grow: 1
+      margin-top: 0
+
+    &.profile
+      width: 100%
+      height: auto
+
+      img
+        width: 120px
+        flex-grow: 0
+
+    &.floating
+      float: none
+      clear: both
+
+    &.left,
+    &.right
+      position: unset
+      left: unset
+      right: unset
+      margin-left: 0
