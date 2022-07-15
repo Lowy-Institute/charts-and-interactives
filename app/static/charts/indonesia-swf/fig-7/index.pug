@@ -346,8 +346,8 @@ block page
               polyline(fill="none" stroke="#16B56F" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="6.486486486486487 51.840875016666665,17.2972972972973 51.615933150000004,28.10810810810811 63.38978851666667,38.91891891891892 56.58930388333333,49.729729729729726 75.20035193333334,60.54054054054053 64.62966854999999,71.35135135135134 59.32431288333333,82.16216216216216 62.79514465,92.97297297297297 48.51969416666667")
 
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -493,8 +493,12 @@ block append css
         transform: rotate(-90deg) translate(0px, 14px)
 
       .sub-chart-title 
-        font-size: 15px
+        font-size: 14px
         font-weight: bold
+      
+      .chart-notes, .chart-source
+        margin: 1em 0 0 2em
+        font-size: 15px
 
       @media (max-width: 650px)
         
@@ -519,11 +523,14 @@ block append css
           font-size: 18px
         .chart-subtitle
           font-size: 14px
-          margin-bottom: 50px
         .chart-notes,
         .chart-source
           text-align: center
           font-size: 13px
+        text
+          font-size: 11px
+        .sub-chart-title,x-label
+          font-size: 12px
 
         
 

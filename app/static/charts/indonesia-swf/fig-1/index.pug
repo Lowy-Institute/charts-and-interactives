@@ -94,7 +94,7 @@ block page
                     =chart.series[0].values[i]
       
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
         span.chart-notes!= chart.notes
       
       .tooltip
@@ -197,7 +197,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 2em
+        margin: 1em 0 0 2em
         font-size: 15px
         
       .chart-value
@@ -216,10 +216,9 @@ block append css
           
       @media (max-width: 400px)
         text
-          font-size: 13px
+          font-size: 12px
         .chart-content
-          bottom: 20px
-          left: 170px
+          left: 150px
         .legend
           flex-wrap: wrap
 
@@ -229,7 +228,7 @@ block append css
           font-size: 14px
         .chart-notes,
         .chart-source
-          font-size: 13px
+          font-size: 12px
         .y-label text
           transform: translate(-10px, 6px)
         .x-label:nth-of-type(even)

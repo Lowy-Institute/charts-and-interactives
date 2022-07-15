@@ -91,17 +91,17 @@ block page
           // Y-Axis labels - left
           svg
             svg(y="100%")
-              text(text-anchor="end" transform="translate(8 4)") 0
+              text(text-anchor="end" transform="translate(4 4)") 0
             svg(y="80%")
-              text(text-anchor="end" transform="translate(8 4)") 2,000
+              text(text-anchor="end" transform="translate(4 4)") 2,000
             svg(y="60%")
-              text(text-anchor="end" transform="translate(8 4)") 4,000
+              text(text-anchor="end" transform="translate(4 4)") 4,000
             svg(y="40%")
-              text(text-anchor="end" transform="translate(8 4)") 6,000
+              text(text-anchor="end" transform="translate(4 4)") 6,000
             svg(y="20%")
-              text(text-anchor="end" transform="translate(8 4)") 8,000
+              text(text-anchor="end" transform="translate(4 4)") 8,000
             svg(y="0")
-              text(text-anchor="end" transform="translate(8 4)") 10,000
+              text(text-anchor="end" transform="translate(4 4)") 10,000
             svg(y="50%")
               text.y-label Trillion rupiah
 
@@ -219,8 +219,8 @@ block page
                 span.legend-item-label= chart.series[i].title
               
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -341,14 +341,14 @@ block append css
         vector-effect: non-scaling-stroke
 
       text
-        font-size: 14px
+        font-size: 13px
         fill: currentColor
 
       svg
         overflow: visible
         
       .chart-notes, .chart-source
-        margin: 1em 2em 0 0
+        margin: 1em 0 0 2em
         font-size: 15px
         
       .chart-value
@@ -399,4 +399,7 @@ block append css
         .chart-notes,
         .chart-source
           text-align: center
-          font-size: 13px
+          font-size: 12px
+        text  
+          font-size: 10px
+          
