@@ -107,7 +107,7 @@ block page
                 span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-left.txt-muted.txt-cond!= chart.source
-        span.chart-notes= chart.notes
+      .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -159,7 +159,7 @@ block append css
     :sass
   
       .wrapper
-        height: 350px
+        height: 375px
 
       .chart
         box-sizing: border-box
@@ -251,7 +251,7 @@ block append css
       .bar-label,.axis-spacer
         font-size: 14px
         float: left
-        width: 33%
+        width: 35%
         /* min-height: 32px
         text-align: right
         align-items: center
@@ -262,7 +262,7 @@ block append css
 
       .bar-content,.axis
         float: right
-        width: 67%
+        width: 65%
 
       .bars .y-label:nth-of-type(4) svg rect
         fill: #16B56F
@@ -288,18 +288,20 @@ block append css
         .chart-title
           font-size: 18px
 
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
+
 
       @media (max-width: 375px)
         .bar-label,.axis-spacer
           font-size: 14px
-          width: 30%
 
         .bar-label p
           padding: 0 .75em 0 0
           line-height: 1
 
         .bar-content,.axis
-          width: 70%
 
         .chart-notes, .chart-source
           margin: .25em 0 0 .5em
