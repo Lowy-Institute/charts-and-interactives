@@ -91,17 +91,17 @@ block page
           // Y-Axis labels - left
           svg
             svg(y="100%")
-              text(text-anchor="end" transform="translate(4 4)") 0
+              text.y-left(text-anchor="end" transform="translate(4 4)") 0
             svg(y="80%")
-              text(text-anchor="end" transform="translate(4 4)") 2,000
+              text.y-left(text-anchor="end" transform="translate(4 4)") 2,000
             svg(y="60%")
-              text(text-anchor="end" transform="translate(4 4)") 4,000
+              text.y-left(text-anchor="end" transform="translate(4 4)") 4,000
             svg(y="40%")
-              text(text-anchor="end" transform="translate(4 4)") 6,000
+              text.y-left(text-anchor="end" transform="translate(4 4)") 6,000
             svg(y="20%")
-              text(text-anchor="end" transform="translate(4 4)") 8,000
+              text.y-left(text-anchor="end" transform="translate(4 4)") 8,000
             svg(y="0")
-              text(text-anchor="end" transform="translate(4 4)") 10,000
+              text.y-left(text-anchor="end" transform="translate(4 4)") 10,000
             svg(y="50%")
               text.y-label Trillion rupiah
 
@@ -383,6 +383,11 @@ block append css
 
         .y-right text
           transform: translate(.75rem,0)
+
+        .y-left
+          transform: translate(-.1rem,0)
+        .y-label
+        transform: rotate(-90deg) translate(-2.5rem, -2.4rem)
 
         .y-label2
           transform: rotate(-90deg) translate(-1.5rem,1.75rem) !important
