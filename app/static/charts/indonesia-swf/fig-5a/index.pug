@@ -25,13 +25,13 @@ block page
         
         svg(height="100%" width="100%")
           svg
-              rect(y="0%" x="1%" height="100%" width="36.4%" fill="#e1dede")
-              text(y="10%" x="7%") Asian financial
-              text(y="16%" x="6.25%") crisis & recovery
+              rect(y="0%" x="1%" height="100%" width="37%" fill="#e1dede")
+              text(y="8%" x="3%") Asian financial
+              text(y="13%" x="3%") crisis & recovery
               rect(y="0%" x="36.5%" height="100%" width="38.4%" fill="#f1eeee")
-              text(y="10%" x="46.25%") Yudhoyono
+              text(y="8%" x="40%") Yudhoyono
               rect()
-              text(y="10%" x="80.25%") Jokowi
+              text(y="8%" x="78%") Jokowi
 
           // pasted in columns from fig-3b
           g.bars
@@ -378,7 +378,7 @@ block append css
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 14px)
 
-        text
+        text,.y-label,.y-label2
           font-size: 13px
 
         .y-right text
@@ -400,8 +400,9 @@ block append css
         .chart-source
           text-align: center
           font-size: 12px
-        text  
-          font-size: 10px
+          line-height: 1.2
+        text,.y-label,.y-label2
+          font-size: 11px
         .legend
           font-size: 13px
           flex-wrap: wrap;
@@ -410,4 +411,7 @@ block append css
           margin: 0px 8px 0
         li
           padding: 4px 12px 1px 20px
-          
+
+      @media (max-width: 375px)
+        text,.y-label,.y-label2
+          font-size: 10px
