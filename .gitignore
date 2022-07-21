@@ -61,3 +61,4 @@ app/static/charts/the-interpreter/australia-election-cycle-3/chart/data.yaml
 app/static/charts/the-interpreter/australia-election-cycle-3/chart/index.pug
 app/static/charts/the-interpreter/australia-election-cycle-3/line.coffee
 app/static/charts/ian/_api-sparklines/index.pug
+app/static/charts/indonesia-poll/q19b/data.yaml
