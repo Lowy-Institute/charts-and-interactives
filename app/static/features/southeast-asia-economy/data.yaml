@@ -11,18 +11,21 @@ posts:
       Lorem ipsum dolor saminur gurdan time onnus veritas valour gnomus."
 
   - title: A new approach to development?
+    titleShort: A new approach to development?
     href: sundaram
     author: Jomo Kwame Sundaram
     bioShort: Malaysian economist
     bioLong:
-      Jomo Kwame Sundaram was an Assistant Secretary General for Economic
-      Development in the United Nations system during 2005-2015 and received the
+      Jomo Kwame Sundaram was an Assistant Secretary-General for Economic
+      Development in the United Nations system during 2005–15 and received the
       Wassily Leontief Prize for Advancing the Frontiers of Economic Thought in
       2007.
     description:
       Lorem ipsum dolor saminur gurdan time onnus veritas valour gnomus.
 
-  - title: Resilience over industrialisation
+  - title:
+      Southeast Asia’s resilience will not be achieved through industrialisation
+    titleShort: Resilience without industrialisation
     href: mafira
     author: Tiza Mafira
     bioShort: Indonesian climate policy expert
@@ -34,29 +37,39 @@ posts:
       Lorem ipsum dolor saminur gurdan time onnus veritas valour gnomus.
 
   - title: A new approach to development?
+    titleShort: A new approach to development?
     href: basri
     author: Muhammed Chatib Basri
     bioShort: Indonesian economist
-    bioLong: Former Indonesian Finance Minister
+    bioLong:
+      Chatib Basri is a Senior Lecturer at the Department of Economics at the
+      University of Indonesia and a former Minister of Finance of Indonesia.
     description:
       Lorem ipsum dolor saminur gurdan time onnus veritas valour gnomus.
 
-  - title: Future-proofing after the pandemic
+  - title: >
+      Economic governance: Future-proofing Southeast Asia post-pandemic
+    titleShort: Post-pandemic future-proofing
     href: yeoh
     author: Tricia Yeoh
     bioShort: Malaysian public policy analyst
     bioLong:
-      Tricia Yeoh is CEO of IDEAS and is completing her PhD in Political Studies
-      at the University of Nottingham Malaysia.
+      Tricia Yeoh is CEO of Institute for Democracy and Economic Affairs (IDEAS)
+      and is completing her PhD in Political Studies at the University of
+      Nottingham, Malaysia.
     description:
       Lorem ipsum dolor saminur gurdan time onnus veritas valour gnomus.
 
-  - title: Hostage of fortune
+  - title: >
+      Hostage of fortune: Southeast Asia’s development model needs a reboot
+    titleShort: Hostage of fortune
     href: shastry
     author: Vasuki Shastry
     bioShort: Asia business analyst
     bioLong:
-      Vasuki Shastry is an Associate Asia Fellow at Chatham House and author of
-      “Has Asia Lost It? Dynamic Past, Turbulent Future”.
+      Vasuki Shastry is an Associate Fellow in the Asia Pacific program of
+      Chatham House. He was formerly with the IMF, Standard Chartered Bank, and
+      the Singapore central bank. He is the author of two books on Asia, most
+      recently <em>Has Asia Lost It? Dynamic Past, Turbulent Future</em>.
     description:
       Lorem ipsum dolor saminur gurdan time onnus veritas valour gnomus.

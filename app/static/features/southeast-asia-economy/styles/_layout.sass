@@ -1,5 +1,6 @@
 $w-title-block: 850px
 $w-content: 570px
+$w-mobile: 450px
 
 main
   padding: 1rem
@@ -20,3 +21,22 @@ article,
 
 article
   padding: 4rem 0
+
+.end-credits
+  padding: 2rem 0
+  border-top: 1px solid #969ba4
+
+  img
+    margin-right: 2rem
+    border-radius: 2px
+    height: 150px
+    width: 130px
+
+@media (max-width: $w-mobile)
+  .end-credits
+    margin: 0 2rem
+    flex-direction: column
+
+    img
+      margin-right: 0
+      margin-bottom: 1rem

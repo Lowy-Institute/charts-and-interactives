@@ -31,6 +31,10 @@ block page
     article
       block content
 
+  section.end-credits.flex-ch.w-content
+    img(width="150" src=`/features/${slug}/img/authors/${post.href}.jpg`)
+    p.caption.ml-8!= post.bioLong
+
   include ../partials/footer
 
 block append css

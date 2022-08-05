@@ -6,5 +6,5 @@ mixin gallery(classes)
         .post.flex-col
           a.txt-bare.flex-col.flex-1(href=`/features/${slug}/post/${p.href}`)
             img(src=`/features/${slug}/img/post-${i}.jpg`)
-            h3!= p.title
+            h3!= p.titleShort || p.title
             .caption.txt-muted #{p.author}, #{p.bioShort}
