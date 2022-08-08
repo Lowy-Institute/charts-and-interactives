@@ -1,10 +1,11 @@
+$w-title-block: 740px
 $w-gallery: 1150px
 $n-countries: 18
 $hl-duration: 1.5s
 
 .homepage
   
-  .feature-img
+  .feature-image
     top: 0
     right: 0
     z-index: 0
@@ -52,6 +53,18 @@ $hl-duration: 1.5s
         height: auto
         max-width: none
         object-fit: contain
+
+  @media (max-width: $w-title-block)
+
+    .feature-image
+      height: 300px
+      display: flex
+      position: relative
+      justify-content: center
+      margin: -2rem -1rem -2rem -3rem
+
+      path
+        stroke-width: 2px
 
 
 @keyframes oscillate-y
