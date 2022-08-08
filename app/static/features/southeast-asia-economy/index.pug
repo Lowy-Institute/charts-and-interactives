@@ -19,16 +19,20 @@ block append config
 
 block page
 
+  include partials/gallery
   include partials/header
 
-  section.title-block
-    .flex.w-title-block
-      .col-text
-        h1 Debate series: Does Southeast Asia need a new development model?
-        p.caption!= "A Lowy Institute debate, with contributions from local experts " + authorList
+  .bg-dk
+    section.title-block.w-title-block
+      .feature-img
+        include ./img/feature-bg
+      .flex.relative.above
+        .col-text
+          h1 Does Southeast Asia need a new development model?
+          p.caption!= "A Lowy Institute debate, with contributions from leading Southeast Asian experts " + authorList + "."
 
-  include partials/gallery
-  +gallery("relative")
+    +gallery("relative")
+
   +gallery("fixed collapse")
   
   main
@@ -36,6 +40,8 @@ block page
       include partials/introduction
 
   include partials/footer
+
+  //- IMAGE: https://unsplash.com/photos/sG6pxanVWJI
   
 block append css
   style
@@ -47,6 +53,7 @@ block append css
     include:sass ./styles/_footer.sass
     include:sass ./styles/_figure.sass
     include:sass ./styles/_gallery.sass
+    include:sass ./styles/_homepage.sass
     include:sass ./styles/_scroller.sass
     include:sass ./styles/_typography.sass
     include:sass ./styles/_title-block.sass

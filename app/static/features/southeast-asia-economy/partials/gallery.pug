@@ -5,6 +5,6 @@ mixin gallery(classes)
       for p,i in page.posts
         .post.flex-col
           a.txt-bare.flex-col.flex-1(href=`/features/${slug}/post/${p.href}`)
-            img(src=`/features/${slug}/img/post-${i}.jpg`)
+            img(src=`/features/${slug}/img/authors/${p.href}.jpg`)
             h3!= p.titleShort || p.title
-            .caption.txt-muted #{p.author}, #{p.bioShort}
+            .caption.txt-muted #{p.author}
