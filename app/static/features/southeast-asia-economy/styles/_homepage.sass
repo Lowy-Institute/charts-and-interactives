@@ -1,0 +1,93 @@
+$w-title-block: 740px
+$w-gallery: 1150px
+$n-countries: 18
+$hl-duration: 1.5s
+
+.homepage
+  
+  .feature-image
+    top: 0
+    right: 0
+    z-index: 0
+    height: 100%
+    position: absolute
+    overflow: hidden
+    display: flex
+    justify-content: flex-end
+
+    path
+      stroke: #b4c5d2
+      animation: highlight #{$n-countries * $hl-duration} infinite
+
+      @for $i from 1 to $n-countries
+        &:nth-child(#{$i})
+          animation-delay: $i * $hl-duration
+
+    > img, > svg
+      height: 100%
+      animation: oscillate-x 24s infinite alternate linear
+
+    &::before
+      content: ""
+      top: 0
+      left: 0
+      z-index: 1
+      width: 100%
+      height: 100%
+      position: absolute
+      background: linear-gradient(#002b45, #002b4500 25%,#002b4500 75%, #002b45), linear-gradient(90deg, #002b45, #002b4500 5%,#002b4500 95%, #002b45)
+
+  .w-title-block
+    max-width: $w-gallery
+
+  .title-block
+    overflow: hidden
+
+    .col-image
+      display: flex
+      justify-content: center
+      animation: oscillate 12s infinite alternate
+      mix-blend-mode: lighten
+      filter: none
+
+      img
+        width: 100%
+        height: auto
+        max-width: none
+        object-fit: contain
+
+  @media (max-width: $w-title-block)
+
+    .feature-image
+      height: 300px
+      display: flex
+      position: relative
+      justify-content: center
+      margin: -2rem -1rem -2rem -3rem
+
+      path
+        stroke-width: 2px
+
+
+@keyframes oscillate-y
+  from
+    transform: translateY(-0.5rem)
+  to
+    transform: translateY(0.5rem)
+
+@keyframes oscillate-x
+  from
+    transform: translateX(1rem) skewY(0deg)
+  to
+    transform: translateX(-1rem) skewY(5deg)
+    
+@keyframes highlight
+  0%
+    fill: #80d0ff00
+    stroke: #b4c5d2
+  5%
+    fill: #80d0ff66
+    stroke: #80d0ff
+  10%
+    fill: #80d0ff00
+    stroke: #b4c5d2

@@ -1,4 +1,4 @@
-$w-gallery: 1100px
+$w-gallery: 1150px
 $w-mobile: 450px
 
 .post-gallery
@@ -18,7 +18,7 @@ $w-mobile: 450px
   .gallery-inner
     max-width: $w-gallery
     display: grid
-    gap: 2rem
+    gap: 1rem
     grid-template-columns: repeat(6, 1fr)
     margin: auto
     padding-bottom: 2rem
@@ -50,7 +50,13 @@ $w-mobile: 450px
       opacity: 0
 
   .post
+    position: relative
     align-items: center
+    transition: filter 0.5s
+    filter: saturate(0)
+
+    &:hover
+      filter: saturate(1)
 
     a
       &:hover
@@ -60,9 +66,9 @@ $w-mobile: 450px
       transition: all 0.5s, color 0.2s
 
   img
-    width: 150px
-    height: 200px
-    min-width: 150px
+    height: 210px
+    width: 160px
+    min-width: 160px
     background-color: #002b45
     overflow: hidden
     border-radius: 0.25rem
@@ -81,17 +87,6 @@ $w-mobile: 450px
     justify-content: flex-start
     cursor: grab
 
-    // &::before
-    //   content: ""
-    //   background: linear-gradient(90deg, #002b45 1rem, #002b4500 0, #002b4500 calc(100% - 0), #002b45 calc(100% - 1rem))
-    //   top: 0
-    //   left: 0
-    //   width: 100%
-    //   height: 100%
-    //   position: absolute
-    //   z-index: 2
-    //   pointer-events: none
-
     .gallery-inner
       gap: 1rem
       scroll-snap-type: x mandatory
@@ -101,9 +96,9 @@ $w-mobile: 450px
       padding-left: 0rem
 
     img
-      width: 225px
-      min-width: 225px
-      height: 300px
+      width: 200px
+      min-width: 200px
+      height: 250px
 
 @media (max-width: $w-mobile)
 
@@ -116,3 +111,8 @@ $w-mobile: 450px
       &.active
         opacity: 1
         filter: none
+
+    img
+      width: 225px
+      min-width: 225px
+      height: 300px

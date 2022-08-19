@@ -11,7 +11,7 @@ block append config
 
 block prepend head
   - 
-    page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/post-${index}.jpg`
+    page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/previews/${post.href}.png`
     page.url = `https://interactives.lowyinstitute.org/features/${slug}/posts/${post.href}`
     page.socialTitle = `${post.title} - Lowy Institute`
     page.description = post.description
@@ -30,6 +30,10 @@ block page
   main
     article
       block content
+
+  section.end-credits.flex-ch.w-content
+    img(width="150" src=`/features/${slug}/img/authors/${post.href}.jpg`)
+    p.caption.ml-8!= post.bioLong
 
   include ../partials/footer
 

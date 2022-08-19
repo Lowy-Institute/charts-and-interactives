@@ -5,10 +5,10 @@ block append config
     slug = "southeast-asia-economy"
     page.url = `https://interactives.lowyinstitute.org/features/${slug}/`
     page.class = "homepage"
-    page.title = "Southeast Asia Economy Debate"
+    page.title = "Does Southeast Asia need a new development model?"
     page.metaTitle = `${page.title} - Lowy Institute`
-    page.description = ""
-    page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/thumb.jpg`
+    page.description = "A Lowy Institute debate, with contributions from leading Southeast Asian experts."
+    page.image = `https://interactives.lowyinstitute.org/features/${slug}/img/thumb.png`
     page.posts = data.getOne(`static/features/${slug}/data`).posts
 
     authorList = page.posts.map((p,i,a) =>
@@ -19,20 +19,21 @@ block append config
 
 block page
 
+  include partials/gallery
   include partials/header
 
-  section.title-block
-    .flex.w-title-block
-      .col-text
-        h1 Does Southeast Asia need a new development model?
-        p.caption!= "A Lowy Institute debate, with contributions from local experts " + authorList
+  .bg-dk
+    section.title-block.w-title-block
+      .feature-image
+        include ./img/feature-bg
+      .flex.relative.above
+        .col-text
+          span.caption.opacity-75.txt-muted  16 August 2022
+          h1 Does Southeast Asia need a new development model?
+          p.caption!= "A Lowy Institute debate, with contributions from leading Southeast Asian experts " + authorList + "."
 
-      //- .grid-3-2
-        for p,i in page.posts
-          img(width="100" height="100" src=`/features/${slug}/img/authors/${p.href}.jpg`)
+    +gallery("relative")
 
-  include partials/gallery
-  +gallery("relative")
   +gallery("fixed collapse")
   
   main
@@ -40,6 +41,8 @@ block page
       include partials/introduction
 
   include partials/footer
+
+  //- IMAGE: https://unsplash.com/photos/sG6pxanVWJI
   
 block append css
   style
@@ -51,6 +54,7 @@ block append css
     include:sass ./styles/_footer.sass
     include:sass ./styles/_figure.sass
     include:sass ./styles/_gallery.sass
+    include:sass ./styles/_homepage.sass
     include:sass ./styles/_scroller.sass
     include:sass ./styles/_typography.sass
     include:sass ./styles/_title-block.sass
