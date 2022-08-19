@@ -1,0 +1,76 @@
+title: >
+  Overall Influence Score
+
+source: >
+  <strong>Source:</strong> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">Asia Power Index</a>)
+
+#notes: >
+  #<strong>Notes:</strong> data from January 2022
+
+subtitle: >
+  Influence of China and the United States in Southeast Aian countries (2018)
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 9
+  stepsX: 11
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [1,2,3,4,5,6,7,8,9,10] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Country
+    values:
+      - Brunei
+      - Cambodia
+      - Indonesia
+      - Lao PDR
+      - Malaysia
+      - Myanmar
+      - Philippines
+      - Singapore
+      - Thailand
+      - Vietnam
+      - Southeast Asia
+
+  -
+    title: China
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 58
+      - 65
+      - 55
+      - 72
+      - 55
+      - 64
+      - 43
+      - 49
+      - 50
+      - 49
+      - 52
+
+  -
+    title: United States
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 42
+      - 35
+      - 45
+      - 28
+      - 45
+      - 36
+      - 57
+      - 51
+      - 50
+      - 51
+      - 48
+

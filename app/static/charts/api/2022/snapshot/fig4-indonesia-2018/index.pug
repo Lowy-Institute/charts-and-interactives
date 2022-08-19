@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/ian/api-line-5-4x-vietnam/data"
+  - var datapath = "static/charts/api/2022/snapshot/fig4-indonesia-2018/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -98,10 +98,10 @@ block page
                 )
 
           g
-            line.tt-line(x1="14.12%" y1="53.00%" x2="14.12%" y2="47.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
-            line.tt-line(x1="37.65%" y1="52.00%" x2="37.65%" y2="48.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
-            line.tt-line(x1="61.18%" y1="65.00%" x2="61.18%" y2="35.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
-            line.tt-line(x1="84.71%" y1="40.00%" x2="84.71%" y2="60.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="14.12%" y1="73.00%" x2="14.12%" y2="27.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="37.65%" y1="31.00%" x2="37.65%" y2="69.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="61.18%" y1="56.00%" x2="61.18%" y2="44.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="84.71%" y1="52.00%" x2="84.71%" y2="48.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
 
           for item, i in chart.series
             g.target
@@ -135,7 +135,7 @@ block page
               li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
-      br
+      br 
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 

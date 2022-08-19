@@ -13,7 +13,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-subtitle.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -210,7 +210,7 @@ block append css
         font-size: 20px
         
       .chart-subtitle
-        font-weight: 600
+        font-weight: normal
         height: 10px
         margin-top: -10px
         font-size: 15px

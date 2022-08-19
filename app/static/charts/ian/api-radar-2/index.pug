@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/ian/api-radar/data"
+  - var datapath = "static/charts/ian/api-radar-2/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
