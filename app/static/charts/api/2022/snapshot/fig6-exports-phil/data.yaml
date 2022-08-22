@@ -1,0 +1,39 @@
+title: >
+  Exports from the Philippines
+
+source: >
+  <strong>Source:</strong> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">Asia Power Index</a>)
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  To China and the United States
+
+axes:
+  minY:  0
+  maxY: 25
+  stepsY: 6
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [1,2,3,4,5,6] # Index of dotted gridlines
+
+series:
+  -
+    title: Exports from the Philippines
+    values:
+      - 2015
+      - 2021
+  -
+    title: China
+    color: "red"
+    values:
+      - 12.61
+      - 21.47
+  -
+    title: United States
+    color: "highlight"
+    values:
+      - 8.81
+      - 11.86

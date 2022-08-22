@@ -1,0 +1,39 @@
+title: >
+  Investment in the Philippines
+
+source: >
+  <strong>Source:</strong> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">Asia Power Index</a>)
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  By China and the United States
+
+axes:
+  minY:  0
+  maxY: 20
+  stepsY: 5
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [1,2,3,4,5] # Index of dotted gridlines
+
+series:
+  -
+    title: Exports from the Philippines
+    values:
+      - 2008-17
+      - 2012-21
+  -
+    title: China
+    color: "red"
+    values:
+      - 9.17
+      - 17.81
+  -
+    title: United States
+    color: "highlight"
+    values:
+      - 13.74
+      - 11.97
