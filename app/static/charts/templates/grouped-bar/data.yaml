@@ -11,23 +11,22 @@ subtitle: >
   Subtitle goes here
 
 axes:
-  minY:  0
-  maxY: 80
-  stepsY: 5
-  rotateX: false
+  min:  0
+  max: 80
+  steps: 5
+  rotateLabels: false
   percentage: true
   minorLines: true
-  dotted: [1, 3] # Index of dotted gridlines
+  dotted: [] # Index of dotted gridlines
 
 series:
   -
     title: Pandemic performance
-
     values:
-      - X Label 1
-      - X Label 2
-      - X Label 3
-      - X Label 4
+      - Category 1
+      - Category 2
+      - Category 3
+      - Category 4
   -
     title: Category 1
     color: "dark"
