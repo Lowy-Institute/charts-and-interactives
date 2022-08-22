@@ -150,7 +150,7 @@ block page
                 span.legend-item-label= chart.series[i].title
       p 
         br
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-source.txt-left.txt-muted!= chart.source
       //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 
       .tooltip
@@ -281,7 +281,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-right: 2em
+        margin-left: 3em
         font-size: 15px
         
       .chart-value
