@@ -1,0 +1,99 @@
+.slide.bg-dk
+  .slide-inner(
+    data-view="in-viewport, page"
+    data-pages=2
+  )
+    .txt-mono(style="margin-top: 88px")
+      .type.pv-md.txt-xl.txt-ff.mx-auto.txt-center(
+        data-view="type, in-viewport"
+        data-duration=1200
+      )
+        span.line.bg-hl Central Committee
+
+      .fw.posa.txt-md.txt-dk.fade-in.txt-center(
+        data-attributes=[
+          {style: ""},
+          {style:"opacity: 0;"}
+        ]
+      )
+        .type.mx-auto(
+            data-view="in-viewport, type"
+            data-duration=2400
+            data-delay=800
+          )
+            span.line.ph-sm.bg-ff
+              | 370 members act as China Inc’s 
+            span.line.ph-sm.bg-ff
+              | expanded board of directors.
+            span.line.ph-sm.bg-ff
+              | Cut-off age of 63.
+
+      .fw.posa.txt-md.txt-dk
+        .mx-auto.flex.flex-wrap(
+          style="justify-content: center; column-gap: 12px; max-width: 760px;"
+        )
+          for item, i in page.data.centralCommittee
+            .fade-in.line.bg-ff.ph-sm(
+              data-attributes=[
+                {style: "transform: translate3d(0, 40px, 0); opacity: 0;"},
+                {style: `transition-delay: ${200 * i}ms`}
+              ]
+            )
+              .line-bg
+              = item
+
+//- .slide.bg-dk
+  .slide-inner.flex-cv.flex-grow(
+    data-view="in-viewport, page"
+    data-pages=2
+  )
+    .mx-auto(style="max-width: 760px;")
+      .mx-auto.txt-center.txt-mono.fade-in(
+        data-attributes=[
+          {style: "transform: translate3d(0, 120px, 0)"},
+          {style: ""}
+        ]
+      )
+        .type.txt-lg.txt-ff.mx-auto(
+          data-view="type, in-viewport"
+          data-duration=1200
+        )
+          span.line.bg-hl Central Committee
+
+        .flex.flex-wrap.txt-md.pv-sm.txt-dk.mx-auto.fade-in(
+          style="justify-content: center; column-gap: 8px; max-width: 760px;"
+          data-attributes=[
+            {style: ""},
+            {style:"opacity: 0.6;"}
+          ]
+        )
+          .type.fl-l.mx-auto(
+              data-view="in-viewport, type"
+              data-duration=1600
+              data-delay=800
+            )
+              span.line.pv-xs.ph-sm.bg-ff
+                | 370 members act as China Inc’s 
+              span.line.pv-xs.ph-sm.bg-ff
+                | expanded board of directors.
+
+              span.line.pv-xs.ph-sm.bg-ff
+                | Cut-off age of 63.
+
+        .fade-in(
+          data-attributes=[
+            {style: "opacity: 0;"},
+            {style: "opacity: 1;"}
+          ]
+        )
+          .flex.flex-wrap.txt-md.txt-dk.mx-auto(
+            style="justify-content: center; column-gap: 8px;"
+          )
+            for item, i in page.data.centralCommittee
+              .type.fl-l(
+                data-view="in-viewport, type"
+                data-duration=(300 + item.length * 15)
+                data-delay=(800 + i * 100)
+                style="margin: 2px"
+              )
+                span.line.pv-xs.ph-sm.bg-ff= item

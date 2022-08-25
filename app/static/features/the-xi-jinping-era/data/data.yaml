@@ -1,0 +1,173 @@
+makeup:
+  profession:
+    title: Profession
+    scale: 0.45
+    labels:
+      - Military
+      - Student
+      - Other
+      - Worker
+      - Party Cadre
+      - Management Personnel
+      - Technical Personnel
+      - Retired
+      - Farmer
+
+    data:
+      - label: 1987
+        values: [2.8, 0, 0, 17.1, 27.7, 0, 0, 7.6, 39.5]
+      - label: 2017
+        values: [1.5, 2.0, 6.9, 7.4, 8.4, 10.6, 15.1, 19.6, 28.5]
+
+  age:
+    title: Age
+    scale: 0.75
+    labels:
+      - Under 30
+      - 31-35
+      - 36-40
+      - 41-45
+      - 46-50
+      - 51-55
+      - [56-60, 50-59]
+      - Over 60
+
+    data:
+      - label: CCP Membership
+        values: [15.2, 8.0, 9.4, 10.2, 10.2, 10.8, 7.5, 28.8]
+      - label: Central committee
+        values: [0, 0, 0, 0, 0, 0, 35.3, 64.7]
+
+  gender:
+    title: Gender
+    scale: 0.853
+    labels:
+      - CCP Membership
+      - Central committee
+
+    sizes:
+      - 89M members
+      - 204 members
+
+    data:
+      - label: Male
+        values: [73.3, 85.3]
+      - label: Female
+        values: [26.7, 14.7]
+
+politburo:
+  - years: 2017-2022
+    members:
+      - img: "./img/politburo-members/han-zheng.jpg"
+        name: Han Zheng
+        cn: 韩正
+        role: Vice Premier, HK, Macau, Finance, Housing, Environment
+      - img: "./img/politburo-members/li-zhanshu.jpg"
+        name: Li Zhanshu
+        cn: 栗战书
+        role: National People’s Congress
+      - img: "./img/politburo-members/li-keqiang.jpg"
+        name: Li Keqiang
+        cn: 李克强
+        role: Premier, Head of Government
+      - img: "./img/politburo-members/xi-jinping.jpg"
+        name: Xi Jinping
+        cn: 习近平
+        role: General Secretary of CCP, President of China
+        class: member-xi
+      - img: "./img/politburo-members/wang-huning.jpg"
+        name: Wang Huning
+        cn: 王沪宁
+        role: Ideology, Party&nbsp;Affairs
+      - img: "./img/politburo-members/zhao-leji.jpg"
+        name: Zhao Leji
+        cn: 赵乐际
+        role: Anti&#8209;corruption
+      - img: "./img/politburo-members/wang-yang.jpg"
+        name: Wang Yang
+        cn: 汪洋
+        role: Relations with non&#8209;CCP groups, Taiwan
+
+  - years: 2022-2027
+    members:
+      - img: "./img/politburo-members/---.png"
+        name: ???
+        cn: "–"
+        role: ???
+      - img: "./img/politburo-members/---.png"
+        name: ???
+        cn: "–"
+        role: ???
+      - img: "./img/politburo-members/---.png"
+        name: ???
+        cn: "–"
+        role: ???
+      - img: "./img/politburo-members/---.png"
+        name: ???
+        cn: "–"
+        role: ???
+      - img: "./img/politburo-members/---.png"
+        name: ???
+        cn: "–"
+        role: ???
+      - img: "./img/politburo-members/---.png"
+        name: ???
+        cn: "–"
+        role: ???
+      - img: "./img/politburo-members/---.png"
+        name: ???
+        cn: "–"
+        role: ???
+
+centralCommittee:
+  - Top party and government officials
+  - Senior military leaders
+  - Judges
+  - Academics
+  - Heads of women’s and trade union bodies
+
+roles:
+  - role: Party Secretary Xi
+    area: Party
+    img: ./img/roles/party-secretary-xi.jpg
+  - role: Chairman Xi
+    area: Military
+    img: ./img/roles/chairman-xi.jpg
+  - role: President Xi
+    area: State
+    img: ./img/roles/president-xi.jpg
+
+leaders:
+  - name: Mao Zedong
+    years: 1949–1975
+    img: ./img/leaders/mao-zedong.jpg
+  - name: Deng Xiaoping
+    years: 1978–1992
+    img: ./img/leaders/deng-xiaoping.jpg
+  - name: Jiang Zemin
+    years: 1989–2002
+    img: ./img/leaders/jiang-zemin.jpg
+  - name: Hu Jintao
+    years: 2002–2012
+    img: ./img/leaders/hu-jintao.jpg
+  - name: Xi Jinping
+    years: 2012–???
+    img: ./img/leaders/xi-jinping.jpg
+
+centralMilitaryCommission:
+  - name: Xu Qiliang
+    role: Vice Chairman
+    img: ./img/politburo-members/xu-qiliang.jpg
+  - name: Xi Jinping
+    role: Chairman
+    img: ./img/politburo-members/xi-jinping.jpg
+    class: member-xi
+  - name: Zhang Youxia
+    role: Vice Chairman
+    img: ./img/politburo-members/zhang-youxia.jpg
+
+politburoMembers:
+  - Top foreign policy officials
+  - Leaders of four cities* and Guangdong province
+  - Rural policy and legal system heads
+  - Top leader’s chief of staff

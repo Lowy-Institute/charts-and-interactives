@@ -1,0 +1,29 @@
+for slide in page.data.politburo
+  - const length = ~~(slide.members.length / 2)
+  .slide.bg-dk.txt-ff
+    .slide-inner(data-view="in-viewport")
+      .type.txt-lg.txt-left(
+        data-view="type, in-viewport"
+        data-duration=1200
+        data-underline=[{row:0, start:0, end:28}]
+        style="margin: auto"
+      )
+        span.line.txt-mono Politburo Standing Committee, 
+          = slide.years
+      
+      .flex-ch.txt-center.pv-lg
+        for member, i in slide.members
+          .member.fade-in(
+            class=[
+              "delay-" + (2 * (length - Math.abs(i - length)) + 3),
+              member.class
+            ]
+          )
+            img(data-src=member.img)
+            .txt-sm
+              .member-name.bg-dk.txt-ff.pv-xs
+                .txt-mono= member.name
+
+            .member-role.pv-xs
+              .txt-cn.txt-muted.pv-xs= member.cn
+              .pv-xs!= member.role

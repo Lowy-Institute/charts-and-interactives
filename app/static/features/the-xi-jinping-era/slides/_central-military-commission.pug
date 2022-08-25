@@ -1,0 +1,34 @@
+.slide.bg-dk.txt-ff
+  .slide-inner.txt-mono.flex.flex-col.flex-ch(data-view="in-viewport")
+    .type.txt-lg.txt-ff.mx-auto(
+        data-view="type, in-viewport"
+        data-duration=1200
+      )
+        span.line.bg-hl Central Military Commission
+
+    .flex-ch.mx-auto.txt-center
+      for item, i in page.data.centralMilitaryCommission
+        - const length = 2
+
+        .member.fade-in(
+          style="margin: 0 12px; padding: 0"
+          class=[
+            item.class,
+            "delay-" + (2 * (length - Math.abs(i - length)) + 3),
+          ]
+        )
+
+          .posr
+            img(
+              data-src=item.img
+              width=200
+            )
+
+          .pv-sm.bg-dk
+            .type.mx-auto.pv-xs.txt-sm(
+              data-view="type, in-viewport"
+              data-duration=800
+              data-delay=(300 + 500 * i)
+            )
+              span.line= item.name
+              span.line.txt-muted= item.role

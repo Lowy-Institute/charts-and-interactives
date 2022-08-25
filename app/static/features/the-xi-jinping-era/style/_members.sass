@@ -1,0 +1,14 @@
+.member
+  flex: 1 1 100%
+  padding: 0 2px
+
+  .bg-dk
+    background: lighten($color-dk, 8)
+
+  .visible &
+    &.member-xi
+      transform: translateY(-20px)
+
+.member-role
+  height: 148px
+  background: linear-gradient(to bottom, lighten($color-dk, 4), $color-dk)

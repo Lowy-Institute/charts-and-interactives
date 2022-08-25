@@ -1,0 +1,23 @@
+.slide.bg-dk.txt-ff
+  .slide-inner.flex(data-view="in-viewport")
+    .flex-ch.mx-auto.txt-center.txt-mono.txt-md
+      for item, i in page.data.roles
+        .member.bg-hl.fade-in(
+          style="margin: 0 12px; padding: 0"
+          class=("delay-" + (i))
+        )
+          .posr.bg-dka
+            .fade-in(
+              class=("delay-" + (5 + 3 * i))
+            )
+              img(data-src=item.img.replace("roles", "illustration"))
+
+          .pv-sm
+            .mx-auto.pv-xs= item.area
+
+            .type.mx-auto.pv-xs(
+              data-view="type, in-viewport"
+              data-duration=800
+              data-delay=(1000 + 300 * i)
+            )
+              span.line.txt-sm.txt-dk= item.role

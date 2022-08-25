@@ -1,0 +1,86 @@
+.bg-hl
+  background: $color-hl
+.bg-dk
+  background: $color-dk
+.bg-ff
+  background: #fff
+.bg-bk
+  background: #000
+.bg-lt
+  background: $color-lt
+.bg-dka
+  background: rgba($color-dk, 0.2)
+.bg-lta
+  background: rgba(#fff, 0.2)
+
+.txt-hl
+  color: $color-hl
+.txt-dk
+  color: $color-dk
+.txt-ff
+  color: #fff
+.txt-mid
+  color: $color-mid
+.txt-muted
+  color: $color-muted
+.txt-dk-mid
+  color: $color-dk-mid
+
+.fill-no
+  fill: none
+.fill-hl
+  fill: $color-hl
+.fill-dk
+  fill: $color-dk
+.fill-ff
+  fill: #fff
+.fill-lt
+  fill: $color-lt
+.fill-a
+  fill-opacity: 0.2
+.fill-dka
+  fill: #8b8b96
+.stroke
+  stroke: #fff
+  vector-effect: non-scaling-stroke
+
+.mask-l
+  fill: url(#mask-l)
+.mask-r
+  fill: url(#mask-r)
+.mask-t
+  fill: url(#mask-t)
+.mask-b
+  fill: url(#mask-b)
+
+.fill-v
+  fill: url(#fade-v)
+.fill-h
+  fill: url(#fade-h)
+.stroke-v
+  fill: none
+  stroke: url(#fade-v)
+.stroke-h
+  fill: none
+  stroke: url(#fade-h)
+.fade
+  opacity: 0.25
+.line
+  fill: none
+  vector-effect: non-scaling-stroke
+
+  &.dashed
+    stroke-dasharray: 864 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+
+  &.cn,
+  &.ussr
+    stroke: $color-hl
+    stroke-dashoffset: 40
+  &.us,
+  &.other
+    stroke: #fff
+    stroke-dashoffset: 44
+  &.ussr
+    stroke-dashoffset: 0
+  &.other
+    opacity: 0.5

@@ -1,0 +1,44 @@
+@media print
+  html, body
+    display: block
+    overflow: visible
+    height: auto
+
+  #scroller
+    display: block
+    height: auto !important
+
+  .slide.hidden
+    display: flex !important
+
+  .fade-in,
+  .line,
+  .line .mask,
+  .line .line-bg,
+  .bar-bg, .bar-label, .bar-value,
+  .block:before,
+  .block-row:before,
+  .item-0,
+  .undo
+    opacity: 1 !important
+    transition: none !important
+
+  .line .mask,
+  .line .line-bg
+    width: auto !important
+
+  .block:before,
+  .block-row:before,
+  .line .mask,
+  .line .line-bg,
+  .bar-bg, .bar-value,
+  .undo
+    transform: translateZ(0) !important
+
+  .line:after
+    content: attr(data-text)
+
+  #controls,
+  body:before,
+  .char
+    display: none

@@ -1,0 +1,49 @@
+extend /partials/layout
+
+block append config
+  - page.includeFonts = false
+  - page.title = "The Xi Jinping Era"
+  - page.robots = "noindex, nofollow"
+  - page.slides = 18
+
+  style
+    :sass
+      .box
+        flex-basis: 25%
+        box-sizing: border-box
+      .box-inner
+        line-height: 120px
+
+block page
+  #controls.p-xs.txt-ff
+    #pager-progress
+      span#pager-index 1
+      span#pager-total &ensp;/&ensp;#{page.slides}
+    #btn-prev.btn.icon.icon-up
+    #btn-next.btn.icon.icon-down
+    #btn-fs.btn.icon.icon-expand
+
+  #scroller.bg-dk(
+    data-view="scroller"
+    data-pager=".pager-page"
+    data-index="#pager-index"
+    style="display: none"
+  )
+    div(style=`height: ${page.slides * 100}%`)
+      include _slides
+
+block customScripts
+  script(type="text/javascript")
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/type.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/slide.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/line.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/bars.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/page.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/video.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/scroller.coffee
+
+  link(href="https://use.typekit.net/hdu4qmq.css" rel="stylesheet")
+
+block append css
+  style
+      include:sass _style.sass

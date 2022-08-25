@@ -80,12 +80,10 @@ require.register "views/scroller", (exports, require, module) ->
         @el.scrollTo top: (index + 1) * height, behavior: 'auto'
 
     onPrev: ->
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      @scrollTo(index - 1)
+      @$el.trigger({ type: "keydown", keyCode: 38 })
 
     onNext: ->
-      index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      @scrollTo(index + 1)
+      @$el.trigger({ type: "keydown", keyCode: 40 })
 
     scrollTo: (i) ->
       @$el.addClass("scrolling")

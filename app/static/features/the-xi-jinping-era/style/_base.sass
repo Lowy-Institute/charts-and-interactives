@@ -1,0 +1,138 @@
+html, body
+  height: 100%
+  overflow: hidden !important
+
+body
+  font-family: Semi, sans-serif
+  background: $color-dk
+
+::-webkit-scrollbar
+  display: none
+
+svg, symbol
+  overflow: visible
+
+cite
+  display: block
+
+#scroller
+  overflow: auto
+  height: 100%
+  scroll-snap-type: y mandatory
+  position: relative
+  &.scrolling
+    scroll-behavior: initial
+    scroll-snap-type: initial
+
+.txt-mono
+  font-family: calling-code, monospace
+  font-weight: 400
+  font-style: normal
+
+.txt-sans
+  font-family: Sans, sans-serif
+  font-size: 16px
+
+  &.txt-tu
+    letter-spacing: 0.1em
+    line-height: 1.2
+
+.txt-sc
+  font-family: "PingFang SC", sans-serif
+  font-weight: 500
+  font-size: 87.5%
+  letter-spacing: 0.09em
+
+strong.txt-sans
+  font-weight: 600
+
+.txt-center .line
+  margin-left: auto
+  margin-right: auto
+
+.mx-auto
+  margin: auto
+
+.txt-xl
+  font-size: 80px
+  line-height: 1
+.txt-lg
+  font-size: 48px
+.txt-md
+  font-size: 32px
+
+h4, .txt-sm, small
+  font-size: 18px
+  letter-spacing: 0.03em
+.txt-xs
+  font-size: 13px
+
+.txt-bold
+  font-weight: 600
+
+.l0
+  left: 0
+.r0
+  right: 0
+
+.posa
+  position: absolute
+
+.posr
+  position: relative
+  overflow: hidden
+
+.z1
+  z-index: 1
+
+.fh
+  height: 100%
+
+.fw
+  width: 100%
+
+.video-title
+  opacity: 0
+  transition: all 600ms
+
+  video.paused + &
+    opacity: 1
+
+video
+  transition: all 600ms
+
+  &.paused
+    opacity: 0.5
+
+.month-label
+  height: 10px
+  border-left: 2px solid
+  border-top: 2px solid
+  position: relative
+
+  .month:last-child &
+    border-right: 2px solid
+
+.year-label
+  height: 18px
+  margin-bottom: -14px
+  padding-top: 6px
+
+.bg-mid
+  background: $color-mid
+
+// Paged content
+$list1: ".item"
+$list2: ".item"
+
+@for $i from 0 through 10
+  $list1: "#{$list1}, .item-#{$i}"
+  $list2: "#{$list2}, .page-#{$i} .item-#{$i}"
+
+#{$list1}
+  opacity: 0
+  transition-property: opacity
+  transition-duration: 600ms
+
+#{$list2}
+  opacity: 1

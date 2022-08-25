@@ -1,0 +1,50 @@
+.slide.bg-dk
+  .slide-inner(
+    data-view="in-viewport, page"
+    data-pages=2
+  )
+    .txt-center.txt-mono(style="margin-top: 80px")
+      .type.pv-md.txt-xl.txt-ff.mx-auto(
+        data-view="type, in-viewport"
+        data-duration=1200
+      )
+        span.line.bg-hl Politburo
+
+      .fw.posa.txt-md.txt-dk.fade-in(
+        data-attributes=[
+          {style: ""},
+          {style:"opacity: 0;"}
+        ]
+      )
+        .type.mx-auto(
+            data-view="in-viewport, type"
+            data-duration=2400
+            data-delay=800
+          )
+            span.line.ph-sm.bg-ff
+              | 25 members form the party elite.
+            span.line.ph-sm.bg-ff
+              | No appointments over 64.
+            span.line.ph-sm.bg-ff
+              | Military and security officials
+            span.line.ph-sm.bg-ff
+              | capped at three positions.
+
+      .fw.posa.txt-md.txt-dk
+        for item, i in page.data.politburoMembers
+          .fade-in.line.bg-ff.ph-sm(
+            data-attributes=[
+              {style: "transform: translate3d(0, 40px, 0); opacity: 0;"},
+              {style: `transition-delay: ${200 * i}ms`}
+            ]
+          )
+            .line-bg
+            = item
+
+        .fade-in.txt-muted.txt-sm.pv-md(
+          data-attributes=[
+            {style: "opacity: 0;"},
+            {style: "transition-delay: 800ms"},          
+          ]
+        )
+          | * Shanghai, Chongqing, Tianjin, Beijing
