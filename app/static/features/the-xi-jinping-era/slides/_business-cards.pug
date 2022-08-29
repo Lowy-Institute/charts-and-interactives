@@ -1,0 +1,77 @@
+.slide.bg-dk.txt-center
+  .posr.flex.flex-ch.flex-wrap(data-view="in-viewport")
+    for card, i in page.data.cards
+      .bcard.txt-dk.p-sm.fade-in.flex-ch.flex-col(
+        class=[
+          "delay-" + (i * 2),
+          ["bg-ff", "bg-lt"][i % 2]
+        ]
+        style={
+          transform: `translateZ(0) rotate(${4 + (-2 + (i % 4)) * 8}deg) scale(0.9)`
+        }
+      )
+        .card-org
+          .txt-xs= card.org
+          .txt-sm= card.org_cn
+        
+        if i % 4 === 3
+          hr
+
+        .card-title.pv-sm
+          if i % 3 === 0
+            .txt-md.txt-mono Xi Jinping 习近平
+          else
+            .txt-lg.txt-mono 习近平
+            .txt-md.txt-mono Xi Jinping
+        
+        .card-role.txt-sm.txt-mono
+          if i === 0
+            != [card.role, card.role_cn].join("<br>")
+          else
+            != [card.role, card.role_cn].join("&emsp;")
+
+style
+  :sass
+    .bcard
+      width: 420px
+      height: 240px
+      margin: -20px
+      box-shadow: 0 0 24px #22273d30
+      border: 1px solid #fff8
+      transition-duration: 600ms !important
+      justify-content: space-around
+
+      [data-view="in-viewport"]:not(.visible) &
+        transform: translate3d(0, 80px, 0) !important
+
+      .card-org
+        line-height: 24px
+
+      .card-title
+        line-height: 36px
+
+      hr
+        border-bottom: 2px solid #93a8b6
+        margin: 12px 0
+        width: 100%
+
+      &:nth-child(8n + 1)
+        .card-role
+          border-top: 1px solid red
+          margin-bottom: -8px
+          padding-top: 16px
+
+      &:nth-child(6n + 1)
+        text-align: left
+        align-items: flex-start
+        padding-left: 40px
+
+      &:nth-child(7)
+        .card-title
+          border-top: 1px solid #72798f
+          border-bottom: 1px solid #72798f
+          padding: 24px 0
+          
+      .txt-xs
+        font-size: 14px
+        letter-spacing: 0.01em

@@ -171,3 +171,53 @@ politburoMembers:
   - Leaders of four cities* and Guangdong province
   - Rural policy and legal system heads
   - Top leader’s chief of staff
+
+cards:
+  - org: CCP Central Committee
+    role_cn: 中国共产党中央委员会总书记
+    role: General Secretary
+
+  - org: Central National Security Commission
+    org_cn: 中央国家安全委员会
+    role: Chairman
+    role_cn: 主席
+    new: true
+
+  - org: People’s Republic of China
+    org_cn: 中华人民共和国
+    role: President
+    role_cn: 国家主席
+
+  - org: Central Leading Small Group for Comprehensively Deepening Reform
+    org_cn: 中央全面深化改革领导小组
+    role: Group Leader
+    role_cn: 组长
+    new: true
+
+  - org: CMC Joint Battle Command Centre
+    org_cn: 中央军委联合作战指挥中心
+    role: Commander-in-Chief
+    role_cn: 总指挥
+    new: true
+
+  - org: Central Finance and Economy Leading Small Group
+    org_cn: 中央财经领导小组
+    role: Group Leader
+    role_cn: 组长
+
+  - org: Central Cybersecurity and Informatisation Leading Small Group
+    org_cn: 中央网络安全和信息化领导小组
+    role: Group Leader
+    role_cn: 组长
+    new: true
+
+  - org: CCP Central Military Commission
+    org_cn: 中国共产党中央军事委员会
+    role: Chairman
+    role_cn: 主席
+
+  - org: CMC National Defence and Military Reform Leading Small Group
+    org_cn: 中央军委深化国防和军队改革领导小组
+    role: Group Leader
+    role_cn: 组长
+    new: true
