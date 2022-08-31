@@ -24,7 +24,7 @@ block page
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
-        
+
           // Y-Axis labels
           svg(height="100%")
             - let steps = chart.axes.stepsY-1
@@ -304,10 +304,9 @@ block append css
         display: block
 
       g.target:nth-child(even) circle
-        background-image: url(https://alexsobolenko.github.io/flag-icons/flags/4x3/chn.svg)
-        fill: #539ed4
-      g.target:nth-child(odd) circle
         fill: #ff4050
+      g.target:nth-child(odd) circle
+        fill: #539ed4
 
       @media (max-width: 700px)
         
