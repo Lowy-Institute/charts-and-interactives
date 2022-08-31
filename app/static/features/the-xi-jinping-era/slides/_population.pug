@@ -1,38 +1,43 @@
 - const map = data.getOne("static/features/chinas-communist-party-under-xi-jinping/data/provinces")
 
 .slide.bg-dk.flex
-  .flex-cv.flex-grow.posr(data-view="in-viewport")
-    .posa.fw.fh
-      include /features/chinas-communist-party-under-xi-jinping/img/china.svg
-      
-      svg.mx-auto(
-        width="954"
-        height="720"
-        stroke="#3f4457"
-        fill="#585d6d"
-        viewBox="60 48 848 640"
-        font-size="12px"
-      )
-        for province, i in map.provinces
-          g.fade-in(
-            class="delay-" + ~~(i / 3)
-          )
-            use.fill-no(
-              href="#" + province.id
-            )
-          
-            text.txt-mono(
-              x=province.x
-              y=province.y + 4
-              text-anchor="middle"
-              stroke="none"
-            )
-              = province.name
+  .posr.fw.fh.flex-cv(data-view="in-viewport")
+    img.fade-in.posa.fw.fh(data-src="./img/background/population.jpg")
 
-    .slide-inner.flex-cv
-      .type.txt-xl.txt-ff.txt-center.mx-auto(
-        data-view="type, in-viewport"
-        data-duration=1200
-        data-underline=[{row:0,start:0,end:15}]
-      )
-        span.line.txt-mono 1.4 billion
+    .flex-cv.flex-grow.posr
+      .posa.fw.fh
+        include /features/chinas-communist-party-under-xi-jinping/img/china.svg
+        
+        svg.mx-auto(
+          width="954"
+          height="720"
+          stroke="#f7434c88"
+          fill="#22273d88"
+          viewBox="60 48 848 640"
+          font-size="12px"
+        )
+          for province, i in map.provinces
+            g.fade-in(
+              class="delay-" + ~~(i / 3)
+            )
+              use(
+                href="#" + province.id
+              )
+
+              text.txt-mono(
+                x=province.x
+                y=province.y + 4
+                text-anchor="middle"
+                stroke="none"
+                fill="#f7434c88"
+              )
+                = province.name
+
+      .slide-inner.flex-cv
+        .type.txt-xl.txt-ff.txt-center.mx-auto(
+          data-view="type, in-viewport"
+          data-duration=1200
+          _data-underline=[{row:1,start:0,end:15}]
+        )
+          span.line.txt-mono.txt-md.bg-dk Population
+          span.line.txt-mono.bg-hl 1.4 billion
