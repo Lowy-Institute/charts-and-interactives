@@ -48,3 +48,6 @@ https://share.s-ings.com/lowy/the-xi-jinping-era-assets.zip
 
 Username: lowy
 Password: 31bligh
+
+Note that the PSD for the first slide doesn't exactily match the image used.
+I made edits to make this image better resemble Xi, but those edits were lost.
