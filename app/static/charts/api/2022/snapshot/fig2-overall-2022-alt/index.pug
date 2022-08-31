@@ -1,0 +1,333 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/api/2022/snapshot/fig2-overall-2022/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0.6) / (ln + 0.25)
+        - fy = (y) => (y - minY) / range
+        
+        svg(height="100%" width="100%")
+          defs
+            pattern(id="pattern-usa" patternUnits="objectBoundingBox" width="16" height="16")
+              image(xlink:href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='flag-icon-css-us' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cg%3E%3Cpath d='M0,0H640V36.94H0V0ZM0,73.88H640v36.94H0v-36.94Zm0,73.78H640v37.03H0v-37.03Zm0,73.88H640v36.94H0v-36.94Zm0,73.88H640v36.94H0v-36.94Zm0,73.78H640v36.94H0v-36.94Zm0,73.87H640v36.94H0v-36.94Z' style='fill:%23bd3d44; fill-rule:evenodd;'/%3E%3Cpath d='M0,36.94H640v36.94H0V36.94ZM0,110.81H640v36.84H0v-36.84Zm0,73.78H640v36.94H0v-36.94Zm0,73.88H640v36.94H0v-36.94Zm0,73.87H640v36.94H0v-36.94Zm0,73.78H640v36.94H0v-36.94Z' style='fill:%23fff; fill-rule:evenodd;'/%3E%3C/g%3E%3Cpath d='M0,0H364.78V258.47H0V0Z' style='fill:%23192f5d; fill-rule:evenodd;'/%3E%3Cpath d='M30.38,11.06l3.37,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.37-8.63,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.37-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.59l-8.62,6.28,3.28,10.31-8.72-6.37-8.62,6.28,3.28-10.22-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.37-8.72,6.28,3.38-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.37-8.63,6.28,3.28-10.22-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.37-8.72,6.28,3.38-10.22-8.72-6.28h10.78l3.28-10.22ZM60.84,36.94l3.28,10.22h10.78l-8.72,6.28,3.19,10.22-8.44-6.28-8.72,6.28,3.09-10.22-8.44-6.28h10.69l3.28-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.22-8.72-6.28-8.72,6.28,3.37-10.22-8.72-6.28h10.78l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.28-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.22-8.72-6.28-8.62,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.63-6.28-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.38-10.22ZM30.38,62.72l3.37,10.41h10.69l-8.63,6.28,3.28,10.22-8.72-6.38-8.63,6.38,3.28-10.31-8.72-6.28h10.87l3.19-10.31Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.28,10.22-8.62-6.38-8.72,6.38,3.28-10.31-8.62-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.31h10.59l-8.62,6.28,3.28,10.22-8.72-6.38-8.62,6.38,3.28-10.31-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.22-8.72-6.38-8.72,6.38,3.38-10.31-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.31h10.69l-8.63,6.28,3.28,10.22-8.72-6.38-8.63,6.38,3.28-10.31-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.22-8.72-6.38-8.72,6.38,3.38-10.31-8.72-6.28h10.78l3.28-10.22ZM60.84,88.59l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.37-10.22-8.72-6.28h10.78l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.62,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.63-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.38-10.22ZM30.38,114.47l3.37,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.63,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.28-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.59l-8.62,6.28,3.28,10.31-8.72-6.38-8.62,6.28,3.28-10.22-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.38-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.63,6.28,3.28-10.22-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.38-10.22-8.72-6.28h10.78l3.28-10.22ZM60.84,140.34l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.38-8.72,6.38,3.28-10.31-8.63-6.28h10.69l3.37-10.12Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.22-8.72-6.38-8.72,6.38,3.37-10.31-8.72-6.28h10.78l3.28-10.12Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.38-8.72,6.38,3.28-10.31-8.62-6.28h10.69l3.38-10.12Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.22-8.72-6.38-8.62,6.38,3.28-10.31-8.72-6.28h10.87l3.19-10.12Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.63-6.38-8.72,6.38,3.28-10.31-8.63-6.28h10.69l3.38-10.12ZM30.38,166.12l3.37,10.31h10.69l-8.63,6.28,3.28,10.13-8.72-6.28-8.63,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.37,10.13-8.72-6.28-8.72,6.28,3.37-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.31h10.59l-8.62,6.28,3.28,10.13-8.72-6.28-8.62,6.28,3.28-10.22-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.13-8.72-6.28-8.72,6.28,3.38-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.31h10.69l-8.63,6.28,3.28,10.13-8.72-6.28-8.63,6.28,3.28-10.22-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.13-8.72-6.28-8.72,6.28,3.38-10.22-8.72-6.28h10.78l3.28-10.22ZM60.84,192l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.37-10.22-8.72-6.28h10.78l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.62,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.63-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.38-10.22ZM30.38,217.87l3.37,10.22h10.69l-8.63,6.28,3.28,10.22-8.72-6.28-8.63,6.28,3.28-10.31-8.72-6.28h10.87l3.19-10.13Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.37,10.22-8.72-6.28-8.72,6.28,3.37-10.31-8.72-6.28h10.69l3.38-10.13Zm60.75,0l3.38,10.22h10.59l-8.44,6.28,3.28,10.22-8.72-6.28-8.62,6.28,3.28-10.31-8.72-6.28h10.78l3.19-10.13Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.22-8.72-6.28-8.72,6.28,3.38-10.31-8.72-6.28h10.69l3.38-10.13Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.22-8.72-6.28-8.63,6.28,3.28-10.31-8.63-6.28h10.69l3.28-10.13Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.22-8.72-6.28-8.72,6.28,3.38-10.31-8.72-6.28h10.78l3.28-10.13Z' style='fill:%23fff; fill-rule:evenodd;'/%3E%3C/svg%3E" x="-5" y="0" width="24" height="16")
+            pattern(id="pattern-chn" patternUnits="objectBoundingBox" width="16" height="16")
+              image(xlink:href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='flag-icon-css-cn' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath d='M0,0H640V480H0V0Z' style='fill:%23de2910;'/%3E%3Cpolygon points='147.09 129.27 163.2 177.6 120 147.9 111.94 153.44 76.8 177.6 85.89 150.33 92.91 129.27 48 98.4 103.2 98.4 120 48 136.8 98.4 192 98.4 147.09 129.27' style='fill:%23ffde00;'/%3E%3Cpath id='a' d='M264.17,50.48l-44.46,9.85,29.65-34.56-2.91,46.51-24.67-41.17,42.38,19.37Z' style='fill:%23ffde00;'/%3E%3Cpath id='a-2' d='M309.04,107.35l-44.8-8.16,40.74-20.35-20.72,41.74-6.77-47.52,31.55,34.29Z' style='fill:%23ffde00;'/%3E%3Cpath id='a-3' d='M302.5,187.12l-37.57-25.72,45.49-1.97-35.94,29.66,13.2-46.15,14.82,44.18Z' style='fill:%23ffde00;'/%3E%3Cpath id='a-4' d='M245.99,239.24l-24.72-38.24,42.72,15.76-44.61,13.48,30-37.47-3.39,46.48Z' style='fill:%23ffde00;'/%3E%3C/svg%3E" x="-2" y="0" width="24" height="16")
+
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg.y-label(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = (minY + range*(i/steps) + (axes.percentage ? "%" : ""))
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+              line.tt-line(x1="5.33%" y1="0%" x2="5.33%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="14.22%" y1="0%" x2="14.22%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="23.11%" y1="0%" x2="23.11%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="32%" y1="0%" x2="32%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="40.89%" y1="0%" x2="40.89%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="49.78%" y1="0%" x2="49.78%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="58.67%" y1="0%" x2="58.67%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="67.56%" y1="0%" x2="67.56%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="76.44%" y1="0%" x2="76.44%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="85.33%" y1="0%" x2="85.33%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+              line.tt-line(x1="94.22%" y1="0%" x2="94.22%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
+            
+
+          // X-Axis labels
+          for x, i in chart.series[0].values
+            svg.x-label(x=toPercent(fx(i)) y="100%")
+              text(
+                text-anchor=axes.rotateX ? "end" : "middle"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 24)" : "translate(0 20)"
+              )=x
+              
+          // OPTIONAL GUIDE LINE
+          if !isEmpty(axes.guideLine)
+            - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
+            line(
+              x1="0" y1=y x2="100" y2=y
+              stroke="#333"
+              stroke-width=.25
+              stroke-dasharray=(false ? 1 : "")
+            )
+
+          // CHART LINES
+          svg(
+            height="100%"
+            width="100%"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            )
+
+            // SERIES LINES
+            //for item, i in chart.series
+              if i
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[chart.series[i].color]
+                  stroke-dasharray=(item.dashed ? 10 : "")
+                  stroke-width=(item.widen ? 6 : 3)
+                  stroke-linejoin=(item.dashed ? "": "round")
+                  stroke-linecap=(item.dashed ? "": "round")
+                  points=(item.values.map( (y, ix) => {
+                    return isEmpty(y) ? "" : [
+                      100 * fx(ix),
+                      100 * fy(maxY + minY - y)
+                    ].join(" ");
+                  })).join(",")
+                )
+
+          g
+            line.tt-line(x1="5.33%" y1="63.00%" x2="5.33%" y2="37.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="14.22%" y1="69.00%" x2="14.22%" y2="31.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="23.11%" y1="60.00%" x2="23.11%" y2="40.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="32%" y1="71.00%" x2="32%" y2="29.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="40.89%" y1="63.00%" x2="40.89%" y2="37.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="49.78%" y1="66.00%" x2="49.78%" y2="34.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="58.67%" y1="52.00%" x2="58.67%" y2="48.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="67.56%" y1="49.00%" x2="67.56%" y2="51.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="76.44%" y1="53.00%" x2="76.44%" y2="47.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="85.33%" y1="53.00%" x2="85.33%" y2="47.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+            line.tt-line(x1="94.22%" y1="46.00%" x2="94.22%" y2="54.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
+
+          for item, i in chart.series
+            g.target
+              for val, ix in item.values
+                if i !== 0
+                  circle(
+                    r=8
+                    cx=toPercent(fx(ix))
+                    cy=toPercent(fy(maxY + minY - val))
+                    stroke='#fff'
+                    stroke-width=0
+                  )
+                svg.chart-value(
+                  x=toPercent(fx(ix))
+                  y=toPercent(fy(maxY + minY - val))
+                  style=`color: ${chart.colors[chart.series[i].color]}`
+                )
+                  if i !== 0
+                    text(
+                      y=(5)
+                      x=(24)
+                      text-anchor="middle"
+                      fill=chart.colors[chart.series[i].color]
+                    )
+                      = val
+      
+      //.row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+      p 
+        br
+        br
+      .chart-source.txt-left.txt-muted!= chart.source
+      //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nLegendItems = 2;
+    const nSeries = 3;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.x-label');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let val = vals[i].innerHTML;
+        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
+        let cat = legendItems[i % nLegendItems].innerHTML;
+        let box = el.getBoundingClientRect();
+        
+        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+        max-width: 1062px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 50px
+        right: 20px
+        bottom: 40px
+
+      .chart-content > svg
+        border-bottom: 1px solid #bbb
+
+      .chart-title
+        margin: auto
+        font-size: 20px
+        color: #002b45
+        font-weight: 600
+        
+      .chart-subtitle
+        font-weight: normal
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-top: 1.5em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-left: 3em
+        font-size: 15px
+        
+      .chart-value
+        opacity: 1
+        transition-duration: .4s
+        pointer-events: auto
+      
+      /*.chart-content:hover .chart-value
+      /*  opacity: 0
+
+      .txt-muted
+        color: #767676
+
+      .y-label 
+        display: none  
+      .y-label:nth-child(odd)
+        display: block
+
+      g.target:nth-child(even) circle
+        fill: url(#pattern-chn)
+      g.target:nth-child(odd) circle
+        fill: url(#pattern-usa)
+
+      @media (max-width: 700px)
+        
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 40px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
