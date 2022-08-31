@@ -4,11 +4,25 @@
     data-pages=2
   )
     .txt-center.txt-mono(style="margin-top: 80px")
-      .type.pv-md.txt-xl.txt-ff.mx-auto(
-        data-view="type, in-viewport"
-        data-duration=1200
+      .fade-in(
+        data-attributes=[
+          {style: ""},
+          {style:"opacity: 0;"}
+        ]
       )
-        span.line.bg-hl Politburo
+        .type.pv-md.txt-xl.txt-ff.mx-auto.txt-center(
+          data-view="type, in-viewport"
+          data-duration=1200
+        )
+          span.line.bg-hl Politburo
+
+      .fade-in.posa.txt-lg.mx-auto.txt-ff.fw.flex(
+        data-attributes=[
+          {style:"opacity: 0; transform: translate3d(0, -112px, 0)"},
+          {style: "transform: translate3d(0, -152px, 0)"}
+        ]
+      )
+        .bg-hl.mx-auto.ph-sm.pv-xs Members of the Politburo
 
       .fw.posa.txt-md.txt-dk.fade-in(
         data-attributes=[
@@ -30,7 +44,7 @@
             span.line.ph-sm.bg-ff
               | capped at three positions.
 
-      .fw.posa.txt-md.txt-dk
+      .fw.posa.txt-md.txt-dk(style="margin-top: -40px")
         for item, i in page.data.politburoMembers
           .fade-in.line.bg-ff.ph-sm(
             data-attributes=[

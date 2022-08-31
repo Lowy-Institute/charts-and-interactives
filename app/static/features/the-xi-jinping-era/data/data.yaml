@@ -62,10 +62,10 @@ politburo:
         name: Han Zheng
         cn: 韩正
         role: Vice Premier, HK, Macau, Finance, Housing, Environment
-      - img: "./img/politburo-members/li-zhanshu.jpg"
-        name: Li Zhanshu
-        cn: 栗战书
-        role: National People’s Congress
+      - img: "./img/politburo-members/wang-huning.jpg"
+        name: Wang Huning
+        cn: 王沪宁
+        role: Ideology, Party&nbsp;Affairs
       - img: "./img/politburo-members/li-keqiang.jpg"
         name: Li Keqiang
         cn: 李克强
@@ -75,10 +75,10 @@ politburo:
         cn: 习近平
         role: General Secretary of CCP, President of China
         class: member-xi
-      - img: "./img/politburo-members/wang-huning.jpg"
-        name: Wang Huning
-        cn: 王沪宁
-        role: Ideology, Party&nbsp;Affairs
+      - img: "./img/politburo-members/li-zhanshu.jpg"
+        name: Li Zhanshu
+        cn: 栗战书
+        role: National People’s Congress
       - img: "./img/politburo-members/zhao-leji.jpg"
         name: Zhao Leji
         cn: 赵乐际
@@ -168,7 +168,7 @@ centralMilitaryCommission:
 
 politburoMembers:
   - Top foreign policy officials
-  - Leaders of four cities* and Guangdong province
+  - Leaders of four cities* and key provinces
   - Rural policy and legal system heads
   - Top leader’s chief of staff
 

@@ -1,0 +1,51 @@
+.slide.bg-dk.txt-ff
+  .slide-inner.txt-mono.flex.flex-col.flex-ch(data-view="in-viewport")
+    .type.txt-lg.txt-ff.mx-auto(
+        data-view="type, in-viewport"
+        data-duration=1200
+      )
+        span.line.bg-hl The Post-Mao Era
+
+    .flex-ch.mx-auto.txt-center
+      for item, i in page.data.leaders
+        .member(
+          style={
+            "padding": "0",
+            "position": "relative",
+            "margin-left": "12px",
+            "margin-right": i === 0 ? "48px" : "12px",
+          }
+        )
+          .fade-in(
+            class=("delay-" + (2 + i * 3))
+          )
+            img(data-src=item.img)
+
+          .pv-sm.bg-dk.fade-in(
+            class=("delay-" + (i * 3))
+          )
+            .type.mx-auto.pv-xs.txt-sm(
+              data-view="type, in-viewport"
+              data-duration=800
+              data-delay=(300 + 500 * i)
+            )
+              span.line= item.name
+              span.line.txt-muted= item.years
+
+          if i === 0
+            svg.posa.fade-in.delay-3.txt-mid(
+              width="40"
+              height="400"
+              fill="none"
+              stroke="currentColor"
+              style={
+                "top": "50%",
+                "right": "-52px",
+                "margin": "-200px 0",
+                "z-index": 1,
+              }
+            )
+              path(
+                d="M0 0 l40 40 l-40 40 l40 40 l-40 40 l40 40 l-40 40 l40 40 l-40 40 l40 40 l-40 40"
+                stroke-width=8
+              )
