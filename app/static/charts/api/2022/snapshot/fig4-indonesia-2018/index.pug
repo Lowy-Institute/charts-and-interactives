@@ -128,14 +128,14 @@ block page
                     )
                       = val
       
-      //.row
+      .row
         ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
-      br 
+      
       .chart-source.txt-left.txt-muted!= chart.source
       //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
 
@@ -240,7 +240,7 @@ block append css
 
       .legend
         font-size: 15px
-        margin-top: 1.5em
+        margin-top: 2.5em
 
       .legend-item
         margin: 4px 8px 0
@@ -255,6 +255,7 @@ block append css
         height: 1em
         width: 1em
         background: black
+        border-radius: 50%
 
       polyline
         vector-effect: non-scaling-stroke
@@ -267,7 +268,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 3em
+        margin: .5em 0 0 3em
         font-size: 15px
         
       .chart-value
@@ -296,6 +297,9 @@ block append css
         
         text
           font-size: 13px
+
+        .x-label:nth-child(even) text
+          transform: translateY(54px)
           
       @media (max-width: 450px)
         .chart-content
