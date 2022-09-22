@@ -1,0 +1,48 @@
+extend /partials/layout
+
+block append config
+  - page.class = "slide-0"
+  - page.title = "Covid Performance - Lowy Institute"
+  - page.metaTitle = "Covid Performance - Lowy Institute"
+  - page.description = ""
+  - page.url = "https://interactives.lowyinstitute.org/features/covid-performance/"
+  - page.image = "https://interactives.lowyinstitute.org/features/covid-performance/img/thumbnail.png"
+  - page.embed = false
+    
+block page
+  
+  include partials/_nav-list
+  include partials/_header
+  include partials/_social
+  
+  nav
+    +nav-list
+    include partials/_social
+      
+  #scroller.inset-0(
+    data-view="scroller"
+    data-pager=".slide-wrap"
+    data-index="0"
+  )
+    #scroller-inner
+      include slides/_slides
+
+  #modal-wrap: #modal
+    .absolute.btn-down Collapse
+    #modal-inner
+      h3.name.txt-bold Title
+      .text
+
+block append css
+  style: include:sass _style.sass
+
+block append customScripts
+
+  script(type="text/javascript")
+    include:coffee coffee/base.coffee
+    include:coffee coffee/scroller.coffee
+    include:coffee coffee/methods.coffee
+    include:coffee coffee/line.coffee
+    include:coffee coffee/path.coffee
+    include:coffee coffee/data-text.coffee
+    include coffee/choices.js
