@@ -20,6 +20,11 @@ block page
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
+        - rangeY = maxY - minY 
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - rangeX = maxX - minX
+        - stepsX = axes.stepsX
         - fx = (i) => (i + 0.4) / (ln - 0.2)
         - fy = (y) => (y - minY) / range
         
@@ -30,9 +35,11 @@ block page
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
+              - value = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
+              - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
               svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+                text(text-anchor="end" transform="translate(-8 4)")= formatted
+              
             svg(y="50%")
               text.y-label Tonnes
                 
@@ -181,7 +188,7 @@ block append css
         box-sizing: border-box
         
       .y-label
-        transform: rotate(-90deg) translate(-1.5rem, -5rem)
+        transform: rotate(-90deg) translate(-1.5rem, -5.3rem)
 
       li
         list-style: none

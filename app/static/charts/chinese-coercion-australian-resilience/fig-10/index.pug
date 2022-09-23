@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/chinese-coercion-australian-resilience/fig-7/data"
+  - var datapath = "static/charts/chinese-coercion-australian-resilience/fig-10/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -40,9 +40,6 @@ block page
               - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")= formatted
-
-          svg(y="50%")
-            text.y-label Volume (tonnes swt)
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -137,7 +134,7 @@ block page
                     )
                       = val.toLocaleString('en-US')
       
-      .row
+      //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
