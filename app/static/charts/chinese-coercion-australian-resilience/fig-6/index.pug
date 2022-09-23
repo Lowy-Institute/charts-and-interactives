@@ -60,12 +60,12 @@ block page
 
           // X-Axis labels
           for x, i in chart.series[0].values
-            if [2000,2010,2020,2030,2040,2050].includes(x)
-              svg.x-label(x=toPercent(fx(i)) y="100%")
-                text(
-                  text-anchor=axes.rotateX ? "end" : "middle"
-                  transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
-                )=x
+            //if [2000,2010,2020,2030,2040,2050].includes(x)
+            svg.x-label(x=toPercent(fx(i)) y="100%")
+              text(
+                text-anchor=axes.rotateX ? "end" : "middle"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+              )=x
               
           // OPTIONAL GUIDE LINE
           if !isEmpty(axes.guideLine)
@@ -197,7 +197,7 @@ block append css
 
       .legend
         font-size: 15px
-        margin-bottom: .75em
+        margin-top: .75em
         flex-direction: row-reverse
 
       .legend-item
@@ -251,11 +251,23 @@ block append css
       .chart-content:hover circle,
         opacity: 0
 
+      .x-label 
+        display: none  
+      .x-label:nth-child(6n+3)
+        display: block
+
+      .x-label text
+        text-anchor: end
+        transform: rotate(-45deg) translate(-8px, 14px)
+        font-size: 11px
+
+
       @media (max-width: 700px)
-        
-        .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)
+        .x-label
+          display: none  
+          
+        .x-label:nth-child(20n+3)
+          display: block
 
         text
           font-size: 13px
