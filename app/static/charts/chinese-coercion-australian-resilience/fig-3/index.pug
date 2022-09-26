@@ -1,0 +1,160 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/chinese-coercion-australian-resilience/fig-2/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0.6) / (ln + 0.25)
+        - fy = (y) => (y - minY) / range
+        
+        img(src="fig-3.svg")
+
+      
+      //.row
+        ul.legend.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 50px
+        right: 20px
+        bottom: 40px
+
+      .chart-title
+        margin: auto
+        font-size: 20px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 1
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 11px
+        margin-top: 1.5em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+        border-radius: 50%
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 11px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-right: 2em
+        font-size: 14px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+
+      .txt-muted
+        color: #767676
+
+
+      @media (max-width: 700px)
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 24px)
+        
+
+        text
+          font-size: 11px
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 40px
+        .legend
+          /* flex-direction: column */
+        .chart-title
+          font-size: 16px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+
+        .x-label 
+          display: none  
+        .x-label:nth-child(2n+3)
+          display: block
