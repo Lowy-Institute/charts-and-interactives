@@ -28,7 +28,7 @@ block page
                 
                 svg(y=toPercent(y) x="100%")
                   text(text-anchor="start" transform="translate(8 4)")
-                    = "$" + (scale.minY[1] + (i/(scale.ticks[1]-1)) * (scale.maxY[1] - scale.minY[1])).toFixed(0)
+                    = "$" + (scale.minY[1] + (i/(scale.ticks[1]-1)) * (scale.maxY[1] - scale.minY[1])).toFixed(1) + "b"
 
                 svg
                   line(
@@ -47,7 +47,7 @@ block page
                     text-anchor="end"
                     transform="rotate(-45) translate(-5 15)"
                   )
-                    = year
+                    = !((i)%1) || i==chart.axes[0].values.length-1 ? year : ""
 
             svg(
               width="100%"
@@ -90,7 +90,7 @@ block page
         style
           :sass
             .wrapper
-              height: 550px
+              height: 500px
               overflow: visible
               position: relative
       
@@ -109,8 +109,8 @@ block page
               position: absolute
               top: 20px
               bottom: 45px
-              left: 65px
-              right: 35px
+              left: 80px
+              right: 80px
                 
             .chart-content > svg
               border-bottom: 1px solid #ccc
