@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/chinese-coercion-australian-resilience/fig-5/data"
+  - var datapath = "static/charts/chinese-coercion-australian-resilience/fig-11/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -13,7 +13,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.p-sm!= chart.subtitle
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -23,7 +23,7 @@ block page
         - fx = (i) => (i + 0.6) / (ln + 0.25)
         - fy = (y) => (y - minY) / range
         
-        img(src="fig-5.svg")
+        img(src="fig-11.svg")
 
       
       //.row
@@ -43,7 +43,6 @@ block append css
     
       .wrapper
         height: 550px
-        max-width: 600px
 
       .chart
         box-sizing: border-box

@@ -4,7 +4,7 @@ title: >
 subtitle: >
 
 source: >
-  Source: Wine Australia.
+  Source: Wine Australia
 
 notes: >
 
@@ -18,9 +18,9 @@ charts:
       minY: [0,0]
       maxY: [200.000000,1.200000000]
     legend:
-      - name: Volume - Million litres (LHS)
+      - name: 'Volume: Million litres (LHS)'
         scale: 0
-      - name: Value - Billion AUD (RHS)
+      - name: 'Value: Billion AU$ (RHS)'
         scale: 1
     colors:
       - "#002a45"

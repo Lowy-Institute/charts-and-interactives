@@ -1,13 +1,13 @@
 title: >
-  Figure 5: Sources of China’s LNG supply 2020
+  Sources of China’s LNG supply 2020
 source: >
-  Source: China Customs Data.
+  Source: China Customs Data
 
 #notes: >
   #Notes: data points for China are enlarged for emphasis
 
-#subtitle: >
-  #New cases per million
+subtitle: >
+  (Total 67.13 MT)
 
 axes:
   minY:  0
