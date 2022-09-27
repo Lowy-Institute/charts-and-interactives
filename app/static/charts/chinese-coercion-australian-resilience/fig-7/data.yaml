@@ -11,15 +11,16 @@ source: >
   #Subtitle goes here
 
 axes:
-  minY:  0
+  minY:  -50000
   maxY: 450000
-  stepsY: 10
+  stepsY: 11
   rotateX: false
   percentage: false
   minorLines: true
   dotted: [] # Index of dotted gridlines
   reverse: false
   guideLine: null # value of optional horizontal line. set 'null' if disabled
+  datum: 0
 
 series:
   -
@@ -147,24 +148,3 @@ series:
       - 251822
       - 211754
       - 145264
-  -
-    title: China trendline (linear)
-    color: "blue-100"
-    widen: false
-    dashed: true
-    values:
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 210820

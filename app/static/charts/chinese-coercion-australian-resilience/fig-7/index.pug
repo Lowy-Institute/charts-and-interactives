@@ -25,6 +25,7 @@ block page
         - maxX = axes.maxX
         - rangeX = maxX - minX
         - stepsX = axes.stepsX
+        - baseline = (axes.datum + maxY) / range
 
         - fx = (i) => (i + 0.6) / (ln + 0.25)
         - fy = (y) => (y - minY) / range
@@ -69,6 +70,7 @@ block page
                 transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
               )=x
               
+              
           // OPTIONAL GUIDE LINE
           if !isEmpty(axes.guideLine)
             - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
@@ -103,8 +105,8 @@ block page
                     ].join(" ");
                   })).join(",")
                 )
-            line(x1="3.93%" y1="105%"  x2="95.74%" y2="53.15%" stroke="#2D6993" stroke-dasharray="2")
-
+            line(x1="3.93%" y1="95%"  x2="95.74%" y2="48.15%" stroke="#2D6993"  stroke-dasharray="1,6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke")
+            
           for item, i in chart.series
             g
               for val, ix in item.values
@@ -137,7 +139,9 @@ block page
                       fill=chart.colors[chart.series[i].color]
                     )
                       = val.toLocaleString('en-US')
-      
+          //- Add a new baseline, to allow for negative y values  
+          line(x1="0" x2="100%" y1=toPercent(baseline) y2=toPercent(baseline) stroke="#bbb")
+
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
@@ -145,6 +149,9 @@ block page
               li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
+          li.legend-item
+            span.legend-item-box(style=`background: none; border-top: 3px dotted #2D6993; top: 1em;`)
+            span.legend-item-label China trendline (linear)
 
       .chart-source.txt-left.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
@@ -214,7 +221,7 @@ block append css
         bottom: 40px
 
       .chart-content > svg
-        border-bottom: 1px solid #bbb
+       border-bottom: 1px solid #5552 /* recoloured to look like minor line */
 
       .chart-title
         margin: auto
