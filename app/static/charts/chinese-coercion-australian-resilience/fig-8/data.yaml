@@ -14,7 +14,7 @@ charts:
     title: >
       Comparing household and business debt
     scale:
-      ticks: [11,11]
+      ticks: [11,13]
       minY: [0,0]
       maxY: [200.000000,1.200000000]
     legend:
