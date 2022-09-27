@@ -147,3 +147,24 @@ series:
       - 251822
       - 211754
       - 145264
+  -
+    title: China trendline (linear)
+    color: "blue-100"
+    widen: false
+    dashed: true
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 210820
