@@ -109,7 +109,7 @@ block page
             line(x1="3.93%" y1="95%"  x2="95.74%" y2="48.15%" stroke="#2D6993"  stroke-dasharray="1,6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke")
             
           for item, i in chart.series
-            g(id=chart.series[i].title)
+            g
               for val, ix in item.values
                 if i !== 0
                   circle(
@@ -125,6 +125,7 @@ block page
                     x=toPercent(fx(ix))
                     y=toPercent(fy(maxY + minY - val))
                     style=`color: ${chart.colors[chart.series[i].color]}`
+                    class=chart.series[i].title
                   )
                     if false
                       rect(
@@ -162,13 +163,13 @@ block page
   script.
 
     /* --- USER TO UPDATE --- */
-    const enableTooltips = false;
-    const nLegendItems = 4;
+    const enableTooltips = true;
+    const nLegendItems = 6;
     const nSeries = 5;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
-    const rects = document.querySelectorAll('rect');
+    const circle = document.querySelectorAll('circle');
     const vals = document.querySelectorAll('.chart-value');
     const series = document.querySelectorAll('.x-label');
     const tooltip = document.querySelector('.tooltip');
@@ -176,7 +177,7 @@ block page
     
     if (enableTooltips) {
       window.addEventListener('DOMContentLoaded', () => {
-        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+        circle.forEach( (rect, i) => addHoverEventListeners(circle, i) );  
       });
     }
         
@@ -186,7 +187,7 @@ block page
         let val = vals[i].innerHTML;
         let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
         let cat = legendItems[i % nLegendItems].innerHTML;
-        let box = el.getBoundingClientRect();
+        let box = el.getBoundingClientCircle();
         
         tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
@@ -205,7 +206,9 @@ block page
 block append css
   style
     :sass
-    
+      path, polyline
+        vector-effect: non-scaling-stroke
+
       .wrapper
         height: 550px
         max-width: 1062px
