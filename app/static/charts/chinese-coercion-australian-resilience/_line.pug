@@ -87,7 +87,7 @@ mixin svg-line(data, lines)
           g(class=`g${point.field}`)
             circle(cx=(point.x/3 + "%") cy=(point.y + "%") r=4 stroke-width=1 stroke="#fff")
           g.point(class=`g${point.field}`)
-            svg.point-invis(
+            svg(
               width="100%"
               height="100%"
               viewBox="0 0 300 100"
