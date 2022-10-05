@@ -1,0 +1,220 @@
+title: >
+  Percentage of a country’s assessed contributions over all assessed contributions
+
+source: >
+  Source: UN System Chief Executive Board for Coordination.
+
+notes: >
+  Notes: data points for China are enlarged for emphasis
+
+#subtitle: >
+  #New cases per million
+
+axes:
+  minY:  0
+  maxY: 15
+  stepsY: 4
+  rotateX: true
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+  
+  -
+    title: Argentina
+    color: "highlight"
+    widen: false
+    dashed: false
+    classname: ag
+    values:
+      - 0.376356939
+      - 0.343761083
+      - 0.31251321
+      - 0.211678762
+      - 0.236354568
+      - 0.230062697
+      - 0.378753069
+      - 0.494269988
+      - 0.539800075
+      - 0.575499207
+      - 0.588125367
+  -
+    title: Brazil
+    color: "green"
+    widen: false
+    dashed: false
+    classname: br
+    values:
+      - 1.409182158
+      - 1.545711382
+      - 1.634630772
+      - 1.276667065
+      - 1.523920118
+      - 1.486077378
+      - 1.717109442
+      - 2.014361076
+      - 2.102694969
+      - 1.942958649
+      - 1.778956254 
+  -
+    title: India
+    color: "orange"
+    widen: false
+    dashed: false
+    classname: in
+    values:
+      - 0.590631213
+      - 0.621791847
+      - 0.617035575
+      - 0.374376697
+      - 0.387628461
+      - 0.378357225
+      - 0.39599858
+      - 0.416559086
+      - 0.433535226
+      - 0.488938504
+      - 0.520750188
+  -
+    title: Indonesia
+    color: "purple"
+    widen: false
+    dashed: false
+    classname: id
+    values:
+      - 0.242377643
+      - 0.256113696
+      - 0.257510819
+      - 0.172377128
+      - 0.189608316
+      - 0.185110457
+      - 0.227348504
+      - 0.256945152
+      - 0.269616364
+      - 0.29967789
+      - 0.312322637
+  -
+    title: Nigeria
+    color: "pink"
+    widen: false
+    dashed: false
+    classname: ni
+    values:
+      - 0.094475241
+      - 0.101569978
+      - 0.102017698
+      - 0.058343383
+      - 0.057711395
+      - 0.056070479
+      - 0.086508488
+      - 0.113271752
+      - 0.122144863
+      - 0.140926407
+      - 0.152519987 
+  -
+    title: Saudi Arabia
+    color: "lime"
+    widen: false
+    dashed: false
+    classname: sau
+    values:
+      - 0.833953878
+      - 0.852101724
+      - 0.854776611
+      - 0.672259458
+      - 0.671941293
+      - 0.664911087
+      - 0.816788725
+      - 0.983393949
+      - 1.045419388
+      - 1.091543067
+      - 1.102885432 
+  -
+    title: South Africa
+    color: "yellow"
+    widen: false
+    dashed: false
+    classname: sa
+    values:
+      - 0.38047295
+      - 0.394485799
+      - 0.397519697
+      - 0.217378805
+      - 0.205385382
+      - 0.200006298
+      - 0.196889388
+      - 0.210038781
+      - 0.21211181
+      - 0.1948023
+      - 0.179200792
+  -
+    title: Thailand
+    color: "brown"
+    widen: false
+    dashed: false
+    classname: th
+    values:
+      - 0.246980696
+      - 0.249051084
+      - 0.243286692
+      - 0.140576216
+      - 0.141150677
+      - 0.137312517
+      - 0.150593436
+      - 0.165109664
+      - 0.170813385
+      - 0.185910962
+      - 0.193591609
+  -
+    title: United Arab Emirates
+    color: "red-light"
+    widen: false
+    dashed: false
+    classname: uae
+    values:
+      - 0.389402398
+      - 0.412677277
+      - 0.410783226
+      - 0.481162933
+      - 0.570797159
+      - 0.568509401
+      - 0.576797184
+      - 0.584644578
+      - 0.56504736
+      - 0.591797437
+      - 0.59798295 
+  -
+    title: China
+    color: "red"
+    widen: false
+    dashed: false
+    classname: cn
+    values:
+      - 3.043777788
+      - 3.151301813
+      - 3.14500561
+      - 4.770813049
+      - 5.877107302
+      - 5.896079864
+      - 7.5998053
+      - 8.916532964
+      - 8.859033965
+      - 11.20244595
+      - 13.09942391
+

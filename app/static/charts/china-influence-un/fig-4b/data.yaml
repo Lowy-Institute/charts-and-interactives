@@ -1,0 +1,147 @@
+title: >
+  Figure 4: UN Peace and Development Trust Fund approved project budgets by UN agencies
+
+source: >
+  Source: UN Peace and Development Trust Fund
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minX:  0
+  maxX: 13
+  stepsX: 14
+  percentage: false
+  minorLines: true
+  dotted: [1,3,5,7,9,11,13] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020 
+  - 
+    title: CEB
+    color: "teal-300"
+    values:
+      - 0
+      - 0.05
+      - 0
+      - 0
+      - 0
+  - 
+    title: ILO
+    color: "red-200"
+    values:
+      - 0
+      - 0
+      - 0.64
+      - 0
+      - 0
+  - 
+    title: IOM
+    color: "teal-dark"
+    values:
+      - 0.5
+      - 0
+      - 0
+      - 1.23
+      - 0
+  - 
+    title: OHRLLS
+    color: "teal-light"
+    values:
+      - 0
+      - 0.58
+      - 0.78
+      - 0
+      - 0
+  - 
+    title: UNAIDS
+    color: "teal-400"
+    values:
+      - 0
+      - 0.5
+      - 0
+      - 0
+      - 0
+  - 
+    title: UNCTAD
+    color: "teal-500"
+    values:
+      - 0
+      - 0.5
+      - 0.95
+      - 0
+      - 1.07
+  - 
+    title: UNDESA
+    color: "teal-100"
+    values:
+      - 5.23
+      - 3.79
+      - 4.15
+      - 6.01
+      - 3.49
+  - 
+    title: UNDP
+    color: "red-300"
+    values:
+      - .64
+      - 0
+      - 1.12
+      - 0
+      - 1
+  - 
+    title: UNECA
+    color: "teal-200"
+    values:
+      - 0
+      - 0
+      - 0.8
+      - 0
+      - 0
+  - 
+    title: UNESCAP
+    color: "teal-600"
+    values:
+      - 0
+      - 0
+      - 0.85
+      - 0
+      - 0
+  - 
+    title: UNHCR
+    color: "red-500"
+    values:
+      - 1.53
+      - 0
+      - 0
+      - 0
+      - 0
+  - 
+    title: UNODC
+    color: "red-dark"
+    values:
+      - 0
+      - 0
+      - 0
+      - 1.23
+      - 0
+  - 
+    title: WHO
+    color: "red-600"
+    values:
+      - 0
+      - 3
+      - 0
+      - 0
+      - 1.7

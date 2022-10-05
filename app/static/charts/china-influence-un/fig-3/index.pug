@@ -1,0 +1,632 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/china-influence-un/fig-3/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0.6) / (ln + 0.25)
+        - fy = (y) => (y - minY) / range
+        
+        .subtitles
+          .box-sub-left: .chart-subtitle Voluntary core (un-earmarked) contributions
+          .box-sub-right: .chart-subtitle Voluntary non-core (earmarked) contributions
+
+
+        .chart-container(height="100%" width="100%")
+          // CHART 1: fig-7a
+          svg.box-left(height="100%")
+            //-- Y-Axis labels
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 0%
+              svg(y="85.71%")
+                text(text-anchor="end" transform="translate(-8 4)") 5%
+              svg(y="71.43%")
+                text(text-anchor="end" transform="translate(-8 4)") 10%
+              svg(y="57.14%")
+                text(text-anchor="end" transform="translate(-8 4)") 15%
+              svg(y="42.86%")
+                text(text-anchor="end" transform="translate(-8 4)") 20%
+              svg(y="28.57%")
+                text(text-anchor="end" transform="translate(-8 4)") 25%
+              svg(y="14.29%")
+                text(text-anchor="end" transform="translate(-8 4)") 30%
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 35%
+
+            // -- Y-Axis minor lines
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="0%" y2="100%" stroke="#bbb" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="14.29%" x2="100%" y2="14.29%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="28.57%" x2="100%" y2="28.57%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="42.86%" x2="100%" y2="42.86%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="57.14%" x2="100%" y2="57.14%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="71.43%" x2="100%" y2="71.43%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="85.71%" x2="100%" y2="85.71%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="100%" y1="0.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+
+            // X-Axis labels
+            svg(class="x-label" x="5.33%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2010
+            svg(class="x-label" x="14.22%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2011
+            svg(class="x-label" x="23.11%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2012
+            svg(class="x-label" x="32.00%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2013
+            svg(class="x-label" x="40.89%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2014
+            svg(class="x-label" x="49.78%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2015
+            svg(class="x-label" x="58.67%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2016
+            svg(class="x-label" x="67.56%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2017
+            svg(class="x-label" x="76.44%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2018
+            svg(class="x-label" x="85.33%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2019
+            svg(class="x-label" x="94.22%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2020
+
+            // OPTIONAL GUIDE LINE
+            // CHART LINES
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              // SERIES LINES
+              polyline(fill="none" stroke="#16B56F" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 86.15792714,14.222222222222221 82.3404520342857,23.111111111111114 96.48529972857143,32 87.0271762342857,40.888888888888886 93.28970454571429,49.77777777777778 88.14929011428572,58.666666666666664 84.10689817714285,67.55555555555556 88.78434146,76.44444444444444 89.4464460657143,85.33333333333333 91.60923685142858,94.22222222222221 90.52835645714285")
+              polyline(fill="none" stroke="#990f02" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 84.22861752,14.222222222222221 85.31762511142857,23.111111111111114 84.04817523142857,32 78.52665903142858,40.888888888888886 85.6077356,49.77777777777778 81.58033126285714,58.666666666666664 81.83079430857141,67.55555555555556 89.01263938857143,76.44444444444444 89.40460028857143,85.33333333333333 85.75450459714286,94.22222222222221 87.84122534")
+              polyline(fill="none" stroke="#ff8800" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 89.08597984000001,14.222222222222221 89.62419282857142,23.111111111111114 92.56958041428571,32 88.91455651142857,40.888888888888886 86.8426422,49.77777777777778 89.73776898571428,58.666666666666664 86.86209874285714,67.55555555555556 88.02749552285714,76.44444444444444 81.07136941142858,85.33333333333333 77.33541764857142,94.22222222222221 55.601741800000006")
+              polyline(fill="none" stroke="#68389a" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 83.52870398571429,14.222222222222221 87.18381285428572,23.111111111111114 86.20168602285713,32 86.51542527428572,40.888888888888886 83.58732286857142,49.77777777777778 86.24328839142858,58.666666666666664 85.22022204857144,67.55555555555556 87.07037707428572,76.44444444444444 85.99306076857143,85.33333333333333 85.06178989428571,94.22222222222221 85.95516698")
+              polyline(fill="none" stroke="#bd5d92" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 69.10998434285715,14.222222222222221 74.25309633142857,23.111111111111114 71.07224665714286,32 78.46625798571428,40.888888888888886 78.44263595142856,49.77777777777778 86.39932631428572,58.666666666666664 73.06858405142857,67.55555555555556 85.05127376,76.44444444444444 82.7600628,85.33333333333333 68.8262494,94.22222222222221 85.43463432285714")
+              polyline(fill="none" stroke="#a3bc3e" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 68.85807848571429,14.222222222222221 69.1318126857143,23.111111111111114 65.30322828571428,32 69.87377782857142,40.888888888888886 74.79392233428571,49.77777777777778 74.82863983428571,58.666666666666664 79.66598925714285,67.55555555555556 75.82537686857142,76.44444444444444 78.12056327714286,85.33333333333333 68.701934,94.22222222222221 85.42705311142858")
+              polyline(fill="none" stroke="#a37c09" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 70.2096822,14.222222222222221 65.11185005714286,23.111111111111114 66.17132565714286,32 61.3057812,40.888888888888886 69.62549188571428,49.77777777777778 67.90145705714285,58.666666666666664 59.6031108,67.55555555555556 57.193238,76.44444444444444 49.85987497142857,85.33333333333333 68.37753285714285,94.22222222222221 57.29052617142857")
+              polyline(fill="none" stroke="#008A97" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 89.4080207657143,14.222222222222221 91.51183685999999,23.111111111111114 89.61393656000001,32 86.72032861714285,40.888888888888886 86.51646567142856,49.77777777777778 85.69708653428572,58.666666666666664 87.13886780857143,67.55555555555556 84.78858231428572,76.44444444444444 83.92403268285716,85.33333333333333 89.98194802285714,94.22222222222221 92.30794991142858")
+              polyline(fill="none" stroke="#F59894" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 79.35834806857143,14.222222222222221 71.67695771142857,23.111111111111114 59.76607611428572,32 79.39229758285714,40.888888888888886 72.0088774742857,49.77777777777778 70.13679102857144,58.666666666666664 74.7868992857143,67.55555555555556 61.2353563142857,76.44444444444444 69.66946580000001,85.33333333333333 76.74975708000001,94.22222222222221 70.37158117142857")
+              polyline(fill="none" stroke="#008A97" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 61.798895685714285,14.222222222222221 66.35303014285715,23.111111111111114 62.615233342857145,32 60.854539114285714,40.888888888888886 62.683200085714276,49.77777777777778 51.34616571428571,58.666666666666664 56.78089528571428,67.55555555555556 62.34551840000001,76.44444444444444 76.24699923142857,85.33333333333333 78.59670479714286,94.22222222222221 72.90545932")
+              polyline(fill="none" stroke="#ff4050" stroke-dasharray="" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 98.66982159142856,14.222222222222221 98.89247934285714,23.111111111111114 98.99947937714285,32 98.77135701714288,40.888888888888886 98.72906568285714,49.77777777777778 98.47029238,58.666666666666664 97.81843156571428,67.55555555555556 97.19912126857143,76.44444444444444 97.67487266857144,85.33333333333333 97.17569312857142,94.22222222222221 97.09757995714287")
+
+            g
+              circle(r="4" cx="5.33%" cy="86.16%" fill="#16B56F" stroke="#fff" stroke-width="0")               
+              circle(r="4" cx="14.22%" cy="82.34%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="96.49%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="87.03%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="93.29%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="88.15%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="84.11%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="88.78%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="89.45%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="91.61%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="90.53%" fill="#16B56F" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="84.23%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="85.32%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="84.05%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="78.53%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="85.61%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="81.58%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="81.83%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="89.01%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="89.40%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="85.75%" fill="#990f02" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="87.84%" fill="#990f02" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="89.09%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="89.62%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="92.57%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="88.91%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="86.84%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="89.74%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="86.86%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="88.03%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="81.07%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="77.34%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="55.60%" fill="#ff8800" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="83.53%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="87.18%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="86.20%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="86.52%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="83.59%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="86.24%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="85.22%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="87.07%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="85.99%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="85.06%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="85.96%" fill="#68389a" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="69.11%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="74.25%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="71.07%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="78.47%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="78.44%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="86.40%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="73.07%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="85.05%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="82.76%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="68.83%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="85.43%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="68.86%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="69.13%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="65.30%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="69.87%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="74.79%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="74.83%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="79.67%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="75.83%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="78.12%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="68.70%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="85.43%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="70.21%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="65.11%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="66.17%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="61.31%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="69.63%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="67.90%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="59.60%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="57.19%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="49.86%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="68.38%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="57.29%" fill="#a37c09" stroke="#fff" stroke-width="0")        
+            g
+              circle(r="4" cx="5.33%" cy="89.41%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="91.51%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="89.61%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="86.72%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="86.52%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="85.70%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="87.14%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="84.79%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="83.92%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="89.98%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="92.31%" fill="#008A97" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="79.36%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="71.68%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="59.77%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="79.39%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="72.01%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="70.14%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="74.79%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="61.24%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="69.67%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="76.75%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="70.37%" fill="#F59894" stroke="#fff" stroke-width="0")     
+            g
+              circle(r="4" cx="5.33%" cy="61.80%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="66.35%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="62.62%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="60.85%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="62.68%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="51.35%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="56.78%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="62.35%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="76.25%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="78.60%" fill="#008A97" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="72.91%" fill="#008A97" stroke="#fff" stroke-width="0")
+            g
+              circle(r="6" cx="5.33%" cy="98.67%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="14.22%" cy="98.89%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="23.11%" cy="99.00%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="32.00%" cy="98.77%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="40.89%" cy="98.73%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="49.78%" cy="98.47%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="58.67%" cy="97.82%" fill="#ff4050" stroke="#fff" stroke-width="0")                
+              circle(r="6" cx="67.56%" cy="97.20%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="76.44%" cy="97.67%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="85.33%" cy="97.18%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="94.22%" cy="97.10%" fill="#ff4050" stroke="#fff" stroke-width="0")              
+
+
+          // CHART 2: fig-7b
+          .box-sub-right-mobile: .chart-subtitle Percentage contributions over GDP
+          svg.box-right(height="100%")
+
+            //-- Y-Axis labels
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 0%
+              svg(y="85.71%")
+                text(text-anchor="end" transform="translate(-8 4)") 5%
+              svg(y="71.43%")
+                text(text-anchor="end" transform="translate(-8 4)") 10%
+              svg(y="57.14%")
+                text(text-anchor="end" transform="translate(-8 4)") 15%
+              svg(y="42.86%")
+                text(text-anchor="end" transform="translate(-8 4)") 20%
+              svg(y="28.57%")
+                text(text-anchor="end" transform="translate(-8 4)") 25%
+              svg(y="14.29%")
+                text(text-anchor="end" transform="translate(-8 4)") 30%
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 35%
+
+            // -- Y-Axis minor lines
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="0%" y2="100%" stroke="#bbb" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="14.29%" x2="100%" y2="14.29%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="28.57%" x2="100%" y2="28.57%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="42.86%" x2="100%" y2="42.86%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="57.14%" x2="100%" y2="57.14%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="71.43%" x2="100%" y2="71.43%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="85.71%" x2="100%" y2="85.71%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="100%" y1="0.00%" x2="100%" y2="100%" stroke="#bbb" stroke-dasharray="")
+
+            // X-Axis labels
+            svg(class="x-label" x="5.33%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2010
+            svg(class="x-label" x="14.22%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2011
+            svg(class="x-label" x="23.11%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2012
+            svg(class="x-label" x="32.00%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2013
+            svg(class="x-label" x="40.89%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2014
+            svg(class="x-label" x="49.78%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2015
+            svg(class="x-label" x="58.67%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2016
+            svg(class="x-label" x="67.56%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2017
+            svg(class="x-label" x="76.44%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2018
+            svg(class="x-label" x="85.33%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2019
+            svg(class="x-label" x="94.22%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-8, 24)") 2020
+
+            // OPTIONAL GUIDE LINE
+            // CHART LINES
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              // SERIES LINES
+              polyline(fill="none" stroke="#539ed4" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 94.2949349142857,14.222222222222221 91.88698196,23.111111111111114 92.97751192285713,32 91.20111325428572,40.888888888888886 85.37089786,49.77777777777778 89.64955172857142,58.666666666666664 91.31994553428572,67.55555555555556 91.20122868,76.44444444444444 92.63382364,85.33333333333333 98.75602666857142,94.22222222222221 98.95790998571428")
+              polyline(fill="none" stroke="#16B56F" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 82.61339783142857,14.222222222222221 79.63556604285714,23.111111111111114 83.03813426285714,32 81.89040941714286,40.888888888888886 87.23499926,49.77777777777778 87.66103884857142,58.666666666666664 85.33234515714287,67.55555555555556 92.59662186285715,76.44444444444444 91.57208585142857,85.33333333333333 90.11345098285713,94.22222222222221 93.30744739714285")
+              polyline(fill="none" stroke="#ff8800" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 91.67052813142857,14.222222222222221 89.83953185142856,23.111111111111114 87.93054961142857,32 86.19133657142858,40.888888888888886 84.27596918,49.77777777777778 82.46138962285715,58.666666666666664 65.63843948571429,67.55555555555556 58.79659414285714,76.44444444444444 64.5042812857143,85.33333333333333 65.96458508571429,94.22222222222221 51.31390091428572")
+              polyline(fill="none" stroke="#68389a" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 69.75724685714285,14.222222222222221 73.12357262857144,23.111111111111114 73.49086700285714,32 74.71997513142855,40.888888888888886 83.65932288571429,49.77777777777778 81.49621564857144,58.666666666666664 81.44824349428572,67.55555555555556 86.01440857142858,76.44444444444444 86.84825192,85.33333333333333 88.64922874857143,94.22222222222221 87.05593854857143")
+              polyline(fill="none" stroke="#bd5d92" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 89.21421655142858,14.222222222222221 90.41669246857143,23.111111111111114 89.84659718857144,32 90.97118242571428,40.888888888888886 93.48471495142859,49.77777777777778 89.91682788857143,58.666666666666664 93.69348256571428,67.55555555555556 94.19358891142858,76.44444444444444 91.12298862285714,85.33333333333333 88.81235802,94.22222222222221 94.51419989142858")
+              polyline(fill="none" stroke="#a3bc3e" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 86.43902185428571,14.222222222222221 85.8302498,23.111111111111114 85.79678445714285,32 87.14515281999999,40.888888888888886 90.6232695,49.77777777777778 91.19851842571428,58.666666666666664 90.93606883142857,67.55555555555556 90.48900836571428,76.44444444444444 86.71947166571428,85.33333333333333 91.81337116857142,94.22222222222221 91.23540402")
+              polyline(fill="none" stroke="#ffc52b" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 96.40360184,14.222222222222221 96.37187933142857,23.111111111111114 96.70919673428571,32 96.63142052857143,40.888888888888886 82.20497484571429,49.77777777777778 94.04739235999999,58.666666666666664 95.79204631142858,67.55555555555556 97.88000276857143,76.44444444444444 96.01171264285715,85.33333333333333 92.11570754571427,94.22222222222221 94.22202270285715")
+              polyline(fill="none" stroke="#a37c09" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 88.35954027428572,14.222222222222221 88.16202111428572,23.111111111111114 87.84642584571428,32 89.75314903428571,40.888888888888886 90.40035990571428,49.77777777777778 90.45435280571428,58.666666666666664 91.48073547714286,67.55555555555556 90.18638807142857,76.44444444444444 84.52587082857143,85.33333333333333 89.4805689857143,94.22222222222221 90.29670358")
+              polyline(fill="none" stroke="#F59894" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 80.03401292000001,14.222222222222221 76.56092664857142,23.111111111111114 75.26532405428571,32 64.62475502857143,40.888888888888886 77.42340340857142,49.77777777777778 69.0410224,58.666666666666664 71.75017072,67.55555555555556 70.8808062,76.44444444444444 71.44810349142857,85.33333333333333 77.00380399714287,94.22222222222221 71.86017385428572")
+              polyline(fill="none" stroke="#F59894" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 20.58004451428571,14.222222222222221 29.623253457142855,23.111111111111114 22.137057685714286,32 29.45841851428571,40.888888888888886 9.339681485714287,49.77777777777778 11.19174002857143,58.666666666666664 17.23249068571429,67.55555555555556 10.976373371428576,76.44444444444444 19.50291317142857,85.33333333333333 8.404114542857144,94.22222222222221 8.259851857142857")
+              polyline(fill="none" stroke="#ff4050" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="5.333333333333333 99.24598723142856,14.222222222222221 98.54998182000001,23.111111111111114 99.09934126857142,32 98.9926075,40.888888888888886 98.62806193714285,49.77777777777778 99.09095207142856,58.666666666666664 95.97749752285713,67.55555555555556 97.60900211428572,76.44444444444444 98.62417233999999,85.33333333333333 98.32390425714286,94.22222222222221 98.25465084857143")
+            g
+              circle(r="4" cx="5.33%" cy="94.29%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="91.89%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="92.98%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="91.20%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="85.37%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="89.65%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="91.32%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="91.20%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="92.63%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="98.76%" fill="#539ed4" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="98.96%" fill="#539ed4" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="82.61%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="79.64%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="83.04%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="81.89%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="87.23%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="87.66%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="85.33%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="92.60%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="91.57%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="90.11%" fill="#16B56F" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="93.31%" fill="#16B56F" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="91.67%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="89.84%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="87.93%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="86.19%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="84.28%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="82.46%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="65.64%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="58.80%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="64.50%" fill="#ff8800" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="65.96%" fill="#ff8800" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="69.76%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="73.12%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="73.49%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="74.72%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="83.66%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="81.50%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="81.45%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="86.01%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="86.85%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="88.65%" fill="#68389a" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="87.06%" fill="#68389a" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="89.21%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="90.42%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="89.85%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="90.97%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="93.48%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="89.92%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="93.69%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="94.19%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="91.12%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="88.81%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="94.51%" fill="#bd5d92" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="86.44%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="85.83%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="85.80%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="87.15%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="90.62%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="91.20%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="90.94%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="90.49%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="86.72%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="91.81%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="91.24%" fill="#a3bc3e" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="96.40%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="96.37%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="96.71%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="96.63%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="82.20%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="94.05%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="95.79%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="97.88%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="96.01%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="92.12%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="94.22%" fill="#ffc52b" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="88.36%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="88.16%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="87.85%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="89.75%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="90.40%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="90.45%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="91.48%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="90.19%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="84.53%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="89.48%" fill="#a37c09" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="90.30%" fill="#a37c09" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="80.03%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="76.56%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="75.27%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="64.62%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="77.42%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="69.04%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="71.75%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="70.88%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="71.45%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="77.00%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="71.86%" fill="#F59894" stroke="#fff" stroke-width="0")
+            g
+              circle(r="4" cx="5.33%" cy="20.58%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="14.22%" cy="29.62%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="23.11%" cy="22.14%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="32.00%" cy="29.46%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="40.89%" cy="9.34%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="49.78%" cy="11.19%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="58.67%" cy="17.23%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="67.56%" cy="10.98%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="76.44%" cy="19.50%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="85.33%" cy="8.40%" fill="#F59894" stroke="#fff" stroke-width="0")
+              circle(r="4" cx="94.22%" cy="8.26%" fill="#F59894" stroke="#fff" stroke-width="0")
+            g
+              circle(r="6" cx="5.33%" cy="99.25%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="14.22%" cy="98.55%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="23.11%" cy="99.10%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="32.00%" cy="98.99%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="40.89%" cy="98.63%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="49.78%" cy="99.09%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="58.67%" cy="95.98%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="67.56%" cy="97.61%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="76.44%" cy="98.62%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="85.33%" cy="98.32%" fill="#ff4050" stroke="#fff" stroke-width="0")
+              circle(r="6" cx="94.22%" cy="98.25%" fill="#ff4050" stroke="#fff" stroke-width="0")
+      .row
+        ul.legend.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 660px
+        max-width: 1062px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 10px
+        left: 60px
+        right: 20px
+        bottom: 40px
+
+      .chart-title
+        margin: auto
+        font-size: 18px
+        
+      .chart-subtitle
+        font-weight: normal
+        margin-top: 0
+        font-size: 14px
+        padding: 1rem
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 1
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+        line-height: 1.2em
+
+      .legend
+        font-size: 12px
+        margin-top: 1.6em
+
+      .legend-item
+        margin: 0 4px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+        border-radius: 50%
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 11px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-right: 2em
+        font-size: 11px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+
+      .txt-muted
+        color: #767676
+
+      .box-left,.box-right
+        background-color: #eff1f280
+      .box-left,.box-sub-left
+        float: left
+        width: 46%
+        margin: 0
+      .box-right,.box-sub-right,.box-subright-mobile
+        float: right
+        width: 46%
+        margin: 0
+      .chart-container
+        height: 90%
+      .box-sub-right-mobile
+        display: none
+
+      @media (max-width: 700px)
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 24px)
+        text
+          font-size: 11px
+        .box-left
+          width: 44%
+        .box-right
+          width: 44%
+        .legend
+        font-size: 11px
+          
+      @media (max-width: 450px)
+        .legend
+          /* flex-direction: column */
+        .chart-title
+          font-size: 16px
+        .chart-subtitle
+          font-size: 12px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+        .x-label 
+          display: none  
+        .x-label:nth-child(2n+3)
+          display: block
+
+        .chart-container
+          height: auto
+        .box-left,.box-sub-left,.box-right,.box-sub-right-mobile
+          width: 100%
+          float: none
+        .box-sub-right-mobile
+          margin-top: 2em !important
+        .box-sub-right .chart-subtitle
+          display: none
+        .box-sub-right-mobile
+          display: block
+        .x-label text
+          text-anchor: middle
+          transform: translate(-8px, 18px)
+        .chart-subtitle
+          padding: 0.5rem
+        li 
+          padding: 4px 12px 2px 16px
+        .legend-item-box
+          height: 0.8em
+          width: 0.8em

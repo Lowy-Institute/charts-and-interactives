@@ -1,0 +1,238 @@
+title: >
+  Voluntary core (un-earmarked) contributions
+
+source: >
+  Source: UN System Chief Executive Board for Coordination.
+
+notes: >
+  Notes: data points for China are enlarged for emphasis
+
+#subtitle: >
+  #New cases per million
+
+axes:
+  minY:  0
+  maxY: 35
+  stepsY: 8
+  rotateX: true
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+  
+  -
+    title: Canada
+    color: "green"
+    widen: false
+    dashed: false
+    classname: br
+    values:
+      - 4.844725501
+      - 6.180841788
+      - 1.230145095
+      - 4.540488318
+      - 2.348603409
+      - 4.14774846
+      - 5.562585638
+      - 3.925480489
+      - 3.693743877
+      - 2.936767102
+      - 3.31507524
+  -
+    title: Denmark
+    color: "red-dark"
+    widen: false
+    dashed: false
+    classname: br
+    values:
+      - 5.519983868
+      - 5.138831211
+      - 5.583138669
+      - 7.515669339
+      - 5.03729254
+      - 6.446884058
+      - 6.359221992
+      - 3.845576214
+      - 3.708389899
+      - 4.985923391
+      - 4.255571131
+  -
+    title: Germany
+    color: "orange"
+    widen: false
+    dashed: false
+    classname: in
+    values:
+      - 3.819907056
+      - 3.63153251
+      - 2.600646855
+      - 3.879905221
+      - 4.60507523
+      - 3.591780855
+      - 4.59826544
+      - 4.190376567
+      - 6.625020706
+      - 7.932603823
+      - 15.53939037
+  -
+    title: Japan
+    color: "purple"
+    widen: false
+    dashed: false
+    classname: id
+    values:
+      - 5.764953605
+      - 4.485665501
+      - 4.829409892
+      - 4.719601154
+      - 5.744436996
+      - 4.814849063
+      - 5.172922283
+      - 4.525368024
+      - 4.902428731
+      - 5.228373537
+      - 4.915691557
+  -
+    title: Netherlands
+    color: "pink"
+    widen: false
+    dashed: false
+    classname: ni
+    values:
+      - 10.81150548
+      - 9.011416284
+      - 10.12471367
+      - 7.536809705
+      - 7.545077417
+      - 4.76023579
+      - 9.425995582
+      - 5.232054184
+      - 6.03397802
+      - 10.91081271
+      - 5.097877987 
+  -
+    title: Norway
+    color: "lime"
+    widen: false
+    dashed: false
+    classname: sau
+    values:
+      - 10.89967253
+      - 10.80386556
+      - 12.1438701
+      - 10.54417776
+      - 8.822127183
+      - 8.809976058
+      - 7.11690376
+      - 8.461118096
+      - 7.657802853
+      - 10.9543231
+      - 5.100531411 
+  -
+    title: Sweden
+    color: "brown"
+    widen: false
+    dashed: false
+    classname: th
+    values:
+      - 10.42661123
+      - 12.21085248
+      - 11.84003602
+      - 13.54297658
+      - 10.63107784
+      - 11.23449003
+      - 14.13891122
+      - 14.9823667
+      - 17.54904376
+      - 11.0678635
+      - 14.94831584
+  -
+    title: Switzerland
+    color: "green-dark"
+    widen: false
+    dashed: false
+    classname: th
+    values:
+      - 3.707192732
+      - 2.970857099
+      - 3.635122204
+      - 4.647884984
+      - 4.719237015
+      - 5.006019713
+      - 4.501396267
+      - 5.32399619
+      - 5.626588561
+      - 3.506318192
+      - 2.692217531
+  -
+    title: United Kingdom
+    color: "teal"
+    widen: false
+    dashed: false
+    classname: uae
+    values:
+      - 7.224578176
+      - 9.913064801
+      - 14.08187336
+      - 7.212695846
+      - 9.796892884
+      - 10.45212314
+      - 8.82458525
+      - 13.56762529
+      - 10.61568697
+      - 8.137585022
+      - 10.36994659
+  -
+    title: United States of America
+    color: "red-light"
+    widen: false
+    dashed: false
+    classname: uae
+    values:
+      - 13.37038651
+      - 11.77643945
+      - 13.08466833
+      - 13.70091131
+      - 13.06087997
+      - 17.028842
+      - 15.12668665
+      - 13.17906856
+      - 8.313550269
+      - 7.491153321
+      - 9.483089238
+  -
+    title: China
+    color: "red"
+    widen: false
+    dashed: false
+    classname: cn
+    values:
+      - 0.465562443
+      - 0.38763223
+      - 0.350182218
+      - 0.430025044
+      - 0.444827011
+      - 0.535397667
+      - 0.763548952
+      - 0.980307556
+      - 0.813794566
+      - 0.988507405
+      - 1.015847015
+

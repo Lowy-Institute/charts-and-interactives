@@ -1,0 +1,429 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/china-influence-un/fig-5a/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+    .page-title.txt-center= page.title
+    .page-subtitle.txt-center= page.subtitle
+    .col-wrap.txt-center.flex-grow.flex
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[0]
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          - scale = chart.scale
+          - fx = (i) => (i + 0.8) / (chart.axes[1].values.length + 0.5)
+          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(5)
+                - y = 1 - (i / 4)
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+
+            g
+              for y, i in chart.axes[1].values
+                - label = chart.axes[0].values[i]
+                svg(
+                  x=toPercent(fx(i))
+                  y=toPercent(1 - fy(y))
+                  width=toPercent(fx(0))
+                  height=toPercent(fy(y))
+                )
+                  rect(
+                    fill="#ff4050"
+                    width="100%"
+                    height="100%"
+                  )
+
+                  text.chart-value(
+                    x="50%"
+                    y=-8
+                    text-anchor="middle"
+                  )
+                    = y.toFixed(1)
+
+                  svg(x="50%" y="100%")
+                    text(
+                      text-anchor="end"
+                      transform="rotate(-45) translate(-6 12)"
+                      class=label.highlight ? "txt-bold" : ""
+                    )
+                      =label.text
+
+            svg(y="50%")
+              text(
+                text-anchor="middle"
+                y=-24
+                transform="rotate(-90)"
+              )
+                = chart.axes[1].title
+
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[1]
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          - scale = chart.scale
+          - fx = (i) => (i + 0.8) / (chart.axes[1].values.length + 0.5)
+          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(5)
+                - y = 1 - (i / 4)
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+
+            g
+              for y, i in chart.axes[1].values
+                - label = chart.axes[0].values[i]
+                svg(
+                  x=toPercent(fx(i))
+                  y=toPercent(1 - fy(y))
+                  width=toPercent(fx(0))
+                  height=toPercent(fy(y))
+                )
+                  rect(
+                    fill="#a3bc3e"
+                    width="100%"
+                    height="100%"
+                  )
+
+                  text.chart-value(
+                    x="50%"
+                    y=-8
+                    text-anchor="middle"
+                  )
+                    = y.toFixed(1)
+
+                  svg(x="50%" y="100%")
+                    text(
+                      text-anchor="end"
+                      transform="rotate(-45) translate(-6 12)"
+                      class=label.highlight ? "txt-bold" : ""
+                    )
+                      =label.text
+
+            svg(y="50%")
+              text(
+                text-anchor="middle"
+                y=-24
+                transform="rotate(-90)"
+              )
+                = chart.axes[1].title
+
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[2]
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          - scale = chart.scale
+          - fx = (i) => (i + 0.8) / (chart.axes[1].values.length + 0.5)
+          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(5)
+                - y = 1 - (i / 4)
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+
+            g
+              for y, i in chart.axes[1].values
+                - label = chart.axes[0].values[i]
+                svg(
+                  x=toPercent(fx(i))
+                  y=toPercent(1 - fy(y))
+                  width=toPercent(fx(0))
+                  height=toPercent(fy(y))
+                )
+                  rect(
+                    fill="#16B56F"
+                    width="100%"
+                    height="100%"
+                  )
+
+                  text.chart-value(
+                    x="50%"
+                    y=-8
+                    text-anchor="middle"
+                  )
+                    = y.toFixed(1)
+
+                  svg(x="50%" y="100%")
+                    text(
+                      text-anchor="end"
+                      transform="rotate(-45) translate(-6 12)"
+                      class=label.highlight ? "txt-bold" : ""
+                    )
+                      =label.text
+
+            svg(y="50%")
+              text(
+                text-anchor="middle"
+                y=-24
+                transform="rotate(-90)"
+              )
+                = chart.axes[1].title
+
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[3]
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          - scale = chart.scale
+          - fx = (i) => (i + 0.8) / (chart.axes[1].values.length + 0.5)
+          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(5)
+                - y = 1 - (i / 4)
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+
+            g
+              for y, i in chart.axes[1].values
+                - label = chart.axes[0].values[i]
+                svg(
+                  x=toPercent(fx(i))
+                  y=toPercent(1 - fy(y))
+                  width=toPercent(fx(0))
+                  height=toPercent(fy(y))
+                )
+                  rect(
+                    fill="#539ed4"
+                    width="100%"
+                    height="100%"
+                  )
+
+                  text.chart-value(
+                    x="50%"
+                    y=-8
+                    text-anchor="middle"
+                  )
+                    = y.toFixed(1)
+
+                  svg(x="50%" y="100%")
+                    text(
+                      text-anchor="end"
+                      transform="rotate(-45) translate(-6 12)"
+                      class=label.highlight ? "txt-bold" : ""
+                    )
+                      =label.text
+
+            svg(y="50%")
+              text(
+                text-anchor="middle"
+                y=-24
+                transform="rotate(-90)"
+              )
+                = chart.axes[1].title
+
+      .col-md.flex-grow.flex.flex-col
+        - chart = page.charts[4]
+        .chart-title= chart.title
+        .chart-subtitle.txt-muted= chart.subtitle
+
+        .chart.flex-grow: .chart-content
+          - scale = chart.scale
+          - fx = (i) => (i + 0.8) / (chart.axes[1].values.length + 0.5)
+          - fy = (y) => (y - scale.minY) / (scale.maxY - scale.minY)
+          svg(height="100%" width="100%")
+            svg(height="100%")
+              for n, i in new Array(5)
+                - y = 1 - (i / 4)
+                svg(y=toPercent(y))
+                  text(text-anchor="end" transform="translate(-8 4)")
+                    = scale.minY + (i/4) * (scale.maxY - scale.minY)
+
+            g
+              for y, i in chart.axes[1].values
+                - label = chart.axes[0].values[i]
+                svg(
+                  x=toPercent(fx(i))
+                  y=toPercent(1 - fy(y))
+                  width=toPercent(fx(0))
+                  height=toPercent(fy(y))
+                )
+                  rect(
+                    fill="#bd5d92"
+                    width="100%"
+                    height="100%"
+                  )
+
+                  text.chart-value(
+                    x="50%"
+                    y=-8
+                    text-anchor="middle"
+                  )
+                    = y.toFixed(1)
+
+                  svg(x="50%" y="100%")
+                    text(
+                      text-anchor="end"
+                      transform="rotate(-45) translate(-6 12)"
+                      class=label.highlight ? "txt-bold" : ""
+                    )
+                      =label.text
+
+            svg(y="50%")
+              text(
+                text-anchor="middle"
+                y=-24
+                transform="rotate(-90)"
+              )
+                = chart.axes[1].title
+      .col-md.col-legend-mobile
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
+          li.legend-item
+            span.legend-item-box(style=`background: #ff4050`)
+            span.legend-item-label China
+          li.legend-item
+            span.legend-item-box(style=`background: #a3bc3e`)
+            span.legend-item-label France
+          li.legend-item
+            span.legend-item-box(style=`background: #16B56F`)
+            span.legend-item-label Russian Federation
+          li.legend-item
+            span.legend-item-box(style=`background: #539ed4`)
+            span.legend-item-label UK
+          li.legend-item
+            span.legend-item-box(style=`background: #bd5d92`)
+            span.legend-item-label USA
+
+    .col-legend
+      ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
+        li.legend-item
+          span.legend-item-box(style=`background: #ff4050`)
+          span.legend-item-label China
+        li.legend-item
+          span.legend-item-box(style=`background: #a3bc3e`)
+          span.legend-item-label France
+        li.legend-item
+          span.legend-item-box(style=`background: #16B56F`)
+          span.legend-item-label Russian Federation
+        li.legend-item
+          span.legend-item-box(style=`background: #539ed4`)
+          span.legend-item-label UK
+        li.legend-item
+          span.legend-item-box(style=`background: #bd5d92`)
+          span.legend-item-label USA
+      
+block append css
+  style
+    :sass
+      .page-title
+        margin-bottom: 12px
+      .page-subtitle
+        margin-bottom: 12px
+
+      .wrapper
+        height: 300px
+
+      .col-wrap
+        margin: 0
+
+      .col-md
+        padding: 0 0 1em
+        width: 20%
+      .col-legend
+        padding: 0 0 1em
+        width: 100%
+      .col-legend-mobile
+        display:none
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 36px
+        right: 12px
+        bottom: 72px
+
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+        height: 20px
+        min-height: 100%
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 0 0 32px
+
+      .chart-title
+        max-width: 320px
+        margin: auto
+        font-size: 13px
+
+      .chart-subtitle
+        height: 0
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 8px 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 0
+
+      text
+        font-size: 11px
+        fill: currentColor
+
+      svg
+        overflow: visible
+      
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 12px
+        margin: -32px 0
+
+      .legend-item
+        margin: 0 8px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      @media screen and (max-width: 600px)
+        .wrapper
+          height: 780px
+        .col-wrap
+          display: block
+        .col-md
+          width: 50%
+          height: 232px
+        .col-legend
+          display: none
+        .col-legend-mobile
+          width: 50%
+          height: 232px
+        .legend
+          margin: 32px 24px

@@ -1,0 +1,604 @@
+title: >
+  Figure 5b: Executive leader postings held by UNSC permanent members
+
+subtitle: >
+  UN System Chief Executives Board for Coordination
+
+source: >
+  Positions selected based on their preceding positions as of September 2022. 
+  Count equally split if (1) the position is replaced during a calendar year 
+  (2) due to restructuring the department had 2+ leaders.
+
+charts:
+  -
+    title: >
+      China 
+    scale:
+      minY: 0
+      maxY: 7
+    axes:
+      -
+        title: Year
+        values:
+          - text: 1971
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 1981
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 1991
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 2001
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2011
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2021
+          - text: 
+      -
+        title: "Count"
+        values:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1.5
+          - 2.5
+          - 3.5
+          - 4
+          - 3.5
+          - 3
+          - 3.5
+          - 4
+          - 3
+          - 2
+
+
+  -
+    title: >
+      France 
+    scale:
+      minY: 0
+      maxY: 7
+    axes:
+      -
+        title: Year
+        values:
+          - text: 1971
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 1981
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 1991
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 2001
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2011
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2021
+          - text: 
+      -
+        title: "Count"
+        values:
+          - 3
+          - 3
+          - 2.5
+          - 2.5
+          - 2
+          - 2.5
+          - 3
+          - 3.5
+          - 4
+          - 4
+          - 4
+          - 4
+          - 4
+          - 4
+          - 4
+          - 3
+          - 3
+          - 2.5
+          - 1.5
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 2
+          - 2
+          - 1.5
+          - 1
+          - 1
+          - 1
+          - 2
+          - 2.5
+          - 3
+          - 3.5
+          - 4.5
+          - 5.5
+          - 5
+          - 5
+          - 4.5
+          - 3.5
+          - 3
+          - 2.5
+          - 1
+          - 1.5
+          - 2
+          - 1.5
+          - 1
+          - 1
+          - 1
+
+  -
+    title: >
+      Russian Federation 
+    scale:
+      minY: 0
+      maxY: 7
+    axes:
+      -
+        title: Year
+        values:
+          - text: 1971
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 1981
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 1991
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 2001
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2011
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2021
+          - text:
+      -
+        title: "Count"
+        values:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0.5
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 0.5
+          - 0
+          - 0
+
+  -
+    title: >
+      UK 
+    scale:
+      minY: 0
+      maxY: 7
+    axes:
+      -
+        title: Year
+        values:
+          - text: 1971
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 1981
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 1991
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 2001
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2011
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2021
+          - text:
+      -
+        title: "Count"
+        values:
+          - 3.5
+          - 4
+          - 4.5
+          - 3
+          - 2
+          - 2
+          - 1.5
+          - 1
+          - 1
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0.333333333
+          - 0
+          - 0
+          - 0
+          - 0.5
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 0.5
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0.5
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+          - 1
+
+  -
+    title: >
+      USA 
+    scale:
+      minY: 0
+      maxY: 7
+    axes:
+      -
+        title: Year
+        values:
+          - text: 1971
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 1981
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 1991
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 2001
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2011
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text: 
+          - text:
+          - text: 2021
+          - text:
+      -
+        title: "Count"
+        values:
+          - 4.5
+          - 4
+          - 4.5
+          - 5
+          - 5
+          - 5.5
+          - 6
+          - 6
+          - 5.5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5.5
+          - 6
+          - 6
+          - 6.666666667
+          - 7
+          - 6.5
+          - 6
+          - 5.5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5
+          - 5.5
+          - 6
+          - 6
+          - 5.5
+          - 5
+          - 4.5
+          - 4
+          - 4
+          - 4
+          - 4
+          - 4
+          - 4
+          - 4
+          - 3.5
+          - 3
+          - 3
+          - 3
+          - 3
+
+

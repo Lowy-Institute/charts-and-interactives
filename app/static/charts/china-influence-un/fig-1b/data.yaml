@@ -1,0 +1,220 @@
+title: >
+  Percentage of a country's assessed contributions over over country GDP
+
+source: >
+  Source: UN System Chief Executive Board for Coordination.
+
+notes: >
+  Notes: data points for China are enlarged for emphasis
+
+#subtitle: >
+  #New cases per million
+
+axes:
+  minY:  0
+  maxY: 0.04
+  stepsY: 9
+  rotateX: true
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+  
+  -
+    title: Canada
+    color: "highlight"
+    widen: false
+    dashed: false
+    classname: ca
+    values:
+      - 0.009175129
+      - 0.008792835
+      - 0.010269934
+      - 0.022299453
+      - 0.022883969
+      - 0.026990649
+      - 0.026894401
+      - 0.024415975
+      - 0.022970793
+      - 0.022595151
+      - 0.023419832
+  -
+    title: France
+    color: "green"
+    widen: false
+    dashed: false
+    classname: fr
+    values:
+      - 0.010242715
+      - 0.009896782
+      - 0.012662053
+      - 0.031127248
+      - 0.030919343
+      - 0.037956409
+      - 0.033876589
+      - 0.029863004
+      - 0.027013473
+      - 0.026579648
+      - 0.02642866
+  -
+    title: Germany
+    color: "orange"
+    widen: false
+    dashed: false
+    classname: de
+    values:
+      - 0.01061616
+      - 0.010004028
+      - 0.012411628
+      - 0.026290346
+      - 0.024650305
+      - 0.030168548
+      - 0.026519396
+      - 0.023679648
+      - 0.021431903
+      - 0.021963971
+      - 0.021940032
+  -
+    title: Italy
+    color: "purple"
+    widen: false
+    dashed: false
+    classname: it
+    values:
+      - 0.01014537
+      - 0.009905854
+      - 0.013077084
+      - 0.028624433
+      - 0.027621463
+      - 0.034280412
+      - 0.029670633
+      - 0.026149554
+      - 0.023925281
+      - 0.02395121
+      - 0.024346638
+  -
+    title: Japan
+    color: "pink"
+    widen: false
+    dashed: false
+    classname: jp
+    values:
+      - 0.010157891
+      - 0.009270255
+      - 0.010540372
+      - 0.028218164
+      - 0.029352419
+      - 0.03410918
+      - 0.027683062
+      - 0.026513394
+      - 0.025422116
+      - 0.024077259
+      - 0.02327357
+  -
+    title: Russian Federation
+    color: "lime"
+    widen: false
+    dashed: false
+    classname: rf
+    values:
+      - 0.00411966
+      - 0.003440093
+      - 0.00405593
+      - 0.013372318
+      - 0.018507538
+      - 0.029742542
+      - 0.03490685
+      - 0.030207364
+      - 0.028225018
+      - 0.024690332
+      - 0.025031449
+  -
+    title: Spain
+    color: "yellow"
+    widen: false
+    dashed: false
+    classname: es
+    values:
+      - 0.009477134
+      - 0.009715409
+      - 0.013022484
+      - 0.029378599
+      - 0.028982077
+      - 0.035159258
+      - 0.029925352
+      - 0.025461743
+      - 0.022994413
+      - 0.022533235
+      - 0.023360185
+  -
+    title: United Kingdom
+    color: "brown"
+    widen: false
+    dashed: false
+    classname: uk
+    values:
+      - 0.011384212
+      - 0.011150852
+      - 0.013094153
+      - 0.030585124
+      - 0.026065011
+      - 0.028773691
+      - 0.028197312
+      - 0.026167875
+      - 0.0253
+      - 0.024426291
+      - 0.025684939
+  -
+    title: United States of America
+    color: "red-light"
+    widen: false
+    dashed: false
+    classname: us
+    values:
+      - 0.006810566
+      - 0.006982633
+      - 0.007770581
+      - 0.019797988
+      - 0.020046381
+      - 0.020657395
+      - 0.019310861
+      - 0.017956816
+      - 0.016535054
+      - 0.015486511
+      - 0.015728282
+  -
+    title: China
+    color: "red"
+    widen: false
+    dashed: false
+    classname: cn
+    values:
+      - 0.002277426
+      - 0.002004772
+      - 0.00208325
+      - 0.006558133
+      - 0.007616124
+      - 0.007645821
+      - 0.009337995
+      - 0.009862177
+      - 0.008508107
+      - 0.010644621
+      - 0.012165738
+
