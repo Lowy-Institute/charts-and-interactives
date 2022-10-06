@@ -106,7 +106,7 @@ block page
 
 
     /* --- USER TO UPDATE --- */
-    const enableTooltips = false;
+    const enableTooltips = true;
     const nLegendItems = 4;
     const nSeries = 6;
     /* --------------------- */
@@ -132,7 +132,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.innerHTML = val + cat + " by permanent members " + " in " + ser;
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
