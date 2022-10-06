@@ -107,8 +107,8 @@ block page
 
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nLegendItems = 4;
-    const nSeries = 6;
+    const nLegendItems = 3;
+    const nSeries = 4;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -128,11 +128,11 @@ block page
       el.addEventListener('mouseover', () => {
         
         let val = vals[i].innerHTML;
-        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
+        let ser = series[Math.floor(i/nLegendItems) ].innerHTML;
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + " resolutions mentioned " + cat + " in " + ser;
+        tooltip.innerHTML = val + " resolutions mentioned " + cat;
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;

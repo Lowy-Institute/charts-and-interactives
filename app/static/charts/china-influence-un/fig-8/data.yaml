@@ -16,7 +16,7 @@ axes:
   stepsY: 11
   rotateX: false
   percentage: false
-  minorLines: false
+  minorLines: true
   dotted: [] # Index of dotted gridlines
   reverse: false
 
