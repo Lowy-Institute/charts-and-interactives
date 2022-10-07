@@ -1,0 +1,57 @@
+- chartData = page.data.populationGrowth
+
+.slide.bg-dk
+  .slide-inner(data-view="in-viewport")
+    .txt-md.txt-ff.txt-left.posa.txt-mono.z1
+      .line(style="background:#f7434c") Economic weaknesses
+      .type(
+        data-view="slide, in-viewport"
+        data-duration=1800
+        style="margin-top: 12px"
+      )
+        span.line.bg-ff.txt-dk.txt-sm Population growth
+
+    .flex-row.fw.fh
+      - n = chartData.length
+      - p = 25
+      - fx = (i,a) => 100 * i / (a.length - 1)
+      - fy = v => 50 - 10 * (v - 1)
+      for chart, i in chartData
+        svg(
+          x=(`${100 * i / n}%`)
+          width=(`${100 / n}%`)
+          height="100%"
+          data-delay=(chart.delay || 0)
+          data-duration=2000
+          data-view="line, in-viewport"
+        )
+          svg(
+            x=`${p}%`
+            width=`${100 - 2 * p}%`
+            height=`${100}%`
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          )
+            line(x1=0 x2="100%" y1="50%" y2="50%" stroke="white" stroke-dasharray="1 2" opacity="0.75")
+            polyline.line(
+              class=[chart.code, chart.dashed ? "dashed" : ""].join(" ")
+              stroke-width=4
+              points=(
+                chart.data.map((e,i,a)=>[fx(i,a), fy(e.value)].map((e)=>e.toFixed(2)).join(",")).join(" ")
+              )
+            )
+          svg(
+            x=`${p}%`
+            width=`${100 - 2 * p}%`
+          )
+            for point, j in chart.data
+              if j
+                circle.fade-in(
+                  cx=fx(j,chart.data) + "%"
+                  cy=fy(point.value) + "%"
+                  r=4
+                  class=`${chart.code} delay-${j * 8}`
+                )
+
+    .posa.txt-muted.fade-in.delay-24(style="top: 0; right: 0")
+      | Source: ??

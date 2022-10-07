@@ -43,6 +43,8 @@
 .stroke
   stroke: #fff
   vector-effect: non-scaling-stroke
+.stroke-lt
+  stroke: $color-lt
 
 .mask-l
   fill: url(#mask-l)
@@ -65,17 +67,23 @@
   stroke: url(#fade-h)
 .fade
   opacity: 0.25
+
+line,
 .line
   fill: none
   vector-effect: non-scaling-stroke
 
   &.dashed
-    stroke-dasharray: 864 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    stroke-dasharray: 644 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
 
   &.cn,
   &.ussr
     stroke: $color-hl
-    stroke-dashoffset: 40
+    // stroke-dashoffset: 40
+  &.tw,
+  &.sk
+    stroke: #fff
+
   &.us,
   &.other
     stroke: #fff
@@ -84,3 +92,13 @@
     stroke-dashoffset: 0
   &.other
     opacity: 0.5
+
+circle
+
+  &.cn,
+  &.ussr
+    fill: $color-hl
+
+  &.tw,
+  &.sk
+    fill: #fff

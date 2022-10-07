@@ -166,6 +166,20 @@ centralMilitaryCommission:
     role: Vice Chairman
     img: ./img/politburo-members/zhang-youxia.jpg
 
+fourBigTigers:
+  - name: Zhou Yongkang
+    img: ./img/four-tigers/zhou-yongkang.jpg
+    class: jailed
+  - name: Gen. Xu Caihou
+    img: ./img/four-tigers/xu-caihou.jpg
+    class: jailed
+  - name: Ling Jihua
+    img: ./img/four-tigers/ling-jihua.jpg
+    class: jailed
+  - name: Su Rong
+    img: ./img/four-tigers/su-rong.jpg
+    class: jailed
+
 politburoMembers:
   - Top foreign policy officials
   - Leaders of four cities* and key provinces
@@ -221,3 +235,355 @@ cards:
     role: Group Leader
     role_cn: 组长
     new: true
+
+economicStrengths:
+  - EV battery production
+  - FDI in high-end manufacturing
+  - Renewable power sector
+  - Solar panel materials
+  - Vehicle exports
+
+population:
+  axes:
+    y: [800, 600, 400, 200]
+  scale:
+    - 1980
+    - 1981
+    - 1982
+    - 1983
+    - 1984
+    - 1985
+    - 1986
+    - 1987
+    - 1988
+    - 1989
+    - 1990
+    - 1991
+    - 1992
+    - 1993
+    - 1994
+    - 1995
+    - 1996
+    - 1997
+    - 1998
+    - 1999
+    - 2000
+    - 2001
+    - 2002
+    - 2003
+    - 2004
+    - 2005
+    - 2006
+    - 2007
+    - 2008
+    - 2009
+    - 2010
+    - 2011
+    - 2012
+    - 2013
+    - 2014
+    - 2015
+    - 2016
+    - 2017
+    - 2018
+    - 2019
+    - 2020
+    - 2021
+    - 2022
+    - 2023
+    - 2024
+    - 2025
+    - 2026
+    - 2027
+    - 2028
+    - 2029
+    - 2030
+    - 2031
+    - 2032
+    - 2033
+    - 2034
+    - 2035
+    - 2036
+    - 2037
+    - 2038
+    - 2039
+    - 2040
+    - 2041
+    - 2042
+    - 2043
+    - 2044
+    - 2045
+    - 2046
+    - 2047
+    - 2048
+    - 2049
+    - 2050
+  countries:
+    - name: China
+      code: cn
+      dashed: true
+      pop:
+        - 484668854
+        - 504651825
+        - 529559326
+        - 543172302
+        - 557972107
+        - 573328003
+        - 587222839
+        - 599649719
+        - 617746460
+        - 641050842
+        - 660476501
+        - 675503479
+        - 682740967
+        - 688579163
+        - 693913757
+        - 699202393
+        - 705632813
+        - 713376404
+        - 721141602
+        - 728701111
+        - 735723145
+        - 742675964
+        - 748695435
+        - 753550415
+        - 758614319
+        - 763212036
+        - 767209351
+        - 771038391
+        - 774456360
+        - 777627258
+        - 781035522
+        - 784713318
+        - 788292847
+        - 791642761
+        - 794645630
+        - 797335266
+        - 798530334
+        - 799186096
+        - 799306641
+        - 798807739
+        - 797325640
+        - 796460131
+        - 795595561
+        - 794731929
+        - 793869235
+        - 793007477
+        - 789807047
+        - 786619534
+        - 783444884
+        - 780283047
+        - 777133971
+        - 770210066
+        - 763347849
+        - 756546772
+        - 749806290
+        - 743125862
+        - 734064378
+        - 725113388
+        - 716271544
+        - 707537515
+        - 698909987
+        - 691861655
+        - 684884403
+        - 677977516
+        - 671140283
+        - 664372001
+        - 655894060
+        - 647524304
+        - 639261353
+        - 631103844
+        - 623050431
+
+populationGrowth:
+  title: 30-year population growth
+  scale: 0.85
+  labels:
+    - Taiwan
+    - South Korea
+    - China
+
+  sizes:
+    - 1974—2005
+    - 1980—2011
+    - 2019—2049
+
+  data:
+    - label: ""
+      values: [0, 0, 39.3]
+    - label: ""
+      values: [71.8, 44.4, 0]
+
+rules:
+  - [Collective leadership, One Man Rule]
+  - [Term Limits, Leader for Life]
+  - [Meritocracy, Loyalty]
+  - [Private Sector, State Sector]
+  - [Wealth, Common Prosperity]
+  - [Globalisation, Technology Independence]
+  - [US-China Co-existence, US-China Confrontation]
+
+regionalInvestment:
+  axes:
+    y: [70, 60, 50, 40, 30, 20, 10]
+  scale:
+    - 2000
+    - 2001
+    - 2002
+    - 2003
+    - 2004
+    - 2005
+    - 2006
+    - 2007
+    - 2008
+    - 2009
+    - 2010
+    - 2011
+    - 2012
+    - 2013
+    - 2014
+    - 2015
+    - 2016
+    - 2017
+    - 2018
+    - 2019
+    - 2020
+  countries:
+    - name: Global
+      class: cn
+      data:
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        - 7.5
+        - 62.9
+        - 41.2
+        - 34
+        - 34.9
+        - 41.8
+        - 48.3
+        - 51.1
+        - 75
+        - 49.2
+        - 12.6
+        - 3.9
+        - null
+    - name: Africa
+      class: stroke-lt
+      data:
+        - 0.1
+        - 0.3
+        - 0.8
+        - 1.8
+        - 1.0
+        - 2.2
+        - 5.2
+        - 4.0
+        - 3.4
+        - 6.6
+        - 6.8
+        - 9.7
+        - 11.9
+        - 17.5
+        - 12.0
+        - 11.8
+        - 28.4
+        - 14.6
+        - 11.8
+        - 8.2
+        - null
+    - name: Pacific
+      class: other
+      data:
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        -
+        - 0.063
+        - 0.094
+        - 0.116
+        - 0.126
+        - 0.177
+        - 0.199
+        - 0.233
+        - 0.287
+        - 0.229
+        - 0.246
+        - 0.169
+        - null
+    - name: Latin America
+      class: other
+      data:
+        -
+        -
+        -
+        -
+        -
+        - 0.03
+        - 0.0
+        - 5.1
+        - 0.3
+        - 12.7
+        - 34.5
+        - 8.0
+        - 7.0
+        - 12.3
+        - 13.6
+        - 21.3
+        - 12.5
+        - 6.6
+        - 2.1
+        - 1.9
+        - null
+
+retirementRules:
+  labels:
+    -
+    -
+    - Nomination age
+    - Retirement age
+
+  data:
+    - position: Politburo Inner Circle
+      icon:
+        <svg width="36" height="36" viewBox="0 0 22 22" fill="none"
+        stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="10"
+        opacity="0.5" /><circle cx="11" cy="11" r="6"/></svg>
+      nomination: 67
+      retirement: 72
+
+    - position: Politburo, Vice-Premiers
+      icon:
+        <svg width="36" height="36" viewBox="0 0 22 22" fill="none"
+        stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="10"
+        /><circle cx="11" cy="11" r="6" opacity="0.5"/></svg>
+      nomination: 67
+      retirement: 70
+
+    - position: Provincial leaders, Ministers
+      icon:
+        <svg width="36" height="36" viewBox="0 0 20 20"
+        fill="currentColor"><rect x="6" width="8" height="8"/><rect y="12"
+        width="8" height="8" opacity="0.5"/><rect x="12" y="12" width="8"
+        height="8" opacity="0.5"/></svg>
+      nomination: 63
+      retirement: 65
+
+    - position: Deputy leaders, Ministers
+      icon:
+        <svg width="36" height="36" viewBox="0 0 20 20"
+        fill="currentColor"><rect x="6" width="8" height="8"
+        opacity="0.5"/><rect y="12" width="8" height="8"/><rect x="12" y="12"
+        width="8" height="8"/></svg>
+      nomination: 58
+      retirement: 60

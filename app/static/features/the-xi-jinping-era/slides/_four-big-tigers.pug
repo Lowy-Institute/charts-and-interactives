@@ -1,0 +1,34 @@
+.slide.bg-dk.txt-ff
+  .slide-inner.txt-mono.flex.flex-col.flex-ch(data-view="in-viewport")
+    .type.txt-lg.txt-ff.txt-center.mx-auto(
+        data-view="type, in-viewport"
+        data-duration=1200
+      )
+        span.line.bg-hl Four Big Tigers
+        span.line.bg-ff.txt-dk.txt-md No Longer a Comrade
+
+    .flex-ch.mx-auto.txt-center
+      for item, i in page.data.fourBigTigers
+        - const length = 2
+
+        .member.fade-in(
+          style="margin: 0 12px; padding: 0"
+          class=[
+            item.class,
+            "delay-" + (i),
+          ]
+        )
+
+          .posr.profile-img.delay-11
+            img(
+              data-src=item.img
+              width=200
+            )
+
+          .pv-sm.bg-dk
+            .type.mx-auto.pv-xs.txt-sm(
+              data-view="type, in-viewport"
+              data-duration=600
+              data-delay=(300 * i)
+            )
+              span.line= item.name

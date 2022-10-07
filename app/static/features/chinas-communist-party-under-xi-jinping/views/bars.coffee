@@ -11,6 +11,8 @@ require.register "views/bars", (exports, require, module) ->
         val: @$(".bar-value")
         bar: @$(".bar-bg")
 
+      @data.precision ?= 1
+      @data.prefix ?= ""
       @data.suffix ?= ""
       @data.direction ?= 1
 
@@ -25,7 +27,7 @@ require.register "views/bars", (exports, require, module) ->
         tx = easie.quintInOut Math.max(Math.min(t, 1), 0)
 
         if @data.value
-          @$elements.val.html((tx * @data.value).toFixed(1) + @data.suffix)
+          @$elements.val.html(@data.prefix + (tx * @data.value).toFixed(@data.precision) + @data.suffix)
           @$elements.bar.css(transform: "translate3d(#{(-1 + tx) * 90 * @data.direction}%,0,0)")
 
         if t > 0

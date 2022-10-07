@@ -9,6 +9,36 @@
     &.member-xi
       transform: translateY(-20px)
 
+  &.jailed
+    position: relative
+
+    .profile-img
+
+      &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 300px
+        bottom: 0
+        background: linear-gradient(to right, #666, $color-lt, $color-dk 25%, transparent 25%)
+        background-size: 48px 48px
+        opacity: 0
+        z-index: 1
+        transform: translateZ(0) scale(1, 0)
+        transform-origin: top center
+
+      .visible &
+        img
+          opacity: 1
+
+        &:before
+          opacity: 1
+          transition-delay: inherit
+          transition-duration: 900ms
+          transform: translateZ(0) scale(1, 1)
+
 .member-role
   height: 148px
   background: linear-gradient(to bottom, lighten($color-dk, 4), $color-dk)
+

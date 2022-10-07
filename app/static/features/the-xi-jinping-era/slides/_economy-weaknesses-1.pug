@@ -1,0 +1,113 @@
+- chartData = page.data.population
+
+.slide.bg-dk
+  .slide-inner(data-view="in-viewport")
+    .type.txt-md.txt-ff.txt-left.posa.txt-mono.z1(
+      data-view="slide, in-viewport"
+      data-duration=1800
+    )
+      span.line.bg-hl Economic weaknesses
+      span.line.bg-ff.txt-dk.txt-sm China's population
+
+    svg(
+      width="100%" 
+      height="100%"
+      style="margin-top: 1rem"
+      viewBox="0 0 1080 520" 
+      data-view="line, in-viewport"
+      data-duration=6000
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    )
+      defs
+        linearGradient#fade-h(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="50%" stop-opacity=1 stop-color="#4c5162")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#fade-v(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="50%" stop-opacity=1 stop-color="#4c5162")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#mask-l(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=0 stop-color="#22273d")
+        linearGradient#mask-r(x1="0%" x2="100%" y1="0%" y2="0%")
+          stop(offset="0%" stop-opacity=0 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#mask-t(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=1 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=0 stop-color="#22273d")
+        linearGradient#mask-b(x1="0%" x2="0%" y1="0%" y2="100%")
+          stop(offset="0%" stop-opacity=0 stop-color="#22273d")
+          stop(offset="100%" stop-opacity=1 stop-color="#22273d")
+        linearGradient#gradient
+          stop(offset="0" stop-color="#d7d7e2")
+          stop(offset="100%" stop-color="#d7d7e2" stop-opacity=0)
+
+      svg(width="100%" height="100%")
+        - nb = (_.last(chartData.scale) - chartData.scale[0] + 1)
+        for n, i in new Array(nb)
+          if (chartData.scale[i]) % 10 == 0 && i > 0 && i < nb
+            - x = i / nb * 100 + "%"
+            g.fade-in(class=("delay-" + ~~(1 + i * 3 / 10)))
+              if i > 0 && i < nb - 1
+                rect.fill-ff(x=x width=1 y=0 height="100%")
+              g
+                rect.fill-dk(
+                  x=x y="100%" transform="translate(-24 0)" width=48 height=26
+                )
+                text.fade.fill-ff(
+                  x=x y="100%"
+                  text-anchor="middle"
+                  transform="translate(0 14)"
+                )
+                  = chartData.scale[i]
+
+        - nb = chartData.axes.y.length
+        for v, i in chartData.axes.y
+          - y = (i + 1) / (nb + 1) * 100 + "%"
+          g.fade-in(class=("delay-" + ~~(3 * (i + 2))))
+            rect.fill-ff(x=0 y=y height=1 width="100%")
+            g
+              rect.fill-dk(x=0 y=y transform="translate(-24 -12)" width=48 height=24)
+              text.fade.fill-ff(x=0 y=y text-anchor="end" transform="translate(0 7)")
+                | #{v}&thinsp;M
+
+        rect(height="100%" width="100%" fill="url(#mask-t)")
+        rect(height="100%" width="100%" fill="url(#mask-r)")
+        rect(height="100%" width="100%" fill="url(#mask-l)")
+        rect(height="100%" width="100%" fill="url(#mask-b)")
+
+      svg.fade-in.delay-1(
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      )
+        for country, i in chartData.countries
+          polyline.line(
+            class=[country.code, country.dashed ? "dashed" : ""].join(" ")
+            stroke-width=4
+            points=(
+              country.pop.map((e,i,a)=>[i/(a.length - 1)*100, 100-(e/10000000)].map((e)=>e.toFixed(2)).join(",")).join(" ")
+            )
+          )
+
+      svg
+        for country, i in chartData.countries
+          - w = country.name.length * 12 + 13
+          svg.fade-in(
+            x=(2 - w)
+            y=(100 - country.pop[0] * 1/10000000) + "%"
+          )
+            path.fill-hl(
+              d="M-8,-12l" + w + ",0l8,12l-8,12l-" + w + ",0Z"
+            )
+            text.txt-bold.txt-sans.txt-tu.fill-dk(
+              x=0
+              y=6
+              text-anchor="start"
+            )= country.name
+
+    .posa.txt-muted.fade-in.delay-24(style="top: 0; right: 0")
+      | Source: UN Projections

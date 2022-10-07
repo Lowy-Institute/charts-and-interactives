@@ -1,3 +1,14 @@
+.fade-up
+  opacity: 0
+  transform: translate3d(0, 16px, 0)
+  transition: none
+
+  .visible &
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+    transition-duration: 1200ms
+    transition-property: all
+
 .fade-in
   opacity: 0
   transition: none
@@ -15,12 +26,13 @@ img.fade-in
     transform: scale3d(1, 1, 1)
 
 .undo
-  &.complete
+  &.complete,
+  .visible &
     transform: translate3d(0, 0, 0) !important
     transition: all 800ms, transform 800ms cubic-bezier(0.5, 0, 0.5, 1)
 
 @for $i from 0 through 30
-  .delay-#{$i})
+  .delay-#{$i}
     transition-delay: ($i * 200ms)
 
 @keyframes wave
