@@ -410,7 +410,7 @@ populationGrowth:
 
   data:
     - label: ""
-      values: [0, 0, 39.3]
+      values: [0, 0, 21.0]
     - label: ""
       values: [71.8, 44.4, 0]
 
