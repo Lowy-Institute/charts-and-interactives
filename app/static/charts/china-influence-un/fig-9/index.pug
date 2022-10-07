@@ -1,0 +1,573 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/china-influence-un/fig-9/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - fx = (i) => (i + 0.9) / (ln + 0.5)
+        - fy = (y) => (y - minY) / range
+        
+        svg(height="22%" width="100%")
+          <!-- chart 1 -->
+          <!-- Y-Axis labels-->
+          svg(height="100%")
+            svg(y="100.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 0
+            svg(y="75.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 1
+            svg(y="50.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 2
+            svg(y="25.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 3
+            svg(y="0.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 4
+          <!-- Y-Axis minor lines-->
+          svg(height="100%")
+            svg
+              line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="25.00%" x2="100%" y2="25.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="75.00%" x2="100%" y2="75.00%" stroke="#5552" stroke-dasharray="")
+          <!-- Chart rects-->
+          g(class="bars")
+            svg(x="2.69%" width="2.69%" height="100%")
+            svg(x="5.67%" width="2.69%" height="100%")
+            svg(x="8.66%" width="2.69%" height="100%")
+            svg(x="11.64%" width="2.69%" height="100%")
+            svg(x="14.63%" width="2.69%" height="100%")
+            svg(x="17.61%" width="2.69%" height="100%")
+            svg(x="20.60%" width="2.69%" height="100%")
+            svg(x="23.58%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#a3bc3e")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 1
+            svg(x="26.57%" width="2.69%" height="100%")
+            svg(x="29.55%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#ff8800")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="32.54%" width="2.69%" height="100%")
+            svg(x="35.52%" width="2.69%" height="100%")
+            svg(x="38.51%" width="2.69%" height="100%")
+            svg(x="41.49%" width="2.69%" height="100%")
+            svg(x="44.48%" width="2.69%" height="100%")
+            svg(x="47.46%" width="2.69%" height="100%")
+            svg(x="50.45%" width="2.69%" height="100%")
+            svg(x="53.43%" width="2.69%" height="100%")
+            svg(x="56.42%" width="2.69%" height="100%")
+            svg(x="59.40%" width="2.69%" height="100%")
+            svg(x="62.39%" width="2.69%" height="100%")
+            svg(x="65.37%" width="2.69%" height="100%")
+            svg(x="68.36%" width="2.69%" height="100%")
+            svg(x="71.34%" width="2.69%" height="100%")
+            svg(x="74.33%" width="2.69%" height="100%")
+            svg(x="77.31%" width="2.69%" height="100%")
+            svg(x="80.30%" width="2.69%" height="100%")
+            svg(x="83.28%" width="2.69%" height="100%")
+            svg(x="86.27%" width="2.69%" height="100%")
+            svg(x="89.25%" width="2.69%" height="100%")
+            svg(x="92.24%" width="2.69%" height="100%")
+            svg(x="95.22%" width="2.69%" height="100%")
+            svg(x="98.21%" width="2.69%" height="100%")
+        
+        svg(height="22%" width="100%" y="50.00%")
+          <!-- chart 2 -->
+          <!-- Y-Axis labels-->
+          svg(height="100%") 
+            svg(y="100.00%") 
+              text(text-anchor="end" transform="translate(-8 4)") 0
+            svg(y="75.00%") 
+              text(text-anchor="end" transform="translate(-8 4)") 1
+            svg(y="50.00%") 
+              text(text-anchor="end" transform="translate(-8 4)") 2
+            svg(y="25.00%") 
+              text(text-anchor="end" transform="translate(-8 4)") 3
+            svg(y="0.00%") 
+              text(text-anchor="end" transform="translate(-8 4)") 4
+          <!-- Y-Axis minor lines-->
+          svg(height="100%") 
+            svg
+              line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="") 
+            svg
+              line(x1="0%" y1="25.00%" x2="100%" y2="25.00%" stroke="#5552" stroke-dasharray="") 
+            svg
+              line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="") 
+            svg
+              line(x1="0%" y1="75.00%" x2="100%" y2="75.00%" stroke="#5552" stroke-dasharray="") 
+          <!-- Chart rects-->
+          g(class="bars") 
+            svg(x="2.69%" width="2.69%" height="100%")
+            svg(x="5.67%" width="2.69%" height="100%")
+            svg(x="8.66%" width="2.69%" height="100%")
+            svg(x="11.64%" width="2.69%" height="100%")
+            svg(x="14.63%" width="2.69%" height="100%")
+            svg(x="17.61%" width="2.69%" height="100%")
+            svg(x="20.60%" width="2.69%" height="100%")
+            svg(x="23.58%" width="2.69%" height="100%")
+            svg(x="26.57%" width="2.69%" height="100%")
+            svg(x="29.55%" width="2.69%" height="100%")
+            svg(x="32.54%" width="2.69%" height="100%")
+            svg(x="35.52%" width="2.69%" height="100%")
+            svg(x="38.51%" width="2.69%" height="100%")
+            svg(x="41.49%" width="2.69%" height="100%")
+            svg(x="44.48%" width="2.69%" height="100%")
+            svg(x="47.46%" width="2.69%" height="100%")
+            svg(x="50.45%" width="2.69%" height="100%")
+            svg(x="53.43%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#F42A39")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="56.42%" width="2.69%" height="100%")   
+              rect(y="75.00%" height="25.00%" width="100%" fill="#00E7FD")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="59.40%" width="2.69%" height="100%")
+            svg(x="62.39%" width="2.69%" height="100%")
+            svg(x="65.37%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="68.36%" width="2.69%" height="100%")
+              rect(y="50.00%" height="50.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="75.00%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2
+            svg(x="71.34%" width="2.69%" height="100%")
+            svg(x="74.33%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="77.31%" width="2.69%" height="100%")
+            svg(x="80.30%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="83.28%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="86.27%" width="2.69%" height="100%")
+            svg(x="89.25%" width="2.69%" height="100%")
+              rect(y="50.00%" height="50.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="75.00%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2
+              rect(y="25.00%" height="25.00%" width="100%" fill="#076273") 
+              text(class="chart-value" x="50%" y="37.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="92.24%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="95.22%" width="2.69%" height="100%")
+            svg(x="98.21%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#F98B93")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+
+        svg(height="22%" width="100%")
+          <!-- chart 3 -->
+          <!-- Y-Axis labels-->
+          svg(height="100%")
+            svg(y="100.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 0
+            svg(y="75.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 1
+            svg(y="50.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 2
+            svg(y="25.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 3
+            svg(y="0.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 4
+          <!-- Y-Axis minor lines-->
+          svg(height="100%")
+            svg
+              line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="25.00%" x2="100%" y2="25.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="75.00%" x2="100%" y2="75.00%" stroke="#5552" stroke-dasharray="")
+          <!-- Chart rects-->
+          g(class="bars")
+            svg(x="2.69%" width="2.69%" height="100%")
+            svg(x="5.67%" width="2.69%" height="100%")
+            svg(x="8.66%" width="2.69%" height="100%")
+            svg(x="11.64%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#ffc52b")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="14.63%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#2D6993")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 1
+            svg(x="17.61%" width="2.69%" height="100%")
+            svg(x="20.60%" width="2.69%" height="100%")
+            svg(x="23.58%" width="2.69%" height="100%")
+            svg(x="26.57%" width="2.69%" height="100%")
+            svg(x="29.55%" width="2.69%" height="100%")
+            svg(x="32.54%" width="2.69%" height="100%")
+            svg(x="35.52%" width="2.69%" height="100%")
+            svg(x="38.51%" width="2.69%" height="100%")
+            svg(x="41.49%" width="2.69%" height="100%")
+            svg(x="44.48%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#ffc52b")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="47.46%" width="2.69%" height="100%")
+            svg(x="50.45%" width="2.69%" height="100%")
+            svg(x="53.43%" width="2.69%" height="100%")
+            svg(x="56.42%" width="2.69%" height="100%")
+            svg(x="59.40%" width="2.69%" height="100%")
+            svg(x="62.39%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#16B56F")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="65.37%" width="2.69%" height="100%")
+            svg(x="68.36%" width="2.69%" height="100%")
+            svg(x="71.34%" width="2.69%" height="100%")
+            svg(x="74.33%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#008A97")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="77.31%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#2D6993")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 1
+            svg(x="80.30%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="83.28%" width="2.69%" height="100%")
+              rect(y="0.00%" height="100.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="50.00%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 4
+            svg(x="86.27%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              rect(y="50.00%" height="25.00%" width="100%" fill="#008A97")
+              text(class="chart-value" x="50%" y="62.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="89.25%" width="2.69%" height="100%")
+            svg(x="92.24%" width="2.69%" height="100%")
+            svg(x="95.22%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#ff4050")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+            svg(x="98.21%" width="2.69%" height="100%")
+              rect(y="75.00%" height="25.00%" width="100%" fill="#B7C1CE")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              rect(y="50.00%" height="25.00%" width="100%" fill="#008A97")
+              text(class="chart-value" x="50%" y="62.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+
+        svg(height="22%" width="100%")
+          <!-- chart 4 -->
+          <!-- Y-Axis labels-->
+          svg(height="100%")
+            svg(y="100.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 0
+            svg(y="75.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 1
+            svg(y="50.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 2
+            svg(y="25.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 3
+            svg(y="0.00%")
+              text(text-anchor="end" transform="translate(-8 4)") 4
+          <!-- Y-Axis minor lines-->
+          svg(height="100%")
+            svg
+              line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="25.00%" x2="100%" y2="25.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+            svg
+              line(x1="0%" y1="75.00%" x2="100%" y2="75.00%" stroke="#5552" stroke-dasharray="")
+          <!-- Chart rects-->
+          g(class="bars")
+            svg(x="2.69%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#bd5d92")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              rect(y="50.00%" height="25.00%" width="100%" fill="#68389a")
+              text(class="chart-value" x="50%" y="62.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1990
+            svg(x="5.67%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1991
+            svg(x="8.66%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1992
+            svg(x="11.64%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1993
+            svg(x="14.63%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1994
+            svg(x="17.61%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#bd5d92")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1995
+            svg(x="20.60%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#539ed4")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1996
+            svg(x="23.58%" width="2.69%" height="100%")  
+              rect(y="50.00%" height="50.00%" width="100%" fill="#bd5d92")
+              text(class="chart-value" x="50%" y="75.00%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1997
+            svg(x="26.57%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1998
+            svg(x="29.55%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 1999
+            svg(x="32.54%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2000
+            svg(x="35.52%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2001
+            svg(x="38.51%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#2D6993")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 1
+              rect(y="50.00%" height="25.00%" width="100%" fill="#DF0C1B")
+              text(class="chart-value" x="50%" y="62.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2002
+            svg(x="41.49%" width="2.69%" height="100%")  
+              rect(y="50.00%" height="50.00%" width="100%" fill="#DF0C1B")
+              text(class="chart-value" x="50%" y="75.00%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2003
+            svg(x="44.48%" width="2.69%" height="100%")  
+              rect(y="50.00%" height="50.00%" width="100%" fill="#DF0C1B")
+              text(class="chart-value" x="50%" y="75.00%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2004
+            svg(x="47.46%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2005
+            svg(x="50.45%" width="2.69%" height="100%")  
+              rect(y="50.00%" height="50.00%" width="100%" fill="#DF0C1B")
+              text(class="chart-value" x="50%" y="75.00%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2006
+            svg(x="53.43%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2007
+            svg(x="56.42%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2008
+            svg(x="59.40%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2009
+            svg(x="62.39%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2010
+            svg(x="65.37%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#DF0C1B")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2011
+            svg(x="68.36%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2012
+            svg(x="71.34%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2013
+            svg(x="74.33%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2014
+            svg(x="77.31%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2015
+            svg(x="80.30%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2016
+            svg(x="83.28%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#DF0C1B")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2017
+            svg(x="86.27%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#DF0C1B")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2018
+            svg(x="89.25%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2019
+            svg(x="92.24%" width="2.69%" height="100%")  
+              rect(y="75.00%" height="25.00%" width="100%" fill="#f2b000")
+              text(class="chart-value" x="50%" y="87.50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2020
+            svg(x="95.22%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2021
+            svg(x="98.21%" width="2.69%" height="100%")  
+              <!-- X-Axis labels-->
+              svg(class="x-label" x="50%" y="100%")
+                text(text-anchor="middle" transform="translate(0 20)") 2022
+
+      .row
+        ul.legend.list-bare.txt-left.list-column
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      
+      .tooltip    
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 670px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 16px
+        right: 20px
+        bottom: 40px
+
+      .chart-content > svg
+        border-bottom: 1px solid #bbb
+        margin-bottom: 30px
+
+      .chart-title
+        margin: auto
+        font-size: 20px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      ul.list-column
+        column-count: 3
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 13px
+        margin-bottom: .75em
+        margin-top: 5em
+
+      .legend-item
+        margin: 0 8px 0
+        padding: 2px 0 2px 20px
+        position: relative
+        white-space: pre-nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .25em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 12px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-left: 2em
+        font-size: 15px
+        
+      .chart-value
+        opacity: 0
+        transition-duration: .4s
+        pointer-events: none
+      
+      .chart-content:hover .chart-value
+        opacity: 1
+        
+      .x-label text
+        text-anchor: end
+        transform: rotate(-45deg) translate(-8px, 14px)
+
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 40px
+        .legend
+          flex-direction: column
+          font-size: 11px
+        .chart-title
+          font-size: 1px
+        .chart-subtitle
+          font-size: 13px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+        ul.list-column
+          column-count: 2
+        .x-label 
+          display: none
+        .bars svg:nth-child(5n+1) .x-label
+          display: block
