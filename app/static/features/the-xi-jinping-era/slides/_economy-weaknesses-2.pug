@@ -1,0 +1,59 @@
+- chartData = page.data.populationGrowth
+
+.slide.bg-dk.txt-ff
+  .slide-inner(data-view="in-viewport")
+    .txt-md.txt-ff.txt-left.posa.txt-mono.z1
+      .line(style="background:#f7434c") Economic weaknesses
+      .type(
+        data-view="slide, in-viewport"
+        data-duration=1800
+        style="margin-top: 12px"
+      )
+        span.line.bg-ff.txt-dk.txt-sm= chartData.title
+
+    .bars.txt-mid.fh.txt-sm.fade-in
+      for item, j in chartData.data
+        .bar-group.flex-cv(style=`padding-top: 40px;`)
+          .bar-group-label.txt-center.txt-muted.fade-in.delay-8
+            = item.label
+
+          for value, i in item.values
+            .bar(
+              style={margin: "20px 0"}
+              data-view="bars, in-viewport"
+              data-duration=(2500 - i * 400)
+              data-delay=(j * 50 + i * 200)
+              data-value=value
+              data-direction=(j > 0 ? 1 : -1)
+              data-suffix="%"
+              data-prefix=(j > 0 ? "+" : "-")
+            )
+              .bar-bg.txt-ff.r0(
+                style={
+                  width: `${value / chartData.scale}%`
+                }
+                class=[
+                  ["bg-lt", "bg-lt", "bg-hl"][i],
+                  j > 0 ? "l0 bar-bg-fade" : "r0"
+                ]
+              )
+                if Math.abs(value) > 0
+                  span.bar-value(
+                    class=[
+                      j > 0 ? "bar-value-outside txt-muted" : "",
+                      j > 0 ? "bar-value-right" : ""
+                    ]
+                  )= value
+              
+              if j == 0
+                strong.bar-label.txt-left.txt-tu.txt-sans(
+                  class=["txt-ff", "txt-ff", "txt-hl"][i]
+                  style="line-height: 1.3"
+                )
+                  = chartData.labels[i]
+                  br
+                  span.txt-normal.txt-muted
+                    = chartData.sizes[i]
+
+    //- .posa.txt-mid.fade-in.delay-8(style="top: 0; right: 0")
+      | Source: CCP Organization Department (2017)

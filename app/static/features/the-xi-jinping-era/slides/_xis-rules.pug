@@ -1,0 +1,55 @@
+.slide.bg-dk
+  .slide-inner.flex-ch.flex-col.flex.flex-evenly(
+    data-view="in-viewport, page" data-pages=2
+  )
+    .fh.fade-in.txt-mono(
+      data-attributes=[
+        {style: ""},
+        {style:"transform: translate3d(0, -12px, 0)"}
+      ]
+    )
+      .bg-l.txt-lg.txt-ff.ph-lg.pv-sm
+        | Xi's Rules
+    
+    .posa.flex-cv.txt-ff.txt-sans.txt-tu.fade-in.txt-bold(
+      data-attributes=[
+        {style: "transform: translate3d(0, 40px, 0);"},
+        {style: "opacity:0; transform: translate3d(0, 20px, 0);"}
+      ]
+    )
+      for row, i in page.data.rules
+        .flex-ch
+          for v, j in [row[0],"&rarr;",row[1]]
+            .ph-sm.pv-xs.fade-in(
+              style=((j > 0 ? `transform: translate3d(-24px,0,0);` : "") + ` transition-delay: ${200 * (6.5 * i + (j ? 2.5 : 0))}ms`)
+              class=(
+                ["bg-lta", "undo txt-md", "undo bg-hl"][j]
+              )
+            )!= v
+
+    .posa.fw.txt-md.txt-dk.fade-in.txt-mono
+      .fade-in.pv-sm(
+        data-attributes=[
+          {style: "transform: translate3d(0, 80px, 0); opacity: 0;"},
+          {style: "transform: translate3d(0, 40px, 0);"}
+        ]
+      )
+        .line.bg-ff.ph-sm.mx-auto
+          .line-bg 
+          | “China's reform and opening-up will
+        .line.bg-ff.ph-sm.mx-auto
+          .line-bg 
+          | continue to move on. The Yellow River
+        .line.bg-ff.ph-sm.mx-auto
+          .line-bg 
+          | and Yangtze River will not flow backward.”
+
+        .fade-in.txt-ff.txt-sm.txt-center.pv-sm(
+          data-attributes=[
+            {style: "opacity: 0;"},
+            {style: "transition-delay: 400ms"},  
+          ]
+        )
+          | Li Keqiang, August, 2022
+
+          
