@@ -593,10 +593,9 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
-      
-      .tooltip    
+        .chart-source.txt-left.txt-muted.txt-cond!= chart.source
+        .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
+
   
 block append css
   style
@@ -659,9 +658,9 @@ block append css
 
       .legend-item
         margin: 0 8px 0
-        padding: 2px 0 2px 20px
+        padding: 1px 0 1px 20px
         position: relative
-        white-space: pre-nowrap
+        white-space: pre-wrap
 
       .legend-item-box
         position: absolute
@@ -679,8 +678,8 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 2em
-        font-size: 15px
+        margin-right: 2em
+        font-size: 12px
         
       .chart-value
         opacity: 0
