@@ -1,0 +1,212 @@
+extend /partials/layout
+
+include _line
+
+block append config
+  - _.extend(page, data.getOne(__.directory.replace("app/","") + "/data"))
+
+block page
+  .wrapper
+    .txt-center
+      h1= page.title
+      if page.subtitle
+        h2.txt-muted= page.subtitle
+
+    +svg-line(page.chart)
+
+block append scripts
+  style
+    :sass
+      h1
+        font-size: 20px
+        margin: 0
+        line-height: 1.2
+        margin-bottom: 20px !important
+      h2
+        font-size: 14px
+
+      .wrapper
+        max-width: 900px
+        overflow: visible
+        line-height: 16px
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+        
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 40px
+        right: 20px
+        bottom: 40px
+
+      .chart-wrap
+        padding-left: 32px
+        padding-bottom: 40px
+        margin: 24px 0 12px
+
+      .chart-legend
+        text-transform: none
+        margin-left: -0.5em
+        padding-left: 32px
+        padding-bottom: 16px
+        /* max-width: 500px */
+
+      .chart-details
+        text-align: left
+        flex-grow: 1
+        list-style: none
+        font-size: 15px
+
+      svg.chart-key-line
+        display: inline-block
+        margin-right: 0.5em
+
+        line
+          stroke-width: 4
+
+      svg.line
+        overflow: visible
+        font-size: 13px
+        height: 350px
+        line-height: 12px
+        pointer-events: none
+
+        svg
+          overflow: visible
+
+        path,
+        line
+          fill: none
+          vector-effect: non-scaling-stroke
+
+        line
+          stroke-width: 1
+          stroke: #ccc
+        
+        line.trendline
+          stroke-width: 2
+          stroke: #2D6993
+
+        text
+          text-align: center
+
+        path
+          stroke-width: 2.5
+
+        .dot
+          stroke-dasharray: 1
+
+      .x,
+      .y
+        text
+          fill: currentColor
+
+      .point
+        opacity: 0
+        transition: opacity 300ms
+        .area
+          pointer-events: all
+          stroke: none !important
+        &:hover
+          opacity: 1
+
+      .g0
+        circle,
+        text
+          fill: #2D6993
+        path,
+        line
+          stroke: #2D6993
+
+      .g1
+        circle,
+        text
+          fill: #ff4050
+        path,
+        line
+          stroke: #ff4050
+      
+      .g2
+        circle,
+        text
+          fill: #B7C1CE
+        path,
+        line
+          stroke: #B7C1CE
+
+      .g3
+        circle,
+        text
+          fill: #ffc52b
+        path,
+        line
+          stroke: #ffc52b 
+        
+      .g4
+        circle,
+        text
+          fill: #539ed4
+        path,
+        line
+          stroke: #539ed4
+
+      .chart-footer
+        margin: 36px 0 12px 0
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      .g0
+        background: #2D6993
+        fill: #2D6993
+      .g1
+        background: #ff4050
+      .g2
+        background: #B7C1CE
+      .g3
+        background: #ffc52b 
+      .g4
+        background: #539ed4
+
+      .y-label
+        transform: rotate(-90deg) translate(-3rem, -4.2rem)
+
+      @media (max-width: 700px)
+        .chart-footer
+          display: block
+
+        .chart-legend,
+        .chart-key
+          display: block
+
+        .chart-details
+          text-align: left
+
+        .x-tick:nth-child(even)
+          display: none
+
+      @media (max-width: 450px)
+        .x-tick text
+          transform: rotate(-45deg) translate(2px, 8px)
