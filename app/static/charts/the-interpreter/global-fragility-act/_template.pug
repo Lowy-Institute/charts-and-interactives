@@ -10,7 +10,7 @@ block page
     .txt-center
       h1= page.title
       if page.subtitle
-        h2.txt-muted= page.subtitle
+        h2= page.subtitle
 
     +svg-line(page.chart)
 
@@ -21,9 +21,11 @@ block append scripts
         font-size: 20px
         margin: 0
         line-height: 1.2
-        margin-bottom: 20px !important
+        margin-bottom: 10px !important
+       
       h2
-        font-size: 14px
+        font-size: 16px
+         margin-bottom: 20px !important
 
       .wrapper
         max-width: 900px
