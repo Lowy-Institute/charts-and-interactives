@@ -59,16 +59,16 @@
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       )
-        for country, i in chartData.countries
-          -
-            ymax = chartData.axes.y[0] + +chartData.axes.y.slice(-1)
-            fy = v => (v !== null) ? 100 * (1 - v / ymax) : null
-            fx = (i,n) => 100 * i / (n - 1)
-            fp = _a => _a.map((v,i,a) => [fx(i,a.length), fy(v)])
-              .filter(a => a[1] !== null)
-              .map(coords => coords.map((v) => v.toFixed(2)).join(","))
-              .join(" ")
+        -
+          ymax = chartData.axes.y[0] + +chartData.axes.y.slice(-1)
+          fy = v => (v !== null) ? 100 * (1 - v / ymax) : null
+          fx = (i,n) => 100 * i / (n - 1)
+          fp = _a => _a.map((v,i,a) => [fx(i,a.length), fy(v)])
+            .filter(a => a[1] !== null)
+            .map(coords => coords.map((v) => v.toFixed(2)).join(","))
+            .join(" ")
 
+        for country, i in chartData.countries
           polyline.line(
             class=[country.class, country.dashed ? "dashed" : ""].join(" ")
             stroke-width=4

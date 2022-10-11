@@ -4,18 +4,18 @@
   .slide-inner(data-view="in-viewport")
     .type.txt-md.txt-ff.txt-left.posa.txt-mono.z1(
       data-view="slide, in-viewport"
-      data-duration=1800
+      data-duration=2000
     )
       span.line.bg-hl Economic weaknesses
-      span.line.bg-ff.txt-dk.txt-sm China's population
+      span.line.bg-ff.txt-dk.txt-sm China’s working-age population – falling fast
 
     svg(
       width="100%" 
       height="100%"
-      style="margin-top: 1rem"
-      viewBox="0 0 1080 520" 
+      style="margin-top: 1.25rem"
+      viewBox="0 0 1080 500" 
       data-view="line, in-viewport"
-      data-duration=6000
+      data-duration=5000
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     )
@@ -54,10 +54,10 @@
                 rect.fill-ff(x=x width=1 y=0 height="100%")
               g
                 rect.fill-dk(
-                  x=x y="100%" transform="translate(-24 0)" width=48 height=26
+                  x=x y="103%" transform="translate(-24 0)" width=48 height=26
                 )
                 text.fade.fill-ff(
-                  x=x y="100%"
+                  x=x y="103%"
                   text-anchor="middle"
                   transform="translate(0 14)"
                 )
@@ -76,7 +76,7 @@
         rect(height="100%" width="100%" fill="url(#mask-t)")
         rect(height="100%" width="100%" fill="url(#mask-r)")
         rect(height="100%" width="100%" fill="url(#mask-l)")
-        rect(height="100%" width="100%" fill="url(#mask-b)")
+        //- rect(height="100%" width="100%" fill="url(#mask-b)")
 
       svg.fade-in.delay-1(
         width="100%"
@@ -84,30 +84,41 @@
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       )
+        -
+          ymax = chartData.axes.y[0] + +chartData.axes.y.slice(-1)
+          scale = chartData.axes.scale
+          fy = v => (v !== null) ? 100 * (1 - (scale * v) / ymax) : null
+          fx = (i,n) => 100 * i / (n - 1)
+          fp = _a => _a.map((v,i,a) => [fx(i,a.length), fy(v)])
+            .filter(a => a[1] !== null)
+            .map(coords => coords.map((v) => v.toFixed(2)).join(","))
+            .join(" ")
+
         for country, i in chartData.countries
           polyline.line(
-            class=[country.code, country.dashed ? "dashed" : ""].join(" ")
+            class=[country.class, country.dashed ? "dashed" : ""].join(" ")
             stroke-width=4
-            points=(
-              country.pop.map((e,i,a)=>[i/(a.length - 1)*100, 100-(e/10000000)].map((e)=>e.toFixed(2)).join(",")).join(" ")
-            )
+            points=fp(country.data)
           )
 
       svg
         for country, i in chartData.countries
-          - w = country.name.length * 12 + 13
+          - w = country.name.length * 12 + (country.name.length > 6 ? 0 : 13)
+          - origin = fp(country.data).split(" ")[0].split(",")
           svg.fade-in(
-            x=(2 - w)
-            y=(100 - country.pop[0] * 1/10000000) + "%"
+            x=(origin[0] + "%")
+            y=(origin[1] + "%")
           )
-            path.fill-hl(
-              d="M-8,-12l" + w + ",0l8,12l-8,12l-" + w + ",0Z"
-            )
-            text.txt-bold.txt-sans.txt-tu.fill-dk(
-              x=0
-              y=6
-              text-anchor="start"
-            )= country.name
+            svg(x=(2 - w))
+              path(
+                class=["fill-hl", "fill-lt", "fill-dka", "fill-dka"][i]
+                d="M-8,-12l" + w + ",0l8,12l-8,12l-" + w + ",0Z"
+              )
+              text.txt-bold.txt-sans.txt-tu.fill-dk(
+                x=0
+                y=6
+                text-anchor="start"
+              )= country.name
 
-    .posa.txt-muted.fade-in.delay-24(style="top: 0; right: 0")
-      | Source: UN Projections
+    .posa.txt-muted.fade-in.delay-24(style="top: 0; right: 0; width: 360px")
+      | Source: World Development Indicator, UNPD World Population Prospects 2022, Medium Variant
