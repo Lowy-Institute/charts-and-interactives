@@ -1,20 +1,20 @@
 .slide.bg-dk
-  .slide-inner.flex-ch.flex-col.flex.flex-evenly(
+  .slide-inner.flex-cv.txt-center(
     data-view="in-viewport, page" data-pages=2
   )
-    .fh.fade-in.txt-mono(
+    .fade-in.txt-mono(
       data-attributes=[
         {style: ""},
         {style:"transform: translate3d(0, -12px, 0)"}
       ]
     )
-      .bg-l.txt-lg.txt-ff.ph-lg.pv-sm
+      .bg-l.txt-xl.txt-ff.ph-lg(style="margin-bottom: 0rem")
         | Xi's Rules
     
-    .posa.flex-cv.txt-ff.txt-sans.txt-tu.fade-in.txt-bold(
+    .flex-col.txt-ff.txt-sans.txt-tu.fade-in.txt-bold.txt-sm.flex-grow(
       data-attributes=[
-        {style: "transform: translate3d(0, 40px, 0);"},
-        {style: "opacity:0; transform: translate3d(0, 20px, 0);"}
+        {style: "transform: translate3d(0, 40px, 0); font-size: 20px"},
+        {style: "opacity:0; transform: translate3d(0, 20px, 0); font-size: 20px"}
       ]
     )
       for row, i in page.data.rules

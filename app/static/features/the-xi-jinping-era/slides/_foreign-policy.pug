@@ -1,9 +1,81 @@
-.slide.bg-dk.flex
-  .slide-inner.flex-cv.flex-grow(data-view="in-viewport")
-    .mx-auto.txt-center.txt-mono
-      .type.txt-xl.txt-ff.mx-auto(
-        data-view="type, in-viewport"
-        data-duration=1200
-      )
-        span.line.bg-hl Foreign Policy
-        span.line.bg-hl.txt-sm Something to go here?
+.slide.bg-dk
+  .posr.fw.fh.flex-cv(data-view="in-viewport")
+    img.fade-in.posa.fw.fh(data-src="./img/background/xinjiang.jpg")
+
+    .slide-inner(
+      data-view="in-viewport, page"
+      data-pages=3
+    )
+      .txt-mono(style="margin-top: 180px")
+        .fw.posa
+          .type.pv-md.txt-xl.mx-auto.txt-center.fade-in(
+            data-view="type, in-viewport"
+            data-duration=1200
+            data-attributes=[
+              {style: ""},
+              {style:"opacity: 0; transform: translate3d(0, -40px, 0);"},
+              {},
+            ]
+          )
+            span.line.bg-hl.txt-ff Foreign Policy
+            span.line.bg-ff.txt-md The ‘Wolf Warrior’ Era
+
+        .posa.fw.txt-md.txt-dk.fade-in
+        
+          .fade-in.pv-sm(
+            data-attributes=[
+              {style: "transform: translate3d(0, 0px, 0); opacity: 0;"},
+              {style: "transform: translate3d(0, -40px, 0);"},
+              {style: "transform: translate3d(0, -160px, 0); opacity: 0;"},
+            ]
+          )
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | “Observe calmly, secure our position,
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | cope with affairs calmly, hide our strength
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | and bide our time; be good at
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | maintaining a low profile and
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | never claim leadership.”
+
+            .fade-in.txt-ff.txt-sm.txt-center.pv-sm(
+              data-attributes=[
+                {style: "opacity: 0;"},
+                {style: "transition-delay: 400ms"},          
+                {},      
+              ]
+            )
+              | Deng Xiaoping
+
+          .fade-in.pv-sm(
+            data-attributes=[
+              {style: "opacity: 0;"},
+              {style: "transform: translate3d(0, -210px, 0); opacity: 0;"},
+              {style: "transform: translate3d(0, -330px, 0); opacity: 1;"},
+            ]
+          )
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | “The world is undergoing profound 
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | changes unseen in a century, but time
+            .line.bg-ff.ph-sm.mx-auto
+              .line-bg 
+              | and situation are in our favour.”
+
+            .fade-in.txt-ff.txt-sm.txt-center.pv-sm(
+              data-attributes=[
+                {style: "opacity: 0;"},
+                {style: "transition-delay: 800ms"},          
+                {},
+              ]
+            )
+              | Xi Jinping, 2021
