@@ -1,0 +1,62 @@
+title: >
+  Development support to the Pacific by donor and type of flows
+
+source: >
+  Source: Lowy Institute Pacific Aid Map
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  US$ current
+
+axes:
+  minY:  0
+  maxY: 800
+  stepsY: 9
+  rotateX: false
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Donors
+    values:
+      - ADB
+      - Australia
+      - IMF
+      - Japan
+      - China
+      - World Bank
+      - New Zealand
+      - EU
+      - 27 other partners
+
+  -
+    title: Grants
+    color: "dark"
+    values:
+      - null
+      - 393.46693100
+      - null
+      - 30.06459700
+      - 6.51744498
+      - null
+      - 24.19949500
+      - 13.67145000
+      - 66.74016907
+
+  -
+    title: Loans
+    color: "orange"
+    values:
+      - 675.46677596 
+      - 102.23804330 
+      - 366.60611900 
+      - 96.62272300 
+      - 83.20033805 
+      - 36.54390500 
+      - null
+      - 10.38176600 
