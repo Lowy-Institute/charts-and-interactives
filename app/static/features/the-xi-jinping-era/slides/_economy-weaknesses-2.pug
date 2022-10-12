@@ -2,16 +2,16 @@
 
 .slide.bg-dk.txt-ff
   .slide-inner(data-view="in-viewport")
-    .txt-md.txt-ff.txt-left.posa.txt-mono.z1
+    .txt-lg.txt-ff.txt-left.posa.txt-mono.z1
       .line(style="background:#f7434c") Economic weaknesses
       .type(
         data-view="slide, in-viewport"
         data-duration=1800
         style="margin-top: 12px"
       )
-        span.line.bg-ff.txt-dk.txt-sm= chartData.title
+        span.line.bg-ff.txt-dk.txt-md= chartData.title
 
-    .bars.txt-mid.fh.txt-sm.fade-in
+    .bars.posa.fw.txt-mid.fh.txt-sm.fade-in(style="height: 380px; bottom: 0")
       for item, j in chartData.data
         .bar-group.flex-cv(style=`padding-top: 40px;`)
           .bar-group-label.txt-center.txt-muted.fade-in.delay-8

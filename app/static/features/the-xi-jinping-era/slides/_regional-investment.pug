@@ -2,20 +2,20 @@
 
 .slide.bg-dk
   .slide-inner(data-view="in-viewport")
-    .type.txt-md.txt-ff.txt-left.posa.txt-mono.z1(
+    .type.txt-lg.txt-ff.txt-left.posa.txt-mono.z1(
       data-view="slide, in-viewport"
       data-duration=1800
     )
       span.line.bg-hl Belt & Road
-      span.line.bg-ff.txt-dk.txt-sm Regional investment
+      span.line.bg-ff.txt-dk.txt-md Regional investment
 
     svg(
-      width="1000"
+      width="100%"
       height="100%"
-      style="margin: 1rem auto"
-      viewBox="0 0 1080 500" 
+      style="margin: -.5rem 1rem 0"
+      viewBox="0 0 1080 550" 
       data-view="line, in-viewport"
-      data-duration=6000
+      data-duration=5000
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     )
@@ -41,17 +41,17 @@
         - nb = chartData.axes.y.length
         for v, i in chartData.axes.y
           - y = (i + 1) / (nb + 1) * 100 + "%"
-          g.fade-in(class=("delay-" + ~~(3 * (i + 2))))
+          g.fade-in(class=("delay-" + ~~(3 * (i + 1))))
             rect.fill-ff(x=0 y=y height=1 width="100%")
             g
               rect.fill-dk(x=0 y=y transform="translate(-24 -12)" width=48 height=24)
-              text.fade.fill-ff(x=0 y=y text-anchor="end" transform="translate(0 7)")
-                | $#{v}&thinsp;B
+              if i
+                text.fade.fill-ff(x=0 y=y text-anchor="end" transform="translate(0 7)")
+                  | $#{v}&thinsp;B
 
         rect(height="100%" width="100%" fill="url(#mask-t)")
         rect(height="100%" width="100%" fill="url(#mask-r)")
         rect(height="100%" width="100%" fill="url(#mask-l)")
-        //- rect(height="100%" width="100%" fill="url(#mask-b)")
 
       svg.fade-in.delay-1(
         width="100%"
@@ -60,8 +60,11 @@
         preserveAspectRatio="none"
       )
         -
-          ymax = chartData.axes.y[0] + +chartData.axes.y.slice(-1)
-          fy = v => (v !== null) ? 100 * (1 - v / ymax) : null
+          step = Math.abs(chartData.axes.y[0] - chartData.axes.y[1])
+          ymax = Math.max(...chartData.axes.y) + step
+          ymin = Math.min(...chartData.axes.y) - step
+          scale = chartData.axes.scale || 1
+          fy = v => (v !== null) ? 100 * (1 - ((v * scale) - ymin) / (ymax - ymin)) : null
           fx = (i,n) => 100 * i / (n - 1)
           fp = _a => _a.map((v,i,a) => [fx(i,a.length), fy(v)])
             .filter(a => a[1] !== null)

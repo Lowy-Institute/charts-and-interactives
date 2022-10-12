@@ -1,13 +1,17 @@
 .slide.bg-dk
   .posr.fw.fh.flex-cv(data-view="in-viewport")
-    img.fade-in.posa.fw.fh(data-src="./img/background/xinjiang.jpg")
+    img.fade-in.posa.fw.fh(data-src="./img/background/foreign-policy.jpg")
 
     .slide-inner(
       data-view="in-viewport, page"
       data-pages=3
     )
+      style.
+        #wolf-warrior-title .line:last-child span:nth-child(n + 5) { font-style: italic }
+        #wolf-warrior-title .line:last-child span:nth-child(n + 18) { font-style: normal }
+
       .txt-mono(style="margin-top: 180px")
-        .fw.posa
+        #wolf-warrior-title.fw.posa
           .type.pv-md.txt-xl.mx-auto.txt-center.fade-in(
             data-view="type, in-viewport"
             data-duration=1200
@@ -18,7 +22,7 @@
             ]
           )
             span.line.bg-hl.txt-ff Foreign Policy
-            span.line.bg-ff.txt-md The ‘Wolf Warrior’ Era
+            span.line.bg-ff.txt-md The <em>Wolf Warrior</em> Era
 
         .posa.fw.txt-md.txt-dk.fade-in
         
@@ -57,8 +61,8 @@
           .fade-in.pv-sm(
             data-attributes=[
               {style: "opacity: 0;"},
-              {style: "transform: translate3d(0, -210px, 0); opacity: 0;"},
-              {style: "transform: translate3d(0, -330px, 0); opacity: 1;"},
+              {style: "transform: translate3d(0, -280px, 0); opacity: 0;"},
+              {style: "transform: translate3d(0, -360px, 0); opacity: 1;"},
             ]
           )
             .line.bg-ff.ph-sm.mx-auto
