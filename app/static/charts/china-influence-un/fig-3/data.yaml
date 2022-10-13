@@ -41,7 +41,7 @@ series:
 
   -
     title: Brazil
-    color: "highlight" 
+    color: "blue-300" 
     values:
       - 0
       - 0
@@ -56,7 +56,7 @@ series:
       - 0
   -
     title: Canada
-    color: "green"
+    color: "teal"
     values:
       - 0
       - 0
@@ -86,7 +86,7 @@ series:
       - 0
   -
     title: Denmark
-    color: "red-dark"
+    color: "green-light"
     values:
       - 0
       - 0
@@ -101,7 +101,7 @@ series:
       - 0
   -
     title: Germany
-    color: "orange"
+    color: "green"
     values:
       - 0
       - 0
@@ -116,7 +116,7 @@ series:
       - 0
   -
     title: Japan
-    color: "purple"
+    color: "red-500"
     values:
       - 0
       - 0
@@ -131,7 +131,7 @@ series:
       - 0
   -
     title: Netherlands
-    color: "pink"
+    color: "red-100"
     values:
       - 0
       - 0
@@ -146,7 +146,7 @@ series:
       - 0
   -
     title: Norway
-    color: "lime"
+    color: "yellow-light"
     values:
       - 0
       - 0
@@ -161,7 +161,7 @@ series:
       - 0
   -
     title: Saudi Arabia
-    color: "yellow"
+    color: "orange"
     values:
       - 0
       - 0
@@ -176,7 +176,7 @@ series:
       - 0
   -
     title: Sweden
-    color: "brown"
+    color: "lilac"
     values:
       - 0
       - 0
@@ -191,7 +191,7 @@ series:
       - 0
   -
     title: Switzerland
-    color: "green-dark"
+    color: "purple"
     values:
       - 0
       - 0
@@ -206,7 +206,7 @@ series:
       - 0
   -
     title: United Kingdom
-    color: "red-light"
+    color: "yellow"
     values:
       - 0
       - 0
@@ -221,7 +221,7 @@ series:
       - 0
   -
     title: United States of America
-    color: "teal"
+    color: "brown"
     values:
       - 0
       - 0
