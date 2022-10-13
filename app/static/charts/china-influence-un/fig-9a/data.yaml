@@ -60,7 +60,7 @@ series:
 
   -
     title: Appointment of Secretary-General
-    color: "highlight"
+    color: "red"
     values:
       - 0
       - 0
@@ -134,7 +134,7 @@ series:
       - 0
   -
     title: Central America
-    color: "lime"
+    color: "highlight"
     values:
       - 0
       - 0
@@ -171,7 +171,7 @@ series:
       - 0
   - 
     title: Cyprus
-    color: "yellow"
+    color: "teal"
     values:
       - 0
       - 0
@@ -208,7 +208,7 @@ series:
       - 0
   -
     title: FYR Macedonia
-    color: "orange"
+    color: "green"
     values:
       - 0
       - 0
@@ -245,7 +245,7 @@ series:
       - 0
   -
     title: Georgia
-    color: "green"
+    color: "green-light"
     values:
       - 0
       - 0
@@ -283,7 +283,7 @@ series:
       - 0
   -
     title: Maintenance of international peace and security
-    color: "red"
+    color: "purple"
     values:
       - 0
       - 0
@@ -358,7 +358,7 @@ series:
       - 0
   -
     title: Myanmar
-    color: "red-200"
+    color: "orange"
     values:
       - 0
       - 0
@@ -395,7 +395,7 @@ series:
       - 0
   -
     title: Non-proliferation/DPRK
-    color: "red-400"
+    color: "orange-light"
     values:
       - 0
       - 0
@@ -432,117 +432,6 @@ series:
       - 0
   -
     title: Occupied Arab territories
-    color: "pink"
-    values:
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-  -
-    title: Panama
-    color: "purple"
-    values:
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-  -
-    title: Syria
-    color: "grey"
-    values:
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-  -
-    title: Threats to international peace and security caused by terrorist acts
     color: "yellow-dark"
     values:
       - 0
@@ -579,8 +468,119 @@ series:
       - 0
       - 0
   -
+    title: Panama
+    color: "yellow"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+  -
+    title: Syria
+    color: "brown"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+  -
+    title: Threats to international peace and security caused by terrorist acts
+    color: "red-dark"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+  -
     title: Ukraine
-    color: "teal"
+    color: "red-light"
     values:
       - 0
       - 0
@@ -617,7 +617,7 @@ series:
       - 0
   -
     title: Venezuela
-    color: "teal-dark"
+    color: "pink"
     values:
       - 0
       - 0
@@ -654,7 +654,7 @@ series:
       - 0
   -
     title: Yemen
-    color: "teal-300"
+    color: "lilac"
     values:
       - 0
       - 0
@@ -691,7 +691,7 @@ series:
       - 0
   -
     title: Zimbabwe
-    color: "teal-500"
+    color: "grey"
     values:
       - 0
       - 0
