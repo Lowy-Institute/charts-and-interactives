@@ -23,7 +23,10 @@ block page
         - fx = (i) => (i + 0.6) / (ln + 0.25)
         - fy = (y) => (y - minY) / range
         
-        img(src="fig-6.svg")
+        .desktop
+          img(src="fig-6.svg")
+        .mobile
+          img(src="fig-6-mobile.svg")
 
       
       //.row
@@ -130,6 +133,9 @@ block append css
       .txt-muted
         color: #767676
 
+      .mobile
+        display: none
+
 
       @media (max-width: 700px)
         
@@ -158,4 +164,11 @@ block append css
         .x-label 
           display: none  
         .x-label:nth-child(2n+3)
+          display: block
+
+        .wrapper 
+          margin: 0 !important
+        .desktop
+          display: none
+        .mobile
           display: block
