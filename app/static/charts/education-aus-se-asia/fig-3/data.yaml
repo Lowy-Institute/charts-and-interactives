@@ -1,14 +1,14 @@
 title: >
-  Proportion of alumni by level of study who had oppurtunities to develop partnerships with Australians post award
+  Alumni by level of study who had oppurtunities to develop partnerships with Australians
 
-#source: >
-  #<b>Source:</b> Lorem ipsum
+source: >
+  <b>Source:</b> Australia Awards Alumni Global Tracer Survey 2020
 
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
-#subtitle: >
-  #Subtitle goes here
+subtitle: >
+  (N=5049)
 
 axes:
   minY:  0
@@ -17,7 +17,7 @@ axes:
   rotateX: false
   percentage: true
   minorLines: true
-  dotted: [1, 3] # Index of dotted gridlines
+  dotted: [] # Index of dotted gridlines
 
 series:
   -
@@ -25,9 +25,9 @@ series:
 
     values:
       - Doctorate
-      - Masters
+      - Master's
       - Graduate Diploma/Certificate
-      - Bachelors
+      - Bachelor's
       - Diploma / Advanced Diploma / Associate Degree
       - Short Course / Certificate / Fellowship
   -

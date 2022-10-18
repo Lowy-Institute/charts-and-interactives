@@ -1,8 +1,8 @@
 title: >
-  Percentage of ISEAS State of Southeast Asia survey respondents choosing Australia as preferred destination for tertiary education
+  ISEAS State of Southeast Asia survey respondents choosing Australia as preferred destination for tertiary education
 
-#source: >
-  #<b>Source:</b> Lorem ipsum
+source: >
+  <b>Source:</b> Institute for Southeast Asian Studies (ISEAS), State of Southeast Asia Survey
 
 #notes: >
   #<b>Notes:</b> Lorem ipsum
@@ -17,7 +17,7 @@ axes:
   rotateX: false
   percentage: true
   minorLines: true
-  dotted: [1, 3] # Index of dotted gridlines
+  dotted: [] # Index of dotted gridlines
 
 series:
   -

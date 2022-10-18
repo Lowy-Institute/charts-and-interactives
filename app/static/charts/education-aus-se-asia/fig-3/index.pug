@@ -64,7 +64,7 @@ block page
 
                   for set, j in chart.series.filter( (s, i) => i )
                     - y = set.values[i]
-                    - w = 90/(chart.series.length-1)
+                    - w = 75/(chart.series.length-.5)
                   
                     rect(
                       x=(j*w)
@@ -98,9 +98,9 @@ block page
       .row
         ul.legend-custom.list-bare.txt-center.flex-ch
           li.legend-item-custom(style="font-size:11px") Doctorate
-          li.legend-item-custom(style="font-size:11px") Masters
+          li.legend-item-custom(style="font-size:11px") Master's
           li.legend-item-custom(style="font-size:11px") Graduate Diploma /<br>Certificate
-          li.legend-item-custom(style="font-size:11px") Bachelors
+          li.legend-item-custom(style="font-size:11px") Bachelor's
           li.legend-item-custom(style="font-size:11px") Diploma /<br>Advanced Diploma /<br>Associate Degree
           li.legend-item-custom(style="font-size:11px") Short Course /<br>Certificate /<br>Fellowship
 
@@ -112,7 +112,7 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       .tooltip 
@@ -243,7 +243,8 @@ block append css
         
       .chart-notes, .chart-source
         margin-left: 2em
-        font-size: 15px
+        margin-top: 1em
+        font-size: 14px
         
       .chart-value
         opacity: 0

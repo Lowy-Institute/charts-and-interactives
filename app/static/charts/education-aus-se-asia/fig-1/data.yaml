@@ -1,8 +1,8 @@
 title: >
-  Southeast Asian international students in Australia 2010 - 2019
+  Southeast Asian international students in Australia 2010—2019
 
-#source: >
-  #<b>Source:</b> Lowy Institute
+source: >
+  <b>Source:</b> UNESCO Institute for Statistics
 
 #notes: >
   #<b>Notes:</b> data from January 2022
@@ -53,7 +53,7 @@ series:
       - 21924
 
   -
-    title: VET
+    title: Vocational Education and Training (VET)
     color: "red"
     widen: false
     dashed: false
