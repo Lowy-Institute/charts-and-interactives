@@ -1,0 +1,70 @@
+title: >
+  Southeast Asian international students in Australia 2010—2019
+
+source: >
+  <b>Source:</b> UNESCO Institute for Statistics
+
+#notes: >
+  #<b>Notes:</b> data from January 2022
+
+#subtitle: >
+  #New cases per million
+
+axes:
+  minY:  0
+  maxY: 50000
+  stepsY: 6
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+  -
+    title: Higher Education
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 21352
+      - 20684
+      - 18897
+      - 18615
+      - 20152
+      - 20787
+      - 21647
+      - 21349
+      - 20947
+      - 21924
+
+  -
+    title: Vocational Education and Training (VET)
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 17762
+      - 17958
+      - 16879
+      - 18777
+      - 23662
+      - 26645
+      - 29769
+      - 31487
+      - 30384
+      - 35005

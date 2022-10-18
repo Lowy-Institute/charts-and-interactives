@@ -73,3 +73,7 @@ app/static/features/southeast-asia-economy/img/6A583C37B0A835A3.jpg
 app/static/features/southeast-asia-economy/img/6A583C37B0A835A4.jpg
 app/static/features/southeast-asia-economy/img/6A583C37B0A835A5.jpg
 app/static/features/southeast-asia-economy/img/6A583C37B0A835A7.jpg
+app/static/charts/china-influence-un/_fig-5b/index.pug
+app/static/charts/china-influence-un/_fig-5a/data.yaml
+app/static/charts/china-influence-un/_fig-5a/index.pug
+app/static/charts/china-influence-un/_fig-5b/data.yaml

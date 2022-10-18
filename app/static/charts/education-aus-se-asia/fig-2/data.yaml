@@ -1,0 +1,97 @@
+title: >
+  ISEAS State of Southeast Asia survey respondents choosing Australia as preferred destination for tertiary education
+
+source: >
+  <b>Source:</b> Institute for Southeast Asian Studies (ISEAS), State of Southeast Asia Survey
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 60
+  stepsY: 7
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Pandemic performance
+
+    values:
+      - Cambodia
+      - Brunei
+      - Vietnam
+      - Laos
+      - Indonesia
+      - ASEAN
+      - Myanmar
+      - Malaysia
+      - Philippines
+      - Singapore
+      - Thailand 
+  -
+    title: 2019
+    color: "highlight"
+    values:
+      - 50
+      - 20
+      - 29
+      - 31
+      - 22.6
+      - 23.9
+      - 26.8
+      - 24.6
+      - 17.3
+      - 7.1
+      - 10.6
+  -
+    title: 2020
+    color: "orange"
+    values:
+      - 30.8
+      - 12.4
+      - 17.1
+      - 17.4
+      - 13.5
+      - 13.8
+      - 15.6
+      - 14.1
+      - 20.4
+      - 7.2
+      - 6.2
+  -
+    title: 2021
+    color: "grey"
+    values:
+      - 19.2
+      - 6.1
+      - 20
+      - 17.5
+      - 19.4
+      - 12.3
+      - 9.6
+      - 11.1
+      - 6
+      - 7.6
+      - 6.9
+  -
+    title: 2022
+    color: "yellow"
+    values:
+      - 9.9
+      - 0
+      - 9
+      - 15.9
+      - 7.6
+      - 9.9
+      - 13.3
+      - 12.9
+      - 13
+      - 5.4
+      - 12
