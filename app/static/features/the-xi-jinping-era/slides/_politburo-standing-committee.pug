@@ -1,7 +1,9 @@
 for slide in page.data.politburo
   - const length = ~~(slide.members.length / 2)
   .slide.bg-dk.txt-ff
-    .slide-inner(data-view="in-viewport")
+    .slide-inner(
+    data-view="in-viewport"
+  )
       .type.txt-lg.txt-left(
         data-view="type, in-viewport"
         data-duration=1200
@@ -14,10 +16,10 @@ for slide in page.data.politburo
       .flex-ch.txt-center.pv-lg
         for member, i in slide.members
           .member.fade-in(
-            class=[
-              "delay-" + (2 * (length - Math.abs(i - length)) + 3),
-              member.class
-            ]
+            class=(member.rank
+              ? `delay-${2 * member.rank} rank-${member.rank}`
+              : `delay-${(2 * (length - Math.abs(i - length)) + 3)} ${member.class}`
+            )
           )
             img(data-src=member.img)
             .txt-sm
@@ -25,5 +27,6 @@ for slide in page.data.politburo
                 .txt-mono= member.name
 
             .member-role.pv-xs
-              .txt-cn.txt-muted.pv-xs= member.cn
-              .pv-xs!= member.role
+              .txt-cn.txt-muted.pv-xs= member.faction ? (member.faction  + ", " + member.age) : member.cn
+              .pv-xs(class=member.rank ? "txt-md" : "")
+                != member.rank ? member.rank + (["st", "nd", "rd"][member.rank] || "th") : member.role

@@ -1,0 +1,59 @@
+- chartData = page.data.covid
+
+.slide.bg-dk.txt-ff
+  .slide-inner(data-view="in-viewport")
+    .txt-lg.txt-ff.txt-left.posa.txt-mono.z1
+      .line(style="background:#f7434c") Covid zero
+      //- .type(
+      //-   data-view="slide, in-viewport"
+      //-   data-duration=1800
+      //-   style="margin-top: 12px"
+      //- )
+      //-   span.line.bg-ff.txt-dk.txt-md= chartData.title
+
+    .bars.posa.fw.txt-mid.fh.txt-sm.fade-in(style="height: 380px; bottom: 0")
+      for item, j in chartData.data
+        .bar-group.flex-cv(
+          style=`padding-top: 40px; width: ${j ? "85%" : "15%"}`
+        )
+          .bar-group-label.txt-center.txt-muted.fade-in.delay-8
+            = item.label
+
+          for value, i in item.values
+            for bar, k in value
+              .bar(
+                style={margin: "20px 0"}
+                data-view="bars, in-viewport"
+                data-duration=(2500 - i * 400)
+                data-delay=(j * 50 + i * 200)
+                data-value=value
+                data-precision=(j ? 1 : 2)
+                data-direction=1
+                data-suffix="M"
+              )
+                .bar-bg.txt-ff.r0(
+                  style={
+                    width: `${value / chartData.scale}%`
+                  }
+                  class=[
+                    ["bg-lt", "bg-lt", "bg-lt", "bg-hl"][i],
+                    j > 0 ? "l0 bar-bg-fade" : "r0"
+                  ]
+                )
+                  if Math.abs(value) > 0
+                    span.bar-value(
+                      class=[
+                        j > 0 ? "bar-value-outside txt-muted" : "",
+                        j > 0 ? "bar-value-right" : ""
+                      ]
+                    )= value
+                  
+                if j == 0
+                  strong.bar-label.txt-left.txt-tu.txt-sans(
+                    class=["txt-ff", "txt-ff", "txt-ff", "txt-hl"][i]
+                    style="line-height: 1.3"
+                  )
+                    = chartData.labels[i]
+
+    .posa.txt-mid.fade-in.delay-8(style="top: 0; right: 0")
+      | John Hopkins University, as of October 14, 2022
