@@ -31,7 +31,8 @@ series:
       - Diploma / Advanced Diploma / Associate Degree
       - Short Course / Certificate / Fellowship
   -
-    title: On award
+    title: On award had any opportunities to develop partnerships with Australians or Australian organisations
+
     color: "dark"
     values:
       - 56.8
@@ -41,7 +42,7 @@ series:
       - 35.5
       - 41.4
   -
-    title: Post award
+    title: Post award have developed partnerships with Australians or Australian organisations
     color: "highlight"
     values:
       - 59.9
