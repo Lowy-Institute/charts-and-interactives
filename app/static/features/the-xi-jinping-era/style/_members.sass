@@ -9,6 +9,12 @@
     &.member-xi
       transform: translateY(-20px)
 
+  @for $i from 1 to 10
+    &.rank-#{$i}
+      order: $i
+      .visible &
+        transform: translateY(($i - 2) * 20px)
+
   &.jailed
     position: relative
 

@@ -87,37 +87,58 @@ politburo:
         name: Wang Yang
         cn: 汪洋
         role: Relations with non&#8209;CCP groups, Taiwan
-
   - years: 2022-2027
     members:
-      - img: "./img/politburo-members/---.png"
-        name: ???
-        cn: "–"
-        role: ???
-      - img: "./img/politburo-members/---.png"
-        name: ???
-        cn: "–"
-        role: ???
-      - img: "./img/politburo-members/---.png"
-        name: ???
-        cn: "–"
-        role: ???
-      - img: "./img/politburo-members/---.png"
-        name: ???
-        cn: "–"
-        role: ???
-      - img: "./img/politburo-members/---.png"
-        name: ???
-        cn: "–"
-        role: ???
-      - img: "./img/politburo-members/---.png"
-        name: ???
-        cn: "–"
-        role: ???
-      - img: "./img/politburo-members/---.png"
-        name: ???
-        cn: "–"
-        role: ???
+      - img: "./img/politburo-members/han-zheng.jpg"
+        name: Han Zheng
+        cn: 韩正
+        role: Vice Premier, HK, Macau, Finance, Housing, Environment
+        rank: 7
+        faction: Shanghai
+        age: 68
+      - img: "./img/politburo-members/wang-huning.jpg"
+        name: Wang Huning
+        cn: 王沪宁
+        role: Ideology, Party&nbsp;Affairs
+        rank: 5
+        faction: No faction
+        age: 67
+      - img: "./img/politburo-members/li-keqiang.jpg"
+        name: Li Keqiang
+        cn: 李克强
+        role: Premier, Head of Government
+        rank: 2
+        faction: Youth League
+        age: 67
+      - img: "./img/politburo-members/xi-jinping.jpg"
+        name: Xi Jinping
+        cn: 习近平
+        role: General Secretary of CCP, President of China
+        rank: 1
+        faction: Xi
+        age: 69
+        class: member-xi
+      - img: "./img/politburo-members/li-zhanshu.jpg"
+        name: Li Zhanshu
+        cn: 栗战书
+        role: National People’s Congress
+        rank: 3
+        faction: Xi
+        age: 72
+      - img: "./img/politburo-members/zhao-leji.jpg"
+        name: Zhao Leji
+        cn: 赵乐际
+        role: Anti&#8209;corruption
+        rank: 6
+        faction: Xi (Shaanxi)
+        age: 65
+      - img: "./img/politburo-members/wang-yang.jpg"
+        name: Wang Yang
+        cn: 汪洋
+        role: Relations with non&#8209;CCP groups, Taiwan
+        rank: 4
+        faction: Youth League
+        age: 67
 
 centralCommittee:
   - Top party and government officials
@@ -242,6 +263,15 @@ economicStrengths:
   - Renewable power sector
   - Solar panel materials
   - Vehicle exports
+
+headlines:
+  - TOPICS
+  - ECONOMY
+  - FOREIGN POLICY
+  - BELT & ROAD
+  - ANTI-CORRUPTION
+  - COVID-ZERO
+  - XINJIANG
 
 population:
   axes:
@@ -588,3 +618,31 @@ retirementRules:
         width="8" height="8"/></svg>
       nomination: 58
       retirement: 60
+
+covid:
+  title: Covid zero
+  scale: 1.1
+  labels:
+    - US
+    - India
+    - Australia
+    - China
+  values: [[1.06, 96.7], [0.529, 44.6], [0.015475, 10.3], [0.005226, 1.01]]
+  data:
+    - title: Cases
+      values: [96.7, 44.6, 10.3, 1.01]
+      ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+      multiplier: 1
+      unit: Millions
+    - title: Deaths
+      values: [1060, 529, 15.475, 5.226]
+      ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100]
+      multiplier: 0.1111
+      unit: Thousands
+
+covidDrivers:
+  - Poor public health system
+  - Sub-standard vaccines
+  - Many elderly not vaccinated
+  - Resulting in the lowest
+  - economic growth in 40 years

@@ -1,0 +1,14 @@
+.slide.bg-dk
+  .posr.fw.fh.flex(data-view="in-viewport")
+    .slide-inner(style="font-size: 42px")
+      .flex-col
+        .mx-auto.txt-ff.txt-tu.txt-bold
+          for headline, i in page.data.headlines
+            .flex.fade-up(class="delay-" + (i + 2))
+              div(
+                style="margin: .5rem 0"
+                data-view="type, in-viewport"
+                data-duration=1200
+                data-delay=(i * 200)
+              )
+                .line(class=(i ? "bg-ff txt-dk" : "bg-hl txt-ff"))!= (i ? (i + ".&ensp;") : "") + headline
