@@ -8,7 +8,7 @@ block append config
 block page
   .wrapper.flex.flex-col
     .page-title.txt-center= page.title
-    .page-subtitle.txt-center= page.subtitle
+    //.page-subtitle.txt-center= page.subtitle
     .col-wrap.txt-center.flex-grow.flex
       .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
@@ -312,7 +312,7 @@ block append css
         margin-bottom: 12px
 
       .wrapper
-        height: 600px
+        height: 640px
 
       .col-wrap
         margin: 0
@@ -368,7 +368,7 @@ block append css
           opacity: 0
 
       text
-        font-size: 11px
+        font-size: 12px
         fill: currentColor
 
       svg
@@ -401,7 +401,7 @@ block append css
 
         .col-md
           width: 50%
-          height: 180px
+          height: 200px
         .col-legend
           display: none
         .col-legend-mobile
@@ -411,3 +411,5 @@ block append css
           margin: 0 24px
         li
           padding: 1px 16px 1px 24px
+        text
+          font-size: 10px

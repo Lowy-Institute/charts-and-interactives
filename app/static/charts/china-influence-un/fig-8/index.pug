@@ -107,8 +107,8 @@ block page
 
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nLegendItems = 4;
-    const nSeries = 6;
+    const nLegendItems = 2;
+    const nSeries = 2;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -132,7 +132,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + cat + " by permanent members ";
+        tooltip.innerHTML = ser + ":" + val + cat + " by permanent members ";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
