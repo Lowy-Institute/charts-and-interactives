@@ -1,0 +1,172 @@
+extend /partials/layout
+
+block prepend head
+  meta(name="format-detection" content="date=no")
+  
+block append config
+  - page.url = "https://interactives.lowyinstitute.org/features/frontier-rules/"
+  - page.image = "https://interactives.lowyinstitute.org/features/frontier-rules/img/thumb.png"
+  - page.title = ""
+  - page.description = "Frontier Rules: Emerging tech and challenges to the rules-based order"
+  - page.metaTitle = `Frontier Rules: Emerging tech and challenges to the rules-based order - Lowy Institute`
+  - page.class = "landing"
+
+block page
+  
+  include ./partials/_mixins
+  include ./partials/_logo
+  include ./partials/_credits
+  
+  a#pdf.flex-ch.text-micro.mr-3.hide-sm.opacity-50.bare.fw-500.hide-sm(
+    download href="/features/9-11/downloads/Lowy Institute Debate – Did 9-11 change our world.pdf"
+  )
+    span.label Download PDF&ensp;
+    span.icon.icon-download
+
+  button.scroll-button.flex-ch.text-mini.mr-3.hide-sm
+    span.label Scroll down
+    +arrow(90)
+    
+  button.scroll-button.flex-ch.text-mini.disabled.hidden
+    span.label
+      span.hide-sm Jump to<br>
+      span essays
+    +arrow(90)
+  
+  #title.text-mini
+    .text-mini.mb-4 Lowy Institute
+    .bare Frontier Rules
+    hr(style="border-color: #969ba4")
+    #subtitle
+      .block.mb-2 Emerging tech and challenges to the rules-based order
+  
+  #scroller(data-scroll-container)
+        
+    #slide-0.landing-slide(data-scroll-section)
+
+      .container
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+        
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+        
+        .box.n1
+        .box.n2
+        .box.n3
+        .box.n4
+        .box.n5
+        .box.n6
+        .box.n7
+        .box.n8
+        .box.n9
+
+      #landing-img(
+        data-scroll
+        data-scroll-speed="-11"
+        data-scroll-repeat
+        data-scroll-call="hide"
+      )
+        
+
+    #slide-1.landing-slide(data-scroll-section)
+      .flex.absolute.inset-0(style="top: 45%; height: 400px")
+        img.mx-auto(data-scroll data-scroll-speed="1" width="auto" height="auto" src='./img/conference-room.jpg')
+
+      
+    #slide-2.landing-slide(data-scroll-section)
+      .content(data-scroll data-scroll-repeat)
+        h1.type(data-view="type, in-viewport" delay="250")
+          .line Frontier Rules
+        .delay-1500.fade.opacity-0(fold data-scroll data-scroll-offset="20%")
+          :marked
+            Intensifying geopolitical competition is combining with emerging technologies to create new frontiers for statecraft and present new challenges to the rules-based order. How should Australia engage in emerging domains such as cyberspace and outer space? How should Australia adopt new military technologies such as artificial intelligence and autonomous systems?
+            
+            Australia wants to expand the rules-based order, regulate new frontiers and limit the "grey-zone". Yet Australia must compete effectively with actors who have a lower regard for international law and norms.
+            
+            In Canberra on 14 and 15 June 2022, the Lowy Institute hosted the Frontier Rules conference to examine practical manifestations of this dilemma and to consider how they should be resolved.
+
+
+        #submenu.fixed.flex-ch.text-mini.txt-center.content
+          a.flex-1.bare.current(unfold href="#") Read more
+          a.flex-1.bare(href="#" scroll-to-menu) Keynotes and discussions
+          
+    #slide-3.landing-slide.flex-cv(data-scroll-section)
+      include ./partials/_menu
+
+block append css
+  style: include:sass ./styles/_app.sass
+
+block append scripts
+  script
+    include ./scripts/locomotive-scroll.js
+    include:coffee ./scripts/utils.coffee
+    include:coffee ./scripts/base.coffee
+    include:coffee ./scripts/landing.coffee
+    include:coffee ./scripts/type.coffee
+  
+  

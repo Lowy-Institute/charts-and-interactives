@@ -1,0 +1,16 @@
+#menu.inset-0.collapsed
+  #menu-modal.absolute.inset-0.flex.hidden
+    button#menu-button.bare.flex-cv.text-micro.items-center.fw-400
+      .label menu
+      .label close
+      svg(width='38' height='38' viewbox="0 0 24 24" style="height: 2.5rem" stroke="currentColor" stroke-width="1")
+        path(d="M0,6 h24 M0,12 h24 M0,18 h24")
+        path(d="M6,6 L18,18 M18,6 L6,18")
+    #question.flex-cv
+      .label.fw-400.text-micro.txt-muted.mb-2 Frontier Rules
+      h1.type(data-view="type, in-viewport" data-norepeat data-callback="showScale")
+        .line Keynotes and discussions
+
+    #scale-wrap.flex-1(fade)
+      //- #scale-title.text-mini.mx-12.mb-2 Expert responses
+      include _scale

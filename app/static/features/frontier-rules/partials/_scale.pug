@@ -1,0 +1,18 @@
+- page.essays = data.getOne("static/features/frontier-rules/data/essays").essays
+
+#scale.flex-col.flex-1.relative
+  //.divider.absolute.txt-muted(style="top:50%; left:0; right:0; border-bottom: 1px solid")
+  .agree.flex-cv.flex-1.relative
+
+    for item, i in page.essays.filter(p => p.scale)
+      - len = page.essays.filter(p => p.scale).length
+      a.node.bare.show-sm(
+        slide
+        rel="prefetch"
+        href=`/features/frontier-rules/essays/${item.href}`
+        style=`animation-delay: ${50 * (len - i)}ms; transform: translateY(${50}%)`
+      )
+        .linkage
+        .card
+          .text-micro.txt-muted= item.author
+          .text-mini= item.title
