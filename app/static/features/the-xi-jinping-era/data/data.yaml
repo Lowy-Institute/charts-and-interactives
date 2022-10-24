@@ -621,24 +621,26 @@ retirementRules:
 
 covid:
   title: Covid zero
-  scale: 1.1
+  axis:
+    type: log
+    min: 1000
+    max: 300000000
+    ticks: 6
   labels:
     - US
     - India
     - Australia
     - China
-  values: [[1.06, 96.7], [0.529, 44.6], [0.015475, 10.3], [0.005226, 1.01]]
-  data:
-    - title: Cases
-      values: [96.7, 44.6, 10.3, 1.01]
-      ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
-      multiplier: 1
-      unit: Millions
-    - title: Deaths
-      values: [1060, 529, 15.475, 5.226]
-      ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100]
-      multiplier: 0.1111
-      unit: Thousands
+  legend:
+    - label: Cases
+      color: lta
+    - label: Deaths
+      color: lt
+  values:
+    - [96700000, 1060000]
+    - [44600000, 529000]
+    - [10300000, 15475]
+    - [1010000, 5226]
 
 covidDrivers:
   - Poor public health system

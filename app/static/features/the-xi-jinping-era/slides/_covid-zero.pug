@@ -1,59 +1,76 @@
+- MILLION = 1000000
 - chartData = page.data.covid
+- axis = chartData.axis
+- scale = (Math.log(axis.max) - Math.log(axis.min))
+- logw = (v) => (Math.log(v) - Math.log(axis.min)) / scale
 
-.slide.bg-dk.txt-ff
+.slide.bg-dk
   .slide-inner(data-view="in-viewport")
-    .txt-lg.txt-ff.txt-left.posa.txt-mono.z1
-      .line(style="background:#f7434c") Covid zero
-      //- .type(
-      //-   data-view="slide, in-viewport"
-      //-   data-duration=1800
-      //-   style="margin-top: 12px"
-      //- )
-      //-   span.line.bg-ff.txt-dk.txt-md= chartData.title
+    .type.txt-lg.txt-ff.txt-left(
+      data-view="slide, in-viewport"
+      data-duration=1800
+    )
+      span.line.bg-hl.txt-mono!= chartData.title
 
-    .bars.posa.fw.txt-mid.fh.txt-sm.fade-in(style="height: 380px; bottom: 0")
-      for item, j in chartData.data
-        .bar-group.flex-cv(
-          style=`padding-top: 40px; width: ${j ? "85%" : "15%"}`
-        )
-          .bar-group-label.txt-center.txt-muted.fade-in.delay-8
-            = item.label
+    #covid-zero(style="margin: 6rem auto;")
 
-          for value, i in item.values
-            for bar, k in value
-              .bar(
-                style={margin: "20px 0"}
-                data-view="bars, in-viewport"
-                data-duration=(2500 - i * 400)
-                data-delay=(j * 50 + i * 200)
-                data-value=value
-                data-precision=(j ? 1 : 2)
-                data-direction=1
-                data-suffix="M"
+      .txt-dk-mid.txt-sm.posr
+        .bars(style={"margin-top": "0.5rem"})
+
+          for value, i in chartData.values
+            for v, j in value
+              .bar.bar-border(
+                class=j ? "" : "fw"
+                style=j ? "" : "position: absolute; left: 0;"
               )
-                .bar-bg.txt-ff.r0(
-                  style={
-                    width: `${value / chartData.scale}%`
-                  }
-                  class=[
-                    ["bg-lt", "bg-lt", "bg-lt", "bg-hl"][i],
-                    j > 0 ? "l0 bar-bg-fade" : "r0"
-                  ]
+                .fw.fh(
+                  data-view="bars, in-viewport"
+                  data-duration=1200
+                  data-delay=(j * 500 + i * 100)
+                  data-value=(v < 0.5 * MILLION ? v : v < MILLION ? v / 1000 : v / MILLION)
+                  data-precision=(v < MILLION ? 0 : 1)
+                  data-suffix=(v < 0.5 * MILLION ? "" : v < MILLION ? "K" : "M")
                 )
-                  if Math.abs(value) > 0
-                    span.bar-value(
-                      class=[
-                        j > 0 ? "bar-value-outside txt-muted" : "",
-                        j > 0 ? "bar-value-right" : ""
-                      ]
-                    )= value
-                  
-                if j == 0
-                  strong.bar-label.txt-left.txt-tu.txt-sans(
-                    class=["txt-ff", "txt-ff", "txt-ff", "txt-hl"][i]
-                    style="line-height: 1.3"
+                  .bar-bg(
+                    class=`bg-${chartData.legend[j].color}`
+                    style=`width: ${100 * logw(v)}%`
                   )
-                    = chartData.labels[i]
+                    .bar-value.bar-value-right(
+                      class=j ? "txt-dk" : "txt-muted"
+                    )= v
 
-    .posa.txt-mid.fade-in.delay-8(style="top: 0; right: 0")
-      | John Hopkins University, as of October 14, 2022
+                  if j === 0
+                    .bar-label.txt-right(
+                      class=chartData.labels[i] == "China" ? "txt-ff" : ""
+                    )= chartData.labels[i]
+
+      .scale.fade-in.delay-8.txt-dk-mid(style="border-color: rgba(158,164,181);")
+        for tick, i in new Array(10 * axis.ticks)
+          
+          - d0 = Math.log10(axis.min, 10) - 1
+          - d = 1 + Math.floor(i / 10)
+          - step = Math.pow(10, d0 + d)
+          - v = step * (1 + i % 10)
+
+          if i <= 50
+            .scale-tick(
+              style={
+                "border-color": `rgba(158,164,181,${(1 - 0.1 * (i % 10))})`,
+                "left": `${100 * logw(v)}%`,
+                "position": `absolute`
+              }
+            )
+              if i === 0
+                .scale-tick-label(style="white-space: nowrap") Logarithmic scale
+              else if i % 10 === 0
+                .scale-tick-label
+                  | 10
+                  sup.txt-xs= d0 + d
+
+    .txt-mid
+      .scale-source.fade-in.delay-12 Source: John Hopkins University, as of October 14, 2022
+      .legend.txt-right.delay-8.fade-in
+        for key, i in chartData.legend
+          .key
+            .key-label= key.label
+            .key-box(class=`bg-${key.color}`)
