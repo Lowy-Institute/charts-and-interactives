@@ -80,9 +80,9 @@ series:
 
   -
     title: Resolutions passed
-    color: "highlight"
+    color: "teal-light"
     values:
-      - 0
+      - 1
       - 4
       - 7
       - 3

@@ -1,0 +1,29 @@
+.type
+  display: flex
+  flex-wrap: wrap
+  overflow: hidden
+  opacity: 0
+  
+  &.split
+    opacity: 1
+    
+  &.visible
+    opacity: 1
+
+.line
+  display: inline
+  
+.word
+  display: inline-block
+  opacity: 0
+  
+  .visible &
+    animation: rise 1s forwards
+
+  &:not(:last-child)
+    margin-right: 0.25em
+
+@media (max-width: $screen-tablet)
+  .type,
+  .word
+    white-space: normal

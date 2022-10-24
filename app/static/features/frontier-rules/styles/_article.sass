@@ -1,0 +1,116 @@
+@import app/static/features/frontier-rules/styles/_vars.sass
+
+html,
+body,
+body.embed-false
+  background: white
+  color: $grey-dark
+  height: unset
+
+article
+  padding: 6rem 0 10rem
+  padding-left: 160px
+  font-weight: 300
+
+#submenu
+  top: 0
+  left: 210px
+  right: 50px
+  z-index: 10
+  padding: 0.25rem 0
+  background: linear-gradient(-135deg, $grey-light, $grey-mid)
+  border: none
+  border-bottom: 1px solid
+  width: 675px
+  
+  a
+    padding: 0.3rem
+    transition: all .2s
+    
+    &.current
+      background: rgba(#000, 1)
+      color: white
+    &.current:hover
+      background: rgba($grey-dark, 0.95)
+    &:hover
+      background: rgba($grey-dark, 0.2)
+
+.profile
+  font-size: 16px
+  font-weight: 300
+  align-items: flex-start
+  
+  img
+    padding: 0 0 .5rem 0
+    object-fit: contain
+    width: 220px
+    filter: grayscale(1)
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='18' stroke-dasharray='6%2c 13%2c 11%2c 7' stroke-dashoffset='48' stroke-linecap='butt'/%3e%3c/svg%3e")
+    margin: 0 0 .5em .5em
+
+#essay
+  p
+    line-height: 1.8
+  blockquote p
+    line-height: 1.4
+
+.video
+  aspect-ratio: 16 / 9
+  width: 100%
+
+
+#progress
+  left: 0
+  top: calc(100% - 2px)
+  height: 4px
+  z-index: 20
+  background: #000
+
+#next
+  color: white
+  position: fixed
+  left: 160px
+  right: 0
+  bottom: 0
+  top: unset
+  pointer-events: none
+  
+  &.visible .node
+    transform: translateY(0)
+  
+  .node
+    margin: auto
+    width: 675px
+    display: block
+    max-width: 100%
+    padding: 1rem 2rem
+    pointer-events: all
+    transition: all .5s
+    background: #000
+    transform: translateY(100%)
+    
+    &:hover
+      background: $grey-dark
+
+@media (max-width: $screen-tablet)
+  html,
+  body,
+  body.embed-false
+    overscroll-behavior: none
+  
+  article
+    padding: 8rem 1rem
+    background: white
+    
+  #submenu
+    top: 4rem
+    left: 0
+    right: 0
+    
+    
+  .profile
+    flex-direction: column
+    
+  #next
+    left: 0
+  

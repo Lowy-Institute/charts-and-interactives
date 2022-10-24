@@ -1,0 +1,71 @@
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+.container
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100vw
+  height: 100vh
+
+  /* justify-content: space-evenly;
+  align-items: center
+
+.box
+  height: calc(100%/6)
+  flex: 1 1 calc(100%/12)
+  background: white
+  border: 0px solid grey
+  animation-name: blink
+  animation-duration: 4s
+  animation-iteration-count: infinite
+  animation-direction: alternate-reverse
+
+.n1
+  animation-delay: 0.125s
+
+.n2
+  animation-delay: 0.5s
+
+.n3
+  animation-delay: 0.275s
+
+.n4
+  animation-delay: 0.5s
+
+.n5
+  animation-delay: 0.625s
+
+.n6
+  animation-delay: 1.75s
+
+.n7
+  animation-delay: 0.875s
+
+.n8
+  animation-delay: 1s
+
+.n9
+  animation-delay: 0.25s
+
+/* ******************
+@keyframes blink
+  from
+    background: white
+
+  50%
+    background: rgba(255, 255, 255, 0.01)
+
+  to
+    background: white
+
+
+@media (max-width: $screen-tablet) and (min-height: 600px)
+  #slide-0
+    padding: 0
+  
+  .box
+    height: calc(100%/12)
+    flex: 1 1 calc(100%/6)

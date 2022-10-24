@@ -1,0 +1,72 @@
+extend /partials/layout
+
+block append config
+  - page.class = "essay"
+  - page.image = "https://interactives.lowyinstitute.org/features/frontier-rules/img/thumb.png"
+  - page.data = data.getOne("static/features/frontier-rules/data/essays")
+  - page.essay = page.data.essays.find(e => e.author === author)
+  - page.index = page.data.essays.findIndex(e => e === page.essay)
+  - page.next = page.data.essays[page.index === 2 ? 0 : page.index + 1]
+
+block prepend head
+  - page.url = "https://interactives.lowyinstitute.org/features/frontier-rules/"
+  - page.url += "essays/" + page.essay.href
+  - page.metaTitle = `${page.essay.title} by ${page.essay.author} - Frontier Rules – Lowy Insitute`
+  - page.description = "Frontier Rules: Emerging tech and challenges to the rules-based order."
+
+block page
+  
+  - const slugify = s => s.toLowerCase().replace(/[^\w\s]/g,"").split(/\s/).join("-")
+  
+  include _mixins
+
+  #submenu.fixed.flex-ch.text-mini.txt-center.mx-auto
+    #progress.absolute
+    a.flex-1.bare.current(href="#title-anchor") Keynote
+    a.flex-1.bare(href="#profile-anchor") Speaker 
+  
+  aside
+    include _menu
+    include _logo
+
+  article(data-section)#title-anchor
+    h1= page.essay.title
+    .mini-profile.flex.items-center.my-6
+      img.thumbnail(src=`../../img/authors/${slugify(page.essay.author)}-tn.jpg` width="50" height="50")
+      .col.mx-4
+        .text-mini.mb-0= page.essay.author
+        .text-mini.txt-muted.mb-0!= page.essay.position
+    hr
+    
+    #essay
+      block body
+    hr#profile-anchor
+
+
+    #profile
+
+    .profile
+      h2 Speaker profile
+      img.profile-img.float-right(src=`../../img/authors/${slugify(page.essay.author)}-500.jpg` width="220")
+      p.profile-text!= page.essay.bio
+      
+  #next.fixed.inset-0
+    a.node.bare.relative(href=`/features/frontier-rules/essays/${page.next.href}`)
+      .card.flex
+        .flex-cv.text-mini.fw-400 Next<br>video
+        .flex-cv.pl-8.ml-8.border-l-soft
+          .text-micro.txt-muted= page.next.author
+          .text-mini= page.next.title
+          //- .absolute.icon.icon-right-arrow(style="right: 2rem")
+
+block append css
+  style
+    include:sass ../styles/_app.sass
+    include:sass ../styles/_article.sass
+    
+block append scripts
+  script
+    include:coffee ../scripts/utils.coffee
+    include:coffee ../scripts/base.coffee
+    include:coffee ../scripts/article.coffee
+    include:coffee ../scripts/type.coffee

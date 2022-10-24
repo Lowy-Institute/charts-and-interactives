@@ -1,0 +1,232 @@
+.landing-slide
+  /* padding: 6rem */
+  position: relative
+  min-height: 100vh
+  
+#title
+  position: fixed
+  z-index: 1
+  left: 3rem
+  bottom: 3rem
+  width: 360px
+  font-size: 36px
+  text-decoration: none!important
+  
+#subtitle
+  font-size: 24px
+  font-weight: 500
+  letter-spacing: 0.21em
+  line-height: 1.4
+
+#pdf
+  position: absolute
+  right: 1rem
+  top: 1rem
+  z-index: 1
+  transition: opacity .3s
+  
+  &:hover
+    opacity: 1
+
+#credits
+  bottom: 6rem
+  right: 2rem
+  font-weight: 400
+  border-bottom: 1px solid #969ba4
+  padding-bottom: 1rem
+  z-index: 1
+  
+  .label
+    opacity: 0.65
+    
+  a
+    position: relative
+    
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      transition: background .2s
+      z-index: -1
+      
+    &:hover:before
+      background: $highlight
+    
+#landing-img
+  position: absolute
+  left: 45vw
+  bottom: 0
+  
+  img
+    padding-top: 25vh
+    height: 100vh
+
+.scroll-button
+  position: fixed
+  bottom: 3rem
+  right: 3.75rem
+  padding: .5rem
+  border: none
+  transition: opacity .75s, transform .3s
+  z-index: 2
+  
+  &:hover
+    background: none
+    transform: scale(1.04)
+  
+  svg
+    top: 95%
+    left: calc(50% - .5em)
+    position: absolute
+    transform-origin: center
+    animation: bounce 1s ease infinite alternate
+    
+#slide-1
+  z-index: 1
+  min-height: 0
+  height: 100vh
+  // margin-bottom: -6rem
+  
+  img
+    filter: grayscale(0.5)
+
+#slide-2
+  p:last-child
+    margin-bottom: 1.4em
+  
+#slide-3
+  padding-bottom: 1rem
+
+.landing #submenu
+  width: 100%
+  border: 1px solid #000
+  padding: 0
+  position: relative
+  
+  a
+    padding: 1.25rem 1rem
+    transition: background .3s
+    
+    &:hover
+      background: rgba(white, 1)
+    &:first-child
+      border-right: 1px solid #000
+
+@media (max-width: $screen-tablet), (orientation: portrait) and (pointer: coarse)
+  
+  #scroller
+    padding-bottom: 4rem
+    position: relative
+    
+  #landing-img
+    left: 15%
+    
+    img
+      padding-top: 42.5vh
+      padding-bottom: 3rem
+    
+  #title
+    top: 1rem
+    left: 0
+    right: 0
+    bottom: unset
+    width: 100%
+    font-size: 26px
+    text-align: center
+    
+    hr
+      margin: 16px auto 17px
+    
+    > *
+      width: 250px
+      margin-left: auto
+      margin-right: auto
+    
+    .mb-4
+      margin-bottom: 0.5rem
+    
+  #subtitle
+    font-size: 12px
+    
+  .landing-slide
+    padding: 2rem 1rem
+
+  .scroll-button
+    top: 0
+    right: 0
+    bottom: unset
+    z-index: 1000
+    flex-direction: row
+    padding: .75rem 1rem
+    height: 70px
+    
+    .arrow
+      position: relative
+      left: unset
+      top: unset
+      padding-left: .5rem
+      
+  .landing
+
+    #slide-3,
+    #menu-modal
+      padding-top: 1rem
+      padding-bottom: 2rem
+    
+    #submenu
+      width: 95%
+      margin: auto
+      flex-direction: column
+      margin-top: 1rem
+      
+      a
+        width: 100%
+        padding: .75rem 1rem
+
+        &:first-child
+          border-right: none
+          border-bottom: 1px solid #969ba4
+
+  #slide-1
+    display: none
+    
+  #slide-3
+    min-height: 0
+    height: auto
+    
+    #menu,
+    #menu-modal,
+    #scale-wrap
+      position: relative
+      top: auto
+      left: auto
+      right: auto
+      bottom: auto
+
+
+  #credits
+    left: 0
+    right: 0
+    bottom: 0
+    background: #fff
+    border-top: 1px solid #969ba4
+    border-bottom: none
+    padding: .5rem 0
+    font-size: 10px
+    
+    .flex-cv
+      flex-direction: row
+      flex-wrap: wrap
+      
+      > *
+        padding: 0 .5rem
+        
+      div:nth-child(2)
+        order: 1
+      
+@media (max-width: $screen-tablet) and (min-height: 600px)
+  #title
+    top: 3rem
