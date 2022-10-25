@@ -87,7 +87,7 @@ politburo:
         name: Wang Yang
         cn: 汪洋
         role: Relations with non&#8209;CCP groups, Taiwan
-  - years: 2022-2027
+  - years: 2017-2022
     members:
       - img: "./img/politburo-members/han-zheng.jpg"
         name: Han Zheng
@@ -139,6 +139,111 @@ politburo:
         rank: 4
         faction: Youth League
         age: 67
+  - years: 2017-2022
+    members:
+      - img: "./img/politburo-members/han-zheng-out.jpg"
+        name: H̶a̶n̶ ̶Z̶h̶e̶n̶g̶
+        cn: 韩正
+        role: Vice Premier, HK, Macau, Finance, Housing, Environment
+        rank: 7
+        faction: Shanghai
+        age: 68
+      - img: "./img/politburo-members/wang-huning.jpg"
+        name: Wang Huning
+        cn: 王沪宁
+        role: Ideology, Party&nbsp;Affairs
+        rank: 5
+        faction: No faction
+        age: 67
+      - img: "./img/politburo-members/li-keqiang-out.jpg"
+        name: L̶i̶ ̶K̶e̶q̶i̶a̶n̶g̶
+        cn: 李克强
+        role: Premier, Head of Government
+        rank: 2
+        faction: Youth League
+        age: 67
+      - img: "./img/politburo-members/xi-jinping.jpg"
+        name: Xi Jinping
+        cn: 习近平
+        role: General Secretary of CCP, President of China
+        rank: 1
+        faction: Xi
+        age: 69
+        class: member-xi
+      - img: "./img/politburo-members/li-zhanshu-out.jpg"
+        name: L̶i̶ ̶Z̶h̶a̶n̶s̶h̶u̶
+        cn: 栗战书
+        role: National People’s Congress
+        rank: 3
+        faction: Xi
+        age: 72
+      - img: "./img/politburo-members/zhao-leji.jpg"
+        name: Zhao Leji
+        cn: 赵乐际
+        role: Anti&#8209;corruption
+        rank: 6
+        faction: Xi (Shaanxi)
+        age: 65
+      - img: "./img/politburo-members/wang-yang-out.jpg"
+        name: W̶a̶n̶g̶ ̶Y̶a̶n̶g̶
+        cn: 汪洋
+        role: Relations with non&#8209;CCP groups, Taiwan
+        rank: 4
+        faction: Youth League
+        age: 67
+  - years: 2022-2027
+    members:
+      - img: "./img/politburo-members/li-qiang.jpg"
+        name: Li Qiang
+        cn: 韩正
+        role: Vice Premier, HK, Macau, Finance, Housing, Environment
+        rank: 2
+        faction: Xi loyalist
+        age: 63
+      - img: "./img/politburo-members/wang-huning.jpg"
+        name: Wang Huning
+        cn: 王沪宁
+        role: Ideology, Party&nbsp;Affairs
+        rank: 4
+        faction: No faction
+        age: 67
+      - img: "./img/politburo-members/cai-qi.jpg"
+        name: Cai Qi
+        cn: 李克强
+        role: Secreteriat
+        rank: 5
+        faction: Xi loyalist
+        age: 66
+      - img: "./img/politburo-members/xi-jinping.jpg"
+        name: Xi Jinping
+        cn: 习近平
+        role: General Secretary of CCP, President of China
+        rank: 1
+        faction: Xi
+        age: 69
+        class: member-xi
+      - img: "./img/politburo-members/ding-xuexiang.jpg"
+        name: Ding Xuexiang
+        cn: 栗战书
+        role: Vice-Premier
+        rank: 6
+        faction: Xi loyalist
+        age: 60
+      - img: "./img/politburo-members/zhao-leji.jpg"
+        name: Zhao Leji
+        cn: 赵乐际
+        role: Anti&#8209;corruption
+        rank: 3
+        faction: Xi (Shaanxi)
+        age: 65
+      - img: "./img/politburo-members/li-xi.jpg"
+        name: Li Xi
+        cn: 汪洋
+        role: Anti-corruption
+        rank: 7
+        faction: Xi loyalist
+        age: 66
+
 
 centralCommittee:
   - Top party and government officials
@@ -646,3 +751,62 @@ covidDrivers:
   - Many elderly not vaccinated
   - Resulting in the lowest
   - economic growth in 40 years
+
+keywords:
+  reform:
+    title: Political Reform
+    scale: 0.25
+    labels:
+      - 12th party congress
+      - 13th party congress
+      - 14th party congress
+      - 15th party congress
+      - 16th party congress
+      - 17th party congress
+      - 18th party congress
+      - 19th party congress
+      - 20th party congress
+    data:
+      - label: 
+        values: []
+      - label: Frequency of keyword found in leaders' reports to CCP congress
+        values: [0,12,6,5,7,5,5,1,0]
+
+  confidence:
+    title: Self-confidence
+    scale: 0.25
+    labels:
+      - 12th party congress
+      - 13th party congress
+      - 14th party congress
+      - 15th party congress
+      - 16th party congress
+      - 17th party congress
+      - 18th party congress
+      - 19th party congress
+      - 20th party congress
+    data:
+      - label: 
+        values: []
+      - label: Frequency of keyword found in leaders' reports to CCP congress
+        values: [0,0,1,0,0,0,5,14,14]
+
+  military:
+    title: Military
+    scale: 0.25
+    labels:
+      - 12th party congress
+      - 13th party congress
+      - 14th party congress
+      - 15th party congress
+      - 16th party congress
+      - 17th party congress
+      - 18th party congress
+      - 19th party congress
+      - 20th party congress
+    data:
+      - label: 
+        values: []
+      - label: Frequency of keyword found in leaders' reports to CCP congress
+        values: [4,0,3,9,8,16,18,14,21]
+      

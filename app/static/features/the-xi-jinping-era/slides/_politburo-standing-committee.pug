@@ -29,4 +29,4 @@ for slide in page.data.politburo
             .member-role.pv-xs
               .txt-cn.txt-muted.pv-xs= member.faction ? (member.faction  + ", " + member.age) : member.cn
               .pv-xs(class=member.rank ? "txt-md" : "")
-                != member.rank ? member.rank + (["st", "nd", "rd"][member.rank] || "th") : member.role
+                != member.rank ? member.rank + ([ "", "st", "nd", "rd"][member.rank] || "th") : member.role
