@@ -36,7 +36,6 @@
     left: auto
     right: 100%
     margin-right: 16px
-    min-width: 80px /* stop long labels wrapping for small values */
 
 .bar-value-right
   right: 16px
@@ -47,7 +46,10 @@
     margin-left: 16px
     right: auto
     margin-right: 0
-    min-width: 80px /* stop long labels wrapping for small values */
+
+#keyword_frequency .bar-value-outside
+  min-width: 80px /* stop long labels wrapping for small values on _keyword_frequency.pug */
+
 
 .bar-bg
   opacity: 0

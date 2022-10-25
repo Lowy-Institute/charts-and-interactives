@@ -9,7 +9,7 @@ for key in ["reform", "confidence", "military"]
         span.line.bg-lta.txt-mono
           = page.data.keywords[key].title
 
-      .bars.txt-muted.fh.txt-sm.fade-in(style={"margin-top": "80px"})
+      #keyword_frequency.bars.txt-muted.fh.txt-sm.fade-in(style={"margin-top": "80px"})
         for item, j in page.data.keywords[key].data
           if j > 0
             .bar-group.flex-cv(style={"padding-top": "40px", "height": "80%", "width": "100%"})
@@ -28,6 +28,7 @@ for key in ["reform", "confidence", "military"]
                 data-value=value
                 data-direction=(j > 0 ? 1 : -1)
                 data-suffix=" times"
+                data-precision=0
               )
                 .bar-bg(
                   style=`width: ${value / page.data.keywords[key].scale}%`
