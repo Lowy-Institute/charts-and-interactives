@@ -7,8 +7,8 @@ block append config
   - page.url = "https://interactives.lowyinstitute.org/features/frontier-rules/"
   - page.image = "https://interactives.lowyinstitute.org/features/frontier-rules/img/thumb.png"
   - page.title = ""
-  - page.description = "Frontier Rules: Emerging tech and challenges to the rules-based order"
-  - page.metaTitle = `Frontier Rules: Emerging tech and challenges to the rules-based order - Lowy Institute`
+  - page.description = "Frontier Rules: Emerging tech and grey zone challenges to the rules-based order"
+  - page.metaTitle = `Frontier Rules: Emerging tech and grey zone challenges to the rules-based order - Lowy Institute`
   - page.class = "landing"
 
 block page
@@ -22,8 +22,9 @@ block page
     //span.icon.icon-download
 
   button.scroll-button.flex-ch.text-mini.mr-3.hide-sm
-    span.label Scroll down
+    span.label Scroll down 
     +arrow(90)
+    
     
   button.scroll-button.flex-ch.text-mini.disabled.hidden
     span.label
@@ -36,92 +37,13 @@ block page
     .bare Frontier Rules
     hr(style="border-color: #969ba4")
     #subtitle
-      .block.mb-2 Emerging tech and challenges to the rules-based order
+      .block.mb-2 Emerging tech and grey zone challenges to the rules-based order
   
   #scroller(data-scroll-container)
         
     #slide-0.landing-slide(data-scroll-section)
-
-      .container
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
-
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
-
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
-        
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
-
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
-
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
-
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
-        
-        .box.n1
-        .box.n2
-        .box.n3
-        .box.n4
-        .box.n5
-        .box.n6
-        .box.n7
-        .box.n8
-        .box.n9
+      include ./partials/_animated_grid
+      
 
       #landing-img(
         data-scroll
@@ -132,8 +54,11 @@ block page
         
 
     #slide-1.landing-slide(data-scroll-section)
+      include ./partials/_animated_line
+
       .flex.absolute.inset-0(style="top: 45%; height: 400px")
         img.mx-auto(data-scroll data-scroll-speed="1" width="auto" height="auto" src='./img/conference-room.jpg')
+        
 
       
     #slide-2.landing-slide(data-scroll-section)
