@@ -30,7 +30,7 @@ for key in ["reform", "confidence", "military"]
                 data-delay=(j * 400 + i * 40)
                 data-value=value
                 data-direction=(j > 0 ? 1 : -1)
-                data-suffix=" times"
+                data-suffix=(value > 1 ? " times" : " time")
                 data-precision=0
               )
                 .bar-bg(
