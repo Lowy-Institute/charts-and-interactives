@@ -17,11 +17,13 @@ for slide in page.data.politburo
         for member, i in slide.members
           .member.fade-in(
             class=(member.rank
-              ? `delay-${2 * member.rank} rank-${member.rank}`
+              ? `delay-${2 * member.rank} rank-${member.rank} ${member.class}`
               : `delay-${(2 * (length - Math.abs(i - length)) + 3)} ${member.class}`
             )
           )
-            img(data-src=member.img)
+            .posr.profile-img.delay-11
+              .profile-img-bg
+                img(data-src=member.img)
             .txt-sm
               .member-name.bg-dk.txt-ff.pv-xs
                 .txt-mono= member.name

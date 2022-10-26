@@ -44,6 +44,40 @@
           transition-duration: 900ms
           transform: translateZ(0) scale(1, 1)
 
+  &.out
+    position: relative
+    text-decoration: line-through
+    text-decoration-thickness: 2px
+
+    .profile-img
+      display: block
+
+      &:before
+        content: "X"
+        color: $color-hl
+        position: absolute
+        top: -62
+        left: 13px
+        width: 75px
+        font-size: 14em
+        opacity: 0
+        z-index: 2
+
+      .visible &
+        img
+          opacity: 1
+
+        &:before
+          opacity: 1
+          transition-delay: inherit
+          transition-duration: 4000ms
+          transform: translateZ(0) scale(1, 1)
+
+    profile-img-bg
+      filter: grayscale(100%) brightness(125%)
+      opacity: 0.5
+      transition: filter 0.9s ease-out, opacity 0.9s ease-out
+
 .member-role
   height: 148px
   background: linear-gradient(to bottom, lighten($color-dk, 4), $color-dk)

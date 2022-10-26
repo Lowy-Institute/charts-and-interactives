@@ -101,7 +101,7 @@ politburo:
         cn: 王沪宁
         role: Ideology, Party&nbsp;Affairs
         rank: 5
-        faction: No faction
+        faction: Xi faction
         age: 67
       - img: "./img/politburo-members/li-keqiang.jpg"
         name: Li Keqiang
@@ -148,13 +148,15 @@ politburo:
         rank: 7
         faction: Shanghai
         age: 68
+        class: out
       - img: "./img/politburo-members/wang-huning.jpg"
         name: Wang Huning
         cn: 王沪宁
         role: Ideology, Party&nbsp;Affairs
         rank: 5
-        faction: No faction
+        faction: Xi faction
         age: 67
+        class: in
       - img: "./img/politburo-members/li-keqiang-out.jpg"
         name: L̶i̶ ̶K̶e̶q̶i̶a̶n̶g̶
         cn: 李克强
@@ -162,6 +164,7 @@ politburo:
         rank: 2
         faction: Youth League
         age: 67
+        class: out
       - img: "./img/politburo-members/xi-jinping.jpg"
         name: Xi Jinping
         cn: 习近平
@@ -169,7 +172,7 @@ politburo:
         rank: 1
         faction: Xi
         age: 69
-        class: member-xi
+        class: in
       - img: "./img/politburo-members/li-zhanshu-out.jpg"
         name: L̶i̶ ̶Z̶h̶a̶n̶s̶h̶u̶
         cn: 栗战书
@@ -177,6 +180,7 @@ politburo:
         rank: 3
         faction: Xi
         age: 72
+        class: out
       - img: "./img/politburo-members/zhao-leji.jpg"
         name: Zhao Leji
         cn: 赵乐际
@@ -184,6 +188,7 @@ politburo:
         rank: 6
         faction: Xi (Shaanxi)
         age: 65
+        class: in
       - img: "./img/politburo-members/wang-yang-out.jpg"
         name: W̶a̶n̶g̶ ̶Y̶a̶n̶g̶
         cn: 汪洋
@@ -191,6 +196,7 @@ politburo:
         rank: 4
         faction: Youth League
         age: 67
+        class: out
   - years: 2022-2027
     members:
       - img: "./img/politburo-members/li-qiang.jpg"
@@ -205,7 +211,7 @@ politburo:
         cn: 王沪宁
         role: Ideology, Party&nbsp;Affairs
         rank: 4
-        faction: No faction
+        faction: Xi faction
         age: 67
       - img: "./img/politburo-members/cai-qi.jpg"
         name: Cai Qi
@@ -268,7 +274,7 @@ leaders:
     years: 1949–1975
     img: ./img/leaders/mao-zedong.jpg
   - name: Deng Xiaoping
-    years: 1978–1992
+    years: 1978–1997
     img: ./img/leaders/deng-xiaoping.jpg
   - name: Jiang Zemin
     years: 1989–2002
@@ -370,7 +376,7 @@ economicStrengths:
   - Vehicle exports
 
 headlines:
-  - TOPICS
+  - XI and POLICY
   - ECONOMY
   - FOREIGN POLICY
   - BELT & ROAD
@@ -726,6 +732,7 @@ retirementRules:
 
 covid:
   title: Covid zero
+  subtitle: Deaths and Cases
   axis:
     type: log
     min: 1000
