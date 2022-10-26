@@ -1,0 +1,61 @@
+
+.slide.bg-dk.txt-ff
+  .slide-inner(data-view="in-viewport")
+    .type.txt-md.txt-left.fade-in(
+      data-view="slide, in-viewport"
+      data-duration=1000
+    )
+      span.line.txt-dk.bg-ff.txt-mono
+        = page.data.associates.title
+    .type.txt-md.txt-left.fade-in(
+      data-view="slide, in-viewport"
+      data-duration=2000
+    )
+      //span.line.bg-lta.txt-mono
+        = page.data.associates.subtitle  
+    #associates.bars.txt-muted.fh.txt-sm.fade-in
+      .bar-group.flex-cv(style={"padding-top": "40px","width": "100%"})
+         for item, j in page.data.associates.data
+        
+          #label.strong.txt-sans.bar-group-label.txt-tu.fade-in.txt-left(
+            style=`bottom: 100px; margin: 0 auto; width: 360px`
+            class=[
+              j > 0 ? "txt-hl delay-9" : "txt-muted delay-8"
+            ]
+          )
+            span
+              = item.label
+          for value, i in item.values
+            .bar(
+              data-view="bars, in-viewport"
+              data-duration=(2000 - j * 400)
+              data-delay=(j * 400 + i * 40)
+              data-value=value
+              data-direction=(j > 0 ? 1 : -1)
+              data-suffix="%"
+            )
+              .bar-bg(
+                style=`width: ${value / page.data.associates.scale}%`
+                class=[
+                  j > 0 ? "bg-hl txt-ff l0" : "bg-lta txt-ff l0"
+                ]
+              )
+                .bar-value(
+                  class=[
+                    value / page.data.associates.scale < 15 ? "bar-value-outside txt-muted" : "",
+                    j => 0 ? "bar-value-right" : ""
+                  ]
+                )
+                  = value || ""
+              .bar-label(
+                class=["txt-right"]
+                style="width: 180px; line-height: 1.5em; margin-top: 12px;"
+              )
+                if value > 0
+                  if Array.isArray(page.data.associates.labels[i])
+                    = page.data.associates.labels[i][j]
+                  else
+                    = page.data.associates.labels[i]
+
+    .posa.txt-mid.fade-in.delay-8(style="top: 0; right: 0")
+      | Source: Neil Thomas, Eurasia

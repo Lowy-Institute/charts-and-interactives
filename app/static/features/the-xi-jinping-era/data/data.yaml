@@ -756,7 +756,8 @@ covidDrivers:
 
 keywords:
   reform:
-    title: Political Reform
+    title: Leaders' Priorities, 1982-2022
+    subtitle: Political Reform
     scale: 0.25
     labels:
       - 12th party congress
@@ -775,7 +776,8 @@ keywords:
         values: [0,12,6,5,7,5,5,1,0]
 
   confidence:
-    title: Self-confidence
+    title: Leaders' Priorities, 1982-2022
+    subtitle: Self-confidence
     scale: 0.25
     labels:
       - 12th party congress
@@ -794,7 +796,8 @@ keywords:
         values: [0,0,1,0,0,0,5,14,14]
 
   military:
-    title: Military
+    title: Leaders' Priorities, 1982-2022
+    subtitle: Military
     scale: 0.25
     labels:
       - 12th party congress
@@ -812,3 +815,16 @@ keywords:
       - label: Frequency of keyword found in leaders' reports to CCP congress
         values: [4,0,3,9,8,16,18,14,21]
       
+associates: 
+  title: Xi's Growing Domination of the Politburo
+  #subtitle: On Top Communist Party Bodies
+  scale: 1.5
+  labels:
+    - 18th party congress (2012-2017)
+    - 19th party congress (2017-2022)
+    - 20th party congress (2022-2027)
+  data:
+    - label: Politburo Standing Committee
+      values: [29,43,100]
+    - label: Politburo
+      values: [24,60,90]

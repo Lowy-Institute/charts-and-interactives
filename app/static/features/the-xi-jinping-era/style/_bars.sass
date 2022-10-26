@@ -47,9 +47,6 @@
     right: auto
     margin-right: 0
 
-#keyword_frequency .bar-value-outside
-  min-width: 80px /* stop long labels wrapping for small values on _keyword_frequency.pug */
-
 
 .bar-bg
   opacity: 0
@@ -91,3 +88,33 @@
   bottom: 0
   left: 0
   right: 0
+
+/* stop long labels wrapping for small values on _keyword_frequency.pug */
+#keyword_frequency .bar-value-outside
+  min-width: 80px 
+
+/* layout changes for _associates.pug */
+#associates .bar-group .bar
+  margin-bottom: 50px
+#associates .bar-group .bar:nth-child(n+5) 
+  transform: translateY(-226px) 
+#associates .bar-group .bar:last-child
+  margin-bottom: 0
+#associates .bar-group .bar:nth-of-type(n+5) .bar-label
+  display: none
+#associates #label:nth-of-type(1)
+  transform: translateY(-32px) 
+#associates #label > span
+  display:inline-block
+  &:before
+    content: ""
+    width: 16px
+    height: 16px
+    display: block
+    float: left
+    margin: 1px 12px 0px 0px
+    background: $color-hl
+
+#associates #label:nth-of-type(1) > span:before
+  background: $color-muted
+  
