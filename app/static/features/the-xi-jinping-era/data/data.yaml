@@ -101,7 +101,7 @@ politburo:
         cn: 王沪宁
         role: Ideology, Party&nbsp;Affairs
         rank: 5
-        faction: Xi faction
+        faction: No faction
         age: 67
       - img: "./img/politburo-members/li-keqiang.jpg"
         name: Li Keqiang
@@ -123,7 +123,7 @@ politburo:
         cn: 栗战书
         role: National People’s Congress
         rank: 3
-        faction: Xi
+        faction: Xi loyalist
         age: 72
       - img: "./img/politburo-members/zhao-leji.jpg"
         name: Zhao Leji
@@ -141,7 +141,7 @@ politburo:
         age: 67
   - years: 2017-2022
     members:
-      - img: "./img/politburo-members/han-zheng.jpg"
+      - img: "./img/politburo-members/han-zheng-out.jpg"
         name: H̶a̶n̶ ̶Z̶h̶e̶n̶g̶
         cn: 韩正
         role: Vice Premier, HK, Macau, Finance, Housing, Environment
@@ -154,7 +154,7 @@ politburo:
         cn: 王沪宁
         role: Ideology, Party&nbsp;Affairs
         rank: 5
-        faction: Xi faction
+        faction: Xi loyalist
         age: 67
         class: in
       - img: "./img/politburo-members/li-keqiang.jpg"
@@ -178,7 +178,7 @@ politburo:
         cn: 栗战书
         role: National People’s Congress
         rank: 3
-        faction: Xi
+        faction: Xi loyalist
         age: 72
         class: out
       - img: "./img/politburo-members/zhao-leji.jpg"
@@ -211,7 +211,7 @@ politburo:
         cn: 王沪宁
         role: Ideology, Party&nbsp;Affairs
         rank: 4
-        faction: Xi faction
+        faction: Xi loyalist
         age: 67
       - img: "./img/politburo-members/cai-qi.jpg"
         name: Cai Qi
