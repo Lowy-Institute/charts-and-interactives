@@ -130,7 +130,7 @@ politburo:
         cn: 赵乐际
         role: Anti&#8209;corruption
         rank: 6
-        faction: Xi (Shaanxi)
+        faction: Xi loyalist
         age: 65
       - img: "./img/politburo-members/wang-yang.jpg"
         name: Wang Yang
@@ -186,7 +186,7 @@ politburo:
         cn: 赵乐际
         role: Anti&#8209;corruption
         rank: 6
-        faction: Xi (Shaanxi)
+        faction: Xi loyalist
         age: 65
         class: in
       - img: "./img/politburo-members/wang-yang.jpg"
@@ -240,7 +240,7 @@ politburo:
         cn: 赵乐际
         role: Anti&#8209;corruption
         rank: 3
-        faction: Xi (Shaanxi)
+        faction: Xi loyalist
         age: 65
       - img: "./img/politburo-members/li-xi.jpg"
         name: Li Xi
