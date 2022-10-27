@@ -16,13 +16,14 @@ mixin economyArrow
         .txt-lg.line.bg-ff.txt-dk Drivers and Costs
 
       .flex-col.txt-mono.pv-lg
-        .mx-auto.txt-ff(style="font-size: 38px")
+        #covid-drivers.mx-auto.txt-ff(style="font-size: 38px")
           for item, i in page.data.covidDrivers
             .flex-ch(class="delay-" + (i + 2))
               div(
                 style=(i === page.data.covidDrivers.length - 1 ? "margin-top: -1rem" : "margin: .5rem 0")
                 data-view="type, in-viewport"
                 data-duration=600
+                data-underline=[{row:0, start:0, end:28}]
                 data-delay=(1200 + i * 550)
               )
                 .line= item

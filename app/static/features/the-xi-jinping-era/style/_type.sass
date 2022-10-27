@@ -137,3 +137,25 @@
   &.last
     padding-right: 0.25em
     margin-right: -0.25em
+
+/* white underline for _covid-drivers.pug only */
+#covid-drivers .char
+
+  &.underline
+    background: linear-gradient(to bottom, #fff, #fff)
+    background-size: 0.07em 0.07em
+    background-repeat: repeat-x
+    background-position: 0 87%
+    text-shadow: -0.1em 0.02em 0 $color-dk, -0.05em 0.02em 0 $color-dk, 0.05em 0.02em 0 $color-dk, 0.1em 0.02em 0 $color-dk
+    padding: 0 !important
+
+  &.ul-first
+    background: linear-gradient(to right, $color-dk 100%, transparent 100%), linear-gradient(to bottom, #fff, #fff)
+    background-size: 0.07em 0.07em
+    background-repeat: repeat-y, repeat-x
+    background-position: 0 87%
+  &.ul-last
+    background: linear-gradient(to left, $color-dk 100%, transparent 100%), linear-gradient(to bottom, #fff, #fff)
+    background-size: 0.08em 0.07em, 0.07em 0.07em
+    background-repeat: repeat-y, repeat-x
+    background-position: 100% 0, 0 87%

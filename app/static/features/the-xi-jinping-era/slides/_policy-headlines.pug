@@ -6,9 +6,8 @@
           for headline, i in page.data.headlines
             .flex.fade-up(class="delay-" + (i + 2))
               div(
-                style="margin: .5rem 0"
                 data-view="type, in-viewport"
                 data-duration=1200
                 data-delay=(i * 200)
               )
-                .line(class=(i ? "bg-ff txt-dk" : "bg-hl txt-ff"))!= (i ? (i + ".&ensp;") : "") + headline
+                .line(class=(i ? "bg-ff txt-dk txt-md" : "bg-hl txt-ff txt-lg") style=(i ? "margin: .5rem 0" : "margin: .5rem 0 1.5rem 0"))!= (i ? (i + ".&ensp;") : "") + headline
