@@ -381,7 +381,7 @@ headlines:
   - FOREIGN POLICY
   - BELT & ROAD
   - ANTI-CORRUPTION
-  - COVID-ZERO
+  - COVID ZERO
   - XINJIANG
 
 population:
@@ -763,7 +763,7 @@ covidDrivers:
 
 keywords:
   reform:
-    title: Leaders' Priorities, 1982-2022
+    title: Leaders&#8217; Priorities, 1982-2022
     subtitle: Political Reform
     scale: 0.25
     labels:
@@ -783,7 +783,7 @@ keywords:
         values: [0,12,6,5,7,5,5,1,0]
 
   confidence:
-    title: Leaders' Priorities, 1982-2022
+    title: Leaders&#8217; Priorities, 1982-2022
     subtitle: Self-confidence
     scale: 0.25
     labels:
@@ -803,7 +803,7 @@ keywords:
         values: [0,0,1,0,0,0,5,14,14]
 
   military:
-    title: Leaders' Priorities, 1982-2022
+    title: Leaders&#8217; Priorities, 1982-2022
     subtitle: Military
     scale: 0.25
     labels:
@@ -819,11 +819,11 @@ keywords:
     data:
       - label: 
         values: []
-      - label: Frequency of keyword found in leaders' reports to CCP congress
+      - label: Frequency of keyword found in leaders&#8217; reports to CCP congress
         values: [4,0,3,9,8,16,18,14,21]
       
 associates: 
-  title: Xi's Growing Domination of the Politburo
+  title: Xi&#8217;s Growing Domination of the Politburo
   #subtitle: On Top Communist Party Bodies
   scale: 1.5
   labels:

@@ -1,0 +1,22 @@
+extend /partials/layout
+
+block page
+
+  div(style=`height: 550px`)
+    include _slides
+
+block customScripts
+  script(type="text/javascript")
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/type.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/slide.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/line.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/bars.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/page.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/video.coffee
+    include:coffee /features/chinas-communist-party-under-xi-jinping/views/scroller.coffee
+
+  link(href="https://use.typekit.net/hdu4qmq.css" rel="stylesheet")
+
+block append css
+  style
+      include:sass _style.sass

@@ -1,0 +1,54 @@
+.slide.bg-dk.txt-ff
+  .slide-inner(data-view="in-viewport")
+    .type.txt-lg.txt-left.posa.fade-in(
+      data-view="slide, in-viewport"
+      data-duration=1000
+    )
+      span.line.bg-lta.txt-mono
+        = page.data.makeup.gender.title
+
+    .bars.txt-mid.fh.txt-sm.fade-in
+      for item, j in page.data.makeup.gender.data
+        .bar-group.flex-cv(style={"padding-top": "40px"})
+          .bar-group-label.txt-center.txt-muted.fade-in.delay-8
+            = item.label
+
+          for value, i in item.values
+            .bar(
+              style={margin: "20px 0"}
+              data-view="bars, in-viewport"
+              data-duration=(2000 - j * 400)
+              data-delay=(j * 400 + i * 40)
+              data-value=value
+              data-direction=(j > 0 ? 1 : -1)
+              data-suffix="%"
+            )
+              .bar-bg.txt-ff.r0(
+                style={
+                  width: `${value / page.data.makeup.gender.scale}%`
+                }
+                class=[
+                  ["bg-lta", "bg-hl"][i],
+                  j > 0 ? "l0 bar-bg-fade" : "r0"
+                ]
+              )
+                .bar-value(
+                  class=[
+                    j > 0 ? "bar-value-outside txt-muted" : "",
+                    j > 0 ? "bar-value-right" : ""
+                  ]
+                )
+                  = value
+              
+              if j > 0
+                strong.bar-label.txt-right.txt-tu.txt-sans(
+                  class=["txt-ff", "txt-hl"][i]
+                  style="line-height: 1.3"
+                )
+                  = page.data.makeup.gender.labels[i]
+                  br
+                  span.txt-normal.txt-muted
+                    = page.data.makeup.gender.sizes[i]
+
+    .posa.txt-mid.fade-in.delay-8(style="top: 0; right: 0")
+      | Source: CCP Organization Department (2017)
