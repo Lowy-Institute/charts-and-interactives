@@ -4,8 +4,8 @@ title: >
 #source: >
   #<b>Source:</b> Lorem ipsum
 
-#notes: >
-  #<b>Notes:</b> Lorem ipsum
+notes: >
+  Note: 2022 data up to September
 
 subtitle: >
   Number of UN General Assembly resolutions mentioning China-promoted phrases
@@ -75,7 +75,7 @@ series:
       - 1
       - 0
   -
-    title: Shared future
+    title: Shared future (without 'community of')
     color: "blue-100"
     values:
       - 2
