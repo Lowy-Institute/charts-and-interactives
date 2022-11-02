@@ -75,7 +75,7 @@ block page
                       y=toPercent(y - fy(v/2))
                       text-anchor="middle"
                       transform="translate(0 4.5)"
-                      style=`color: ${(j < 3 ? "white" : "")}`
+                      style=`color: ${(j > 10 ? "" : "white")}`
                     )
                       = v.toFixed(0) + (axes.percentage ? "%" : "")
 
@@ -132,7 +132,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = ser + ":" + val + cat + " by permanent members ";
+        tooltip.innerHTML = ser + ": " + val + cat + " by permanent members ";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -233,6 +233,10 @@ block append css
       
       .chart-content:hover .chart-value
         opacity: 1
+
+      
+      text.chart-value
+        font-size: 10px
         
       .x-label text
         text-anchor: end
