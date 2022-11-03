@@ -52,13 +52,13 @@ block page
           // X-Axis labels
           for x, i in chart.axes.x.values
             svg.x-label(x=toPercent(fx(i)) y="100%")
-              text(
+              text.line1(
                 text-anchor=axes.rotateX ? "end" : "middle"
                 transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
               )= x
-              text(
+              text.line2(
                 text-anchor=axes.rotateX ? "end" : "middle"
-                transform=axes.rotateX ? "rotate(-45) translate(-8, 34)" : "translate(0 40)"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 34)" : "translate(0 36)"
               )
                 = chart.axes.x.label[i]
               
@@ -115,8 +115,8 @@ block page
               span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
               span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -181,6 +181,7 @@ block append css
         left: 50px
         right: 20px
         bottom: 40px
+        padding: 0 24px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb
@@ -247,7 +248,8 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 2em
+        margin-top: 1em
+        margin-left: 3em
         font-size: 15px
         
       .chart-value
@@ -260,12 +262,17 @@ block append css
 
       @media (max-width: 700px)
         
-        .x-label text
+        .x-label text.line1
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 14px)
+        .x-label text.line2
+          text-anchor: end
+          transform: rotate(-45deg) translate(8px, 30px)
 
         text
           font-size: 13px
+        .legend
+          margin-top: 2em
           
       @media (max-width: 450px)
         .chart-content
