@@ -1,0 +1,75 @@
+title: >
+  Composition of parliament, 2017 – 2022
+
+source: >
+  <b>Source:</b> <a href="https://devpolicy.org/pngmps/">PNG MP Database</a>, Development Policy Centre
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 6
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  x:
+    title: Year
+    values:
+      - 2017
+      - 2019
+      - 2020
+      - 2021
+      - 2022
+      - 2022
+
+    label:
+      - 
+      - 
+      - 
+      - 
+      - "(pre-election)"
+      - "(post-election)"
+
+series:
+  
+  -
+    title: Opposition, cross-benches, and speaker
+    color: "grey"
+    values:
+      - 21
+      - 16
+      - 53
+      - 32
+      - 30
+      - 18
+
+  -
+    title: Rest of government
+    color: "orange"
+    values:
+      - 37
+      - 57
+      - 23
+      - 41
+      - 42
+      - 49
+
+  -
+    title: PM's party
+    color: "highlight"
+    values:
+      - 42
+      - 27
+      - 23
+      - 27
+      - 28
+      - 33
+
