@@ -20,7 +20,7 @@ block page
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
-        - fx = (i) => (i + 0.5) / (ln + 0.5)
+        - fx = (i) => (i + 0.6) / (ln + 0.75)
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
@@ -64,7 +64,7 @@ block page
 
                   for set, j in chart.series.filter( (s, i) => i )
                     - y = set.values[i]
-                    - w = 50/(chart.series.length-.5)
+                    - w = 50/(chart.series.length-1)
                   
                     rect(
                       x=(j*w)
@@ -239,12 +239,12 @@ block append css
           top: 30px
           
         rect
-          width: 50%
+          width: 30%
           
-        $n-series: 3
+        $n-series: 4
         @for $i from 2 through $n-series
           rect:nth-of-type(#{$i})
-            x: ($i - 1)*50%
+            x: ($i - 1)*30%
           
         .x-label text
           text-anchor: end
