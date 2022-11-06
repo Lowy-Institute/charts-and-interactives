@@ -1,0 +1,43 @@
+title: >
+  Figure 5: Cumulative loan flows by creditor-borrower
+
+source: >
+  Source: Authors’ calculations; Lowy Institute Pacific Aid Map
+
+charts:
+  -
+    subtitle: Disbursements, 2011–2017
+
+    colors:
+      - "#002a45"
+      - "#ff1f2f"
+      - "#539ed4"
+      - "#2D6993"
+      - "#b7c1ce"
+
+    series:
+      -
+        name: ""
+        values:
+          - name: ADB
+            value: 1041913827
+      -
+        name: ""
+        values:
+          - name: China
+            value: 942708559.7
+      -
+        name: ""
+        values:
+          - name: World Bank Group
+            value: 297778157.8
+      -
+        name: ""
+        values:
+          - name: Japan
+            value: 174016133.1
+      -
+        name: ""
+        values:
+          - name: Others
+            value: 90635739.14
