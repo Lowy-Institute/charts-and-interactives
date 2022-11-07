@@ -15,7 +15,7 @@ block page
       .chart-title= chart.title
       .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
-        - ln = chart.series[0].values.length
+        - ln = chart.series[0].x.values.length
         - axes = chart.axes
         - minY = axes.minY
         - maxY = axes.maxY
@@ -52,7 +52,7 @@ block page
           // Chart rects
           g
           
-            for seriesname, i in chart.series[0].values
+            for seriesname, i in chart.series[0].x.values
               svg(
                 x=toPercent(fx(i))
                 y=toPercent(fy(minY))
@@ -85,17 +85,27 @@ block page
                       = y + (axes.percentage ? "%" : "")
 
                   // X-Axis labels
-                  //svg.x-label(x="50%" y="100%")
-                    text(
+                  svg.x-label(x="50%" y="100%")
+                    text.line1(
                       text-anchor=axes.rotateX ? "end" : "middle"
                       transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
                     )
                       =seriesname
+                    text.line2(
+                      text-anchor=axes.rotateX ? "end" : "middle"
+                      transform=axes.rotateX ? "rotate(-45) translate(-8, 34)" : "translate(0 36)"
+                    )
+                       = chart.series[0].x.values2[i]
+                    text.line3(
+                      text-anchor=axes.rotateX ? "end" : "middle"
+                      transform=axes.rotateX ? "rotate(-45) translate(-8, 54)" : "translate(0 52)"
+                    )
+                       = chart.series[0].x.values3[i]
       //.row 
         for seriesname, i in chart.series[0].values
           span.x-label(style="font-size:11px")= seriesname
 
-      .row
+      //.row
         ul.legend-custom.list-bare.txt-center.flex-ch
           li.legend-item-custom(style="font-size:11px") Doctorate
           li.legend-item-custom(style="font-size:11px") Master's
@@ -105,7 +115,7 @@ block page
           li.legend-item-custom(style="font-size:11px") Short Course /<br>Certificate /<br>Fellowship
 
       .row
-        ul.legend.list-bare.txt-left.flex
+        ul.legend.txt-left.flex
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -173,7 +183,7 @@ block append css
         top: 20px
         left: 50px
         right: 20px
-        bottom: 8px
+        bottom: 60px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb
@@ -208,7 +218,7 @@ block append css
         padding: 4px 16px 4px 24px
 
       .legend
-        font-size: 15px
+        font-size: 14px
         margin-left: 3em
 
       .legend-item
@@ -255,21 +265,32 @@ block append css
           opacity: 1
 
       @media (max-width: 650px)
+
+        .x-label text.line1
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 8px)
+        .x-label text.line2
+          text-anchor: end
+          transform: rotate(-45deg) translate(8px, 20px)
+        .x-label text.line3
+          text-anchor: end
+          transform: rotate(-45deg) translate(16px, 32px)
+
         .chart-content
           left: 40px
           right: 5px
-          bottom: 8px
+          bottom: 100px
           top: 30px
           
         rect
-          width: 50%
+          width: 40%
           
-        $n-series: 3
+        $n-series: 2
         @for $i from 2 through $n-series
           rect:nth-of-type(#{$i})
-            x: ($i - 1)*50%
+            x: ($i - 1)*40%
           
-        .x-label text
+        .x-label text,.legend-item-custom
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 14px)
           
@@ -281,8 +302,11 @@ block append css
           margin-right: 32px
           
       @media (max-width: 450px)
+        .legend
+          margin-left: .5em
+          font-size: 13px
         .legend-item
-          width: min-content
+          line-height: 1.1em
         .chart-title
           font-size: 18px
         .chart-subtitle
@@ -293,3 +317,12 @@ block append css
           font-size: 13px
         .chart-value
           display: none
+        .x-label text.line1
+          text-anchor: end
+          transform: rotate(-90deg) translate(-8px, 0px)
+        .x-label text.line2
+          text-anchor: end
+          transform: rotate(-90deg) translate(-8px, 12px)
+        .x-label text.line3
+          text-anchor: end
+          transform: rotate(-90deg) translate(-8px, 24px)

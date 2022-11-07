@@ -21,15 +21,29 @@ axes:
 
 series:
   -
-    title: Pandemic performance
-
-    values:
-      - Doctorate
-      - Master's
-      - Graduate Diploma/Certificate
-      - Bachelor's
-      - Diploma / Advanced Diploma / Associate Degree
-      - Short Course / Certificate / Fellowship
+    title: 
+    x:
+      values:
+        - Doctorate
+        - Master's
+        - Graduate Diploma
+        - Bachelor's
+        - Diploma
+        - Short Course
+      values2:
+        - 
+        - 
+        - / Certificate
+        - 
+        - / Advanced Dip
+        - / Certificate
+      values3:
+        - 
+        - 
+        -
+        - 
+        - / Associate Deg
+        - / Fellowship
   -
     title: On award had any opportunities to develop partnerships with Australians or Australian organisations
 
