@@ -1,0 +1,42 @@
+
+.wrapper.flex.bg-ff.txt-dk(style="padding:24px;")
+  .posr.fw.fh.flex-cv(data-view="in-viewport" width="100%")
+    //- img.fade-in.posa.fw.fh(data-src="./img/background/congress.jpg")
+
+    .slide-inner.flex-cv(style="width:100%;")
+
+      .type.txt-md.txt-dk(
+            data-view="type, in-viewport"
+            data-duration=1200
+          )
+            span.line.bg-hl Retirement rules
+            //- span.line.txt-sm.txt-muted One in 11 Chinese adults is a party member
+
+      style.
+        #retirement-rules-table { border-collapse: collapse; margin-top: 3rem; }
+        #retirement-rules-table td, #retirement-rules-table th { border-bottom: 0px solid #fff4; padding: 0.5rem 0 }
+        
+      table#retirement-rules-table.mx-auto.txt-center.txt-dk
+        tbody
+          tr.txt-normal.txt-mid
+            for col, i in page.data.retirementRules.labels
+              th.ph-md(style=`width: ${["10rem", "20rem", "7rem", "7rem"][i]}`)!= col
+          for row, j in page.data.retirementRules.data
+            tr
+              td.fade-in(class=`delay-${(j + 1) * 2}`)!= row.icon
+              th.txt-normal.txt-tu.txt-mid.fade-in.txt-left.fade-in(class=`delay-${(j + 1) * 2}`)
+                != row.position
+              for col, i in ["nomination", "retirement"]
+                td.txt-md.fade-in(
+                  class=((i ? "txt-hl" : "txt-mid") + ` delay-${(j + 1) * 2}`)
+                  data-view="bars, in-viewport"
+                  data-duration=3000
+                  data-delay=i * 250
+                  data-precision=0
+                  data-prefix=(i ? "" : "<span class='txt-md'><&thinsp;</span>")
+                  data-suffix=(i ? "+" : "")
+                  data-value=row[col]
+                )
+                  span.bar-value(
+                    style="position: static;display: inline-block;"
+                  )= row[col]
