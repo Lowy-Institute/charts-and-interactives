@@ -37,9 +37,10 @@ block page
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
               - value = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
-              - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
+
               svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")= "$" + formatted
+                text(text-anchor="end" transform="translate(-8 4)")= "$" + (value/1000000) + " M" 
+                // shows 000,000 as M
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -207,7 +208,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 120px
+        left: 60px
         right: 40px
         bottom: 60px
 
