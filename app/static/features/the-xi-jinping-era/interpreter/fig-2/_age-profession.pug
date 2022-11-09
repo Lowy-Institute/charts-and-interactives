@@ -1,7 +1,7 @@
 
 for key in ["age"]
-  .wrapper.flex.bg-ff.txt-dk(style="padding:24px;")
-    .slide-inner(data-view="in-viewport" style="width:100%;")
+  .wrapper.flex.bg-ff.txt-dk
+    .slide-inner(data-view="in-viewport")
       .type.txt-md.txt-left.posa.fade-in(
         data-view="slide, in-viewport"
         data-duration=1000
@@ -9,9 +9,9 @@ for key in ["age"]
         span.line.bg-lta
           = page.data.makeup[key].title
 
-      .bars.txt-mid.fh.txt-sm.fade-in
+      .bars.txt-mid.fh.fade-in
         for item, j in page.data.makeup[key].data
-          .bar-group.flex-cv(style="padding-top: 40px; height:90%;")
+          .bar-group.flex-cv
             strong.txt-sans.bar-group-label.txt-center.txt-tu.fade-in(
               class=[
                 j > 0 ? "txt-hl delay-12" : "txt-mid delay-8"
@@ -46,7 +46,6 @@ for key in ["age"]
                   class=[
                       j > 0 ? "txt-right" : "txt-left"
                     ]
-                  style="font-size:16px;"
                 )
                   if value > 0
                     if Array.isArray(page.data.makeup[key].labels[i])
@@ -56,3 +55,38 @@ for key in ["age"]
 
       .posa.txt-muted.fade-in.delay-8(style="bottom: 0; right: 0")
         | Source: CCP Organization Department (2017)
+
+block append css
+  style
+    :sass
+    
+      .wrapper
+        padding: 24px
+      .slide-inner
+        width: 100%
+      .bar-group
+        padding-top: 40px
+        height: 90%
+      .bar-label
+        font-size: 16px
+
+      @media (max-width: 450px)
+        .wrapper
+          padding: 12px
+        .bars
+          margin-right: -24px
+        .bar-label.txt-right
+          display: none
+        .bar-label
+          overflow: hidden
+          max-width: 9ch
+          text-overflow: ellipsis
+          white-space: nowrap
+          left: 0
+        .bar-value
+          font-size: 12px
+        .bar-value
+          left: 2px
+        .bar-value-right
+          left: 12px
+        
