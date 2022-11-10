@@ -1,7 +1,7 @@
 - chartData = page.data.population
 
-.wrapper.flex.bg-ff.txt-dk(style="padding:24px;")
-  .slide-inner(data-view="in-viewport" style="width:100%;")
+.wrapper.flex.bg-ff.txt-dk
+  .slide-inner(data-view="in-viewport")
     .type.txt-md.txt-dk.txt-left.posa.z1(
       data-view="slide, in-viewport"
       data-duration=2000
@@ -128,3 +128,14 @@
       style="top: 280px; left: 56%; transform: translateX(-50%); width: 400px; border: 1px solid #aeb3bc; opacity: .8;"
     )
       | 120&hairsp;m fewer workers by 2040
+
+block append css
+  style
+    :sass
+    
+      body
+        background: #fff
+      .wrapper
+        padding: 24px
+      .slide-inner
+        width: 100%

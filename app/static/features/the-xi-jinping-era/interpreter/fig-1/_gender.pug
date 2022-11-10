@@ -1,5 +1,5 @@
-.wrapper.flex.bg-ff.txt-dk(style="padding:24px;")
-  .slide-inner(data-view="in-viewport" style="width:100%;")
+.wrapper.flex.bg-ff.txt-dk
+  .slide-inner(data-view="in-viewport")
     .type.txt-md.txt-left.posa.fade-in(
       data-view="slide, in-viewport"
       data-duration=1000
@@ -7,15 +7,15 @@
       span.line.bg-lta
         = page.data.makeup.gender.title
 
-    .bars.txt-mid.fh.txt-sm.fade-in(style="margin-top: 100px;")
+    .bars.txt-mid.fh.txt-sm.fade-in
       .txt-center.txt-tu.txt-sans.txt-mid(style="line-height: 1.3;") 
         strong CCP Membership
         br
         span.txt-normal.txt-mid 89M members
     
       for item, j in page.data.makeup.gender.data
-        .bar-group.flex-cv(style="overflow:visible; height:50%;")
-          .bar-group-label.txt-center.txt-mid.fade-in.delay-8(style="top: 20px;")
+        .bar-group.flex-cv
+          .bar-group-label.txt-center.txt-mid.fade-in.delay-8
             = item.label 
 
           for value, i in item.values
@@ -62,3 +62,22 @@
 
     .posa.txt-muted.fade-in.delay-8(style="bottom: 0; right: 0")
       | Source: CCP Organization Department (2017)
+
+block append css
+  style
+    :sass
+    
+      body
+        background: #fff
+      .wrapper
+        padding: 24px
+      .slide-inner
+        width: 100%
+
+      .bars
+        margin-top: 100px
+      .bar-group
+        overflow: visible
+        height: 50%
+      .bar-group-label
+        top: 20px
