@@ -79,7 +79,7 @@ series:
       - 2022
 
   -
-    title: Resolutions passed
+    title: Resolutions vetoed
     color: "teal-light"
     values:
       - 1
@@ -136,7 +136,7 @@ series:
       - 1
       - 3
   -
-    title: Resolutions vetoed
+    title: Resolutions passed
     color: "blue-100"
     values:
       - 16
