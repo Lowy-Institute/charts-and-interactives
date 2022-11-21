@@ -38,10 +38,25 @@ series:
       - 2018
       - 2019
       - 2020
-
+      - 2021
+  -
+    title: Australia
+    color: "orange"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
   -
     title: Brazil
-    color: "blue-300" 
+    color: "highlight" 
     values:
       - 0
       - 0
@@ -147,21 +162,6 @@ series:
   -
     title: Norway
     color: "yellow-light"
-    values:
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-  -
-    title: Saudi Arabia
-    color: "orange"
     values:
       - 0
       - 0

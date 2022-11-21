@@ -36,13 +36,32 @@ series:
       - 2018
       - 2019
       - 2020
-  
+      - 2021
   -
-    title: Canada
-    color: "green"
+    title: Australia
+    color: "orange"
     widen: false
     dashed: false
-    classname: br
+    classname: oz
+    values:
+      - 2.431873143
+      - 3.314474354
+      - 4.986023932
+      - 1.840491692
+      - 4.281101481
+      - 2.706379752
+      - 2.77565357
+      - 4.150887396
+      - 1.647165166
+      - 1.54009546
+      - 2.241651514
+      - 1.871571412
+  -
+    title: Canada
+    color: "teal"
+    widen: false
+    dashed: false
+    classname: ca
     values:
       - 4.844725501
       - 6.180841788
@@ -55,12 +74,13 @@ series:
       - 3.693743877
       - 2.936767102
       - 3.31507524
+      - 2.477212552
   -
     title: Denmark
-    color: "red-dark"
+    color: "green-light"
     widen: false
     dashed: false
-    classname: br
+    classname: dk
     values:
       - 5.519983868
       - 5.138831211
@@ -73,12 +93,13 @@ series:
       - 3.708389899
       - 4.985923391
       - 4.255571131
+      - 5.899958903
   -
     title: Germany
-    color: "orange"
+    color: "green"
     widen: false
     dashed: false
-    classname: in
+    classname: de
     values:
       - 3.819907056
       - 3.63153251
@@ -91,12 +112,13 @@ series:
       - 6.625020706
       - 7.932603823
       - 15.53939037
+      - 9.360712293
   -
     title: Japan
-    color: "purple"
+    color: "red-500"
     widen: false
     dashed: false
-    classname: id
+    classname: jp
     values:
       - 5.764953605
       - 4.485665501
@@ -109,12 +131,13 @@ series:
       - 4.902428731
       - 5.228373537
       - 4.915691557
+      - 3.717878891
   -
     title: Netherlands
-    color: "pink"
+    color: "red-100"
     widen: false
     dashed: false
-    classname: ni
+    classname: nl
     values:
       - 10.81150548
       - 9.011416284
@@ -126,13 +149,15 @@ series:
       - 5.232054184
       - 6.03397802
       - 10.91081271
-      - 5.097877987 
+      - 5.097877987
+      - 3.711047564
+
   -
     title: Norway
-    color: "lime"
+    color: "yellow-light"
     widen: false
     dashed: false
-    classname: sau
+    classname: no
     values:
       - 10.89967253
       - 10.80386556
@@ -144,13 +169,14 @@ series:
       - 8.461118096
       - 7.657802853
       - 10.9543231
-      - 5.100531411 
+      - 5.100531411
+      - 6.07713562
   -
     title: Sweden
-    color: "brown"
+    color: "lilac"
     widen: false
     dashed: false
-    classname: th
+    classname: se
     values:
       - 10.42661123
       - 12.21085248
@@ -163,12 +189,13 @@ series:
       - 17.54904376
       - 11.0678635
       - 14.94831584
+      - 22.83374561
   -
     title: Switzerland
-    color: "green-dark"
+    color: "purple"
     widen: false
     dashed: false
-    classname: th
+    classname: ch
     values:
       - 3.707192732
       - 2.970857099
@@ -181,12 +208,13 @@ series:
       - 5.626588561
       - 3.506318192
       - 2.692217531
+      - 3.890761902
   -
     title: United Kingdom
-    color: "teal"
+    color: "yellow"
     widen: false
     dashed: false
-    classname: uae
+    classname: uk
     values:
       - 7.224578176
       - 9.913064801
@@ -196,15 +224,16 @@ series:
       - 10.45212314
       - 8.82458525
       - 13.56762529
+      - 10.36994659
       - 10.61568697
       - 8.137585022
-      - 10.36994659
+      - 6.73214091
   -
     title: United States of America
-    color: "red-light"
+    color: "brown"
     widen: false
     dashed: false
-    classname: uae
+    classname: us
     values:
       - 13.37038651
       - 11.77643945
@@ -217,6 +246,7 @@ series:
       - 8.313550269
       - 7.491153321
       - 9.483089238
+      - 10.50761989
   -
     title: China
     color: "red"
@@ -235,4 +265,5 @@ series:
       - 0.813794566
       - 0.988507405
       - 1.015847015
+      - 0.743494909
 
