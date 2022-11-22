@@ -1,0 +1,133 @@
+title: >
+  Global governance percentile rankings for PNG, 2011–2020
+
+source: >
+  Source: World Governnance Indicators
+
+#notes: >
+  #<b>Notes:</b> data from January 2022
+
+#subtitle: >
+  #New cases per million
+
+axes:
+  minY:  0
+  maxY: 60
+  stepsY: 7
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+  -
+    title: Voice and accountability
+    color: "blue-100"
+    widen: false
+    dashed: false
+    values:
+      - 47.89
+      - 46.48
+      - 47.89
+      - 49.75
+      - 49.26
+      - 50.74
+      - 51.72
+      - 49.76
+      - 50.24
+      - 46.86
+  -
+    title: Political stability/No violence
+    color: "orange"
+    widen: false
+    dashed: false
+    values:
+      - 22.27
+      - 26.07
+      - 27.96
+      - 31.9
+      - 30.95
+      - 26.19
+      - 21.9
+      - 22.17
+      - 22.17
+      - 22.17
+  -
+    title: Government effectiveness
+    color: "grey"
+    widen: false
+    dashed: false
+    values:
+      - 27.01
+      - 26.07
+      - 30.33
+      - 26.92
+      - 31.73
+      - 23.56
+      - 26.44
+      - 25
+      - 20.19
+      - 18.27
+  -
+    title: Regulatory quality
+    color: "yellow"
+    widen: false
+    dashed: false
+    values:
+      - 33.18
+      - 32.7
+      - 33.18
+      - 39.42
+      - 32.21
+      - 30.29
+      - 28.37
+      - 32.21
+      - 32.21
+      - 26.92
+  -
+    title: Rule of law
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 24.41
+      - 23.47
+      - 17.84
+      - 24.52
+      - 22.12
+      - 24.52
+      - 21.63
+      - 23.56
+      - 22.6
+      - 25.48
+  -
+    title: Control of corruption
+    color: "green"
+    widen: false
+    dashed: false
+    values:
+      - 16.11
+      - 18.48
+      - 17.54
+      - 17.79
+      - 16.83
+      - 15.87
+      - 16.83
+      - 18.75
+      - 16.83
+      - 29.33

@@ -1,0 +1,148 @@
+title: >
+  Index of formal sector employment (March 2012 = 100)
+
+source: >
+  Source: Quarterly Economic Bulletin Statistical Tables, BPNG
+
+#notes: >
+  #<b>Notes:</b> data from January 2022
+
+#subtitle: >
+  #New cases per million
+
+axes:
+  minY:  90
+  maxY: 110
+  stepsY: 11
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2012 Mar
+      - 2012 Jun
+      - 2012 Sep
+      - 2012 Dec
+      - 2013 Mar
+      - 2013 Jun
+      - 2013 Sep
+      - 2013 Dec
+      - 2014 Mar
+      - 2014 Jun
+      - 2014 Sep
+      - 2014 Dec
+      - 2015 Mar
+      - 2015 Jun
+      - 2015 Sep
+      - 2015 Dec
+      - 2016 Mar
+      - 2016 Jun
+      - 2016 Sep
+      - 2016 Dec
+      - 2017 Mar
+      - 2017 Jun
+      - 2017 Sep
+      - 2017 Dec
+      - 2018 Mar
+      - 2018 Jun
+      - 2018 Sep
+      - 2018 Dec
+      - 2019 Mar
+      - 2019 Jun
+      - 2019 Sep
+      - 2019 Dec
+      - 2020 Mar
+      - 2020 Jun
+      - 2020 Sep
+      - 2020 Dec
+  -
+    title: Employment index (Normalized)
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 100
+      - 103.028899
+      - 104.5995897
+      - 105.3406998
+      - 107.2233033
+      - 109.7966625
+      - 106.3461231
+      - 107.9189687
+      - 107.7254323
+      - 107.7799443
+      - 106.9272734
+      - 103.7194552
+      - 105.0907345
+      - 107.8349875
+      - 103.8162821
+      - 99.97507967
+      - 101.3265148
+      - 103.4783963
+      - 102.7514383
+      - 100.3214216
+      - 101.4327115
+      - 100.1227747
+      - 98.73869984
+      - 96.50092081
+      - 96.79131215
+      - 96.95923234
+      - 96.78221117
+      - 98.65530719
+      - 100.6523866
+      - 101.1467452
+      - 98.82037009
+      - 97.23726776
+      - 96.01701764
+      - 97.25905093
+      - 92.41662783
+      - 91.89080946
+  -
+    title: Trendline
+    color: "highlight"
+    widen: false
+    dashed: true
+    values:
+      - 107.9
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - 92
+
