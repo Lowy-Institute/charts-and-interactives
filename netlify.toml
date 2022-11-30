@@ -17,6 +17,12 @@
   to = "https://lowy-institute-chinese-communities.netlify.app/:splat"
   status = 200
 
+# Chinese Communities Poll staging site. Not part of this repo, but can be accessed from this domain
+[[redirects]]
+  from = "/features/staging--chinese-communities/*"
+  to = "https://staging--lowy-institute-chinese-communities.netlify.app/"
+  status = 200
+
 # Diplomatic postings is not part of this repo, but can be accessed from this domain
 [[redirects]]
   from = "/features/diplomat-database/*"
