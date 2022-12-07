@@ -1,0 +1,59 @@
+title: >
+  United States — China
+
+source: >
+  <b>Source:</b> <a href="https://power.lowyinstitute.org/" target="_blank">Lowy Institute Asia Power Index</a>
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Comprehensive power in 2022
+
+axes:
+  min:  0
+  max: 100
+  steps: 6
+  percentage: false
+  grid: true
+  rotate: 0
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Categories
+    values:
+      - Defence networks
+      - Cultural influence
+      - Economic capability
+      - Military capability
+      - Resilience
+      - Future resources
+      - Diplomatic influence
+      - Economic relationships
+
+  -
+    title: China
+    color: red
+    values:
+      - 23.6805435
+      - 47.3591025
+      - 87.04516629
+      - 68.08071165
+      - 70.42691562
+      - 72.87424208
+      - 91.53947525
+      - 98.34491166
+
+  -
+    title: United States
+    color: blue-100
+    values:
+      - 84.59345776
+      - 80.86216705
+      - 87.97372545
+      - 90.74000216
+      - 83.29971669
+      - 75.93750544
+      - 89.26038296
+      - 53.67959093

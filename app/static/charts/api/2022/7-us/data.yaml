@@ -1,0 +1,98 @@
+title: >
+  US investment
+
+source: >
+  <b>Source:</b> FDI Markets
+
+notes: >
+  <b>Notes:</b> data from January 2022
+
+subtitle: >
+  In Asia Power Index countries
+
+axes:
+  minY:  0
+  maxY: 70
+  stepsY: 8
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+      - 2022
+  -
+    title: Australia
+    color: "green"
+    widen: false
+    dashed: false
+    values:
+      -  13.5
+      -  13.8
+      -  13.3
+      -  11.2
+      -  10.1
+  -
+    title: China
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      -  36.6
+      -  58.9
+      -  61.0
+      -  56.0
+      -  30.1
+  -
+    title: India
+    color: "orange"
+    widen: false
+    dashed: false
+    values:
+      -  33.0
+      -  28.0
+      -  28.9
+      -  30.9
+      -  26.5
+  -
+    title: Japan
+    color: "orange"
+    widen: false
+    dashed: false
+    values:
+      - 8.2
+      - 9.3
+      - 10.2
+      - 9.2
+      - 12.5
+  -
+    title: Malaysia
+    color: "dark"
+    widen: false
+    dashed: false
+    values:
+      -  1.7
+      -  2.4
+      -  3.7
+      -  4.4
+      -  10.8
+  -
+    title: Singapore
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      -  9.9
+      -  13.4
+      -  11.0
+      -  10.0
+      -  5.5
