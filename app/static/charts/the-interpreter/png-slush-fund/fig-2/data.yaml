@@ -1,0 +1,52 @@
+title: >
+  Incumbent ruling party’s success rate at election, nominal DSIP per open MP, 1992–2022
+
+#source: >
+  #<b>Source:</b> Lorem ipsum
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  xLabel: Kina (millions)
+  minX:  0
+  maxX: 10
+  stepsX: 11
+  rotateX: false
+  interceptX: null # value of optional vertical line. set 'null' if disabled
+  percentageX: false
+  gridX: true
+
+  yLabel: Success rate
+  minY:  0
+  maxY: 50
+  stepsY: 11
+  interceptY: null # value of optional horizontal line. set 'null' if disabled
+  percentageY: true
+  gridY: true
+
+  rScaleFactor: 5
+
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Series 1
+    color: highlight
+    names:
+      - [ 1992 PANGU ]
+      - [ 1997 PPP ]
+      - [ 2002 PDM ]
+      - [ 2012 PNC ]
+      - [ 2017 PNC ]
+      - [ 2022 PANGU ]
+    values:
+      - [ 0.1, 24, 1.0 ]
+      - [ 0.55, 23, 1.0 ]
+      - [ 1.5, 15, 1.0 ]
+      - [ 2.2, 32, 1.0 ]
+      - [ 8.265, 31, 1.0 ]
+      - [ 9.86, 45, 1.0 ]
