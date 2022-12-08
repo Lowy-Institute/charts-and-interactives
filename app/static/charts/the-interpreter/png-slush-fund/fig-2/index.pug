@@ -187,7 +187,7 @@ block page
         let box = el.getBoundingClientRect();
         
         tooltip.innerHTML = "In " + t + " had a nominal DSIP of " + x + " million Kina available, and a " + y + "% election success rate";
-        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2.2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
         
@@ -233,7 +233,7 @@ block append css
         left: 0
         background: #31363B
         color: #fff
-        padding: .75em
+        padding: .8em
         opacity: 0
         border-radius: .2em
         box-shadow: 0 0 5px 0 #0004
