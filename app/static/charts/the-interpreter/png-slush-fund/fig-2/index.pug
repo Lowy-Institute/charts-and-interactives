@@ -13,7 +13,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      //.chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -120,7 +120,7 @@ block page
                 - x = toPercent(fx(v[0]))
                 - y = toPercent(fy(v[1]))
                 - r = v[2]*chart.axes.rScaleFactor
-                - dy = chart.series[s].names[i][1] == true ? (r+4) : -(r+12)
+                - dy = chart.series[s].names[i][1] == true ? (r+20) : -(r+12)
                 - color = '#002b45'
                 text.label(
                   x=x
@@ -140,11 +140,13 @@ block page
           svg(x="0" y="50%")
             text.axis-label.y(
               text-anchor="middle"
-              transform="rotate(-90) translate(0 -40)"
+              transform="rotate(-90) translate(0 -50)"
             )= chart.axes.yLabel
       
-      //.row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+      .row.legend-block
+        .txt-left.legend
+          strong= 'Election year / incumbent ruling party'
+        ul.legend.list-bare.txt-left.list-column
           for ax, i in new Array(chart.series.length)
             li.legend-item
               span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
@@ -159,12 +161,13 @@ block page
 
 
     /* --- USER TO UPDATE --- */
-    const enableTooltips = false;
+    const enableTooltips = true;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
     const circles = document.querySelectorAll('circle');
     const series = document.querySelectorAll('.label');
+    const title = document.querySelectorAll('.legend-item-label');
     const tooltip = document.querySelector('.tooltip');
     
     if (enableTooltips) {
@@ -179,10 +182,11 @@ block page
         let x = el.dataset.x;
         let y = el.dataset.y;
         let r = el.dataset.r;
-        let s = series[i].innerHTML;
+        //let s = series[i].innerHTML;
+        let t = title[i].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = s + " scored " + x + " on the x axis, " + y + " on the y axis, and is " + r + " in radius";
+        tooltip.innerHTML = "In " + t + " had a nominal DSIP of " + x + " million Kina available, and a " + y + "% election success rate";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -227,7 +231,8 @@ block append css
       .tooltip
         position: absolute
         left: 0
-        background: #fffe
+        background: #31363B
+        color: #fff
         padding: .75em
         opacity: 0
         border-radius: .2em
@@ -243,11 +248,20 @@ block append css
         margin: 0
         padding: 4px 16px 4px 24px
 
+      .list-column
+        column-count: 2
+        margin: 0 3em
+
+      .legend-block
+        background-color: #f5f5f5
+        margin: .2em 1em
+        padding: 8px 16px
+
       .legend
-        font-size: 15px
+        font-size: 14px
 
       .legend-item
-        margin: 4px 8px 0
+        margin: 4px 8px 0 4px
         padding-right: 0
         position: relative
         white-space: nowrap
@@ -255,10 +269,11 @@ block append css
       .legend-item-box
         position: absolute
         left: 0
-        top: .5em
-        height: 1em
-        width: 1em
+        top: .6em
+        height: .8em
+        width: .8em
         background: black
+        border-radius: 50%
         
       .axis-label
         font-size: 16px
@@ -280,6 +295,7 @@ block append css
       .chart-notes
         margin-left: 2em
 
+
       @media (max-width: 700px)
         
         .x-label text
@@ -292,10 +308,14 @@ block append css
       @media (max-width: 450px)
         .chart-content
           bottom: 60px
-          left: 45px
+          left: 52px
           right: 15px
         .legend
           flex-direction: column
+          font-size: 13px
+        .list-column
+          column-count: 1
+          margin: 0 .5em
         .chart-title
           font-size: 18px
         .chart-subtitle
@@ -309,4 +329,7 @@ block append css
         .axis-label
           font-size: 14px
         .axis-label.y
-          transform: rotate(-90deg) translate(0, -35px)!important
+          transform: rotate(-90deg) translate(0, -40px)!important
+        .legend-block
+          margin: .2em 0
+          padding: 8px 1px

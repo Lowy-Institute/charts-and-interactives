@@ -34,19 +34,44 @@ axes:
 # Data format: [x, y, r]
 series:
   -
-    title: Series 1
+    title: 1992, PANGU (Papua And Nuigini Pati)
     color: highlight
     names:
-      - [ 1992 PANGU ]
-      - [ 1997 PPP ]
-      - [ 2002 PDM ]
-      - [ 2012 PNC ]
-      - [ 2017 PNC ]
-      - [ 2022 PANGU ]
+      - [ PANGU ]
     values:
       - [ 0.1, 24, 1.0 ]
+  -
+    title: 1997, PPP (People's Progress Party)
+    color: dark
+    names:
+      - [ PPP, true ]
+    values:
       - [ 0.55, 23, 1.0 ]
+  -
+    title: 2002, PDM (People's Democratic Movement)
+    color: orange
+    names:
+      - [ PDM ]
+    values:
       - [ 1.5, 15, 1.0 ]
+  -
+    title: 2012, PNC (People's National Congress)
+    color: red
+    names:
+      - [ PNC ]
+    values:
       - [ 2.2, 32, 1.0 ]
+  -
+    title: 2017, PNC (People's National Congress)
+    color: green
+    names:
+      - [ PNC ]
+    values:
       - [ 8.265, 31, 1.0 ]
+  -
+    title: 2022, PANGU (Papua And Nuigini Pati)
+    color: teal
+    names:
+      - [ PANGU ]
+    values:
       - [ 9.86, 45, 1.0 ]
