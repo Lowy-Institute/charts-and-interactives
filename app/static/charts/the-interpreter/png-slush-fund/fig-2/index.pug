@@ -186,7 +186,7 @@ block page
         let t = title[i].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = "In " + t + " had a nominal DSIP of " + x + " million Kina available, and a " + y + "% election success rate";
+        tooltip.innerHTML = "In " + t + " had a nominal DSIP of " + x + " million Kina, and a " + y + "% election success rate";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2.2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -213,7 +213,7 @@ block append css
 
       .chart-content
         position: absolute
-        top: 20px
+        top: 40px
         left: 64px
         right: 72px
         bottom: 60px
