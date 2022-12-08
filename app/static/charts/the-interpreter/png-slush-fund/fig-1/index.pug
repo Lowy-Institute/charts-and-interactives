@@ -11,7 +11,7 @@ block page
     .page-title.txt-center= page.title
 
     .col-wrap.txt-center.flex-grow.flex.txt-sm
-      .col-md.flex-grow.flex.flex-col
+      .flex-grow.flex.flex-col
         - chart = page.charts[0]
         - scale = chart.scale
         - fx = (i, len) => (i) / (len - 1)
