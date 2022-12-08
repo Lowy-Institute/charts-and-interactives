@@ -11,7 +11,7 @@ block page
     .page-title.txt-center= page.title
 
     .col-wrap.txt-center.flex-grow.flex.txt-sm
-      .flex-grow.flex.flex-col
+      .col-md.flex-grow.flex.flex-col
         - chart = page.charts[0]
         - scale = chart.scale
         - fx = (i, len) => (i) / (len - 1)
@@ -243,7 +243,7 @@ block append css
           max-height: 600px
           min-height: 600px
         .col-md
-          max-width: 600px
+          max-width: 760px
           width: 100%
           height: 50%
           padding-bottom: 8px
