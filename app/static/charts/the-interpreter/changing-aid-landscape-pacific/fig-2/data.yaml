@@ -1,0 +1,74 @@
+title: >
+  Stagnating grants and rising loans
+
+source: >
+  Source: PNG Economics Database, Development Policy Centre
+
+#notes: >
+  #<b>Notes:</b> data from January 2022
+
+subtitle: >
+  Official development finance flows to the Pacific, constant 2020 USD billions
+
+axes:
+  minY:  0
+  maxY:  2500000000 
+  stepsY: 6
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+  -
+    title: Grants
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 1770619396.87
+      - 2256362187.04
+      - 2153829874.38
+      - 2102064430.83
+      - 2017610570.73
+      - 1997215674.94
+      - 1760788683.02
+      - 2033560048.52
+      - 2354290223.56
+      - 2199045505.96
+      - 2277215895.20 
+
+  -
+    title: Loans
+    color: "orange"
+    widen: false
+    dashed: false
+    values:
+      - 470913137.83
+      - 333179449.05
+      - 397455484.08
+      - 425832440.53
+      - 390809538.35
+      - 426203915.36
+      - 598780415.03
+      - 624765751.91
+      - 713187834.84
+      - 924772167.79
+      - 1970442437.03 
+

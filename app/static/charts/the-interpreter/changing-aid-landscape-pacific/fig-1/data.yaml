@@ -1,0 +1,69 @@
+title: >
+  A surge in official development finance to the Pacific, mostly driven by ODA
+
+source: >
+  <b>Source:</b> <a href="https://devpolicy.org/pngmps/">PNG MP Database</a>, Development Policy Centre
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  ODF by type of flows, nominal USD billion
+
+axes:
+  minY:  0
+  maxY: 4500000000
+  stepsY: 10
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  x:
+    title: Year
+    values:
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+
+series:
+  -
+    title: ODF
+    color: "orange"
+    values:
+      - 414620455.11
+      - 264574941.34
+      - 249911940.90
+      - 181313409.38
+      - 193434855.36
+      - 156354794.45
+      - 268329340.53
+      - 234058929.98
+      - 235525854.57
+      - 650756895.32
+      - 966154495.44 
+  -
+    title: ODA
+    color: "highlight"
+    values:
+      - 1826912079.59
+      - 2324966694.75
+      - 2301373417.56
+      - 2346583461.98
+      - 2214985253.72
+      - 2267064795.85
+      - 2091239757.51
+      - 2424266870.45
+      - 2831952203.83
+      - 2473060778.42
+      - 3281503836.78 
+
