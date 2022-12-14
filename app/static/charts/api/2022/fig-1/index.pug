@@ -6,38 +6,73 @@ block append config
 
 block page
   #wrapper(ontouchstart="")
+    .chart-title.txt-bold.txt-tu Comprehensive power
     .bars.pv-xs
       .bar-row
+        span.trend.fl-l.txt-sm 
+          strong Rank
         span.label.fl-l
-        span.trend.fl-l.txt-xs Trend
+        //span.trend.fl-l.txt-xs Trend
       for item in chart.list
-        .bar-row.clearfix(class=item.change < 0 ? "neg" : "pos")
+        .bar-row.clearfix.txt-sm(class=item.trend < 0 ? "neg" : "pos")
+          span.rank.fl-l= item.rank
           span.label.fl-l= item.country
-          span.trend.fl-l
+          //span.trend.fl-l
             if item.trend > 0
               | &nearr;
             else if item.trend < 0
               | &searr;
             else
               | –
+          span.rank.fl-l= item.rank2 == 2 ? ('+') + item.rank2 : item.rank2
           .bar
             .bar-inner(
               style={
-                width: `${(Math.abs(item.change) / 25) * 100}%`,
-                left:  `${(item.change < 0 ? ((12.5 + parseFloat(item.change)) / 25) : 0.5) * 100}%`
+                width: `${(Math.abs(item.change) / 75) * 40}%`,
+                left:  `${(item.change < 0 ? ((40 + parseFloat(item.change)) / 25) : 0.45) * 100}%`
               })
               .bar-label=item.change.toFixed(1)
 
       .bar-scale.flex-row.txt-muted
         .bar-scale-tick 0
-        .bar-scale-tick 5
-        .bar-scale-tick 10
+        .bar-scale-tick 20
+        .bar-scale-tick 40
+        .bar-scale-tick 60
+        .bar-scale-tick 80
+        .bar-scale-tick 100
 
-    .pv-xs.txt-muted.txt-center.hint
-      :marked
-        A country’s Power Gap score is the difference between its overall
-        power and what its power would be expected to be given its
-        available resources.
+    .key.txt-right
+      span.txt-tu.txt-bold Score trend
+      ul
+        li.legend-item
+          span.legend-item-box(style="background-color:#539ed4;")
+          span.legend-item-label Upward
+        li.legend-item
+          span.legend-item-box(style="background-color:#002b45;")
+          span.legend-item-label Downward
+
+      span.txt-tu.txt-bold Greatest gains
+      br
+      . 
+        Cambodia +0.7
+      br
+      . 
+        Brunei Darussalam +0.4
+      br
+      . 
+        Lao PDR +0.3
+      br
+      br
+      span.txt-tu.txt-bold Greatest losses
+      br
+      . 
+        China -2.1
+      br
+      . 
+        United States -1.5
+      br
+      . 
+        Russia -1.4
 
 block append css
   style
@@ -54,7 +89,7 @@ block append css
         overflow: visible
         font-feature-settings: "pnum" 1
         margin: auto
-        width: 500px
+        width: 600px
         max-width: 100%
 
       .hint
@@ -66,9 +101,10 @@ block append css
         position: relative
 
       .label
-        width: 140px
+        width: 145px
         font-weight: 200
         height: 100%
+        margin-left: 12px
 
       .trend
         width: 20px
@@ -77,14 +113,18 @@ block append css
         height: 100%
         text-align: center
 
+      .rank
+        width: 17px
+        font-weight: 400
+
       .bar-scale
         display: flex
-        margin-left: 160px
-        margin-right: 20px
+        margin-left: 165px
+        margin-right: 0
         font-size: 14px
 
       .bar-scale-tick
-        width: 20%
+        width: 25%
         text-align: center
         position: relative
         padding-top: 4px
@@ -95,10 +135,17 @@ block append css
           left: 50%
           bottom: 100%
           margin-bottom: 1px
-          height: 34 * 1.2em
+          height: 32 * 1.5em
           padding-top: 23px
           border-left: 1px solid rgba(#0F1F2B, 0.2)
           margin-left: -0.5px
+
+        &:first-of-type:before
+          border-left: 2px solid rgba(#002b45, 1)
+
+        &:last-of-type,&:last-of-type:before
+          border-left: 0
+          color: #fff
 
       .bar-row
         height: 1.4em
@@ -113,14 +160,15 @@ block append css
 
       .bar
         height: 100%
-        margin-left: 160px
+        margin-left: -108px
         margin-right: 20px
         position: relative
         z-index: 1
 
       .bar-inner
         position: relative
-        height: 100%
+        height: 80%
+        margin: 2px 0
 
         .neg &
           background: #002b45
@@ -134,12 +182,7 @@ block append css
         background: white
         height: 100%
         font-size: 14px
-
-        .neg &
-          right: 100%
-
-        .pos &
-          left: 100%
+        left: 100%
 
       .bar-group-label
         position: absolute
@@ -160,6 +203,31 @@ block append css
         left: 50%
         transform: translateX(-50%) rotate(-90deg)
         margin-top: 120px
+
+      .key
+        position: absolute
+        bottom: 120px
+        right: 230px
+        width: 150px
+        background-color: #ffffff
+        font-size: 13px
+        border: 1px solid #ccc
+        padding: 12px
+
+      ul
+        list-style: none
+      .legend-item
+        margin: 0
+        padding-right: 16px
+        position: relative
+      .legend-item-box
+        position: absolute
+        right: 0
+        top: 4px
+        height: 0.8em
+        width: 0.8em
+        background: black
+
 
       @media (max-width: 512px)
         .label

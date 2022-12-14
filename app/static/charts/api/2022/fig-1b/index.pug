@@ -1,205 +1,246 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/api/2022/fig-1b/data"
-  - var colorpath = "static/charts/templates/colors/data"
-  - _.extend(page, data.getOne(datapath))
-  - _.extend(page, data.getOne(colorpath))
-  - toPercent = (n) => (n * 100).toFixed(2) + "%"
-  - chart = page
-  
+  - page.title = "A middle power moment"
+  - var chart  = data.getOne("static/charts/api/2022/fig-1b/data")
+
 block page
-  .wrapper.flex
-    .flex.flex-grow.flex-col
-      .chart-title-wrap.ph-lg
-        .chart-title!= chart.title
-        .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
-      .chart.flex-grow: .chart-content
-        - ln = chart.series[0].values.length
-        - axes = chart.axes
-        - minX = axes.minX
-        - maxX = axes.maxX
-        - range = maxX - minX
-        - fx = (x) => (x - minX) / range
-        - fy = (i) => (i + 0.7) / ln
-        
-        svg(height="100%" width="100%")
-        
-          // X-Axis labels
-          //- svg(width="100%" y="100%")
-            - let steps = chart.axes.stepsX-1
-            for n, i in new Array(steps+1)
-              - x = i / (steps)
-              svg.txt-wide.x-label(x=toPercent(x))
-                text(text-anchor="middle" transform="translate(0 18)")
-                  = ((minX + range*(i/steps))).toFixed(0)
-                
-          // X-Axis minor lines
-          if chart.axes.minorLines
-            svg(width="100%")
-              for n, i in new Array(steps+1)
-                - x = (i / steps)
-                svg
-                  line(
-                    x1=toPercent(x)
-                    y1="0%"
-                    x2=toPercent(x)
-                    y2="100%"
-                    stroke="#5552"
-                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
-                  )
+  #wrapper(ontouchstart="")
+    .chart-title.txt-bold.txt-tu Comprehensive power
+    .bars.pv-xs
+      .bar-row(style="border-top:2px solid; border-bottom: 2px solid; padding: 4px 0 2px 0;")
+        span.rank.fl-l.txt-sm
+          strong Rank
+        span.rank.fl-l.txt-sm &nbsp;
+        span.fl-l.txt-sm(style='width:145px;')
+          strong Country/Territory
+        span.score.fl-l.txt-sm.txt-bold Score
+        span.fl-l.txt-sm.txt-bold Trend
+        span.label.fl-l
 
-          // Chart rects
-          g.bars
-            - const n = chart.series[0].values.length
-            for undef, i in new Array(n)
-              svg(
-                y=toPercent(fy(i)-fy(-0.15) )
-                height=toPercent(fy(0))
-                width="100%"
-              )   
-                - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
-                - vals = axes.reverse ? vals.reverse() : vals
-                - x0 = 0
+      for item in chart.list
+        .bar-row.clearfix.txt-sm(class=item.trend < 0 ? "neg" : "pos")
+          .rank.fl-l= item.rank
+          .rank.fl-l(style=item.rank2 == 0 ? "color:#fff;": "")= item.rank2 == 2 ? ('+') + item.rank2 : ('') + item.rank2
+          .label.fl-l= item.country
+          .score.fl-l= item.change.toFixed(1)
+          .trend.fl-l
+            if item.trend > 0
+              | &nearr;
+            else if item.trend < 0
+              | &searr;
+            else
+              | –
+          
+          .power
+            if item.change >= 70
+              | Super power &ge; 70 points
+            else if item.change >= 10
+              | Middle power &ge; 10 points
+            else
+              | Minor power &lt; 10 points
 
-                for v, j in vals
-                  - ci = axes.reverse ? vals.length-j : j+1
 
-                  if v > 0
-                    rect(
-                      x=toPercent(0.5)
-                      width=toPercent(fx(v) - 0.5)
-                      height="100%"
-                      fill=(chart.colors[chart.series[ci].color])
-                    )
-                  else
-                    rect(
-                      x=toPercent(fx(v))
-                      width=toPercent(0.5 - fx(v))
-                      height="100%"
-                      fill=(chart.colors[chart.series[ci].color])
-                    )
+    .key.txt-right
+      span.txt-tu.txt-bold Greatest gains
+      br
+      . 
+        Cambodia +0.7
+      br
+      . 
+        Brunei Darussalam +0.4
+      br
+      . 
+        Lao PDR +0.3
+      br
+      br
+      span.txt-tu.txt-bold Greatest losses
+      br
+      . 
+        China -2.1
+      br
+      . 
+        United States -1.5
+      br
+      . 
+        Russia -1.4
 
-                  text.chart-value(
-                    x=toPercent(x0 + fx(v > 0 ? v - .025 : v + .025))
-                    y="50%"
-                    text-anchor=v > 0 ? "start" : "end"
-                    transform=`translate(${v > 0 ? 8 : -8} 4.5)`
-                    style=`color: "#31363B"`
-                  )
-                    = v.toFixed(1) + (axes.percentage ? "%" : "")
-
-                  - x0 += fx(v)
-                    
-                  // Y-Axis labels
-                  svg.y-label(x="50%" y="50%")
-                    text(
-                      text-anchor=(v > 0 ? "end" : "start")
-                      transform=`translate(${v > 0 ? -12 : 12}, 5)`
-                    )
-                      =chart.series[0].values[i]
-                      
-              line(x1="50%" x2="50%" y1="0%" y2="100%" stroke="#2D6993")
-
-      //- .chart-source.txt-muted.txt-semi!= chart.source
-    
-  
 block append css
   style
     :sass
-  
-      .wrapper
-        height: 700px
+      body
+        font-family: Sans
+        display: flex
+        width: 1px
+        min-width: 100%
+        *width: 100%
 
-      .chart
-        box-sizing: border-box
+      #wrapper
+        line-height: 1.4
+        overflow: visible
+        font-feature-settings: "pnum" 1
+        margin: auto
+        width: 600px
+        max-width: 100%
+
+      .hint
+        font-size: 80%
+        max-width: 512px
+        margin: auto
+
+      .bars
         position: relative
 
-      .chart-content
-        position: absolute
-        top: -15rem
-        left: 120px
-        right: 30px
-        bottom: 30px
+      .label
+        width: 145px
+        font-weight: 200
+        height: 100%
+        margin-left: 12px
 
-      .chart-title-wrap
-        max-width: 220px
+      .trend
+        width: 40px
+        font-weight: 300
+        line-height: 1.2
+        height: 100%
+        text-align: center
+        margin-right: 20px
+
+      .rank
+        min-width: 32px
+        font-weight: 400
       
-      .chart-title
-        font-size: 23px
-        font-weight: 500
-        text-transform: uppercase
-        
-      .chart-subtitle
-        font-weight: 600
-        font-size: 15px
-        margin-bottom: 1.5rem
+      .score
+        margin: 0 20px
+        text-align: right
+        min-width: 36px
 
-      li
-        list-style: none
-        margin: 0
-        padding: 4px 16px 4px 24px
+      .bar-scale
+        display: flex
+        margin-left: 165px
+        margin-right: 0
+        font-size: 14px
 
-      .legend
-        font-size: 15px
-        margin: 1rem 0 0
-
-      .legend-item
-        margin: 4px 8px
-        padding-right: 0
+      .bar-scale-tick
+        width: 25%
+        text-align: center
         position: relative
-        white-space: nowrap
+        padding-top: 4px
 
+        &:before
+          content: ""
+          position: absolute
+          left: 50%
+          bottom: 100%
+          margin-bottom: 1px
+          height: 32 * 1.5em
+          padding-top: 23px
+          border-left: 1px solid rgba(#0F1F2B, 0.2)
+          margin-left: -0.5px
+
+        &:first-of-type:before
+          border-left: 2px solid rgba(#002b45, 1)
+
+        &:last-of-type,&:last-of-type:before
+          border-left: 0
+          color: #fff
+
+      .bar-row:nth-child(5).power
+        display: none
+
+      .bar-row
+        height: 1.4em
+        margin-bottom: 4px
+        padding: 2px 0
+        overflow: hidden
+
+        &:hover
+          background: #f2f4f6
+
+          .bar-label
+            background: #f2f4f6
+
+      .bar
+        height: 100%
+        margin-left: -108px
+        margin-right: 20px
+        position: relative
+        z-index: 1
+
+      .bar-inner
+        position: relative
+        height: 80%
+        margin: 2px 0
+
+        .neg &
+          background: #002b45
+
+        .pos &
+          background: #539ed4
+
+      .bar-label
+        position: absolute
+        padding: 0 0.3em
+        background: white
+        height: 100%
+        font-size: 14px
+        left: 100%
+
+      .bar-group-label
+        position: absolute
+        line-height: 1
+        min-width: 220px
+
+      .bar-group-label-neg
+        color: #002b45
+        margin-left: 102px
+        left: 50%
+        transform: translateX(-50%) rotate(90deg)
+        top: 50%
+        margin-top: 132px
+
+      .bar-group-label-pos
+        color: #539ed4
+        margin-left: 36px
+        left: 50%
+        transform: translateX(-50%) rotate(-90deg)
+        margin-top: 120px
+
+      .key
+        position: absolute
+        bottom: 120px
+        right: 146px
+        width: 140px
+        background-color: #ffffff
+        font-size: 13px
+        padding: 12px
+
+      ul
+        list-style: none
+      .legend-item
+        margin: 0
+        padding-right: 16px
+        position: relative
       .legend-item-box
         position: absolute
-        left: 0
-        top: .5em
-        height: 1em
-        width: 1em
+        right: 0
+        top: 4px
+        height: 0.8em
+        width: 0.8em
         background: black
 
-      text
-        font-size: 14px
-        fill: currentColor
 
-      svg
-        overflow: visible
-        
-      .chart-source
-        margin-top: 1rem 
-        
-      .chart-source,
-      .chart-notes
-        font-size: 15px
-        
-        b
-          font-weight: 500
-        
-      .chart-value
-        transition-duration: .4s
-        pointer-events: none
-        fill: #2D6993
-          
-      @media (max-width: 400px)
-      
-        .chart-content
-          left: 110px
-          right: 30px
-      
-        text
-          font-size: 13px
-        .legend
-          flex-wrap: wrap
+      @media (max-width: 512px)
+        .label
+          width: 108px
 
-        .chart-title
-          font-size: 22px
-        .chart-subtitle
-          font-size: 14px
-        .chart-notes,
-        .chart-source
-          font-size: 13px
-        .y-label text
-          transform: translate(-10px, 6px)
-        .x-label:nth-of-type(even)
-          display: none
-          
+        .trend
+          width: 12px
+
+        .bar-scale,
+        .bar
+          margin-left: 120px
+
+        .bar-group-label-neg
+          margin-left: 64px
+        .bar-group-label-pos
+          margin-left: 36px

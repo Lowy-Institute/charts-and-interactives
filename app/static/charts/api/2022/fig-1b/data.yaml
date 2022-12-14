@@ -1,82 +1,148 @@
-title: >
-  Changes in international reputations around COVID-19 handling
+list:
+  - country: United States
+    rank: 1
+    rank2: 00
+    trend: -1
+    change: 80.7
+  - country: China
+    rank: 2
+    rank2: 0
+    trend: -1
+    change: 72.5
+  - country: Japan
+    rank: 3
+    rank2: 0
+    trend: -1
+    change: 37.2
+  - country: India
+    rank: 4
+    rank2: 0
+    trend: -1
+    change: 36.3
+  - country: Russia
+    rank: 5
+    rank2: 0
+    trend: -1
+    change: 31.6
+  - country: Australia
+    rank: 6
+    rank2: 0
+    trend: 1
+    change: 30.9
+  - country: Korea, South
+    rank: 7
+    rank2: 0
+    trend: -1
+    change: 29.5
+  - country: Singapore
+    rank: 8
+    rank2: 0
+    trend: -1
+    change: 25.1
+  - country: Indonesia
+    rank: 9
+    rank2: 0
+    trend: 1
+    change: 19.4
+  - country: Thailand
+    rank: 10
+    rank2: 0
+    trend: -1
+    change: 18.7
+  - country: Malaysia
+    rank: 11
+    rank2: 0
+    trend: -1
+    change: 18.0
+  - country: Vietnam
+    rank: 12
+    rank2: 0
+    trend: -1
+    change: 17.5
+  - country: New Zealand
+    rank: 13
+    rank2: 0
+    trend: -1
+    change: 16.8
+  - country: Taiwan
+    rank: 14
+    rank2: 0
+    trend: -1
+    change: 15.2
+  - country: Pakistan
+    rank: 15
+    rank2: 0
+    trend: -1
+    change: 13.9
+  - country: Philippines
+    rank: 16
+    rank2: 0
+    trend: -1
+    change: 12.8
+  - country: Korea, North
+    rank: 17
+    rank2: 0
+    trend: -1
+    change: 10.6
+  - country: Brunei Darussalam
+    rank: 18
+    rank2: 0
+    trend: 1
+    change: 10.0
+  - country: Bangladesh
+    rank: 19
+    rank2: 0
+    trend: -1
+    change: 9.1
+  - country: Cambodia
+    rank: 20
+    rank2: +2
+    trend: 1
+    change: 7.8
+  - country: Sri Lanka
+    rank: 21
+    rank2: -1
+    trend: -1
+    change: 7.5
+  - country: Myanmar
+    rank: 22
+    rank2: -1
+    trend: 1
+    change: 7.5
+  - country: Lao PDR
+    rank: 23
+    rank2: 0
+    trend: 1
+    change: 6.4
+  - country: Mongolia
+    rank: 24
+    rank2: 0
+    trend: -1
+    change: 5.0
+  - country: Nepal
+    rank: 25
+    rank2: 0
+    trend: -1
+    change: 4.2
+  - country: Papua New Guinea
+    rank: 26
+    rank2: 0
+    trend: -1
+    change: 3.3
 
-subtitle: >
-  Point difference in survey results between 2020 and 2021
 
-source: >
-  <b>Source:</b> Lorem ipsum.
 
-notes: >
-  <b>Notes:</b> Lorem ipsum.
 
-axes:
-  minX: -50
-  maxX: 50
-  stepsX: 11
-  percentage: false
-  minorLines: false
-  dotted: [] # Index of dotted gridlines
-  reverse: false
 
-series:
-  -
-    title: Category
-    values:
-      - United States
-      - China
-      - Russia
-      - Singapore
-      - Brunei
-      - Pakistan
-      - Philippines
-      - Laos
-      - New Zealand
-      - Bangladesh
-      - Cambodia
-      - Thailand
-      - Sri Lanka
-      - Taiwan
-      - Indonesia
-      - Mongolia
-      - Nepal
-      - Malaysia
-      - Vietnam
-      - Japan
-      - Papua New Guinea
-      - North Korea
-      - South Korea
-      - Australia
-      - India
-      - Myanmar
 
-  -
-    title: Series 1
-    color: "blue-100"
-    values:
-      - 47.04968944
-      - 26.83998928
-      - 21.57069503
-      - 18.79459101
-      - 15.16191843
-      - 9.217538106
-      - 7.115480338
-      - 1.809910956
-      - 1.742160279
-      - 1.644804263
-      - 0.842044135
-      - 0.201307037
-      - 0.68442011
-      - 1.870748299
-      - 3.147250417
-      - 3.213317847
-      - 4.921602787
-      - 6.083042973
-      - 6.300813008
-      - 8.839043748
-      - 9.102787456
-      - 9.815552237
-      - 10.6296665
-      - 16.63763066
-      - 18.81533101
-      - 48.44318986
+
+
+
+
+
+
+
+
+
+
+
