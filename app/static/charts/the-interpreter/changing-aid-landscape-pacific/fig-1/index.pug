@@ -98,17 +98,26 @@ block page
           for item, i in chart.series
             g
               for val, ix in item.values
-                svg.chart-value(
-                  x=toPercent(fx(ix))
-                  y=toPercent(fy( _.sum(chart.series.slice(i).map(s => s.values[ix]))))
-                  style=`color: white`
-                )
+               svg.chart-value(
+                    x=toPercent(fx(ix))
+                    y=toPercent(fy( _.sum(chart.series.slice(i).map(s => s.values[ix]))))
+                    style=`color: ${chart.colors[chart.series[i].color]}`
+                  )
+                  rect(
+                    y=(i-10)
+                    x=(ix === 0 ? "2" : ix === item.values.length - 1 ? "-56" : "-28")
+                    height=16
+                    width=54
+                    fill="#edf5fb"
+                    opacity=".8"
+                    text-anchor="middle"
+                  )
                   text(
-                    dy=(i % 1 == 0 ? 24 : 24)
+                    dy=(i % 1 == 0 ? 4 : 4)
                     text-anchor=(ix === 0 ? "start" : ix === item.values.length - 1 ? "end" : "middle")
                     fill=chart.colors[chart.series[i].color]
                   )
-                    = ('$') + val
+                    = ('$') + (val/1000000000).toFixed(2) + " B"
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -172,6 +181,7 @@ block append css
     
       .wrapper
         height: 550px
+        /* max-width: 1062px */
 
       .chart
         box-sizing: border-box

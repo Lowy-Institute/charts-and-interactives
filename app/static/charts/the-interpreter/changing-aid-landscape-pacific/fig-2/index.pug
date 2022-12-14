@@ -135,7 +135,7 @@ block page
                       text-anchor="middle"
                       fill=chart.colors[chart.series[i].color]
                     )
-                      = ('$') + val.toLocaleString('en-US')
+                      = ('$') + (val/1000000000).toFixed(3) + " B"
       
       //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -199,7 +199,7 @@ block append css
     
       .wrapper
         height: 550px
-        max-width: 1062px
+        /* max-width: 1062px */
 
       .chart
         box-sizing: border-box
@@ -294,9 +294,6 @@ block append css
       .chart-value text
         font-size: 13px
 
-      .x-label text
-        text-anchor: end
-        transform: rotate(-45deg) translate(-8px, 14px)
 
       @media (max-width: 700px)
         

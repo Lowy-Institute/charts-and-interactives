@@ -2,7 +2,7 @@ title: >
   Stagnating grants and rising loans
 
 source: >
-  Source: PNG Economics Database, Development Policy Centre
+  <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a> 
 
 #notes: >
   #<b>Notes:</b> data from January 2022
@@ -14,7 +14,7 @@ axes:
   minY:  0
   maxY:  2500000000 
   stepsY: 6
-  rotateX: true
+  rotateX: false
   percentage: false
   minorLines: true
   dotted: [] # Index of dotted gridlines
