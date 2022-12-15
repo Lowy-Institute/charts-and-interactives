@@ -8,7 +8,7 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  ODF by type of flows, nominal USD billion
+  ODF (Official Development Finance) by type of flows, nominal USD billion
 
 axes:
   minY:  0
@@ -37,7 +37,7 @@ axes:
 
 series:
   -
-    title: ODF
+    title: OOF (Other Official Flows)
     color: "orange"
     values:
       - 414620455.11
@@ -52,7 +52,7 @@ series:
       - 650756895.32
       - 966154495.44 
   -
-    title: ODA
+    title: ODA (Official Development Assistance)
     color: "highlight"
     values:
       - 1826912079.59
