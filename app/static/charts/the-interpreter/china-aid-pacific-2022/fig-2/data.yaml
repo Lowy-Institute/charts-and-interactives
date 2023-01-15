@@ -1,0 +1,76 @@
+title: >
+  Diplomatic switch – what it cost to Beijing to convince Honiara to stop recognizing Taipei
+
+
+source: >
+  <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  US$ current
+
+axes:
+  minY:  0
+  maxY: 45000000
+  stepsY: 10
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+  -
+    title: Taiwan
+    color: "highlight"
+    values:
+      - 5022538.64
+      - 10589154.06
+      - 16722034.68
+      - 22270450.60
+      - 14926993.43
+      - 10944000.57
+      - 15818163.58
+      - 13369947.72
+      - 11794843.70
+      - 9431372.49
+      - 6303513.06
+      - null
+      - null
+
+  -
+    title: China
+    color: "orange"
+    values:
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - 38688.00
+      - null
+      - null
+      - null
+      - 10408361.58
+      - 14357362.90
+      - 41117845.42

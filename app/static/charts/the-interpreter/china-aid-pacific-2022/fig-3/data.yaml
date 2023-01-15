@@ -1,0 +1,75 @@
+title: >
+  Diplomatic switch – what it cost to Beijing to convince Tarawa to stop recognizing Taipei
+
+source: >
+  <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  US$ current
+
+axes:
+  minY:  0
+  maxY: 30000000
+  stepsY: 7
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+  -
+    title: Taiwan
+    color: "highlight"
+    values:
+      - 8278775.59
+      - 4945575.83
+      - 10529574.15
+      - 14164988.71
+      - 9813019.93
+      - 26967935.24
+      - 7925934.19
+      - 14573571.61
+      - 8066107.49
+      - 9516575.47
+      - 13277716.88
+      - null
+      - null
+
+  -
+    title: China
+    color: "orange"
+    values:
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - null
+      - 21121086.08
+      - 12446186.12 
