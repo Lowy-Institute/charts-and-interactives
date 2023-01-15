@@ -1,5 +1,5 @@
 title: >
-  Diplomatic switch – what it cost to Beijing to convince Honiara to stop recognizing Taipei
+  Honiara’s diplomatic switch: the cost to Beijing
 
 
 source: >
@@ -9,7 +9,7 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  US$ current
+  Development finance disbursements, US$ current
 
 axes:
   minY:  0
@@ -41,7 +41,7 @@ series:
 
   -
     title: Taiwan
-    color: "highlight"
+    color: "dark"
     values:
       - 5022538.64
       - 10589154.06

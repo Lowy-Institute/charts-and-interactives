@@ -1,5 +1,5 @@
 title: >
-  Chinese aid to the Pacific
+  China’s development finance to the Pacific
 
 
 source: >
@@ -9,7 +9,7 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  US$ current
+  Disbursements, US$ current
 
 axes:
   minY:  0
@@ -60,7 +60,7 @@ series:
       - 12722901.83 
   -
     title: Grants
-    color: "highlight"
+    color: "dark"
     values:
       - 65902748.43
       - 26148885.37

@@ -1,5 +1,5 @@
 title: >
-  Diplomatic switch – what it cost to Beijing to convince Tarawa to stop recognizing Taipei
+  Tarawa’s diplomatic switch: the cost to Beijing
 
 source: >
   <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
@@ -8,7 +8,7 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  US$ current
+  Development finance disbursements, US$ current
 
 axes:
   minY:  0
@@ -40,7 +40,7 @@ series:
 
   -
     title: Taiwan
-    color: "highlight"
+    color: "dark"
     values:
       - 8278775.59
       - 4945575.83
