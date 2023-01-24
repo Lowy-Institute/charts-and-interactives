@@ -1,0 +1,71 @@
+title: >
+  US comparative advantage in 2022 
+
+subtitle: >
+  Difference in US-China Index measure scores
+
+source: >
+  <b>Source:</b> Lorem ipsum.
+
+notes: >
+  <b>Notes:</b> Lorem ipsum.
+
+axes:
+  min: 0
+  max: 100
+  steps: 11
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: true
+
+netChange:
+  - -2.2
+  - 0.5
+  - -4.9
+  - -1.0
+  - -3.2
+  - -2.6
+  - 2.2
+  - 2.5
+
+series:
+  -
+    title: Category
+    values:
+      - Economic Capability
+      - Military Capability
+      - Resilience
+      - Future Resources
+      - Economic Relationships
+      - Defence Networks
+      - Diplomatic Relationships
+      - Cultural Influence
+
+  -
+    title: 2022
+    color: "green"
+    stroke: ""
+    values:
+      - 21.9
+      - 44.9
+      - 51.2
+      - 47.7
+      - 15.4
+      - 21.5
+      - 65.8
+      - 38.3
+
+  -
+    title: 2021
+    color: "green"
+    stroke: ""
+    values:
+      - 23.1
+      - 44.4
+      - 56.1
+      - 48.7
+      - 18.6
+      - 23.1
+      - 63.6
+      - 35.8

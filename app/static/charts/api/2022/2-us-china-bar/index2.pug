@@ -1,0 +1,302 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/api/2022/2-us-china-bar/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  
+block page
+  .wrapper.flex.txt-center
+    .flex.flex-grow.flex-col
+      .chart-title!= chart.title
+      .chart-subtitle.txt-muted.txt-tu!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - min = axes.min
+        - max = axes.max
+        - range = (max - min)
+        - zero = 0.5
+        - fx = (i) => (i + 0.5) / (ln + 0.75)
+        - fy = (y) => Math.abs(y) / range
+
+            svg(height="100%" width="100%") 
+              <!-- X-Axis labels-->
+              svg(width="100%" y="0") 
+               svg.txt-wide.x-label(y="0.00%") 
+                  text(text-anchor="end" transform="translate(-12 4)") 60
+                  
+               svg.txt-wide.x-label(y="8.33%") 
+                  text(text-anchor="end" transform="translate(-12 4)") 50
+                  
+               svg.txt-wide.x-label(y="16.67%") 
+                  text(text-anchor="end" transform="translate(-12 4)") 40
+                
+               svg.txt-wide.x-label(y="25.00%") 
+                  text(text-anchor="end" transform="translate(-12 4)") 30
+                
+               svg.txt-wide.x-label(y="33.33%") 
+                  text(text-anchor="end" transform="translate(-12 4)") 20
+                
+               svg.txt-wide.x-label(y="41.67%") 
+                  text(text-anchor="end" transform="translate(-12 4)") 10
+                
+               svg.txt-wide.x-label(y="50.00%") 
+                  text(text-anchor="end" transform="translate(-12 4)") 0
+                
+               svg.txt-wide.x-label(y="58.33%") 
+                  text(text-anchor="end" transform="translate(-12 4)") -10
+                
+               svg.txt-wide.x-label(y="66.67%") 
+                  text(text-anchor="end" transform="translate(-12 4)") -20
+                
+               svg.txt-wide.x-label(y="75.00%") 
+                  text(text-anchor="end" transform="translate(-12 4)") -30
+                
+               svg.txt-wide.x-label(y="83.33%") 
+                  text(text-anchor="end" transform="translate(-12 4)") -40
+                
+               svg.txt-wide.x-label(y="91.67%") 
+                  text(text-anchor="end" transform="translate(-12 4)") -50
+              
+              <!-- X-Axis minor lines-->
+              svg(width="100%") 
+                svg
+                  line(y1="0.00%" x1="0%" y2="0.00%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="8.33%" x1="0%" y2="8.33%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="16.67%" x1="0%" y2="16.67%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="25.00%" x1="0%" y2="25.00%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="33.33%" x1="0%" y2="33.33%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="41.67%" x1="0%" y2="41.67%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="50.00%" x1="0%" y2="50.00%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="58.33%" x1="0%" y2="58.33%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="66.67%" x1="0%" y2="66.67%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="75.00%" x1="0%" y2="75.00%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="83.33%" x1="0%" y2="83.33%" x2="100%" stroke="#5552" stroke-dasharray="") 
+                svg
+                  line(y1="91.67%" x1="0%" y2="91.67%" x2="100%" stroke="#5552" stroke-dasharray="") 
+
+              
+              <!-- Chart rects-->
+              g.bars 
+                svg(x="5.71%" width="5.71%" height="100%")
+                  text.chart-value(x="50%" y="1%" text-anchor="middle" transform="translate(0 -18)" style="color: #16B56F") ↑ 1.5
+                  rect(y="-0.75%" height="50.75%" width="100%" stroke-dasharray="0" fill="#16B56F" fill-opacity="50%") 
+                  rect(y="0.50%" height="49.50%" width="100%" stroke-dasharray="0" fill="#002b45" fill-opacity="50%" style="fill-opacity: 1;") 
+                  text.chart-value(x="50%" y="29%" text-anchor="middle" transform="translate(0 -18)" style="color: #fff") 59.4
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Defence
+                      tspan(x="0" dy="12") Networks
+                
+                svg(x="17.14%" width="5.71%" height="100%")   
+                  text.chart-value(x="50%" y="24%" text-anchor="middle" transform="translate(0 -18)" style="color: #16B56F") ↑ 6.2
+                  rect(y="22.08%" height="27.92%" width="100%" stroke-dasharray="0" fill="#16B56F" fill-opacity="50%") 
+                  rect(y="27.25%" height="22.75%" width="100%" stroke-dasharray="0" fill="#002b45" fill-opacity="50%" style="fill-opacity: 1;") 
+                  text.chart-value(x="50%" y="42%" text-anchor="middle" transform="translate(0 -18)" style="color: #fff") 27.3
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Cultural
+                      tspan(x="0" dy="12") Influence
+                
+                svg(x="28.57%" width="5.71%" height="100%")   
+                  
+                  text.chart-value(x="50%" y="31%" text-anchor="middle" transform="translate(0 -18)" style="color: #f00") ↓ 2.2
+                  rect(y="29.25%" height="20.75%" width="100%" stroke-dasharray="0" fill="#16B56F" fill-opacity="50%" style="fill: #ff4050;") 
+                  rect(y="31.08%" height="18.92%" width="100%" stroke-dasharray="0" fill="#002b45" fill-opacity="50%" render-order="1" style="fill-opacity: 1; z-index: 1; position: absolute;") 
+                  text.chart-value(x="50%" y="44%" text-anchor="middle" transform="translate(0 -18)" style="color: #fff") 24.9
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Military
+                      tspan(x="0" dy="12") Capability
+                    
+                
+                svg(x="40.00%" width="5.71%" height="100%")   
+                  text.chart-value(x="50%" y="41%" text-anchor="middle" transform="translate(0 -18)" style="color: #16B56F") ↑ 0.4
+                  rect(y="39.25%" height="10.75%" width="100%" stroke-dasharray="0" fill="#16B56F" fill-opacity="50%") 
+                  rect(y="39.58%" height="10.42%" width="100%" stroke-dasharray="0" fill="#002b45" fill-opacity="50%" style="fill-opacity: 1;")
+                  text.chart-value(x="50%" y="49%" text-anchor="middle" transform="translate(0 -18)" style="color: #fff") 12.5
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Resilience
+                  
+                
+                svg(x="51.43%" width="5.71%" height="100%")
+                  text.chart-value(x="50%" y="47%" text-anchor="middle" transform="translate(0 -18)" style="color: #f00") ↓ 2.3
+                  rect(y="45.58%" height="4.42%" width="100%" stroke-dasharray="0" fill="#16B56F" fill-opacity="50%" style="fill: #ff4050;") 
+                  rect(y="47.42%" height="2.58%" width="100%" stroke-dasharray="0" fill="#002b45" fill-opacity="50%" style="fill-opacity: 1;")
+                  text.chart-value(x="50%" y="53%" text-anchor="middle" transform="translate(0 -18)" style="color: #fff") 5.3
+                  
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Future
+                      tspan(x="0" dy="12") Resources
+                                    
+                svg(x="62.86%" width="5.71%" height="100%")   
+                  text.chart-value(x="50%" y="51%" text-anchor="middle" transform="translate(0 -18)" style="color: #16B56F") ↑ 1.4
+                  rect(y="49.25%" height="0.75%" width="100%" stroke-dasharray="0" fill="#16B56F" fill-opacity="50%") 
+                  rect(style="fill-opacity: 1;" fill-opacity="50%" fill="red" stroke-dasharray="0" stroke="" width="100%" height="0.42%" y="50.00%")
+                  text.chart-value(x="50%" y="56%" text-anchor="middle" transform="translate(0 -18)") -0.5
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Diplomatic
+                      tspan(x="0" dy="12") Influence
+                    
+                svg(x="74.29%" width="5.71%" height="100%")   
+                  text.chart-value(x="50%" y="60%" text-anchor="middle" transform="translate(0 -18)" style="color: #f00") ↓ 5.3
+                  rect(y="50.00%" height="3.92%" width="100%" stroke="" stroke-dasharray="0" fill="red" fill-opacity="50%") 
+                  rect(y="49.50%" height="0.50%" width="100%" stroke-dasharray="0" fill="#002b45" fill-opacity="100%")
+                  text.chart-value(x="50%" y="52%" text-anchor="middle" transform="translate(0 -18)") 0.6
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Economic
+                      tspan(x="0" dy="12") Capability
+                    
+                
+                svg(x="85.71%" width="5.71%" height="100%")
+                  text.chart-value(x="50%" y="96%" text-anchor="middle" transform="translate(0 -18)" style="color: #16B56F") ↑ 3.2
+                  rect(y="50.00%" height="39.92%" width="100%" stroke="" stroke-dasharray="0" fill="#16B56F" fill-opacity="50%")
+                  rect(y="50.00%" height="37.25%" width="100%" stroke="" stroke-dasharray="0" fill="red" fill-opacity="50%" style="fill-opacity: 1;") 
+                  text.chart-value(x="50%" y="74%" text-anchor="middle" transform="translate(0 -18)" style="color: #fff") -47.9
+                  
+                  <!-- Y-Axis labels-->
+                  svg.y-label.txt-tu.txt-sm(x="50%" y="98%") 
+                    text(text-anchor="middle") 
+                      tspan(x="0" dy="0") Economic
+                      tspan(x="0" dy="12") Relationships
+                    
+                                
+              line(stroke="currentColor" y1="50%" y2="50%" x1="0" x2="100%" style="stroke-width: .5;") 
+
+              rect(stroke="" x="50%" y="0%" height="12%" width="44%" fill="#e0ddee80") 
+              text(y="4%" x="70%" text-anchor="start") 
+                tspan(x="53%") Net change in US-China power disparity from 2021
+                tspan(x="53%" dy="20") ↑ Trending towards US advantage
+                tspan(x="53%" dy="16") ↓ Trending towards China advantage
+
+          
+      //- .chart-source.txt-muted.txt-semi!= chart.source
+    
+  
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 750px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 40px
+        left: 40px
+        right: 40px
+        bottom: 40px
+
+      .chart-title
+        font-size: 28px
+        font-weight: 600
+        
+      .chart-subtitle
+        font-weight: 600
+        font-size: 15px
+        margin-bottom: 1.5rem
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin: 1rem 0 0
+
+      .legend-item
+        margin: 4px 8px
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-source
+        margin-top: 1rem 
+        
+      .chart-source,
+      .chart-notes
+        font-size: 15px
+        
+        b
+          font-weight: 500
+        
+      .y-label text
+        font-size: 10px
+        font-weight: 600
+        letter-spacing: 0.03em
+          
+      @media (max-width: 400px)
+      
+        .chart-content
+          left: 110px
+          right: 30px
+      
+        text
+          font-size: 13px
+        .legend
+          flex-wrap: wrap
+
+        .chart-title
+          font-size: 22px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          font-size: 13px
+        .y-label text
+          transform: translate(-10px, 6px)
+        .x-label:nth-of-type(even)
+          display: none
+          

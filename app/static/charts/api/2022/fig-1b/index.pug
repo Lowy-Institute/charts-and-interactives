@@ -24,7 +24,7 @@ block page
           .rank.fl-l(style=item.rank2 == 0 ? "color:#fff;": "")= item.rank2 == 2 ? ('+') + item.rank2 : ('') + item.rank2
           .label.fl-l= item.country
           .score.fl-l= item.change.toFixed(1)
-          .trend.fl-l
+          .trend.fl-l(style="color:#d56997")
             if item.trend > 0
               | &nearr;
             else if item.trend < 0
@@ -210,7 +210,7 @@ block append css
         bottom: 120px
         right: 146px
         width: 140px
-        background-color: #ffffff
+        background-color: #efeef7
         font-size: 13px
         padding: 12px
 

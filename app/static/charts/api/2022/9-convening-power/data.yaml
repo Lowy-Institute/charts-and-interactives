@@ -1,0 +1,50 @@
+title: >
+  Convening Power
+
+source: >
+  <b>Source:</b> Lowy Institute (Asia Power Index - Diplomatic Influence - Foreign Policy)
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Asia Power Index countries hosting the most visits from regional leaders or foreign ministers
+
+axes:
+  minY:  0
+  maxY: 24
+  stepsY: 10
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Country
+    values:
+      - China
+      - Indonesia
+      - United States
+      - Singapore
+      - Cambodia
+      - India
+      - South Korea
+      - Vietnam
+      - Bangladesh
+      - Russia
+      
+  -
+    title: Number
+    color: "dark"
+    values:
+      - 22
+      - 20
+      - 13
+      - 8
+      - 7
+      - 7
+      - 7
+      - 7
+      - 6
+      - 6

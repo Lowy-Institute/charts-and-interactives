@@ -1,0 +1,60 @@
+title: >
+  India
+
+source: >
+  <b>Source:</b> Lowy Institute Asia Power Index 
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Comprehensive power in 2021 and 2022 compared
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 11
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Economic Capability
+      - Military Capability
+      - Resilience
+      - Future Resources
+      - Economic Relationships
+      - Defence Networks
+      - Diplomatic Relationships
+      - Cultural Influence
+
+  -
+    title: Category 1
+    color: "dark"
+    values:
+      - 21.9
+      - 44.9
+      - 51.2
+      - 47.7
+      - 15.4
+      - 21.5
+      - 65.8
+      - 38.3
+
+  -
+    title: Category 2
+    color: "highlight"
+    values:
+      - 2.2
+      - 0.5
+      - 4.9
+      - 1.0
+      - 3.2
+      - 2.6
+      - 2.2
+      - 2.5

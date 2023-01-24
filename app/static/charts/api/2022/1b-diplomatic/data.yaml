@@ -1,0 +1,40 @@
+title: >
+  Diplomatic Dialogues (Bilateral)
+
+source: >
+  <b>Source:</b> Lowy Institute (Asia Power Index - Diplomatic Influence - Foreign Policy)
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  The five most active Asia Power Index members in bilateral diplomacy between leaders or foreign ministers (2022)
+
+axes:
+  minY:  0
+  maxY: 80
+  stepsY: 9
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+
+series:
+  -
+    title: Country
+    values:
+      - China
+      - United States
+      - Australia
+      - Indonesia
+      - Korea, Rep.
+      
+  -
+    title: Number
+    color: "dark"
+    values:
+      - 46
+      - 40
+      - 36
+      - 30
+      - 29

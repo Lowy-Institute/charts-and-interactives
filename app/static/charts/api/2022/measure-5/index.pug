@@ -1,12 +1,12 @@
 extend /partials/layout
 
 block append config
-  - page.title = "A middle power moment"
-  - var chart  = data.getOne("static/charts/api/2022/fig-1/data")
+  - page.title = "ECONOMIC RELATIONSHIPS"
+  - var chart  = data.getOne("static/charts/api/2022/measure-5/data")
 
 block page
   #wrapper(ontouchstart="")
-    .chart-title.txt-bold.txt-tu Comprehensive power
+    .chart-title.txt-bold.txt-tu ECONOMIC RELATIONSHIPS
     .bars.pv-xs
       .bar-row
         span.trend.fl-l.txt-sm 
@@ -14,7 +14,9 @@ block page
         span.label.fl-l
         //span.trend.fl-l.txt-xs Trend
       for item in chart.list
-        .bar-row.clearfix.txt-sm(class=item.trend < 0 ? "neg" : "pos")
+        .bar-row.clearfix.txt-sm(class=item.trend < 0 ? "neg" : item.trend === 0 ? "neutral": "pos")
+
+        
           span.rank.fl-l= item.rank
           span.label.fl-l= item.country
           //span.trend.fl-l
@@ -24,7 +26,7 @@ block page
               | &searr;
             else
               | –
-          span.rank.fl-l= item.rank2 == 2 ? ('+') + item.rank2 : item.rank2
+          span.rank.fl-l(style="text-align:right")= item.rank2 >0 ? ('+') + item.rank2 : item.rank2
           .bar
             .bar-inner(
               style={
@@ -41,38 +43,19 @@ block page
         .bar-scale-tick 80
         .bar-scale-tick 100
 
-    .key.txt-right
+    .key
       span.txt-tu.txt-bold Score trend
-      ul
+      ul.legend.list-bare.txt-left.flex.flex-ch
         li.legend-item
           span.legend-item-box(style="background-color:#539ed4;")
           span.legend-item-label Upward
         li.legend-item
           span.legend-item-box(style="background-color:#002b45;")
           span.legend-item-label Downward
+        li.legend-item
+          span.legend-item-box(style="background-color:#ccc;")
+          span.legend-item-label No change
 
-      span.txt-tu.txt-bold Greatest gains
-      br
-      . 
-        Cambodia +0.7
-      br
-      . 
-        Brunei Darussalam +0.4
-      br
-      . 
-        Lao PDR +0.3
-      br
-      br
-      span.txt-tu.txt-bold Greatest losses
-      br
-      . 
-        China -2.1
-      br
-      . 
-        United States -1.5
-      br
-      . 
-        Russia -1.4
 
 block append css
   style
@@ -135,10 +118,10 @@ block append css
           left: 50%
           bottom: 100%
           margin-bottom: 1px
-          height: 32 * 1.5em
+          height: 12 * 1.5em
           padding-top: 23px
           border-left: 1px solid rgba(#0F1F2B, 0.2)
-          margin-left: -0.5px
+          margin-left: -2px
 
         &:first-of-type:before
           border-left: 2px solid rgba(#002b45, 1)
@@ -176,6 +159,9 @@ block append css
         .pos &
           background: #539ed4
 
+        .neutral &
+          background: #ccc
+
       .bar-label
         position: absolute
         padding: 0 0.3em
@@ -206,26 +192,33 @@ block append css
 
       .key
         position: absolute
-        bottom: 120px
         right: 230px
-        width: 150px
+        width: auto
         background-color: #efeef7
         font-size: 13px
         border: 0px solid #ccc
         padding: 12px
 
-      ul
+      li
         list-style: none
-      .legend-item
         margin: 0
-        padding-right: 16px
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
         position: relative
+        white-space: nowrap
+
       .legend-item-box
         position: absolute
-        right: 0
-        top: 4px
-        height: 0.8em
-        width: 0.8em
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
         background: black
 
 

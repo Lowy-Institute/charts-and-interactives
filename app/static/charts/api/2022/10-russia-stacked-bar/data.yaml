@@ -1,0 +1,60 @@
+title: >
+  Russia
+
+source: >
+  <b>Source:</b> Lowy Institute Asia Power Index 
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Comprehensive power in 2021 and 2022 compared
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 11
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Economic Capability
+      - Military Capability
+      - Resilience
+      - Future Resources
+      - Economic Relationships
+      - Defence Networks
+      - Diplomatic Relationships
+      - Cultural Influence
+
+  -
+    title: Category 1
+    color: "dark"
+    values:
+      - 13.83673224
+      - 51.60918361
+      - 76.31700432
+      - 15.9580372
+      - 7.692108519
+      - 18.89584803
+      - 58.99178355
+      - 17.96395379
+
+  -
+    title: Category 2
+    color: "highlight"
+    values:
+      - 2.3
+      - 0.9
+      - 3.2
+      - 2.1
+      - 0.0
+      - 1.7
+      - 4.7
+      - 0.0

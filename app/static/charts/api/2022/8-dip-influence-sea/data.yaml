@@ -1,0 +1,38 @@
+title: >
+  Diplomatic Influence of Southeast Asian Countries (2023)
+
+#subtitle: >
+  #Year-on-year points changes in comprehensive power
+
+source: >
+  <b>Source:</b>  Lowy Institute Asia Power Index
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum.
+
+series:
+  - title: Category
+    values:
+      - Indonesia
+      - Vietnam
+      - Singapore
+      - Thailand
+      - Malaysia
+      - Philippines
+      - Brunei
+      - Cambodia
+      - Laos
+      - Myanmar
+
+  - title: Change
+    values:
+      - [1, 60.4]
+      - [2, 55.2]
+      - [3, 52.9]
+      - [4, 48.3]
+      - [5, 43.8]
+      - [6, 37.1]
+      - [7, 32.7]
+      - [8, 32.5]
+      - [9, 27.3]
+      - [10, 24.6]

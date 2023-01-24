@@ -1,0 +1,71 @@
+list:
+  - country: United States
+    rank: 1
+    rank2: +1
+    trend: -1
+    change: 88.0
+  - country: China
+    rank: 2
+    rank2: -1
+    trend: -1
+    change: 87.0
+  - country: Japan
+    rank: 3
+    rank2:
+    trend: -1
+    change: 28.6
+  - country: India
+    rank: 4
+    rank2:
+    trend: -1
+    change: 21.9
+  - country: Korea, South
+    rank: 5
+    rank2:
+    trend: -1
+    change: 17.6
+  - country: Singapore
+    rank: 6
+    rank2: +1
+    trend: -1
+    change: 14.1
+  - country: Russia
+    rank: 7
+    rank2: -1
+    trend: -1
+    change: 13.8
+  - country: Taiwan
+    rank: 8
+    rank2:
+    trend: -1
+    change: 13.0
+  - country: Australia
+    rank: 9
+    rank2:
+    trend: -1
+    change: 12.3
+  - country: Indonesia
+    rank: 10
+    rank2: +1
+    trend: 0
+    change: 8.6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
