@@ -15,7 +15,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title!= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-subtitle.txt-muted.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - viewBox = 400
         - r0   = viewBox/2
@@ -170,12 +170,12 @@ block append css
 
       .chart-title
         margin: auto
-        font-size: 26px
-        text-transform: uppercase
-        font-weight: 500
+        font-size: 20px
+        /* text-transform: uppercase
+        font-weight: 600
         
       .chart-subtitle
-        font-weight: 600
+        /* font-weight: 600
         height: 10px
         margin-top: -10px
         font-size: 15px
@@ -203,7 +203,7 @@ block append css
         background: black
         
       .chart-values
-        font-size: 12px
+        font-size: 14px
         opacity: 0
         transition: opacity 300ms ease
         
@@ -211,7 +211,7 @@ block append css
           opacity: 1
         
       .axis-values
-        font-size: 11px
+        font-size: 13px
         
       .category-label
         font-size: 12px

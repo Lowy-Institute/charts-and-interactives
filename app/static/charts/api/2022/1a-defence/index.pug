@@ -35,7 +35,7 @@ block page
               //svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + range*(i/steps) + (axes.percentage ? "%" : "")
-            svg(x="70" y="50%")
+            svg(x="70" y="55%")
               text.y-label Number of meetings
                 
           // Y-Axis minor lines
@@ -102,8 +102,8 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      //.chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
   
 block append css
@@ -111,8 +111,8 @@ block append css
     :sass
     
       .wrapper
-        height: 650px
-        max-width: 800px
+        height: 500px
+        max-width: 600px
 
       .chart
         box-sizing: border-box
@@ -131,6 +131,7 @@ block append css
       .chart-title
         margin: auto
         font-size: 20px
+        font-weight: 600
         
       .chart-subtitle
         height: 10px

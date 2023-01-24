@@ -13,7 +13,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-subtitle.txt-muted.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -26,7 +26,7 @@ block page
         svg(height="100%" width="100%")
         
           svg(y="50%")
-           text(text-anchor="middle" y="-70" transform="rotate(-90)") Ten-year investment $US
+           text(text-anchor="middle" y="-70" transform="rotate(-90)") Three-year Capital Investment US$
 
           // Y-Axis labels
           svg(height="100%")
@@ -152,7 +152,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 80px
+        left: 90px
         right: 20px
         bottom: 40px
 
@@ -164,10 +164,10 @@ block append css
         font-size: 20px
         
       .chart-subtitle
-        font-weight: 600
+        /* font-weight: 600
         height: 10px
         margin-top: -10px
-        font-size: 15px
+        font-size: 16px
         
       .tooltip
         position: absolute
@@ -211,7 +211,7 @@ block append css
         vector-effect: non-scaling-stroke
 
       text
-        font-size: 14px
+        font-size: 16px
         fill: currentColor
 
       svg
@@ -220,7 +220,7 @@ block append css
       .chart-notes, .chart-source
         margin-right: 2em
         font-size: 15px
-      .txt-muted
+      /*.txt-muted
         color: #767676
 
       .point .chart-value

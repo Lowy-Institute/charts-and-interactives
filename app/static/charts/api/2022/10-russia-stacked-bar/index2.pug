@@ -12,7 +12,7 @@ block page
   .wrapper.flex
     .txt-center.flex.flex-grow.flex-col
       .chart-title= chart.title
-      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart-subtitle.txt-muted.p-sm!= chart.subtitle
       .chart.flex-grow: .chart-content
         - ln = chart.series[0].values.length
         - axes = chart.axes
@@ -178,10 +178,10 @@ block page
                       tspan(x="0" dy="12") Influence
               
                     
-              rect(stroke="" x="65%" y="4%" height="16%" width="24%" fill="#e0ddee80") 
+              rect(stroke="" x="65%" y="4%" height="16%" width="26%" fill="#e0ddee80") 
               text(y="12%" x="70%" text-anchor="start") 
                 tspan(x="68%") ↑ Improvement in 2022
-                tspan(x="68%" dy="16") ↓ Decline in 2022
+                tspan(x="68%" dy="18") ↓ Decline in 2022
 
       //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -191,8 +191,8 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      //.chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -266,7 +266,7 @@ block append css
         font-size: 20px
         
       .chart-subtitle
-        font-weight: 600
+        /* font-weight: 600
         height: 10px
         margin-top: -10px
         font-size: 15px
@@ -310,7 +310,7 @@ block append css
         background: black
 
       text
-        font-size: 14px
+        font-size: 16px
         fill: currentColor
 
       svg
@@ -330,8 +330,8 @@ block append css
         opacity: 1
 
       .x-label text
-        font-size: 10px
-        font-weight: 600
+        font-size: 12px
+        /* font-weight: 600
         letter-spacing: 0.03em
 
       @media (max-width: 700px)
