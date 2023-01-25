@@ -1,12 +1,12 @@
 list:
   - country: United States
     rank: 1
-    rank2: 1
+    rank2:
     trend: -1
     change: 75.9
   - country: China
     rank: 2
-    rank2: -1
+    rank2:
     trend: -1
     change: 72.9
   - country: India
@@ -16,17 +16,17 @@ list:
     change: 47.7
   - country: Russia
     rank: 4
-    rank2: -1
+    rank2:
     trend: -1
     change: 16.0
   - country: Japan
     rank: 5
-    rank2: 
+    rank2: 1
     trend: 0
     change: 11.6
-  - country: Indoneasia
+  - country: Indonesia
     rank: 6
-    rank2: 1
+    rank2: -1
     trend: 0
     change: 11.5
   - country: Korea, South
@@ -46,6 +46,6 @@ list:
     change: 10.5
   - country: Vietnam
     rank: 10
-    rank2: 2
+    rank2: 
     trend: 0
     change: 6.9
