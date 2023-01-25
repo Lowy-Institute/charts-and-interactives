@@ -65,7 +65,7 @@ series:
       -  26.5
   -
     title: Japan
-    color: "orange"
+    color: "pink"
     widen: false
     dashed: false
     values:

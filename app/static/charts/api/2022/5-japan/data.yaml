@@ -54,7 +54,7 @@ series:
       - 6.3
   -
     title: Indonesia
-    color: "orange"
+    color: "purple"
     widen: false
     dashed: false
     values:

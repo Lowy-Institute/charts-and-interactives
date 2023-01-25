@@ -5,7 +5,7 @@ block append config
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
-  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - toPercent = (n) => (n * 100).toFixed(1) + "%"
   - chart = page
   - red = "#ff4050"
   - redtxt = "#990f02"
@@ -38,7 +38,7 @@ block page
               td(
                 style=`background-color: ${bgcolor}${intensity}; color: ${color};`
               )
-                span= (v).toFixed(2)
+                span= (v)
                 
                 
 
