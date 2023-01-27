@@ -16,13 +16,13 @@ block page
   .wrapper
     h1.txt-center= chart.title
     h2.txt-center.txt-tu.txt-muted= chart.subtitle
-    table.mx-auto(cellspacing=0)
+    table.mx-auto(cellspacing=0 width=520)
       thead
-        tr
-          th(colspan="3" bgcolor="#444" style="border-right:1px solid #fff;") Diplomatic Influence of Southeast Asian Countries (2023)
+        //tr
+          th(colspan="3" bgcolor="#444" style="") Diplomatic Influence of Southeast Asian Countries (2023)
         tr(bgcolor="#444")
           th Country
-          th Rank
+          th Sub-regional rank 
           th Score
       tbody
         for country,i in chart.series[0].values
@@ -40,7 +40,9 @@ block page
               )
                 span= (v)
                 
-                
+    .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+    .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+
 
 block append css
   style
@@ -85,3 +87,12 @@ block append css
         
       .wrapper
         padding: 2rem 0
+
+      .chart-notes, .chart-source
+        margin-top: 1em
+        margin-bottom: 0
+        margin-right: 7.5em
+        font-size: 15px
+
+      .chart-notes
+        margin-top: 0

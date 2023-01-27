@@ -1,14 +1,14 @@
 title: >
-  Japanese investment
+  Japanese foreign investment
 
 source: >
-  <b>Source:</b> FDI Markets
+  Source: Lowy Institute 2023 Asia Power Index
 
 notes: >
-  <b>Notes:</b> data from January 2022
+  Notes: data from FDI Markets, January 2022
 
 subtitle: >
-  Three year flows, US$
+  Three-year Capital Investment US$
 
 axes:
   minY:  0

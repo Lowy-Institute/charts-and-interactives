@@ -47,6 +47,9 @@ block page
                   text(text-anchor="end" transform="translate(-8 4)") 90
                 svg(y="0.00%")
                   text(text-anchor="end" transform="translate(-8 4)") 100
+
+              svg(x="70" y="55%")
+                text.y-label Measures scores
               
               <!-- Y-Axis minor lines-->
               svg(height="100%")
@@ -89,10 +92,10 @@ block page
                   
                 
                 svg(x="16.00%" width="4.57%" height="100%")  
-                  rect(y="55.10%" height="44.10%" width="100%" fill="#002b45")
+                  rect(y="55.9%" height="44.10%" width="100%" fill="#002b45")
                   //text.chart-value(x="50%" y="77.55%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 44
                   
-                  rect(y="54.60%" height="0.70%" width="100%" fill="#ff948d" fill-opacity="50%")
+                  rect(y="55.2%" height="0.70%" width="100%" fill="#ff948d" fill-opacity="100%")
                   text.chart-value(x="50%" y="52%" text-anchor="middle" transform="translate(0 4.5)" style="color: #f00") ↓ 0.7
                   
                   <!-- X-Axis labels-->
@@ -182,8 +185,8 @@ block page
                     
               rect(stroke="" x="65%" y="4%" height="17%" width="26%" fill="#e0ddee80") 
               text(y="12%" x="70%" text-anchor="start") 
-                tspan(x="68%") ↑ Improvement in 2022
-                tspan(x="68%" dy="20") ↓ Decline in 2022
+                tspan(x="68%") ↑ Improvement in 2023
+                tspan(x="68%" dy="20") ↓ Decline in 2023
 
       //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -193,7 +196,7 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      //.chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       //.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       .tooltip
@@ -256,7 +259,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
+        left: 60px
         right: 20px
         bottom: 40px
 
@@ -320,7 +323,7 @@ block append css
         
       .chart-notes, .chart-source
         margin-top: 1em
-        margin-left: 2em
+        margin-right: 2em
         font-size: 15px
         
       .chart-value
@@ -335,6 +338,9 @@ block append css
         font-size: 12px
         /* font-weight: 600
         letter-spacing: 0.03em
+
+      .y-label
+        transform: rotate(-90deg) translate(-1.5rem, -7.5rem)
 
       @media (max-width: 700px)
         

@@ -1,14 +1,14 @@
 title: >
-  Convening Power
+  Diplomatic convening power
 
 source: >
-  <b>Source:</b> Lowy Institute (Asia Power Index - Diplomatic Influence - Foreign Policy)
+  Source: Lowy Institute 2023 Asia Power Index
 
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Asia Power Index countries hosting the most visits from regional leaders or foreign ministers
+  Asia Power Index countries hosting the most visits from regional leaders or foreign ministers (2021)
 
 axes:
   minY:  0

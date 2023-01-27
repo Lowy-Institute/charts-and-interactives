@@ -1,5 +1,5 @@
 list:
-  - country:  Japan
+  - country: Japan
     trend: -1
     change: 10.1
   - country: Australia
@@ -35,10 +35,10 @@ list:
   - country: China
     trend:  -1
     change: 0.0
-  - country: Lao PDR
+  - country: Laos
     trend:  1
     change: -0.6
-  - country: Brunei Darussalam
+  - country: Brunei
     trend:  0
     change: -0.7
   - country: United States

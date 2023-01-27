@@ -24,21 +24,26 @@ block page
           .rank.fl-l(style=item.rank2 == 0 ? "color:#fff;": "")= item.rank2 == 2 ? ('+') + item.rank2 : ('') + item.rank2
           .label.fl-l= item.country
           .score.fl-l= item.change.toFixed(1)
-          .trend.fl-l(style="color:#d56997")
+          .trend.fl-l(style="color:#ccc")
             if item.trend > 0
-              | &nearr;
+              span(style="color:#16B56F")
+                | &nearr;
             else if item.trend < 0
-              | &searr;
+              span(style="color:#F00")
+                | &searr;
             else
               | –
           
           .power
             if item.change >= 70
-              | Super power &ge; 70 points
+              span.txt-bold Super powers 
+              span &ge; 70 points
             else if item.change >= 10
-              | Middle power &ge; 10 points
+              span.txt-bold Middle powers 
+              span &ge; 10 points
             else
-              | Minor power &lt; 10 points
+              span.txt-bold Minor powers 
+              span &lt; 10 points
 
 
     .key.txt-right
@@ -48,10 +53,10 @@ block page
         Cambodia +0.7
       br
       . 
-        Brunei Darussalam +0.4
+        Brunei +0.4
       br
       . 
-        Lao PDR +0.3
+        Laos +0.3
       br
       br
       span.txt-tu.txt-bold Greatest losses
@@ -64,6 +69,10 @@ block page
       br
       . 
         Russia -1.4
+
+    .pv-xs.txt-muted.txt-right.hint
+      :marked
+        \* Brunei is classified as a minor power as its unrounded score is 9.98
 
 block append css
   style
@@ -144,8 +153,22 @@ block append css
           border-left: 0
           color: #fff
 
-      .bar-row:nth-child(5).power
-        display: none
+      .bar-row .power
+        display: inline-block
+        color: #fff
+
+      .bar-row:nth-of-type(3) .power,.bar-row:nth-of-type(11) .power,.bar-row:nth-of-type(23) .power
+        color: #333
+
+      .bar-row:nth-of-type(3),.bar-row:nth-of-type(18)
+        border-bottom: 2px solid #333
+
+      .bar-row:nth-of-type(3) .power
+        top: 61px
+        display: block
+        position: absolute
+        left: 358px
+        
 
       .bar-row
         height: 1.4em

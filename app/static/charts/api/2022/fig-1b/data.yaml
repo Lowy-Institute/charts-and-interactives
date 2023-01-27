@@ -29,7 +29,7 @@ list:
     rank2: 0
     trend: 0
     change: 30.9
-  - country: Korea, South
+  - country: South Korea
     rank: 7
     rank2: 0
     trend: -1
@@ -79,12 +79,12 @@ list:
     rank2: 0
     trend: -1
     change: 12.8
-  - country: Korea, North
+  - country: North Korea
     rank: 17
     rank2: 0
     trend: -1
     change: 10.6
-  - country: Brunei Darussalam
+  - country: Brunei *
     rank: 18
     rank2: 0
     trend: 1
@@ -109,7 +109,7 @@ list:
     rank2: -1
     trend: 0
     change: 7.5
-  - country: Lao PDR
+  - country: Laos
     rank: 23
     rank2: 0
     trend: 1

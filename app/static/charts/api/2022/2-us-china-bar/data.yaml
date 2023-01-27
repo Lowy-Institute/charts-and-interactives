@@ -1,14 +1,14 @@
 title: >
-  US comparative advantage in 2022 
+  US comparative advantage in 2023 
 
 subtitle: >
   Difference in US-China Index measure scores
 
 source: >
-  <b>Source:</b> Lorem ipsum.
+  Source: Lowy Institute 2023 Asia Power Index
 
-notes: >
-  <b>Notes:</b> Lorem ipsum.
+#notes: >
+  #<b>Notes:</b> Lorem ipsum.
 
 axes:
   min: -60
@@ -26,7 +26,7 @@ netChange:
   - 0.4
   - -2.3
   - 1.4
-  - -5.3
+  - -2.9
   - 3.2
 
 series:
@@ -38,8 +38,8 @@ series:
       - Military Capability
       - Resilience
       - Future Resources
-      - Diplomatic Influence
       - Economic Capability 
+      - Diplomatic Influence
       - Economic Relationships
 
   -
@@ -53,7 +53,7 @@ series:
       - 12.9
       - 3.1
       - 0.9
-      - -4.7
+      - -2.3
       - -44.7
 
   -

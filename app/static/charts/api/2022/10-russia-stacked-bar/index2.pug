@@ -47,6 +47,9 @@ block page
                   text(text-anchor="end" transform="translate(-8 4)") 90
                 svg(y="0.00%")
                   text(text-anchor="end" transform="translate(-8 4)") 100
+
+              svg(x="70" y="55%")
+                text.y-label Measures scores
               
               <!-- Y-Axis minor lines-->
               svg(height="100%")
@@ -180,8 +183,8 @@ block page
                     
               rect(stroke="" x="65%" y="4%" height="16%" width="26%" fill="#e0ddee80") 
               text(y="12%" x="70%" text-anchor="start") 
-                tspan(x="68%") ↑ Improvement in 2022
-                tspan(x="68%" dy="18") ↓ Decline in 2022
+                tspan(x="68%") ↑ Improvement in 2023
+                tspan(x="68%" dy="18") ↓ Decline in 2023
 
       //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -254,7 +257,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
+        left: 60px
         right: 20px
         bottom: 40px
 
@@ -333,6 +336,9 @@ block append css
         font-size: 12px
         /* font-weight: 600
         letter-spacing: 0.03em
+      
+      .y-label
+        transform: rotate(-90deg) translate(-1.5rem, -7.5rem)
 
       @media (max-width: 700px)
         

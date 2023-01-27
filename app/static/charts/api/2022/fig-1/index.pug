@@ -14,7 +14,7 @@ block page
         span.label.fl-l
         //span.trend.fl-l.txt-xs Trend
       for item in chart.list
-        .bar-row.clearfix.txt-sm(class=item.trend < 0 ? "neg" : "pos")
+        .bar-row.clearfix.txt-sm(class=item.trend < 0 ? "neg" : item.trend === 0 ? "neutral": "pos")
           span.rank.fl-l= item.rank
           span.label.fl-l= item.country
           //span.trend.fl-l
@@ -50,6 +50,9 @@ block page
         li.legend-item
           span.legend-item-box(style="background-color:#002b45;")
           span.legend-item-label Downward
+        li.legend-item
+          span.legend-item-box(style="background-color:#ccc;")
+          span.legend-item-label No change
 
       span.txt-tu.txt-bold Greatest gains
       br
@@ -57,10 +60,10 @@ block page
         Cambodia +0.7
       br
       . 
-        Brunei Darussalam +0.4
+        Brunei +0.4
       br
       . 
-        Lao PDR +0.3
+        Laos +0.3
       br
       br
       span.txt-tu.txt-bold Greatest losses
@@ -175,6 +178,9 @@ block append css
 
         .pos &
           background: #539ed4
+
+        .neutral &
+          background: #ccc
 
       .bar-label
         position: absolute

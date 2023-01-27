@@ -33,8 +33,8 @@ block page
               //svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
                   = minY + range*(i/steps) + (axes.percentage ? "%" : "")
-            svg(x="70" y="50%")
-              text.y-label Visits
+            svg(x="70" y="50%" text-anchor="middle")
+              text.y-label Leadership or ministerial level visits
                 
           // Y-Axis minor lines
           if chart.axes.minorLines

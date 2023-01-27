@@ -27,9 +27,9 @@ list:
   - country: Australia
     rank: 6
     rank2: 
-    trend: 1
+    trend: 0
     change: 30.9
-  - country: Korea, South
+  - country: South Korea
     rank: 7
     rank2: 
     trend: -1
@@ -42,7 +42,7 @@ list:
   - country: Indonesia
     rank: 9
     rank2: 
-    trend: 1
+    trend: 0
     change: 19.4
   - country: Thailand
     rank: 10
@@ -79,12 +79,12 @@ list:
     rank2: 
     trend: -1
     change: 12.8
-  - country: Korea, North
+  - country: North Korea
     rank: 17
     rank2: 
     trend: -1
     change: 10.6
-  - country: Brunei Darussalam
+  - country: Brunei
     rank: 18
     rank2: 
     trend: 1
@@ -107,9 +107,9 @@ list:
   - country: Myanmar
     rank: 22
     rank2: -1
-    trend: 1
+    trend: 0
     change: 7.5
-  - country: Lao PDR
+  - country: Laos
     rank: 23
     rank2: 
     trend: 1
