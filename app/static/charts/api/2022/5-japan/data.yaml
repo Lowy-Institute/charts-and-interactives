@@ -8,7 +8,7 @@ notes: >
   Notes: data from FDI Markets, January 2022
 
 subtitle: >
-  Three-year Capital Investment US$
+  Three-year capital investment (US$)
 
 axes:
   minY:  0
@@ -87,7 +87,7 @@ series:
       - 20.8
   -
     title: Vietnam
-    color: "red-100"
+    color: "lime"
     widen: false
     dashed: false
     values:

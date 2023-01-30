@@ -2,13 +2,13 @@ title: >
   Russia
 
 source: >
-  <b>Source:</b> Lowy Institute Asia Power Index 
+  Source: Lowy Institute 2023 Asia Power Index
 
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Comprehensive power in 2021 and 2023 compared
+  Annual change in comprehensive power
 
 axes:
   minY:  0
@@ -30,7 +30,7 @@ series:
       - Future Resources
       - Economic Relationships
       - Defence Networks
-      - Diplomatic Relationships
+      - Diplomatic Influence
       - Cultural Influence
 
   -

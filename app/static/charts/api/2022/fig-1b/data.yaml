@@ -84,7 +84,7 @@ list:
     rank2: 0
     trend: -1
     change: 10.6
-  - country: Brunei *
+  - country: Brunei*
     rank: 18
     rank2: 0
     trend: 1

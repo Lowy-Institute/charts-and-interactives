@@ -26,7 +26,7 @@ block page
               | &searr;
             else
               | –
-          span.rank.fl-l(style="text-align:right")= item.rank2 >0 ? ('+') + item.rank2 : item.rank2
+          span.rank.fl-l(style="text-align:right;")= item.rank2 >0 ? ('+') + item.rank2 : item.rank2
           .bar
             .bar-inner(
               style={
@@ -45,7 +45,8 @@ block page
 
     .key
       span.txt-tu.txt-bold Score trend
-      ul.legend.list-bare.txt-left.flex.flex-ch
+      ul.legend
+        //.list-bare.txt-left.flex.flex-ch
         li.legend-item
           span.legend-item-box(style="background-color:#539ed4;")
           span.legend-item-label Upward
@@ -55,6 +56,8 @@ block page
         li.legend-item
           span.legend-item-box(style="background-color:#ccc;")
           span.legend-item-label No change
+
+    .chart-notes.txt-muted.txt-right * Score trends reflect annual changes in measure scores above a minimum threshold (≥ 0.5)
 
 
 block append css
@@ -84,7 +87,7 @@ block append css
         position: relative
 
       .label
-        width: 145px
+        width: 140px
         font-weight: 200
         height: 100%
         margin-left: 12px
@@ -192,12 +195,14 @@ block append css
 
       .key
         position: absolute
-        right: 230px
+        /* right: 230px
+        right: 150px
         width: auto
         background-color: #efeef7
         font-size: 13px
         border: 0px solid #ccc
         padding: 12px
+        top: 222px
 
       li
         list-style: none
@@ -206,6 +211,7 @@ block append css
 
       .legend
         font-size: 15px
+        padding: 0
 
       .legend-item
         margin: 4px 8px 0
@@ -220,6 +226,10 @@ block append css
         height: 1em
         width: 1em
         background: black
+
+      .chart-notes,.chart-source
+        margin-right: 2em
+        font-size: 14px
 
 
       @media (max-width: 512px)
