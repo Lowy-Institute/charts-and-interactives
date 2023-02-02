@@ -19,7 +19,7 @@ list:
     rank2: 
     trend: -1
     change: 44.1
-  - country: Korea, South
+  - country: South Korea
     rank: 5
     rank2: 
     trend: 1
@@ -34,7 +34,7 @@ list:
     rank2: 1
     trend: 0
     change: 26.0
-  - country: Korea, North
+  - country: North Korea
     rank: 8
     rank2: -2
     trend: -1

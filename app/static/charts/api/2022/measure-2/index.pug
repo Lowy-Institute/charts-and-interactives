@@ -11,6 +11,8 @@ block page
       .bar-row
         span.trend.fl-l.txt-sm 
           strong Rank
+        span.trend.txt-sm(style="margin-left:-32px;")
+          strong Rank change
         span.label.fl-l
         //span.trend.fl-l.txt-xs Trend
       for item in chart.list
@@ -26,7 +28,7 @@ block page
               | &searr;
             else
               | –
-          span.rank.fl-l(style="text-align:right")= item.rank2 >0 ? ('+') + item.rank2 : item.rank2
+          span.rank-change.fl-l(style="text-align:right;")= item.rank2 >0 ? ('+') + item.rank2 : item.rank2
           .bar
             .bar-inner(
               style={
@@ -42,7 +44,6 @@ block page
         .bar-scale-tick 60
         .bar-scale-tick 80
         .bar-scale-tick 100
-
 
     .key
       span.txt-tu.txt-bold Score trend
@@ -76,7 +77,7 @@ block append css
         overflow: visible
         font-feature-settings: "pnum" 1
         margin: auto
-        width: 600px
+        width: 700px
         max-width: 100%
 
       .hint
@@ -96,17 +97,21 @@ block append css
       .trend
         width: 20px
         font-weight: 300
-        line-height: 1.2
+        line-height: 1.7
         height: 100%
         text-align: center
 
       .rank
         width: 17px
         font-weight: 400
+      .rank-change
+        /* width: 100px
+        font-weight: 400
 
       .bar-scale
         display: flex
-        margin-left: 165px
+        /* margin-left: 165px
+        margin-left: 205px
         margin-right: 0
         font-size: 14px
 
@@ -229,7 +234,7 @@ block append css
         background: black
 
       .chart-notes,.chart-source
-        margin-right: 2em
+        margin-right: -8em
         font-size: 14px
 
 
