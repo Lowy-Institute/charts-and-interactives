@@ -1,0 +1,110 @@
+extend /partials/layout
+
+block append config
+  - var chart  = data.getOne("static/charts/china-us-trade-dominance/us-china-competition/data")
+  - var byValue = function(e){return e.values ? -e.values[0] : 0};
+  - var inOrder = _.sortBy(chart.items, byValue);
+  - page.title = "The US-China Trade War: Who Dominates Global Trade?"
+  - page.description = "China has displaced the United States from its traditional dominance as a major trading partner for most countries of the world."
+  - page.includeFonts = false
+
+block page
+  - chart.scale = chart.scale.slice(20)
+  - chart.items.forEach((e) => e.values = e.values.slice(20))
+  script
+    != `window.chart = ${JSON.stringify(chart)};`
+
+  #wrapper(data-view="map")
+    #map-wrapper
+      svg#map(width="100%" height="100%")
+        text(x="50%" y="50%" text-anchor="middle")
+          | Loading map...
+
+      #chart-title
+        h1.chart-title-main
+          | The US-China Trade War
+          .chart-title-sub Who Dominates Global Trade?
+
+      #map-scale
+        .map-legend-label.map-legend-label-no-data No data
+        .map-legend-label.txt-bold Who is the larger trading partner?
+        #map-scale-canvas-wrap
+          canvas#map-scale-canvas
+        .flex.flex-between
+          .map-legend-label US
+          .map-legend-label Equal
+          .map-legend-label China
+
+      #chart-year= _.first(chart.scale)
+
+      #controls
+        a#btn-reset.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+            polygon.btn-icon-shape(points="24,24 24,0 8,12 ")
+
+        a#btn-play.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            polygon.btn-icon-shape(points="2,24 2,0 22,12 ")
+
+        a#btn-pause.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            rect.btn-icon-shape(x="0"  y="0" width="8" height="24")
+            rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+
+        a#btn-end.btn(tabindex="0")
+          svg.btn-icon(viewBox="0 0 24 24")
+            rect.btn-icon-shape(x="16" y="0" width="8" height="24")
+            polygon.btn-icon-shape(points="0,0 0,24 16,12 ")
+
+    #map-timeline
+      canvas#map-timeline-minimap
+      .clearfix
+        #map-scale-min.map-legend-label= _.first(chart.scale)
+        #map-scale-max.map-legend-label= _.last(chart.scale)
+
+    small#chart-source.txt-sans
+      | Source: Lowy Institute calculations, IMF Direction of Trade Statistics database
+
+    #logo
+      a#chart-logo(href="https://www.lowyinstitute.org/")
+        img(src="/img/lowyinstitute-logo-reversed.png")
+
+block append css
+  style
+    include:sass ../_style.sass
+    :sass
+      #map-wrapper
+        bottom: 116px
+      #map-timeline
+        bottom: 20px
+      #logo
+        height: 12px
+      #chart-logo
+        display: inline-block
+        margin-top: 12px
+        float: right
+        right: 0
+        opacity: 1
+      #chart-source
+        bottom: 124px
+      
+
+      @media (max-width: 1080px)
+        #map-timeline
+          bottom: 44px
+        #chart-source
+          bottom: 20px
+
+      @media (max-width: 480px)
+        #map-timeline
+          bottom: 56px
+
+
+block append customScripts
+  script(src="https://d3js.org/d3.v5.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/2.4.0/d3-geo-projection.js")
+  script(src='/extra/topojson.v1.min.js')
+
+  script
+    include:coffee ../view.coffee
