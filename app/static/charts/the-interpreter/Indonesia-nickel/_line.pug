@@ -9,7 +9,7 @@ mixin path(vals, scale, xs)
   path(d=vals.reduce(map, "") fill="none" data-l=vals.length)
 
 mixin svg-line(data, lines)
-  - line = locals.r("./app/static/charts/the-interpreter/indonesia-nickel/line.coffee")
+  - line = locals.r("./app/static/charts/chinese-coercion-australian-resilience/line.coffee")
   - keys = data.keys
   - scale = (data.scale.max - data.scale.min) / 100
   - df = _.last(keys) - keys[0]
