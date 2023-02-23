@@ -835,3 +835,37 @@ associates:
       values: [29,43,100]
     - label: Politburo
       values: [24,60,90]
+
+lorem:
+  - CHINESE PARTNERS
+  - Ministry of Foreign Affairs (State to State)
+  - Chinese Communist Party (Party to Party)
+  - Ex-IM Bank (Lending)
+  - Commerce Ministry (Trade)
+  - State-owned Enterprises (Investment)
+
+ipsum:
+  - [Lorem, Ipsum]
+  - [Sit, Amet]
+  - [Dolor, Etc]
+  - [Lorem, Ipsum]
+  - [Sit, Amet]
+  - [Dolor, Etc]
+
+sit:
+  - STATE-OWNED COMPANIES
+  - China Civil Engineering Construction Co.(Central Government)
+  - China Harbour Engineering (Central Government)
+  - Metallurgical Corp. of China (China Minmetals/Central Government)
+  - Guangdong Foreign Construction (Guangdong Provincial Government)
+
+ipsum2:
+  - img: ./img/leaders/mao-zedong.jpg
+    name: Mao Zedong
+    job1: Job 1
+    job2: Job 2
+    
+  - img: ./img/leaders/deng-xiaoping.jpg
+    name: Deng Xiaoping
+    job1: Job 1
+    job2: Job 2
