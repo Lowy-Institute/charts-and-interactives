@@ -1,0 +1,89 @@
+title: >
+  Private infrastructure finance mobilised in Indo-Pacific by OECD donors
+
+source: >
+  <b>Source:</b> Lowy Institute
+
+#notes: >
+ # <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Constant 2020 USD billions
+
+axes:
+  minY:  0
+  maxY: 1400
+  stepsY: 8
+  rotateX: false
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+
+  -
+    title: Pacific
+    color: "highlight"
+    values:
+      - 12.1802064144342
+      - ""
+      - 0.0168748440870787
+      - ""
+      - ""
+      - 1.8309455548703
+      - ""
+      - 2.29061315840731
+      - 0.0329095174817175
+
+  -
+    title: Southeast Asia
+    color: "orange"
+    values:
+      - 65.7833226419022
+      - 46.2794047210015
+      - 161.632371639079
+      - 199.19266340767
+      - 2.91390656762766
+      - 156.275782476949
+      - 18.332452974838
+      - 387.584789762883
+      - 97.8532436368134
+  -
+    title: South Asia ex India
+    color: "yellow"
+    values:
+      - 364.576429737398
+      - 244.759594837159
+      - 304.524666044075
+      - 379.451101251953
+      - 252.197794271857
+      - 124.854737812368
+      - 40.3033413480366
+      - 308.781574053219
+      - 18.0315089197504
+  -
+    title: India
+    color: "dark"
+    values:
+      - 11.5902519416009
+      - 679.456282791152
+      - 12.1064287396297
+      - 102.657602310388
+      - 466.600367449915
+      - 148.631850912769
+      - 407.539654453331
+      - 523.773419944078
+      - 583.988704439134

@@ -1,0 +1,122 @@
+title: >
+  OECD infrastructure development finance in the Indo-Pacific 
+
+source: >
+  <b>Source:</b> Lowy Institute
+
+#notes: >
+ # <b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Constant 2020 USD billions
+
+axes:
+  minY:  0
+  maxY: 10000
+  stepsY: 6
+  rotateX: false
+  percentage: false
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Countries
+    values:
+      - "Japan"
+      - "Team Europe"
+      - "Korea"
+      - "AU/UK/US"
+      - "Other"
+
+  -
+    title: Japan
+    color: "highlight"
+    values:
+      - 8320.0387912
+      - ""
+      - ""
+      - ""
+      - ""
+  -
+    title: Korea
+    color: "orange"
+    values:
+      - ""
+      - ""
+      - 2143.0567042
+      - ""
+      - ""
+  -
+    title: Germany
+    color: "yellow"
+    values:
+      - ""
+      - 1334.136858
+      - ""
+      - ""
+      - ""
+  -
+    title: France
+    color: "dark"
+    values:
+      - ""
+      - 545.911225
+      - ""
+      - ""
+      - ""
+  -
+    title: EU Institutions
+    color: "blue-100"
+    values:
+      - ""
+      - 388.4426642
+      - ""
+      - ""
+      - ""
+  -
+    title: Other EU bilateral
+    color: "blue-300"
+    values:
+      - ""
+      - 56.8542158
+      - ""
+      - ""
+      - ""
+  -
+    title: USA
+    color: "purple"
+    values:
+      - ""
+      - ""
+      - ""
+      - 163.075721
+      - ""
+  -
+    title: Australia
+    color: "pink"
+    values:
+      - ""
+      - ""
+      - ""
+      - 143.4730152
+      - ""
+  -
+    title: UK
+    color: "teal"
+    values:
+      - ""
+      - ""
+      - ""
+      - 34.3751832
+      - ""
+  -
+    title: Other OECD
+    color: "aqua"
+    values:
+      - ""
+      - ""
+      - ""
+      - ""
+      - 151.663817800001

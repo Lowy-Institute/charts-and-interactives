@@ -1,0 +1,54 @@
+title: >
+  China's global development finance and the Indo-Pacific
+
+source: >
+  <b>Source:</b> Lowy Institute
+
+#notes: >
+ # <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Commitments, constant 2020 USD billions
+
+axes:
+  minY:  0
+  maxY: 40
+  stepsY: 9
+  rotateX: false
+  percentage: true
+  minorLines: false
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2007
+      - 2008
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+
+  -
+    title: IP share (RHS)
+    color: "red"
+    widen: true
+    values:
+      - 16.4189718028333
+      - 23.1527090491766
+      - 13.1935012871185
+      - 19.9558117586258
+      - 22.4285589110272
+      - 18.1203974256769
+      - 9.88376439709408
+      - 26.2030398318222
+      - 29.5698392372287
+      - 32.1544176659955
+      - 35.0222002268384

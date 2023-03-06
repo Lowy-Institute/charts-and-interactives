@@ -1,0 +1,99 @@
+title: >
+  Rising infrastructure investment mostly through public sector financing
+
+source: >
+  <b>Source:</b> Lowy Institute
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Constant 2020 US$ billions
+
+axes:
+  minY:  0
+  maxY: 30
+  stepsY: 7
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  x:
+    title: Year
+    values:
+      - 2000
+      - 2001
+      - 2002
+      - 2003
+      - 2004
+      - 2005
+      - 2006
+      - 2007
+      - 2008
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017	
+      - 2018
+      - 2019
+      - 2020
+
+series:
+  -
+    title: Multilateral public finance
+    color: "green"
+    values:
+      - 4.726
+      - 4.130
+      - 4.673
+      - 4.588
+      - 4.159
+      - 2.982
+      - 3.483
+      - 3.695
+      - 6.678
+      - 6.852
+      - 5.463
+      - 9.850
+      - 7.440
+      - 8.630
+      - 11.479
+      - 10.000
+      - 12.741
+      - 13.673
+      - 11.606
+      - 13.209
+      - 12.595 
+
+  -
+    title: Bilateral public finance
+    color: "dark"
+    values:
+      - 3.462
+      - 3.465
+      - 3.088
+      - 3.171
+      - 3.990
+      - 3.028
+      - 4.148
+      - 3.821
+      - 5.682
+      - 5.652
+      - 5.736
+      - 6.765
+      - 7.212
+      - 10.160
+      - 9.907
+      - 16.202
+      - 12.664
+      - 11.779
+      - 14.444
+      - 9.375
+      - 11.156

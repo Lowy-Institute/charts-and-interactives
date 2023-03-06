@@ -1,0 +1,93 @@
+title: >
+  Recent slowdown in new Chinese financing commitments in the Indo-Pacific 
+
+source: >
+  <b>Source:</b> Lowy Institute
+
+#notes: >
+ # <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Various indicators, commitments, current USD billions
+
+axes:
+  minY:  0
+  maxY: 35
+  stepsY: 8
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+  -
+    title: Policy bank loans (BU)
+    color: "red-dark"
+    widen: true
+    dashed: false
+    values:
+      - 22.77674
+      - 5.78234
+      - 14.44774
+      - 13.930749
+      - 8.37083
+      - 0.700
+      - 1.690
+      - 2.93699
+
+  -
+    title: Bilateral PPG loans (WB)
+    color: "lime"
+    widen: true
+    dashed: false
+    values:
+      - 10.765
+      - 6.544
+      - 11.263
+      - 5.678
+      - 8.136
+      - 6.254
+      - 3.283
+      - 0   
+  -
+    title: Bilateral PPI infra support (WB)
+    color: "purple"
+    widen: true
+    dashed: false
+    values:
+      - 0.234
+      - 0
+      - 2.726
+      - 7.752
+      - 0
+      - 5.163
+      - 1.179
+      - 0.328
+  -
+    title: Construction contracts (AEI)
+    color: "highlight"
+    widen: true
+    dashed: false
+    values:
+      - 14.250
+      - 30.670
+      - 22.060
+      - 17.410
+      - 20.290
+      - 17.630
+      - 12.670
+      - 7.850

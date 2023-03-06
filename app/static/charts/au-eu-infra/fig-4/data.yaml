@@ -1,0 +1,74 @@
+title: >
+  Aid for infrastructure vs human development
+
+source: >
+  <b>Source:</b> Lowy Institute
+
+#notes: >
+ # <b>Notes:</b> data from January 2022
+
+subtitle: >
+  Ratio of economic infrastructure to health & education official development assistance from OECD-DAC members to Indo-Pacific EMDEs
+
+axes:
+  minY:  0
+  maxY: 6
+  stepsY: 7
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    values:
+      - 2000-2004
+      - 2005-2009
+      - 2010-2014
+      - 2015-2019
+  -
+    title: Indo-Pacific
+    color: "dark"
+    widen: true
+    dashed: false
+    values:
+      - 2.06
+      - 1.72
+      - 2.9
+      - 4.39
+
+  -
+    title: Southeast Asia
+    color: "red"
+    widen: false
+    dashed: false
+    values:
+      - 3.64
+      - 1.91
+      - 2.57
+      - 4.41
+
+  -
+    title: South Asia
+    color: "grey"
+    widen: false
+    dashed: false
+    values:
+      - 1.24
+      - 1.87
+      - 3.98
+      - 5.23
+
+  -
+    title: Pacific (RHS)
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 2.06
+      - 1.54
+      - 1.72
+      - 3.2

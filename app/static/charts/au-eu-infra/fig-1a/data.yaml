@@ -1,0 +1,68 @@
+title: >
+  China's global development finance and the Indo-Pacific
+
+source: >
+  <b>Source:</b> Lowy Institute
+
+#notes: >
+ # <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Commitments, constant 2020 USD billions
+
+axes:
+  minY:  0
+  maxY: 120
+  stepsY: 7
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2007
+      - 2008
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+
+  -
+    title: Other regions
+    color: "grey"
+    values:
+      - 18.6590009311644
+      - 19.2471262375503
+      - 74.6013990733767
+      - 58.8527049215555
+      - 32.2431878708123
+      - 42.3815451513878
+      - 87.1754916624926
+      - 51.7024892993712
+      - 59.9805538048535
+      - 74.6041863740599
+      - 43.6148777310751
+  -
+    title: Indo-Pacific
+    color: "highlight"
+    values:
+      - 3.66544438093205
+      - 5.79881357295914
+      - 11.3384789075634
+      - 14.6725643260812
+      - 9.3226093068243
+      - 9.37926440178211
+      - 9.56122961670996
+      - 18.3579700766587
+      - 25.1826108894385
+      - 35.3575588237081
+      - 23.5078593935047

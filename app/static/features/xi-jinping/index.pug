@@ -1,0 +1,66 @@
+extend /partials/layout
+
+block append config
+  - _.extend(page, data.getOne("static/features/xi-jinping/data"))
+
+block page
+  include partials/other/header
+
+  mixin item(index)
+    .scroll-item(
+      id=`scroll-item-${index}`
+      class=(index == "index" ? "active" : null)
+    )
+      block
+
+  #scroller(
+    data-view="scroller" 
+    data-pager=".pager-page" 
+    data-index=".pager-index"
+    data-min="1"
+    data-max="12"
+  )
+    +item("intro")
+      include partials/slides/intro
+    +item(1)
+      include partials/slides/01
+    +item(2)
+      include partials/slides/02
+    +item(3)
+      include partials/slides/03
+    +item(4)
+      include partials/slides/04
+    +item(5)
+      include partials/slides/05
+    +item(6)
+      include partials/slides/06
+    +item(7)
+      include partials/slides/07
+    +item(8)
+      include partials/slides/08
+    +item(9)
+      include partials/slides/09
+    +item(10)
+      include partials/slides/10
+    +item(11)
+      include partials/slides/11
+    +item(12)
+      include partials/slides/12
+    +item("outro")
+      include partials/slides/outro
+
+  include partials/other/footer
+
+block append css
+  style
+    include:sass _styles.sass
+
+block append scripts
+  script
+    include:coffee coffee/scroller.coffee
+    include:coffee coffee/counter.coffee
+    include:coffee coffee/spin.coffee
+    include:coffee coffee/spiral.coffee
+    include:coffee coffee/data-votes.coffee
+    include:coffee coffee/data-women.coffee
+    include:coffee coffee/data-seats.coffee

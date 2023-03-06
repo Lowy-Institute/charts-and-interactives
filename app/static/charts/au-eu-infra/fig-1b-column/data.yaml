@@ -1,0 +1,48 @@
+title: >
+  Stacked column chart
+
+source: >
+  <b>Source:</b> Lorem ipsum
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 35
+  stepsY: 8
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+  -
+    title: All ODF (AidData)
+    color: "grey"
+    values:
+      - 16.744
+      - 23.198
+      - 32.897
+      - 22.287
+      - 0
+      - 0
+      - 0
+      - 0
+
