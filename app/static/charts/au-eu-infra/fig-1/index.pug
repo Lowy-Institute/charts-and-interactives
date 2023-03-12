@@ -1,0 +1,450 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/au-eu-infra/fig-1/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+    //.page-title.txt-center= page.title
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        .chart-title China's global development finance and the Indo-Pacific
+        .chart-subtitle.txt-muted Commitments, constant 2020 USD billions
+
+        .chart.flex-grow: .chart-content
+
+          svg(height="100%" width="100%")
+            // Y-Axis labels
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 0
+              svg(y="83.33%")
+                text(text-anchor="end" transform="translate(-8 4)") 20 B
+              svg(y="66.67%")
+                text(text-anchor="end" transform="translate(-8 4)") 40 B
+              svg(y="50.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 60 B
+              svg(y="33.33%")
+                text(text-anchor="end" transform="translate(-8 4)") 80 B
+              svg(y="16.67%")
+                text(text-anchor="end" transform="translate(-8 4)") 100 B
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 120 B
+            // false RHS Y-Axis
+            svg(height="100%")
+              svg(y="100.00%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 0%
+              svg(y="87.50%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 5%
+              svg(y="75.00%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 10%
+              svg(y="62.50%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 15%
+              svg(y="50.00%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 20%
+              svg(y="37.50%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 25%
+              svg(y="25.00%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 30%
+              svg(y="12.50%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 35%
+              svg(y="0.00%" x="104%")
+                text(text-anchor="end" transform="translate(-8 4)") 40%
+            // Y-Axis minor lines
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="16.67%" x2="100%" y2="16.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="33.33%" x2="100%" y2="33.33%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="50.00%" x2="100%" y2="50.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="66.67%" x2="100%" y2="66.67%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="83.33%" x2="100%" y2="83.33%" stroke="#5552" stroke-dasharray="")
+            // Chart rects
+            svg(height="100%")
+              g.bars
+                svg(x="5.11%" width="2.55%" height="100%")  
+                  rect(y="84.45%" height="15.55%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="92.23%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 19
+                  rect(y="81.40%" height="3.05%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="82.92%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 4
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2007
+                svg(x="13.62%" width="2.55%" height="100%")  
+                  rect(y="83.96%" height="16.04%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="91.98%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 19
+                  rect(y="79.13%" height="4.83%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="81.54%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 6
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2008
+                svg(x="22.13%" width="2.55%" height="100%")  
+                  rect(y="37.83%" height="62.17%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="68.92%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 75
+                  rect(y="28.38%" height="9.45%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="33.11%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 11
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2009
+                svg(x="30.64%" width="2.55%" height="100%")  
+                  rect(y="50.96%" height="49.04%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="75.48%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 59
+                  rect(y="38.73%" height="12.23%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="44.84%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 15
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2010
+                svg(x="39.15%" width="2.55%" height="100%")  
+                  rect(y="73.13%" height="26.87%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="86.57%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 32
+                  rect(y="65.36%" height="7.77%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="69.25%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 9
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2011
+                svg(x="47.66%" width="2.55%" height="100%")  
+                  rect(y="64.68%" height="35.32%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="82.34%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 42
+                  rect(y="56.87%" height="7.82%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="60.77%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 9
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2012
+                svg(x="56.17%" width="2.55%" height="100%")  
+                  rect(y="27.35%" height="72.65%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="63.68%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 87
+                  rect(y="19.39%" height="7.97%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="23.37%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 10
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2013
+                svg(x="64.68%" width="2.55%" height="100%")  
+                  rect(y="56.91%" height="43.09%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="78.46%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 52
+                  rect(y="41.62%" height="15.30%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="49.27%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 18
+                  // X-Axis labels-
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2014
+                svg(x="73.19%" width="2.55%" height="100%")  
+                  rect(y="50.02%" height="49.98%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="75.01%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 60
+                  rect(y="29.03%" height="20.99%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="39.52%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 25
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2015
+                svg(x="81.70%" width="2.55%" height="100%")  
+                  rect(y="37.83%" height="62.17%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="68.91%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 75
+                  rect(y="8.37%" height="29.46%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="23.10%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 35
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2016
+                svg(x="90.21%" width="2.55%" height="100%")  
+                  rect(y="63.65%" height="36.35%" width="100%" fill="#B7C1CE")
+                  text.chart-value(x="50%" y="81.83%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #B7C1CE") 44
+                  rect(y="44.06%" height="19.59%" width="100%" fill="#539ed4") 
+                  text.chart-value(x="50%" y="53.86%" text-anchor="middle" transform="translate(-16 4.5)" style="color: #539ed4") 24
+                  // X-Axis labels
+                  svg.x-label(x="50%" y="100%")
+                    text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2017
+            // Chart lines (copied from fig-1-line)
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              polyline(fill="none" stroke="#ff4050" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="6.3 58.95257049291674,15 42.118227377058496,23.5 67.01624678220375,32.5 50.110470603435495,40.3 43.928602722432004,49 54.69900643580775,57.5 75.2905890072648,66 34.492400420444504,76 26.075401906928253,84 19.613955835011243,92 12.444499432904")
+
+
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch.legend-a
+          li.legend-item 
+            span.legend-item-box(style="background: #B7C1CE") 
+            span.legend-item-label Other regions
+          li.legend-item 
+            span.legend-item-box(style="background: #539ed4")
+            span.legend-item-label Indo-Pacific
+          li.legend-item
+            span.legend-item-box(style="background: #ff4050")
+            span.legend-item-label IP share (RHS)
+
+      .col-md.flex-grow.flex.flex-col
+        .chart-title Recent slowdown in new Chinese financing commitments in the Indo-Pacific 
+        .chart-subtitle.txt-muted Various indicators, commitments, current USD billions
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            // Y-Axis labels
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 0
+              svg(y="85.71%")
+                text(text-anchor="end" transform="translate(-8 4)") 5 B
+              svg(y="71.43%")
+                text(text-anchor="end" transform="translate(-8 4)") 10 B
+              svg(y="57.14%")
+                text(text-anchor="end" transform="translate(-8 4)") 15 B
+              svg(y="42.86%")
+                text(text-anchor="end" transform="translate(-8 4)") 20 B
+              svg(y="28.57%")
+                text(text-anchor="end" transform="translate(-8 4)") 25 B
+              svg(y="14.29%")
+                text(text-anchor="end" transform="translate(-8 4)") 30 B
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 35 B
+            // Y-Axis minor lines
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="14.29%" x2="100%" y2="14.29%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="28.57%" x2="100%" y2="28.57%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="42.86%" x2="100%" y2="42.86%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="57.14%" x2="100%" y2="57.14%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="71.43%" x2="100%" y2="71.43%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="85.71%" x2="100%" y2="85.71%" stroke="#5552" stroke-dasharray="")
+            // X-Axis labels
+            svg.x-label(x="7.27%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2014
+            svg.x-label(x="19.39%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2015
+            svg.x-label(x="31.52%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2016
+            svg.x-label(x="43.64%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2017
+            svg.x-label(x="55.76%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2018
+            svg.x-label(x="67.88%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2019
+            svg.x-label(x="80.00%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2020
+            svg.x-label(x="92.12%" y="100%")
+              text(text-anchor="end" transform="rotate(-45) translate(-5 15)") 2021
+            // OPTIONAL GUIDE LINE
+            // CHART RECTS copied from fig-1b-column
+            g.bars
+              svg(x="4.5%" width="6%" height="100%")
+                rect(y="52.16%" height="47.84%" width="100%" fill="#B7C1CE")
+              svg(x="16.5%" width="6%" height="100%")
+                rect(y="33.72%" height="66.28%" width="100%" fill="#B7C1CE")
+              svg(x="28.5%" width="6%" height="100%")
+                rect(y="6.01%" height="93.99%" width="100%" fill="#B7C1CE")
+              svg(x="40.5%" width="6%" height="100%")
+                rect(y="36.32%" height="63.68%" width="100%" fill="#B7C1CE")
+            // CHART LINES
+            svg(height="100%" width="100%" viewBox="0 0 100 100" preserveAspectRatio="none")
+              // SERIES LINES
+              polyline(fill="none" stroke="#990f02" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="7.2727272727272725 34.9236,19.393939393939394 83.47902857142859,31.51515151515152 58.72074285714286,43.63636363636364 60.197860000000006,55.75757575757575 76.08334285714287,67.87878787878788 97.99999999999999,80 95.17142857142858,92.12121212121211 91.6086")
+              polyline(fill="none" stroke="#a3bc3e" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="7.2727272727272725 69.24285714285713,19.393939393939394 81.30285714285715,31.51515151515152 67.82000000000001,43.63636363636364 83.77714285714285,55.75757575757575 76.75428571428571,67.87878787878788 82.13142857142857,80 90.62,92.12121212121211 100")
+              polyline(fill="none" stroke="#68389a" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="7.2727272727272725 99.33142857142857,19.393939393939394 100,31.51515151515152 92.21142857142858,43.63636363636364 77.85142857142857,55.75757575757575 100,67.87878787878788 85.24857142857142,80 96.63142857142857,92.12121212121211 99.06285714285713")
+              polyline(fill="none" stroke="#539ed4" stroke-dasharray="" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="7.2727272727272725 59.285714285714285,19.393939393939394 12.371428571428567,31.51515151515152 36.971428571428575,43.63636363636364 50.25714285714285,55.75757575757575 42.02857142857143,67.87878787878788 49.62857142857143,80 63.79999999999999,92.12121212121211 77.57142857142857")
+            g
+              svg.chart-value(x="7.27%" y="-5654.29%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2014
+              svg.chart-value(x="19.39%" y="-5657.14%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2015
+              svg.chart-value(x="31.52%" y="-5660.00%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2016
+              svg.chart-value(x="43.64%" y="-5662.86%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2017
+              svg.chart-value(x="55.76%" y="-5665.71%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2018
+              svg.chart-value(x="67.88%" y="-5668.57%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2019
+              svg.chart-value(x="80.00%" y="-5671.43%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2020
+              svg.chart-value(x="92.12%" y="-5674.29%" style="color: undefined")
+                text(y="-12" text-anchor="middle") 2021
+            g
+              svg.chart-value(x="7.27%" y="34.92%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 22.8
+              svg.chart-value(x="19.39%" y="83.48%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 5.8
+              svg.chart-value(x="31.52%" y="58.72%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 14.4
+              svg.chart-value(x="43.64%" y="60.20%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 13.9
+              svg.chart-value(x="55.76%" y="76.08%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 8.4
+              svg.chart-value(x="67.88%" y="98.00%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 0.7
+              svg.chart-value(x="80.00%" y="95.17%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 1.7
+              svg.chart-value(x="92.12%" y="91.61%" style="color: #990f02")
+                text(y="-12" text-anchor="middle" fill="#990f02") 2.9
+            g
+              svg.chart-value(x="7.27%" y="69.24%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 10.8
+              svg.chart-value(x="19.39%" y="81.30%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 6.5
+              svg.chart-value(x="31.52%" y="67.82%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 11.3
+              svg.chart-value(x="43.64%" y="83.78%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 5.7
+              svg.chart-value(x="55.76%" y="76.75%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 8.1
+              svg.chart-value(x="67.88%" y="82.13%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 6.3
+              svg.chart-value(x="80.00%" y="90.62%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 3.3
+              svg.chart-value(x="92.12%" y="100.00%" style="color: #a3bc3e") 
+                text(y="-12" text-anchor="middle" fill="#a3bc3e") 0
+            g
+              svg.chart-value(x="7.27%" y="99.33%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 0.2
+              svg.chart-value(x="19.39%" y="100.00%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 0
+              svg.chart-value(x="31.52%" y="92.21%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 2.7
+              svg.chart-value(x="43.64%" y="77.85%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 7.8
+              svg.chart-value(x="55.76%" y="100.00%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 0
+              svg.chart-value(x="67.88%" y="85.25%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 5.2
+              svg.chart-value(x="80.00%" y="96.63%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 1.2
+              svg.chart-value(x="92.12%" y="99.06%" style="color: #68389a") 
+                text(y="-12" text-anchor="middle" fill="#68389a") 0.3
+            g
+              svg.chart-value(x="7.27%" y="59.29%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 14.3
+              svg.chart-value(x="19.39%" y="12.37%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 30.7
+              svg.chart-value(x="31.52%" y="36.97%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 22.1
+              svg.chart-value(x="43.64%" y="50.26%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 17.4
+              svg.chart-value(x="55.76%" y="42.03%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 20.3
+              svg.chart-value(x="67.88%" y="49.63%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 17.6
+              svg.chart-value(x="80.00%" y="63.80%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 12.7
+              svg.chart-value(x="92.12%" y="77.57%" style="color: #539ed4") 
+                text(y="-12" text-anchor="middle" fill="#539ed4") 7.9
+
+        ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+          li.legend-item
+            span.legend-item-box(style="background: #B7C1CE")
+            span.legend-item-label All ODF (AidData)
+          li.legend-item
+            span.legend-item-box(style="background: #990f02")
+            span.legend-item-label Policy bank loans (BU)
+          li.legend-item
+            span.legend-item-box(style="background: #a3bc3e")
+            span.legend-item-label Bilateral PPG loans (WB)
+          li.legend-item
+            span.legend-item-box(style="background: #68389a")
+            span.legend-item-label Bilateral PPI infra support (WB)
+          li.legend-item
+            span.legend-item-box(style="background: #539ed4")
+            span.legend-item-label Construction contracts (AEI)
+
+    //- .chart-source.txt-muted
+      != page.source
+
+block append css
+  style
+    :sass
+      .page-title
+        margin-bottom: 12px
+
+      .wrapper
+        height: 550px
+
+      .col-wrap
+        margin: 0 -1em
+
+      .col-md
+        padding: 0 1em
+        width: 50%
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 40px
+        right: 20px
+        bottom: 40px
+
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+        font-size: 15px
+
+      .chart-title
+        max-width: 320px
+        margin: auto
+
+      .chart-subtitle
+        height: 0
+        margin-bottom: 10px
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 8px 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
+
+      text
+        font-size: 13px
+        fill: currentColor
+
+      svg
+        overflow: visible
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      .legend
+        font-size: 13px
+        margin-bottom: .75em
+
+      .legend-a
+        margin-top: 42px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-left: 16px
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 4px
+        height: 0.8em
+        width: 0.8em
+        background: black
+
+      @media screen and (max-width: 600px)
+        .col-wrap
+          display: block
+        .col-md
+          width: 100%
+          height: 270px
+
+        .legend-a
+          margin-top: 0
+          margin-bottom: 20px !important
