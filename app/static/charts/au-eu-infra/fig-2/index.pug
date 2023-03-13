@@ -1,0 +1,402 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/au-eu-infra/fig-2/data"
+  - _.extend(page, data.getOne(datapath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+
+block page
+  .wrapper.flex.flex-col
+    //.page-title.txt-center= page.title
+    .col-wrap.txt-center.flex-grow.flex.txt-sm
+      .col-md.flex-grow.flex.flex-col
+        .chart-title OECD infrastructure development finance in the Indo-Pacific
+        //.chart-subtitle.txt-muted Constant 2020 USD billions
+
+        .chart.flex-grow: .chart-content
+          svg(height="100%" width="100%")
+            //  Y-Axis labels 
+            svg(height="100%")
+              svg(y="100.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 0
+              svg(y="80.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 2
+              svg(y="60.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 4
+              svg(y="40.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 6
+              svg(y="20.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 8
+              svg(y="0.00%")
+                text(text-anchor="end" transform="translate(-8 4)") 10
+           
+            //  Y-Axis minor lines// 
+            svg(height="100%")
+              svg
+                line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="20.00%" x2="100%" y2="20.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="40.00%" x2="100%" y2="40.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="60.00%" x2="100%" y2="60.00%" stroke="#5552" stroke-dasharray="")
+              svg
+                line(x1="0%" y1="80.00%" x2="100%" y2="80.00%" stroke="#5552" stroke-dasharray="")
+           
+            //  Chart rects// 
+            g.bars
+              svg(x="10.43%" width="10.43%" height="100%")  
+                rect(y="16.80%" height="83.20%" width="100%" fill="#539ed4")
+                text.chart-value(x="50%" y="58.40%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 8
+                
+                //  X-Axis labels// 
+                svg.x-label(x="50%" y="100%")
+                  text(text-anchor="middle" transform="translate(0 20)") Japan
+             
+              svg(x="27.83%" width="10.43%" height="100%")  
+                rect(y="86.66%" height="13.34%" width="100%" fill="#ffc52b")
+                text.chart-value(x="50%" y="93.33%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 1
+                
+                rect(y="81.20%" height="5.46%" width="100%" fill="#002b45")
+                text.chart-value(x="50%" y="83.93%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1
+                
+                rect(y="77.32%" height="3.88%" width="100%" fill="#2D6993")
+                text.chart-value(x="50%" y="79.26%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0
+                
+                rect(y="76.75%" height="0.57%" width="100%" fill="#a5C1d9")
+                text.chart-value(x="50%" y="77.03%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0
+                
+                //  X-Axis labels// 
+                svg.x-label(x="50%" y="100%")
+                  text(text-anchor="middle" transform="translate(0 20)") Team Europe
+               
+             
+              svg(x="45.22%" width="10.43%" height="100%")  
+                rect(y="78.57%" height="21.43%" width="100%" fill="#ff8800")
+                text.chart-value(x="50%" y="89.28%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 2
+                
+                //  X-Axis labels// 
+                svg.x-label(x="50%" y="100%")
+                  text(text-anchor="middle" transform="translate(0 20)") Korea
+             
+              svg(x="62.61%" width="10.43%" height="100%")  
+                rect(y="98.37%" height="1.63%" width="100%" fill="#68389a")
+                text.chart-value(x="50%" y="99.18%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0
+                
+                rect(y="96.93%" height="1.43%" width="100%" fill="#bd5d92")
+                text.chart-value(x="50%" y="97.65%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0
+                
+                rect(y="96.59%" height="0.34%" width="100%" fill="#008A97")
+                text.chart-value(x="50%" y="96.76%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0
+                
+                //  X-Axis labels// 
+                svg.x-label(x="50%" y="100%")
+                  text(text-anchor="middle" transform="translate(0 20)") AU/UK/US
+             
+              svg(x="80.00%" width="10.43%" height="100%")  
+                rect(y="98.48%" height="1.52%" width="100%")
+                text.chart-value(x="50%" y="99.24%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0
+                
+                //  X-Axis labels// 
+                svg.x-label(x="50%" y="100%")
+                  text(text-anchor="middle" transform="translate(0 20)") Other
+                  
+
+
+      .col-md.flex-grow.flex.flex-col
+        .chart-title OECD infrastructure development finance by Indo-Pacific sub-regions
+        //.chart-subtitle.txt-muted Constant 2020 USD billions
+
+        .chart.flex-grow: .chart-content(style="margin-left:44px")
+          svg(height="100%" width="100%")
+            //  X-Axis labels   //
+            svg(width="100%" y="100%") 
+              svg.x-label(x="0.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 0%
+              svg.x-label(x="10.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 10%
+              svg.x-label(x="20.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 20%
+              svg.x-label(x="30.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 30%
+              svg.x-label(x="40.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 40%
+              svg.x-label(x="50.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 50%
+              svg.x-label(x="60.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 60%
+              svg.x-label(x="70.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 70%
+              svg.x-label(x="80.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 80%
+              svg.x-label(x="90.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 90%
+              svg.x-label(x="100.00%") 
+                text(text-anchor="middle" transform="translate(0 18)") 100%
+            
+            //  X-Axis minor lines   //
+            svg(width="100%") 
+              svg
+                line(x1="0.00%" y1="0%" x2="0.00%" y2="100%" stroke="#5552" stroke-dasharray="") 
+              svg
+                line(x1="10.00%" y1="0%" x2="10.00%" y2="100%" stroke="#5552" stroke-dasharray="5") 
+              svg
+                line(x1="20.00%" y1="0%" x2="20.00%" y2="100%" stroke="#5552" stroke-dasharray="") 
+              svg
+                line(x1="30.00%" y1="0%" x2="30.00%" y2="100%" stroke="#5552" stroke-dasharray="5") 
+              svg
+                line(x1="40.00%" y1="0%" x2="40.00%" y2="100%" stroke="#5552" stroke-dasharray="") 
+              svg
+                line(x1="50.00%" y1="0%" x2="50.00%" y2="100%" stroke="#5552" stroke-dasharray="5") 
+              svg
+                line(x1="60.00%" y1="0%" x2="60.00%" y2="100%" stroke="#5552" stroke-dasharray="") 
+              svg
+                line(x1="70.00%" y1="0%" x2="70.00%" y2="100%" stroke="#5552" stroke-dasharray="5") 
+              svg
+                line(x1="80.00%" y1="0%" x2="80.00%" y2="100%" stroke="#5552" stroke-dasharray="") 
+              svg
+                line(x1="90.00%" y1="0%" x2="90.00%" y2="100%" stroke="#5552" stroke-dasharray="5") 
+              svg
+                line(x1="100.00%" y1="0%" x2="100.00%" y2="100%" stroke="#5552" stroke-dasharray="") 
+            
+            //  Chart rects   //
+            g.bars
+              svg(y="5.00%" height="23.33%" width="100%")   
+                rect(x="0.00%" width="63.18%" height="100%" fill="#539ed4" data-v="63.184" data-c="0" data-s="0") 
+                text.chart-value(x="31.59%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 63%
+                
+                rect(x="63.18%" width="12.06%" height="100%" fill="#ff8800" data-v="12.062" data-c="0" data-s="1") 
+                text.chart-value(x="69.21%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 12%
+                
+                rect(x="75.25%" width="12.39%" height="100%" fill="#ffc52b" data-v="12.387" data-c="0" data-s="2") 
+                text.chart-value(x="81.44%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 12%
+                
+                rect(x="87.63%" width="4.44%" height="100%" fill="#002b45" data-v="4.443" data-c="0" data-s="3") 
+                text.chart-value(x="89.85%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 4%
+                
+                rect(x="92.08%" width="4.92%" height="100%" fill="#2D6993" data-v="4.925" data-c="0" data-s="4") 
+                text.chart-value(x="94.54%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 5%
+                
+                rect(x="97.00%" width="0.45%" height="100%" fill="#a5C1d9" data-v="0.448" data-c="0" data-s="5") 
+                text.chart-value(x="97.22%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="97.45%" width="1.94%" height="100%" fill="#68389a" data-v="1.938" data-c="0" data-s="6") 
+                text.chart-value(x="98.42%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2%
+                
+                rect(x="99.39%" width="0.02%" height="100%" fill="#bd5d92" data-v="0.023" data-c="0" data-s="7") 
+                text.chart-value(x="99.40%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="99.41%" width="0.45%" height="100%" fill="#008A97" data-v="0.451" data-c="0" data-s="8") 
+                text.chart-value(x="99.64%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="99.86%" width="0.14%" height="100%" data-v="0.138" data-c="0" data-s="9") 
+                text.chart-value(x="99.93%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                //  Y-Axis labels   //
+                svg.y-label(x="0%" y="50%") 
+                  text(text-anchor="end" transform="translate(-16, 5)") South Asia
+                  
+                
+              
+              svg(y="38.33%" height="23.33%" width="100%")   
+                rect(x="0.00%" width="63.83%" height="100%" fill="#539ed4" data-v="63.828" data-c="1" data-s="0") 
+                text.chart-value(x="31.91%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 64%
+                
+                rect(x="63.83%" width="21.83%" height="100%" fill="#ff8800" data-v="21.826" data-c="1" data-s="1") 
+                text.chart-value(x="74.74%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 22%
+                
+                rect(x="85.65%" width="7.93%" height="100%" fill="#ffc52b" data-v="7.926" data-c="1" data-s="2") 
+                text.chart-value(x="89.62%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 8%
+                
+                rect(x="93.58%" width="3.99%" height="100%" fill="#002b45" data-v="3.993" data-c="1" data-s="3") 
+                text.chart-value(x="95.58%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 4%
+                
+                rect(x="97.57%" width="0.61%" height="100%" fill="#2D6993" data-v="0.61" data-c="1" data-s="4") 
+                text.chart-value(x="97.88%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1%
+                
+                rect(x="98.18%" width="0.43%" height="100%" fill="#a5C1d9" data-v="0.427" data-c="1" data-s="5") 
+                text.chart-value(x="98.40%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="98.61%" width="0.41%" height="100%" fill="#68389a" data-v="0.41" data-c="1" data-s="6") 
+                text.chart-value(x="98.82%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="99.02%" width="0.81%" height="100%" fill="#bd5d92" data-v="0.806" data-c="1" data-s="7") 
+                text.chart-value(x="99.42%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1%
+                
+                rect(x="99.83%" width="0.05%" height="100%" fill="#008A97" data-v="0.05" data-c="1" data-s="8") 
+                text.chart-value(x="99.85%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="99.88%" width="0.13%" height="100%" data-v="0.125" data-c="1" data-s="9") 
+                text.chart-value(x="99.94%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                //  Y-Axis labels   //
+                svg.y-label(x="0%" y="50%") 
+                  text(text-anchor="end" transform="translate(-16, -4)") Southeast
+                  text(text-anchor="end" transform="translate(-16, 14)") Asia
+                  
+                
+              
+              svg(y="71.67%" height="23.33%" width="100%")   
+                rect(x="0.00%" width="35.62%" height="100%" fill="#539ed4" data-v="35.622" data-c="2" data-s="0") 
+                text.chart-value(x="17.81%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 36%
+                
+                rect(x="35.62%" width="2.72%" height="100%" fill="#ff8800" data-v="2.723" data-c="2" data-s="1") 
+                text.chart-value(x="36.98%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 3%
+                
+                rect(x="38.34%" width="0.61%" height="100%" fill="#ffc52b" data-v="0.614" data-c="2" data-s="2") 
+                text.chart-value(x="38.65%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: white") 1%
+                
+                rect(x="38.96%" width="0.04%" height="100%" fill="#002b45" data-v="0.042" data-c="2" data-s="3") 
+                text.chart-value(x="38.98%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="39.00%" width="2.40%" height="100%" fill="#2D6993" data-v="2.396" data-c="2" data-s="4") 
+                text.chart-value(x="40.20%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 2%
+                
+                rect(x="41.40%" width="0.10%" height="100%" fill="#a5C1d9" data-v="0.095" data-c="2" data-s="5") 
+                text.chart-value(x="41.44%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 0%
+                
+                rect(x="41.49%" width="0.98%" height="100%" fill="#68389a" data-v="0.979" data-c="2" data-s="6") 
+                text.chart-value(x="41.98%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 1%
+                
+                rect(x="42.47%" width="23.67%" height="100%" fill="#bd5d92" data-v="23.667" data-c="2" data-s="7") 
+                text.chart-value(x="54.30%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 24%
+                
+                rect(x="66.14%" width="33.86%" height="100%" fill="#a37c09" data-v="33.862" data-c="2" data-s="9") 
+                text.chart-value(x="83.07%" y="50%" text-anchor="middle" transform="translate(0 4.5)" style="color: ") 34%
+                
+                //  Y-Axis labels   //
+                svg.y-label(x="0%" y="50%") 
+                  text(text-anchor="end" transform="translate(-16, 5)") Pacific
+
+    ul.legend.txt-nowrap.flex-wrap.list-bare.txt-left.flex.flex-ch
+      li.legend-item
+        span.legend-item-box(style="background: #539ed4")
+        span.legend-item-label Japan
+      li.legend-item
+        span.legend-item-box(style="background: #ff8800")
+        span.legend-item-label Korea
+      li.legend-item
+        span.legend-item-box(style="background: #ffc52b")
+        span.legend-item-label Germany
+      li.legend-item
+        span.legend-item-box(style="background: #002b45")
+        span.legend-item-label France
+      li.legend-item
+        span.legend-item-box(style="background: #2D6993")
+        span.legend-item-label EU Institutions
+      li.legend-item
+        span.legend-item-box(style="background: #a5C1d9")
+        span.legend-item-label Other EU bilateral
+      li.legend-item
+        span.legend-item-box(style="background: #68389a")
+        span.legend-item-label USA
+      li.legend-item
+        span.legend-item-box(style="background: #bd5d92")
+        span.legend-item-label Australia
+      li.legend-item
+        span.legend-item-box(style="background: #008A97")
+        span.legend-item-label UK
+      li.legend-item
+        span.legend-item-box(style="background: #a37c09")
+        span.legend-item-label Other OECD
+
+
+    //- .chart-source.txt-muted
+      != page.source
+
+block append css
+  style
+    :sass
+      .page-title
+        margin-bottom: 12px
+
+      .wrapper
+        height: 550px
+
+      .col-wrap
+        margin: 0 -1em
+
+      .col-md
+        padding: 0 1em
+        width: 50%
+
+      .chart
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 40px
+        right: 20px
+        bottom: 40px
+
+      .chart-content > svg
+        border-bottom: 1px solid #ccc
+
+      .chart-title,
+      .chart-subtitle
+        padding: 0 24px
+        font-size: 15px
+
+      .chart-title
+        max-width: 320px
+        margin: auto
+
+      .chart-subtitle
+        height: 0
+        margin-bottom: 10px
+
+      .chart-source
+        font-size: 14px
+        max-width: 800px
+        margin: 12px 8px 0
+
+      .chart-value
+        opacity: 0
+        transition: opacity 300ms
+
+        .chart:hover &
+          opacity: 1
+
+      text
+        font-size: 13px
+        fill: currentColor
+
+      svg
+        overflow: visible
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      .legend
+        font-size: 13px
+        margin-top: 30px
+        margin-bottom: .75em
+
+
+      /* .legend-a
+        margin-top: 42px */
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-left: 16px
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 4px
+        height: 0.8em
+        width: 0.8em
+        background: black
+
+      @media screen and (max-width: 600px)
+        .col-wrap
+          display: block
+        .col-md
+          width: 100%
+          height: 228px
+
+        /* .legend-a
+          margin-top: 0
+          margin-bottom: 20px !important */
