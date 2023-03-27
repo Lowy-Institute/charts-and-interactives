@@ -8,7 +8,7 @@ source: >
   #<strong>Notes:</strong> data from January 2022
 
 subtitle: >
-  Influence of China and the United States in Southeast Asian countries (2022)
+  Chinese and US influence in Southeast Asian countries (2022)
 
 axes:
   minY:  0
@@ -29,7 +29,7 @@ series:
       - Brunei
       - Cambodia
       - Indonesia
-      - Lao PDR
+      - Laos
       - Malaysia
       - Myanmar
       - Philippines
