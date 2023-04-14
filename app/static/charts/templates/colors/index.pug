@@ -1,0 +1,228 @@
+extend /partials/layout
+
+block append config
+
+  - var colorpath = "static/charts/templates/colors/data"
+
+block page
+
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .titles
+        .chart-title Colours
+        .chart-subtitle.txt-muted.p-sm Swatches
+      
+      .chart.flex-grow: .chart-content
+        
+        ul.legend.txt-nowrap.list-bare.txt-left.list-column
+          li.legend-item 
+            span.legend-item-box(style="background: #002b45; border: 1px solid #002b45") 
+            span.legend-item-label dark
+          li.legend-item 
+            span.legend-item-box(style="background: #539ed4; border: 1px solid #539ed4")
+            span.legend-item-label highlight
+          li.legend-item
+            span.legend-item-box(style="background: #2D6993; border: 1px solid #2D6993")
+            span.legend-item-label blue-100
+          li.legend-item
+            span.legend-item-box(style="background: #809eb8; border: 1px solid #809eb8") 
+            span.legend-item-label blue-200
+          li.legend-item
+            span.legend-item-box(style="background: #a5C1d9; border: 1px solid #a5C1d9") 
+            span.legend-item-label blue-300
+          li.legend-item
+            span.legend-item-box(style="background: #d4e2e8; border: 1px solid #d4e2e8") 
+            span.legend-item-label blue-400
+          li.legend-item
+            span.legend-item-box(style="background: #008A97; border: 1px solid #008A97") 
+            span.legend-item-label teal
+          li.legend-item
+            span.legend-item-box(style="background: #076273; border: 1px solid #076273 ") 
+            span.legend-item-label teal-dark
+          li.legend-item
+            span.legend-item-box(style="background: #78c0d1; border: 1px solid #78c0d1") 
+            span.legend-item-label teal-light
+          li.legend-item
+            span.legend-item-box(style="background: #002D31; border: 1px solid #002D31") 
+            span.legend-item-label teal-100
+          li.legend-item
+            span.legend-item-box(style="background: #005B64; border: 1px solid #005B64") 
+            span.legend-item-label teal-200
+          li.legend-item
+            span.legend-item-box(style="background: #008A97; border: 1px solid #008A97") 
+            span.legend-item-label teal-300
+          li.legend-item
+            span.legend-item-box(style="background: #00B9CA; border: 1px solid #00B9CA") 
+            span.legend-item-label teal-400
+          li.legend-item
+            span.legend-item-box(style="background: #00E7FD; border: 1px solid #00E7FD") 
+            span.legend-item-label teal-500
+          li.legend-item
+            span.legend-item-box(style="background: #31EDFF; border: 1px solid #31EDFF") 
+            span.legend-item-label teal-600
+          li.legend-item
+            span.legend-item-box(style="background: #B7C1CE; border: 1px solid #B7C1CE") 
+            span.legend-item-label grey
+          li.legend-item
+            span.legend-item-box(style="background: #31363B; border: 1px solid #31363B") 
+            span.legend-item-label grey-100
+          li.legend-item
+            span.legend-item-box(style="background: #5E646C; border: 1px solid #5E646C") 
+            span.legend-item-label grey-200
+          li.legend-item
+            span.legend-item-box(style="background: #8A939D; border: 1px solid #8A939D") 
+            span.legend-item-label grey-300
+          li.legend-item
+            span.legend-item-box(style="background: #B7C1CE; border: 1px solid #B7C1CE") 
+            span.legend-item-label grey-400
+          li.legend-item
+            span.legend-item-box(style="background: #31363B; border: 1px solid #31363B") 
+            span.legend-item-label grey-interpreter
+          li.legend-item
+            span.legend-item-box(style="background: #ff4050; border: 1px solid #ff4050") 
+            span.legend-item-label red
+          li.legend-item
+            span.legend-item-box(style="background: #990f02; border: 1px solid #990f02") 
+            span.legend-item-label red-dark
+          li.legend-item
+            span.legend-item-box(style="background: #F59894; border: 1px solid #F59894") 
+            span.legend-item-label red-light
+          li.legend-item
+            span.legend-item-box(style="background: #DF0C1B; border: 1px solid #DF0C1B") 
+            span.legend-item-label red-100
+          li.legend-item
+            span.legend-item-box(style="background: #F42A39; border: 1px solid #F42A39") 
+            span.legend-item-label red-200
+          li.legend-item
+            span.legend-item-box(style="background: #F65B66; border: 1px solid #F65B66") 
+            span.legend-item-label red-300
+          li.legend-item
+            span.legend-item-box(style="background: #F98B93; border: 1px solid #F98B93") 
+            span.legend-item-label red-400
+          li.legend-item
+            span.legend-item-box(style="background: #FBBCC0; border: 1px solid #FBBCC0") 
+            span.legend-item-label red-500
+          li.legend-item
+            span.legend-item-box(style="background: #16B56F; border: 1px solid #16B56F") 
+            span.legend-item-label green
+          li.legend-item
+            span.legend-item-box(style="background: #008A97; border: 1px solid #008A97") 
+            span.legend-item-label green-dark
+          li.legend-item
+            span.legend-item-box(style="background: #a5dd75; border: 1px solid #a5dd75") 
+            span.legend-item-label green-light
+          li.legend-item
+            span.legend-item-box(style="background: #a3bc3e; border: 1px solid #a3bc3e") 
+            span.legend-item-label lime
+          li.legend-item
+            span.legend-item-box(style="background: #ff8800; border: 1px solid #ff8800") 
+            span.legend-item-label  orange
+          li.legend-item
+            span.legend-item-box(style="background: #ffa800; border: 1px solid #ffa800") 
+            span.legend-item-label  orange-light
+          li.legend-item
+            span.legend-item-box(style="background: #ffc52b; border: 1px solid #ffc52b") 
+            span.legend-item-label  yellow
+          li.legend-item
+            span.legend-item-box(style="background: #f2b000; border: 1px solid #f2b000") 
+            span.legend-item-label  yellow-dark
+          li.legend-item
+            span.legend-item-box(style="background: #ffe18f; border: 1px solid #ffe18f") 
+            span.legend-item-label  yellow-light
+          li.legend-item
+            span.legend-item-box(style="background: #68389a; border: 1px solid #68389a") 
+            span.legend-item-label  purple
+          li.legend-item
+            span.legend-item-box(style="background: #bd5d92; border: 1px solid #bd5d92") 
+            span.legend-item-label  pink
+          li.legend-item
+            span.legend-item-box(style="background: #cab0d6; border: 1px solid #cab0d6") 
+            span.legend-item-label  lilac
+          li.legend-item
+            span.legend-item-box(style="background: #a37c09; border: 1px solid #a37c09;") 
+            span.legend-item-label brown
+          li.legend-item
+            span.legend-item-box(style="background: #fff; border: 1px solid #4b4f5b;") 
+            span.legend-item-label white / transparent
+  
+
+
+
+
+block append css
+  style
+    :sass
+  
+      .wrapper
+        height: 550px
+        max-width: 720px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 30px
+        left: 50px
+        right: 20px
+        bottom: 50px
+
+      .chart-title
+        margin: auto
+        font-size: 24px
+        
+      .chart-subtitle
+        font-weight: 400
+        margin-top: -10px
+        font-size: 18px
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 14px
+
+      .legend-item
+        margin: 4px 0 8px 8px
+        padding-left: 20px
+        position: relative
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: 6px
+        height: 1em
+        width: 1em
+        background: black
+
+      .list-column
+        column-count: 4
+        margin: 0 3em
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      @media (max-width: 700px)
+
+        text
+          font-size: 12px
+          
+      @media (max-width: 450px)
+        .chart-content
+          left: 32px
+          right: 14px
+          bottom: 40px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
