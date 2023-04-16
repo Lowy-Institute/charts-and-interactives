@@ -250,7 +250,6 @@ politburo:
         faction: Xi loyalist
         age: 66
 
-
 centralCommittee:
   - Top party and government officials
   - Senior military leaders
@@ -698,35 +697,33 @@ retirementRules:
   data:
     - position: Politburo Inner Circle
       icon:
-        <svg width="36" height="36" viewBox="0 0 22 22" fill="none"
-        stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="10"
-        opacity="0.5" /><circle cx="11" cy="11" r="6"/></svg>
+        <svg width="36" height="36" viewBox="0 0 22 22" fill="none" stroke="currentColor"
+        stroke-width="2"><circle cx="11" cy="11" r="10" opacity="0.5" /><circle cx="11" cy="11"
+        r="6"/></svg>
       nomination: 67
       retirement: 72
 
     - position: Politburo, Vice-Premiers
       icon:
-        <svg width="36" height="36" viewBox="0 0 22 22" fill="none"
-        stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="10"
-        /><circle cx="11" cy="11" r="6" opacity="0.5"/></svg>
+        <svg width="36" height="36" viewBox="0 0 22 22" fill="none" stroke="currentColor"
+        stroke-width="2"><circle cx="11" cy="11" r="10" /><circle cx="11" cy="11" r="6"
+        opacity="0.5"/></svg>
       nomination: 67
       retirement: 70
 
     - position: Provincial leaders, Ministers
       icon:
-        <svg width="36" height="36" viewBox="0 0 20 20"
-        fill="currentColor"><rect x="6" width="8" height="8"/><rect y="12"
-        width="8" height="8" opacity="0.5"/><rect x="12" y="12" width="8"
+        <svg width="36" height="36" viewBox="0 0 20 20" fill="currentColor"><rect x="6" width="8"
+        height="8"/><rect y="12" width="8" height="8" opacity="0.5"/><rect x="12" y="12" width="8"
         height="8" opacity="0.5"/></svg>
       nomination: 63
       retirement: 65
 
     - position: Deputy leaders, Ministers
       icon:
-        <svg width="36" height="36" viewBox="0 0 20 20"
-        fill="currentColor"><rect x="6" width="8" height="8"
-        opacity="0.5"/><rect y="12" width="8" height="8"/><rect x="12" y="12"
-        width="8" height="8"/></svg>
+        <svg width="36" height="36" viewBox="0 0 20 20" fill="currentColor"><rect x="6" width="8"
+        height="8" opacity="0.5"/><rect y="12" width="8" height="8"/><rect x="12" y="12" width="8"
+        height="8"/></svg>
       nomination: 58
       retirement: 60
 
@@ -777,10 +774,10 @@ keywords:
       - 19th party congress
       - 20th party congress
     data:
-      - label: 
+      - label:
         values: []
       - label: Frequency of keyword found in leaders' reports to CCP congress
-        values: [0,12,6,5,7,5,5,1,0]
+        values: [0, 12, 6, 5, 7, 5, 5, 1, 0]
 
   confidence:
     title: Leaders’ Priorities, 1982-2022
@@ -797,10 +794,10 @@ keywords:
       - 19th party congress
       - 20th party congress
     data:
-      - label: 
+      - label:
         values: []
       - label: Frequency of keyword found in leaders' reports to CCP congress
-        values: [0,0,1,0,0,0,5,14,14]
+        values: [0, 0, 1, 0, 0, 0, 5, 14, 14]
 
   military:
     title: Leaders’ Priorities, 1982-2022
@@ -817,12 +814,12 @@ keywords:
       - 19th party congress
       - 20th party congress
     data:
-      - label: 
+      - label:
         values: []
       - label: Frequency of keyword found in leaders' reports to CCP congress
-        values: [4,0,3,9,8,16,18,14,21]
-      
-associates: 
+        values: [4, 0, 3, 9, 8, 16, 18, 14, 21]
+
+associates:
   title: Xi&#8217;s Growing Domination of the Politburo
   #subtitle: On Top Communist Party Bodies
   scale: 1.5
@@ -832,40 +829,130 @@ associates:
     - 20th party congress (2022-2027)
   data:
     - label: Politburo Standing Committee
-      values: [29,43,100]
+      values: [29, 43, 100]
     - label: Politburo
-      values: [24,60,90]
+      values: [24, 60, 90]
 
-lorem:
-  - CHINESE PARTNERS
+battleShips:
+  axes:
+    y: [450, 400, 350, 300, 250, 200]
+  scale:
+    - 2005
+    - 2006
+    - 2007
+    - 2008
+    - 2009
+    - 2010
+    - 2011
+    - 2012
+    - 2013
+    - 2014
+    - 2015
+    - 2016
+    - 2017
+    - 2018
+    - 2019
+    - 2020
+    - 2021
+    - 2022
+    - 2023
+    - 2024
+    - 2025
+    - 2026
+    - 2027
+    - 2028
+    - 2029
+    - 2030
+  countries:
+    - name: PLA Navy
+      class: cn dashed
+      data:
+        - 216
+        - 221
+        - 222
+        - 233
+        - 262
+        - 276
+        - 276
+        - 271
+        - 273
+        - 283
+        - 294
+        - 303
+        - 317
+        - 306
+        - 335
+        - 333
+        - 346
+        - 359
+        - 372
+        - 385
+        - 400
+        - 405
+        - 410
+        - 415
+        - 420
+        - 425
+    - name: US Navy
+      class: us dashed
+      data:
+        - 291
+        - 282
+        - 281
+        - 279
+        - 282
+        - 285
+        - 288
+        - 284
+        - 287
+        - 285
+        - 289
+        - 271
+        - 275
+        - 279
+        - 286
+        - 296
+        - 305
+        - 311
+        - 314
+        - 314
+        - 313
+        - 314
+        - 316
+        - 322
+        - 325
+        - 331
+
+warshipTonnage:
+  title: Warship tonnage
+  subtitle: Launched in the Indo-Pacific between 2016 and 2020
+  scale: 1000
+  note:
+    Warship tonnage launched by the major sea-going navies in the Indo-Pacific between 2016 and 2020
+    shows that approximately 60 per cent of the US Navy's ships are assigned to the Pacific Fleet
+  data:
+    - label: Chinese PLA Navy
+      class: bg-hl txt-ff
+      value: 632.8
+    - label: Quad Navies
+      class: bg-lt txt-dk
+      value: 401.5
+    - label: US Navy Pacific Fleet
+      class: bg-lt txt-dk
+      value: 257.2
+    - label: Indo-Pacific Democracies
+      class: bg-lt txt-dk
+      value: 231.9
+
+chinesePartners:
   - Ministry of Foreign Affairs (State to State)
   - Chinese Communist Party (Party to Party)
   - Ex-IM Bank (Lending)
   - Commerce Ministry (Trade)
   - State-owned Enterprises (Investment)
 
-ipsum:
-  - [Lorem, Ipsum]
-  - [Sit, Amet]
-  - [Dolor, Etc]
-  - [Lorem, Ipsum]
-  - [Sit, Amet]
-  - [Dolor, Etc]
-
-sit:
-  - STATE-OWNED COMPANIES
+stateOwnedCompanies:
   - China Civil Engineering Construction Co.(Central Government)
   - China Harbour Engineering (Central Government)
   - Metallurgical Corp. of China (China Minmetals/Central Government)
   - Guangdong Foreign Construction (Guangdong Provincial Government)
-
-ipsum2:
-  - img: ./img/leaders/mao-zedong.jpg
-    name: Mao Zedong
-    job1: Job 1
-    job2: Job 2
-    
-  - img: ./img/leaders/deng-xiaoping.jpg
-    name: Deng Xiaoping
-    job1: Job 1
-    job2: Job 2

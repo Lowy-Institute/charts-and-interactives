@@ -22,8 +22,7 @@ axes:
   guideLine: null # value of optional horizontal line. set 'null' if disabled
 
 series:
-  -
-    title: Year
+  - title: Year
     values:
       - 2005
       - 2006
@@ -52,17 +51,15 @@ series:
       - 2029
       - 2030
 
-  -
-    title: US LOB
+  - title: US LOB
     color: "blue-100"
     widen: false
     dashed: true
     values:
       - 270
       - 320
-      
-  -
-    title: PLA LOB
+
+  - title: PLA LOB
     color: "red"
     widen: false
     dashed: true
@@ -70,8 +67,7 @@ series:
       - 210
       - 431
 
-  -
-    title: PLA Navy
+  - title: PLA Navy
     color: "red"
     widen: true
     dashed: false
@@ -103,8 +99,7 @@ series:
       - 420
       - 425
 
-  -
-    title: US Navy
+  - title: US Navy&nbsp;
     color: "blue-100"
     widen: true
     dashed: false
