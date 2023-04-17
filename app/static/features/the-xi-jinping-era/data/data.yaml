@@ -952,7 +952,20 @@ chinesePartners:
   - State-owned Enterprises (Investment)
 
 stateOwnedCompanies:
-  - China Civil Engineering Construction Co.(Central Government)
-  - China Harbour Engineering (Central Government)
-  - Metallurgical Corp. of China (China Minmetals/Central Government)
-  - Guangdong Foreign Construction (Guangdong Provincial Government)
+  title: State-owned companies
+  groups:
+    - heading: Central Government
+      items:
+        - name: China Civil Engineering Construction Co.
+          img: ./img/logos/ccecc.png
+        - name: Metallurgical Corp. of China (Minmetals)
+          img: ./img/logos/minmetals.png
+        - name: China Harbour Engineering
+          img: ./img/logos/hec.png
+
+    - heading: Provincial and City Governments
+      items:
+        - name: Guangdong Foreign Construction
+          img: ./img/logos/gdfc.png
+        - name: Shanghai Construction Overseas Engineering
+          img: ./img/logos/scoe.png
