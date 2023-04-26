@@ -96,6 +96,7 @@ politburo:
         rank: 7
         faction: Shanghai
         age: 68
+        class: out
       - img: "./img/politburo-members/wang-huning.jpg"
         name: Wang Huning
         cn: 王沪宁
@@ -110,6 +111,7 @@ politburo:
         rank: 2
         faction: Youth League
         age: 67
+        class: out
       - img: "./img/politburo-members/xi-jinping.jpg"
         name: Xi Jinping
         cn: 习近平
@@ -125,6 +127,7 @@ politburo:
         rank: 3
         faction: Xi loyalist
         age: 72
+        class: out
       - img: "./img/politburo-members/zhao-leji.jpg"
         name: Zhao Leji
         cn: 赵乐际
@@ -134,63 +137,6 @@ politburo:
         age: 65
       - img: "./img/politburo-members/wang-yang.jpg"
         name: Wang Yang
-        cn: 汪洋
-        role: Relations with non&#8209;CCP groups, Taiwan
-        rank: 4
-        faction: Youth League
-        age: 67
-  - years: 2017-2022
-    members:
-      - img: "./img/politburo-members/han-zheng.jpg"
-        name: H̶a̶n̶ ̶Z̶h̶e̶n̶g̶
-        cn: 韩正
-        role: Vice Premier, HK, Macau, Finance, Housing, Environment
-        rank: 7
-        faction: Shanghai
-        age: 68
-        class: out
-      - img: "./img/politburo-members/wang-huning.jpg"
-        name: Wang Huning
-        cn: 王沪宁
-        role: Ideology, Party&nbsp;Affairs
-        rank: 5
-        faction: Xi loyalist
-        age: 67
-        class: in
-      - img: "./img/politburo-members/li-keqiang.jpg"
-        name: L̶i̶ ̶K̶e̶q̶i̶a̶n̶g̶
-        cn: 李克强
-        role: Premier, Head of Government
-        rank: 2
-        faction: Youth League
-        age: 67
-        class: out
-      - img: "./img/politburo-members/xi-jinping.jpg"
-        name: Xi Jinping
-        cn: 习近平
-        role: General Secretary of CCP, President of China
-        rank: 1
-        faction: Xi
-        age: 69
-        class: in
-      - img: "./img/politburo-members/li-zhanshu.jpg"
-        name: L̶i̶ ̶Z̶h̶a̶n̶s̶h̶u̶
-        cn: 栗战书
-        role: National People’s Congress
-        rank: 3
-        faction: Xi loyalist
-        age: 72
-        class: out
-      - img: "./img/politburo-members/zhao-leji.jpg"
-        name: Zhao Leji
-        cn: 赵乐际
-        role: Anti&#8209;corruption
-        rank: 6
-        faction: Xi loyalist
-        age: 65
-        class: in
-      - img: "./img/politburo-members/wang-yang.jpg"
-        name: W̶a̶n̶g̶ ̶Y̶a̶n̶g̶
         cn: 汪洋
         role: Relations with non&#8209;CCP groups, Taiwan
         rank: 4
@@ -248,6 +194,44 @@ politburo:
         role: Anti-corruption
         rank: 7
         faction: Xi loyalist
+        age: 66
+  - years: 2022-2027
+    members:
+      - img: "./img/politburo-members/li-qiang.jpg"
+        name: Li Qiang
+        cn: 韩正
+        role: Vice Premier, HK, Macau, Finance, Housing, Environment
+        age: 63
+      - img: "./img/politburo-members/wang-huning.jpg"
+        name: Wang Huning
+        cn: 王沪宁
+        role: Ideology, Party&nbsp;Affairs
+        age: 67
+      - img: "./img/politburo-members/cai-qi.jpg"
+        name: Cai Qi
+        cn: 李克强
+        role: Secreteriat
+        age: 66
+      - img: "./img/politburo-members/xi-jinping.jpg"
+        name: Xi Jinping
+        cn: 习近平
+        role: General Secretary of CCP, President of China
+        age: 69
+        class: member-xi
+      - img: "./img/politburo-members/ding-xuexiang.jpg"
+        name: Ding Xuexiang
+        cn: 栗战书
+        role: Vice-Premier
+        age: 60
+      - img: "./img/politburo-members/zhao-leji.jpg"
+        name: Zhao Leji
+        cn: 赵乐际
+        role: Anti&#8209;corruption
+        age: 65
+      - img: "./img/politburo-members/li-xi.jpg"
+        name: Li Xi
+        cn: 汪洋
+        role: Anti-corruption
         age: 66
 
 centralCommittee:
