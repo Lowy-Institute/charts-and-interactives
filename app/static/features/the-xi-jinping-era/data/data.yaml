@@ -953,3 +953,17 @@ stateOwnedCompanies:
           img: ./img/logos/gdfc.png
         - name: Shanghai Construction Overseas Engineering
           img: ./img/logos/scoe.png
+
+  SOEStrategicFunctions:
+    - Advance industrial policy
+    - Implement domestic and international initiatives
+    - Serve redistributive function sub-nationally
+    - Support social stability
+    - Tool to manage financial, political, and public health crises
+
+  SOEStateSupport:
+    - Subsidies
+    - Preferential access to credit
+    - Cheaper capital
+    - Land grants
+    - Preferential tax policies
