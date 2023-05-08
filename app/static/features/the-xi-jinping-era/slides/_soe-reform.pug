@@ -1,38 +1,40 @@
 .slide.bg-dk
   .slide-inner.flex-ch(data-view="in-viewport")
     .flex.flex-evenly.flex-col.fh
-      .type.txt-lg.txt-center(
-        data-view="slide, in-viewport"
-        data-duration=1200
+
+      .type.txt-lg.txt-mono.txt-center.mx-auto(
+        data-view="type, in-viewport"
+        data-duration=1000
       )
-        span.line.txt-mono.bg-ff.txt-dk SOE Reform Under Xi Jinping
-      .type.txt-center.pv-md(
-        data-view="slide, in-viewport"
-        data-delay=20
+        .line.bg-ff.txt-dk SOE Reform
+        
+      .type.txt-center.pv-md.fade-inelay-6(
+        data-view="in-viewport, slide"
+        data-delay=500
         data-duration=2000
         style="font-size: 24px; margin: auto"
       )
-        span.line.txt-mono.txt-ff Combines limited steps toward economic 
-        span.line.txt-mono.txt-ff(style="margin-top: 0rem") liberalization with increased political control
+        span.line.txt-mono.txt-ff(data-delay=0) Under Xi Jinping, combines limited steps toward 
+        span.line.txt-mono.txt-ff(data-delay=2000 style="margin-top: 0rem") economic liberalization with increased political control
 
       .features.flex-ch.txt-ff
-        .feature.posr.ph-sm.fade-in.delay-6
+        .feature.posr.ph-sm.fade-in.delay-12
           img.feature-icon.posa(data-src="./img/icons/anti-corruption.png")
           .feature-name.bg-hl.pv-xs.ph-sm
             span.txt-tu.txt-sans.txt-bold Anti-corruption
-        .feature.posr.ph-sm.fade-in.delay-8
+        .feature.posr.ph-sm.fade-in.delay-14
           img.feature-icon.posa(data-src="./img/icons/building.png")
           .feature-name.bg-hl.pv-xs.ph-sm
             span.txt-tu.txt-sans.txt-bold Party building
-        .feature.posr.ph-sm.fade-in.delay-10
+        .feature.posr.ph-sm.fade-in.delay-16
           img.feature-icon.posa(data-src="./img/icons/mixed-ownership.png")
           .feature-name.bg-hl.pv-xs.ph-sm
             span.txt-tu.txt-sans.txt-bold Mixed ownership
-        .feature.posr.ph-sm.fade-in.delay-12
+        .feature.posr.ph-sm.fade-in.delay-18
           img.feature-icon.posa(data-src="./img/icons/state-capital-mgmt.png")
           .feature-name.bg-hl.pv-xs.ph-sm
             span.txt-tu.txt-sans.txt-bold State capital mgmt
-        .feature.posr.ph-sm.fade-in.delay-14
+        .feature.posr.ph-sm.fade-in.delay-20
           img.feature-icon.posa(data-src="./img/icons/merger.png")
           .feature-name.bg-hl.pv-xs.ph-sm
             span.txt-tu.txt-sans.txt-bold Mergers

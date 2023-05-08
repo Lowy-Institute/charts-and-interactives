@@ -1,0 +1,20 @@
+.slide.bg-dk
+  .slide-inner(data-view="in-viewport")
+
+    .type.txt-lg.txt-mono.txt-center.mx-auto(
+      data-view="type, in-viewport"
+      data-duration=1000
+    )
+      .line.bg-ff.txt-dk State Support of SOEs
+
+    .soe-list-item-grid.flex.flex-jcc.txt-ff.flex-wrap(style="margin: 4rem auto 4rem; width: 48rem")
+      for item, i in page.data.SOEStateSupport
+        .list-item.flex.flex-jcc.fade-in(class=`delay-${6 + 3 * (~~((1 + i) / 2))}`)
+          .list-item-num.flex-cv.bg-dk.txt-md.txt-lt.ph-sm: span.txt-dk-mid= (i+1)
+          .list-item-txt.flex-cv.txt-mono.txt-dk.bg-lt.p-xs= item
+
+    .fade-in.delay-16
+      img.feature-icon.txt-center(style="margin: 0 auto" data-src="./img/icons/economic-reform.png")
+
+    .posa.txt-muted.fade-in.delay-16.txt-xs(style="bottom: 0; right: 0")
+      | Credit: Wendy Leutert

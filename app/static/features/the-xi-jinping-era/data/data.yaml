@@ -954,16 +954,16 @@ stateOwnedCompanies:
         - name: Shanghai Construction Overseas Engineering
           img: ./img/logos/scoe.png
 
-  SOEStrategicFunctions:
-    - Advance industrial policy
-    - Implement domestic and international initiatives
-    - Serve redistributive function sub-nationally
-    - Support social stability
-    - Tool to manage financial, political, and public health crises
+SOEStrategicFunctions:
+  - Implement domestic and international initiatives
+  - Advance industrial policy
+  - Support social stability
+  - Serve redistributive function sub-nationally
+  - Manage financial, political, and public health crises
 
-  SOEStateSupport:
-    - Subsidies
-    - Preferential access to credit
-    - Cheaper capital
-    - Land grants
-    - Preferential tax policies
+SOEStateSupport:
+  - Subsidies
+  - Land grants
+  - Cheaper capital
+  - Preferential access to credit
+  - Preferential tax policies
