@@ -1,0 +1,30 @@
+.social-share
+  a.icon.icon-social-facebook(
+    href=[
+      "https://www.facebook.com/sharer.php?u=",
+      encodeURIComponent(page.url),
+    ].join("")
+  )
+  a.icon.icon-social-twitter(
+    href=[
+      "https://twitter.com/share?url=",
+      encodeURIComponent(page.url),
+      "&text=",
+      encodeURIComponent(page.title),
+      "&via=LowyInstitute"
+    ].join("")
+  )
+  a.icon.icon-social-tlinkedin(
+    style="padding:10px;"
+    href=[
+      "https://linkedin.com/shareArticle?url=",
+      encodeURIComponent(page.url),
+      "&title=",
+      encodeURIComponent(page.title),
+      "&via=LowyInstitute"
+    ].join("")
+  )
+    svg(xmlns="http://www.w3.org/2000/svg" data-name="LinkedIn" viewBox="0 0 18 18")
+      g
+        path(fill='#fff' d="M 0.390625 6.007812 L 4.078125 6.007812 L 4.078125 17.863281 L 0.390625 17.863281 Z M 2.234375 0.113281 C 3.414062 0.113281 4.371094 1.070312 4.371094 2.253906 C 4.371094 3.429688 3.414062 4.390625 2.234375 4.390625 C 1.054688 4.390625 0.0976562 3.429688 0.0976562 2.253906 C 0.0976562 1.070312 1.054688 0.113281 2.234375 0.113281 ")
+        path(fill='#fff' d="M 6.390625 6.007812 L 9.921875 6.007812 L 9.921875 7.628906 L 9.972656 7.628906 C 10.464844 6.695312 11.667969 5.714844 13.460938 5.714844 C 17.191406 5.714844 17.882812 8.167969 17.882812 11.363281 L 17.882812 17.863281 L 14.199219 17.863281 L 14.199219 12.097656 C 14.199219 10.722656 14.171875 8.957031 12.28125 8.957031 C 10.363281 8.957031 10.070312 10.453125 10.070312 12 L 10.070312 17.863281 L 6.390625 17.863281 Z M 6.390625 6.007812 ")

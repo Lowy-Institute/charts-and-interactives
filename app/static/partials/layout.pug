@@ -3,7 +3,7 @@ include mixins
 block config
   - var page = {};
   - page.includeFonts = true
-  - page.description  = "Lowy Institute Charts";
+  - page.description  = "Lowy Institute charts & interactives";
   - page.style        = {};
   - page.author       = "Lowy Institute";
   - page.copyright    = `${page.author} ${(new Date().getFullYear())}`
@@ -30,16 +30,28 @@ html.no-js(lang="en")
       meta(name="title"               content=page.metaTitle)
       meta(name="twitter:title"       content=page.metaTitle)
       meta(name="description"         content=page.metaDescription)
-      meta(name="og:description"      content=page.metaDescription)
       meta(name="twitter:description" content=page.metaDescription)
-      meta(name="og:site_name"        content="Lowy Institute – Charts & More")
+      meta(name="og:site_name" property="og:site_name" content="Lowy Institute – charts & interactives")
       meta(name="author"              content=page.author)
       meta(name="copyright"           content=page.copyright)
       meta(name="robots"              content=page.robots)
+      meta(name="og:description" property="og:description" content=page.metaDescription)
+      meta(name="og:title" property="og:title" content=page.metaTitle)
+      meta(
+        name="og:url"
+        property="og:url"
+        content=[
+        "https://interactives.lowyinstitute.org/",
+          __.filepath
+            .replace("app/static/", "")
+            .replace("index.pug", "")
+            .replace(".pug", ".html")
+        ].join("")
+      )
 
       if page.image
         meta(name="twitter:card"  content="summary_large_image")
-        meta(name="og:image"      content=page.image)
+        meta(name="og:image" property="og:image"  content=page.image)
         meta(name="twitter:image" content=page.image)
 
       meta(http-equiv="content-type" content="text/html;UTF-8")

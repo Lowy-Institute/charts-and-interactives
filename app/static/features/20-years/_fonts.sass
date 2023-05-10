@@ -1,0 +1,27 @@
+=font-face($name, $path, $fweight, $fstyle: normal, $fdisplay: block)
+  $path: "https://charts.lowyinstitute.org/fonts/#{$path}"
+  $types: (woff2) (woff) (ttf, truetype)
+  $source: ()
+
+  @each $type in $types
+    $ext: nth($type, 1)
+    $format: nth($type, length($type))
+    $source: $source, unquote('url("#{$path}.#{$ext}") format("#{$format}")')
+
+  @font-face
+    font-family: $name
+    src: $source
+    font-weight: $fweight
+    font-style: $fstyle
+    font-display: $fdisplay
+
++font-face($font-sans, "antipode/AntipodeSans-NormalLight", 300, normal, swap)
++font-face($font-sans, "antipode/AntipodeSans-NormalRegular", 400)
++font-face($font-sans, "antipode/AntipodeSans-NormalSemiBold", 600)
++font-face($font-sans, "antipode/AntipodeSans-NormalSemiBoldItalic", 600, italic, swap)
++font-face($font-sans, "antipode/AntipodeSans-NormalBold", 700, normal, swap)
+
+// +font-face($font-sans, "william/William-LightItalic", 300, italic, swap)
+// +font-face($font-wide, "antipode/AntipodeSans-ExpandedRegular", 400, italic, swap)
++font-face($font-cond, "antipode/AntipodeSans-CondensedRegular", 400)
++font-face($font-semi, "antipode/AntipodeSans-SemiCondensedRegular", 400)

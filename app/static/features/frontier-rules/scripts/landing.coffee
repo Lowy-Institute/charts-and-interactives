@@ -63,7 +63,7 @@ $(document).ready =>
       if dy is my
         add scrollbtns[1], "disabled"
     
-    scrollbtns[0].onclick = () -> scroll.scrollTo qs("#slide-2"), {duration: 4500, easing: [0.1,0.75,0.9,0.25]}
+    scrollbtns[0].onclick = () -> scroll.scrollTo qs("#slide-2"), {duration: 1500}
     scrollbtns[1].onclick = () -> scroll.scrollTo qs("#slide-3"), {duration: 500}
     
     scrollbtn.onclick = () -> scroll.scrollTo qs("#slide-3"), {duration: 500}

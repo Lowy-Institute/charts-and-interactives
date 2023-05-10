@@ -82,3 +82,8 @@ app/static/features/the-xi-jinping-era/interpreter/_slides.pug
 app/static/features/the-xi-jinping-era/interpreter/_slides.pug
 app/static/features/the-xi-jinping-era/interpreter/_slides.pug
 app/static/features/the-xi-jinping-era/interpreter/index.pug
+app/static/charts/api/2022/3-us-china-spider/index.pug
+app/static/features/frontier-rules/index2.pug
+app/static/features/frontier-rules/scripts/landing.coffee
+app/static/features/frontier-rules/scripts/landing.coffee
+app/static/charts/api/2022/3-us-china-spider/index.pug
