@@ -225,12 +225,25 @@ blockquote
   padding: 0 1rem
 
   & p
-    margin-bottom: .5rem
+    line-height: 1.2
+    margin-bottom: 1rem
+    text-align: left
 
-cite
-  font-style: normal
-  text-transform: uppercase
-  text-align: right
+  & cite
+    font-style: normal
+    text-transform: uppercase
+    text-align: left
+    display: block
+
+  &.right
+    border-left: 0
+    border-right: 2px solid $color-hl
+
+    & p
+      text-align: right
+
+    & cite
+      text-align: right
 
 svg, img
   margin: auto
