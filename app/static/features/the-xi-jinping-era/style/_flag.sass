@@ -1,0 +1,33 @@
+.flag
+  position: absolute
+  width: 1120px
+  height: 520px
+  z-index: -1
+  top: 65px
+  left: -338px
+  background: url(./img/background/flag-base.png)
+  background-size: 200% 100%
+  background-position: 0 0
+  animation: wave 4s infinite linear
+  transition: height 2.0s 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  opacity: 0.5
+
+  &:before
+    content: ""
+    position: absolute
+    top: 20px
+    left: 0
+    right: 0
+    bottom: 20px
+    background: url(./img/background/flag-xi.png)
+    background-size: 70%
+    background-position: 50% -10%
+    animation: rise 2s -1.9s infinite alternate cubic-bezier(0.445, 0.050, 0.550, 0.950)
+    transform: translateY(3px) skewY(3deg)
+    background-repeat: no-repeat
+    opacity: 0.4
+
+  .cite
+    position: absolute
+    top: 424px
+

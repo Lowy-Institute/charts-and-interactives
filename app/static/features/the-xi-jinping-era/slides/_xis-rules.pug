@@ -1,6 +1,6 @@
 .slide.bg-dk
   .slide-inner.flex-cv.txt-center(
-    data-view="in-viewport, page" data-pages=2
+    data-view="in-viewport, page" data-pages=1
   )
     .fade-in.txt-mono
       .bg-l.txt-xl.txt-ff.ph-lg(style="margin-bottom: 0rem")
@@ -8,8 +8,7 @@
     
     .flex-col.txt-ff.txt-sans.txt-tu.fade-in.txt-bold.txt-sm.flex-grow(
       data-attributes=[
-        {style: "transform: translate3d(0, 40px, 0); font-size: 20px"},
-        {style: "opacity:0; transform: translate3d(0, 20px, 0); font-size: 20px"}
+        {style: "transform: translate3d(0, 40px, 0); font-size: 20px"}
       ]
     )
       for row, i in page.data.rules
@@ -22,29 +21,6 @@
               )
             )!= v
 
-    .posa.fw.txt-md.txt-dk.fade-in.txt-mono
-      .fade-in.pv-sm(
-        data-attributes=[
-          {style: "transform: translate3d(0, 80px, 0); opacity: 0;"},
-          {style: "transform: translate3d(0, 40px, 0);"}
-        ]
-      )
-        .line.bg-ff.ph-sm.mx-auto
-          .line-bg 
-          | “China's reform and opening-up will
-        .line.bg-ff.ph-sm.mx-auto
-          .line-bg 
-          | continue to move on. The Yellow River
-        .line.bg-ff.ph-sm.mx-auto
-          .line-bg 
-          | and Yangtze River will not flow backward.”
-
-        .fade-in.txt-ff.txt-sm.txt-center.pv-sm(
-          data-attributes=[
-            {style: "opacity: 0;"},
-            {style: "transition-delay: 400ms"},  
-          ]
-        )
-          | Li Keqiang, August, 2022
+    
 
           

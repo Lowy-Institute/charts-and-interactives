@@ -1,13 +1,29 @@
 .slide.bg-dk
   .posr.fw.fh.flex(data-view="in-viewport")
     .slide-inner
-      .flex-col
-        .mx-auto.txt-ff.txt-lg.txt-mono
-          for headline, i in page.data.sit
-            .flex.fade-up(class="delay-" + (i + 2))
-              div(
-                data-view="type, in-viewport"
-                data-duration=1200
-                data-delay=(i * 200)
-              )
-                .line(class=(i ? "bg-ff txt-dk txt-md" : "bg-hl txt-ff txt-lg") style=(i ? "margin: .5rem 0;  font-size: 28px" : "margin: .5rem 0 1.5rem 0"))!= headline
+      .flex-col(style="gap: 3rem")
+        .fade-in.txt-mono.type(
+          data-view="slide, in-viewport"
+          data-duration=1800
+        )
+            span.line.bg-hl.txt-lg.txt-ff.ph-sm= page.data.stateOwnedCompanies.title
+        
+        for group, i in page.data.stateOwnedCompanies.groups
+          .txt-ff.txt-mono.txt-sm.flex-col
+            .type(data-view="slide, in-viewport" data-delay=200)
+              strong.line.txt-tu.txt-sans.bg-lt.txt-dk(style="line-height: 1.5; font-size: 24px")= group.heading
+            .flex.pv-sm.ph-sm(style="gap: 2rem;")
+              for item, j in group.items
+                .flex-ch.pv-sm(style="width: 320px; line-height: 1.3; gap: 1rem")
+                  img.fade-up(
+                    width="50"
+                    src=item.img
+                    alt=(item + " logo.")
+                    class="delay-" + (7 + i)
+                    data-duration=1200
+                  )
+                  .fade-up(
+                      class="delay-" + (7 + i)
+                      data-duration=1200
+                    )
+                      != item.name
