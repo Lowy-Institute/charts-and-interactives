@@ -197,42 +197,42 @@ politburo:
         age: 66
   - years: 2022-2027
     members:
-      - img: "./img/politburo-members/li-qiang.jpg"
-        name: Li Qiang
-        cn: 韩正
-        role: Vice Premier, HK, Macau, Finance, Housing, Environment
-        age: 63
-      - img: "./img/politburo-members/wang-huning.jpg"
-        name: Wang Huning
-        cn: 王沪宁
-        role: Ideology, Party&nbsp;Affairs
-        age: 67
-      - img: "./img/politburo-members/cai-qi.jpg"
-        name: Cai Qi
-        cn: 李克强
-        role: Secreteriat
-        age: 66
-      - img: "./img/politburo-members/xi-jinping.jpg"
-        name: Xi Jinping
-        cn: 习近平
-        role: General Secretary of CCP, President of China
-        age: 69
-        class: member-xi
-      - img: "./img/politburo-members/ding-xuexiang.jpg"
-        name: Ding Xuexiang
-        cn: 栗战书
-        role: Vice-Premier
-        age: 60
-      - img: "./img/politburo-members/zhao-leji.jpg"
-        name: Zhao Leji
-        cn: 赵乐际
-        role: Anti&#8209;corruption
-        age: 65
       - img: "./img/politburo-members/li-xi.jpg"
         name: Li Xi
         cn: 汪洋
         role: Anti-corruption
         age: 66
+      - img: "./img/politburo-members/wang-huning.jpg"
+        name: Wang Huning
+        cn: 王沪宁
+        role: Chinese People's Political Consultative Conference (United Front)
+        age: 67
+      - img: "./img/politburo-members/li-qiang.jpg"
+        name: Li Qiang
+        cn: 韩正
+        role: Premier, Head of Government
+        age: 63
+      - img: "./img/politburo-members/xi-jinping.jpg"
+        name: Xi Jinping
+        cn: 习近平
+        role: General Secretary of the CCP, President, Chair of Military Commission
+        age: 69
+        class: member-xi
+      - img: "./img/politburo-members/zhao-leji.jpg"
+        name: Zhao Leji
+        cn: 赵乐际
+        role: National People's Congress
+        age: 65
+      - img: "./img/politburo-members/cai-qi.jpg"
+        name: Cai Qi
+        cn: 李克强
+        role: Head of the General Office (Chief of Staff)
+        age: 66
+      - img: "./img/politburo-members/ding-xuexiang.jpg"
+        name: Ding Xuexiang
+        cn: 栗战书
+        role: Vice-Premier, Economy, Hong Kong and Macau
+        age: 60
 
 centralCommittee:
   - Top party and government officials
@@ -958,7 +958,7 @@ SOEStrategicFunctions:
   - Implement domestic and international initiatives
   - Advance industrial policy
   - Support social stability
-  - Serve redistributive function sub-nationally
+  - Help internal redistribution
   - Manage financial, political, and public health crises
 
 SOEStateSupport:
