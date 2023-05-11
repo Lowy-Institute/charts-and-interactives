@@ -413,7 +413,6 @@ strong, .txt-tu, .caption
 
 .logo-block
     margin: auto auto
-    /* height: 15vh
     vertical-align: middle
     width: 50vw
 
@@ -636,6 +635,16 @@ strong, .txt-tu, .caption
     display: flex
     float: right
 
+  .pager
+    margin: auto
+    width: -moz-fit-content
+    width: fit-content
+    position: absolute
+    transform: none
+    left: 0
+    right: 0
+    bottom: 0;
+
   .row-sm
     flex-direction: column
 
@@ -693,8 +702,8 @@ strong, .txt-tu, .caption
       mix-blend-mode: normal
       border-color: rgba($color-dk, 0.1)
 
-  .page-0 #header
-    opacity: 1
+  /* .page-0 #header
+  /*  opacity: 1
 
   #header
     line-height: 72px
@@ -702,6 +711,10 @@ strong, .txt-tu, .caption
 
     .header-logo
       padding: 16px 0
+      width: 172px
+
+  .logo-block
+    width: 72vw
 
   #footer
     line-height: 40px
@@ -742,7 +755,7 @@ strong, .txt-tu, .caption
 
   .row,
   .container
-    padding: 0 8px
+    padding: 0 12px
 
 @keyframes prompt
   to
