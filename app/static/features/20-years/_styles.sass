@@ -261,12 +261,27 @@ svg, img
 #bligh-st path,
 #bligh-st-upper path,
 #bligh-st-lower path
-  fill: rgba(255,255,255,.8)
+  fill: $blue-light
   stroke: $blue-lowy
   stroke-width: .5px
 
-#bligh-st #street path
-    fill: rgba(255,255,255,1)
+#bligh-st #street path,#bligh-st #door path
+    fill: $color-ff
+
+@keyframes recolorAnimation
+  0%
+    opacity: 0
+    transform: translateY(3rem)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+.recolor
+  opacity: 0
+  animation: recolorAnimation 1s ease-in
+  animation-delay: 3s
+  animation-fill-mode: forwards
+
 
 body
   font-family: $font-sans, sans-serif
@@ -378,7 +393,7 @@ strong, .txt-tu, .caption
     line-height: 40px
     border-radius: 20px
     display: inline-block
-    border: 1px solid white
+    /* border: 1px solid mix($color-ff, $blue-light)
     color: $color-ff
     background-color: $color-dk
     margin: auto
@@ -386,13 +401,17 @@ strong, .txt-tu, .caption
     transition: background-color 300ms
 
     @media (color-gamut: p3)
-      background-color: $color-dk
+      background-color: $blue-light
 
     + .icon
       margin-left: 8px
 
     &:hover
-      border: 0px solid white
+      border: 1px solid $color-ff
+      background-color: $color-dk
+
+    &:active
+      border: 1px solid $color-hl
 
 #header,
 #footer
@@ -655,7 +674,7 @@ strong, .txt-tu, .caption
       width: 100%
 
   #img-interpreter
-    width: 240px
+    width: 180px
     margin-top: -24px
     object-fit: contain
 
@@ -757,6 +776,9 @@ strong, .txt-tu, .caption
   .row,
   .container
     padding: 0 12px
+
+  .social-share .icon
+    background-color: mix($blue-lowy,$blue-light)
 
 @keyframes prompt
   to
