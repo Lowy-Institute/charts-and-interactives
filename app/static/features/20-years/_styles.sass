@@ -3,6 +3,7 @@ $color-hl: #ffc52c
 $color-dk: transparent
 $color-lt: #e1dbd6
 $color-ff: #fff
+$color-0: #000
 $muted: #969ba4
 $blue-dark: #001525
 $blue-lowy: #002b45
@@ -445,7 +446,7 @@ strong, .txt-tu, .caption
   width: -moz-fit-content
   width: fit-content
   position: absolute
-  transform: rotate(90deg)
+  transform: rotate(90deg) scale3d(1.3, 1.3, 1.3)
   right: -5vw
   bottom: 50vh;
 
@@ -563,9 +564,11 @@ strong, .txt-tu, .caption
     width: auto
     padding: 0 0.75em
     background-color: $color-hl
+    color: $color-0
 
     &:hover
       background-color: $color-dk
+      color: $color-ff
 
     strong
       vertical-align: top
