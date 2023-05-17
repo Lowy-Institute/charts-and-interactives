@@ -1,0 +1,23 @@
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2595.9 1392.3">
+  <defs>
+    <pattern id="img1" patternUnits="objectBoundingBox" width="1" height="1">
+    <image href="./img/bill-gates.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+    </pattern>
+    <pattern id="img2" patternUnits="objectBoundingBox" width="1" height="1">
+    <image href="./img/angela-merkel.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+    </pattern>
+    <pattern id="img3" patternUnits="objectBoundingBox" width="1" height="1">
+    <image href="./img/afghan.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+    </pattern>
+  </defs>
+  <g id="laptop">
+    <rect class="cls-1" x="338.8" y=".5" width="1921.4" height="1375" rx="26.2" ry="26.2"/>
+    <path id="screen" class="" d="M358 23.2h1883v1262.6H358z" fill="url(#img1)"/>
+    <path d="M1699 0h536c17 0 32 15 32 32v1324c0 17-568-1356-568-1356Z" style="fill:#fff;opacity:.2"/>
+    <path class="cls-1" d="M.7 1351.2c8.3 20.9 136.2 40.6 192.5 40.6h2198c56.3 0 195.7-19.7 204-40.6H.7ZM.7 1348.4h2594.5v2.8H.7z"/>
+    <path class="cls-1" d="M.7 1340.1h2594.5v10.3H.7zM2589.8 1338H6.1c-2.2 0-5.1.9-5.4 2.1h2594.5c-.3-1.2-3.2-2.1-5.4-2.1Z"/>
+    <path class="cls-1" d="M1591.7 1335.2h-587.6c-8.5 0-18.3-.4-18.3 4.6v13.1c4.2 8.9 26 10 40.1 10h543.9c14.2 0 36.2-1.1 40.5-10v-13.1c0-5-10-4.6-18.5-4.6Z"/>
+    <path class="cls-1" d="M1591.4 1335.4h-587.1c-8.5 0-18.3-.4-18.3 4.5v12.8c4.2 8.7 26 9.8 40.1 9.8h543.5c14.2 0 36.2-1.1 40.5-9.8v-12.8c0-4.9-9.9-4.5-18.5-4.5Z"/>
+    <path class="cls-1" d="M985.7 1339.2h624.5v1.2H985.7z"/>
+  </g>
+</svg>

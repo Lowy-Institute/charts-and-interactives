@@ -145,6 +145,9 @@ body,
   width: 100%
   box-shadow: 0 0 40px rgba(0,0,0,.2)
 
+.gallery
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2)
+
 .frame
   position: relative
   z-index: 1
@@ -157,30 +160,33 @@ $font-cond: "Antipode Cond"
 $line-height: calc(32/24)
 // $font-size: 18px
 
+h1
+  font-weight: 200
+
 .txt-xxl
-  font-size: 120px
+  font-size: 80px
   line-height: 0.875
   font-weight: 100
   letter-spacing: 0.04em
   font-family: $font-sans, sans-serif
 .txt-xl
-  font-size: 80px
+  font-size: 64px
   line-height: 1
   font-family: $font-sans, sans-serif
   font-weight: 100
   margin: -4px 0 4px
 .txt-title
-  font-size: 64px
+  font-size: 48px
   line-height: 1
   letter-spacing: -0.02em
   font-weight: 200
 .txt-lg
-  font-size: 40px
+  font-size: 36px
   line-height: inherit
   letter-spacing: 0.007em
   margin: -4px 0 4px
 .txt-md
-  font-size: 32px
+  font-size: 28px
   line-height: inherit
 .txt-sm
   font-size: 14px
@@ -211,7 +217,7 @@ a
   transition: color 300ms
   color: $color-hl
   text-decoration-thickness: 1px
-  text-underline-offset: 7px
+  text-underline-offset: 6px
 
   &:hover,
   &:focus
@@ -259,6 +265,59 @@ svg, img
   width: 100%
   height: 100%
 
+#laptop rect,#laptop path
+  opacity: 0
+
+.page-7
+  #laptop rect,#laptop path
+    fill: none
+    stroke:#fff
+    stroke-miterlimit: 10
+    animation: 4s forwards
+    transition: all 2000ms
+    opacity: 1
+
+  #laptop #screen
+    animation: changeBackground 12s ease infinite
+
+  @keyframes changeBackground
+    0%
+      fill: url(#img1)
+      opacity: 0
+    5%
+      opacity: 1
+    30%
+      opacity: 1
+    50%
+      fill: url(#img2)
+      opacity: 1
+    75% 
+      fill: url(#img2)
+      opacity: 1
+    100%
+      fill: url(#img3)
+      opacity: 0
+
+  @keyframes delayzAnimation
+    0%
+      opacity: 0
+      transform: translateY(3rem)
+    100%
+      opacity: 1
+      transform: translateY(0)
+
+  .delayz
+    opacity: 0
+    animation: delayzAnimation 1s ease-in
+    animation-delay: 1s
+    animation-fill-mode: forwards
+
+  .delayz:nth-child(2)
+    animation-delay: 2s
+
+  .delayz:nth-child(3)
+    animation-delay: 3s
+
 #bligh-st path,
 #bligh-st-upper path,
 #bligh-st-lower path
@@ -266,16 +325,28 @@ svg, img
   stroke: $blue-lowy
   stroke-width: .5px
 
-#bligh-st #street path,#bligh-st #door path
-    fill: $color-ff
+.page-12
+  #bligh-st path,
+  #bligh-st-upper path,
+  #bligh-st-lower path
+    animation: changeColor1 4s forwards
 
-@keyframes recolorAnimation
-  0%
-    opacity: 0
-    transform: translateY(3rem)
-  100%
-    opacity: 1
-    transform: translateY(0)
+  @keyframes changeColor1
+    0%
+      fill: $blue-light
+    100%
+      fill: mix($color-ff, $blue-light)
+
+.page-12
+  #bligh-st #street path,
+  #bligh-st #door path
+    animation: changeColor2 5s forwards
+
+  @keyframes changeColor2
+    0%
+      fill: $blue-light
+    100%
+      fill: $color-ff
 
 .recolor
   opacity: 0
@@ -283,12 +354,147 @@ svg, img
   animation-delay: 3s
   animation-fill-mode: forwards
 
+/* image gallery animation
+
+@keyframes image1-animation
+  0%
+    transform: translate3d(0, 0, 0)
+  50%
+    transform: translate3d(200px, -10px, 0)
+  100%
+    transform: translate3d(400px, 10px, 0)
+  
+@keyframes image2-animation 
+  0%
+    transform: translate3d(0)
+  100%
+    transform: translate3d(-400px,0,0)
+
+@keyframes image3-animation
+  0%
+    transform: translate3d(0)
+  50%
+    transform: translate3d(100px, 10px, 0)
+  100%
+    transform: translate3d(200px, -10px, 0)
+
+.scroll-container .flex img:nth-child(1) 
+  animation: image1-animation 30s infinite alternate
+  animation-timing-function: ease-in-out
+
+.scroll-container .flex img:nth-child(2)
+  animation: image2-animation 60s infinite alternate
+  animation-timing-function: ease-in-out
+
+.scroll-container .flex img:nth-child(3)
+  animation: image3-animation 45s infinite alternate
+  animation-timing-function: ease-in-out
+
+/* ends
+
+.box .layer:nth-child(4),
+.box .layer:nth-child(3),
+.box .layer:nth-child(2),
+.box .layer:nth-child(1)
+  animation: none
+
+.box
+  position: relative
+  width: 640px
+  height: 375px
+  margin-top: 220px
+  background: rgba(0, 0, 0,.1)
+  transform: rotate(-30deg) skew(25deg) scale(0.8)
+
+.layer
+  background: url('./img/api.png') no-repeat
+  background-size: contain
+  position: absolute
+  top: 0
+  left: 0
+  display: block
+  width: 100%
+  height: 100%
+  transition: 0.5s
+
+@keyframes layerAnimation
+  0%
+    transform: translate(0, 0)
+    opacity: 0
+  100%
+    transform: translate(200px, -200px)
+    opacity: 1
+
+.page-7 .box .layer:nth-child(4)
+  background: url('./img/api.png') no-repeat
+  background-size: contain  
+  animation: layerAnimation 0.8s ease-in-out forwards
+
+@keyframes layerAnimation2
+  0%
+    transform: translate(0, 0)
+    opacity: 0
+  100%
+    transform: translate(150px, -150px)
+    opacity: 0.8
+
+.page-7 .box .layer:nth-child(3)
+  background: url('./img/poll.png') no-repeat
+  background-size: contain
+  animation: layerAnimation2 0.8s ease-in-out forwards
+
+@keyframes layerAnimation3
+  0%
+    transform: translate(0, 0)
+    opacity: 0
+  100%
+    transform: translate(100px, -100px)
+    opacity: 0.6
+
+.page-7 .box .layer:nth-child(2)
+  background: url('./img/gdi.png') no-repeat
+  background-size: contain
+  animation: layerAnimation3 0.8s ease-in-out forwards
+
+@keyframes layerAnimation4
+  0%
+    transform: translate(0, 0)
+    opacity: 0
+  100% 
+    transform: translate(50px, -50px)
+    opacity: 0.4
+
+.page-7 .box .layer:nth-child(1)
+  background: url('./img/pam.png') no-repeat
+  background-size: contain
+  animation: layerAnimation4 0.8s ease-in-out forwards
+
+/*  .box:hover .layer:nth-child(4)
+/*    background: url('./img/api.png') no-repeat
+/*    transform: translate(200px, -200px)
+/*    opacity: 1
+/*
+/*  .box:hover .layer:nth-child(3)
+/*    background: url('./img/poll.png') no-repeat
+/*    transform: translate(150px, -150px)
+/*    opacity: 0.8
+/*
+/*  .box:hover .layer:nth-child(2)
+/*    background: url('./img/gdi.png') no-repeat
+/*    transform: translate(100px, -100px)
+/*    opacity: 0.6
+/*
+/*  .box:hover .layer:nth-child(1)
+/*    background: url('./img/pam.png') no-repeat
+/*    transform: translate(50px, -50px)
+/*    opacity: 0.4
+
 
 body
   font-family: $font-sans, sans-serif
   text-align: center
   overflow: hidden
-  font-size: 24px
+  font-size: 22px
   font-weight: 300
   text-rendering: geometricPrecision
   display: flex
@@ -617,7 +823,7 @@ strong, .txt-tu, .caption
 #map-australia path
   fill: $color-hl
 
-.page-3
+.page-2
   #map-surrounds,
   #map-australia
     transition: transform 5000ms
@@ -701,7 +907,7 @@ strong, .txt-tu, .caption
     font-size: 18px
 
   a
-    text-decoration-thickness: .5px
+    text-decoration-thickness: 1px
     text-underline-offset: 3px
 
   /* .row, .row + .row
