@@ -41,7 +41,9 @@ block page
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
+            // add extra gridlines..
             svg(height="100%")
+              // ..vertical dotted lines added..
               for n, i in new Array(steps)
                 - y = (i / steps)
                 svg
@@ -53,6 +55,8 @@ block page
                     stroke="#5552"
                     stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
                   )
+              
+              // ..horizontal dotted lines added.
               line.tt-line(x1="5.33%" y1="0%" x2="5.33%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
               line.tt-line(x1="14.22%" y1="0%" x2="14.22%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
               line.tt-line(x1="23.11%" y1="0%" x2="23.11%" y2="100%" stroke="#5553" stroke-width="1" stroke-dasharray="5" style="opacity: 1;")
@@ -93,7 +97,8 @@ block page
             )
 
             // SERIES LINES
-            //for item, i in chart.series
+            // removed to leave points without joining line
+            // for item, i in chart.series
               if i
                 polyline(
                   fill="none"
@@ -109,7 +114,7 @@ block page
                     ].join(" ");
                   })).join(",")
                 )
-
+          // manual lines added to join two sets of data points
           g
             line.tt-line(x1="5.33%" y1="63.00%" x2="5.33%" y2="37.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
             line.tt-line(x1="14.22%" y1="69.00%" x2="14.22%" y2="31.00%" stroke="#000" stroke-width="2" stroke-dasharray="0" style="opacity: 1;")
