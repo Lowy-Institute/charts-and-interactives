@@ -1,6 +1,6 @@
 .container
   footer#footer
-    .scroll-prompt.txt-sm.txt-tu.txt-lt Scroll down to start
+    .scroll-prompt.txt-sm.caption Scroll down to start
 
     include social
 
@@ -11,7 +11,7 @@
         span.pager-page-end
 
       ul.pager-list
-        for item, i in new Array(14)
+        for item, i in new Array(15)
           li.pager-item
             a.pager-link(href=`#scroll-item-${i + 1}` tabindex="0")
 

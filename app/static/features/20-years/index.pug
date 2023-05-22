@@ -19,7 +19,7 @@ block page
     data-pager=".pager-page" 
     data-index=".pager-index"
     data-min="1"
-    data-max="14"
+    data-max="15"
   )
     +item("intro")
       include partials/slides/intro
@@ -51,6 +51,8 @@ block page
       include partials/slides/13
     +item(14)
       include partials/slides/14
+    +item(15)
+      include partials/slides/15
     +item("outro")
       include partials/slides/outro
 
@@ -59,9 +61,6 @@ block page
 block append css
   style
     include:sass _styles.sass
-
-
-
 
 block append scripts
   script

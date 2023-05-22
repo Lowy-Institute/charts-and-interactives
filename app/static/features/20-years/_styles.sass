@@ -145,9 +145,6 @@ body,
   width: 100%
   box-shadow: 0 0 40px rgba(0,0,0,.2)
 
-.gallery
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2)
-
 .frame
   position: relative
   z-index: 1
@@ -237,6 +234,7 @@ blockquote
     line-height: 1.2
     margin-bottom: 1rem
     text-align: left
+    padding: 0 3rem 0 0
 
   & cite
     font-style: normal
@@ -250,6 +248,8 @@ blockquote
 
     & p
       text-align: right
+      padding: 0 0 0 3rem
+      pa
 
     & cite
       text-align: right
@@ -325,7 +325,8 @@ svg, img
   stroke: $blue-lowy
   stroke-width: .5px
 
-.page-14
+.page-14,
+.page-16
   #bligh-st path,
   #bligh-st-upper path,
   #bligh-st-lower path
@@ -337,7 +338,8 @@ svg, img
     100%
       fill: mix($color-ff, $blue-light)
 
-.page-14
+.page-14,
+.page-16
   #bligh-st #street path,
   #bligh-st #door path
     animation: changeColor2 5s forwards
@@ -469,6 +471,18 @@ svg, img
   background-size: contain
   animation: layerAnimation4 0.8s ease-in-out forwards
 
+/* .box .layer .label
+/*   position: absolute
+/*   left: 0
+/*   top: 0
+/*   margin: -1.5em -4em -2em
+/*   border-bottom: 1px solid white;
+/*   padding-right: 1em
+/*   transform: rotate(30deg) skew(-25deg) scale(0.8)
+/* 
+/* .box .layer .label:hover
+/*   color: $color-hl
+
 /*  .box:hover .layer:nth-child(4)
 /*    background: url('./img/api.png') no-repeat
 /*    transform: translate(200px, -200px)
@@ -572,20 +586,106 @@ strong, .txt-tu, .caption
   .social-share
     display: none
 
+/* donut chart */
 
+.page-13
+  .svg-item
+    width: 90%
+    animation: donutfade 1s
+
+  .donut-ring
+    stroke: $blue-dark
+
+  .donut-segment-1
+    stroke: lighten($blue-dark, 10)
+    animation: donut1 3s forwards
+
+  .donut-segment-2
+    stroke: $blue-light
+    animation: donut2 3s forwards
+
+  .donut-segment-3
+    stroke: $color-hl
+    animation: donut3 3s forwards
+
+  .donut-segment-4
+    stroke: lighten($color-hl,10)
+    animation: donut4 3s forwards
+
+  .pie-label
+    animation: donutfade 3s forwards
+
+  @keyframes donutfade
+    0%
+      opacity: 0
+    75%
+      opacity: 0
+    100%
+      opacity: 1
+
+  @keyframes donut1
+    0%
+      stroke-dasharray: 0, 100
+    100%
+      stroke-dasharray: 99, 1
+  @keyframes donut2
+    0%
+      stroke-dasharray: 0, 100
+    100%
+      stroke-dasharray: 98, 2
+  @keyframes donut3
+    0%
+      stroke-dasharray: 0, 100
+    100%
+      stroke-dasharray: 63, 37
+  @keyframes donut4
+    0%
+      stroke-dasharray: 0, 100
+    100%
+      stroke-dasharray: 47, 53
+
+.donut .pie-label-text
+  font-size: 0.1em
+  fill: #fff
+  text-transform: uppercase
+  letter-spacing: 0.06em
+
+.donut .pie-label-stroke
+  stroke: #fff
+  stroke-width: .2
+  fill: none
+  filter: drop-shadow(0.1px 1px 0.3px rgba(0, 0, 0, 0.4))
+
+/* donut ends */
+
+
+
+.fade-in
+  opacity: 0
+  transition: none
+
+  .visible &
+    transition-duration: 1200ms
+    transition-property: all
+    opacity: 1
+
+@for $i from 0 through 30
+  .delay-#{$i}
+    transition-delay: ($i * 200ms)
 
 #footer
   line-height: 64px
   height: 64px
 
   .scroll-prompt
-    float: left
+    /* float: left
     transition: opacity 300ms
     opacity: 0
     animation: prompt 3s infinite linear alternate
+    font-weight: 200
 
     .page-0 &
-      opacity: 1
+      opacity: .5
 
   .social-share
     float: right
@@ -654,7 +754,7 @@ strong, .txt-tu, .caption
   position: absolute
   transform: rotate(90deg) scale3d(1.3, 1.3, 1.3)
   right: -5vw
-  bottom: 50vh;
+  bottom: 50vh
 
   .pager-page
     position: absolute
@@ -665,8 +765,7 @@ strong, .txt-tu, .caption
     z-index: 1
     transition: opacity 300ms
 
-    .page-0 &,
-    .page-13 &
+    .page-0 &
       opacity: 0
 
     .pager-page-start,
@@ -819,6 +918,9 @@ strong, .txt-tu, .caption
   path
     opacity: 0
     fill: $color-ff
+
+#map-surrounds:before
+  background: linear-gradient(to bottom, #0c213a, rgba(12, 33, 58, 0))
 
 #map-australia path
   fill: $color-hl
