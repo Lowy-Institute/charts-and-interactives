@@ -132,7 +132,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = ser + " held " + val + " bilateral or trilateral meetings.";
+        tooltip.innerHTML = ser + " held " + val + " bilateral or trilateral meetings with the United States.";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -162,7 +162,7 @@ block append css
         top: 20px
         left: 50px
         right: 20px
-        bottom: 40px
+        bottom: 80px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb
@@ -234,18 +234,22 @@ block append css
       .chart-content:hover .chart-value
         opacity: 1
 
+      .x-label text
+        text-anchor: end
+        transform: rotate(-45deg) translate(-8px, 14px)
+
       @media (max-width: 700px)
         
         .x-label text
           text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 14px)
+          transform: rotate(-90deg) translate(-8px, 2px)
+        .chart-content
+          bottom: 130px
 
         text
           font-size: 13px
           
       @media (max-width: 450px)
-        .chart-content
-          bottom: 40px
         .legend
           flex-direction: column
         .chart-title

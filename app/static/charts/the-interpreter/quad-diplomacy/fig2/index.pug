@@ -105,9 +105,9 @@ block page
                   r=r
                   cx=x
                   cy=y
-                  fill=color+"dd"
+                  fill=color+"66"
                   stroke=color
-                  stroke-width=2
+                  stroke-width=1
                   data-x=v[0]
                   data-y=v[1]
                   data-r=v[2]
@@ -127,7 +127,7 @@ block page
                   y=y
                   transform=`translate(0 ${dy})`
                   text-anchor="middle"
-                  fill=color
+                  fill="#333"
                 )
                   = chart.series[s].names[i][0]
 
@@ -140,7 +140,7 @@ block page
           svg(x="0" y="50%")
             text.axis-label.y(
               text-anchor="middle"
-              transform="rotate(-90) translate(0 -40)"
+              transform="rotate(-90) translate(0 -48)"
             )= chart.axes.yLabel
       
       //.row
@@ -210,7 +210,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
+        left: 60px
         right: 50px
         bottom: 60px
 

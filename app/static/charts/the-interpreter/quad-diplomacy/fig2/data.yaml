@@ -2,13 +2,13 @@ title: >
   Diplomatic Meetings
 
 source: >
-  <b>Source:</b> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">2023 Asia Power Index</a>)
+  <strong>Source:</strong> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">Asia Power Index</a>)
 
 notes: >
-  Y-axis: Diversity - Percentage regional countries with whom at least one activity was held
+  <strong>*</strong> Diversity is defined as the percentage of regional countries with whom at least one activity was held.
 
 subtitle: >
-  Leader and foreign minister (2022)
+  Leader and Foreign Minister (2022)
 
 axes:
   xLabel: Number of meetings held with regional counterparts
@@ -20,7 +20,7 @@ axes:
   percentageX: false
   gridX: true
 
-  yLabel: Diversity
+  yLabel: Diversity *
   minY:  0
   maxY: 100
   stepsY: 11
@@ -35,11 +35,10 @@ axes:
 series:
   -
     title: Series 1
-    color: grey-interpreter
+    color: orange
     names:
       - [ Australia ]
       - [ Bangladesh ]
-      - [ Bhutan ]
       - [ Brunei ]
       - [ Cambodia ]
       - [ China ]
@@ -48,7 +47,6 @@ series:
       - [ Japan ]
       - [ Laos ]
       - [ Malaysia ]
-      - [ Maldives ]
       - [ Mongolia ]
       - [ Myanmar ]
       - [ Nepal ]
@@ -66,30 +64,28 @@ series:
       - [ Vietnam ]
 
     values:
-      - [78, 73.0769231, 1.0 ]
-      - [29, 73.0769231, 1.0 ]
-      - [6, 15.3846154, 1.0 ]
-      - [35, 69.2307692, 1.0 ]
-      - [59, 84.6153846, 1.0 ]
-      - [96, 96.1538462, 1.0 ]
-      - [74, 80.7692308, 1.0 ]
-      - [81, 88.4615385, 1.0 ]
-      - [90, 84.6153846, 1.0 ]
-      - [38, 57.6923077, 1.0 ]
-      - [27, 53.8461538, 1.0 ]
-      - [24, 57.6923077, 1.0 ]
-      - [16, 30.7692308, 1.0 ]
-      - [10, 19.2307692, 1.0 ]
-      - [7, 19.2307692, 1.0 ]
-      - [33, 65.3846154, 1.0 ]
-      - [32, 50, 1.0 ]
-      - [17, 38.4615385, 1.0 ]
-      - [32, 61.5384615, 1.0 ]
-      - [39, 53.8461538, 1.0 ]
-      - [68, 84.6153846, 1.0 ]
-      - [52, 73.0769231, 1.0 ]
-      - [26, 69.2307692, 1.0 ]
-      - [45, 80.7692308, 1.0 ]
-      - [27, 53.8461538, 1.0 ]
-      - [67, 65.3846154, 1.0 ]
-      - [68, 76.9230769, 1.0 ]
+      - [ 77, 75, 1.0 ]
+      - [ 26, 70.8333333, 1.0 ]
+      - [ 33, 70.8333333, 1.0 ]
+      - [ 57, 87.5, 1.0 ]
+      - [ 93, 100, 1.0 ]
+      - [ 68, 79.1666667, 1.0 ]
+      - [ 80, 91.6666667, 1.0 ]
+      - [ 89, 87.5, 1.0 ]
+      - [ 37, 58.3333333, 1.0 ]
+      - [ 27, 58.3333333, 1.0 ]
+      - [ 16, 33.3333333, 1.0 ]
+      - [ 10, 20.8333333, 1.0 ]
+      - [ 7, 20.8333333, 1.0 ]
+      - [ 33, 70.8333333, 1.0 ]
+      - [ 31, 50, 1.0 ]
+      - [ 17, 41.6666667, 1.0 ]
+      - [ 31, 62.5, 1.0 ]
+      - [ 39, 58.3333333, 1.0 ]
+      - [ 65, 87.5, 1.0 ]
+      - [ 52, 79.1666667, 1.0 ]
+      - [ 25, 70.8333333, 1.0 ]
+      - [ 44, 83.3333333, 1.0 ]
+      - [ 26, 54.1666667, 1.0 ]
+      - [ 67, 70.8333333, 1.0 ]
+      - [ 68, 83.3333333, 1.0 ]
