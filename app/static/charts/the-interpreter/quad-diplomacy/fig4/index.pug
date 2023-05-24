@@ -67,7 +67,7 @@ block page
                     rect(
                       y=toPercent(y-fy(v))
                       height=toPercent(fy(v))
-                      width="95%"
+                      width="85%"
                       fill=chart.colors[chart.series[ci].color]
                     )
                     text.chart-value(
@@ -89,13 +89,13 @@ block page
                   )
                     =chart.series[0].values[i]
       
-      //-.row
-      //-  ul.legend.list-bare.txt-left.flex.flex-ch
-      //-    for ax, i in new Array(chart.series.length)
-      //-      if i==2
-      //-        li.legend-item
-      //-          span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
-      //-          span.legend-item-label= chart.series[i].title
+      .row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i>0
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
 
       .chart-source.txt-right.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
@@ -156,7 +156,6 @@ block append css
       .chart
         box-sizing: border-box
         position: relative
-        margin-bottom: 33px
 
       .chart-content
         position: absolute
@@ -201,6 +200,7 @@ block append css
       .legend
         font-size: 15px
         margin-bottom: .75em
+        display: none
 
       .legend-item
         margin: 4px 8px 0

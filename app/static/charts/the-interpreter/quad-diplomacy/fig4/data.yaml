@@ -50,7 +50,7 @@ series:
 
   -
     title: Category 1
-    color: "dark"
+    color: "grey-interpreter"
     values:
       - 8
       - 7
@@ -78,9 +78,9 @@ series:
 
   -
     title: Category 2
-    color: "highlight"
+    color: "orange"
     values:
-      -
+      - 0
       -
       -
       -

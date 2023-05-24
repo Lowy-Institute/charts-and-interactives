@@ -104,8 +104,8 @@ block page
               for v, i in chart.series[s].values
                 - x = toPercent(fx(v[0]))
                 - y = toPercent(fy(v[1]))
-                //-- r = v[2]*chart.axes.rScaleFactor
-                - r = 8
+                - r = v[2]*chart.axes.rScaleFactor
+                //- r = 8
                 - color = chart.colors[chart.series[s].color]
                 circle.target2(
                   r=r
@@ -287,8 +287,7 @@ block append css
       .chart-notes
         margin-left: 2em
 
-      g.target:nth-child(even) circle
-        fill: green
+
       .target .target2:nth-child(26)
         fill: url(#pattern-usa)
       .target .target2:nth-child(6)

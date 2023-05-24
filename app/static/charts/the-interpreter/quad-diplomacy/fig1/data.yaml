@@ -35,7 +35,7 @@ axes:
 series:
   -
     title: Series 1
-    color: dark
+    color: grey-interpreter
     names:
       - [ Australia ]
       - [ Bangladesh ]
