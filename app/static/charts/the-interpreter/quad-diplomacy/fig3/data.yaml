@@ -1,0 +1,88 @@
+title: >
+  United States
+
+source: >
+  <b>Source:</b> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">2023 Asia Power Index</a>)
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Number of bilateral & trilateral diplomatic meetings (2022)
+
+axes:
+  minY:  0
+  maxY: 15
+  stepsY: 4
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Japan
+      - India
+      - South Korea
+      - Australia
+      - Indonesia
+      - Vietnam
+      - Cambodia
+      - China
+      - Thailand
+      - Pakistan
+      - Philippines
+      - Singapore
+      - Sri Lanka
+      - Bangladesh
+      - New Zealand
+      - Papua New Guinea
+      - Russia
+
+  -
+    title: Category 1
+    color: "dark"
+    values:
+      -
+      -
+      -
+      -
+      - 6
+      - 4
+      - 3
+      - 3
+      -
+      - 2
+      -
+      - 2
+      - 2
+      - 1
+      -
+      - 1
+      - 1
+
+  - 
+    title: US treaty allies or Quad partners
+    color: "highlight"
+    values:
+      - 15
+      - 10
+      - 10
+      - 8
+      -
+      -
+      -
+      -
+      - 3
+      - 
+      - 2
+      -
+      -
+      -
+      - 1
+      -
+      - 
+

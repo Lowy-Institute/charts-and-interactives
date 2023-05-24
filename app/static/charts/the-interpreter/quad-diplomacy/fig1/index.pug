@@ -1,0 +1,326 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/the-interpreter/quad-diplomacy/fig1/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - rangeX = maxX - minX
+        - rangeY = maxY - minY
+        - fx = (x) =>  (x - minX) / rangeX
+        - fy = (y) => 1-(y - minY) / rangeY
+        
+        svg(height="100%" width="100%")
+          defs
+            pattern(id="pattern-usa" patternUnits="objectBoundingBox" width="16" height="16")
+              image(xlink:href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='flag-icon-css-us' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cg%3E%3Cpath d='M0,0H640V36.94H0V0ZM0,73.88H640v36.94H0v-36.94Zm0,73.78H640v37.03H0v-37.03Zm0,73.88H640v36.94H0v-36.94Zm0,73.88H640v36.94H0v-36.94Zm0,73.78H640v36.94H0v-36.94Zm0,73.87H640v36.94H0v-36.94Z' style='fill:%23bd3d44; fill-rule:evenodd;'/%3E%3Cpath d='M0,36.94H640v36.94H0V36.94ZM0,110.81H640v36.84H0v-36.84Zm0,73.78H640v36.94H0v-36.94Zm0,73.88H640v36.94H0v-36.94Zm0,73.87H640v36.94H0v-36.94Zm0,73.78H640v36.94H0v-36.94Z' style='fill:%23fff; fill-rule:evenodd;'/%3E%3C/g%3E%3Cpath d='M0,0H364.78V258.47H0V0Z' style='fill:%23192f5d; fill-rule:evenodd;'/%3E%3Cpath d='M30.38,11.06l3.37,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.37-8.63,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.37-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.59l-8.62,6.28,3.28,10.31-8.72-6.37-8.62,6.28,3.28-10.22-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.37-8.72,6.28,3.38-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.37-8.63,6.28,3.28-10.22-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.37-8.72,6.28,3.38-10.22-8.72-6.28h10.78l3.28-10.22ZM60.84,36.94l3.28,10.22h10.78l-8.72,6.28,3.19,10.22-8.44-6.28-8.72,6.28,3.09-10.22-8.44-6.28h10.69l3.28-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.22-8.72-6.28-8.72,6.28,3.37-10.22-8.72-6.28h10.78l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.28-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.22-8.72-6.28-8.62,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.63-6.28-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.38-10.22ZM30.38,62.72l3.37,10.41h10.69l-8.63,6.28,3.28,10.22-8.72-6.38-8.63,6.38,3.28-10.31-8.72-6.28h10.87l3.19-10.31Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.28,10.22-8.62-6.38-8.72,6.38,3.28-10.31-8.62-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.31h10.59l-8.62,6.28,3.28,10.22-8.72-6.38-8.62,6.38,3.28-10.31-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.22-8.72-6.38-8.72,6.38,3.38-10.31-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.31h10.69l-8.63,6.28,3.28,10.22-8.72-6.38-8.63,6.38,3.28-10.31-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.22-8.72-6.38-8.72,6.38,3.38-10.31-8.72-6.28h10.78l3.28-10.22ZM60.84,88.59l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.37-10.22-8.72-6.28h10.78l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.62,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.63-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.38-10.22ZM30.38,114.47l3.37,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.63,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.28-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.59l-8.62,6.28,3.28,10.31-8.72-6.38-8.62,6.28,3.28-10.22-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.38-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.63,6.28,3.28-10.22-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.38-10.22-8.72-6.28h10.78l3.28-10.22ZM60.84,140.34l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.38-8.72,6.38,3.28-10.31-8.63-6.28h10.69l3.37-10.12Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.22-8.72-6.38-8.72,6.38,3.37-10.31-8.72-6.28h10.78l3.28-10.12Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.62-6.38-8.72,6.38,3.28-10.31-8.62-6.28h10.69l3.38-10.12Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.22-8.72-6.38-8.62,6.38,3.28-10.31-8.72-6.28h10.87l3.19-10.12Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.22-8.63-6.38-8.72,6.38,3.28-10.31-8.63-6.28h10.69l3.38-10.12ZM30.38,166.12l3.37,10.31h10.69l-8.63,6.28,3.28,10.13-8.72-6.28-8.63,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.37,10.13-8.72-6.28-8.72,6.28,3.37-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.31h10.59l-8.62,6.28,3.28,10.13-8.72-6.28-8.62,6.28,3.28-10.22-8.72-6.28h10.78l3.38-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.13-8.72-6.28-8.72,6.28,3.38-10.22-8.72-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.31h10.69l-8.63,6.28,3.28,10.13-8.72-6.28-8.63,6.28,3.28-10.22-8.63-6.28h10.69l3.28-10.22Zm60.84,0l3.28,10.31h10.78l-8.72,6.28,3.38,10.13-8.72-6.28-8.72,6.28,3.38-10.22-8.72-6.28h10.78l3.28-10.22ZM60.84,192l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.37-10.22Zm60.75,0l3.38,10.22h10.69l-8.72,6.28,3.38,10.31-8.72-6.38-8.72,6.28,3.37-10.22-8.72-6.28h10.78l3.28-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.62-6.38-8.72,6.28,3.28-10.22-8.62-6.28h10.69l3.38-10.22Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.31-8.72-6.38-8.62,6.28,3.28-10.22-8.72-6.28h10.87l3.19-10.22Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.28,10.31-8.63-6.38-8.72,6.28,3.28-10.22-8.63-6.28h10.69l3.38-10.22ZM30.38,217.87l3.37,10.22h10.69l-8.63,6.28,3.28,10.22-8.72-6.28-8.63,6.28,3.28-10.31-8.72-6.28h10.87l3.19-10.13Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.37,10.22-8.72-6.28-8.72,6.28,3.37-10.31-8.72-6.28h10.69l3.38-10.13Zm60.75,0l3.38,10.22h10.59l-8.44,6.28,3.28,10.22-8.72-6.28-8.62,6.28,3.28-10.31-8.72-6.28h10.78l3.19-10.13Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.22-8.72-6.28-8.72,6.28,3.38-10.31-8.72-6.28h10.69l3.38-10.13Zm60.75,0l3.38,10.22h10.69l-8.63,6.28,3.28,10.22-8.72-6.28-8.63,6.28,3.28-10.31-8.63-6.28h10.69l3.28-10.13Zm60.84,0l3.28,10.22h10.78l-8.72,6.28,3.38,10.22-8.72-6.28-8.72,6.28,3.38-10.31-8.72-6.28h10.78l3.28-10.13Z' style='fill:%23fff; fill-rule:evenodd;'/%3E%3C/svg%3E" x="-5" y="0" width="24" height="16")
+            pattern(id="pattern-chn" patternUnits="objectBoundingBox" width="16" height="16")
+              image(xlink:href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='flag-icon-css-cn' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cpath d='M0,0H640V480H0V0Z' style='fill:%23de2910;'/%3E%3Cpolygon points='147.09 129.27 163.2 177.6 120 147.9 111.94 153.44 76.8 177.6 85.89 150.33 92.91 129.27 48 98.4 103.2 98.4 120 48 136.8 98.4 192 98.4 147.09 129.27' style='fill:%23ffde00;'/%3E%3Cpath id='a' d='M264.17,50.48l-44.46,9.85,29.65-34.56-2.91,46.51-24.67-41.17,42.38,19.37Z' style='fill:%23ffde00;'/%3E%3Cpath id='a-2' d='M309.04,107.35l-44.8-8.16,40.74-20.35-20.72,41.74-6.77-47.52,31.55,34.29Z' style='fill:%23ffde00;'/%3E%3Cpath id='a-3' d='M302.5,187.12l-37.57-25.72,45.49-1.97-35.94,29.66,13.2-46.15,14.82,44.18Z' style='fill:%23ffde00;'/%3E%3Cpath id='a-4' d='M245.99,239.24l-24.72-38.24,42.72,15.76-44.61,13.48,30-37.47-3.39,46.48Z' style='fill:%23ffde00;'/%3E%3C/svg%3E" x="-2" y="0" width="24" height="16")
+        
+          // Y-AXIS LABELS
+          svg(height="100%")
+            - steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = minY + rangeY*(i/steps) + (axes.percentageY ? "%" : "")
+                  
+          // X-AXIS LABELS
+          svg(width="100%" y="100%")
+            - steps = chart.axes.stepsX-1
+            for n, i in new Array(steps+1)
+              - x = i / steps
+              svg(x=toPercent(x))
+                text(
+                  text-anchor=axes.rotateX ? "end" : "middle"
+                  transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
+                )
+                  = minX + rangeX*(i/steps) + (axes.percentageX ? "%" : "")
+                
+          // MINOR GRID
+          if chart.axes.gridX
+            - steps = chart.axes.stepsX - 1
+            svg(height="100%")
+              for n, i in new Array(steps + 1)
+                - x = i / steps
+                svg
+                  line(
+                    x1=toPercent(x)
+                    y1="0"
+                    x2=toPercent(x)
+                    y2="100%"
+                    stroke="#5553"
+                  )
+          if chart.axes.gridY
+            - steps = chart.axes.stepsY - 1
+            svg(width="100%")
+              for n, i in new Array(steps + 1)
+                - y = i / steps
+                svg
+                  line(
+                    x1="0"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5553"
+                  )
+              
+          // INTERCEPTS
+          if !isEmpty(axes.interceptX)
+            - x = toPercent( fx(maxX + minX - axes.interceptX) )
+            line(
+              x1=x y1="0" x2=x y2="100%" 
+              stroke="#333"
+              stroke-width=1
+            )
+          if !isEmpty(axes.interceptY)
+            - y = toPercent( fy((maxY + minY) - axes.interceptY) )
+            line(
+              x1="0" y1=y x2="100%" y2=y
+              stroke="#333"
+              stroke-width=1
+            )
+
+          // BUBBLES
+          for series, s in chart.series
+            g.target
+              for v, i in chart.series[s].values
+                - x = toPercent(fx(v[0]))
+                - y = toPercent(fy(v[1]))
+                //-- r = v[2]*chart.axes.rScaleFactor
+                - r = 8
+                - color = chart.colors[chart.series[s].color]
+                circle.target2(
+                  r=r
+                  cx=x
+                  cy=y
+                  fill=color+"dd"
+                  stroke=color
+                  stroke-width=0
+                  data-x=v[0]
+                  data-y=v[1]
+                  data-r=v[2]
+                )
+                
+          // LABELS
+          for series, s in chart.series
+            g
+              for v, i in chart.series[s].values
+                - x = toPercent(fx(v[0]))
+                - y = toPercent(fy(v[1]))
+                - r = v[2]*chart.axes.rScaleFactor
+                - dy = chart.series[s].names[i][1] == true ? (r+14) : -(r+6)
+                - color = chart.colors[chart.series[s].color]
+                text.label(
+                  x=x
+                  y=y
+                  transform=`translate(0 ${dy})`
+                  text-anchor="middle"
+                  fill=color
+                )
+                  = chart.series[s].names[i][0]
+
+          // AXIS LABELS
+          svg(x="50%"  y="100%")
+            text.axis-label.x(
+              text-anchor="middle"
+              transform="translate(0 50)"
+            )= chart.axes.xLabel
+          svg(x="0" y="50%")
+            text.axis-label.y(
+              text-anchor="middle"
+              transform="rotate(-90) translate(0 -40)"
+            )= chart.axes.yLabel
+      
+      //.row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            li.legend-item
+              span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+              span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-center.txt-muted.txt-cond!= chart.source
+        span.chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const circles = document.querySelectorAll('circle');
+    const series = document.querySelectorAll('.label');
+    const tooltip = document.querySelector('.tooltip');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        circles.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let x = el.dataset.x;
+        let y = parseFloat(el.dataset.y).toFixed(2);
+        let r = el.dataset.r;
+        let s = series[i].innerHTML;
+        let box = el.getBoundingClientRect();
+        
+        tooltip.innerHTML = s + " held " + x + " combined trainings and defence dialogues with " + y + "% of regional countries.";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+    
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 700px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 50px
+        right: 50px
+        bottom: 60px
+
+      .chart-title
+        margin: auto
+        font-size: 24px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #333e
+        color: #fff
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: 0
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+        
+      .axis-label
+        font-size: 16px
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 11px
+        text-shadow: 0 0 2px white
+
+      svg
+        overflow: visible
+        
+      .chart-source
+        margin-top: .5em
+        font-size: 15px
+      
+      .chart-notes
+        margin-left: 2em
+
+      g.target:nth-child(even) circle
+        fill: green
+      .target .target2:nth-child(26)
+        fill: url(#pattern-usa)
+      .target .target2:nth-child(6)
+        fill: url(#pattern-chn)
+
+      @media (max-width: 700px)
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
+
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 60px
+          left: 45px
+          right: 15px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+        .label
+          display: none
+        .axis-label
+          font-size: 14px
+        .axis-label.y
+          transform: rotate(-90deg) translate(0, -35px)!important

@@ -1,0 +1,95 @@
+title: >
+  Defence Diplomacy
+
+source: >
+  <b>Source:</b> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">2023 Asia Power Index</a>)
+
+notes: >
+  Y-axis: Diversity - Percentage regional countries with whom at least one activity was held
+
+subtitle: >
+  Combined trainings and defence dialogues (2022)
+
+axes:
+  xLabel: Number of dialogues and combined trainings
+  minX:  0
+  maxX: 500
+  stepsX: 11
+  rotateX: false
+  interceptX: null # value of optional vertical line. set 'null' if disabled
+  percentageX: false
+  gridX: true
+
+  yLabel: Diversity
+  minY:  0
+  maxY: 100
+  stepsY: 11
+  interceptY: null # value of optional horizontal line. set 'null' if disabled
+  percentageY: true
+  gridY: true
+
+  rScaleFactor: 10
+
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Series 1
+    color: dark
+    names:
+      - [ Australia ]
+      - [ Bangladesh ]
+      - [ Bhutan ]
+      - [ Brunei ]
+      - [ Cambodia ]
+      - [ China ]
+      - [ India ]
+      - [ Indonesia ]
+      - [ Japan ]
+      - [ Laos ]
+      - [ Malaysia ]
+      - [ Maldives ]
+      - [ Mongolia ]
+      - [ Myanmar ]
+      - [ Nepal ]
+      - [ New Zealand ]
+      - [ Pakistan ]
+      - [ Papua New Guinea ]
+      - [ Philippines ]
+      - [ Russia ]
+      - [ Singapore ]
+      - [ South Korea ]
+      - [ Sri Lanka ]
+      - [ Thailand ]
+      - [ Timor-Leste ]
+      - [ United States ]
+      - [ Vietnam ]
+
+    values:
+      - [ 230, 76.9230769, 1.0 ]
+      - [ 28, 42.3076923, 1.0 ]
+      - [ 2, 03.8461538, 1.0 ]
+      - [ 87, 57.6923077, 1.0 ]
+      - [ 107, 69.2307692, 1.0 ]
+      - [ 59, 57.6923077, 1.0 ]
+      - [ 118, 80.7692308, 1.0 ]
+      - [ 183, 76.9230769, 1.0 ]
+      - [ 363, 88.4615385, 1.0 ]
+      - [ 56, 46.1538462, 1.0 ]
+      - [ 83, 46.1538462, 1.0 ]
+      - [ 25, 26.9230769, 1.0 ]
+      - [ 23, 38.4615385, 1.0 ]
+      - [ 22, 42.3076923, 1.0 ]
+      - [ 8, 11.5384615, 1.0 ]
+      - [ 47, 46.1538462, 1.0 ]
+      - [ 26, 5, 1.0 ]
+      - [ 19, 23.0769231, 1.0 ]
+      - [ 132, 69.2307692, 1.0 ]
+      - [ 28, 42.3076923, 1.0 ]
+      - [ 178, 69.2307692, 1.0 ]
+      - [ 147, 65.3846154, 1.0 ]
+      - [ 30, 30.7692308, 1.0 ]
+      - [ 100, 65.3846154, 1.0 ]
+      - [ 10, 15.3846154, 1.0 ]
+      - [ 455, 88.4615385, 1.0 ]
+      - [ 103, 61.5384615, 1.0 ]

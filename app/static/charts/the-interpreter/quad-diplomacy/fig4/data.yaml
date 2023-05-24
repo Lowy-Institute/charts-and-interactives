@@ -1,0 +1,105 @@
+title: >
+  China
+
+source: >
+  <b>Source:</b> Lowy Institute (<a href="https://power.lowyinstitute.org/" target="_blank">2023 Asia Power Index</a>)
+
+notes: >
+  <b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  Number of bilateral & trilateral diplomatic meetings (2022)
+
+axes:
+  minY:  0
+  maxY: 15
+  stepsY: 4
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Year
+    values:
+      - Pakistan
+      - Russia
+      - Indonesia
+      - Thailand
+      - Australia
+      - Mongolia
+      - Singapore
+      - Cambodia
+      - India
+      - South Korea
+      - Laos
+      - Nepal
+      - Philippines
+      - Sri Lanka
+      - United States
+      - Vietnam
+      - Bangladesh
+      - Brunei
+      - Malaysia
+      - Myanmar
+      - New Zealand
+      - Papua New Guinea
+      - Timor-Leste
+
+  -
+    title: Category 1
+    color: "dark"
+    values:
+      - 8
+      - 7
+      - 5
+      - 4
+      - 3
+      - 3
+      - 3
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 2
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+      - 1
+
+  -
+    title: Category 2
+    color: "highlight"
+    values:
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
+      -
