@@ -97,7 +97,7 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+      .chart-source.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
       
       .tooltip
@@ -226,6 +226,7 @@ block append css
       .chart-notes, .chart-source
         margin-left: 2em
         font-size: 15px
+        text-align: left
         
       .chart-value
         opacity: 0
