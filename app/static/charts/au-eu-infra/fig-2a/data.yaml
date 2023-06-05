@@ -12,11 +12,11 @@ source: >
 
 axes:
   minY:  0
-  maxY: 10000
+  maxY: 10
   stepsY: 6
   rotateX: false
   percentage: false
-  minorLines: false
+  minorLines: true
   dotted: [] # Index of dotted gridlines
   reverse: false
 
@@ -34,7 +34,7 @@ series:
     title: Japan
     color: "highlight"
     values:
-      - 8320.0387912
+      - 8.3200387912
       - ""
       - ""
       - ""
@@ -45,7 +45,7 @@ series:
     values:
       - ""
       - ""
-      - 2143.0567042
+      - 2.1430567042
       - ""
       - ""
   -
@@ -53,7 +53,7 @@ series:
     color: "yellow"
     values:
       - ""
-      - 1334.136858
+      - 1.334136858
       - ""
       - ""
       - ""
@@ -62,7 +62,7 @@ series:
     color: "dark"
     values:
       - ""
-      - 545.911225
+      - 0.545911225
       - ""
       - ""
       - ""
@@ -71,7 +71,7 @@ series:
     color: "blue-100"
     values:
       - ""
-      - 388.4426642
+      - 0.3884426642
       - ""
       - ""
       - ""
@@ -80,7 +80,7 @@ series:
     color: "blue-300"
     values:
       - ""
-      - 56.8542158
+      - 0.0568542158
       - ""
       - ""
       - ""
@@ -91,7 +91,7 @@ series:
       - ""
       - ""
       - ""
-      - 163.075721
+      - 0.163075721
       - ""
   -
     title: Australia
@@ -100,7 +100,7 @@ series:
       - ""
       - ""
       - ""
-      - 143.4730152
+      - 0.1434730152
       - ""
   -
     title: UK
@@ -109,7 +109,7 @@ series:
       - ""
       - ""
       - ""
-      - 34.3751832
+      - 0.0343751832
       - ""
   -
     title: Other OECD
@@ -119,4 +119,4 @@ series:
       - ""
       - ""
       - ""
-      - 151.663817800001
+      - 0.151663817800001

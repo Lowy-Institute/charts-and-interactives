@@ -94,7 +94,7 @@ block page
                     =chart.series[0].values[i]
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -164,12 +164,12 @@ block append css
         position: absolute
         top: 0
         left: 112px
-        right: 12px
+        right: 20px
         bottom: 30px
 
       .chart-title
         margin: auto
-        font-size: 24px
+        font-size: 20px
         
       .chart-subtitle
         font-weight: 600
@@ -243,7 +243,7 @@ block append css
           flex-wrap: wrap
 
         .chart-title
-          font-size: 22px
+          font-size: 18px
         .chart-subtitle
           font-size: 14px
         .chart-notes,

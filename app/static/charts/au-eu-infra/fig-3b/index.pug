@@ -248,7 +248,10 @@ block append css
         pointer-events: none
       
       .chart-content:hover .chart-value
-        opacity: 1
+        opacity: 0
+
+      .x-label:nth-of-type(even)
+        display: none
 
       @media (max-width: 700px)
         
@@ -272,3 +275,6 @@ block append css
         .chart-source
           text-align: center
           font-size: 13px
+        .x-label:nth-of-type(even)
+          display: none
+        

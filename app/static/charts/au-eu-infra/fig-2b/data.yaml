@@ -1,14 +1,14 @@
 title: >
-  Stacked bar chart
+  OECD infrastructure development finance by Indo-Pacific sub-regions
 
-source: >
-  <b>Source:</b> Lorem ipsum
+#source: >
+  #<b>Source:</b> Lorem ipsum
 
-notes: >
-  <b>Notes:</b> Lorem ipsum
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
 
-subtitle: >
-  Subtitle goes here
+#subtitle: >
+  #Subtitle goes here
 
 axes:
   minX:  0

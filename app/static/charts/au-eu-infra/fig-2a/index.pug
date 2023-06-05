@@ -90,7 +90,7 @@ block page
                     =chart.series[0].values[i]
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-ch.flex-wrap
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -162,7 +162,7 @@ block append css
         top: 20px
         left: 50px
         right: 20px
-        bottom: 40px
+        bottom: 50px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb
@@ -245,9 +245,7 @@ block append css
           
       @media (max-width: 450px)
         .chart-content
-          bottom: 40px
-        .legend
-          flex-direction: column
+          bottom: 80px
         .chart-title
           font-size: 18px
         .chart-subtitle
