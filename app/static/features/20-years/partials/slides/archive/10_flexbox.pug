@@ -1,0 +1,93 @@
+.row.row-sm(style="height:100%;")
+  .col-fw.bg-b-dk
+
+    .txt-center
+      .flex.flow.flex-wrap(data-view="in-viewport")
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-0.bg-ff(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/bill-gates.jpg")
+              //-.txt-xs Dr Angela Merkel
+        
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-2.bg-lt(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/pm-samoa.jpg")
+              //-.txt-xs Dr Angela Merkel
+
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-4.bg-ff(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/angela-merkel.jpg")
+              //-.txt-xs Dr Angela Merkel
+
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-6.bg-lt(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/allan-gyngell+1.jpg")
+              //-.txt-xs Dr Angela Merkel
+          
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-8.bg-ff(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/jaishankar.jpg")
+              //-.txt-xs Dr Angela Merkel
+        
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-10.bg-lt(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/boris-johnson.jpg")
+              //-.txt-xs Dr Angela Merkel
+        
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-12.bg-ff(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/volodymyr-zelenskyy.jpg")
+              //-.txt-xs Dr Angela Merkel
+        
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-14.bg-lt(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/angela-merkel.jpg")
+              //-.txt-xs Dr Angela Merkel
+        
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-16.bg-ff(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/michael-wesley+1.jpg")
+              //-.txt-xs Dr Angela Merkel
+
+        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-18.bg-ff(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(src="./img/michael-wesley+1.jpg")
+              //-.txt-xs Dr Angela Merkel
+
+style
+  :sass
+    .flow
+      display: flow-root 
+
+    .bcard
+      width: 25%
+      height: auto
+      transition-duration: 600ms !important
+      justify-content: start !important
+      transform: scale(1.1)
+      float: left
+
+      [data-view="in-viewport"]:not(.visible) &
+        transform: translate3d(0, 80px, 0) !important
+
+      &:first-child
+        width: 50%
+
+      &:nth-child(6)
+        clear: left
+
+      &:nth-child(7)
+    
+      & .img-pan .bg-img
+        width: 120%
+
+      .txt-xs
+        font-size: 14px
+        letter-spacing: 0.01em
+
+    @media (max-width: 760px)
+      .bcard
+        width: 50%
+        /*padding: .3rem
+
+      .txt-xs
+        font-size: 11px

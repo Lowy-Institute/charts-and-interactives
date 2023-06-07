@@ -1,0 +1,138 @@
+.row.row-sm(style="height:100%;")
+  .col-fw.bg-b-dk
+
+    .txt-center
+      .angry-grid(data-view="in-viewport")
+        #item-0
+          .bcard.fade-in.delay-0(style="transform:scale(1);")
+            .img-pan
+              img.bg-img(src="./img/bill-gates.jpg")
+        #item-1 
+          .bcard.fade-in.delay-2(style="transform:scale(1);")
+            .img-pan
+              img.bg-img(src="./img/pm-samoa.jpg")
+        #item-2
+          .bcard.fade-in.delay-4(style="transform:scale(1);")
+            .img-pan
+              img.bg-img(src="./img/jaishankar.jpg")
+        #item-3.bcard.fade-in.delay-6(style="transform:scale(1);")
+          .img-pan
+          //-    img.bg-img(src="./img/allan-gyngell+1.jpg")
+        #item-4.bcard.fade-in.delay-8(style="transform:scale(1);")
+          img.bg-img(src="./img/angela-merkel.jpg")
+        #item-5
+          .bcard.fade-in.delay-10(style="transform:scale(1);")
+            .img-pan
+              img.bg-img(src="./img/boris-johnson.jpg")
+        #item-6
+          .bcard.fade-in.delay-12(style="transform:scale(1);")
+            .img-pan
+              img.bg-img(src="./img/volodymyr-zelenskyy.jpg")
+        #item-7
+          .bcard.fade-in.delay-14(style="transform:scale(1);")
+            .img-pan
+              img.bg-img(src="./img/angela-merkel.jpg")
+        #item-8
+          //-.bcard.fade-in.delay-16(style="transform:scale(1);")
+          //-  .img-pan
+          //-    img.bg-img(src="./img/michael-wesley+1.jpg")
+        #item-9
+          .bcard.fade-in.delay-18(style="transform:scale(1);")
+            .img-pan
+              img.bg-img(src="./img/michael-wesley+1.jpg")
+
+style
+  :sass
+    .angry-grid
+       display: grid;
+       grid-template-rows: 1fr 1fr 1fr 1fr
+       grid-template-columns: 1fr 1fr 1fr 1fr
+       gap: 0px
+       height: 100%
+
+    #item-0
+       grid-row-start: 1
+       grid-column-start: 1
+       grid-row-end: 3
+       grid-column-end: 3
+
+    #item-1
+       grid-row-start: 1
+       grid-column-start: 3
+       grid-row-end: 2
+       grid-column-end: 4
+
+    #item-2
+       grid-row-start: 1
+       grid-column-start: 4
+       grid-row-end: 2
+       grid-column-end: 5
+
+    #item-3
+       background-image: url('./img/allan-gyngell+1.jpg')
+       background-size: cover
+       grid-row-start: 2
+       grid-column-start: 3
+       grid-row-end: 3
+       grid-column-end: 5
+
+    #item-4
+       grid-row-start: 3
+       grid-column-start: 1
+       grid-row-end: 5
+       grid-column-end: 2
+
+    #item-5
+       grid-row-start: 3
+       grid-column-start: 2
+       grid-row-end: 4
+       grid-column-end: 3
+
+    #item-6
+       grid-row-start: 3
+       grid-column-start: 3
+       grid-row-end: 4
+       grid-column-end: 4
+
+    #item-7
+       grid-row-start: 3
+       grid-column-start: 4
+       grid-row-end: 4
+       grid-column-end: 5
+
+    #item-8
+       grid-row-start: 4
+       grid-column-start: 3
+       grid-row-end: 5
+       grid-column-end: 5
+
+    #item-9
+       grid-row-start: 4
+       grid-column-start: 2
+       grid-row-end: 5
+       grid-column-end: 3
+
+
+    .flow
+      display: flow-root 
+
+    .bcard
+     
+      transition-duration: 600ms !important
+      justify-content: start !important
+      transform: scale(1.1)
+
+      [data-view="in-viewport"]:not(.visible) &
+        transform: translate3d(0, 80px, 0) !important
+    
+      & .img-pan .bg-img
+        width: 120%
+
+      .txt-xs
+        font-size: 14px
+        letter-spacing: 0.01em
+
+    @media (max-width: 760px)
+      .angry-grid
+         grid-template-rows: repeat(5, 1fr)
+         grid-template-columns: 1fr 1fr

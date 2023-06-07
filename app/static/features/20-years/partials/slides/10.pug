@@ -1,70 +1,43 @@
-.row.row-sm(style="height:100%;")
-  .col-fw.bg-b-lt
+.row.row-sm
+  .column
 
-    .slide.bg-dk.txt-center
-      .posr.flex.flex-ch.flex-wrap(data-view="in-viewport")
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-0.bg-ff(style="transform: translateZ(0) rotate(5deg) scale(0.8);")
-          img(src="./img/bill-gates.jpg")
-          .txt-xs Dr Angela Merkel
-        
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-2.bg-lt(style="transform:translateZ(0) rotate(-4deg) scale(0.8);")
-          img(src="./img/pm-samoa.jpg")
-          .txt-xs Dr Angela Merkel
+    .row-test(style="height:50%;")
 
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-4.bg-ff(style="transform: translateZ(0) rotate(4deg) scale(0.8);")
-          img(src="./img/angela-merkel.jpg")
-          .txt-xs Dr Angela Merkel
+      .sub-column.bg-b-lt
+        .bcard.fade-in.delay-0.bg-ff(style="height:50%; transform:scale(1);")
+          .img-pan
+            img.bg-img(data-src="./img/pm-samoa.jpg" alt="Prime Minister of Samoa")
+        .bcard.fade-in.delay-4.bg-ff(style="height:50%; transform:scale(1);")
+          .img-pan
+            img.bg-img(data-src="./img/boris-johnson.jpg" alt="Boris Johnson")
 
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-6.bg-lt(style="transform:translateZ(0) rotate(12deg) scale(0.8);")
-          img(src="./img/allan-gyngell+1.jpg")
-          .txt-xs Dr Angela Merkel
-          
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-8.bg-ff(style="transform:translateZ(0) rotate(-12deg) scale(0.8);")
-          img(src="./img/jaishankar.jpg")
-          .txt-xs Dr Angela Merkel
-        
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-10.bg-lt(style="transform:translateZ(0) rotate(-4deg) scale(0.8);")
-          img(src="./img/boris-johnson.jpg")
-          .txt-xs Dr Angela Merkel
-        
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-12.bg-ff(style="transform:translateZ(0) rotate(4deg) scale(0.8);")
-          img(src="./img/volodymyr-zelenskyy.jpg")
-          .txt-xs Dr Angela Merkel
-        
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-14.bg-lt(style="transform:translateZ(0) rotate(12deg) scale(0.8);")
-          img(src="./img/angela-merkel.jpg")
-          .txt-xs Dr Angela Merkel
-        
-        .bcard.txt-dk.fade-in.flex-ch.flex-col.delay-16.bg-ff(style="transform:translateZ(0) rotate(-12deg) scale(0.8);")
-          img(src="./img/michael-wesley+1.jpg")
-          .txt-xs Dr Angela Merkel
+      .sub-column.bg-b-dk
+        .bcard.fade-in.delay-2.bg-ff(style="height:100%; transform:scale(1);")
+          .img-pan
+            img.bg-img(data-src="./img/angela-merkel.jpg" alt="Angela Merkel")
 
-style
+    .row-test(style="height:50%;")
+      .sub-column
+        .bcard.fade-in.delay-6.bg-ff(style="transform:scale(1);")
+          .img-pan
+            img.bg-img(data-src="./img/town-hall.jpg" alt="Sydney Town Hall")
+
+
+  .col-1-2.column.bg-b-dk
+    .p-xs.txt-center(style="max-width: 74%")
+
+      .block.pv-xs
+        :marked
+          At the heart of the events program is the annual Lowy Lecture, at which a prominent individual reflects on Australia’s role in the world and the world’s influence on Australia. Past Lowy Lecturers include [Dr Angela Merkel](#), Chancellor of the Federal Republic of Germany; UK Foreign Secretary [Boris Johnson](#); US National Security Adviser [Jake Sullivan](#); and Lowy Institute Chairman [Sir Frank Lowy](#).
+
+
+//-style
   :sass
+
     .bcard
-      width: 350px
-      height: 220px
-      margin: -20px
-      padding: .4rem
-      box-shadow: 0 0 24px #22273d30
       transition-duration: 600ms !important
-      justify-content: space-around
+      justify-content: start !important
+      transform: scale(1.1)
 
       [data-view="in-viewport"]:not(.visible) &
         transform: translate3d(0, 80px, 0) !important
-
-      &:nth-child(8n + 1)
-
-      &:nth-child(6n + 1)
-        text-align: left
-        align-items: flex-start
-        /* padding-left: 40px
-
-      &:nth-child(7)
-
-      .txt-xs
-        font-size: 14px
-        letter-spacing: 0.01em
-
-
-

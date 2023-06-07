@@ -1,6 +1,9 @@
 
 .row.row-sm
   .col-fw.bg-b-lt
+    .pulse-box
+      .pulse-css
+
     .box
       .layer
         .label <a href="https://poll.lowyinstitute.org">the Lowy Institute Poll</a>
@@ -14,3 +17,50 @@
 .row.row-sm
   .col-fw.bg-bg-dk
     .block.ph-sm
+
+style
+  :sass
+    .pulse-box
+      position: absolute
+      top: 32px
+      left: 24px
+      transform: translate(0,-50%)
+
+    .pulse-css
+      background: #4f9ed3
+      position: relative
+      width: 16px
+      height: 16px
+      border-radius: 8px
+
+    .pulse-css:after,
+    .pulse-css:before
+      content: ""
+      width: 16px
+      height: 16px
+      border-radius: 8px
+      background-color: #fff
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      transform: scale(.5)
+      transform-origin: center center
+      animation: pulse-effect 2s linear infinite
+
+    .pulse-css:after
+      animation-delay: 1.25s
+
+    @keyframes pulse-effect
+      0%
+        transform: scale(0.5)
+        opacity: 0
+      50%
+        opacity: 0.2
+      70%
+        opacity: 0.09
+      100% 
+        transform: scale(4)
+        opacity: 0
