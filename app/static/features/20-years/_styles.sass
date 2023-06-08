@@ -349,8 +349,11 @@ svg, img
   @keyframes changeColor1
     0%
       fill: $blue-light
+    10%
+      fill: $blue-light
     100%
-      fill: mix($color-ff, $blue-light)
+      /*fill: mix($color-ff, $blue-light)
+      fill: $color-ff
 
 .page-14,
 .page-16
@@ -608,7 +611,7 @@ strong, .txt-tu, .caption
 
 /* donut chart */
 
-.page-13
+.page-12
   .svg-item
     width: 90%
     animation: donutfade 1s
@@ -665,7 +668,7 @@ strong, .txt-tu, .caption
       stroke-dasharray: 47, 53
 
 .donut .pie-label-text
-  font-size: 0.1em
+  font-size: 0.11em
   fill: #fff
   text-transform: uppercase
   letter-spacing: 0.06em
@@ -954,6 +957,13 @@ strong, .txt-tu, .caption
       transition: all 2000ms
       opacity: 1
 
+.fl-tn
+  width: 180px !important
+  height: auto
+  position: absolute
+  bottom: 8vw
+  right: 16vh
+
 #controls
   display: none
 
@@ -1109,6 +1119,16 @@ strong, .txt-tu, .caption
 
   .social-share .icon
     background-color: mix($blue-lowy,$blue-light)
+
+  .fl-tn
+    width: 120px !important
+    height: auto
+    position: absolute
+    bottom: 4vw
+    right: 2vh
+
+  blockquote
+    margi-top: -1em
 
 @keyframes prompt
   to
