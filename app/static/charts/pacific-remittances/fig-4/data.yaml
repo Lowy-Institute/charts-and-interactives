@@ -1,0 +1,125 @@
+title: >
+  Average cost of remitting from Australia to three Pacific Islands vs global average cost
+
+source: >
+  <b>Source:</b> The World Bank, <em><a href="https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS?end=2021&locations=WS-VU-TO-FJ-MH-KI-TV&start=2021&view=bar">Personal remittances, received (% of GDP) – Fiji, Tonga, Vanuatu</a></em>, accessed March 30, 2023.
+
+#notes: >
+  #<b>Notes:</b> data from January 2022
+
+#subtitle: >
+  #2000-2020
+
+axes:
+  minY:  0
+  maxY: 25
+  stepsY: 6
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    color: "white"
+    values:
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+      - 2022
+  -
+    title: Fiji
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 13.78
+      - 14.81
+      - 15.08
+      - 12.63
+      - 12.58
+      - 10.35
+      - 9.76
+      - 9.38
+      - 8.61
+      - 7.49
+      - 8.07
+      - 6.71
+      - 6.84
+      - 6.88
+  -
+    title: Vanautu
+    color: "orange"
+    widen: false
+    dashed: false
+    values:
+      - 11.53
+      - 13.15
+      - 14.44
+      - 13.4
+      - 14.87
+      - 17.18
+      - 20.73
+      - 16.67
+      - 18.63
+      - 12.94
+      - 13.04
+      - 11.96
+      - 8.66
+      - 8.91
+
+  -
+    title: Tonga
+    color: "green"
+    widen: false
+    dashed: false
+    values:
+      - 11.77
+      - 16.99
+      - 10.63
+      - 11.68
+      - 11.67
+      - 12.57
+      - 8.73
+      - 10.5
+      - 9.18
+      - 9.14
+      - 8.5
+      - 9.33
+      - 9.18
+      - 8.77
+
+  -
+    title: World
+    color: "yellow"
+    widen: false
+    dashed: false
+    values:
+      - 9.4
+      - 8.83
+      - 8.96
+      - 8.85
+      - 8.93
+      - 7.9
+      - 7.52
+      - 7.42
+      - 7.21
+      - 6.94
+      - 6.84
+      - 6.75
+      - 6.3
+      - 6.3
+

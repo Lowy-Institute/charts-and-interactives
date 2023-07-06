@@ -1,0 +1,44 @@
+title: >
+  Inbound remittances as a percentage of national income
+
+source: >
+  <b>Source:</b> The World Bank, <em><a href="https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS?end=2021&locations=WS-VU-TO-FJ-MH-KI-TV&start=2021&view=bar">Personal remittances, received (% of GDP) – Samoa, Vanuatu, Tonga, Fiji, Marshall Islands, Kiribati, Tuvalu</a></em>, accessed March 30, 2023.
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  2021
+
+axes:
+  minX:  0
+  maxX: 50
+  stepsX: 11
+  percentage: true
+  minorLines: true
+  dotted: [1,3,5,7,9,11,13] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Category
+    values:
+      - Tuvalu
+      - Kiribati
+      - Fiji
+      - Marshall Is.
+      - Vanuatu
+      - Samoa
+      - Tonga
+
+  -
+    title: Series 1
+    color: "dark"
+    values:
+      - 4.2
+      - 5.9
+      - 9.2
+      - 13.3
+      - 21.4
+      - 29.4
+      - 46.2
