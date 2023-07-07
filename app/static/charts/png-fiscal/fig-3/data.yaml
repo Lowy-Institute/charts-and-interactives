@@ -1,0 +1,107 @@
+title: >
+  Figure 3
+
+source: >
+  <b>Source:</b> OECD Fiscal Decentralization Database; author’s calculations for PNG.
+
+#notes: >
+  #<strong>*</strong> Diversity is defined as the percentage of regional countries with whom at least one activity was held.
+
+#subtitle: >
+  #Combined trainings and defence dialogues (2022)
+
+axes:
+  xLabel: Spending ratio
+  minX:  0
+  maxX: 70
+  stepsX: 8
+  rotateX: false
+  interceptX: null # value of optional vertical line. set 'null' if disabled
+  percentageX: true
+  gridX: true
+
+  yLabel: Revenue ratio
+  minY:  0
+  maxY: 60
+  stepsY: 7
+  interceptY: null # value of optional horizontal line. set 'null' if disabled
+  percentageY: true
+  gridY: true
+
+  rScaleFactor: 5
+
+
+# Data format: [x, y, r]
+series:
+  -
+    title: Series 1
+    color: dark
+    names:
+      - [ Australia ]
+      - [ Austria ]
+      - [ Belgium ]
+      - [ Canada ]
+      - [ Costa Rica ]
+      - [ Czech Republic ]
+      - [ Denmark ]
+      - [ Estonia ]
+      - [ Finland ]
+      - [ France ]
+      - [ Germany ]
+      - [ Greece ]
+      - [ Hungary ]
+      - [ Iceland ]
+      - [ Ireland ]
+      - [ Israel ]
+      - [ Italy ]
+      - [ Latvia ]
+      - [ Lithuania ]
+      - [ Luxembourg ]
+      - [ Mexico ]
+      - [ Netherlands ]
+      - [ Norway ]
+      - [ PNG ]
+      - [ Poland ]
+      - [ Portugal ]
+      - [ Slovak Republic ]
+      - [ Slovenia ]
+      - [ Spain ]
+      - [ Sweden ]
+      - [ Switzerland ]
+      - [ United Kingdom ]
+      - [ United States ]
+
+    values:
+      - [ 43.27630595, 47.97759784, 1.5 ]
+      - [ 29.63607631, 10.8271237, 1.0 ]
+      - [ 44.37089126, 24.6359326, 1.0 ]
+      - [ 57.20723099, 55.0879845, 1.0 ]
+      - [ 3.916407694, 4.329314073, 1.0 ]
+      - [ 27.6188284, 19.01421934, 1.0 ]
+      - [ 62.28123803, 27.6442858, 1.0 ]
+      - [ 23.2039174, 4.040693642, 1.0 ]
+      - [ 39.37512, 29.72, 1.0 ]
+      - [ 18.6542589, 16.89902422, 1.0 ]
+      - [ 6.522023792, 36.59129491, 1.0 ]
+      - [ 6.522023792, 3.032504086, 1.0 ]
+      - [ 12.03689552, 8.185365046, 1.0 ]
+      - [ 28.95512953, 29.64141009, 1.0 ]
+      - [ 8.857968122, 3.127365177, 1.0 ]
+      - [ 11.6504557, 8.438663103, 1.0 ]
+      - [ 26.52144854, 13.59475895, 1.0 ]
+      - [ 25.93376497, 16.95728946, 1.0 ]
+      - [ 22.68364393, 3.524211618, 1.0 ]
+      - [ 10.23799991, 5.57338974, 1.0 ]
+      - [ 39.10220475, 19.81779894, 1.0 ]
+      - [ 28.92327698, 8.241925698, 1.0 ]
+      - [ 31.94168902, 17.44670123, 1.0 ]
+      - [ 24.85, 7.49, 1.5 ]
+      - [ 30.17799674, 15.66005195, 1.0 ]
+      - [ 13.43425284, 10.4654115, 1.0 ]
+      - [ 17.1185315, 4.342439632, 1.0 ]
+      - [ 17.29324011, 11.9370781, 1.0 ]
+      - [ 41.64463476, 28.36698624, 1.0 ]
+      - [ 48.34587629, 32.96031732, 1.0 ]
+      - [ 55.19730124, 49.41724696, 1.0 ]
+      - [ 20.63042258, 9.337901353, 1.0 ]
+      - [ 39.69047586, 44.53406801, 1.0 ]
