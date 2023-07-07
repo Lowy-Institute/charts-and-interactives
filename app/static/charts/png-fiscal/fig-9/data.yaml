@@ -1,0 +1,72 @@
+title: >
+  Figure 9
+
+source: >
+  Source: PNG Treasury FBO report (2020)
+
+#notes: >
+  #Notes: Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 160
+  stepsY: 9
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Province
+    values:
+      - Morobe
+      - East Sepik
+      - Eastern Highlands
+      - Manus
+      - Madang
+      - Southern Highlands
+      - Western Highlands
+      - Simbu
+      - East New Britain
+      - Enga
+      - Central
+      - Milne Bay
+      - West New Britain
+      - Jiwaka
+      - West Sepik
+      - Western
+      - Hela
+      - New Ireland
+      - Oro
+      - Gulf
+
+  -
+    title: Real recurrent K'millions
+    color: "teal"
+    values:
+      - 153
+      - 128
+      - 127
+      - 123
+      - 118
+      - 113
+      - 97
+      - 92
+      - 88
+      - 86
+      - 82
+      - 78
+      - 76
+      - 75
+      - 70
+      - 57
+      - 54
+      - 48
+      - 41
+      - 38
+

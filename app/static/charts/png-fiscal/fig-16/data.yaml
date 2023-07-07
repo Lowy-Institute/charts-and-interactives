@@ -1,0 +1,76 @@
+title: >
+  Figure 16
+
+source: >
+  Source: Treasury Budget Vol. 3A report 2023
+
+#notes: >
+  #Notes: Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 200
+  stepsY: 11
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Province
+    values:
+      - Morobe
+      - Eastern Highlands
+      - East Sepik
+      - Southern Highlands
+      - Enga
+      - Bougainville
+      - Simbu
+      - Madang
+      - West Sepik
+      - East New Britain
+      - Jiwaka
+      - Western Highlands
+      - Hela
+      - Central
+      - NCD
+      - Milne Bay
+      - Western
+      - Oro
+      - West New Britain
+      - New Ireland
+      - Gulf
+      - Manus
+
+  -
+    title: Real recurrent K'millions
+    color: "teal"
+    values:
+      - 200
+      - 156
+      - 142
+      - 134
+      - 133
+      - 125
+      - 116
+      - 114
+      - 80
+      - 78
+      - 77
+      - 77
+      - 76
+      - 76
+      - 74
+      - 73
+      - 61
+      - 59
+      - 54
+      - 52
+      - 51
+      - 32
+

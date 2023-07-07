@@ -1,12 +1,11 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/png-fiscal/fig-21/data"
+  - var datapath = "static/charts/png-fiscal/fig-20/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
   - toPercent = (n) => (n * 100).toFixed(2) + "%"
-  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
   - chart = page
   
 block page
@@ -20,7 +19,7 @@ block page
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
-        - fx = (i) => (i + 0.6) / (ln + 0.25)
+        - fx = (i) => (i + 0.6) / (ln + 0.75)
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
@@ -32,7 +31,7 @@ block page
               - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = (minY + range*(i/steps) + (axes.percentage ? "%" : ""))
+                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -49,90 +48,50 @@ block page
                     stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
                   )
 
-          // X-Axis labels
-          for x, i in chart.series[0].values
-            svg.x-label(x=toPercent(fx(i)) y="100%")
-              text(
-                text-anchor=axes.rotateX ? "end" : "middle"
-                transform=axes.rotateX ? "rotate(-45) translate(-8, 24)" : "translate(0 20)"
-              )=x
-              
-          // OPTIONAL GUIDE LINE
-          if !isEmpty(axes.guideLine)
-            - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
-            line(
-              x1="0" y1=y x2="100" y2=y
-              stroke="#333"
-              stroke-width=.25
-              stroke-dasharray=(false ? 1 : "")
-            )
+          // Horizontal chart line
+          svg
+            line(x1="0%" y1="0.00%" x2="100%" y2="0.00%" stroke="#539ed4" stroke-width="4" stroke-dasharray="")
 
-          // CHART LINES
-          svg(
-            height="100%"
-            width="100%"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          )
-            // SERIES LINES
-            for item, i in chart.series
-              if i
-                polyline(
-                  fill="none"
-                  stroke=chart.colors[chart.series[i].color]
-                  stroke-dasharray=(item.dashed ? 10 : "")
-                  stroke-width=(item.widen ? 6 : 3)
-                  stroke-linejoin=(item.dashed ? "": "round")
-                  stroke-linecap=(item.dashed ? "": "round")
-                  points=(item.values.map( (y, ix) => {
-                    return isEmpty(y) ? "" : [
-                      100 * fx(ix),
-                      100 * fy(maxY + minY - y)
-                    ].join(" ");
-                  })).join(",")
-                )
-      
-          for item, i in chart.series
-            g.point(class=chart.series[i].title)
-              for val, ix in item.values
-                if i !== 0
-                  circle(
-                    r=4
-                    cx=toPercent(fx(ix))
-                    cy=toPercent(fy(maxY + minY - val))
-                    fill=chart.colors[chart.series[i].color]
-                    stroke='#fff'
-                    stroke-width=0
-                  )
-                svg.chart-value(
-                  x=toPercent(fx(ix))
-                  y=toPercent(fy(maxY + minY - val))
-                  style=`color: ${chart.colors[chart.series[i].color]}`
-                )
-                  if false
+          // Chart rects
+          g.bars
+            - const n = chart.series[0].values.length
+            for undef, i in new Array(n)
+              svg(
+                x=toPercent(fx(i))
+                width=toPercent(fx(0))
+                height="100%"
+              )   
+                - y = 1
+                - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
+                - vals = axes.reverse ? vals.reverse() : vals
+
+                for v, j in vals
+                  - ci = axes.reverse ? vals.length-j : j+1
+                  if v > 0
                     rect(
-                      y=(i % 2 == 0 ? -12 : 24) - 12
-                      height=14
-                      width=24
-                      x=-12
-                      fill="#fff"
+                      y=toPercent(y-fy(v))
+                      height=toPercent(fy(v))
+                      width="100%"
+                      fill=chart.colors[chart.series[ci].color]
                     )
-                  if true
-                    rect(
-                      y=(i-26)
-                      x=(i-16)
-                      height=14
-                      width=30
-                      fill="#eee"
-                      opacity=".8"
+                    text.chart-value(
+                      x="50%"
+                      y=toPercent(y - fy(v +6))
                       text-anchor="middle"
+                      transform="translate(0 4.5)"
+                      style=`color: ${(j < 3 ? "#008A97" : "")}`
                     )
+                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+
+                  - y -= fy(v)
+                    
+                // X-Axis labels
+                svg.x-label(x="50%" y="100%")
                   text(
-                    y=(i % 1 == 0 ? -12 : 24)
-                    text-anchor="middle"
-                    fill=chart.colors[chart.series[i].color]
+                    text-anchor=axes.rotateX ? "end" : "middle"
+                    transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
                   )
-                    = val.toFixed(1)
+                    =chart.series[0].values[i]
       
       .row
         ul.legend.list-bare.txt-left.flex.flex-ch
@@ -142,13 +101,63 @@ block page
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
+          li.legend-item
+            span.legend-item-line(style="background: #539ed4")
+            span.legend-item-label Costs
+
       .chart-source.txt-left.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
+      
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = true;
+    const nLegendItems = 1;
+    const nSeries = 2;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.x-label');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let val = vals[i].innerHTML;
+        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
+        let cat = legendItems[i % nLegendItems].innerHTML;
+        let box = el.getBoundingClientRect();
+        
+        tooltip.innerHTML = "In " + ser + " revenue was " + val + " of costs";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+    
   
 block append css
   style
     :sass
-    
+  
       .wrapper
         height: 550px
 
@@ -198,25 +207,29 @@ block append css
 
       .legend
         font-size: 15px
-        margin-top: 1.5em
+        margin-bottom: .75em
 
       .legend-item
         margin: 4px 8px 0
-        padding-right: .5em
+        padding-right: 0
         position: relative
         white-space: nowrap
 
       .legend-item-box
         position: absolute
-        left: -.5em
-        top: .75em
-        height: .35em
+        left: 0
+        top: .5em
+        height: 1em
+        width: 1em
+        background: black
+
+      .legend-item-line
+        position: absolute
+        left: -0.5em
+        top: 0.85em
+        height: 0.35em
         width: 1.5em
         background: black
-        border-radius: 3px
-
-      polyline
-        vector-effect: non-scaling-stroke
 
       text
         font-size: 14px
@@ -224,34 +237,27 @@ block append css
 
       svg
         overflow: visible
-
-      .chart-notes, 
-      .chart-source
+        
+      .chart-notes, .chart-source
         margin-top: 1em
         margin-left: 3em
         font-size: 15px
-
       .txt-muted
         color: #767676
-
-      .point .chart-value
-        opacity: 0
-        transition: opacity 300ms
-
-      .point:hover .chart-value
-          opacity: 1
-
+        
+      .chart-value
+        opacity: 1
+        transition-duration: .4s
+        pointer-events: none
       
+      .chart-content:hover .chart-value
+        opacity: 1
 
       @media (max-width: 700px)
         
         .x-label text
           text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 24px)
-        //.x-label 
-        //  display: none  
-        //.x-label:nth-child(7n+3)
-        //  display: block
+          transform: rotate(-45deg) translate(-8px, 14px)
 
         text
           font-size: 13px
