@@ -1,0 +1,75 @@
+title: >
+  Figure 10
+
+source: >
+  <b>Source:</b> Treasury FBO reports 2009 to 2021.
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 3500
+  stepsY: 8
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  x:
+    title: Year
+    values:
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+series:
+  -
+    title: Function grants
+    color: "yellow"
+    values:
+      -  219
+      - 225
+      - 257
+      - 303
+      - 367
+      - 1938
+      - 1678
+      - 1269
+      - 530
+      - 819
+      - 351
+      - 372
+      - 443
+
+  -
+    title: Compensation of employees
+    color: "teal"
+    values:
+      - 906
+      - 854
+      - 1061
+      - 1087
+      - 1003
+      - 1226
+      - 1299
+      - 1385
+      - 1346
+      - 1403
+      - 1448
+      - 1540
+      - 1392 

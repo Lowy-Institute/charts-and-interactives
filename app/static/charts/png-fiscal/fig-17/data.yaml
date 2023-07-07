@@ -1,0 +1,91 @@
+title: >
+  Figure 17
+
+source: >
+  <b>Source:</b> Treasury Budget Vol. 3A reports 2011 to 2023; PNG Economics Database; Auditor General’s report: SIPs 2019.
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 1400
+  stepsY: 8
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  x:
+    title: Year
+    values:
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+series:
+  -
+    title: LLGSIP
+    color: "teal"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 86
+      - 129
+      - 27
+      - 25
+      - 0
+      - 0
+      - 0
+      - 0
+
+  -
+    title: DSIP
+    color: "yellow"
+    values:
+      - 458
+      - 241
+      - 203
+      - 194
+      - 695
+      - 661
+      - 623
+      - 584
+      - 522
+      - 415
+      - 495
+      - 472
+      - 559
+  -
+    title: PSIP
+    color: "highlight"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 432
+      - 400
+      - 375
+      - 126
+      - 35
+      - 143
+      - 109
+      - 117
+      - 140
