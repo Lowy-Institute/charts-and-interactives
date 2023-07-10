@@ -1,0 +1,54 @@
+title: >
+  Figure 18
+
+source: >
+  <b>Source:</b> 
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+#subtitle: >
+  #Subtitle goes here
+
+axes:
+  minY:  0
+  maxY: 100
+  stepsY: 11
+  rotateX: false
+  percentage: true
+  minorLines: true
+  dotted: [1, 3] # Index of dotted gridlines
+
+series:
+  -
+    title: Year
+    values:
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+
+  -
+    title: Share of Provinces that did not submit acquittals
+    color: "highlight"
+    values:
+      - 14
+      - 36
+      - 64
+      - 73
+  -
+    title: Share of DDAs that did not submit acquittals
+    color: "orange"
+    values:
+      - 17
+      - 30
+      - 58
+      - 70
+  -
+    title: Share of LLGs that did not submit acquittals
+    color: "grey"
+    values:
+      - 100
+      - 100
+      - 100
+      - 100
