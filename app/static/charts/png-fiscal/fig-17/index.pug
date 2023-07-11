@@ -20,19 +20,29 @@ block page
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
+        - rangeY = maxY - minY 
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - rangeX = maxX - minX
+        - stepsX = axes.stepsX
         - fx = (i) => (i + 0) / (ln - 1)
         - fy = (y) => (1 - (y - minY) / range)
         
         svg(height="100%" width="100%")
+
+          svg(y="50%")
+           text(text-anchor="middle" y="-60" transform="rotate(-90)") K'millions (2012 prices)
         
           // Y-Axis labels
           svg(height="100%")
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
+              - value = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
+              - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
               svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")
-                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
+                text(text-anchor="end" transform="translate(-8 4)")= formatted
+
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
