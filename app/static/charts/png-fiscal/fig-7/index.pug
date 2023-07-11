@@ -92,7 +92,7 @@ block page
 
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-wrap
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -197,6 +197,7 @@ block append css
       .legend
         font-size: 15px
         margin-bottom: .75em
+        margin-right: 3em
 
       .legend-item
         margin: 4px 8px 0
@@ -280,3 +281,7 @@ block append css
           font-size: 13px
         .chart-value
           display: none
+        .x-label text
+          font-size: 10px
+        .legend
+          font-size: 12px

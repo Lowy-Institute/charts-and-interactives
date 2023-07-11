@@ -135,7 +135,7 @@ block page
                     = val.toFixed(1)
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.list-bare.txt-left.flex.flex-wrap
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -199,6 +199,7 @@ block append css
       .legend
         font-size: 15px
         margin-top: 1.5em
+        margin-left: 3em
 
       .legend-item
         margin: 4px 8px 0
@@ -237,7 +238,6 @@ block append css
         transition: opacity 300ms
       .point:hover .chart-value
           opacity: 1
-
       
 
       @media (max-width: 700px)
@@ -245,10 +245,10 @@ block append css
         .x-label text
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 24px)
-        //.x-label 
-        //  display: none  
-        //.x-label:nth-child(7n+3)
-        //  display: block
+        .x-label 
+          display: none  
+        .x-label:nth-child(2n+1)
+          display: block
 
         text
           font-size: 13px
