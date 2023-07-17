@@ -1,0 +1,111 @@
+title: >
+  Chinese exports of vehicles and parts other than railway or tramway rolling stock
+
+#source: >
+  #<b>Source:</b> NEFC Fiscal Budget Report 2020; Treasury FBO report 2020
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  (Millions, USD)
+
+axes:
+  minY:  0
+  maxY: 900
+  stepsY: 10
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [1, 3] # Index of dotted gridlines
+
+series:
+  -
+    title: Month
+    values:
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+
+  -
+    title: 2019
+    color: "highlight"
+    values:
+      - 73.268854
+      - 56.324837
+      - 97.138021
+      - 142.489928
+      - 126.459936
+      - 158.017875
+      - 130.725762
+      - 95.740206
+      - 168.328317
+      - 100.500751
+      - 117.085223
+      - 157.335842
+  -
+    title: 2020
+    color: "orange"
+    values:
+      - 87.498437
+      - 8.307100
+      - 21.324491
+      - 47.745107
+      - 91.455665
+      - 143.102919
+      - 156.292823
+      - 111.041295
+      - 124.614846
+      - 144.547260
+      - 95.116789
+      - 113.874065 
+  -
+    title: 2021
+    color: "grey"
+    values:
+      - 103.733952
+      - 59.633256
+      - 107.584660
+      - 113.819849
+      - 113.129994
+      - 192.605319
+      - 178.782729
+      - 139.021977
+      - 111.663831
+      - 73.615115
+      - 107.105278
+      - 195.001575
+  -
+    title: 2022
+    color: "yellow"
+    values:
+      - 193.169289
+      - 161.615789
+      - 261.752713
+      - 251.443650
+      - 212.476678
+      - 262.561002
+      - 219.012035
+      - 257.911777
+      - 223.573566
+      - 231.164326
+      - 268.599239
+      - 343.383023
+  -
+    title: 2023
+    color: "red"
+    values:
+      - 357.772052
+      - 406.210190
+      - 598.691979
+      - 662.685717
+      - 802.581561
