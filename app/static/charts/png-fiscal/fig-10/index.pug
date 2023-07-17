@@ -102,7 +102,7 @@ block page
                 svg.chart-value(
                   x=toPercent(fx(ix))
                   y=toPercent(fy( _.sum(chart.series.slice(i).map(s => s.values[ix]))))
-                  style=`color: white`
+                  style=`color: ${i === 0 ? 'black' : 'white'}`
                 )
                   text(
                     dy=(i % 1 == 0 ? 24 : 24)
