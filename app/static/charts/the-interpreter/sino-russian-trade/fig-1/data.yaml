@@ -1,14 +1,14 @@
 title: >
   Chinese exports of vehicles and parts other than railway or tramway rolling stock
 
-#source: >
-  #<b>Source:</b> NEFC Fiscal Budget Report 2020; Treasury FBO report 2020
+source: >
+  <b>Source:</b> UN Comtrade, PRC General Administration of Customs, Author’s Calculations
 
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  (Millions, USD)
+  Millions, USD
 
 axes:
   minY:  0
@@ -38,7 +38,7 @@ series:
 
   -
     title: 2019
-    color: "highlight"
+    color: "grey-interpreter"
     values:
       - 73.268854
       - 56.324837
@@ -54,7 +54,7 @@ series:
       - 157.335842
   -
     title: 2020
-    color: "orange"
+    color: "grey-400"
     values:
       - 87.498437
       - 8.307100
@@ -70,7 +70,7 @@ series:
       - 113.874065 
   -
     title: 2021
-    color: "grey"
+    color: "yellow-light"
     values:
       - 103.733952
       - 59.633256
@@ -102,7 +102,7 @@ series:
       - 343.383023
   -
     title: 2023
-    color: "red"
+    color: "orange"
     values:
       - 357.772052
       - 406.210190

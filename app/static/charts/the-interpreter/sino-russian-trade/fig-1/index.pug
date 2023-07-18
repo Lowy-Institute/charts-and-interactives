@@ -24,6 +24,9 @@ block page
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
+
+          svg(y="50%")
+             text(text-anchor="middle" y="-60" transform="rotate(-90)") Millions, USD
         
           // Y-Axis labels
           svg(height="100%")
@@ -158,9 +161,9 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
+        left: 70px
         right: 20px
-        bottom: 100px
+        bottom: 80px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb
@@ -197,7 +200,7 @@ block append css
       .legend
         font-size: 15px
         margin-bottom: .75em
-        margin-right: 3em
+        margin-left: 2.6em
 
       .legend-item
         margin: 4px 8px 0

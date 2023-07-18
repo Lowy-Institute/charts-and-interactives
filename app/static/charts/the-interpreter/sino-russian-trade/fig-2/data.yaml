@@ -2,14 +2,14 @@ title: >
   Chinese exports to Central Asia
 
 
-#source: >
-  #<b>Source:</b> NEFC Fiscal Budget Report 2020; Treasury FBO report 2020
+source: >
+  <b>Source:</b> UN Comtrade, PRC General Administration of Customs, Author’s Calculations
 
 #notes: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  (Billions, USD)
+  Billions, USD
 
 axes:
   minY:  0
@@ -39,7 +39,7 @@ series:
 
   -
     title: 2019
-    color: "highlight"
+    color: "grey-interpreter"
     values:
       - 1.865989206
       - .898461246
@@ -55,7 +55,7 @@ series:
       - 2.655756243
   -
     title: 2020
-    color: "orange"
+    color: "grey-400"
     values:
       - 2.397500906
       - .348315706
@@ -71,7 +71,7 @@ series:
       - 1.655568812
   -
     title: 2021
-    color: "grey"
+    color: "yellow-light"
     values:
       - 1.690929215
       - 1.302692335
@@ -103,7 +103,7 @@ series:
       - 4.480492927
   -
     title: 2023
-    color: "red"
+    color: "orange"
     values:
       - 3.655778206
       - 3.762359654
