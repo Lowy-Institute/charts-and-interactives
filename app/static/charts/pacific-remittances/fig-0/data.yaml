@@ -1,0 +1,224 @@
+title: >
+  Trends in the global cost of sending $200 in remittances
+
+source: >
+  Source: Author's calculations from World Bank Data
+
+#notes: >
+  #<b>Notes:</b> data from January 2022
+
+#subtitle: >
+  #(USD, 2000-2020)
+
+axes:
+  minY:  0
+  maxY: 12
+  stepsY: 13
+  rotateX: true
+  percentage: true
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    color: "white"
+    values:
+      - 2011, q3
+      - 2012, q1
+      - q3
+      - 2013, q1
+      - q2
+      - q3
+      - q4
+      - 2014, q1
+      - q2
+      - q3
+      - q4
+      - 2015, q1
+      - q2
+      - q3
+      - q4
+      - 2016, q1
+      - q2
+      - q3
+      - q4
+      - 2017, q1
+      - q2
+      - q3
+      - q4
+      - 2018, q1
+      - q2
+      - q3
+      - q4
+      - 2019, q1
+      - q2
+      - q3
+      - q4
+      - 2020, q1
+      - q2
+      - q3
+      - q4
+      - 2021, q1
+      - q2
+      - q3
+      - q4
+      - 2022, q1
+      - q2
+      - q3
+      - q4
+      - 2023, q1
+  -
+    title: Cash
+    color: "highlight"
+    widen: false
+    dashed: false
+    values:
+      - 8
+      - 7.9
+      - 7.8
+      - 7.7
+      - 7.4
+      - 8.5
+      - 8.2
+      - 8
+      - 7.8
+      - 7.7
+      - 7.8
+      - 7.6
+      - 7.65
+      - 7.5
+      - 7.4
+      - 7.6
+      - 7.8
+      - 7.6
+      - 7.6
+      - 7.7
+      - 7.65
+      - 7.6
+      - 7.5
+      - 7.6
+      - 7.4
+      - 7.4
+      - 7.4
+      - 7.3
+      - 7.2
+      - 7.25
+      - 7.3
+      - 7.2
+      - 7.2
+      - 7.3
+      - 7.1
+      - 6.9
+      - 6.8
+      - 6.8
+      - 6.6
+      - 6.7
+      - 6.6
+      - 6.9
+      - 7
+      - 7
+  -
+    title: Digital
+    color: "orange"
+    widen: false
+    dashed: false
+    values:
+      - 12
+      - 11.25
+      - 11.2
+      - 11.2
+      - 12.15
+      - 11.5
+      - 10.7
+      - 10.55
+      - 9.85
+      - 9.35
+      - 9.3
+      - 8.3
+      - 8.3
+      - 7.75
+      - 7.7
+      - 7.35
+      - 7.15
+      - 6.9
+      - 6.8
+      - 6.75
+      - 6.5
+      - 6.2
+      - 6
+      - 6
+      - 5.8
+      - 5.7
+      - 6
+      - 5.95
+      - 5.8
+      - 5.7
+      - 5.5
+      - 5.5
+      - 5.25
+      - 5.3
+      - 5.2
+      - 5.15
+      - 5
+      - 5
+      - 4.7
+      - 4.85
+      - 4.85
+      - 5.25
+      - 4.78
+      - 4.8
+
+  -
+    title: Global average
+    color: "green"
+    widen: false
+    dashed: false
+    values:
+      - 9.3
+      - 9.15
+      - 9.05
+      - 9.1
+      - 8.9
+      - 8.98
+      - 8.6
+      - 8.4
+      - 8.2
+      - 7.9
+      - 8.1
+      - 7.8
+      - 7.75
+      - 7.55
+      - 7.4
+      - 7.6
+      - 7.7
+      - 7.5
+      - 7.48
+      - 7.52
+      - 7.35
+      - 7.25
+      - 7.15
+      - 7.2
+      - 7.05
+      - 6.95
+      - 7.1
+      - 6.95
+      - 6.9
+      - 6.9
+      - 6.88
+      - 6.83
+      - 6.7
+      - 6.8
+      - 6.55
+      - 6.4
+      - 6.3
+      - 6.3
+      - 6.15
+      - 6.2
+      - 6.1
+      - 6.3
+      - 6.23
+      - 6.25
+
