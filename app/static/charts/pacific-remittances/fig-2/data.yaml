@@ -1,14 +1,14 @@
 title: >
-  Remittances as % of GDP
+  Graph 3: Remittances as a percentage of GDP
 
 source: >
-  Source: The World Bank, <em><a href="https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS?end=2021&locations=WS-VU-TO-FJ-MH-KI-TV&start=2021&view=bar">Personal remittances, received (% of GDP) – Fiji, Tonga, Vanuatu</a></em>, accessed March 30, 2023.
+  Source: The World Bank
 
 #notes: >
   #<b>Notes:</b> data from January 2022
 
 subtitle: >
-  2000-2020
+  2000–2021
 
 axes:
   minY:  0
@@ -77,7 +77,7 @@ series:
       - 7.1
       - 9.2
   -
-    title: Vanautu
+    title: Vanuatu
     color: "orange"
     widen: false
     dashed: false

@@ -1,14 +1,14 @@
 title: >
-  Personal remittances received from all sources
+  Graph 2: Personal remittances received from all sources
 
 source: >
-  Source: World Bank
+  Source: The World Bank
 
 #notes: >
   #<b>Notes:</b> data from January 2022
 
 subtitle: >
-  (USD, 2000-2020)
+  (US$, 2000–2021)
 
 axes:
   minY:  0
@@ -77,7 +77,7 @@ series:
       - 317.155616
       - 393.635199
   -
-    title: Vanautu
+    title: Vanuatu
     color: "orange"
     widen: false
     dashed: false

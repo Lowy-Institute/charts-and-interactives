@@ -1,5 +1,5 @@
 title: >
-  Average cost of remitting from Australia to three Pacific Islands vs global average cost
+  Graph 5: Average cost of remitting from Australia to three Pacific Islands vs global average
 
 source: >
   Source: The World Bank
@@ -7,8 +7,8 @@ source: >
 #notes: >
   #<b>Notes:</b> data from January 2022
 
-#subtitle: >
-  #2000-2020
+subtitle: >
+  2009–2022
 
 axes:
   minY:  0
@@ -61,7 +61,7 @@ series:
       - 6.84
       - 6.88
   -
-    title: Vanautu
+    title: Vanuatu
     color: "orange"
     widen: false
     dashed: false
