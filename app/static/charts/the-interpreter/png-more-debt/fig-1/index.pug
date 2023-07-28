@@ -69,9 +69,9 @@ block page
 
           // TARGET LINE
           svg
-            line(x1="56.3%" y1="0%" x2="56.3%" y2="100%" stroke="#444" stroke-width="1" stroke-dasharray="5")
-            line(x1="77.46%" y1="0%" x2="77.46%" y2="100%" stroke="#444" stroke-width="1" stroke-dasharray="5")
-            line(x1="92.28%" y1="0%" x2="92.28%" y2="100%" stroke="#444" stroke-width="1" stroke-dasharray="5")
+            line(x1="56.3%" y1="0%" x2="56.3%" y2="100%" stroke="#444" stroke-width="2" stroke-dasharray="5")
+            line(x1="77.46%" y1="0%" x2="77.46%" y2="100%" stroke="#444" stroke-width="2" stroke-dasharray="5")
+            line(x1="92.28%" y1="0%" x2="92.28%" y2="100%" stroke="#444" stroke-width="2" stroke-dasharray="5")
 
           // CHART LINES
           svg(
@@ -246,15 +246,14 @@ block append css
 
       
 
-      @media (max-width: 700px)
+      @media (max-width: 650px)
         
         .x-label text
-          text-anchor: end
-          transform: rotate(-45deg) translate(-8px, 24px)
-        //.x-label 
-        //  display: none  
-        //.x-label:nth-child(7n+3)
-        //  display: block
+          display: none
+        .x-label:nth-child(29) text,
+        .x-label:nth-child(39) text,
+        .x-label:nth-child(46) text
+          display: block
 
         text
           font-size: 13px
