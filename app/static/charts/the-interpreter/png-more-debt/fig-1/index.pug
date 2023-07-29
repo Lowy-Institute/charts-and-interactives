@@ -67,12 +67,25 @@ block page
               stroke-dasharray=(false ? 1 : "")
             )
 
-          // TARGET LINE
+          // Annotations: lines & labels
           svg
             line(x1="56.3%" y1="0%" x2="56.3%" y2="100%" stroke="#444" stroke-width="2" stroke-dasharray="5")
             line(x1="77.46%" y1="0%" x2="77.46%" y2="100%" stroke="#444" stroke-width="2" stroke-dasharray="5")
             line(x1="92.28%" y1="0%" x2="92.28%" y2="100%" stroke="#444" stroke-width="2" stroke-dasharray="5")
             line(x1="0%" y1="85.71%" x2="100%" y2="85.71%" stroke="#bbb" stroke-dasharray="")
+          svg.label(x="64%" y="8%")
+            text(style="color: #444;") Somare
+          svg.label(x="82%" y="8%")
+            text(style="color: #444;") O'Neill
+          // arrow icons
+          svg(x="60%" y="8%" viewBox="0 0 2100 800")
+            defs
+              marker(id="arrowhead" markerWidth="10" markerHeight="5" refX="0" refY="2.5" orient="auto")
+                polygon(points="0 0, 6 2.5, 0 5")
+            svg.arrow-1
+              line(x1="0" y1="0" x2="250" y2="280" stroke="#000" stroke-width="12" marker-end="url(#arrowhead)")
+            svg.arrow-2
+              line(x1="400" y1="260" x2="580" y2="120" stroke="#000" stroke-width="12" marker-end="url(#arrowhead)")
 
           // CHART LINES
           svg(
@@ -245,9 +258,11 @@ block append css
       .point:hover .chart-value
           opacity: 0
 
-      
+      .label text
+        font-weight: 600
+        font-size: 16px
 
-      @media (max-width: 650px)
+      @media (max-width: 700px)
         
         .x-label text
           display: none
@@ -261,7 +276,7 @@ block append css
           
       @media (max-width: 450px)
         .chart-content
-          bottom: 40px
+          bottom: 30px
         .legend
           flex-direction: column
         .chart-title
@@ -279,4 +294,13 @@ block append css
         .x-label:nth-child(39) text,
         .x-label:nth-child(46) text
           display: block
+
+        .label text
+          transform: rotate(-90deg) translate(-16px,16px)
+          font-weight: 400
+
+        .arrow-1 line
+          transform:  rotate(10deg) translate(0,-120px)
+        .arrow-2 line
+          transform:  rotate(-12deg) translate(0,-100px)
 
