@@ -127,7 +127,7 @@ series:
       - 52
       - 50
   -
-    title: Debt serivice as a share of own revenue
+    title: Debt service as a share of own revenue
     color: "orange"
     widen: false
     dashed: false
