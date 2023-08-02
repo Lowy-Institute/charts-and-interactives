@@ -12,8 +12,8 @@ source: >
 
 axes:
   minY:  0
-  maxY: 3500
-  stepsY: 8
+  maxY: 6000
+  stepsY: 7
   rotateX: true
   percentage: false
   minorLines: true
@@ -42,34 +42,34 @@ series:
     title: Function grants
     color: "yellow"
     values:
-      -  219
-      - 225
-      - 257
-      - 303
-      - 367
-      - 1938
-      - 1678
-      - 1269
-      - 530
-      - 819
-      - 351
-      - 372
+      - 378
+      - 388
       - 443
+      - 520
+      - 629
+      - 3311
+      - 2856
+      - 2149
+      - 895
+      - 1380
+      - 590
+      - 625
+      - 743
 
   -
     title: Compensation of employees
     color: "teal"
     values:
-      - 906
-      - 854
-      - 1061
-      - 1087
-      - 1003
-      - 1226
-      - 1299
-      - 1385
-      - 1346
-      - 1403
-      - 1448
-      - 1540
-      - 1392 
+      - 1566
+      - 1473
+      - 1825
+      - 1866
+      - 1717
+      - 2094
+      - 2211
+      - 2347
+      - 2274
+      - 2365
+      - 2438
+      - 2586
+      - 2334

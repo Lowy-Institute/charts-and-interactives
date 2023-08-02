@@ -12,8 +12,8 @@ source: >
 
 axes:
   minY:  0
-  maxY: 200
-  stepsY: 11
+  maxY: 350
+  stepsY: 8
   rotateX: true
   percentage: false
   minorLines: true
@@ -51,26 +51,26 @@ series:
     title: Real revenue (K'millions)
     color: "teal"
     values:
-      - 195
-      - 124
-      - 43
-      - 37
-      - 33
-      - 27
-      - 25
-      - 17
-      - 16
-      - 16
-      - 13
-      - 12
-      - 10
-      - 7
-      - 5
-      - 4
-      - 4
-      - 4
-      - 3
-      - 2
-      - 2
-      - 1
+      - 327
+      - 209 
+      - 73 
+      - 63 
+      - 55 
+      - 45 
+      - 41 
+      - 29 
+      - 27 
+      - 26 
+      - 21 
+      - 21 
+      - 17 
+      - 12 
+      - 8 
+      - 7 
+      - 7 
+      - 7 
+      - 5 
+      - 3 
+      - 3 
+      - 1 
 

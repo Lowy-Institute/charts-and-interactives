@@ -12,8 +12,8 @@ source: >
 
 axes:
   minY:  0
-  maxY: 160
-  stepsY: 9
+  maxY: 300
+  stepsY: 7
   rotateX: true
   percentage: false
   minorLines: true
@@ -49,24 +49,24 @@ series:
     title: Real recurrent K'millions
     color: "teal"
     values:
-      - 153
-      - 128
+      - 257
+      - 215
+      - 213
+      - 198
+      - 190
+      - 163
+      - 155
+      - 147
+      - 144
+      - 137
+      - 131
       - 127
-      - 123
+      - 126
       - 118
-      - 113
-      - 97
-      - 92
-      - 88
-      - 86
-      - 82
-      - 78
-      - 76
-      - 75
-      - 70
-      - 57
-      - 54
-      - 48
-      - 41
-      - 38
+      - 95
+      - 90
+      - 81
+      - 68
+      - 63
+      - 56
 

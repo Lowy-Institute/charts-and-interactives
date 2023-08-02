@@ -23,9 +23,8 @@ block page
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
-
           svg(y="50%")
-           text(text-anchor="middle" y="-60" transform="rotate(-90)") K'millions (2012 prices)
+           text(text-anchor="middle" y="-60" transform="rotate(-90)") K'millions (2022 prices)
         
           // Y-Axis labels
           svg(height="100%")
@@ -92,7 +91,7 @@ block page
                   )
                     =chart.series[0].values[i]
       
-      .row
+      //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
@@ -163,7 +162,7 @@ block append css
       .chart-content
         position: absolute
         top: 20px
-        left: 50px
+        left: 70px
         right: 20px
         bottom: 140px
 
