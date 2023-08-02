@@ -1,0 +1,303 @@
+extend /partials/layout
+
+block append config 
+  - var datapath = "static/charts/gender-financing/fig-7/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - isEmpty = (y) => (y === undefined || y == null || y.length <= 0)
+  - chart = page
+  
+block page
+  .wrapper.flex
+    .txt-center.flex.flex-grow.flex-col
+      .chart-title= chart.title
+      .chart-subtitle.txt-muted.txt-tu.p-sm!= chart.subtitle
+      .chart.flex-grow: .chart-content
+        - ln = chart.series[0].values.length
+        - axes = chart.axes
+        - minY = axes.minY
+        - maxY = axes.maxY
+        - range = maxY - minY
+        - rangeY = maxY - minY 
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - rangeX = maxX - minX
+        - stepsX = axes.stepsX
+        - fx = (i) => (i + 0.4) / (ln - 0.2)
+        - fy = (y) => (y - minY) / range
+        
+        svg(height="100%" width="100%")
+
+          svg(y="50%")
+           text(text-anchor="middle" y="-60" transform="rotate(-90)") Rate as % of remittance
+        
+          // Y-Axis labels
+          svg(height="100%")
+            - let steps = chart.axes.stepsY-1
+            for n, i in new Array(steps+1)
+              - y = 1 - (i / (steps))
+              - value = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
+              - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
+              svg(y=toPercent(y))
+                text(text-anchor="end" transform="translate(-8 4)")= formatted
+                
+          // Y-Axis minor lines
+          if chart.axes.minorLines
+            svg(height="100%")
+              for n, i in new Array(steps)
+                - y = (i / steps)
+                svg
+                  line(
+                    x1="0%"
+                    y1=toPercent(y)
+                    x2="100%"
+                    y2=toPercent(y)
+                    stroke="#5552"
+                    stroke-dasharray=(chart.axes.dotted.includes(steps-i) ? 5 : "")
+                  )
+
+          // X-Axis labels
+          for x, i in chart.series[0].values
+            svg.x-label(x=toPercent(fx(i)) y="100%")
+              text(
+                text-anchor=axes.rotateX ? "end" : "middle"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 24)" : "translate(0 20)"
+              )=x
+              
+          // OPTIONAL GUIDE LINE
+          if !isEmpty(axes.guideLine)
+            - var y = 100*fy(maxY + minY - axes.guideLine)+"%"
+            line(
+              x1="0" y1=y x2="100" y2=y
+              stroke="#333"
+              stroke-width=.25
+              stroke-dasharray=(false ? 1 : "")
+            )
+
+          // CHART LINES
+          svg(
+            height="100%"
+            width="100%"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          )
+
+            // SERIES LINES
+            for item, i in chart.series
+              if i
+                polyline(
+                  fill="none"
+                  stroke=chart.colors[chart.series[i].color]
+                  stroke-dasharray=(item.dashed ? 10 : "")
+                  stroke-width=(item.widen ? 4 : 2)
+                  stroke-linejoin=(item.dashed ? "": "round")
+                  stroke-linecap=(item.dashed ? "": "round")
+                  points=(item.values.map( (y, ix) => {
+                    return isEmpty(y) ? "" : [
+                      100 * fx(ix),
+                      100 * fy(maxY + minY - y)
+                    ].join(" ");
+                  })).join(",")
+                )
+      
+          for item, i in chart.series
+            g.point(class=chart.series[i].title)
+              for val, ix in item.values
+                if i !== 0
+                  circle(
+                    r=3
+                    cx=toPercent(fx(ix))
+                    cy=toPercent(fy(maxY + minY - val))
+                    fill=chart.colors[chart.series[i].color]
+                    stroke='#fff'
+                    stroke-width=0
+                  )
+                svg.chart-value(
+                  x=toPercent(fx(ix))
+                  y=toPercent(fy(maxY + minY - val))
+                  style=`color: ${chart.colors[chart.series[i].color]}`
+                )
+                  if false
+                    rect(
+                      y=(i % 2 == 0 ? -12 : 24) - 12
+                      height=14
+                      width=24
+                      x=-12
+                      fill="#fff"
+                    )
+                  if true
+                    rect(
+                      y=(i-26)
+                      x=(i-16)
+                      height=14
+                      width=30
+                      fill="#eee"
+                      opacity=".8"
+                      text-anchor="middle"
+                    )
+                  text(
+                    y=(i % 1 == 0 ? -12 : 24)
+                    text-anchor="middle"
+                    fill="chart.colors[chart.series[i].color]"
+                  )
+                    = val + "%"
+
+            // LINE LABELS
+            g
+              svg(x="100%" y="49%")
+                rect(fill="#16B56F" x="2" y="-8" width="48" height="18")
+                text(class="label" style="color: white; font-weight: 600" transform="translate(6 6)") Tonga
+
+              
+
+            // for item, i in chart.series
+            //g.line-label
+              for val, ix in item.values
+                if ix === item.values.length - 1
+                  svg(
+                    x=toPercent(fx(ix))
+                    y=toPercent(fy(maxY + minY - val))
+                  )
+                    rect(fill="white" x="2" y="-8" width="100" height="16")
+                    text.label(
+                      style=`color: ${chart.colors[chart.series[i].color]}; font-weight: 600`
+                      transform="translate(4 6)"
+                    )= item.title
+
+
+      //.row
+        ul.legend.list-bare.txt-left.flex.flex-ch
+          for ax, i in new Array(chart.series.length)
+            if i
+              li.legend-item
+                span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
+                span.legend-item-label= chart.series[i].title
+
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
+  
+block append css
+  style
+    :sass
+    
+      .wrapper
+        height: 550px
+
+      .chart
+        box-sizing: border-box
+        position: relative
+
+      .chart-content
+        position: absolute
+        top: 20px
+        left: 70px
+        right: 70px
+        bottom: 70px
+
+      .chart-content > svg
+        border-bottom: 1px solid #bbb
+
+      .chart-title
+        margin: auto
+        font-size: 20px
+        
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
+        
+      .tooltip
+        position: absolute
+        left: 0
+        background: #fffe
+        padding: .75em
+        opacity: 0
+        border-radius: .2em
+        box-shadow: 0 0 5px 0 #0004
+        transition-duration: 0.5s
+        pointer-events: none
+        font-size: 14px
+        text-transform: lowercase
+        max-width: 180px
+        box-sizing: border-box
+
+      li
+        list-style: none
+        margin: 0
+        padding: 4px 16px 4px 24px
+
+      .legend
+        font-size: 15px
+        margin-top: 1.5em
+
+      .legend-item
+        margin: 4px 8px 0
+        padding-right: .5em
+        position: relative
+        white-space: nowrap
+
+      .legend-item-box
+        position: absolute
+        left: -.5em
+        top: .75em
+        height: .35em
+        width: 1.5em
+        background: black
+        border-radius: 3px
+
+      polyline
+        vector-effect: non-scaling-stroke
+
+      text
+        font-size: 14px
+        fill: currentColor
+
+      svg
+        overflow: visible
+        
+      .chart-notes, .chart-source
+        margin-top: 1em
+        margin-left: 3em
+        font-size: 15px
+      .txt-muted
+        color: #767676
+
+      .point .chart-value
+        opacity: 0
+        transition: opacity 300ms
+      .point:hover .chart-value
+          opacity: 1
+
+      
+
+      @media (max-width: 700px)
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 24px)
+        //.x-label 
+        //  display: none  
+        //.x-label:nth-child(7n+3)
+        //  display: block
+
+        text
+          font-size: 13px
+          
+      @media (max-width: 450px)
+        .chart-content
+          bottom: 40px
+        .legend
+          flex-direction: column
+        .chart-title
+          font-size: 18px
+        .chart-subtitle
+          font-size: 14px
+        .chart-notes,
+        .chart-source
+          text-align: center
+          font-size: 13px
+        .point:hover .chart-value
+          opacity: 0

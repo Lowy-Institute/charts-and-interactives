@@ -1,0 +1,60 @@
+title: >
+  Graph 6: Average cost of remitting, Australia to Tonga
+
+source: >
+  Source: The World Bank, <em><a href="https://remittanceprices.worldbank.org/corridor/Australia/Tonga">Remittance Prices Worldwide: Sending money from Australia to Tonga</a></em>, accessed March 30, 2023.
+
+#notes: >
+  #<b>Notes:</b> data from January 2022
+
+subtitle: >
+  (% of A$200), Q3 2019 - Q3 2022
+
+axes:
+  minY:  7.5
+  maxY: 10
+  stepsY: 6
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+
+series:
+  -
+    title: Year
+    color: "white"
+    values:
+      - Q3, 2019
+      - Q4, 2019
+      - Q1, 2020
+      - Q2, 2020
+      - Q3, 2020
+      - Q4, 2020
+      - Q1, 2021
+      - Q2, 2021
+      - Q3, 2021
+      - Q4, 2021
+      - Q1, 2022
+      - Q2, 2022
+      - Q3, 2022
+  -
+    title: Tonga
+    color: "green"
+    widen: false
+    dashed: false
+    values:
+      - 8.5
+      - 9.43
+      - 9.2
+      - 8.9
+      - 9.33
+      - 9.79
+      - 9.49
+      - 9.29
+      - 9.18
+      - 9.19
+      - 9.18
+      - 8.93
+      - 8.77

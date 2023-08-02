@@ -1,0 +1,148 @@
+extend /partials/layout
+
+block append config
+  - var datapath = "static/charts/gender-financing/fig-13/data"
+  - var colorpath = "static/charts/templates/colors/data"
+  - _.extend(page, data.getOne(datapath))
+  - _.extend(page, data.getOne(colorpath))
+  - toPercent = (n) => (n * 100).toFixed(2) + "%"
+  - chart = page
+  - red = "#ff4050"
+  - redtxt = "#990f02"
+  - green = "#16B56F"
+  - greentxt = "#006500"
+  
+block page
+  .wrapper
+    h1.txt-center= chart.title
+    h2.txt-center.txt-muted= chart.subtitle
+    table.mx-auto(cellspacing=0)
+      thead
+        tr
+          th(color="#444" style="border-right:1px solid #444; border-bottom: 1px solid #444;") Country
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2008
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2009
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2010
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2011
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2012
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2013
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2014
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2015
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2016
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2017
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2018
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2019
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2020
+      tbody
+        //for country,i in chart.series[0].values
+          tr
+            td= country
+            for v,j in chart.series[1].values[i]
+              - v = +v
+              - color = Math.abs(v) < 0.1 ? "" : v > 0 ? greentxt : redtxt
+              - bgcolor = v > 0 ? green : red
+              - ratio = (255 * (v > 0 ? v / 1.5 : v / -5.5)).toFixed(0)
+              - intensity = ("0" + (+ratio).toString(16)).slice(-2)
+              //- v = null ? "null" : (v)
+              td(
+                style=`background-color: ${bgcolor}${intensity}; color: ${color};`
+              )
+                span= (v).toFixed(0) + "%"
+
+        // using HSL color space
+        //each country, i in chart.series[0].values
+          tr
+            td= country
+            each v, j in chart.series[1].values[i]
+              - v = +v
+              - if (v === 0)
+                - hue = 0
+              - else if (v < 20)
+                - hue = Math.floor((v / 50) * 60)
+              - else
+                - hue = Math.floor(60 + ((v - 50) / 50) * 60)
+              - color = v > 0 ? "green" : v < 0 ? "red" : "black"
+              td(
+                style=`background-color: hsl(${hue}, 100%, 50%); color: ${color};`
+              )
+                span= (v).toFixed(0) + "%"
+
+        // adjust hues slightly
+        each country, i in chart.series[0].values
+          tr
+            td= country
+            each v, j in chart.series[1].values[i]
+              - v = +v
+              - if (v === 0)
+                - hue = 0
+                - saturation = 100
+                - lightness = 50
+              - else if (v < 750)
+                - hue = Math.floor((v / 750) * 60)
+                - saturation = 80 + Math.floor((v / 750) * 20)
+                - lightness = 60 + Math.floor((v / 750) * 10)
+              - else
+                - hue = Math.floor(60 + ((v - 750) / (4500 - 750)) * 60)
+                - saturation = 100
+                - lightness = 70 - Math.floor(((v - 750) / (4500 - 750)) * 10)
+              - color = v > 0 ? "green" : v < 0 ? "red" : "black"
+              td(
+                style=`background-color: hsl(${hue}, ${saturation}%, ${lightness}%); color: ${color};`
+              )
+                span= (v).toFixed(0)
+
+
+
+                
+
+
+    .chart-source.txt-right.txt-muted.txt-cond!= chart.source
+
+block append css
+  style
+    :sass
+      html,
+      body
+        height: auto
+        overflow: auto
+        
+      h1
+        font-size: 20px
+        font-weight: 600
+        /* text-transform: uppercase
+        margin-bottom: 0.2rem
+        
+      h2
+        margin-bottom: 1em
+        /* font-weight: 600
+        font-size: 15px
+      
+      h1,h2
+        font-family: "Sans"
+        
+      table
+        border-bottom: 1px solid
+        
+      th
+        border-top: 0px solid
+        border-bottom: 0px solid
+        padding: 6px .75rem 4px
+        /* color: #fff
+
+      td,th
+        text-align: right
+        font-size: 14px
+        
+      td
+        padding: 3px .5rem
+        
+        span
+          opacity: 1
+        
+      .wrapper
+        padding: 2rem 0
+
+      .chart-notes, .chart-source
+        margin-top: 1em
+        margin-right: 1.5em
+        font-size: 15px
