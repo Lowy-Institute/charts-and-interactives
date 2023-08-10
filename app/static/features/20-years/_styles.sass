@@ -1,7 +1,7 @@
 // Vars
 $color-hl: #ffc52c
 $color-dk: transparent
-$color-lt: #ddd8d3
+$color-lt: #d8d3ce
 $color-ff: #fff
 $color-0: #000
 $muted: #969ba4
@@ -123,19 +123,19 @@ body,
     transform: scale3d(1, 1, 1)
 
 .fade
-  animation: fadeAnimation 2s $easing-cubic-in-out
+  animation: fadeAnimation 1.6s $easing-cubic-in-out
 
 @keyframes delayAnimation
   0%
     opacity: 0
-    transform: translateY(3rem)
+    transform: translateY(100%)
   100%
     opacity: 1
     transform: translateY(0)
 
 .title-animation
   opacity: 0
-  animation: delayAnimation 1.4s 0.6s $easing-cubic-in-out forwards
+  animation: delayAnimation 1.0s 0.8s $easing-cubic-in-out forwards
 
 .img-pan
   width: 100%
@@ -157,9 +157,6 @@ body,
 .frame
   position: relative
   z-index: 1
-
-h1
-  font-weight: 200
 
 .txt-xxl
   font-size: 80px
@@ -189,6 +186,9 @@ h1
   line-height: inherit
   font-family: Sans, sans-serif
 
+.sine-lt,
+.sine-ff,
+.sine-dk
   .txt-right &
     margin-left: auto
     margin-right: 0
@@ -517,7 +517,7 @@ body
   text-align: center
   overflow: hidden
   font-size: 22px
-  font-weight: 300
+  font-weight: 400
   text-rendering: geometricPrecision
   display: flex
   flex-direction: column
@@ -525,7 +525,7 @@ body
 
 strong, .txt-tu, .caption
   font-family: Sans, sans-serif
-  font-weight: 400
+  font-weight: 600
   font-style: normal
 
 .row,
