@@ -1,7 +1,7 @@
 // Vars
 $color-hl: #ffc52c
 $color-dk: transparent
-$color-lt: #e1dbd6
+$color-lt: #ddd8d3
 $color-ff: #fff
 $color-0: #000
 $muted: #969ba4
@@ -228,14 +228,14 @@ h1
   background-image: url("./img/sine-dk.png")
 
 a
-  transition: color 300ms
-  color: $color-hl
-  text-decoration-thickness: 1px
-  text-underline-offset: 6px
+  transition: text-decoration-color 300ms
+  text-decoration-color: transparent
+  color: $color-ff
 
   &:hover,
   &:focus
     color: $color-ff
+    text-decoration-color: $color-ff
 
 blockquote
   font-style: normal
