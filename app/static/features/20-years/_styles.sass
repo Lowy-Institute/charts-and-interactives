@@ -9,6 +9,7 @@ $blue-dark: #001525
 $blue-lowy: #002b45
 $blue-light: #004b78
 $highlight: lighten($blue-light, 10)
+$easing-cubic-in-out: cubic-bezier(0.65, 0.05, 0.36, 1)
 
 // Colors
 .bg-hl
@@ -66,7 +67,7 @@ body,
   right: 20px
   text-align: center
   text-transform: uppercase
-  font-size: 16px;
+  font-size: 16px
   font-weight: 300
 
 .caption
@@ -122,8 +123,7 @@ body,
     transform: scale3d(1, 1, 1)
 
 .fade
-  animation: fadeAnimation 4s
-  animation-timing-function: ease-in
+  animation: fadeAnimation 2s $easing-cubic-in-out
 
 @keyframes delayAnimation
   0%
@@ -133,11 +133,9 @@ body,
     opacity: 1
     transform: translateY(0)
 
-.delay
+.title-animation
   opacity: 0
-  animation: delayAnimation 1s ease-in
-  animation-delay: 3s
-  animation-fill-mode: forwards
+  animation: delayAnimation 1.4s 0.6s $easing-cubic-in-out forwards
 
 .img-pan
   width: 100%
@@ -160,14 +158,6 @@ body,
   position: relative
   z-index: 1
 
-// Font size
-// Fonts
-$font-sans: "Antipode Sans"
-$font-semi: "Antipode Semi"
-$font-cond: "Antipode Cond"
-$line-height: calc(32/24)
-// $font-size: 18px
-
 h1
   font-weight: 200
 
@@ -176,11 +166,9 @@ h1
   line-height: 0.875
   font-weight: 100
   letter-spacing: 0.04em
-  font-family: $font-sans, sans-serif
 .txt-xl
   font-size: 64px
   line-height: 1
-  font-family: $font-sans, sans-serif
   font-weight: 100
   margin: -4px 0 4px
 .txt-title
@@ -199,7 +187,7 @@ h1
 .txt-sm
   font-size: 14px
   line-height: inherit
-  font-family: $font-sans, sans-serif
+  font-family: Sans, sans-serif
 
   .txt-right &
     margin-left: auto
@@ -490,7 +478,7 @@ svg, img
 /*   left: 0
 /*   top: 0
 /*   margin: -1.5em -4em -2em
-/*   border-bottom: 1px solid white;
+/*   border-bottom: 1px solid white
 /*   padding-right: 1em
 /*   transform: rotate(30deg) skew(-25deg) scale(0.8)
 /* 
@@ -525,7 +513,7 @@ svg, img
       transform: translate3d(0, 80px, 0) !important
 
 body
-  font-family: $font-sans, sans-serif
+  font-family: Sans, sans-serif
   text-align: center
   overflow: hidden
   font-size: 22px
@@ -536,7 +524,7 @@ body
   background-color: $color-dk !important
 
 strong, .txt-tu, .caption
-  font-family: $font-sans, sans-serif
+  font-family: Sans, sans-serif
   font-weight: 400
   font-style: normal
 
@@ -709,17 +697,14 @@ strong, .txt-tu, .caption
   height: 64px
 
   .scroll-prompt
-    /* float: left
     transition: opacity 300ms
     opacity: 0
+    line-height: inherit
+    font-weight: 600
     animation: prompt 3s infinite linear alternate
-    font-weight: 200
 
     .page-0 &
       opacity: .9
-
-  .social-share
-    float: right
 
 .social-share
   display: flex
@@ -1028,7 +1013,7 @@ html
     transform: none
     left: 0
     right: 0
-    bottom: 0;
+    bottom: 0
 
   .row-sm
     flex-direction: column
@@ -1165,7 +1150,7 @@ html
     right: -50vw
 
   .page-12 .col-1-3, .col-2-3
-    flex-basis: auto;
+    flex-basis: auto
     padding: 0.5em 0
 
 @keyframes prompt
@@ -1290,30 +1275,4 @@ html
   &.page-13 #btn-next
     color: transparent
     pointer-events: none
-
-
-=font-face($name, $path, $fweight, $fstyle: normal, $fdisplay: block)
-  $path: "https://charts.lowyinstitute.org/fonts/#{$path}"
-  $types: (woff2) (woff) (ttf, truetype)
-  $source: ()
-
-  @each $type in $types
-    $ext: nth($type, 1)
-    $format: nth($type, length($type))
-    $source: $source, unquote('url("#{$path}.#{$ext}") format("#{$format}")')
-
-  @font-face
-    font-family: $name
-    src: $source
-    font-weight: $fweight
-    font-style: $fstyle
-    font-display: $fdisplay
-
-+font-face($font-sans, "antipode/AntipodeSans-NormalLight", 300, normal, swap)
-+font-face($font-sans, "antipode/AntipodeSans-NormalRegular", 400)
-+font-face($font-sans, "antipode/AntipodeSans-NormalSemiBold", 600)
-+font-face($font-sans, "antipode/AntipodeSans-NormalSemiBoldItalic", 600, italic, swap)
-+font-face($font-sans, "antipode/AntipodeSans-NormalBold", 700, normal, swap)
-+font-face($font-cond, "antipode/AntipodeSans-CondensedRegular", 400)
-+font-face($font-semi, "antipode/AntipodeSans-SemiCondensedRegular", 400)
 

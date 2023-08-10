@@ -1,11 +1,7 @@
-.row
-  .col-fw
+.row.flex.flex-col.flex-between
+  .col-fw.flex-cv
     .logo-block.fade
-      //-img(src='./img/logo-20-years-white.svg')
       include ../../img/logo-20-years-white.svg
 
-.row
-  .col-fw.num-lf
-    .txt-center
-      h1.txt-lg.ph-sm.delay
-        = page.title
+    h1.txt-lg.ph-sm.title-animation=animation
+      =page.title
