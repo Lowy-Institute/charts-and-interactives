@@ -51,7 +51,9 @@ let animationLat;
 
 const DURATION = 20 * 60 * 1000;
 
-setTimeout(() => {
-  animationLon = chart.animate({ property: "deltaLongitude", to: -150 + 10 * 360 }, DURATION);
-  // animationLat = chart.animate({ property: "deltaLatitude", to: 0 }, DURATION);
-}, 2000);
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    animationLon = chart.animate({ property: "deltaLongitude", to: -150 + 8 * 360 }, DURATION);
+  }, 3000);
+})
