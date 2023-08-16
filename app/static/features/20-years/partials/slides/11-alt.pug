@@ -1,40 +1,66 @@
-.row.row-sm
+- 
+  const fundingData = [
+    {label: "other", class: "bg-lt", v: 1},
+    {label: "sponsorship", class: "bg-hl", v: 1},
+    {label: "membership", class: "bg-b-lt", v: 15},
+    {label: "donations", class: "bg-b-bl", v: 36},
+    {label: "grants", class: "bg-b-dk", v: 47},
+  ]
+
+.row
   .col-2-3
-    .block.ph-sm
+    .block.p-sm
       :marked
         For each of the Institute’s first 20 years, our Chairman has asked: how do we know we are succeeding? 
         
         We know because others invest in our work: more than half the Institute’s funding now comes from external grants and corporate support. We know because the best think tanks and research institutions want to work with us: from the Brookings Institution and Council on Foreign Relations in the United States to the Foundation for Strategic Research in France and the Australian National University. We know because Lowy Institute staff have gone on to fill prominent roles in government, including heads of intelligence agencies and senior advisors to cabinet ministers.
 
-  .col-1-3
-    .title Funding
-    //- donut SVG
-    .donut(class="svg-item")
-      svg(width="100%" viewBox="0 0 88 54" class="donut")
-        circle(class="donut-hole" cx="20" cy="10" r="15.91549430918954" fill="transparent")
-        //- segments: stroke-dasharray for each segment adds up to 100, animated across 2 frames (see CSS)
-        g
-          circle(class="donut-ring" cx="44" cy="27" r="15.91549430918954" fill="transparent" stroke-width="12")
-          circle(class="donut-segment donut-segment-1" cx="44" cy="27" r="15.91549430918954" fill="transparent" stroke-width="12" stroke-dashoffset="25")
-          circle(class="donut-segment donut-segment-2" cx="44" cy="27" r="15.91549430918954" fill="transparent" stroke-width="12" stroke-dashoffset="25")
-          circle(class="donut-segment donut-segment-3" cx="44" cy="27" r="15.91549430918954" fill="transparent" stroke-width="12" stroke-dashoffset="25")
-          circle(class="donut-segment donut-segment-4" cx="44" cy="27" r="15.91549430918954" fill="transparent" stroke-width="12" stroke-dashoffset="25")
-          //- labels & lines: fade in later on top
-          g(class="pie-label")
-           text(class="pie-label-text" transform="translate(14 5)" text-anchor="start" y="-2")
-             tspan Other
-           path(class="pie-label-stroke" d="M24,2L43.3,2L43.3,6")
-           text(class="pie-label-text" transform="translate(5 5)" text-anchor="start" y="5")
-             tspan Sponsorship
-             tspan(dx="-10" dy="2.5") income
-           path(class="pie-label-stroke" d="M24,9L42.3,9")
-           text(class="pie-label-text" transform="translate(4 5)" text-anchor="start" y="22")
-             tspan Donations
-           path(class="pie-label-stroke" d="M28,26L20,26")
-           text(class="pie-label-text" transform="translate(5 5)" text-anchor="start" y="45")
-             tspan Membership
-             tspan(dx="-10" dy="2.5") income
-           path(class="pie-label-stroke" d="M38,40L34,49L23,49")
-           text(class="pie-label-text" transform="translate(65 5)" text-anchor="start" y="45")
-             tspan Grants
-           path(class="pie-label-stroke" d="M54,40L58,49L64,49")
+  .col-1-3.flex-col
+    .funding-chart-title.txt-md Our funding
+    .funding-chart.flex-col
+      for item, i in fundingData
+        .funding-chart-group.flex
+          .funding-chart-label.txt-right.txt-tu.txt-xs= item.label
+          .funding-chart-items
+            for _, i in new Array(item.v)
+              .funding-chart-item(
+                class=`${item.class} ${i < 10 && 'bt'} ${(i % 10 === 0) && 'bl'} ${((i % 10 === 9) || (i === item.v - 1)) && 'br'} ${(i >= item.v - 10) && 'bb'}`
+              )
+            .funding-chart-value.txt-tu.txt-xs #{item.v}%
+
+style
+  :sass
+    .funding-chart
+      grid-gap: 0.5rem
+      gap: 0.5rem
+
+    .funding-chart-title
+      margin-bottom: 1rem
+
+    .funding-chart-group
+      display: grid
+      grid-gap: 1rem
+      grid-template-columns: 1fr auto
+        
+    .funding-chart-items
+      display: grid
+      grid-template-columns: repeat(10, 1.125rem)
+
+    .funding-chart-value
+      margin-left: 6px
+      margin-top: 2px
+      opacity: 0.85
+
+    .funding-chart-item
+      width: 1.125rem
+      height: 1.125rem
+      box-sizing: border-box
+
+      &.bt
+        border-top: 1px solid rgba(#fff, 0.5)
+      &.bl
+        border-left: 1px solid rgba(#fff, 0.5)
+      &.br
+        border-right: 1px solid rgba(#fff, 0.5)
+      &.bb
+        border-bottom: 1px solid rgba(#fff, 0.5)
