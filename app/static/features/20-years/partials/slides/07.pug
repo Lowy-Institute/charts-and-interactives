@@ -1,20 +1,20 @@
-.row(style="height:40%;")
-  .col-fw(style="background-color:#1a1f23; color:#fff;")
-    .block.ph-sm
-      img#img-interpreter(style="margin:0" data-src="img/the-interpreter-dark.png" width="180" slt="The Interpreter logo")
-      p
-      |  Our online magazine, <em><a href="https://www.lowyinstitute.org/the-interpreter" style="color:#f80;">The Interpreter</a></em>, has published daily commentary and analysis on international issues since 2007.
+.row(style="height:50%;")
+  .col-fw
+    .block.ph-sm.flex-cv
+      a(href="https://www.lowyinstitute.org/the-interpreter")
+        img#img-interpreter(style="margin-bottom: 1rem;" data-src="img/the-interpreter-dark.png" width="180" alt="The Interpreter logo")
+      p.txt-center.txt-md Our online magazine has published daily commentary and analysis on international issues since 2007.
 
-.row(style="height:60%;")
-  .col-1-2(style="background-color:#fff; color:#1a1f23;" id="col-2")
-    .block.txt-lg.num-lf
-      .txt-sm.pv-xs.txt-tu More than
-      .txt-xl.pv-xs(data-view="counter") 18,000
-      .txt-lg articles
-      
-  .col-1-2(style="background-color:#f80; color:#1a1f23;" id="col-3")
-    .block.txt-lg.num-lf
-      .txt-sm.pv-xs.txt-tu by more than
-      .txt-xl.pv-xs(data-view="counter") 1,860
-      .txt-lg contributors
-
+.row(style="height:50%;")
+  .col-1-2.bg-b-bl(style="border-top: 1px solid #f80")
+    .block: .txt-center
+      .txt-sm.txt-center.txt-tu.pv-xs Articles
+      .inline-flex.flex-jcc.flex-aic.relative
+        .txt-xl(data-view="counter") 18,000
+        .suffix.txt-xl.txt-interpreter-lt.ph-xs +
+  .col-1-2.bg-b-bl(style="border-top: 1px solid #f80")
+    .block: .txt-center
+      .txt-sm.txt-center.txt-tu.pv-xs Contributors
+      .inline-flex.flex-jcc.flex-aic.relative
+        .txt-xl(data-view="counter") 1,800
+        .suffix.txt-xl.txt-interpreter-lt.ph-xs +

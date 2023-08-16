@@ -8,6 +8,8 @@ $muted: #969ba4
 $blue-dark: #001525
 $blue-lowy: #002b45
 $blue-light: #004b78
+$interpreter-dk: #1a1f23
+$interpreter-lt: #f80
 $highlight: lighten($blue-light, 10)
 $easing-cubic-in-out: cubic-bezier(0.65, 0.05, 0.36, 1)
 
@@ -26,6 +28,10 @@ $easing-cubic-in-out: cubic-bezier(0.65, 0.05, 0.36, 1)
   background: $color-lt
 .bg-ff
   background: $color-ff
+.bg-interpreter-dk
+  background: $interpreter-dk
+.bg-interpreter-lt
+  background: $interpreter-lt
 
 html,
 body,
@@ -40,6 +46,10 @@ body,
   color: $color-lt
 .txt-ff
   color: $color-ff
+.txt-interpreter-dk
+  color: $interpreter-dk
+.txt-interpreter-lt
+  color: $interpreter-lt
 
 // Grid
 .row
@@ -999,6 +1009,10 @@ html
 
 .faint
   opacity: 0.7
+
+.suffix
+  position: absolute
+  left: 100%
 
 @media (max-width: 960px), (max-height: 800px)
   .txt-xxl
