@@ -289,7 +289,7 @@ svg, img
 #laptop rect,#laptop path
   opacity: 0
 
-.page-7
+.active
   #laptop rect,#laptop path
     fill: none
     stroke:#fff
@@ -346,8 +346,7 @@ svg, img
   stroke: $blue-lowy
   stroke-width: .5px
 
-.page-14,
-.page-16
+.active
   #bligh-st path,
   #bligh-st-upper path,
   #bligh-st-lower path
@@ -362,8 +361,7 @@ svg, img
       /*fill: mix($color-ff, $blue-light)
       fill: $color-ff
 
-.page-14,
-.page-16
+.active
   #bligh-st #street path,
   #bligh-st #door path
     animation: changeColor2 5s forwards
@@ -451,7 +449,7 @@ svg, img
     transform: translate(200px, -200px)
     opacity: 1
 
-.page-7 .box .layer:nth-child(4)
+.active .box .layer:nth-child(4)
   background: url('./img/api.png') no-repeat
   background-size: contain  
   animation: layerAnimation 0.8s ease-in-out forwards
@@ -464,7 +462,7 @@ svg, img
     transform: translate(150px, -150px)
     opacity: 0.8
 
-.page-7 .box .layer:nth-child(3)
+.active .box .layer:nth-child(3)
   background: url('./img/poll.png') no-repeat
   background-size: contain
   animation: layerAnimation2 0.8s ease-in-out forwards
@@ -477,7 +475,7 @@ svg, img
     transform: translate(100px, -100px)
     opacity: 0.6
 
-.page-7 .box .layer:nth-child(2)
+.active .box .layer:nth-child(2)
   background: url('./img/gdi.png') no-repeat
   background-size: contain
   animation: layerAnimation3 0.8s ease-in-out forwards
@@ -490,7 +488,7 @@ svg, img
     transform: translate(50px, -50px)
     opacity: 0.4
 
-.page-7 .box .layer:nth-child(1)
+.active .box .layer:nth-child(1)
   background: url('./img/pam.png') no-repeat
   background-size: contain
   animation: layerAnimation4 0.8s ease-in-out forwards
@@ -619,7 +617,7 @@ strong, .txt-tu, .caption
 
 /* donut chart */
 
-.page-12
+.active
   .svg-item
     width: 90%
     animation: donutfade 1s
@@ -979,7 +977,7 @@ html
 #map-australia path
   fill: $color-hl
 
-.page-2
+.active
   #map-surrounds,
   #map-australia
     transition: transform 5000ms
@@ -1095,9 +1093,6 @@ html
     &:before
       mix-blend-mode: normal
       border-color: rgba($color-dk, 0.1)
-
-  /* .page-0 #header
-  /*  opacity: 1
 
   #header
     line-height: 72px
