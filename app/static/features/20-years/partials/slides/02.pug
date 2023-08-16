@@ -1,12 +1,13 @@
-.row.row-sm
-  .col-1-2.bg-b-lt
-    .bg-img.of-hidden
-      include ../../img/map.svg
+.row
+  .col-fw.flex-ch(style="gap: 4rem")
+    #animated-map.fade-in(style="transition-duration: 1s")
+    .flex-col
+      blockquote.txt-cond
+        .rise-in.delay-0 The goal of the Lowy Institute was
+        .rise-in.delay-1
+          | to give Australia a
+          span.txt-hl  bigger voice 
+          | on
+        .rise-in.delay-2 the issues that matter in global affairs
 
-  .col-1-2.bg-b-lt
-    blockquote.txt-md
-      p "the goal of the Lowy Institute was to give Australia a bigger voice on the issues that matter in global affairs…”
-      cite.txt-sm Sir Frank Lowy
-
-    .block.fade-in.delay-4
-      img.bg-img.fl-tn(style="border:1px solid rgba(255,255,255,.5)" data-src="./img/sir-frank-lowy-crop-mono.jpg" alt="Sir Frank Lowy")
+      .txt-tu.txt-sm.rise-in.delay-3(style="width: 100%") Sir Frank Lowy
