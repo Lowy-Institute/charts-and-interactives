@@ -1,60 +1,20 @@
-.row.bg
-  .col.col-1-3
-    .block.ph-sm
-      :marked
-        The Institute has created a suite of interactives that are eagerly anticipated and parsed around the world: the [Lowy Institute Poll](https://poll.lowyinstitute.org), the most authoritative survey of Australian attitudes to the world; the [Global Diplomacy Index](https://globaldiplomacyindex.lowyinstitute.org), mapping the world’s most significant diplomatic networks and the [Asia Power Index](https://power.lowyinstitute.org), still the world’s most comprehensive effort to measure power in the world’s most consequential region.
+.row(style="height:50%;")
+  .col-fw
+    .block.ph-sm.flex-cv
+      a(href="https://www.lowyinstitute.org/the-interpreter")
+        img#img-interpreter(style="margin-bottom: 1rem;" data-src="img/the-interpreter-dark.png" width="180" alt="The Interpreter logo")
+      p.txt-center.txt-md Our online magazine has published daily commentary and analysis on international issues since 2007.
 
-  .col.col-2-3
-    //- .pulse-box: .pulse-css
-    .box
-      .layer
-      .layer
-      .layer
-      .layer
-
-style
-  :sass
-    .pulse-box
-      position: absolute
-      top: 32px
-      left: 32px
-      transform: translate(0,-50%)
-
-    .pulse-css
-      background: #4f9ed3
-      position: relative
-      width: 16px
-      height: 16px
-      border-radius: 8px
-
-    .pulse-css:after,
-    .pulse-css:before
-      content: ""
-      width: 16px
-      height: 16px
-      border-radius: 8px
-      background-color: #fff
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      margin: auto
-      transform: scale(.5)
-      transform-origin: center center
-      animation: pulse-effect 2s linear infinite
-
-    .pulse-css:after
-      animation-delay: 1.25s
-
-    @keyframes pulse-effect
-      0%
-        transform: scale(0.5)
-        opacity: 0
-      50%
-        opacity: 0.2
-      70%
-        opacity: 0.09
-      100% 
-        transform: scale(4)
-        opacity: 0
+.row(style="height:50%;")
+  .col-1-2.bg-b-bl(style="border-top: 1px solid #f80")
+    .block: .txt-center
+      .txt-sm.txt-center.txt-tu.pv-xs Articles
+      .inline-flex.flex-jcc.flex-aic.relative
+        .txt-xl(data-view="counter") 18,000
+        .suffix.txt-xl.txt-interpreter-lt.ph-xs +
+  .col-1-2.bg-b-bl(style="border-top: 1px solid #f80")
+    .block: .txt-center
+      .txt-sm.txt-center.txt-tu.pv-xs Contributors
+      .inline-flex.flex-jcc.flex-aic.relative
+        .txt-xl(data-view="counter") 1,800
+        .suffix.txt-xl.txt-interpreter-lt.ph-xs +
