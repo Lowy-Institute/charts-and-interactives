@@ -10,6 +10,8 @@ require.register "views/scroller", (exports, require, module) ->
     initialize: ->
       @data = @$el.data()
 
+      @data.slideHeights = $(".scroll-item").map (i, e) => +e.dataset.nSlides
+
       @data.support = window.CSS?.supports("scroll-snap-type: y mandatory")
 
       @$elements =
@@ -37,15 +39,43 @@ require.register "views/scroller", (exports, require, module) ->
         $("br").each (i, el) ->
           $(el).replaceWith(" ")
 
+    # sum heights array sequentially until sum > index
+    # index should be set to the interator value minus 1
+    # this is to allow for slides with over 100% height
+    getIndex: (index) -> 
+      j = 0
+      aggregate = 0
+
+      while aggregate <= index
+        aggregate += @data.slideHeights[j]
+        j++
+
+      return j - 1
+
+    sum: (arr) -> if arr.length then arr.reduce((a,b) => a + b) else 0
+
     onScroll: ->
       i  = Math.floor @el.scrollTop / @el.offsetHeight
       i2 = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
-      t1 = (@el.scrollTop / @el.offsetHeight) % 1
-      t2 = Math.sin(Math.PI * t1)
 
+      i = @getIndex i
       i  -= @data.min
 
+      i2 = @getIndex i2
       i2 = Math.max(Math.min(i2, @data.max), @data.min)
+
+      n = @data.slideHeights[i2]
+
+      cumulativeSlideHeights = @sum @data.slideHeights.get().slice(0, i2)
+      slideOffsetTop = @el.offsetHeight * cumulativeSlideHeights
+
+      if (slideOffsetTop > @el.scrollTop)
+        cumulativeSlideHeights = @sum @data.slideHeights.get().slice(0, i2 - 1)
+        slideOffsetTop = @el.offsetHeight * cumulativeSlideHeights
+        n = @data.slideHeights[i2 - 1]
+
+      t1 = ((@el.scrollTop - slideOffsetTop) / (n * @el.offsetHeight)) % 1
+      t2 = Math.sin(Math.PI * t1)
 
       if t1 < 0.5 and i < 0
         t2 = 1
@@ -73,6 +103,7 @@ require.register "views/scroller", (exports, require, module) ->
 
     onScrollEnd: ->
       index = Math.floor @el.scrollTop / @el.offsetHeight + 0.5
+      index = @getIndex index
 
       unless @data.support
         @scrollTo(index)

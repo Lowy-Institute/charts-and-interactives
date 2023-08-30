@@ -13,10 +13,12 @@ block page
   include partials/other/header
   include partials/other/background-gallery
 
-  mixin item(index)
+  mixin item(index, n = 1)
     .scroll-item(
       id=`scroll-item-${index}`
       class=(index == "index" ? "active" : null)
+      style=`height: ${n * 100}%`
+      data-n-slides=n
     )
       block
 
@@ -25,7 +27,7 @@ block page
     data-pager=".pager-page" 
     data-index=".pager-index"
     data-min="1"
-    data-max="15"
+    data-max="14"
   )
     +item("intro")
       include partials/slides/intro
@@ -45,7 +47,7 @@ block page
       include partials/slides/07
     +item(8)
       include partials/slides/08
-    +item(9)
+    +item(9, 6)
       include partials/slides/09
     +item(10)
       include partials/slides/10-alt
@@ -68,7 +70,7 @@ block append scripts
   script
     include:coffee coffee/scroller.coffee
     include:coffee coffee/counter.coffee
-    include coffee/animated-map.js
+    include coffee/image-slider.js
 
   script.
     window.onload = () => document.querySelector("#scroller").scrollTo({top: 0, behavior: "instant"})

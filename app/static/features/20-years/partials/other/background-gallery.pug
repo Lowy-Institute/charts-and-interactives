@@ -4,9 +4,19 @@ mixin gallery-image(slide, src)
     style=`background-image: url("./img/${src}")`
   )
 
+mixin gallery-slider(slide, src) 
+  .background-slider(
+    data-slide=slide
+    class=`background-slider-${slide}`
+    style=`background-image: url("./img/${src}")`
+  )
+
 #background-gallery
   +gallery-image(0, "bligh-st-front.jpg")
   +gallery-image(1, "bligh-st-front-oblique.jpg")
   +gallery-image(2, "sir-frank-lowy.jpg")
   +gallery-image(3, "michael-and-sanna-marin.jpg")
+  +gallery-image(7, "collage-1.jpg")
+  +gallery-image(8, "town-hall.jpg")
+  +gallery-slider(9, "collage-2.jpg")
   //- +gallery-image(4, "pm-samoa.jpg")

@@ -1,7 +1,6 @@
 // Vars
 $color-hl: #ffc52c
 $color-dk: transparent
-// $color-lt: #d8d3ce
 $color-lt: #e8e3de
 $color-ff: #fff
 $color-0: #000
@@ -41,6 +40,7 @@ body.embed-false
   color: $color-ff
 
 #background-gallery,
+.background-slider,
 .background-image
   position: absolute
   top: 0
@@ -49,19 +49,27 @@ body.embed-false
   bottom: 0
   z-index: 0
 
-.background-image
+.background-image,
+.background-slider
   opacity: 0
   transition: opacity 1s, background-position 2s
   pointer-events: none
-  background-position: 52% 48%
+  background-position: 50% 48%
   background-size: 110% auto
   background-repeat: no-repeat
 
+.background-image
   @media (max-aspect-ratio: 16/10)
     background-size: auto 110%
 
+.background-slider
+  transition: opacity 1s
+  background-size: auto 100%
+  background-position: 0 50%
+
 @for $i from 0 through 20
-  .page-#{$i} .background-image-#{$i}
+  .page-#{$i} .background-image-#{$i},
+  .page-#{$i} .background-slider-#{$i}
     opacity: 0.3
     background-position: 50% 52%
 
