@@ -1,7 +1,8 @@
 // Vars
 $color-hl: #ffc52c
 $color-dk: transparent
-$color-lt: #d8d3ce
+// $color-lt: #d8d3ce
+$color-lt: #e8e3de
 $color-ff: #fff
 $color-0: #000
 $muted: #969ba4
@@ -12,6 +13,7 @@ $interpreter-dk: #1a1f23
 $interpreter-lt: #f80
 $highlight: lighten($blue-light, 10)
 $easing-cubic-in-out: cubic-bezier(0.65, 0.05, 0.36, 1)
+$easing-exp-in-out: cubic-bezier(0.68, -0.01, 0.23, 1.34)
 
 // Colors
 .bg-hl
@@ -33,10 +35,35 @@ $easing-cubic-in-out: cubic-bezier(0.65, 0.05, 0.36, 1)
 .bg-interpreter-lt
   background: $interpreter-lt
 
-html,
 body,
- background: linear-gradient(-135deg, $blue-light, $blue-dark)
- color: $color-ff
+body.embed-false
+  background: linear-gradient(-135deg, $blue-light, $blue-dark)
+  color: $color-ff
+
+#background-gallery,
+.background-image
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 0
+
+.background-image
+  opacity: 0
+  transition: opacity 1s, background-position 2s
+  pointer-events: none
+  background-position: 52% 48%
+  background-size: 110% auto
+  background-repeat: no-repeat
+
+  @media (max-aspect-ratio: 16/10)
+    background-size: auto 110%
+
+@for $i from 0 through 20
+  .page-#{$i} .background-image-#{$i}
+    opacity: 0.3
+    background-position: 50% 52%
 
 .txt-hl
   color: lighten($color-hl, 2)
@@ -428,8 +455,8 @@ svg, img
 
 .box
   position: relative
-  width: 640px
-  height: 375px
+  width: 440px
+  height: 255px
   margin-top: 220px
   background: rgba(0, 0, 0,.1)
   transform: rotate(-30deg) skew(25deg) scale(0.8)
@@ -443,7 +470,7 @@ svg, img
   display: block
   width: 100%
   height: 100%
-  transition: 0.5s
+  transition: 1s
 
 @keyframes layerAnimation
   0%
@@ -456,7 +483,7 @@ svg, img
 .active .box .layer:nth-child(4)
   background: url('./img/api.png') no-repeat
   background-size: contain  
-  animation: layerAnimation 0.8s ease-in-out forwards
+  animation: layerAnimation 1.25s $easing-exp-in-out forwards
 
 @keyframes layerAnimation2
   0%
@@ -469,7 +496,7 @@ svg, img
 .active .box .layer:nth-child(3)
   background: url('./img/poll.png') no-repeat
   background-size: contain
-  animation: layerAnimation2 0.8s ease-in-out forwards
+  animation: layerAnimation2 1.25s $easing-exp-in-out forwards
 
 @keyframes layerAnimation3
   0%
@@ -482,7 +509,7 @@ svg, img
 .active .box .layer:nth-child(2)
   background: url('./img/gdi.png') no-repeat
   background-size: contain
-  animation: layerAnimation3 0.8s ease-in-out forwards
+  animation: layerAnimation3 1.25s $easing-exp-in-out forwards
 
 @keyframes layerAnimation4
   0%
@@ -495,46 +522,7 @@ svg, img
 .active .box .layer:nth-child(1)
   background: url('./img/pam.png') no-repeat
   background-size: contain
-  animation: layerAnimation4 0.8s ease-in-out forwards
-
-/* .box .layer .label
-/*   position: absolute
-/*   left: 0
-/*   top: 0
-/*   margin: -1.5em -4em -2em
-/*   border-bottom: 1px solid white
-/*   padding-right: 1em
-/*   transform: rotate(30deg) skew(-25deg) scale(0.8)
-/* 
-/* .box .layer .label:hover
-/*   color: $color-hl
-
-/*  .box:hover .layer:nth-child(4)
-/*    background: url('./img/api.png') no-repeat
-/*    transform: translate(200px, -200px)
-/*    opacity: 1
-/*
-/*  .box:hover .layer:nth-child(3)
-/*    background: url('./img/poll.png') no-repeat
-/*    transform: translate(150px, -150px)
-/*    opacity: 0.8
-/*
-/*  .box:hover .layer:nth-child(2)
-/*    background: url('./img/gdi.png') no-repeat
-/*    transform: translate(100px, -100px)
-/*    opacity: 0.6
-/*
-/*  .box:hover .layer:nth-child(1)
-/*    background: url('./img/pam.png') no-repeat
-/*    transform: translate(50px, -50px)
-/*    opacity: 0.4
-
-  .bcard
-    transition-duration: 600ms !important
-    justify-content: start !important
-    transform: scale(1.1)
-    [data-view="in-viewport"]:not(.visible) &
-      transform: translate3d(0, 80px, 0) !important
+  animation: layerAnimation4 1.25s $easing-exp-in-out forwards
 
 body
   font-family: Sans, sans-serif
@@ -545,7 +533,6 @@ body
   text-rendering: geometricPrecision
   display: flex
   flex-direction: column
-  background-color: $color-dk !important
 
 strong, .txt-tu, .caption
   font-family: Sans, sans-serif
@@ -573,7 +560,7 @@ strong, .txt-tu, .caption
   height: 73px
   margin: auto
   transition: all 300ms
-  box-shadow: 0 0 80px rgba(0,0,0,.1)
+  // box-shadow: 0 0 80px rgba(0,0,0,.1)
 
 
   .page-0 &
@@ -934,12 +921,35 @@ html
   left: 100%
 
 #animated-map
-  height: 350px
-  width: 350px
-  box-shadow: 0 0 2rem 0 rgba($color-lt, 0.25)
+  width: 100%
+  height: 100%
+  position: absolute
   border-radius: 100%
   box-sizing: border-box
   pointer-events: none !important
+  filter: blur(6px)
+  // mix-blend-mode: luminosity
+  transition: filter 0.4s 0.6s, opacity 1s
+  padding: 2rem
+  opacity: 0
+
+  .active &
+    filter: blur(0px)
+    opacity: 0.5
+
+  > *
+    pointer-events: none !important
+
+  &-gradient
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    mask-repeat: space
+    background: linear-gradient(90deg, #0000, #000)
 
 @media (max-width: 960px), (max-height: 800px)
   .txt-xxl

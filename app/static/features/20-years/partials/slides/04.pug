@@ -1,11 +1,44 @@
 .row
-  .col-fw
-    .block.ph-sm
+  .col-1-2
+    .block.ph-lg
       :marked
         Over 20 years, the Institute has [published influential research](https://www.lowyinstitute.org/publications?keys=&amp;author=All&amp;type=All&amp;issues=All&amp;related_issues=All&amp;sort_by=&amp;page=0) with an eye to the topics that matter. 
         
-        First and foremost, it has examined Australia’s place in the world. It has explored the global role of the United States, highlighted the emergence of India and analysed the rising power of China. It has re-thought Australian policy in the Pacific and [mapped global aid flows in the region](https://www.lowyinstitute.org/about/Pacific%20Aid%20Map%20interactive%20site). It has published cutting-edge research on climate change, global diasporas and Asia’s changing power dynamics.
+        First and foremost, it has examined Australia’s place in the world. It has explored the global role of the United States, highlighted the emergence of India and analysed the rising power of China. It has re-thought Australian policy in the Pacific and [mapped global aid flows in the region](https://pacificaidmap.lowyinstitute.org/). It has published cutting-edge research on climate change, global diasporas and Asia’s changing power dynamics.
+  .col-1-2.flex-col
+    .animated-numbers-grid
+      .block.p-md
+        .txt-center
+          .txt-sm.txt-tu.pv-xs.txt-center reports, analyses &amp; policy briefs
+          .inline-flex.flex-jcc.flex-aic.relative
+            .txt-xl(data-view="counter") 500
+            .suffix.faint.txt-xl.ph-xs +
+      .block.p-md
+        .txt-center
+          .txt-sm.txt-tu.pv-xs.txt-center Lowy&nbsp;Institute Papers^
+          .inline-flex.flex-jcc.flex-aic.relative
+            .txt-xl(data-view="counter") 45
+            .suffix.faint.txt-xl.ph-xs +
 
-.row
-  .col-fw.bg-hl.txt-dk
-    .block
+      .block.p-md(style="border-top: 1px solid #ffc52c")
+        .txt-center
+          .txt-sm.txt-tu.pv-xs.txt-center Podcasts
+          .inline-flex.flex-jcc.flex-aic.relative
+            .txt-xl(data-view="counter") 150
+            .suffix.faint.txt-xl.ph-xs +
+      .block.p-md(style="border-top: 1px solid #ffc52c")
+        .txt-center
+          .txt-sm.txt-center.txt-tu.pv-xs Videos
+          .inline-flex.flex-jcc.flex-aic.relative
+            .txt-xl(data-view="counter") 300
+            .suffix.faint.txt-xl.ph-xs +
+          .txt-xs.faint.absolute.txt-center(style="left: 0; right: 0; bottom: 0; margin: 1rem;") ^ Australia’s only book-length<br/>monographs on international issues
+
+
+style
+  :sass
+    .animated-numbers-grid
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: 1fr 1fr
+      margin-right: 4rem

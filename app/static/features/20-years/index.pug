@@ -11,6 +11,7 @@ block append config
 
 block page
   include partials/other/header
+  include partials/other/background-gallery
 
   mixin item(index)
     .scroll-item(
@@ -70,3 +71,6 @@ block append scripts
     include:coffee coffee/scroller.coffee
     include:coffee coffee/counter.coffee
     include coffee/animated-map.js
+
+  script.
+    window.onload = () => document.querySelector("#scroller").scrollTo({top: 0, behavior: "instant"})

@@ -8,8 +8,8 @@ chart.geodata = am4geodata_worldLow;
 // Set projection
 chart.projection = new am4maps.projections.Orthographic();
 chart.panBehavior = "rotateLongLat";
-chart.deltaLatitude = 0;
-chart.deltaLongitude = -150;
+chart.deltaLatitude = -5;
+chart.deltaLongitude = -170;
 chart.padding(0, 0, 0, 0);
 
 // Create map polygon series
@@ -49,11 +49,10 @@ chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#00152
 let animationLon;
 let animationLat;
 
-const DURATION = 20 * 60 * 1000;
-
+const DURATION = 5 * 60 * 1000;
 
 window.addEventListener("load", () => {
   setTimeout(() => {
-    animationLon = chart.animate({ property: "deltaLongitude", to: -150 + 8 * 360 }, DURATION);
-  }, 3000);
+    animationLon = chart.animate({ property: "deltaLongitude", to: -170 + 2 * 360 }, DURATION);
+  }, 1000);
 })

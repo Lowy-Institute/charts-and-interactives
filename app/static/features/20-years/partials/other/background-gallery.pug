@@ -1,0 +1,12 @@
+mixin gallery-image(slide, src) 
+  .background-image(
+    class=`background-image-${slide}`
+    style=`background-image: url("./img/${src}")`
+  )
+
+#background-gallery
+  +gallery-image(0, "bligh-st-front.jpg")
+  +gallery-image(1, "bligh-st-front-oblique.jpg")
+  +gallery-image(2, "sir-frank-lowy.jpg")
+  +gallery-image(3, "michael-and-sanna-marin.jpg")
+  //- +gallery-image(4, "pm-samoa.jpg")
