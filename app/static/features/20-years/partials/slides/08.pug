@@ -1,41 +1,7 @@
-.row.row-sm
-  //- .column
-    .row-test(style="height:50%;")
-
-      .sub-column.bg-b-lt
-        .bcard.fade-in.delay-0.bg-ff(style="height:50%; transform:scale(1);")
-          .img-pan
-            img.bg-img(data-src="./img/pm-samoa-recrop.jpg" alt="Afioga Fiamē Naomi Mataʻafa, Prime Minister of Samoa")
-        .bcard.fade-in.delay-2.bg-ff(style="height:50%; transform:scale(1);")
-          .img-pan
-            img.bg-img(data-src="./img/boris-johnson.jpg" alt="Boris Johnson")
-
-      .sub-column.bg-b-dk
-        .bcard.fade-in.delay-1.bg-ff(style="height:100%; transform:scale(1);")
-          .img-pan
-            img.bg-img(data-src="./img/angela-merkel.jpg" alt="Angela Merkel")
-
-    .row-test(style="height:50%;")
-      .sub-column.bg-b-bl
-        .bcard.fade-in.delay-3.bg-ff(style="transform:scale(1);")
-          .img-pan
-            img.bg-img(data-src="./img/town-hall.jpg" alt="Sydney Town Hall")
-
-
+.row
+  .col-1-2
   .col-1-2
     .p-xs.txt-center.mw
-      .block.pv-xs
+      .text-box.block
         :marked
           At the heart of the events program is the annual Lowy Lecture, at which a prominent individual reflects on Australia’s role in the world and the world’s influence on Australia. Past Lowy Lecturers include [Dr&nbsp;Angela Merkel](#), Chancellor of the Federal Republic of Germany; UK Foreign Secretary [Boris&nbsp;Johnson](#); US National Security Adviser [Jake&nbsp;Sullivan](#); and Lowy Institute Chairman [Sir&nbsp;Frank&nbsp;Lowy](#).
-
-
-//-style
-  :sass
-
-    .bcard
-      transition-duration: 600ms !important
-      justify-content: start !important
-      transform: scale(1.1)
-
-      [data-view="in-viewport"]:not(.visible) &
-        transform: translate3d(0, 80px, 0) !important
