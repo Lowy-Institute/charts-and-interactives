@@ -231,6 +231,13 @@ body.embed-false
 .mw
   max-width: 74%
 
+.sticky-top
+  position: sticky
+  top: 0
+
+.opacity-0
+  opacity: 0
+
 @keyframes fadeAnimation
   0%
     opacity: 0
@@ -844,11 +851,6 @@ html
   scroll-behavior: smooth
   scroll-snap-type: y mandatory
 
-  // .page-9 &,
-  // .page-10 &
-  //   scroll-snap-type: y proximity
-    // better for image sliders
-
   &.scrolling
     scroll-behavior: initial
 
@@ -857,6 +859,7 @@ html
   height: 100%
   scroll-snap-align: start
   position: relative
+  transition: opacity 1s
 
   .scrolling &
     scroll-snap-align: none
