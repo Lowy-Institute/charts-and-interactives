@@ -1,23 +1,19 @@
 - 
   const scale = {min: 0, max: 47}
   const fundingData = [
-    {label: "other", class: "bg-lt", v: 1},
-    {label: "sponsorship", class: "bg-hl", v: 1},
-    {label: "membership", class: "bg-b-lt", v: 15},
-    {label: "donations", class: "bg-b-bl", v: 36},
     {label: "grants", class: "bg-b-dk", v: 47},
+    {label: "donations", class: "bg-b-bl", v: 36},
+    {label: "membership", class: "bg-b-lt", v: 15},
+    {label: "sponsorship", class: "bg-hl", v: 1},
+    {label: "other", class: "bg-lt", v: 1},
   ]
-
 
 .row
   .col-fw.flex-col
-    .block.ph-md.txt-sm
+    .block
       :marked
-        For each of the Institute’s first 20 years, our Chairman has asked: how do we know we are succeeding? 
-        
-        We know because others invest in our work: more than half the Institute’s funding now comes from external grants and corporate support. We know because the best think tanks and research institutions want to work with us: from the Brookings Institution and Council on Foreign Relations in the United States to the Foundation for Strategic Research in France and the Australian National University. We know because Lowy Institute staff have gone on to fill prominent roles in government, including heads of intelligence agencies and senior advisors to cabinet ministers.
-    .block.flex-col(style="width: 100%; border-top: 1px solid #fff2; padding-top: 1rem; margin-top: 1rem;")
-      .funding-chart-title.txt-xs.txt-cond.txt-right(style="margin-bottom: -1.5em") Our funding
+        For each of the Institute’s first 20 years, our Chairman has asked: how do we know we are succeeding? We know because others invest in our work: more than half the Institute’s funding now comes from external grants and corporate support. We know because the best think tanks and research institutions want to work with us: from the Brookings Institution and Council on Foreign Relations in the United States to the Foundation for Strategic Research in France and the Australian National University. We know because Lowy Institute staff have gone on to fill prominent roles in government, including heads of intelligence agencies and senior advisors to cabinet ministers.
+    .block.flex-col(style="width: 100%; margin-top: 2rem;")
       .funding-chart.flex-col
         for item, i in fundingData
           .funding-chart-group
@@ -26,8 +22,7 @@
               .funding-chart-bar
                 .bar(style=`width: ${100 * item.v / scale.max}%`)
                 .funding-chart-value.txt-tu.txt-xs(style=`left: ${100 * item.v / scale.max}%`) #{item.v}%
-
-
+      .funding-chart-title.txt-sm.faint.txt-right Our funding
 
 style
   :sass
@@ -39,7 +34,7 @@ style
       box-sizing: border-box
 
     .funding-chart-title
-      margin-bottom: 1rem
+      margin-top: -1.5em
 
     .funding-chart-group
       display: flex
@@ -69,4 +64,4 @@ style
       .bar
         height: 1.125rem
         border-radius: 2px
-        background: linear-gradient(to right, #002b45, #004b78)
+        background: linear-gradient(90deg, #002b45, #004b78 calc(25% + 1rem))

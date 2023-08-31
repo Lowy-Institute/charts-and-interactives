@@ -15,7 +15,8 @@
             .suffix.faint.txt-xl.ph-xs +
       .block.p-md
         .txt-center
-          .txt-sm.txt-tu.pv-xs.txt-center Lowy&nbsp;Institute Papers^
+          .txt-sm.txt-tu.pv-xs.txt-center Lowy&nbsp;Institute<br/>Papers
+            span.sm-hidden ^
           .inline-flex.flex-jcc.flex-aic.relative
             .txt-xl(data-view="counter") 45
             .suffix.faint.txt-xl.ph-xs +
@@ -32,7 +33,7 @@
           .inline-flex.flex-jcc.flex-aic.relative
             .txt-xl(data-view="counter") 300
             .suffix.faint.txt-xl.ph-xs +
-          .txt-xs.faint.absolute.txt-center(style="left: 0; right: 0; bottom: 0; margin: 1rem;") ^ Australia’s only book-length<br/>monographs on international issues
+          .animated-numbers-footnote.txt-xs.faint.absolute.txt-center ^ Australia’s only book-length<br/>monographs on international issues
 
 
 style
@@ -42,3 +43,15 @@ style
       grid-template-columns: 1fr 1fr
       grid-template-rows: 1fr 1fr
       margin-right: 4rem
+
+    .animated-numbers-footnote
+      left: 0
+      right: 0
+      bottom: 0
+      margin: 1rem
+
+    @media (max-width: 980px)
+      .animated-numbers-grid
+        margin-right: 0
+      .animated-numbers-footnote
+        display: none
