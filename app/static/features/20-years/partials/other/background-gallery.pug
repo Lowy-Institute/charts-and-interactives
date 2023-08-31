@@ -1,26 +1,33 @@
-mixin gallery-image(slide, src) 
+-
+  getImageSet = (src, ext, sizes = []) => {
+    sizes.unshift("")
+    imageset = sizes.map(s => `url("./img/${src}${s}.${ext}")`).join(", ")
+    return `background-image: url("./img/${src}.${ext}"); background-image: -webkit-image-set(${imageset}); background-image: image-set(${imageset})`
+  }
+
+mixin gallery-image(slide, src, ext = "jpg", sizes)
   .background-image(
     class=`background-image-${slide}`
-    style=`background-image: url("./img/${src}")`
+    style=getImageSet(src, ext, sizes)
   )
 
-mixin gallery-slider(slide, src) 
+mixin gallery-slider(slide, src, ext = "jpg", sizes) 
   .background-slider(
     data-slide=slide
     class=`background-slider-${slide}`
-    style=`background-image: url("./img/${src}")`
+    style=getImageSet(src, ext, sizes)
   )
 
 #background-gallery
-  +gallery-image(0, "bligh-st-front.jpg")
-  +gallery-image(1, "bligh-st-front-oblique.jpg")
-  +gallery-image(2, "frank-lowy-1.jpg")
-  +gallery-image(3, "michael-and-sanna-marin.jpg")
-  +gallery-image(4, "man-of-contradictions.jpg")
-  +gallery-image(6, "interpreter-phone.jpg")
-  +gallery-image(7, "pm-samoa.jpg")
-  +gallery-image(8, "town-hall.jpg")
-  +gallery-slider(9, "collage-2.jpg")
-  +gallery-image(11, "frank-lowy-2.jpg")
-  +gallery-image(12, "staff.jpg")
-  +gallery-image(13, "youtube-thumbnail.webp")
+  +gallery-image(0, "bligh-st-front")
+  +gallery-image(1, "bligh-st-front-oblique")
+  +gallery-image(2, "frank-lowy-1")
+  +gallery-image(3, "michael-and-sanna-marin")
+  +gallery-image(4, "man-of-contradictions")
+  +gallery-image(6, "interpreter-phone")
+  +gallery-image(7, "pm-samoa")
+  +gallery-image(8, "town-hall")
+  +gallery-slider(9, "collage-2", "jpg", ["@sm"])
+  +gallery-image(11, "frank-lowy-2")
+  +gallery-image(12, "staff")
+  +gallery-image(13, "youtube-thumbnail", "webp")
