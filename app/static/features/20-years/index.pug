@@ -1,11 +1,5 @@
 extend /partials/layout
 
-block append customScripts 
-  script(src="https://www.amcharts.com/lib/4/core.js")
-  script(src="https://www.amcharts.com/lib/4/maps.js")
-  script(src="https://www.amcharts.com/lib/4/geodata/worldLow.js")
-  script(src="https://www.amcharts.com/lib/4/themes/animated.js")
-
 block append config
   - _.extend(page, data.getOne("static/features/20-years/data"))
 
