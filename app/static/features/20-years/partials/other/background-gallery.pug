@@ -18,6 +18,12 @@ mixin gallery-slider(slide, src, ext = "jpg", sizes)
     style=getImageSet(src, ext, sizes)
   )
 
+mixin gallery-video(slide, src) 
+  .background-video(class=`background-video-${slide}`)
+    video(autoplay loop muted playsinline loading="lazy")
+      source(src=`./img/${src}` type="video/mp4")
+
+
 #background-gallery
   +gallery-image(0, "bligh-st-front")
   +gallery-image(1, "bligh-st-front-oblique")
@@ -26,7 +32,8 @@ mixin gallery-slider(slide, src, ext = "jpg", sizes)
   +gallery-image(4, "man-of-contradictions")
   +gallery-image(6, "interpreter-phone")
   +gallery-image(7, "pm-samoa")
-  +gallery-image(8, "town-hall")
+  //- +gallery-image(8, "town-hall")
+  +gallery-video(8, "lowy-lecture.mp4")
   +gallery-slider(9, "collage-2", "jpg", ["@sm"])
   +gallery-image(11, "frank-lowy-2")
   +gallery-image(12, "staff")
