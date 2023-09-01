@@ -8,12 +8,13 @@ const moveBackgroundSliders = (e) => {
   sliders.forEach(el => {
     // get the #scroll-item-x
     const slide = qs(`#scroll-item-${el.dataset.slide}`)
+    const nSlides = slide.dataset.nSlides
 
     // calculate % it has scrolled through the scroller
-    let percent = 110 * ((scroller.scrollTop + scroller.offsetTop) - slide.offsetTop) / (slide.dataset.nSlides * scroller.offsetHeight)
+    let percent = (100 + 100 / (nSlides - 1)) * ((scroller.scrollTop + scroller.offsetTop) - slide.offsetTop) / (nSlides * scroller.offsetHeight)
 
     // clamp between 0 and 100
-    percent = Math.max(Math.min(percent, 110), 0)
+    percent = Math.max(Math.min(percent, 100), 0)
     
     // update background-position to 50% x%
     el.style.backgroundPosition = `${percent}% 50%`

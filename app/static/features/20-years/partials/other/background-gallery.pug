@@ -20,7 +20,7 @@ mixin gallery-slider(slide, src, ext = "jpg", sizes)
 
 mixin gallery-video(slide, src) 
   .background-video(class=`background-video-${slide}`)
-    video(autoplay loop muted playsinline loading="lazy")
+    video(autoplay muted playsinline loading="lazy")
       source(src=`./img/${src}` type="video/mp4")
 
 #background-gallery
