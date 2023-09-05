@@ -408,6 +408,7 @@ svg, img
     .active &
       fill: $color-ff
 
+.box .layer:nth-child(5),
 .box .layer:nth-child(4),
 .box .layer:nth-child(3),
 .box .layer:nth-child(2),
@@ -438,20 +439,22 @@ svg, img
     &:nth-child(2)
       background-image: url('./img/gdi.png')
     &:nth-child(3)
-      background-image: url('./img/poll.png')
+      background-image: url('./img/sea-aid-map.png')
     &:nth-child(4)
+      background-image: url('./img/poll.png')
+    &:nth-child(5)
       background-image: url('./img/api.png')
 
-@for $i from 1 through 4
+@for $i from 1 through 5
   .active .box .layer:nth-child(#{$i})
-    animation: layer-animation-#{$i} 1.25s $easing-exp-in-out forwards
+    animation: layer-animation-#{$i} 1.6s $easing-exp-in-out forwards
 
   @keyframes layer-animation-#{$i}
     0%
       transform: translate(0, 0)
-      opacity: 0
+      opacity: 0.1
     100%
-      transform: translate($i * 7%, $i * -12%)
+      transform: translate($i * 10.5%, $i * -18%)
       opacity: 0.2 + 0.2 * $i
 
 body
@@ -880,6 +883,20 @@ html
 .ws-no
   white-space: nowrap
 
+.svg-canvas
+  position: absolute
+  top: 0
+  left: 0
+  opacity: 0
+  width: 100%
+  height: 100%
+  transition: opacity 1s 0.6s
+  transform: rotate3d(1.0, -0.75, 1.5, 90deg) scale(0.66)
+  aspect-ratio: 1
+
+  .active &
+    opacity: 1
+
 @media (max-width: 960px), (max-height: 800px)
   .txt-xxl
     font-size: 72px
@@ -934,6 +951,24 @@ html
       gap: 1rem
       grid-gap: 1rem
 
+  #scroll-item-10
+    .row
+      gap: 2rem
+      grid-gap: 2rem
+
+    .animated-numbers-grid .block
+      padding: 1.5rem 1rem
+
+    .block
+      text-align: center
+
+      &:nth-child(4),
+      &:nth-child(5)
+        border-top: 1px solid #ffc52c
+
+    .spin-graphic-wrapper
+      display: none
+
   #scroll-item-6
     .row:first-child
       border-bottom: 1px solid #f80
@@ -953,7 +988,7 @@ html
   .box
     width: 14rem
     height: 8rem
-    margin-top: 4rem
+    margin-top: 9rem
 
   .background-slider
     transition: opacity 1s

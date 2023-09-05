@@ -1,9 +1,39 @@
 .row
-  .col-fw
-    .block.ph-sm
-      :marked
-        For each of the Institute’s first 20 years, our Chairman has asked: how do we know we are succeeding? 
-        
-        We know because others invest in our work: more than half the Institute’s funding now comes from external grants and corporate support. We know because the best think tanks and research institutions want to work with us: from the Brookings Institution and Council on Foreign Relations in the United States to the Foundation for Strategic Research in France and the Australian National University. We know because Lowy Institute staff have gone on to fill prominent roles in government, including heads of intelligence agencies and senior advisors to cabinet ministers.
+  .col-1-2.flex-col
+    .block.ph-lg.txt-xl The Institute has a global online audience
+  .col-1-2.flex-col
+    .animated-numbers-grid.relative
+      .spin-graphic-wrapper(data-view="spin" data-fill="0.5" data-source="data/votes")
+      .block.p-md
+        .txt-center
+          .inline-flex.ws-no
+            .txt-xl(data-view="counter") 10
+            .faint.txt-xl.ph-xs M+
+          .txt-xs.faint.txt-tu.pv-xs.txt-center Unique page views for The Interpreter
+      .block.p-md
+        .txt-center
+          .inline-flex.ws-no
+            .txt-xl(data-view="counter") 4.4
+            .faint.txt-xl.ph-xs M+
+          .txt-xs.faint.txt-tu.pv-xs.txt-center Unique page views and downloads for Lowy Institute publications
+      .block.p-md
+        .txt-center
+          .inline-flex.ws-no
+            .txt-xl(data-view="counter") 3
+            .faint.txt-xl.ph-xs M+
+          .txt-xs.faint.txt-tu.pv-xs.txt-center Podcast listens and video plays
+      .block.p-md
+        .txt-center
+          .inline-flex.ws-no
+            .faint.txt-xl.ph-xs ~
+            .txt-xl(data-view="counter") 100
+            .faint.txt-xl.ph-xs K
+          .txt-xs.faint.txt-center.txt-tu.pv-xs Media citations for our expert commentary, research, and events
+          .animated-numbers-footnote.txt-xs.faint.absolute.txt-center.txt-cond ^ Counts between 2020-22
 
-      //-  Perhaps the biggest compliment that can be paid to the Lowy Institute is to repeat what others have told us: that twenty years after its establishment, it would be difficult to imagine Australia’s international policy landscape without it.
+style
+  :sass
+    .spin-graphic-wrapper
+      position: absolute
+      width: 100%
+      height: 100%

@@ -20,8 +20,9 @@ block page
     data-view="scroller" 
     data-pager=".pager-page" 
     data-index=".pager-index"
-    data-min="1"
-    data-max="15"
+    data-min=1
+    data-max=15
+    data-i=0
   )
     +item("intro")
       include partials/slides/intro
@@ -44,9 +45,9 @@ block page
     +item(9, 5)
       include partials/slides/09
     +item(10)
-      include partials/slides/10-alt
+      include partials/slides/10
     +item(11)
-      include partials/slides/11-alt
+      include partials/slides/11
     +item(12)
       include partials/slides/12
     +item(13)
@@ -66,6 +67,8 @@ block append scripts
   script
     include:coffee coffee/scroller.coffee
     include:coffee coffee/counter.coffee
+    include:coffee coffee/spin.coffee
+    include:coffee coffee/data-votes.coffee
     include coffee/image-slider.js
 
   script.

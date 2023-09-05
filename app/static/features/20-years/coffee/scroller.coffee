@@ -35,10 +35,6 @@ require.register "views/scroller", (exports, require, module) ->
         @onScrollEnd()
       , 1
 
-      if @$el.outerWidth() <= 600
-        $("br").each (i, el) ->
-          $(el).replaceWith(" ")
-
     # sum heights array sequentially until sum > index
     # index should be set to the interator value minus 1
     # this is to allow for slides with over 100% height
@@ -109,9 +105,10 @@ require.register "views/scroller", (exports, require, module) ->
         @scrollTo(index)
 
       if index isnt @data.i
+        # Somehow getting caught here in the class change??
         $("body")
-          .removeClass("page-#{@data.i}")
           .addClass("page-#{index}")
+          .removeClass("page-#{@data.i}")
 
         _.extend @data,
           y: @el.scrollTop
