@@ -31,17 +31,16 @@ block page
         svg(height="100%" width="100%")
 
           svg(y="50%")
-           text(text-anchor="middle" y="-60" transform="rotate(-90)") Rate as % of remittance
+           text(text-anchor="middle" y="-60" transform="rotate(-90)") Millions
         
           // Y-Axis labels
           svg(height="100%")
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
-              - value = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
-              - formatted = value.replace(/(\d)(?=(\d{3})+$)/g, "$1,")
               svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")= formatted
+                text(text-anchor="end" transform="translate(-8 4)")
+                  = "$" + (minY + range*(i/steps)/1000000000) + (axes.percentage ? "%" : "") + " B"
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -142,29 +141,7 @@ block page
                     text-anchor="middle"
                     fill="chart.colors[chart.series[i].color]"
                   )
-                    = val + "%"
-
-            // LINE LABELS
-            g
-              svg(x="100%" y="49%")
-                rect(fill="#16B56F" x="2" y="-8" width="48" height="18")
-                text(class="label" style="color: white; font-weight: 600" transform="translate(6 6)") Tonga
-
-              
-
-            // for item, i in chart.series
-            //g.line-label
-              for val, ix in item.values
-                if ix === item.values.length - 1
-                  svg(
-                    x=toPercent(fx(ix))
-                    y=toPercent(fy(maxY + minY - val))
-                  )
-                    rect(fill="white" x="2" y="-8" width="100" height="16")
-                    text.label(
-                      style=`color: ${chart.colors[chart.series[i].color]}; font-weight: 600`
-                      transform="translate(4 6)"
-                    )= item.title
+                    = (val/1000000000).toFixed(2)
 
 
       //.row
@@ -193,7 +170,7 @@ block append css
         position: absolute
         top: 20px
         left: 70px
-        right: 70px
+        right: 20px
         bottom: 70px
 
       .chart-content > svg

@@ -1,19 +1,19 @@
 title: >
-  Figure 9: Recurrent expenditure by province, 2021
+  Cumulative Gender Financing to Pacific 2008-2020
 
 source: >
-  Source: PNG Treasury FBO report (2020)
+  <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
 
 #notes: >
   #Notes: Lorem ipsum
 
-#subtitle: >
-  #Subtitle goes here
+subtitle: >
+  Spent, current US$
 
 axes:
   minY:  0
-  maxY: 160
-  stepsY: 9
+  maxY: 6
+  stepsY: 7
   rotateX: true
   percentage: false
   minorLines: true
@@ -22,51 +22,29 @@ axes:
 
 series:
   -
-    title: Province
+    title: Source
     values:
-      - Morobe
-      - East Sepik
-      - Eastern Highlands
-      - Manus
-      - Madang
-      - Southern Highlands
-      - Western Highlands
-      - Simbu
-      - East New Britain
-      - Enga
-      - Central
-      - Milne Bay
-      - West New Britain
-      - Jiwaka
-      - West Sepik
-      - Western
-      - Hela
-      - New Ireland
-      - Oro
-      - Gulf
+      - ADB
+      - Australia
+      - China
+      - EU 
+      - Japan
+      - New Zealand
+      - Taiwan
+      - United Nations
+      - World Bank
 
   -
-    title: Real recurrent K'millions
+    title: Funding
     color: "teal"
     values:
-      - 153
-      - 128
-      - 127
-      - 123
-      - 118
-      - 113
-      - 97
-      - 92
-      - 88
-      - 86
-      - 82
-      - 78
-      - 76
-      - 75
-      - 70
-      - 57
-      - 54
-      - 48
-      - 41
-      - 38
+      - 2.043710356
+      - 5.463537261
+      - 0
+      - .542746464
+      - .200532053
+      - 1.253053889
+      - 0
+      - .071364692
+      - .280901902
 

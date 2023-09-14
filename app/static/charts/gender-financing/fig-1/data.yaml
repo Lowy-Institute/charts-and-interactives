@@ -1,72 +1,46 @@
 title: >
-  Figure 9: Recurrent expenditure by province, 2021
+  Untagged projects reported at the OECD as a % of own total aid spent 
 
 source: >
-  Source: PNG Treasury FBO report (2020)
+  <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
 
 #notes: >
   #Notes: Lorem ipsum
 
-#subtitle: >
-  #Subtitle goes here
+subtitle: >
+  2008-2020, $US (current, spent)
 
 axes:
   minY:  0
-  maxY: 160
-  stepsY: 9
+  maxY: 100
+  stepsY: 11
   rotateX: true
-  percentage: false
+  percentage: true
   minorLines: true
   dotted: [] # Index of dotted gridlines
   reverse: false
 
 series:
   -
-    title: Province
+    title: Source
     values:
-      - Morobe
-      - East Sepik
-      - Eastern Highlands
-      - Manus
-      - Madang
-      - Southern Highlands
-      - Western Highlands
-      - Simbu
-      - East New Britain
-      - Enga
-      - Central
-      - Milne Bay
-      - West New Britain
-      - Jiwaka
-      - West Sepik
-      - Western
-      - Hela
-      - New Ireland
-      - Oro
-      - Gulf
+      - Australia
+      - World Bank
+      - ADB
+      - Japan
+      - UN
+      - NZ
+      - EU
 
   -
-    title: Real recurrent K'millions
+    title: Total untagged (spent, $US current)
     color: "teal"
     values:
-      - 153
-      - 128
-      - 127
-      - 123
-      - 118
-      - 113
-      - 97
-      - 92
-      - 88
-      - 86
-      - 82
-      - 78
-      - 76
-      - 75
-      - 70
-      - 57
-      - 54
-      - 48
-      - 41
-      - 38
+      - 87
+      - 55
+      - 31
+      - 22
+      - 10
+      - 3
+      - 3
 

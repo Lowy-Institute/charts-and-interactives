@@ -85,11 +85,11 @@ block page
                 svg.x-label(x="50%" y="100%")
                   text(
                     text-anchor=axes.rotateX ? "end" : "middle"
-                    transform=axes.rotateX ? "rotate(-90) translate(-8, 4)" : "translate(0 20)"
+                    transform=axes.rotateX ? "rotate(-45) translate(-2, 20)" : "translate(0 20)"
                   )
                     =chart.series[0].values[i]
       
-      .row
+      //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
@@ -162,7 +162,7 @@ block append css
         top: 20px
         left: 50px
         right: 20px
-        bottom: 140px
+        bottom: 80px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb

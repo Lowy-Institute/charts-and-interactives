@@ -1,6 +1,5 @@
 title: >
-  Honiara’s diplomatic switch: the cost to Beijing
-
+  Total gender financing & additional Lowy tagging 
 
 source: >
   <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
@@ -9,12 +8,12 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Development finance disbursements, US$ current
+  2008-2020
 
 axes:
   minY:  0
-  maxY: 45000000
-  stepsY: 10
+  maxY: 6000000000
+  stepsY: 7
   rotateX: false
   percentage: false
   minorLines: true
@@ -25,52 +24,34 @@ series:
   -
     title: Year
     values:
-      - 2009
-      - 2010
-      - 2011
-      - 2012
-      - 2013
-      - 2014
-      - 2015
-      - 2016
-      - 2017
-      - 2018
-      - 2019
-      - 2020
-      - 2021
+      - Australia
+      - World Bank
+      - ADB
+      - Japan
+      - UN
+      - NZ
+      - EU
 
   -
-    title: Taiwan
-    color: "dark"
+    title: Total gender financing (spent, current $US)
+    color: "teal"
     values:
-      - 5022538.64
-      - 10589154.06
-      - 16722034.68
-      - 22270450.60
-      - 14926993.43
-      - 10944000.57
-      - 15818163.58
-      - 13369947.72
-      - 11794843.70
-      - 9431372.49
-      - 6303513.06
-      - null
-      - null
+      - 5381850211.55
+      - 155583135.00
+      - 2043142903.69
+      - 200173643.00
+      - 56079877.00
+      - 1251712813.00
+      - 542312145.00
 
   -
-    title: China
-    color: "orange"
+    title: Total additional tagging (spent, $US, current)
+    color: "purple"
     values:
-      - null
-      - null
-      - null
-      - null
-      - null
-      - null
-      - 38688.00
-      - null
-      - null
-      - null
-      - 10408361.58
-      - 14357362.90
-      - 41117845.42
+      - 77583923.53
+      - 260150243.00
+      - 260150243.00
+      - 358410.00
+      - 15779930.00
+      - 1341076.00
+      - 0

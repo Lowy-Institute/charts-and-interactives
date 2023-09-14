@@ -23,6 +23,8 @@ block page
         - fy = (y) => (y - minY) / range
         
         svg(height="100%" width="100%")
+          svg(y="50%")
+           text(text-anchor="middle" y="-30" transform="rotate(-90)") Billions
         
           // Y-Axis labels
           svg(height="100%")
@@ -72,12 +74,12 @@ block page
                     )
                     text.chart-value(
                       x="50%"
-                      y=toPercent(y - fy(v +8))
+                      y=toPercent(y-fy(v))
                       text-anchor="middle"
-                      transform="translate(0 4.5)"
+                      transform="translate(0 -8)"
                       style=`color: ${(j < 3 ? "#008A97" : "")}`
                     )
-                      = v.toFixed(0) + (axes.percentage ? "%" : "")
+                      = v.toFixed(2)
 
                   - y -= fy(v)
                     
@@ -85,11 +87,11 @@ block page
                 svg.x-label(x="50%" y="100%")
                   text(
                     text-anchor=axes.rotateX ? "end" : "middle"
-                    transform=axes.rotateX ? "rotate(-90) translate(-8, 4)" : "translate(0 20)"
+                    transform=axes.rotateX ? "rotate(-45) translate(-2, 20)" : "translate(0 20)"
                   )
                     =chart.series[0].values[i]
       
-      .row
+      //.row
         ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
@@ -162,7 +164,7 @@ block append css
         top: 20px
         left: 50px
         right: 20px
-        bottom: 140px
+        bottom: 80px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb

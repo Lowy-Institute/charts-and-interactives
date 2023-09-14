@@ -1,6 +1,5 @@
 title: >
-  Honiara’s diplomatic switch: the cost to Beijing
-
+  Gender financing to the Pacific by donor
 
 source: >
   <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
@@ -9,14 +8,14 @@ source: >
   #<b>Notes:</b> Lorem ipsum
 
 subtitle: >
-  Development finance disbursements, US$ current
+  % of total Gender ODA spent, current US$
 
 axes:
   minY:  0
-  maxY: 45000000
-  stepsY: 10
+  maxY: 100
+  stepsY: 11
   rotateX: false
-  percentage: false
+  percentage: true
   minorLines: true
   dotted: [] # Index of dotted gridlines
   reverse: false
@@ -25,6 +24,7 @@ series:
   -
     title: Year
     values:
+      - 2008
       - 2009
       - 2010
       - 2011
@@ -37,40 +37,157 @@ series:
       - 2018
       - 2019
       - 2020
-      - 2021
 
+  -
+    title: ADB
+    color: "highlight"
+    values:
+      - 0.00
+      - 0.00
+      - 0.17
+      - 0.00
+      - 0.39
+      - 6.10
+      - 9.29
+      - 14.66
+      - 19.75
+      - 15.85
+      - 23.05
+      - 31.10
+      - 62.02
+  -
+    title: Australia
+    color: "orange"
+    values:
+      - 76.56
+      - 77.17
+      - 71.78
+      - 78.83
+      - 79.10
+      - 73.40
+      - 68.03
+      - 63.71
+      - 58.35
+      - 59.99
+      - 40.23
+      - 40.49
+      - 19.62
+  -
+    title: China
+    color: "dark"
+    values:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0.01
+      - 0.01
+      - 0
+      - 0
+      - 0.02
+      - 0
+      - 0
+  -
+    title: EU
+    color: "yellow"
+    values:
+      - 8.02
+      - 7.22
+      - 9.19
+      - 4.06
+      - 3.53
+      - 2.14
+      - 2.92
+      - 3.73
+      - 1.83
+      - 5.71
+      - 6.98
+      - 10.92
+      - 5.69
+  -
+    title: Japan
+    color: "red"
+    values:
+      - 0.00
+      - 0.47
+      - 2.08
+      - 3.43
+      - 1.93
+      - 2.88
+      - 1.32
+      - 1.34
+      - 1.39
+      - 0.68
+      - 1.20
+      - 0.38
+      - 4.67
+  -
+    title: NZ
+    color: "green"
+    values:
+      - 14.76
+      - 14.38
+      - 15.94
+      - 13.03
+      - 14.50
+      - 13.77
+      - 15.16
+      - 14.64
+      - 14.43
+      - 14.38
+      - 11.16
+      - 14.26
+      - 6.53
   -
     title: Taiwan
     color: "dark"
     values:
-      - 5022538.64
-      - 10589154.06
-      - 16722034.68
-      - 22270450.60
-      - 14926993.43
-      - 10944000.57
-      - 15818163.58
-      - 13369947.72
-      - 11794843.70
-      - 9431372.49
-      - 6303513.06
-      - null
-      - null
-
+      - 0.00
+      - 0.00
+      - 0.00
+      - 0.00
+      - 0.02
+      - 0.00
+      - 0.00
+      - 0.00
+      - 0.00
+      - 0.00
+      - 0.01
+      - 0.01
+      - 0.00
   -
-    title: China
-    color: "orange"
+    title: UN
+    color: "dark"
     values:
-      - null
-      - null
-      - null
-      - null
-      - null
-      - null
-      - 38688.00
-      - null
-      - null
-      - null
-      - 10408361.58
-      - 14357362.90
-      - 41117845.42
+      - 0.66
+      - 0.44
+      - 0.75
+      - 0.32
+      - 0.08
+      - 0.39
+      - 0.56
+      - 0.62
+      - 1.05
+      - 1.49
+      - 0.96
+      - 1.07
+      - 0.70
+  -
+    title: World Bank
+    color: "grey"
+    values:
+      - 0.00
+      - 0.32
+      - 0.10
+      - 0.32
+      - 0.45
+      - 1.34
+      - 2.70
+      - 1.30
+      - 3.20
+      - 1.90
+      - 16.38
+      - 1.78
+      - 0.77

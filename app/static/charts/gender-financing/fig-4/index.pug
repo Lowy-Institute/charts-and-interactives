@@ -31,8 +31,7 @@ block page
               - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = "$" + (minY + range*(i/steps)/1000000) + (axes.percentage ? "%" : "") + " M"
-                  // shows 000,000 as M
+                  = (minY + range*(i/steps)) + (axes.percentage ? "%" : "")
 
             //svg(y="50%")
               text.y-label Millions (US$)
@@ -81,7 +80,7 @@ block page
                       transform="translate(0 4.5)"
                       style=`color: ${(j < 3 ? "white" : "")}`
                     )
-                      = (v/1000000).toFixed(2)
+                      = (v).toFixed(1)
 
                   - y -= fy(v)
                     
@@ -94,15 +93,15 @@ block page
                     =chart.series[0].values[i]
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-ch
+        ul.legend.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
 
-      .chart-source.txt-right.txt-muted.txt-cond!= chart.source
-      .chart-notes.txt-right.txt-muted.txt-cond!= chart.notes
+      .chart-source.txt-left.txt-muted.txt-cond!= chart.source
+      .chart-notes.txt-muted.txt-cond!= chart.notes
       
       .tooltip
 
@@ -166,7 +165,7 @@ block append css
         top: 20px
         left: 70px
         right: 20px
-        bottom: 40px
+        bottom: 30px
 
       .chart-content > svg
         border-bottom: 1px solid #bbb
@@ -206,7 +205,7 @@ block append css
         margin-bottom: .75em
 
       .legend-item
-        margin: 4px 8px 0
+        margin: 4px 8px
         padding-right: 0
         position: relative
         white-space: nowrap
@@ -227,7 +226,7 @@ block append css
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-left: 2em
+        margin-left: 3em
         font-size: 15px
         
       .chart-value
