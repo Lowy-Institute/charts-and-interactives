@@ -1,0 +1,78 @@
+title: >
+  Figure 1: Development financing (ODA+OOF) to the Pacific
+
+source: >
+  <b>Source:</b> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
+
+#notes: >
+  #<b>Notes:</b> Lorem ipsum
+
+subtitle: >
+  (USD current)
+
+axes:
+  minY:  0
+  maxY: 5000000000
+  stepsY: 11
+  rotateX: true
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+  guideLine: null # value of optional horizontal line. set 'null' if disabled
+  x:
+    title: Year
+    values:
+      - 2008
+      - 2009
+      - 2010
+      - 2011
+      - 2012
+      - 2013
+      - 2014
+      - 2015
+      - 2016
+      - 2017
+      - 2018
+      - 2019
+      - 2020
+      - 2021
+
+series:
+  -
+    title: Grants
+    color: "teal"
+    values:
+      - 1375961835
+      - 1468932295
+      - 1843770766
+      - 2330055375
+      - 2129592368
+      - 2139283169
+      - 1927058415
+      - 1959947452
+      - 1782310739
+      - 2103756126
+      - 2403345941
+      - 2326799862
+      - 2472260085
+      - 3069878097
+
+  -
+    title: Loans
+    color: "yellow"
+    values:
+      - 303103698.5
+      - 293611754.4
+      - 493744960.5
+      - 349210019.8
+      - 415631458.3
+      - 450092987.8
+      - 385118497
+      - 429416953.4
+      - 601427480.9
+      - 592793564.2
+      - 702642742.4
+      - 906551619.5
+      - 2060552157
+      - 1813787740
