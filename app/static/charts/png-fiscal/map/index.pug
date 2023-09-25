@@ -547,7 +547,7 @@ block page
       .chart-source.txt-left.txt-muted <strong>Source:</strong> Lowy Institute / ANU
         
   .tooltip
-    .tt-title.txt-bold
+    .tt-title.txt-tu
     .tt-item-box
       .tt-item
     .tt-item-box
@@ -647,21 +647,24 @@ block append css
         font-size: 14px
         box-sizing: border-box
 
-      /* Style for the tooltip container */
+      /* tooltip container */
       .tt-item-box
         display: flex
         justify-content: space-between
         align-items: center
 
-      /* Style for the left-aligned text */
       .left-text
         flex-grow: 1 /* Takes up available space, pushing the right-aligned text to the right */
         text-align: left
+        padding-right: .5rem
 
-      /* Style for the right-aligned text */
       .right-text
         text-align: right
+        font-weight: 600
 
+      .tt-title
+        margin-bottom: 0.5rem
+        border-bottom: 1px solid #333
       
       .input
         padding: 0.75em 1em 0

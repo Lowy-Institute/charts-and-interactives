@@ -212,11 +212,11 @@ const data = [
     "province": 1,
     "name": "National Central District",
     "id": 19,
-    "staff": 0.55,
-    "service": 0.45,
-    "capital": 0.60,
-    "revenue": 0.40,
-    "districts": 0.53,
+    "staff": 0,
+    "service": 0,
+    "capital": 0,
+    "revenue": 400414438,
+    "districts": 3,
     "llg": 0.47
   },
   {
@@ -271,33 +271,33 @@ function addTooltip(el,i) {
 
     children[0].innerHTML = commune.name;
     children[1].innerHTML = `
-      <div class="left-text">Staff remuneration: </div>
+      <div class="left-text">Staff remuneration:</div>
       <div class="right-text">${formatNumber(commune.staff)}</div>
     `;
     children[2].innerHTML = `
-      <div class="left-text">Service delivery costs:&nbsp;</div>
+      <div class="left-text">Service delivery costs:</div>
       <div class="right-text">${formatNumber(commune.service)}</div>
     `;
     children[3].innerHTML = `
-    <div class="left-text">Capital expenditure: </div>
+    <div class="left-text">Capital expenditure:</div>
     <div class="right-text">${formatNumber(commune.capital)}</div>
     `;
     children[4].innerHTML = `
-    <div class="left-text">Revenue: </div>
+    <div class="left-text">Revenue:</div>
     <div class="right-text">${formatNumber(commune.revenue)}</div>
     `;
     children[5].innerHTML = `
-    <div class="left-text">Districts: </div>
+    <div class="left-text">Districts:</div>
     <div class="right-text">${commune.districts}</div>
     `;
     children[6].innerHTML = `
-    <div class="left-text">Local-level governments: </div>
+    <div class="left-text">Local-level governments:</div>
     <div class="right-text">${commune.llg}</div>
     `;
 
 
-    tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/8 + 'px';
-    tooltip.style.top = box.top + tooltip.offsetHeight/4 + 'px';
+    tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/10 + 'px';
+    tooltip.style.top = box.top + tooltip.offsetHeight/5 + 'px';
     tooltip.style.opacity = .9;
 
     polygons.forEach( p => p.classList.add('fade'));
@@ -305,7 +305,7 @@ function addTooltip(el,i) {
   });
 
   el.addEventListener('mouseleave', () => {
-    document.querySelector('.tooltip').style.opacity = 0;
+    document.querySelector('.tooltip').style.opacity = 1;
     polygons.forEach(p => {
       p.classList.remove('fade');
       // p.style.fill = 'your_default_color'; // Can set a default color here, rather than CSS if desired
