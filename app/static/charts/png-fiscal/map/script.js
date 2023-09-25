@@ -298,7 +298,7 @@ function addTooltip(el,i) {
 
     tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/8 + 'px';
     tooltip.style.top = box.top + tooltip.offsetHeight/4 + 'px';
-    tooltip.style.opacity = 1;
+    tooltip.style.opacity = .9;
 
     polygons.forEach( p => p.classList.add('fade'));
     el.classList.remove('fade');
@@ -317,6 +317,6 @@ function formatNumber(value) {
   if (value === null || value === 0) {
     return 'n/a';
   } else {
-    return (value / 1e6).toLocaleString(undefined, { maximumFractionDigits: 2 }) + ' million PGK';
+    return (value / 1e6).toLocaleString(undefined, { maximumFractionDigits: 2 }) + ' million';
   }
 }
