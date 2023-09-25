@@ -217,7 +217,7 @@ const data = [
     "capital": 0,
     "revenue": 400414438,
     "districts": 3,
-    "llg": 0.47
+    "llg": 0
   },
   {
     "province": 1,
