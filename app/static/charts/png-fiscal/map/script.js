@@ -210,7 +210,7 @@ const data = [
   },
   {
     "province": 1,
-    "name": "National Central District",
+    "name": "National Capital District",
     "id": 19,
     "staff": 0,
     "service": 0,
@@ -305,7 +305,7 @@ function addTooltip(el,i) {
   });
 
   el.addEventListener('mouseleave', () => {
-    document.querySelector('.tooltip').style.opacity = 1;
+    document.querySelector('.tooltip').style.opacity = 0;
     polygons.forEach(p => {
       p.classList.remove('fade');
       // p.style.fill = 'your_default_color'; // Can set a default color here, rather than CSS if desired
