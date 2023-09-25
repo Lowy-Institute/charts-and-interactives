@@ -105,11 +105,10 @@ require.register "views/scroller", (exports, require, module) ->
         @scrollTo(index)
 
       if index isnt @data.i
-        # Somehow getting caught here in the class change??
         $("body")
           .addClass("page-#{index}")
           .removeClass("page-#{@data.i}")
-
+        
         _.extend @data,
           y: @el.scrollTop
           h: @el.offsetHeight
