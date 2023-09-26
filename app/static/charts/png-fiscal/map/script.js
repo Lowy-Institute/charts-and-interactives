@@ -295,7 +295,6 @@ function addTooltip(el,i) {
     <div class="right-text">${commune.llg}</div>
     `;
 
-
     tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/10 + 'px';
     tooltip.style.top = box.top + tooltip.offsetHeight/5 + 'px';
     tooltip.style.opacity = .9;

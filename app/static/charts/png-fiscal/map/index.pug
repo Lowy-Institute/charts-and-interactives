@@ -7,7 +7,7 @@ block page
     .txt-center.flex.flex-grow.flex-col
     
       .chart-title Papua New Guinea by province
-      .chart-subtitle.txt-tu.p-sm Revenues and spending (PGK)
+      .chart-subtitle.txt-tu.p-sm Real revenues and spending (PGK)
 
       svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2151 1281.04")
         g(id="basemap")
@@ -795,6 +795,14 @@ block append css
         td
           font-size: 12px
 
-          
         .row:first-child
           margin-bottom: 10px
+
+        .tooltip 
+          left: 16px !important
+          top: 410px !important
+          width: 92%
+          font-size: 16px
+
+        #map path
+          stroke-width: 2px
