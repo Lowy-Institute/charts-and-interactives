@@ -20,27 +20,27 @@ block page
     table.mx-auto(cellspacing=0)
       thead
         tr
-          th(color="#444" style="border-right:1px solid #444; border-bottom: 1px solid #444;") Country
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2008
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2009
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2010
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2011
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2012
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2013
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2014
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2015
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2016
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2017
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2018
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2019
-          th(color="#444" style="text-align:center;border-bottom: 1px solid #444;") 2020
+          th(color="#444" style="border-right:1px solid #444; border-bottom: 1px solid #444; font-size: 14px;") Country
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2008
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2009
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2010
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2011
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2012
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2013
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2014
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2015
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2016
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2017
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2018
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2019
+          th(color="#444" style="text-align:center;border-bottom: 1px solid #444; font-size: 14px;") 2020
 
       tbody
 
         // adjust hues slightly
         each country, i in chart.series[0].values
           tr
-            td= country
+            td(style="font-size: 14px;")= country
             each v, j in chart.series[1].values[i]
               - v = +v
               - if (v === 0)
@@ -95,15 +95,15 @@ block append css
       th
         border-top: 0px solid
         border-bottom: 0px solid
-        padding: 6px .5rem 4px
+        padding: 6px .3rem 4px
         /* color: #fff
 
       td,th
         text-align: right
-        font-size: 12px
+        font-size: 13px
         
       td
-        padding: 3px .5rem
+        padding: 3px .4rem 3px .3rem
         
         span
           opacity: 1
