@@ -9,7 +9,8 @@ block append config
   - chart = page
   - red = "#ff4050"
   - redtxt = "#990f02"
-  - green = "#16B56F"
+  //- green = "#16B56F"
+  - green = "#094b2e"
   - greentxt = "#006500"
   
 block page
@@ -75,25 +76,22 @@ block page
               - v = +v
               - if (v === 0)
                 - hue = 0
-                - saturation = 100
+                - saturation = 70
                 - lightness = 50
               - else if (v < 32.5)
-                - hue = Math.floor((v / 32.5) * 60)
-                - saturation = 80 + Math.floor((v / 32.5) * 20)
-                - lightness = 60 + Math.floor((v / 32.5) * 10)
+                - hue = Math.floor((v / 32.5) * 70)
+                - saturation = 70 + Math.floor((v / 32.5) * 20)
+                - lightness = 65 + Math.floor((v / 32.5) * 10)
               - else
-                - hue = Math.floor(60 + ((v - 32.5) / (65 - 32.5)) * 60)
-                - saturation = 100
-                - lightness = 70 - Math.floor(((v - 32.5) / (65 - 32.5)) * 10)
+                - hue = Math.floor(70 + ((v - 32.5) / (60 - 32.5)) * 55)
+                - saturation = 60 - Math.floor(((v - 32.5) / (60 - 32.5)) * 25)
+                - lightness = 63 - Math.floor(((v - 32.5) / (60 - 32.5)) * 2)
               - color = v > 0 ? "green" : v < 0 ? "red" : "black"
+              - textColor = lightness < 60 ? 'white' : 'black' // Determine text color based on background lightness
               td(
                 style=`background-color: hsl(${hue}, ${saturation}%, ${lightness}%); color: ${color};`
               )
-                span= (v).toFixed(0) + "%"
-
-
-                
-
+                span(style=`color: ${textColor};`) #{v.toFixed(0) + "%"}
 
     .chart-source.txt-right.txt-muted.txt-cond!= chart.source
 
@@ -106,14 +104,13 @@ block append css
         overflow: auto
         
       h1
+        margin: auto
         font-size: 20px
-        font-weight: 600
-        /* text-transform: uppercase
-        margin-bottom: 0.2rem
         
       h2
-        margin-bottom: 1em
-        /* font-weight: 600
+        font-weight: 600
+        height: 10px
+        /* margin-top: -10px */
         font-size: 15px
       
       h1,h2
