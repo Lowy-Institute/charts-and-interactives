@@ -1,7 +1,8 @@
 extend /partials/layout
 
 block append config
-  - page.title = "Australian exports by destination"
+  - page.title = "Total gender financing in US$ (current) by recipient"
+  - page.subtitle = "2008-2020"
 
 block page
   - chart = data.getOne("static/charts/gender-financing/fig-10/data").series[0]
@@ -9,6 +10,7 @@ block page
 
   #wrapper.txt-sans(data-view="match")
     .txt-center.chart-title= page.title
+    .txt-center.chart-subtitle.txt-muted.txt-tu.p-sm!= page.subtitle
     #chart-wrapper
     
       svg(
@@ -103,7 +105,7 @@ block page
                 polyline.line(
                   stroke-width=3
                   fill="none"
-                  stroke=country.code == "other" ? "#c6c9d0" : "#f90"
+                  stroke=country.code == "other" ? "#008a9770" : "#f90"
                   points=(
                     country.values.map(
                       (e,i,a) => [
@@ -139,7 +141,7 @@ block append css
 
         .active &,
         .inactive &
-          stroke: #31363c
+          stroke: #008a97
 
       g.active
         opacity: 1
@@ -165,7 +167,7 @@ block append css
         height: 100%
         width: 100%
         max-width: 900px
-        max-height: 400px
+        max-height: 450px
         position: relative
         margin: auto
 
@@ -179,12 +181,17 @@ block append css
         position: absolute
         left: 124px
         right: 40px
-        top: 20px
+        top: 40px
         bottom: 20px
       
       .chart-title
         margin: auto
         font-size: 20px
+      .chart-subtitle
+        font-weight: 600
+        height: 10px
+        margin-top: -10px
+        font-size: 15px
       
       #chart-labels
         position: absolute
@@ -212,13 +219,13 @@ block append css
         top: 0.24em
         height: .8em
         width: .8em
-        background-color: #c6c9d0
+        background-color: #008a9730
         transition: background-color 0.3s ease
 
       .chart-label
         &:hover
           .legend-item-box
-            background-color: #31363c !important
+            background-color: #008a97 !important
             
 block append scripts
   //script
