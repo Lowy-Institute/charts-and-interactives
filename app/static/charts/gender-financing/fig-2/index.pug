@@ -94,7 +94,7 @@ block page
                     =chart.series[0].values[i]
       
       .row
-        ul.legend.txt-left.flex.flex-ch
+        ul.legend.txt-left.flex.flex-wrap
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
@@ -108,11 +108,10 @@ block page
 
   script.
 
-
     /* --- USER TO UPDATE --- */
-    const enableTooltips = false;
+    const enableTooltips = true;
     const nLegendItems = 2;
-    const nSeries = 9;
+    const nSeries = 7;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -136,7 +135,7 @@ block page
         let cat = legendItems[i % nLegendItems].innerHTML;
         let box = el.getBoundingClientRect();
         
-        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.innerHTML = cat + " by" + ser + " was $" + val + "B";
         tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
         tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
         tooltip.style.opacity = 1;
@@ -192,7 +191,7 @@ block append css
         transition-duration: 0.5s
         pointer-events: none
         font-size: 14px
-        text-transform: lowercase
+        text-transform: none
         max-width: 180px
         box-sizing: border-box
 
@@ -203,7 +202,9 @@ block append css
 
       .legend
         font-size: 15px
-        margin-bottom: .75em
+        margin-top: 1em
+        margin-bottom: .75em !important
+        margin-left: 4em
 
       .legend-item
         margin: 4px 8px
@@ -220,7 +221,7 @@ block append css
         background: black
 
       text
-        font-size: 12px
+        font-size: 13px
         fill: currentColor
 
       svg
@@ -236,7 +237,7 @@ block append css
         pointer-events: none
       
       .chart-content:hover .chart-value
-        opacity: 1
+        opacity: 0
 
       .y-label
         transform: rotate(-90deg) translate(-3rem, -2.8rem)
