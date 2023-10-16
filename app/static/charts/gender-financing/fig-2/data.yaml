@@ -46,7 +46,7 @@ series:
 
   -
     title: Total additional tagging (spent, $US, current)
-    color: "green"
+    color: "green-light"
     values:
       - 77583923.53
       - 260150243.00
