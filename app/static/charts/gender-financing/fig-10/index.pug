@@ -40,7 +40,6 @@ block page
                 )
                   = chart.scale[0] + i
 
-
         - nb = 5
         svg(
           width="100%"
@@ -69,14 +68,14 @@ block page
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
         )
-          polyline.line(
+          polyline.baseline(
             points="0,99.8076 100,99.8077" stroke="#c6c9d0" stroke-width=1
           )
 
         for country, i in inorder
-          svg
+          svg.countryline
             g(
-              opacity=(0.5 + i / 6 * .5).toFixed(2)
+              opacity=(0.4 + i / 6 * .5).toFixed(2)
               data-id=i
               data-link=i
             )
@@ -87,7 +86,8 @@ block page
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
               )
-                polyline.line(
+                // -- wide white background line that mirrors the visible line
+                //polyline.line(
                   stroke-width=12
                   fill="none"
                   stroke="#fff"
@@ -100,9 +100,11 @@ block page
                         ].map((e) => e.toFixed(2)).join(",")
                     ).join(" ")
                   )
-                )
-                  // 1.002 value set by eye to scale the lines to the Y-axis 
+                //)
+                // 1.002 value set by eye to scale the lines to the Y-axis 
                 polyline.line(
+                  data-id=i
+                  data-link=i
                   stroke-width=3
                   fill="none"
                   stroke=country.code == "other" ? "#008a9770" : "#f90"
@@ -142,6 +144,51 @@ block append css
         .active &,
         .inactive &
           stroke: #008a97
+
+      $red: #ff4050
+      $blue: #539ed4
+      $green: #16B56F
+      $orange: #ff8800
+      $purple: #68389a
+      $yellow: #ffc52b
+      $cyan: #00B9CA
+      $lilac: #cab0d6
+      $lime: #a3bc3e
+      $teal: #008A97
+      $pink: #bd5d92
+      $brown: #a52a2a
+      $navy: #000080
+      $olive: #808000
+
+      polyline
+        &[data-id="0"]
+          stroke: $red
+        &[data-id="1"]
+          stroke: $blue
+        &[data-id="2"]
+          stroke: $green
+        &[data-id="3"]
+          stroke: $orange
+        &[data-id="4"]
+          stroke: $purple
+        &[data-id="5"]
+          stroke: $yellow
+        &[data-id="6"]
+          stroke: $cyan
+        &[data-id="7"]
+          stroke: $lilac
+        &[data-id="8"]
+          stroke: $lime
+        &[data-id="9"]
+          stroke: $teal
+        &[data-id="10"]
+          stroke: $pink
+        &[data-id="11"]
+          stroke: $brown
+        &[data-id="12"]
+          stroke: $navy
+        &[data-id="13"]
+          stroke: $olive
 
       g.active
         opacity: 1
@@ -210,11 +257,13 @@ block append css
         /* right: 8px */
         font-size: 15px
         margin-left: 2em
+        opacity: .7
 
         &.active
+          opacity: 1
           color: #31363c
         &.inactive
-          color: #c6c9d0
+          opacity: .4
 
       .legend-item-box
         position: absolute
@@ -226,9 +275,49 @@ block append css
         transition: background-color 0.3s ease
 
       .chart-label
-        &:hover
+        &[data-id="0"]
           .legend-item-box
-            background-color: #008a97 !important
+            background-color: $red
+        &[data-id="1"]
+          .legend-item-box
+            background-color: $blue
+        &[data-id="2"]
+          .legend-item-box
+            background-color: $green
+        &[data-id="3"]
+          .legend-item-box
+            background-color: $orange
+        &[data-id="4"]
+          .legend-item-box
+            background-color: $purple
+        &[data-id="5"]
+          .legend-item-box
+            background-color: $yellow
+        &[data-id="6"]
+          .legend-item-box
+            background-color: $cyan
+        &[data-id="7"]
+          .legend-item-box
+            background-color: $lilac
+        &[data-id="8"]
+          .legend-item-box
+            background-color: $lime
+        &[data-id="9"]
+          .legend-item-box
+            background-color: $teal
+        &[data-id="10"]
+          .legend-item-box
+            background-color: $pink
+        &[data-id="11"]
+          .legend-item-box
+            background-color: $brown
+        &[data-id="12"]
+          .legend-item-box
+            background-color: $navy
+        &[data-id="13"]
+          .legend-item-box
+            background-color: $olive
+
             
 block append scripts
   //script
