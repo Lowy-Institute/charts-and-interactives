@@ -8,7 +8,8 @@ const data = [
     "capital": 69998503,
     "revenue": 11469005,
     "districts": 4,
-    "llg": 16
+    "llg": 16,
+    "population": "748,196"
   },
   {
     "province": 0,
@@ -19,7 +20,8 @@ const data = [
     "capital": 85442177,
     "revenue": 2466017,
     "districts": 4,
-    "llg": 13
+    "llg": 13,
+    "population": "765,142"
   },
   {
     "province": 0,
@@ -30,7 +32,8 @@ const data = [
     "capital": 87343265,
     "revenue": 1798195,
     "districts": 3,
-    "llg": 6
+    "llg": 6,
+    "population": "451,496"
   },
   {
     "province": 1,
@@ -41,7 +44,8 @@ const data = [
     "capital": 33108844,
     "revenue": 3605222,
     "districts": 1,
-    "llg": 12
+    "llg": 12,
+    "population": "74,547"
   },
   {
     "province": 1,
@@ -52,7 +56,8 @@ const data = [
     "capital": 229091837,
     "revenue": 218432286,
     "districts": 10,
-    "llg": 34
+    "llg": 34,
+    "population": "1,139,789"
   },
   {
     "province": 1,
@@ -63,7 +68,8 @@ const data = [
     "capital": 54688333,
     "revenue": 41216067,
     "districts": 2,
-    "llg": 9
+    "llg": 9,
+    "population": "232,351"
   },
   {
     "province": 1,
@@ -74,7 +80,8 @@ const data = [
     "capital": 67285714,
     "revenue": 7495517,
     "districts": 3,
-    "llg": 10
+    "llg": 10,
+    "population": "271,193"
   },
   {
     "province": 1,
@@ -85,7 +92,8 @@ const data = [
     "capital": 161592517,
     "revenue": 39591266,
     "districts": 5,
-    "llg": 20
+    "llg": 20,
+    "population": "927,306"
   },
   {
     "province": 1,
@@ -96,7 +104,8 @@ const data = [
     "capital": 60407619,
     "revenue": 74442254,
     "districts": 4,
-    "llg": 15
+    "llg": 15,
+    "population": "315,273"
   },
   {
     "province": 1,
@@ -107,7 +116,8 @@ const data = [
     "capital": 76662993,
     "revenue": 67462736,
     "districts": 4,
-    "llg": 9
+    "llg": 9,
+    "population": "531,402"
   },
   {
     "province": 1,
@@ -118,7 +128,8 @@ const data = [
     "capital": 58741497,
     "revenue": 20235482,
     "districts": 3,
-    "llg": 12
+    "llg": 12,
+    "population": "356,343"
   },
   {
     "province": 1,
@@ -129,7 +140,8 @@ const data = [
     "capital": 82003129,
     "revenue": 7464511,
     "districts": 4,
-    "llg": 17
+    "llg": 17,
+    "population": "421,470"
   },
   {
     "province": 1,
@@ -140,7 +152,8 @@ const data = [
     "capital": 77965986,
     "revenue": 40010734,
     "districts": 4,
-    "llg": 18
+    "llg": 18,
+    "population": "457,169"
   },
   {
     "province": 1,
@@ -151,7 +164,8 @@ const data = [
     "capital": 160204082,
     "revenue": 24181426,
     "districts": 6,
-    "llg": 16
+    "llg": 16,
+    "population": "571,060"
   },
   {
     "province": 1,
@@ -162,7 +176,8 @@ const data = [
     "capital": 164369388,
     "revenue": 19932516,
     "districts": 6,
-    "llg": 26
+    "llg": 26,
+    "population": "681,518"
   },
   {
     "province": 1,
@@ -173,7 +188,8 @@ const data = [
     "capital": 54469388,
     "revenue": 964980,
     "districts": 2,
-    "llg": 10
+    "llg": 10,
+    "population": "201,388"
   },
   {
     "province": 1,
@@ -184,7 +200,8 @@ const data = [
     "capital": 166078231,
     "revenue": 29338810,
     "districts": 8,
-    "llg": 24
+    "llg": 24,
+    "population": "784,535"
   },
   {
     "province": 1,
@@ -195,7 +212,8 @@ const data = [
     "capital": 121402653,
     "revenue": 10302652,
     "districts": 6,
-    "llg": 20
+    "llg": 20,
+    "population": "353,457"
   },
   {
     "province": 1,
@@ -206,7 +224,8 @@ const data = [
     "capital":  74708503,
     "revenue":  19058571,
     "districts": 5,
-    "llg": 15
+    "llg": 15,
+    "population": "362,768"
   },
   {
     "province": 1,
@@ -217,7 +236,8 @@ const data = [
     "capital": 0,
     "revenue": 400414438,
     "districts": 3,
-    "llg": 0
+    "llg": 0,
+    "population": "513,918"
   },
   {
     "province": 1,
@@ -228,7 +248,8 @@ const data = [
     "capital": 0,
     "revenue": 0,
     "districts": 3,
-    "llg": 12
+    "llg": 12,
+    "population": "641,431"
   },
   {
     "province": 1,
@@ -239,7 +260,8 @@ const data = [
     "capital": 117429592,
     "revenue": 28633761,
     "districts": 6,
-    "llg": 19
+    "llg": 19,
+    "population": "797,807"
   }
 ]
 
@@ -293,6 +315,10 @@ function addTooltip(el,i) {
     children[6].innerHTML = `
     <div class="left-text">Local-level governments:</div>
     <div class="right-text">${commune.llg}</div>
+    `;
+    children[7].innerHTML = `
+    <div class="left-text">Population:</div>
+    <div class="right-text">${commune.population}</div>
     `;
 
     tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/10 + 'px';
