@@ -11,7 +11,7 @@ const moveBackgroundSliders = (e) => {
     const nSlides = slide.dataset.nSlides
 
     // calculate % it has scrolled through the scroller
-    let percent = (100 + 100 / Math.min(nSlides - 1.3, 1)) * ((scroller.scrollTop + scroller.offsetTop) - slide.offsetTop) / (nSlides * scroller.offsetHeight)
+    let percent = (25 + 100 / Math.min(nSlides - 1.3, 1)) * ((scroller.scrollTop + scroller.offsetTop) - slide.offsetTop) / (nSlides * scroller.offsetHeight)
 
     // clamp between 0 and 100
     percent = Math.max(Math.min(percent, 100), 0)
