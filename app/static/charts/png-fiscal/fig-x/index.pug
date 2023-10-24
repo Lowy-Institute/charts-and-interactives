@@ -140,9 +140,7 @@ block page
                         x=(i-14)
                         height=18
                         width=20
-                        fill="#fff"
-                        stroke=chart.colors[chart.series[i].color]
-                        stroke-width=".5"
+                        fill=chart.colors[chart.series[i].color]
                         opacity=".9"
                         text-anchor="middle"
                       )
@@ -150,7 +148,7 @@ block page
                         y=(i-6)
                         x=(i-4)
                         text-anchor="middle"
-                        fill=chart.colors[chart.series[i].color]
+                        fill="#fff"
                       )
                         = ((val * 18) / 30000).toFixed(0)
                     else
@@ -159,9 +157,7 @@ block page
                         x=(i-19)
                         height=18
                         width=36
-                        fill="#fff"
-                        stroke=chart.colors[chart.series[i].color]
-                        stroke-width=".5"
+                        fill=chart.colors[chart.series[i].color]
                         opacity=".9"
                         text-anchor="middle"
                         transform="rotate(0)"
@@ -170,7 +166,7 @@ block page
                         y=(i-4)
                         x=(i-1)
                         text-anchor="middle"
-                        fill=chart.colors[chart.series[i].color]
+                        fill="#fff"
                         transform="rotate(0)"
                       )
                         = (Math.ceil(val * 10) / 1000).toFixed(0) + "k"
@@ -262,7 +258,7 @@ block append css
 
       text
         font-size: 14px
-        fill: currentColor
+        /* fill: currentColor 
 
       svg
         overflow: visible
