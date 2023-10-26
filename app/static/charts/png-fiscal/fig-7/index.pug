@@ -107,7 +107,7 @@ block page
   script.
     /* --- USER TO UPDATE --- */
     const enableTooltips = true;
-    const nCategories = 3;
+    const nCategories = 5;
     /* --------------------- */
     
     const chart = document.querySelectorAll('.chart-content');
@@ -128,7 +128,7 @@ block page
         
         let box = el.getBoundingClientRect();
         let val = vals[i].innerHTML;
-        let ser = series[Math.floor(i/nCategories)].innerHTML;
+        let ser = series[i].innerHTML;
         let cat = legendItems[i%nCategories].innerHTML;
         
         tooltip.style.left = box.left - 90 + 'px';

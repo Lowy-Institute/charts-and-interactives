@@ -23,28 +23,28 @@ series:
   -
     title: Province
     values:
-      - East New Britain
-      - Hela
-      - Jiwaka
-      - Bougainville
-      - NCD
-      - Western Highlands
-      - Gulf
-      - Morobe
-      - Madang
-      - Milne Bay
-      - East Sepik
-      - Eastern Highlands
-      - West New Britain
-      - Manus
-      - Oro
-      - Simbu
-      - West Sepik
-      - Central
-      - Western
-      - Southern Highlands
-      - New Ireland
-      - Enga
+      - "East New Britain"
+      - "Hela"
+      - "Jiwaka"
+      - "Bougainville"
+      - "NCD"
+      - "Western Highlands"
+      - "Gulf"
+      - "Morobe"
+      - "Madang"
+      - "Milne Bay"
+      - "East Sepik"
+      - "Eastern Highlands"
+      - "West New Britain"
+      - "Manus"
+      - "Oro"
+      - "Simbu"
+      - "West Sepik"
+      - "Central"
+      - "Western"
+      - "Southern Highlands"
+      - "New Ireland"
+      - "Enga"
 
   -
     title: GST share
