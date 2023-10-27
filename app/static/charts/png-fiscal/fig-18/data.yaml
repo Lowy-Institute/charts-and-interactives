@@ -22,6 +22,7 @@ axes:
 series:
   -
     title: Year
+    
     values:
       - 2013
       - 2014
