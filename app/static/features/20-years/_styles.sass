@@ -346,7 +346,7 @@ body.embed-false
   font-family: Sans, sans-serif
 
 a
-  transition: text-decoration-color 300ms
+  transition: text-decoration-color 300ms, filter 300ms
   text-decoration-color: transparent
   font-weight: 500
   color: $color-ff
@@ -355,6 +355,13 @@ a
   &:focus
     color: $color-ff
     text-decoration-color: $color-ff
+
+  &.hover-lighten
+    &:hover,
+    &:focus
+      color: $color-ff
+      filter: brightness(1.1)
+      text-decoration-color: transparent
 
 blockquote
   font-style: normal
