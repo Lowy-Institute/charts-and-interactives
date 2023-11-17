@@ -1,0 +1,46 @@
+title: >
+  Cumulative value of untagged gender equality projects reported at the OECD
+
+source: >
+  <strong>Source:</strong> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a> database
+
+#notes: >
+  #<strong>Note:</strong>
+
+subtitle: >
+  2008-2020, $US (current, spent)
+
+axes:
+  minY:  0
+  maxY: 1400000000
+  stepsY: 8
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Source
+    values:
+      - Australia
+      - World Bank
+      - Japan
+      - ADB
+      - UN
+      - NZ
+      - EU
+
+  -
+    title: Total untagged (spent, $US current)
+    color: "orange"
+    values:
+      - 1269752609.69
+      - 1050315875.00
+      - 779934002.00
+      - 704067157.64
+      - 139371499.00
+      - 78349387.00
+      - 34252849.00
+

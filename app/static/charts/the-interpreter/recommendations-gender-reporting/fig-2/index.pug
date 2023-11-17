@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/the-interpreter/australia-gender-financing-pacific/data"
+  - var datapath = "static/charts/the-interpreter/recommendations-gender-reporting/fig-2/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -19,6 +19,12 @@ block page
         - minY = axes.minY
         - maxY = axes.maxY
         - range = maxY - minY
+        - rangeY = maxY - minY 
+        - minX = axes.minX
+        - maxX = axes.maxX
+        - rangeX = maxX - minX
+        - stepsX = axes.stepsX
+
         - fx = (i) => (i + 0.6) / (ln + 0.75)
         - fy = (y) => (y - minY) / range
         
@@ -29,9 +35,11 @@ block page
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
+              - value = minY + rangeY * (i / steps) + (axes.percentage ? "%" : "")
+
               svg(y=toPercent(y))
-                text(text-anchor="end" transform="translate(-8 4)")
-                  = "$" + (minY + range*(i/steps) + (axes.percentage ? "%" : "")) + " B"
+                text(text-anchor="end" transform="translate(-8 4)")= "$" + (value/1000000000) + " B"
+                // shows 000,000,000 as B
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -72,12 +80,12 @@ block page
                     )
                     text.chart-value(
                       x="50%"
-                      y=toPercent(y-fy(v))
+                      y=toPercent(y - fy(v +8))
                       text-anchor="middle"
-                      transform="translate(0 -8)"
+                      transform="translate(0 -4.5)"
                       style=`color: ${(j < 3 ? "#ff8800" : "")}`
                     )
-                      = "$" + v.toFixed(2) + " B"
+                      = "$" + (v/1000000000).toFixed(2) + (axes.percentage ? "%" : "") + " B"
 
                   - y -= fy(v)
                     
@@ -226,8 +234,12 @@ block append css
       svg
         overflow: visible
         
-      .chart-notes, .chart-source
+      .chart-source
         margin-top: 1em
+        margin-left: 3em
+        font-size: 15px
+      .chart-notes
+        margin-top: .5em
         margin-left: 3em
         font-size: 15px
       .txt-muted
@@ -246,6 +258,9 @@ block append css
         .x-label text
           text-anchor: end
           transform: rotate(-45deg) translate(-8px, 14px)
+        .x-label text.line2
+          text-anchor: end
+          transform: rotate(-45deg) translate(8px, 30px)
 
         text
           font-size: 13px
