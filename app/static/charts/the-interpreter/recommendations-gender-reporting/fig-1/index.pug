@@ -65,6 +65,11 @@ block page
                 width=toPercent(fx(0))
                 height="100%"
               )   
+                defs
+                  linearGradient(id="interpreter-gradient" x1="50%" y1="0%" x2="50%" y2="100%")
+                    stop(offset="60%" style="stop-color:rgb(255,123,0);stop-opacity:1.00")
+                    stop(offset="100%" style="stop-color:rgb(255,169,0);stop-opacity:1.00")
+
                 - y = 1
                 - vals = chart.series.filter( (s, i) => i ).map( s => s.values[i] )
                 - vals = axes.reverse ? vals.reverse() : vals
@@ -76,14 +81,14 @@ block page
                       y=toPercent(y-fy(v))
                       height=toPercent(fy(v))
                       width="100%"
-                      fill=chart.colors[chart.series[ci].color]
+                      fill="url(#interpreter-gradient)"
                     )
                     text.chart-value(
                       x="50%"
                       y=toPercent(y - fy(v +8))
                       text-anchor="middle"
                       transform="translate(0 -4.5)"
-                      style=`color: ${(j < 3 ? "#ffa800" : "")}`
+                      style=`color: ${(j < 3 ? "#ff7b00" : "")}`
                     )
                       = "$" + (v/1000000000).toFixed(2) + (axes.percentage ? "%" : "") + " B"
 
