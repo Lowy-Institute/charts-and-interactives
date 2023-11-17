@@ -1,0 +1,46 @@
+title: >
+  Cumulative Pacific gender equality financing, tagged and untagged by DFAT
+
+source: >
+  <strong>Source:</strong> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
+
+notes: >
+  <strong>Note:</strong> On request from DFAT to keep public records comparable, the additional tags by the Lowy Institute are not published on the Pacific Aid Map.
+
+subtitle: >
+  2008-2020, $US (current, spent)
+
+axes:
+  minY:  0
+  maxY: 14000000000
+  stepsY: 8
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Source
+    values:
+      - Total aid
+      - Tagged
+      - Unagged
+      - Additional
+
+    values2:
+      - (spent)
+      - by DFAT
+      - by DFAT
+      - tag by Lowy
+
+  -
+    title: Total untagged (spent, $US current)
+    color: "orange"
+    values:
+      - 13193156076.73
+      - 11923403467.04
+      - 1269752609.69
+      - 77583923.53
+

@@ -1,0 +1,50 @@
+title: >
+  Cumulative Gender Financing to Pacific 2008-2020
+
+source: >
+  <strong>Source:</strong> Lowy Institute <a href="https://pacificaidmap.lowyinstitute.org/">Pacific Aid Map</a>
+
+#notes: >
+  #Notes: Lorem ipsum
+
+subtitle: >
+  Spent, current US$
+
+axes:
+  minY:  0
+  maxY: 6
+  stepsY: 7
+  rotateX: false
+  percentage: false
+  minorLines: true
+  dotted: [] # Index of dotted gridlines
+  reverse: false
+
+series:
+  -
+    title: Source
+    values:
+      - ADB
+      - Australia
+      - China
+      - EU 
+      - Japan
+      - New Zealand
+      - Taiwan
+      - UN
+      - World Bank
+
+  -
+    title: Funding
+    color: "orange"
+    values:
+      - 2.043710356
+      - 5.463537261
+      - 0
+      - .542746464
+      - .200532053
+      - 1.253053889
+      - 0
+      - .071364692
+      - .280901902
+
