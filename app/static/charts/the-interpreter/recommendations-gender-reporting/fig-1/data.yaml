@@ -37,7 +37,7 @@ series:
 
   -
     title: Total untagged (spent, $US current)
-    color: "orange"
+    color: "orange-light"
     values:
       - 13193156076.73
       - 11923403467.04
