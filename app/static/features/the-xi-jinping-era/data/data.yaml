@@ -147,7 +147,7 @@ politburo:
     members:
       - img: "./img/politburo-members/li-qiang.jpg"
         name: Li Qiang
-        cn: 韩正
+        cn: 李强
         role: Vice Premier, HK, Macau, Finance, Housing, Environment
         rank: 2
         faction: Xi loyalist
@@ -161,7 +161,7 @@ politburo:
         age: 67
       - img: "./img/politburo-members/cai-qi.jpg"
         name: Cai Qi
-        cn: 李克强
+        cn: 蔡奇
         role: Secreteriat
         rank: 5
         faction: Xi loyalist
@@ -176,7 +176,7 @@ politburo:
         class: member-xi
       - img: "./img/politburo-members/ding-xuexiang.jpg"
         name: Ding Xuexiang
-        cn: 栗战书
+        cn: 丁薛祥
         role: Vice-Premier
         rank: 6
         faction: Xi loyalist
@@ -190,7 +190,7 @@ politburo:
         age: 65
       - img: "./img/politburo-members/li-xi.jpg"
         name: Li Xi
-        cn: 汪洋
+        cn: 李希
         role: Anti-corruption
         rank: 7
         faction: Xi loyalist
@@ -199,7 +199,7 @@ politburo:
     members:
       - img: "./img/politburo-members/li-xi.jpg"
         name: Li Xi
-        cn: 汪洋
+        cn: 李希
         role: Anti-corruption
         age: 66
       - img: "./img/politburo-members/wang-huning.jpg"
@@ -209,7 +209,7 @@ politburo:
         age: 67
       - img: "./img/politburo-members/li-qiang.jpg"
         name: Li Qiang
-        cn: 韩正
+        cn: 李强
         role: Premier, Head of Government
         age: 63
       - img: "./img/politburo-members/xi-jinping.jpg"
@@ -225,12 +225,12 @@ politburo:
         age: 65
       - img: "./img/politburo-members/cai-qi.jpg"
         name: Cai Qi
-        cn: 李克强
+        cn: 蔡奇
         role: Head of the General Office (Chief of Staff)
         age: 66
       - img: "./img/politburo-members/ding-xuexiang.jpg"
         name: Ding Xuexiang
-        cn: 栗战书
+        cn: 丁薛祥
         role: Vice-Premier, Economy, Hong Kong and Macau
         age: 60
 
