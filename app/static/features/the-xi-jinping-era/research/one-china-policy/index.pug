@@ -1,0 +1,15 @@
+extend /partials/layout
+
+block append config
+  - page.data = data.getOne("static/features/the-xi-jinping-era/data/data")
+
+block page
+
+  div.slide
+    include _territorial-claims
+
+
+
+block append css
+  style
+      include:sass /features/the-xi-jinping-era/interpreter/_style.sass

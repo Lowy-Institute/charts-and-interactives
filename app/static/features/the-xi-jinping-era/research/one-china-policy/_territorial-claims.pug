@@ -1,0 +1,125 @@
+.slide.bg-dk
+  .posr.fw.fh.flex(data-view="in-viewport")
+    .slide-inner.txt-ff
+      .type.txt-md.txt-left.posa.fade-in(
+        data-view="slide, in-viewport"
+        data-duration=1600,
+      )
+        h2 One-China Policy vs One-China Principle
+
+    .posa.fw.fh(style={
+      "z-index": -1,
+      top: 0
+    })
+      .posa.fade-in.fw.fh.delay-4
+        img(
+          width="100%"
+          height="100%"
+          data-src="./img/one-china-map@2x.png"
+        )
+
+      #diff.posa.fade-in.delay-10.txt-ff
+        h3.hide The differences
+        p Consistent with China’s <strong>one-China principle</strong>, Australia’s <strong>one-China policy</strong> recognises the Government of the PRC as the sole legal Government of China. Yet unlike China’s one-China principle, Australia’s one-China policy takes no position on whether Taiwan is or ought to be part of the PRC. Instead, Australia, like the United States and a range of other countries with one-China policies, only acknowledges without endorsing the PRC’s position on Taiwan. Australia has for decades combined its recognition of the PRC as the sole legal Government of China with mutually beneficial and expanding ties with Taiwan in the trade, political, people-to-people, cultural, and security arenas. Like numerous other countries that maintain various configurations of one-China policies, recognition of the PRC does not entail disengagement from Taiwan. 
+
+      #aus.posa.fade-in.delay-8.txt-ff
+        h3.hide Australia       
+        p.hide The foundation of Australia’s <strong>one-China policy</strong> as articulated in the 1972 Joint Communiqué establishing diplomatic relations with the People’s Republic of China (PRC):
+        span “The Australian Government recognises 
+        span.bg-hl the Government of the People’s Republic of China as the sole legal Government of China
+        span , 
+        span(
+          style={
+          background: "#2020ed"}
+        ) acknowledges the position of the Chinese Government that Taiwan is a province of the People’s Republic of China
+        span , and has decided to remove its official representation from Taiwan before 25 January 1973.” 
+
+      #china.posa.fade-in.delay-6.txt-ff
+        h3.hide China       
+        p.hide China’s <strong>one-China principle</strong> as articulated by the Chinese Ministry of Foreign Affairs in 2022: 
+        span “The one-China principle has a clear and unambiguous meaning, i.e., there is but one China in the world, 
+        span.bg-hl Taiwan is an inalienable part of China
+        span , and 
+        span.bg-hl the Government of the People’s Republic of China is the sole legal Government representing the whole of China.” 
+
+          
+block append css
+  style
+    :sass
+    
+      body
+        background: #fff
+        font-family: Cond, sans-serif
+      .slide
+        height: 850px
+        border: 0
+      .slide-inner
+        width: 100%
+        padding: 32px
+        height: 800px
+      #diff,#aus,#china
+        border: 1px solid #ffffff44
+        padding: .5rem
+        background: #05182466
+      #diff
+        bottom: 32px
+        right: 32px
+        width: auto
+        margin-left: 32px
+      #aus
+        top: 280px
+        right: 32px
+        width: 35%
+      #china
+        top: 32px
+        right: 32px
+        width: 35%
+      #aus h3:after
+        content: ''
+        display: inline-block
+        width: 22px
+        height: 13px
+        background: url('./img/australia-flag-icon.png') no-repeat 0 0
+        background-size: cover
+        position: relative
+        top: 1px
+      #china h3:after
+        content: ''
+        display: inline-block
+        width: 22px
+        height: 13px
+        background: url('./img/china-flag-icon.png') no-repeat 0 0
+        background-size: cover
+        position: relative
+        top: 1px
+      .bg-hl
+        background: #af0818
+      h2
+        font-weight: 700
+      h3
+        text-transform: uppercase
+        font-weight: 400
+        letter-spacing: .12rem
+
+      @media (max-width: 450px)
+        .slide,
+        .slide-inner
+          padding: 12px
+        #diff
+          bottom: 0
+          right: 0
+          width: auto
+          margin-left: 0
+        #aus
+          top: 160px
+          right: 0
+          width: auto
+          position: relative
+        #china
+          top: 36px
+          right: 0
+          width: auto
+        img
+          object-fit: contain
+        .hide
+          display: none
