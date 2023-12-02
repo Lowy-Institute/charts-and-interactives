@@ -12,11 +12,7 @@
       top: 0
     })
       .posa.fade-in.fw.fh.delay-4
-        img(
-          width="100%"
-          height="100%"
-          data-src="./img/one-china-map@2x.png"
-        )
+        include ./img/one-china-map.svg
 
       #diff.posa.fade-in.delay-10.txt-ff
         h3.hide The differences
@@ -30,7 +26,7 @@
         span , 
         span(
           style={
-          background: "#2020ed"}
+          background: "#2020ed99"}
         ) acknowledges the position of the Chinese Government that Taiwan is a province of the People’s Republic of China
         span , and has decided to remove its official representation from Taiwan before 25 January 1973.” 
 
@@ -41,8 +37,10 @@
         span.bg-hl Taiwan is an inalienable part of China
         span , and 
         span.bg-hl the Government of the People’s Republic of China is the sole legal Government representing the whole of China.” 
-
           
+
+script(src="script.js")
+
 block append css
   style
     :sass
@@ -93,13 +91,16 @@ block append css
         position: relative
         top: 1px
       .bg-hl
-        background: #af0818
+        background: #af0818dd
+      .bg-dk
+        background: #002237
       h2
         font-weight: 700
       h3
         text-transform: uppercase
         font-weight: 400
         letter-spacing: .12rem
+
 
       @media (max-width: 992px)
         body
@@ -130,3 +131,5 @@ block append css
           display: none
         body
           font-size: 14px
+        svg
+          margin: 320px 0
