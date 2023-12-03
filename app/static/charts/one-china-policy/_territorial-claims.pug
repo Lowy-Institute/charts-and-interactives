@@ -24,10 +24,7 @@
         span “The Australian Government recognises 
         span.bg-hl the Government of the People’s Republic of China as the sole legal Government of China
         span , 
-        span(
-          style={
-          background: "#6a5acd"}
-        ) acknowledges the position of the Chinese Government that Taiwan is a province of the People’s Republic of China
+        span.bg-hl2 acknowledges the position of the Chinese Government that Taiwan is a province of the People’s Republic of China
         span , and has decided to remove its official representation from Taiwan before 25 January 1973.” 
 
       #china.posa.fade-in.delay-6.txt-ff
@@ -92,6 +89,8 @@ block append css
         top: 1px
       .bg-hl
         background: #008080
+      bg-hl2
+          background: #6a5acd
       .bg-dk
         background: #002237
       h2
@@ -133,3 +132,15 @@ block append css
           font-size: 14px
         svg
           margin: 320px 0
+
+      @media print
+        #diff,#aus,#china
+          border: 0px
+          background: #fff
+          color: #333
+        .bg-hl
+          border-bottom: 1px solid #008080
+          background: #00808033
+        .bg-hl2
+          border-bottom: 1px solid #6a5acd
+          background: #6a5acd33
