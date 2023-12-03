@@ -14,19 +14,19 @@
     <style>
       tspan{letter-spacing:.4em;fill:#fff;font-family:"Cond",sans-serif;font-weight:300;font-size:16px}
       .grad1{fill:url(#linear-gradient)}
-      #prc,#taiwan{fill:#af0818}
-      #taiwan{fill:#2020ed;stroke:#fff;stroke-miterlimit:10;stroke-width:.5px}
+      #prc,#taiwan{fill:#20b2aa}
+      #taiwan{fill:#6a5acd;stroke:#fff;stroke-miterlimit:10;stroke-width:.5px}
       .grad2{fill:url(#linear-gradient-2)}
       #background{fill:#002237}
-      #map{fill:#033751;stroke-width:0}
+      #map{fill:#033751;stroke-width:.5;stroke:#ffffff44}
       #taiwan {animation: pulse 3s infinite alternate;}
       @keyframes pulse {
         0% {
-          fill: #2020ed;
+          fill: #6a5acd;
           filter: drop-shadow(0 04px rgba(255, 255, 255, 0.2))
         }
         100% {
-          fill: #af0818;
+          fill: #20b2aa;
           filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
         }
       }
