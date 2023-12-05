@@ -11,22 +11,31 @@
     <clipPath id="clippath">
       <path d="M0 0h1036v698H0z"/>
     </clipPath>
+    <pattern id="diagonal-stripe" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">
+			<line x1="0" y="0" x2="0" y2="5" stroke="#20B2AA" fill="#fff" stroke-width="8" />
+		</pattern>
+    <!-- pattern generated using https://svg-stripe-generator.web.app/ -->
     <style>
       tspan{letter-spacing:.4em;fill:#fff;font-family:"Cond",sans-serif;font-weight:300;font-size:16px}
       .grad1{fill:url(#linear-gradient)}
       #prc,#taiwan{fill:#20b2aa}
-      #taiwan{fill:#6a5acd;stroke:#fff;stroke-miterlimit:10;stroke-width:.5px}
+      #taiwan{
+        stroke: #20b2aa;
+        stroke-miterlimit:10;
+        stroke-width:.5px;
+        fill:url(#diagonal-stripe)
+        }
       .grad2{fill:url(#linear-gradient-2)}
       #background{fill:#002237}
       #map{fill:#033751;stroke-width:.5;stroke:#ffffff44}
       #taiwan {animation: pulse 3s infinite alternate;}
       @keyframes pulse {
         0% {
-          fill: #6a5acd;
+          stroke: #20b2aa;
           filter: drop-shadow(0 04px rgba(255, 255, 255, 0.2))
         }
         100% {
-          fill: #20b2aa;
+          stroke: #fff;
           filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
         }
       }
