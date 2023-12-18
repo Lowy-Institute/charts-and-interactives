@@ -23,22 +23,28 @@
         stroke: #20b2aa;
         stroke-miterlimit:10;
         stroke-width:.5px;
-        fill:url(#diagonal-stripe)
+        fill:url(#diagonal-stripe);
         }
-      .grad2{fill:url(#linear-gradient-2)}
-      #background{fill:#002237}
-      #map{fill:#033751;stroke-width:.5;stroke:#ffffff44}
-      #taiwan {animation: pulse 3s infinite alternate;}
-      @keyframes pulse {
-        0% {
-          stroke: #20b2aa;
-          filter: drop-shadow(0 04px rgba(255, 255, 255, 0.2))
+      .grad2{fill:url(#linear-gradient-2);}
+      #background{fill:#002237;}
+      #map{fill:#033751; stroke-width:.5; stroke:#ffffff44;}
+      #taiwan {
+        animation: pulse 3s infinite alternate;
         }
-        100% {
-          stroke: #fff;
-          filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
+        @keyframes pulse {
+          0% {
+            stroke: #20b2aa;
+            stroke-width:.5px;
+            transform: translateZ(0);
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+          }
+          100% {
+            stroke: #fff;
+            stroke-width:1px;
+            transform: translateZ(0);
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+          }
         }
-      }
     </style>
   </defs>
   <g class="cls-3" style="clip-path:url(#clippath)">
