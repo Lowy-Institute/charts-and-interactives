@@ -39,7 +39,7 @@ exports.config =
       /[\\/]_/
       "node_modules"
       /\/partials\//
-      /.*\.(psd|coffee|sass|md)$/
+      /.*\.(psd|coffee|md)$/
       /^app\/static(\/|\\)(.+)\.yaml$/
       /\.(tmp\$\$)$/
     ]
