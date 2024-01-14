@@ -153,13 +153,13 @@ block page
             g
               svg(x="100%" y="41%")
                 rect(fill="#539ed4" x="2" y="-8" width="41" height="18")
-                text(class="label" style="color: white; font-weight: 600" transform="translate(6 6)") Cash
+                text(class="label" style="color: white; font-weight: 700" transform="translate(6 6)") Cash
               svg(x="100%" y="60%")
                 rect(fill="#ff8800" x="2" y="-8" width="51" height="18")
-                text(class="label" style="color: white; font-weight: 600" transform="translate(6 6)") Digital
+                text(class="label" style="color: white; font-weight: 700" transform="translate(6 6)") Digital
               svg(x="100%" y="48%")
                 rect(fill="#16B56F" x="2" y="-8" width="104" height="18")
-                text(class="label" style="color: white; font-weight: 600" transform="translate(6 6)") Global average
+                text(class="label" style="color: white; font-weight: 700" transform="translate(6 6)") Global average
               svg.label-last(x="60%" y="78%")
                 rect(fill="#fff" x="2" y="-8" width="104" height="18")
                 text(class="label" style="color: #999; font-weight: 400" transform="translate(6 6)") UN Sustainable Development Goals target
@@ -176,7 +176,7 @@ block page
                   )
                     rect(fill="white" x="2" y="-8" width="100" height="16")
                     text.label(
-                      style=`color: ${chart.colors[chart.series[i].color]}; font-weight: 600`
+                      style=`color: ${chart.colors[chart.series[i].color]}; font-weight: 700`
                       transform="translate(4 6)"
                     )= item.title
 
@@ -218,7 +218,7 @@ block append css
         font-size: 20px
         
       .chart-subtitle
-        font-weight: 600
+        font-weight: 700
         height: 10px
         margin-top: -10px
         font-size: 15px

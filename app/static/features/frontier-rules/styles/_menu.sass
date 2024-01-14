@@ -2,13 +2,14 @@ $h-card: 34px
 
 #logo
   position: fixed
-  color: black
+  color: $color-text
   top: 1.5rem
   left: 1.5rem
   z-index: 200
-  font-weight: 600
+  font-weight: 700
   letter-spacing: .05em
   font-size: 13px
+  line-height: 1
   
   .landing &
     top: 2.5rem
@@ -51,7 +52,7 @@ $h-card: 34px
   z-index: 100
   position: fixed
   pointer-events: none
-  color: black
+  color: $color-text
 
 #menu-button
   position: absolute
@@ -249,7 +250,6 @@ aside
 
 
 @media (max-width: $screen-tablet)
-  
   #logo
     top: 1rem
     left: 1rem

@@ -1,3 +1,5 @@
+@import "app/sass/core/_fonts"
+
 html, body
   height: 100%
   box-sizing: border-box
@@ -9,6 +11,7 @@ body
   justify-content: center
   align-items: center
   background-color: #2d3440
+  font-synthesis: none
   color: #fff
 
   // record
@@ -23,7 +26,7 @@ body
   position: relative
   line-height: 20px
   height: 28px * 20
-  font-family: Montserrat, sans-serif
+  font-family: $font-default-stack
   text-transform: uppercase
   z-index: 0
   padding: 4px 0 24px
@@ -326,6 +329,7 @@ body
   z-index: 10
 
 .chart-title-main
+  font-family: $font-display-stack
   font-size: 20px
   margin: 0
 

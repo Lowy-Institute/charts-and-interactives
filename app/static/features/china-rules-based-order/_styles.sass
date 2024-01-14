@@ -56,11 +56,11 @@ html
   scroll-behavior: smooth
 
 body.embed-false
-  font-family: Sans
+  font-family: $font-default-stack
   font-size: 22px
   line-height: 1.25
-  font-weight: 300
-  color: $dark
+  font-weight: 400
+  color: $color-dark
   font-feature-settings: "liga" 0
   text-rendering: geometricPrecision
 
@@ -74,7 +74,7 @@ p, pre, dl, dd, ul, ol, svg
     margin-bottom: 0
 
 h2, h3, h4
-  font-weight: 500
+  font-weight: 700
   letter-spacing: 0.02em!important
 
 header
@@ -93,7 +93,7 @@ header
 a
   text-decoration: none
   transition: color 400ms ease-in-out, background 400ms ease-in-out, box-shadow 400ms ease-in-out
-  color: $dark
+  color: $color-dark
   &:hover
     color: $red
   &.bg-red:hover
@@ -109,7 +109,7 @@ iframe
   margin: 1.5em 0 2em
 
 blockquote
-  font-family: 'Semi', sans-serif
+  font-family: $font-caption-stack
   color: #333
   font-size: 0.85em
   padding: 0.5em 0 0.5em 1em
@@ -123,7 +123,7 @@ blockquote
 
 p small
   font-style: italic
-  font-weight: 300
+  font-weight: 400
   line-height: 1.2
   color: $mute
 
@@ -156,7 +156,7 @@ cite, .cite
 .txt-yel
   color: $yellow
 .txt-dk
-  color: $dark
+  color: $color-dark
 .txt-mute
   color: $mute
 .txt-ff
@@ -169,12 +169,12 @@ cite, .cite
   line-height: 1.5
 
 .strong
-  font-weight: 600
+  font-weight: 700
   font-style: normal
   letter-spacing: 0.03em
 
 .title
-  font-weight: 200
+  font-weight: 400
   font-size: 72px
   line-height: 72px
 
@@ -198,11 +198,11 @@ cite, .cite
   font-size: 14px
 
 .fw-3
-  font-weight: 300
+  font-weight: 400
 .fw-4
   font-weight: 400
 .fw-5
-  font-weight: 500
+  font-weight: 700
 
 // layout
 
@@ -275,7 +275,7 @@ cite, .cite
 
   .label
     margin-top: -2.25em
-    font-weight: 300
+    font-weight: 400
     font-size: 16px
     // border-bottom: 1px solid rgba($red, 0.9)
     padding-bottom: 0.25em
@@ -289,7 +289,7 @@ cite, .cite
     padding-top: 10px
 
   h2
-    color: $dark
+    color: $color-dark
 
   h3
     color: $red
@@ -408,29 +408,29 @@ cite, .cite
 .content
   padding-top: 60px
   line-height: 1.4
-  font-weight: 300
+  font-weight: 400
 
   a:not(.bare)
     box-shadow: inset 0 -2px #fff, inset 0 -3px $mute
     text-shadow: -2px 1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 2px 1px 0 #fff
 
     &:hover
-      color: black
+      color: $color-text
       box-shadow: inset 0 -1px #fff, inset 0 -3px $red
 
   strong
-    font-weight: 600
+    font-weight: 700
 
   p > small
     line-height: 1
 
   & > p:first-child
-    font-weight: 500
+    font-weight: 700
 
 
   .title
     font-size: 2.5em
-    font-weight: 300
+    font-weight: 400
 
     & + div
       letter-spacing: 0
@@ -445,7 +445,7 @@ cite, .cite
     font-size: 0.85em
 
 .row-title td
-  font-weight: 500
+  font-weight: 700
   padding-top: 20px
 
 .row-title:first-child td
@@ -618,7 +618,7 @@ footer
     color: $red
     position: absolute
     font-style: italic
-    font-family: 'Semi', sans-serif
+    font-family: $font-caption-stack
     font-size: 20px
     bottom: calc(100% + 10px)
     white-space: nowrap

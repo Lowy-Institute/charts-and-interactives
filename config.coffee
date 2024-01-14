@@ -64,7 +64,7 @@ exports.config =
       filters:
         sass: (data) ->
           require("node-sass").renderSync({
-            data
+            data: '@import "app/sass/core/vars.sass"\n' + data
             indentedSyntax: true
           }).css.toString()
 
@@ -108,7 +108,7 @@ exports.config =
           filters:
             sass: (data) ->
               require("node-sass").renderSync({
-                data
+                data: '@import "app/sass/core/vars.sass"\n' + data
                 indentedSyntax: true
                 outputStyle: "compressed"
               }).css.toString()

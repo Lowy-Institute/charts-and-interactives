@@ -6,43 +6,32 @@ $h-card: 34px
   top: 1.5rem
   left: 1.5rem
   z-index: 200
-  font-weight: 600
+  font-weight: 700
   letter-spacing: .05em
   font-size: 13px
-  
+  line-height: 1.1
+
   .landing &
     top: 2.5rem
     left: 2.5rem
+
     .text-highlight
       display: none
-  
+
   @media (max-width: $screen-tablet)
-    
     .landing &
       display: none
 
-    //.landing &::before
-      content: ''
-      position: fixed
-      top: 0
-      left: 0
-      right: 0
-      height: 70px
-      pointer-events: none
-      border-bottom: 1px solid $muted
-      background: lighten($blue-lowy, 5)
-      z-index: -1
-  
   .wordmark
     width: 80px
-    
+
   .text-highlight
     width: 120px
     transition: color .3s
-    
+
   &:hover .text-highlight
     color: lighten($highlight, 30)
-  
+
   .landing &
     opacity: 0
     transition: opacity .75s
@@ -51,32 +40,30 @@ $h-card: 34px
   z-index: 100
   position: fixed
   pointer-events: none
-  color: white
 
 #menu-button
   position: absolute
   left: 1.5rem
   bottom: 1rem
-  padding: 1rem 2rem
+  padding: 1rem 1.75rem
   pointer-events: all
   z-index: 1
-  
+
   path
     &:first-child
       opacity: 0
-    
-  
+
   .label
     transition: all .2s
     position: absolute
     top: 0
-    
+
     &:first-child
       opacity: 0
       transform: translateY(1em)
-    
+
   .collapsed &
-      
+
     .label
       &:first-child
         opacity: 1
@@ -84,13 +71,13 @@ $h-card: 34px
       &:nth-child(2)
         opacity: 0
         transform: translateY(-1em)
-        
+
     path
       &:first-child
         opacity: 1
       &:nth-child(2)
         opacity: 0
-  
+
 #menu-modal
   background: linear-gradient(-135deg, $blue-light, $blue-dark)
   animation: fadein 0.4s forwards
@@ -101,7 +88,7 @@ $h-card: 34px
   flex: 0.5
   padding-right: 2rem
   border-right: 1px solid $muted
-  
+
 #scale
   justify-content: center
   height: 100%
@@ -111,23 +98,23 @@ $h-card: 34px
     &:first-child
       padding: 0 2rem
       border-right: 1px solid
-  
+
   .agree .label
     bottom: 3rem
   .disagree .label
     top: 3rem
-    
+
   .label
     flex: 1
     font-weight: 400
     letter-spacing: 0.2em
     left: 0rem
-    
+
   .node
     padding: 0.5rem 1rem
     transition: all .3s
     transform-origin: left center
-    
+
     &:hover,
     &:focus
       color: white
@@ -136,10 +123,10 @@ $h-card: 34px
         &:before
           transform: rotate(45deg) scale(1.2)
           background: $blue-light
-      
+
       .card
         background: #fff1
-    
+
   .linkage
     position: absolute
     width: 2rem
@@ -148,7 +135,7 @@ $h-card: 34px
     top: 50%
     left: 0
     display: none
-    
+
     &:before
       content: ''
       position: absolute
@@ -161,7 +148,7 @@ $h-card: 34px
       border-radius: 2px
       transform: rotate(45deg)
       transition: all .3s
-    
+
   .card
     padding: .5rem .75rem
     border-radius: 4px
@@ -174,43 +161,41 @@ $h-card: 34px
 
   #menu
     position: absolute
-    
+
   #menu-modal
     background: none
     display: flex
-    
+
   #menu-button
     display: none
 
-
 // When collapsed
 aside
-    
+
   #menu-modal.hidden
     display: flex
     width: 160px
     padding: 0
     background: $blue-lowy
-    
+
     #question,
     #scale-title
       display: none
-      
+
     #scale
       display: none
       position: relative
       padding-left: 1rem
       height: 30%
       top: 34%
-      
+
       .col
         &:first-child
           border-right: none
-      
-      
+
       .label
         display: none
-        
+
       .card
         opacity: 0
         width: 220px
@@ -223,40 +208,38 @@ aside
       .linkage
         width: 0
         top: 0
-        
+
       .node
         transform: none
-        
+
         &:hover
           .card
             opacity: 1
-            
-        
+
       @for $i from 1 through 6
         .node:nth-child(#{$i})
           top: ($i - 1) * 20% !important
 
-
 @media (max-width: $screen-tablet)
-  
+
   #logo
     top: 1rem
     left: 1rem
 
     .wordmark
       width: auto
-  
+
   #menu-modal
     flex-direction: column
     padding: 6rem 1rem 2rem
     overflow: auto
     overscroll-behavior: none
-    
+
     aside &.hidden
       height: 4rem
       padding: 0
       width: 100%
-      
+
   #menu-button
     position: fixed
     top: 0
@@ -264,9 +247,9 @@ aside
     left: unset
     bottom: unset
     padding: .6rem 1.25rem
-    
+
     #menu:not(.collapsed) &
-    
+
       &::before
         content: ''
         position: fixed
@@ -278,35 +261,35 @@ aside
         border-bottom: 1px solid $muted
         background: lighten($blue-lowy, 5)
         z-index: -1
-    
+
     .label
       display: none
-    
+
   #question
     border-right: none
     padding-bottom: 1.5rem
-    
+
     .label
       display: none
-    
+
   #scale
     padding-left: 0
     margin: 0
-    
+
     .col:first-child
       padding: 0
       width: 2rem
-      
+
     .node
       position: relative
       top: auto!important
       padding: .5rem
-      
+
     .label
       position: relative
       display: inline-block
       padding: 1em 0
-      
+
       &:after
         content: ''
         position: absolute
@@ -314,28 +297,26 @@ aside
         height: 1px
         top: calc(50% - 1px)
         background: rgba($muted, 0.5)
-      
+
     .agree .label
       top: -.75em
       bottom: unset
-      
+
       &:after
         left: 70px
 
     .disagree .label
       top: 1em
-      
+
       &:after
         left: 95px
         top: calc(50% - 12px)
-      
+
     .linkage
       width: 1.25rem
-      
+
     .card
       margin-left: 0
-      
+
     .divider
       display: none
-      
-    

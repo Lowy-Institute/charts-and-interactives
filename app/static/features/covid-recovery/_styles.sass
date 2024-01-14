@@ -152,16 +152,16 @@ $color-mt: #7c94a2
   z-index: 1
 
 .txt-sans
-  font-family: Sans, sans-serif
+  font-family: $font-default-stack
 
 .txt-cond
-  font-family: Cond, sans-serif
+  font-family: $font-caption-stack
 
 // Font size
 .txt-xxl
   font-size: 38px
   line-height: 1.2
-  font-weight: 200
+  font-weight: 400
   letter-spacing: -0.01em
 .txt-xl
   font-size: 36px
@@ -185,7 +185,7 @@ $color-mt: #7c94a2
 .txt-sm
   font-size: 14px
   line-height: inherit
-  font-family: Sans, sans-serif
+  font-family: $font-default-stack
 
 .txt-links
   font-size: 32px
@@ -199,7 +199,7 @@ sup
   a
     text-decoration: none
     color: $color-hl
-    font-weight: 500
+    font-weight: 700
     padding: 0 2px
     margin: 0 -2px
 
@@ -229,7 +229,7 @@ sup
   color: $color-ff
   padding: 8px
   font-weight: 400
-  font-family: Sans, sans-serif
+  font-family: $font-default-stack
 
   &:not([class*="bg"])
     background: $color-hl
@@ -299,12 +299,12 @@ a
   line-height: inherit
 
 body
-  font-family: Cond
+  font-family: $font-caption-stack
   text-align: center
   font-size: 16px
   line-height: 1.25
   overflow: hidden
-  font-weight: 300
+  font-weight: 400
   color: $color-dk
   font-feature-settings: "liga" 0
   text-rendering: geometricPrecision
@@ -315,8 +315,8 @@ p, pre, dl, dd, ul, ol, svg
   margin-bottom: 1em
 
 strong, .txt-tu, .caption
-  font-family: Sans
-  font-weight: 600
+  font-family: $font-default-stack
+  font-weight: 700
   font-style: normal
   letter-spacing: 0.02em
 

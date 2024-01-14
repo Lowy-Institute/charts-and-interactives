@@ -4,13 +4,13 @@ html,
 body,
 body.embed-false
   background: white
-  color: $blue-dark
+  color: $color-text
   height: unset
 
 article
   padding: 6rem 0 10rem
   padding-left: 160px
-  font-weight: 300
+  font-weight: 400
 
 #submenu
   top: 0
@@ -24,7 +24,7 @@ article
   width: unset
   
   a
-    padding: 0.3rem
+    padding: 0.5rem
     transition: all .2s
     
     &.current
@@ -37,7 +37,7 @@ article
 
 .profile
   font-size: 16px
-  font-weight: 300
+  font-weight: 400
   align-items: flex-start
   
   img
@@ -53,13 +53,12 @@ article
 
 #qanda
   h3
-    font-size: 1rem
-    font-weight: 600
+    font: inherit
     font-style: italic
-    font-family: "Sans"
+    font-family: $font-caption-stack
 
   p + h3
-    margin-top: 3em
+    margin-top: 4em
 
 #progress
   left: 0
@@ -69,7 +68,6 @@ article
   background: #004b78
 
 #next
-  color: white
   position: fixed
   left: 160px
   right: 0
@@ -88,9 +86,10 @@ article
     padding: 1rem 2rem
     pointer-events: all
     transition: all .5s
+    color: white
     background: darken($blue-light, 4)
     transform: translateY(100%)
-    
+
     &:hover
       background: $blue-light
 

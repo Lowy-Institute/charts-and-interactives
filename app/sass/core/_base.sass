@@ -11,12 +11,13 @@ body
 
 body
   font-size: 17px
-  color: $text
+  color: $color-text
   background: transparent
-  font-family: $font-sans
+  font-family: $font-default-stack
   line-height: 1.4
   text-rendering: optimizeLegibility
   text-size-adjust: 100%
+  font-synthesis: none
   -webkit-tap-highlight-color: transparent
   -webkit-overflow-scrolling: touch
 
@@ -41,7 +42,7 @@ a
 
   &:hover,
   &:focus
-    color: $dark
+    color: $color-dark
 
   &:focus
     outline: none

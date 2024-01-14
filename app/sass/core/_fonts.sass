@@ -1,21 +1,26 @@
-=font-face($name, $path, $weight, $style)
-  $path: "../fonts/#{$path}"
+$font-base: "/fonts/isomer/"
+$font-types: ((woff2) (woff))
+
+=font-face($name, $path, $fweight, $fstyle: normal, $fdisplay: block)
+  $path: "#{$font-base}#{$path}"
+  $source: ()
+
+  @each $font-type in $font-types
+    $ext: nth($font-type, 1)
+    $format: nth($font-type, length($font-type))
+    $source: $source, unquote('url("#{$path}.#{$ext}") format("#{$format}")')
+
   @font-face
-    font-family: "#{$name}"
-    src: url("#{$path}.eot")
-    src: url("#{$path}.eot?#iefix") format("embedded-opentype"), url("#{$path}.woff2") format("woff2"), url("#{$path}.woff") format("woff"), url("#{$path}.ttf") format("truetype")
-    font-weight: $weight
-    font-style: $style
+    font-family: $name
+    src: $source
+    font-weight: $fweight
+    font-style: $fstyle
+    font-display: $fdisplay
 
-$weights: "Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black"
-
-@each $weight in $weights
-  $i: index($weights, $weight)
-  +font-face("Sans", "antipode/Antipode-#{$weight}", $i * 100, normal)
-  +font-face("Cond", "antipode/Antipode-#{$weight}Condensed", $i * 100, normal)
-  +font-face("Semi", "antipode/Antipode-#{$weight}SemiCondensed", $i * 100, normal)
-  +font-face("Wide", "antipode/Antipode-#{$weight}Expanded", $i * 100, normal)
-  +font-face("Sans", "antipode/AntipodeSansItalic-Normal#{$weight}Italic", $i * 100, italic)
-
-+font-face("Cond", "william/William-LightCondensedItalic", 200, italic)
-+font-face("Semi", "william/William-RegularSemiCondensedItalic", 400, italic)
++font-face($font-default, "Isomer-LowyTextRegular", 400)
++font-face($font-default, "Isomer-LowyTextBold", 700, normal, swap)
++font-face($font-default, "Isomer-LowyTextItalic", 300, italic, swap)
++font-face($font-display, "Isomer-LowyDisplay", 500, normal, swap)
++font-face($font-caption, "Isomer-LowyCaption", 400)
++font-face($font-caption, "Isomer-LowyCaptionItalic", 400, italic, swap)
++font-face($font-caption, "Isomer-LowyCaptionBold", 700, normal, swap)

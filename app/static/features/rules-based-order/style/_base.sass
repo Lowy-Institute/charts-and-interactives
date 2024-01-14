@@ -1,5 +1,5 @@
 html,body
-  font-family: 'Sans', sans-serif
+  font-family: $font-default-stack
   letter-spacing: $ls-s
   background-color: $color-bg!important
   color: $color-bk
@@ -13,7 +13,7 @@ blockquote
   font-style: normal
   line-height: 1.6em
   font-size: inherit
-  font-family: "Semi", sans-serif
+  font-family: $font-caption-stack
   font-style: italic
 
 
@@ -36,7 +36,7 @@ blockquote
 .intro-txt h2,
 .themes-txt h2
   margin-top: 2em
-  font-weight: 500
+  font-weight: 700
 
 .intro-txt blockquote
   padding: 0 2.5em 0 1.5em
@@ -66,7 +66,7 @@ blockquote
     span
       display: inline-block
       line-height: 1.25
-      font-weight: 200
+      font-weight: 400
       font-size: 34px
       text-transform: none
       font-style: italic
@@ -171,7 +171,7 @@ section h1
     text-transform: uppercase
     color: #d6dbe4
     letter-spacing: 0.06em
-    font-weight: 600
+    font-weight: 700
     font-size: 1.1rem
 
     &:hover
@@ -188,7 +188,7 @@ section h1
 
   li
     padding: .5em 0 .5em 1.5em
-    font-weight: 500
+    font-weight: 700
 
     a
       position: relative
@@ -255,12 +255,12 @@ cite
   vertical-align: top
   cursor: pointer
   padding: 5px 5px 5px 0
-  font-weight: 500
+  font-weight: 700
   transition-duration: 200ms
   animation: lift-shadow 2s infinite ease
 
   &:hover
-    font-weight: 600
+    font-weight: 700
     color: #888
     text-shadow: 0px -4px black
     animation: none
@@ -330,7 +330,7 @@ cite
     text-align: left
     background: $color-bl-dk
     color: $color-ff
-    font-weight: 300
+    font-weight: 400
     border: 1px solid $color-ff
     transition-duration: 0.3s
 
@@ -369,12 +369,12 @@ cite
   ul
     list-style-type: none
     padding: 0
-    font-weight: 500
-    font-family: 'Semi', sans-serif
+    font-weight: 700
+    font-family: $font-caption-stack
     margin: 0.6em auto 1.4em
 
   span
-    font-weight: 300
+    font-weight: 400
     color: $color-gy-lt
 
     a
@@ -382,7 +382,7 @@ cite
 
   h4
     font-size: 14px
-    font-weight: 600
+    font-weight: 700
     margin-bottom: 4px
 
 .logo
@@ -535,8 +535,8 @@ cite
 
   .section-wrap
     width: 100%
-    padding-left: 200px
-    padding-right: 200px
+    padding-left: 212px
+    padding-right: 212px
 
 
 @media (min-width: 1000px)
@@ -554,9 +554,10 @@ cite
     width: 90%
 
   .banner-title
-    font-size: 40px
+    font-size: 36px
+    
     span
-      font-size: 82px
+      font-size: 72px
 
   #experts
     font-size: 26px
