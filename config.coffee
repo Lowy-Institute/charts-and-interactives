@@ -3,10 +3,12 @@ fs   = require("fs")
 data = require("./utils/data")
 git  = require("git-rev-sync")
 glob = require("glob")
+sass = require("sass")
 hash = git.short()
 
 sassOptions =
   indentedSyntax: true
+  logger: sass.Logger.silent
 
 if process.env.NODE_ENV is "development"
   sassOptions.outputStyle = "compressed"
@@ -68,7 +70,7 @@ exports.config =
           require(arguments[0])
       filters:
         sass: (data) ->
-          require("node-sass").renderSync(
+          require("sass").renderSync(
             Object.assign(
               sassOptions, 
               data: '@import "app/sass/core/vars.sass"\n' + data,

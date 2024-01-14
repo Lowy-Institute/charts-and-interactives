@@ -1,3 +1,5 @@
+@use "sass:math"
+
 // Face
 
 small,
@@ -218,7 +220,7 @@ ol, ul, dd, figure
   margin: 0
 
 p, pre, dl, dd, ul, ol, svg
-  margin-bottom: (28em / 20)
+  margin-bottom: (math.div(28em, 20))
 
 ol, ul
   padding: 0 0 0 1.1em
@@ -228,8 +230,8 @@ ol, ul
     list-style: none
 
 li
-  line-height: (24em / 17)
-  margin-bottom: (28em / 17) - 1.2em
+  line-height: (math.div(24em, 17))
+  margin-bottom: (math.div(28em, 17)) - 1.2em
 
 h1, h2, h3, h4, h5, ul, ol, li, dl, dd, fieldset, p, blockquote, svg
   &:last-child
