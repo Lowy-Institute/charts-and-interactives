@@ -5,7 +5,12 @@ git  = require("git-rev-sync")
 glob = require("glob")
 hash = git.short()
 
+sassOptions =
+  indentedSyntax: true
+
 if process.env.NODE_ENV is "development"
+  sassOptions.outputStyle = "compressed"
+  
   glob "app/static/**/*.pug", (err, list) ->
     console.log(list
       .filter((e) -> not e.match("/_"))
@@ -22,8 +27,8 @@ if process.env.NODE_ENV is "development"
 marked = (data) ->
   require("marked")(data, { smartypants: true, headerIds: false })
     .replace(
-      /(<a href="http[^>]+)>/g,
-      "$1 target=\"_blank\" rel=\"noreferrer\">"
+      /(<a href="https?:\/\/\w+\.(?!lowyinstitute\.org)[^>]+)>/g,
+      '$1 target="_blank" rel="noreferrer">'
     )
 
 exports.config =
@@ -63,10 +68,11 @@ exports.config =
           require(arguments[0])
       filters:
         sass: (data) ->
-          require("node-sass").renderSync({
-            data: '@import "app/sass/core/vars.sass"\n' + data
-            indentedSyntax: true
-          }).css.toString()
+          require("node-sass").renderSync(
+            Object.assign(
+              sassOptions, 
+              data: '@import "app/sass/core/vars.sass"\n' + data,
+          )).css.toString()
 
         coffee: (data) ->
           require("coffeescript").compile(data)
@@ -99,19 +105,6 @@ exports.config =
         require("autoprefixer")(["> 1%"])
         require("csswring")({ preserveHacks: true })
       ]
-
-  overrides:
-    production:
-      plugins:
-        pug:
-          staticPretty: false
-          filters:
-            sass: (data) ->
-              require("node-sass").renderSync({
-                data: '@import "app/sass/core/vars.sass"\n' + data
-                indentedSyntax: true
-                outputStyle: "compressed"
-              }).css.toString()
 
   files:
     javascripts:
