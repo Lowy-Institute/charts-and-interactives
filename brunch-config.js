@@ -9,8 +9,10 @@ const sassOptions = {
   logger: sass.Logger.silent,
 }
 
-if (process.env.NODE_ENV === "development") {
-  sassOptions.outputStyle = "compressed"
+const isDev = process.env.NODE_ENV === "development"
+
+if (isDev) {
+  sassOptions.outputStyle = "expanded"
   glob("app/static/**/*.pug", function (err, list) {
     return console.log(
       list
@@ -52,7 +54,7 @@ module.exports = {
     ignored: [
       /[\\\/]_/,
       "node_modules",
-      /\/partials\//,
+      isDev ? /\/(partials)\// : /\/(partials|test)\//,
       /^app\/static(\/|\\)(.+)\.(psd|coffee|sass|md|yaml)$/,
       /\.(tmp\$\$)$/,
     ],
