@@ -1,5 +1,6 @@
 events:
   - start: 1982
+    end: 
     month: Honiara Agreement
     text: >
       Regional security is defined as 
@@ -47,23 +48,11 @@ events:
       regional security architectures inclusive of 
       regional law enforcement agencies.
 
-  - start: 2022
-    month: 2050 Strategy for the Blue Pacific Continent
+  - start: 2050
+    month: Strategy for the Blue Pacific Continent
     text: >
       Importance of shared commitments, accountability, 
       and regional coordination; value of durable 
       partnerships based on principles of regional 
       ownership, trust, transparency, and accountability; 
       alignment with Pacific priorities.
-
-  - start: 2050
-    end: 2050
-    month: 
-    future:
-    text: >
-
-  #- start: 2050
-  #  end: 2050
-  #  month: 
-  #  future:
-  #  text: >

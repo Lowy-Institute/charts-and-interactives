@@ -2,15 +2,15 @@ extend /partials/layout
  
 block append config
   - page.title = "Timeline of the Quadrilateral Dialogue"
-  - var events = data.getOne("static/charts/geopolitics-pacific/timeline/events").events
+  - var events = data.getOne("static/charts/geopolitics-pacific/timeline-v1/events").events
   - var years = _.pluck(events, "start")
 
-  - vals = (0).toPrecision(22).split("").map(function(e, i){return 1}) // adjust 'precision' value to increase number of years in x-axis
+  - vals = (0).toPrecision(33).split("").map(function(e, i){return 1}) // adjust 'precision' value to increase number of years in x-axis
   - vals = vals.map(function(e){ return +(e / (_.sum(vals) * 2).toFixed(3))});
   - vals = vals.concat(vals).sort()
 
   - var p = function(i){return vals[i]}
-  - order = [[1,2,3,4,5,6,7,8], [1,2,3,4,5,6,7,8]]
+  - order = [[1,2,3,4,5,6,7], [1,2,3,4,5,6,7]]
 
 block page
   .wrapper
@@ -48,13 +48,14 @@ block page
             )
               .event-marker
               .event-year
-                p= e.month
+                if e.end
+                  | Dec 04 –<br>
+                  | Jan 05
+                else
+                  | #{e.month}
  
-              if e.end
-                .event-content(style="display:none;")
-              else
-                .event-content(class= e.highlight ? "highlight" : "")
-                  p.event-text!= e.text
+              .event-content(class= e.highlight ? "highlight" : "")
+                p.event-text!= e.text
 
             - m = order[j > 0 ? 1 : 0][i]
 
@@ -82,7 +83,7 @@ block page
 
       #overlay(style="position: absolute; top:0; left: 0; right: 0;")
         .future
-        //.future-line
+        .future-line
 
     #pager
       span#page 1 

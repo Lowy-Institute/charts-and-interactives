@@ -1,7 +1,7 @@
 extend /partials/layout
 
 block append config
-  - var datapath = "static/charts/png-fiscal/fig-x/data"
+  - var datapath = "static/charts/indonesia-swf/fig-3/data"
   - var colorpath = "static/charts/templates/colors/data"
   - _.extend(page, data.getOne(datapath))
   - _.extend(page, data.getOne(colorpath))
@@ -25,36 +25,50 @@ block page
         
         svg(height="100%" width="100%")
         
-          // Y-Axis labels
-          svg(height="100%")
+          // pasted in columns from fig-3b
+          g.bars
+            svg(x="4.5%" width="4.10%" height="100%")
+             rect(y="71.45%" height="28.55%" width="100%")
+            svg(x="15%" width="4.10%" height="100%") 
+             rect(y="63.63%" height="36.38%" width="100%")
+            svg(x="26%" width="4.10%" height="100%")
+             rect(y="61.02%" height="38.98%" width="100%")
+            svg(x="36.5%" width="4.10%" height="100%") 
+             rect(y="60.65%" height="39.35%" width="100%")
+            svg(x="47.25%" width="4.10%" height="100%") 
+             rect(y="35.97%" height="64.03%" width="100%")
+            svg(x="58.25%" width="4.10%" height="100%") 
+             rect(y="32.72%" height="67.28%" width="100%")
+            svg(x="69%" width="4.10%" height="100%") 
+             rect(y="4.70%" height="95.30%" width="100%")
+            svg(x="80%" width="4.10%" height="100%")
+             rect(y="1.50%" height="98.50%" width="100%")
+            svg(x="91%" width="4.10%" height="100%")  
+             rect(y="1.47%" height="98.53%" width="100%")
+
+          // Y-Axis labels - left
+          svg
+            svg(y="100%")
+              text(text-anchor="end" transform="translate(8 4)") 0
+            svg(y="75%")
+              text(text-anchor="end" transform="translate(8 4)") 100
+            svg(y="50%")
+              text(text-anchor="end" transform="translate(8 4)") 200
+            svg(y="25%")
+              text(text-anchor="end" transform="translate(8 4)") 300
+            svg(y="0")
+              text(text-anchor="end" transform="translate(8 4)") 400
+          svg(y="50%")
+            text.y-label Trillion rupiah
+
+          // Y-Axis labels - right
+          svg.y-right(height="100%" x="102%")
             - let steps = chart.axes.stepsY-1
             for n, i in new Array(steps+1)
               - y = 1 - (i / (steps))
               svg(y=toPercent(y))
                 text(text-anchor="end" transform="translate(-8 4)")
-                  = (((minY + range*(i/steps) + (axes.percentage ? "%" : ""))  * 10) / 1000).toFixed(0) + "k"
-          // false RHS Y-Axis labels
-          svg(height="100%" x="104%")
-            svg(y="100.00%")
-             text(text-anchor="end" transform="translate(-8 4)") 0
-            svg(y="88.89%")
-             text(text-anchor="end" transform="translate(-8 4)") 2
-            svg(y="77.78%")
-             text(text-anchor="end" transform="translate(-8 4)") 4
-            svg(y="66.67%")
-             text(text-anchor="end" transform="translate(-8 4)") 6
-            svg(y="55.56%")
-             text(text-anchor="end" transform="translate(-8 4)") 8
-            svg(y="44.44%")
-             text(text-anchor="end" transform="translate(-8 4)") 10
-            svg(y="33.33%")
-             text(text-anchor="end" transform="translate(-8 4)") 12
-            svg(y="22.22%")
-             text(text-anchor="end" transform="translate(-8 4)") 14
-            svg(y="11.11%")
-             text(text-anchor="end" transform="translate(-8 4)") 16
-            svg(y="0.00%")
-             text(text-anchor="end" transform="translate(-8 4)") 18
+                  = minY + range*(i/steps) + (axes.percentage ? "%" : "")
                 
           // Y-Axis minor lines
           if chart.axes.minorLines
@@ -76,7 +90,7 @@ block page
             svg.x-label(x=toPercent(fx(i)) y="100%")
               text(
                 text-anchor=axes.rotateX ? "end" : "middle"
-                transform=axes.rotateX ? "rotate(-45) translate(-8, 24)" : "translate(0 20)"
+                transform=axes.rotateX ? "rotate(-45) translate(-8, 14)" : "translate(0 20)"
               )=x
               
           // OPTIONAL GUIDE LINE
@@ -113,74 +127,99 @@ block page
                     ].join(" ");
                   })).join(",")
                 )
-
+      
           for item, i in chart.series
-            g.point(class=chart.series[i].title)
+            g
               for val, ix in item.values
-                if i !== 0
+                if false
                   circle(
-                    r=3
+                    r=7
                     cx=toPercent(fx(ix))
                     cy=toPercent(fy(maxY + minY - val))
                     fill=chart.colors[chart.series[i].color]
                     stroke='#fff'
                     stroke-width=0
                   )
-                  // add unique ID to each svg.chart-value...
-                  svg.chart-value(
-                    id=`chart-value-${i}-${ix}`
-                    x=toPercent(fx(ix))
-                    y=toPercent(fy(maxY + minY - val))
-                    style=`color: ${chart.colors[chart.series[i].color]}`
+                svg.chart-value(
+                  x=toPercent(fx(ix))
+                  y=toPercent(fy(maxY + minY - val))
+                  style=`color: ${chart.colors[chart.series[i].color]}`
+                )
+                  if false
+                    rect(
+                      y=(i % 2 == 0 ? -12 : 24) - 12
+                      height=14
+                      width=24
+                      x=-12
+                      fill="#fff"
+                    )
+                  text(
+                    y=(i % 1 == 0 ? -12 : 24)
+                    text-anchor="middle"
+                    fill=chart.colors[chart.series[i].color]
                   )
-                    // Check if the series index is 3, and apply conversion for series index 3
-                    if i === 3  
-                      rect(
-                        y=(i-21)
-                        x=(i-15)
-                        height=20
-                        width=22
-                        fill=chart.colors[chart.series[i].color]
-                        opacity=".9"
-                        text-anchor="middle"
-                      )
-                      text(
-                        y=(i-6)
-                        x=(i-4)
-                        text-anchor="middle"
-                        fill="#fff"
-                      )
-                        = ((val * 18) / 30000).toFixed(0)
-                    else
-                      rect(
-                        y=(i-19)
-                        x=(i-20)
-                        height=20
-                        width=38
-                        fill=chart.colors[chart.series[i].color]
-                        opacity=".9"
-                        text-anchor="middle"
-                        transform="rotate(0)"
-                      )
-                      text(
-                        y=(i-4)
-                        x=(i-1)
-                        text-anchor="middle"
-                        fill="#fff"
-                        transform="rotate(0)"
-                      )
-                        = (Math.ceil(val * 10) / 1000).toFixed(0) + "k"
+                    = val
       
       .row
-        ul.legend.list-bare.txt-left.flex.flex-wrap
+        ul.legend.list-bare.txt-left.flex.flex-ch
           for ax, i in new Array(chart.series.length)
             if i
               li.legend-item
+                span.legend-item-box(style=`background: #2D6993`)
+                span.legend-item-label= 'Amount (left)'
+              li.legend-item
                 span.legend-item-box(style=`background: ${chart.colors[chart.series[i].color]}`)
                 span.legend-item-label= chart.series[i].title
+              
 
       .chart-source.txt-left.txt-muted.txt-cond!= chart.source
       .chart-notes.txt-left.txt-muted.txt-cond!= chart.notes
+      
+      .tooltip
+
+  script.
+
+
+    /* --- USER TO UPDATE --- */
+    const enableTooltips = false;
+    const nLegendItems = 6;
+    const nSeries = 7;
+    /* --------------------- */
+    
+    const chart = document.querySelectorAll('.chart-content');
+    const rects = document.querySelectorAll('rect');
+    const vals = document.querySelectorAll('.chart-value');
+    const series = document.querySelectorAll('.x-label');
+    const tooltip = document.querySelector('.tooltip');
+    const legendItems = document.querySelectorAll('.legend-item-label');
+    
+    if (enableTooltips) {
+      window.addEventListener('DOMContentLoaded', () => {
+        rects.forEach( (rect, i) => addHoverEventListeners(rect, i) );  
+      });
+    }
+        
+    function addHoverEventListeners(el, i) {
+      el.addEventListener('mouseover', () => {
+        
+        let val = vals[i].innerHTML;
+        let ser = series[ Math.floor(i/nLegendItems) ].innerHTML;
+        let cat = legendItems[i % nLegendItems].innerHTML;
+        let box = el.getBoundingClientRect();
+        
+        tooltip.innerHTML = val + " of " + ser + " countries were " + cat + " performing";
+        tooltip.style.left = box.left + box.width/2 - tooltip.offsetWidth/2 + 'px';
+        tooltip.style.top = box.top - tooltip.offsetHeight + 'px';
+        tooltip.style.opacity = 1;
+        
+      });
+      
+      el.addEventListener('mouseleave', () => { 
+        tooltip.style.opacity = 0;
+      });
+      
+    }
+    
   
 block append css
   style
@@ -197,7 +236,7 @@ block append css
         position: absolute
         top: 20px
         left: 50px
-        right: 25px
+        right: 20px
         bottom: 40px
 
       .chart-content > svg
@@ -231,81 +270,79 @@ block append css
       li
         list-style: none
         margin: 0
-        padding: 4px 16px 4px 24px
+        padding: 4px 16px 4px 14px
 
       .legend
         font-size: 15px
-        margin-top: 1.5em
-        margin-left: 3em
+        margin-bottom: .75em
 
       .legend-item
-        margin: 4px 8px 0
-        padding-right: .5em
+        margin: 4px 14px 0
+        padding-right: 0
         position: relative
         white-space: nowrap
 
       .legend-item-box
         position: absolute
-        left: -.5em
-        top: .75em
-        height: .35em
+        left: -1em
+        top: .85em
+        height: .25em
         width: 1.5em
         background: black
-        border-radius: 3px
 
       polyline
         vector-effect: non-scaling-stroke
 
       text
         font-size: 14px
-        /* fill: currentColor 
+        fill: currentColor
 
       svg
         overflow: visible
         
       .chart-notes, .chart-source
-        margin-top: 1em
-        margin-left: 3em
+        margin: 1em 0 0 2em
         font-size: 15px
-      .txt-muted
-        color: #767676
-
+        
       .chart-value
         opacity: 0
-        transition: opacity 300ms
-
-      /* SASS loop generates IDs from chart-value-1-1 to chart-value-3-38 */
-      @for $i from 1 through 3
-        @for $j from 1 through 38
-          $id: chart-value-#{$i}-#{$j}
-          ##{$id}:hover
-            opacity: 1
-
+        transition-duration: .4s
+        pointer-events: none
       
-      .x-label 
-        display: none  
-      .x-label:nth-child(2n+1)
-        display: block
+      .chart-content:hover .chart-value
+        opacity: 0
 
-      .chart-value text
-        font-size: 13px
+      .bars svg rect
+        fill: #2D6993
+
+      .y-label
+        transform: rotate(-90deg) translate(-2.5rem, -2.2rem)
+        color: #4b4f56
+        font-size: 15px
+    
+
 
       @media (max-width: 700px)
-        .x-label 
-          display: none  
-        .x-label:nth-child(2n+1)
-          display: none
-        .x-label:nth-child(4n+1)
-          display: block
+        
+        .x-label text
+          text-anchor: end
+          transform: rotate(-45deg) translate(-8px, 14px)
 
         text
           font-size: 13px
+
+        .y-right text
+          transform: translate(.75rem,0)
+
           
       @media (max-width: 450px)
         .chart-content
           bottom: 40px
         .legend
           flex-direction: column
+          font-size: 13px
+          flex-wrap: wrap;
+          margin-top: 4px
         .chart-title
           font-size: 18px
         .chart-subtitle
@@ -314,3 +351,6 @@ block append css
         .chart-source
           text-align: center
           font-size: 13px
+          line-height: 1.2
+        text, .y-label, .y-label2
+          font-size: 12px;
