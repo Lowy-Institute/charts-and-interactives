@@ -40,15 +40,17 @@ block page
         .text-mini.mb-0= page.essay.author
         .text-mini.txt-muted.mb-0!= page.essay.position
     hr
-    p.opacity-50.fw-400.mb-8
+    p.txt-muted.fw-400.mb-8
       | In response to the question: 
       em September 11 changed America, but did it change the world?
     #essay
       block body
+    
     hr#qanda-anchor.my-20(data-section style="border-bottom: 3px solid #002b45")
+    
     h1.type.wrappable(data-view="type, in-viewport" data-norepeat)
       .line Challenge the expert
-    p.opacity-50.fw-400.mb-8
+    p.txt-muted.fw-400.mb-8
       | Lydia Khalil, Lowy Institute’s resident expert on terrorism and extremism, challenges 
       span= page.essay.author
       | ’s key arguments.
@@ -60,14 +62,13 @@ block page
       img.profile-img.float-left(src=`../../img/authors/${slugify(page.essay.author)}.jpg` width="220")
       p.profile-text!= page.essay.bio
       
-  #next.fixed.inset-0
+  #next.fixed.inset-0.txt-reverse
     a.node.bare.relative(href=`/features/9-11/essays/${page.next.href}`)
       .card.flex
         em.flex-cv.text-mini.fw-400 Next<br>article
         .flex-cv.pl-8.ml-8.border-l-soft
           .text-micro.txt-muted= page.next.author
           .text-mini= page.next.title
-          //- .absolute.icon.icon-right-arrow(style="right: 2rem")
 
 block append css
   style

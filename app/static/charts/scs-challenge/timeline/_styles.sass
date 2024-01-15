@@ -150,7 +150,7 @@ body
     border-color: inherit
 
   @for $i from 0 through 9
-    &.item-#{$i})
+    &.item-#{$i}
       height: 57px + $i * 16px
 
       @media (max-width: 600px)
@@ -307,9 +307,9 @@ body
   font-weight: 400
 
   b
-    font-weight: 600
+    font-weight: 700
     font-style: italic
-    font-family: "Semi", sans-serif
+    font-family: $font-caption-stack
     letter-spacing: 0.02em
 
   .highlight &
@@ -319,7 +319,7 @@ body
   display: none
   
 .month
-  font-weight: 500
+  font-weight: 700
   display: inline-block
   &:not(:first-child)
     margin-top: .5rem

@@ -116,7 +116,7 @@ block page
       // if the slice is more than 50%, take the large arc (the long way around)
       const largeArcFlag = slice.percent > .5 ? 1 : 0;
     
-    	// create an array and join it just for code readability
+      // create an array and join it just for code readability
       const pathData = [
         `M ${startX} ${startY}`, // Move
         `A 1 1 0 ${largeArcFlag} 1 ${endX} ${endY}`, // Arc
@@ -200,7 +200,7 @@ block append css
         padding-left: 1rem
         
       .chart-subtitle
-        /* font-weight: 600
+        /* font-weight: 700
         /* height: 12px
         margin-top: -12px
         font-size: 16px

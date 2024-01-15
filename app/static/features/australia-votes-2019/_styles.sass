@@ -148,16 +148,16 @@ $color-mt: #7c94a2
   z-index: 1
 
 .txt-sans
-  font-family: Sans, sans-serif
+  font-family: $font-default-stack
 
 .txt-cond
-  font-family: Cond, sans-serif
+  font-family: $font-caption-stack
 
 // Font size
 .txt-xxl
-  font-size: 60px
+  font-size: 56px
   line-height: 1
-  font-weight: 200
+  font-weight: 400
   letter-spacing: -0.01em
 .txt-xl
   font-size: 40px
@@ -165,18 +165,18 @@ $color-mt: #7c94a2
   margin: -4px 0 4px
   letter-spacing: -0.01em
 .txt-lg
-  font-size: 28px
-  line-height: inherit
-.txt-md
   font-size: 24px
   line-height: inherit
+.txt-md
+  font-size: 21px
+  line-height: inherit
 .txt-mmd
-  font-size: 20px
+  font-size: 18px
   line-height: inherit
 .txt-sm
   font-size: 14px
   line-height: inherit
-  font-family: Sans, sans-serif
+  font-family: $font-default-stack
 
 .txt-links
   font-size: 40px
@@ -190,7 +190,7 @@ sup
   a
     text-decoration: none
     color: $color-hl
-    font-weight: 500
+    font-weight: 700
     padding: 0 2px
     margin: 0 -2px
 
@@ -217,7 +217,7 @@ sup
   color: $color-ff
   padding: 8px
   font-weight: 400
-  font-family: Sans, sans-serif
+  font-family: $font-default-stack
 
   &:not([class*="bg"])
     background: $color-hl
@@ -282,12 +282,12 @@ li
   line-height: inherit
 
 body
-  font-family: Cond
+  font-family: $font-caption-stack
   text-align: center
   font-size: 16px
   line-height: 1.25
   overflow: hidden
-  font-weight: 300
+  font-weight: 400
   color: $color-dk
   font-feature-settings: "liga" 0
   text-rendering: geometricPrecision
@@ -299,8 +299,8 @@ p, pre, dl, dd, ul, ol, svg
   margin-bottom: 1em
 
 strong, .txt-tu, .caption
-  font-family: Sans
-  font-weight: 600
+  font-family: $font-default-stack
+  font-weight: 700
   font-style: normal
   letter-spacing: 0.02em
 
@@ -689,16 +689,16 @@ p > a
 
 @media (max-width: 1280px), (max-height: 920px)
   .txt-xxl
-    font-size: 48px
+    font-size: 44px
   .txt-xl,
   .txt-title
-    font-size: 32px
+    font-size: 30px
   .txt-lg
-    font-size: 26px
+    font-size: 24px
   .txt-md
     font-size: 21px
   .txt-mmd
-    font-size: 19px
+    font-size: 18px
   .txt-expert-content
     padding: 20px 40px
   .txt-border
@@ -971,5 +971,5 @@ p > a
   #scroll-item-12 .col-1-2.bg-lt
     border-left: none
 
-@media print
+@page
   size: A4 portrait

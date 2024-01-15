@@ -1,22 +1,19 @@
+@use "sass:math"
+
 // Face
 
 small,
 blockquote
-  font-family: $font-sans
+  font-family: $font-default-stack
   font-weight: 400
 
 .txt-sans
-  font-family: "Sans", sans-serif
+  font-family: $font-default-stack
 .txt-wide
-  font-family: "Wide", sans-serif
-.txt-semi
-  font-family: "Semi", sans-serif
+  font-family: $font-display-stack
+.txt-semi,
 .txt-cond
-  font-family: "Cond", sans-serif
-
-h1, h2, h3, h4
-  text-rendering: geometricPrecision
-
+  font-family: $font-caption-stack
 
 // Alignment
 .txt-left
@@ -84,16 +81,14 @@ h1 > em, .txt-roman
 // Weight
 strong, b, .txt-bold
   font-weight: 700
-h1, h2, h3, h4
-  letter-spacing: -0.01em
-  font-family: $font-headline
-  font-weight: 500
+h1, h2
+  font-family: $font-display-stack
 .txt-cnd
   letter-spacing: -0.04em
 .txt-normal
   font-weight: normal
 .txt-light
-  font-weight: 300
+  font-weight: 400
 
 // Size
 .txt-xxl
@@ -200,7 +195,7 @@ sub, sup
 .txt-faint
   color: #f5f5f5
 .txt-muted
-  color: lighten($text, 30%)
+  color: $color-muted
 
 // Transformation
 .txt-lowercase
@@ -225,7 +220,7 @@ ol, ul, dd, figure
   margin: 0
 
 p, pre, dl, dd, ul, ol, svg
-  margin-bottom: (28em / 20)
+  margin-bottom: (math.div(28em, 20))
 
 ol, ul
   padding: 0 0 0 1.1em
@@ -235,8 +230,8 @@ ol, ul
     list-style: none
 
 li
-  line-height: (24em / 17)
-  margin-bottom: (28em / 17) - 1.2em
+  line-height: (math.div(24em, 17))
+  margin-bottom: (math.div(28em, 17)) - 1.2em
 
 h1, h2, h3, h4, h5, ul, ol, li, dl, dd, fieldset, p, blockquote, svg
   &:last-child

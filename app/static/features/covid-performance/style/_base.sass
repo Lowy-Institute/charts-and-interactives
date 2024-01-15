@@ -4,14 +4,14 @@ html, body
 
 body,
 body.embed-false
-  font-family: Sans, sans-serif
-  background: $dark
+  font-family: $font-default-stack
+  background: $color-dark
   font-size: 19px
   color: white
   
   // for Firefox
-  scrollbar-face-color: $dark 
-  scrollbar-track-color: $dark
+  scrollbar-face-color: $color-dark 
+  scrollbar-track-color: $color-dark
 
 *
   box-sizing: border-box
@@ -20,7 +20,7 @@ svg
   overflow: visible
 
 h1
-  font-family: 'Sans', sans-serif
+  font-family: $font-default-stack
   font-weight: 400
   font-size: 38px
   line-height: 1.1
@@ -65,16 +65,16 @@ ul + h1
 .title
   
   h1
-    font-family: 'Semi', 'Sans', sans-serif  
+    font-family: $font-caption-stack
     line-height: 1
-    font-weight: 200
+    font-weight: 400
     font-size: 86px
     
   h2
     font-size: 22px
     text-transform: uppercase
     letter-spacing: 0.05em
-    font-weight: 600
+    font-weight: 700
     
   p
     font-size: 23px
@@ -229,7 +229,7 @@ ul + h1
     .header-logo
       padding-top: 6rem 
       text-align: left
-      font-weight: 600
+      font-weight: 700
       font-size: 16px
       
     .top-img

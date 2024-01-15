@@ -1,13 +1,21 @@
 include mixins
 
 block config
-  - var page = {};
-  - page.includeFonts = true
-  - page.description  = "Lowy Institute charts & interactives";
-  - page.style        = {};
-  - page.author       = "Lowy Institute";
-  - page.copyright    = `${page.author} ${(new Date().getFullYear())}`
-  - page.robots       = "index, follow"
+  - 
+    var page = {};
+    page.includeFonts = true
+    page.description  = "Lowy Institute charts & interactives";
+    page.style        = {};
+    page.author       = "Lowy Institute";
+    page.copyright    = `${page.author} ${(new Date().getFullYear())}`
+    page.robots       = "index, follow"
+    page.url = [
+      "https://interactives.lowyinstitute.org/",
+      __.filepath
+        .replace("app/static/", "")
+        .replace("index.pug", "")
+        .replace(".pug", ".html")
+    ].join("")
 
 doctype html
 html.no-js(lang="en")
@@ -37,17 +45,7 @@ html.no-js(lang="en")
       meta(name="robots"              content=page.robots)
       meta(name="og:description" property="og:description" content=page.metaDescription)
       meta(name="og:title" property="og:title" content=page.metaTitle)
-      meta(
-        name="og:url"
-        property="og:url"
-        content=[
-        "https://interactives.lowyinstitute.org/",
-          __.filepath
-            .replace("app/static/", "")
-            .replace("index.pug", "")
-            .replace(".pug", ".html")
-        ].join("")
-      )
+      meta(name="og:url" property="og:url" content=page.url)
 
       if page.image
         meta(name="twitter:card"  content="summary_large_image")
@@ -62,17 +60,7 @@ html.no-js(lang="en")
       link(rel="shortcut icon" href="/img/favicon.png")
       link(rel="apple-touch-icon" href="/img/favicon.png")
 
-      link(
-        rel="canonical"
-        href=[
-          "https://interactives.lowyinstitute.org/",
-          __.filepath
-            .replace("app/static/", "")
-            .replace("index.pug", "")
-            .replace(".pug", ".html")
-        ].join("")
-      )
-
+      link(rel="canonical" href=page.url)
 
       block css
         if page.includeFonts

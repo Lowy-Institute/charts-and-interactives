@@ -30,8 +30,8 @@
       outline: 0
       
   ::placeholder
-    font-family: 'Sans', sans-serif
-    font-weight: 500
+    font-family: $font-default-stack
+    font-weight: 700
     color: var(--c, gray)
       
   .js-multiselect
@@ -39,7 +39,7 @@
     width: 100%
       
   .combo-menu
-    background-color: $dark
+    background-color: $color-dark
     border: 1px solid rgba(0,0,0,.42)
     border-radius: 4px 4px 0 0
     display: none
@@ -85,7 +85,7 @@
     
     &:after
       font-style: italic
-      font-weight: 300
+      font-weight: 400
       content: '  (no data)'
     
   .selected-options
@@ -118,15 +118,15 @@
       
     
   .remove-option
-    font-family: "Sans", sans-serif
+    font-family: $font-default-stack
     white-space: nowrap
     height: 100%
     background-color: $hl
     border: none
     outline: 0
     border-radius: 3px
-    color: $dark
-    font-weight: 600
+    color: $color-dark
+    font-weight: 700
     letter-spacing: 0.02em
     font-size: 0.75em
     padding: 0.25em 0.5em
