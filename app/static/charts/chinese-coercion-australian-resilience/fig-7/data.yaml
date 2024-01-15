@@ -1,155 +1,47 @@
 title: >
-  Australian beef exports to major markets 
+  Australian beef exports to major markets
 
-source: >
-  Source: Meat and Livestock Australia data, May 2022
+#subtitle: (in per cent)
 
-#notes: >
-  #<b>Notes:</b> Lorem ipsum
+chart:
+  fields:
+    - China
+    - Japan
+    - Singapore
+    - South Korea
+    - United States
 
-#subtitle: >
-  #Subtitle goes here
+  #skipX: 2
 
-axes:
-  minY:  -50000
-  maxY: 450000
-  stepsY: 11
-  rotateX: false
-  percentage: false
-  minorLines: true
-  dotted: [] # Index of dotted gridlines
-  reverse: false
-  guideLine: null # value of optional horizontal line. set 'null' if disabled
-  datum: 0
+  scale:
+    max: 450000
+    min: -50000
+    div: 50000
+    datum: 0
 
-series:
-  -
-    title: Year
-    values:
-      - 2007
-      - 2008
-      - 2009
-      - 2010
-      - 2011
-      - 2012
-      - 2013
-      - 2014
-      - 2015
-      - 2016
-      - 2017
-      - 2018
-      - 2019
-      - 2020
-      - 2021
 
-  -
-    title: China
-    classname: china
-    color: "blue-100"
-    widen: false
-    dashed: false
-    values:
-      - 2146
-      - 2682
-      - 5287
-      - 5600
-      - 7754
-      - 32906
-      - 154833
-      - 124586
-      - 148222
-      - 94040
-      - 110059
-      - 162683
-      - 300133
-      - 196696
-      - 148358
+  keys: [
+    2007, 2008, 2009, 2010, 2011, 2012, 2013, 
+    2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021
+  ]
 
-  -
-    title: Japan
-    classname: japan
-    color: "red"
-    widen: false
-    dashed: false
-    values:
-      - 377866
-      - 364304
-      - 356569
-      - 356213
-      - 342188
-      - 308540
-      - 288796
-      - 293780
-      - 285224
-      - 264325
-      - 292364
-      - 315891
-      - 287497
-      - 269303
-      - 233820
-  -
-    title: Singapore
-    classname: singapore
-    color: "grey"
-    widen: false
-    dashed: false
-    values:
-      - 5534
-      - 8061
-      - 7472
-      - 7622
-      - 9659
-      - 14087
-      - 10564
-      - 10094
-      - 8767
-      - 6967
-      - 5772
-      - 6109
-      - 6336
-      - 9792
-      - 5828
-  -
-    title: South Korea
-    classname: southkorea
-    color: "yellow"
-    widen: false
-    dashed: false
-    values:
-      - 148933
-      - 127207
-      - 115482
-      - 124161
-      - 146347
-      - 125957
-      - 144365
-      - 150918
-      - 166588
-      - 179854
-      - 148552
-      - 170373
-      - 162344
-      - 160850
-      - 165054
-  -
-    title: United States
-    classname: us
-    color: "highlight"
-    widen: false
-    dashed: false
-    values:
-      - 296099
-      - 234779
-      - 251479
-      - 185035
-      - 167820
-      - 224111
-      - 212703
-      - 397889
-      - 415951
-      - 242013
-      - 234112
-      - 231187
-      - 251822
-      - 211754
-      - 145264
+  values:
+    - [2146, 377866, 5534, 148933, 296099]
+    - [2682, 364304, 8061, 127207, 234779]
+    - [5287, 356569, 7472, 115482, 251479]
+    - [5600, 356213, 7622, 124161, 185035]
+    - [7754, 342188, 9659, 146347, 167820]
+    - [32906, 308540, 14087, 125957, 224111]
+    - [154833, 288796, 10564, 144365, 212703]
+    - [124586, 293780, 10094, 150918, 397889]
+    - [148222, 285224, 8767, 166588, 415951]
+    - [94040, 264325, 6967, 179854, 242013]
+    - [110059, 292364, 5772, 148552, 234112]
+    - [162683, 315891, 6109, 170373, 231187]
+    - [300133, 287497, 6336, 162344, 251822]
+    - [196696, 269303, 9792, 160850, 211754]
+    - [148358, 233820, 5828, 165054, 145264]
+
+
+  details:
+    - "Source: Meat and Livestock Australia data, May 2022"
