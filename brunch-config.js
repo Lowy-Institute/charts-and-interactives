@@ -139,6 +139,7 @@ module.exports = {
     stylesheets: {
       joinTo: {
         ["css/app." + hash + ".css"]: "app/sass/app.sass",
+        ["css/fonts." + hash + ".css"]: "app/sass/fonts.sass",
       },
     },
     templates: {
