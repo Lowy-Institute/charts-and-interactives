@@ -2,7 +2,6 @@ extend /partials/layout
 
 block append config
   - 
-    page.includeFonts = false
     page.class = "article"
     page.issues = data.getOne("static/features/indonesia-poll-2021/data").issues
     issue = page.issues.find(e => e.href === href)

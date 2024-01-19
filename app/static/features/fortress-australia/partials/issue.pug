@@ -1,7 +1,6 @@
 extend /partials/layout
 
 block append config
-  - page.includeFonts = false
   - page.class = "article"
   - page.issues = data.getOne("static/features/fortress-australia/data").issues
   - issue = page.issues.find(e => e.author === author)
