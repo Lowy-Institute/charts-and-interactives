@@ -9,7 +9,7 @@
       a.node.bare.show-sm(
         slide
         rel="prefetch"
-        href=`/features/9-11/essays/${item.href}`
+        href=`/features/9-11/essays/${item.href}/`
         style=`animation-delay: ${50 * (len - i)}ms; transform: translateY(${50}%)`
       )
         .linkage
@@ -22,7 +22,7 @@
       a.node.bare.show-sm(
         slide
         rel="prefetch"
-        href=`/features/9-11/essays/${item.href}`
+        href=`/features/9-11/essays/${item.href}/`
         style=`animation-delay: ${50 * (i+1)}ms; transform: translateY(${-50}%)`
       )
         .linkage
@@ -40,7 +40,7 @@
       a.node.absolute.bare(
         fade
         class=(i % 2 ? "left" : "right")
-        href="/features/9-11/essays/placeholder"
+        href="/features/9-11/essays/placeholder/"
         style=`animation-delay: ${300 * i}ms; top: ${10*item.scale}%;`
       )
         .linkage

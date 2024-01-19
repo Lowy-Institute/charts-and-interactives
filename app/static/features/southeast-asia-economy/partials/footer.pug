@@ -25,10 +25,11 @@ footer
       h5.mb-3 Articles
       .post-links
         for p in page.posts
-          a(href=`/features/${slug}/post/${p.href}`)= p.titleShort || p.title
+          a(href=`/features/${slug}/post/${p.href}/`)
+            = p.titleShort || p.title
 
     .flex-col.footer-actions
-      a#download.txt-bare.p-4(download href=`/features/${filepath}`)
+      a#download.txt-bare.p-4(download href=`/features/${filepath}/`)
         h5.flex-ch Download PDF
           span.icon.icon-download.ml-2
       .flex-ch

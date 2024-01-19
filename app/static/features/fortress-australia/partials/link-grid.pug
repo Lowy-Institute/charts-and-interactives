@@ -2,7 +2,7 @@ ul.link-grid.list-bare.txt-ff.bg-dk
   for p,i in page.issues
     li.txt-tu(class=(p.href === issue && issue.href ? "active" : ""))
       a.txt-bare.flex-col(
-        href=`/features/fortress-australia/${p.href}`
+        href=`/features/fortress-australia/${p.href}/`
         class=(p.href === (issue && issue.href) ? "active" : "")
       )
         span.tag.txt-micro.fw700(class=`tag-${i % 2 ? (i-1)/2 + 6 : i / 2}`)!= p.theme

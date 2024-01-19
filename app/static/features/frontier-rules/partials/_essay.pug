@@ -51,7 +51,9 @@ block page
       p.profile-text!= page.essay.bio
       
   #next.fixed.inset-0
-    a.node.bare.relative(href=`/features/frontier-rules/essays/${page.next.href}`)
+    a.node.bare.relative(
+      href=`/features/frontier-rules/essays/${page.next.href}/`
+    )
       .card.flex
         .flex-cv.text-mini.fw-400 Next<br>video
         .flex-cv.pl-8.ml-8.border-l-soft
