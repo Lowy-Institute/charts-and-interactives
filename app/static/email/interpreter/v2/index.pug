@@ -1,0 +1,297 @@
+mixin cell(style)
+  td(style=style)
+    block
+
+mixin row()
+  tr
+    block
+
+mixin table(options)
+  - options = options || {}
+
+  table(
+    border="0"
+    cellpadding=options.padding || "0"
+    cellspacing=options.spacing || "0"
+    align=options.align || "center"
+    width=options.flex ? undefined : "100%"
+    style={
+      "min-width": options.flex ? "initial" : "100%",
+      "text-align": options.align || "center",
+    }
+  )
+    block
+
+mixin block(options)
+  - options = options || {}
+  +table(options)
+    +row()
+      +cell(options.style)
+        block
+
+-
+  const origin = "https://interactives.lowyinstitute.org"
+  const ipsum = [
+    "Eliquam etum sunto et asitibus ilias doloreseque etur aborem dolendae et ullecullorem ipsa doluptas sit de nonsed et, etur?",
+    "Ulpa ducidi aperitatum lam, corerum faccum fuga. Et optatius, sit remquiscil min reius, ommod ut re, est, commos ipsam doluptat as intesting.",
+    "Volorro dolupti cum eumendant unt, a que et la sintiae dolorrum doloreptis ex eliquis modis de acestrum apienis none expero dentur aut.."
+  ]
+
+
+doctype html
+head
+  //if gte mso 15
+    xml
+      o:officedocumentsettings
+        o:allowpng
+          o:pixelsperinch 96
+
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible" content="IE=edge")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  title *|MC:SUBJECT|*
+
+  style(type="text/css").
+    @font-face {
+      font-family: sans;
+      src: url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyTextRegular.woff2") format("woff2"),
+           url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyTextRegular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: sans;
+      src: url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyTextItalic.woff2") format("woff2"),
+           url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyTextItalic.woff") format("woff");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: sans;
+      src: url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyTextBold.woff2") format("woff2"),
+           url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyTextBold.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: wide;
+      src: url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyDisplay.woff2") format("woff2"),
+           url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyDisplay.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .wrapper {
+      max-width: 600px !important;
+    }
+
+    a {
+      color: #27303b !important;
+    }
+
+    a:hover {
+      color: #ff8100 !important;
+    }
+
+    .social-link {
+      display: block;
+    }
+
+    .social-link:hover {
+      background: #ff8100;
+    }
+
+    .social-link:hover img {
+      mix-blend-mode: screen;
+      filter: contrast(1.4);
+    }
+
+    .article {
+      padding: 8px 0 !important;
+    }
+
+    .article td {
+      padding: 4px 0;
+    }
+    
+    .article [style*="font-family:cond"] {
+      font-family: sans, sans-serif !important;
+      text-transform: none !important;
+      font-size: 15px !important;
+    }
+
+    .article [style*="font-size:18px;"][style*="color:#697077;"] {
+      color: #27303b !important;
+      font-size: 17px !important;
+    }
+
+    .article .item-title {
+      font-size: 21px !important;
+      line-height: 1.2 !important;
+    }
+
+    span[style="color:#9ba9b2"] {
+      color: #65747d !important;
+    }
+
+body
+  -
+    var links = [
+      {slug: "facebook", url: "https://www.facebook.com/LowyInstitute", title: "Facebook"},
+      {slug: "twitter", url: "https://twitter.com/LowyInstitute", title: "Twitter"},
+      {slug: "linked-in", url: "http://www.linkedin.com/company/457230", title: "LinkedIn"},
+      {slug: "youtube", url: "https://www.youtube.com/channel/UCRgFUxxVSDOrPFfWqs6yUiw", title: "Youtube"},
+      {slug: "rss", url: "https://www.lowyinstitute.org/the-interpreter/rss.xml", title: "RSS"},
+    ]
+
+  //if mso
+    style(type="text/css").
+      body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
+  // *|IF:MC_PREVIEW_TEXT|*
+  // [if !gte mso 9] <!
+  span(style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;") *|MC_PREVIEW_TEXT|*
+  // <![endif]
+  // *|END:IF|*
+  center
+    table(align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%")
+      tr
+        td(align="center" valign="top" style="padding: 24px 12px;")
+          //if (gte mso 9)|(IE)
+            table(align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;")
+              tr
+                td(align="center" valign="top" width="600" style="width:600px;")
+          table.wrapper(border="0" cellpadding="0" cellspacing="0" width="100%")
+            tr
+              td(valign="top")
+                +block({
+                  flex: true,
+                  style: {
+                    "padding-bottom": "12px",
+                  }
+                })
+                  a(href="https://www.lowyinstitute.org/the-interpreter/" style="display:block;")
+                    img(
+                      alt="The Interpreter"
+                      src=`${origin}/email/interpreter/v2/the-interpreter.png`
+                      width="165"
+                      style="width:165px;max-width:165px; padding-bottom: 0; display: block;"
+                    )
+
+                +block({
+                  style: {
+                    "padding-bottom": "8px",
+                    "font-size": "15px",
+                    "font-family": "sans",
+
+                  }
+                })
+                  | The Interpreter Weekly Digest,
+                  | published by the 
+                  a(href="https://www.lowyinstitute.org/" rel="link" style="color: #27303b") Lowy&nbsp;Institute
+                  | .
+
+                +block({
+                  style: {
+                    "padding-bottom": "28px",
+                    "font-size": "15px",
+                    "font-family": "sans",
+
+                  }
+                })
+                  | News, analysis, and commentary on international events from the&nbsp;week.
+
+                +block({
+                  style: {
+                    "padding": "8px 0",
+                    "border-top": "1px solid #27303b",
+                    "border-bottom": "1px solid #27303b",
+                  }
+                })
+                  +table({ align: "left" })
+                    each item, i in Array(3)
+                      tr
+                        td.mcnTextContent(valign="top" style="padding:8px 0;")
+                          table(border="0" cellpadding="0" cellspacing="0" width="100%")
+                            tbody
+                              tr
+                                td.article(style="padding:12px;border-radius:4px;background:#fff;")
+                                  table(border="0" cellpadding="4" cellspacing="0" width="100%")
+                                    tbody
+                                      tr
+                                        td.item-title(style="font-family:wide, sans-serif;font-weight:700;font-size:28px;line-height:120%;")
+                                          a(href="#" target="_blank" style="text-decoration:none;")
+                                            strong
+                                              | The title of the number #{i} article in the list
+                                      tr
+                                        td(style="font-size:18px;font-family:cond, sans-serif;text-transform:uppercase;")
+                                          | Article Author, Another Author
+                                          |
+                                          span(style="color:#9ba9b2")
+                                            | 6/12/23
+                                      tr
+                                        td(style="font-family:sans, sans-serif;font-size:18px;line-height:140%;color:#697077;")
+                                          = ipsum[i]
+                                      tr
+                                        td(style="font-family:sans, sans-serif;font-size:14px;line-height:140%;")
+                                          a(href="#" target="_blank") Read more
+
+                +block({
+                  style: {
+                    "padding": "28px 0 8px",
+                    "font-family": "sans, sans-serif",
+                    "font-size": "13px",
+                  }
+                })
+                  strong Lowy Institute
+                  br
+                  | {{msdyncrm_contentsettings.msdyncrm_addressmain}}
+                
+                +block()
+                  +table({ flex: true, spacing: 16 })
+                    +row
+                      each link in links
+                        +cell()
+                          a(
+                            href=link.url
+                            target="_blank"
+                            class="social-link"
+                          )
+                            img(
+                              src=`${origin}/email/interpreter/v2/social/${link.slug}.png` 
+                              alt=link.title
+                              style="display: block;"
+                              height="30"
+                              width="30"
+                            )
+
+                +block({
+                  style: {
+                    "padding": "8px 0",
+                    "font-family": "sans, sans-serif",
+                    "font-size": "13px",
+                  }
+                })
+                  | You are receiving this email as a subscriber to 
+                  strong The Interpreter Weekly Digest.
+
+                +block({
+                  style: {
+                    "padding": "8px 0",
+                    "font-family": "sans, sans-serif",
+                    "font-size": "13px",
+                  }
+                })
+                  a(href="https://portal.lowyinstitute.org/SignIn?returnUrl=%2Fprofile-custom%2F") Visit your profile
+                  |  to update your email preferences or 
+
+                  a(href="{{msdyncrm_contentsettings.msdyncrm_subscriptioncenter}}&amp;subscriptionListName=The%20Interpreter&amp;contactId={{contact.contactid}}")
+                    | unsubscribe.
+  
