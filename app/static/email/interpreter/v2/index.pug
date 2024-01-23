@@ -38,7 +38,8 @@ mixin block(options)
   ]
 
 
-doctype html
+doctype transitional
+
 head
   //if gte mso 15
     xml
@@ -49,7 +50,9 @@ head
   meta(charset="UTF-8")
   meta(http-equiv="X-UA-Compatible" content="IE=edge")
   meta(name="viewport" content="width=device-width, initial-scale=1")
-  title *|MC:SUBJECT|*
+  meta(name="referrer" content="never")
+
+  title The Interpreter Weekly Digest
 
   style(type="text/css").
     @font-face {
@@ -90,6 +93,7 @@ head
     }
 
     .wrapper {
+      width: 100% !important;
       max-width: 600px !important;
     }
 
@@ -145,6 +149,7 @@ head
 
 body
   -
+    var code = false
     var links = [
       {slug: "facebook", url: "https://www.facebook.com/LowyInstitute", title: "Facebook"},
       {slug: "twitter", url: "https://twitter.com/LowyInstitute", title: "Twitter"},
@@ -153,69 +158,69 @@ body
       {slug: "rss", url: "https://www.lowyinstitute.org/the-interpreter/rss.xml", title: "RSS"},
     ]
 
-  //if mso
-    style(type="text/css").
-      body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
-  // *|IF:MC_PREVIEW_TEXT|*
-  // [if !gte mso 9] <!
-  span(style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;") *|MC_PREVIEW_TEXT|*
-  // <![endif]
-  // *|END:IF|*
-  center
-    table(align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%")
-      tr
-        td(align="center" valign="top" style="padding: 24px 12px;")
-          //if (gte mso 9)|(IE)
-            table(align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;")
-              tr
-                td(align="center" valign="top" width="600" style="width:600px;")
-          table.wrapper(border="0" cellpadding="0" cellspacing="0" width="100%")
-            tr
-              td(valign="top")
-                +block({
-                  flex: true,
-                  style: {
-                    "padding-bottom": "12px",
-                  }
-                })
-                  a(href="https://www.lowyinstitute.org/the-interpreter/" style="display:block;")
-                    img(
-                      alt="The Interpreter"
-                      src=`${origin}/email/interpreter/v2/the-interpreter.png`
-                      width="165"
-                      style="width:165px;max-width:165px; padding-bottom: 0; display: block;"
-                    )
 
-                +block({
-                  style: {
-                    "padding-bottom": "8px",
-                    "font-size": "15px",
-                    "font-family": "sans",
+  table(
+    align="center"
+    border="0"
+    cellpadding="0"
+    cellspacing="0"
+    height="100%"
+    width="100%"
+    style="background:#fff"
+  )
+    tr
+      td(align="center" valign="top" style="padding: 24px 12px;")
+        table.wrapper(border="0" cellpadding="0" cellspacing="0" width="600")
+          tr
+            td(valign="top")
+              +block({
+                flex: true,
+                style: {
+                  "padding-bottom": "12px",
+                }
+              })
+                a(href="https://www.lowyinstitute.org/the-interpreter/" style="display:block;")
+                  img(
+                    alt="The Interpreter"
+                    src=`${origin}/email/interpreter/v2/the-interpreter.png`
+                    width="165"
+                    style="width:165px;max-width:165px; padding-bottom: 0; display: block;"
+                  )
 
-                  }
-                })
-                  | The Interpreter Weekly Digest,
-                  | published by the 
-                  a(href="https://www.lowyinstitute.org/" rel="link" style="color: #27303b") Lowy&nbsp;Institute
-                  | .
+              +block({
+                style: {
+                  "padding-bottom": "8px",
+                  "font-size": "15px",
+                  "font-family": "sans, sans-serif",
+                }
+              })
+                | The Interpreter Weekly Digest,
+                | published by the 
+                a(href="https://www.lowyinstitute.org/" rel="link" style="color: #27303b") Lowy&nbsp;Institute
+                | .
 
-                +block({
-                  style: {
-                    "padding-bottom": "28px",
-                    "font-size": "15px",
-                    "font-family": "sans",
+              +block({
+                style: {
+                  "padding-bottom": "28px",
+                  "font-size": "15px",
+                  "font-family": "sans, sans-serif",
+                }
+              })
+                | News, analysis, and commentary on international events from the&nbsp;week.
 
-                  }
-                })
-                  | News, analysis, and commentary on international events from the&nbsp;week.
+              +block({
+                style: {
+                  align: "left",
+                  "padding": "16px 0",
+                  "border-top": "1px solid #27303b",
+                  "border-bottom": "1px solid #27303b",
+                }
+              })
+                if code
+                  = "{{lowy_rssfeed(f2779e8a-55ba-ec11-983f-00224815997c).lowy_digestcontent}}"
 
-                +block({
-                  style: {
-                    "padding": "16px 0",
-                    "border-top": "1px solid #27303b",
-                    "border-bottom": "1px solid #27303b",
-                  }
-                })
+                else
+                  //- Current format of RSS imports within CRM
                   +table({ align: "left" })
                     each item, i in Array(3)
                       tr
@@ -244,55 +249,54 @@ body
                                         td(style="font-family:sans, sans-serif;font-size:14px;line-height:140%;")
                                           a(href="#" target="_blank") Read more
 
-                +block({
-                  style: {
-                    "padding": "28px 0 8px",
-                    "font-family": "sans, sans-serif",
-                    "font-size": "13px",
-                  }
-                })
-                  strong Lowy Institute
-                  br
-                  | {{msdyncrm_contentsettings.msdyncrm_addressmain}}
-                
-                +block()
-                  +table({ flex: true, spacing: 16 })
-                    +row
-                      each link in links
-                        +cell()
-                          a(
-                            href=link.url
-                            target="_blank"
-                            class="social-link"
+              +block({
+                style: {
+                  "padding": "28px 0 8px",
+                  "font-family": "sans, sans-serif",
+                  "font-size": "13px",
+                }
+              })
+                strong Lowy Institute
+                br
+                | {{msdyncrm_contentsettings.msdyncrm_addressmain}}
+              
+              +block()
+                +table({ flex: true, spacing: 16 })
+                  +row
+                    each link in links
+                      +cell()
+                        a(
+                          href=link.url
+                          target="_blank"
+                          class="social-link"
+                        )
+                          img(
+                            src=`${origin}/email/interpreter/v2/social/${link.slug}.png` 
+                            alt=link.title
+                            style="display: block;"
+                            height="30"
+                            width="30"
                           )
-                            img(
-                              src=`${origin}/email/interpreter/v2/social/${link.slug}.png` 
-                              alt=link.title
-                              style="display: block;"
-                              height="30"
-                              width="30"
-                            )
 
-                +block({
-                  style: {
-                    "padding": "8px 0",
-                    "font-family": "sans, sans-serif",
-                    "font-size": "13px",
-                  }
-                })
-                  | You are receiving this email as a subscriber to 
-                  strong The Interpreter Weekly Digest.
+              +block({
+                style: {
+                  "padding": "8px 0",
+                  "font-family": "sans, sans-serif",
+                  "font-size": "13px",
+                }
+              })
+                | You are receiving this email as a subscriber to 
+                strong The Interpreter Weekly Digest.
 
-                +block({
-                  style: {
-                    "padding": "8px 0",
-                    "font-family": "sans, sans-serif",
-                    "font-size": "13px",
-                  }
-                })
-                  a(href="https://portal.lowyinstitute.org/SignIn?returnUrl=%2Fprofile-custom%2F") Visit your profile
-                  |  to update your email preferences or 
+              +block({
+                style: {
+                  "padding": "8px 0",
+                  "font-family": "sans, sans-serif",
+                  "font-size": "13px",
+                }
+              })
+                a(href="https://portal.lowyinstitute.org/SignIn?returnUrl=%2Fprofile-custom%2F") Visit your profile
+                |  to update your email preferences or 
 
-                  a(href="{{msdyncrm_contentsettings.msdyncrm_subscriptioncenter}}&amp;subscriptionListName=The%20Interpreter&amp;contactId={{contact.contactid}}")
-                    | unsubscribe.
-  
+                a(href="{{msdyncrm_contentsettings.msdyncrm_subscriptioncenter}}&amp;subscriptionListName=The%20Interpreter&amp;contactId={{contact.contactid}}")
+                  | unsubscribe.
