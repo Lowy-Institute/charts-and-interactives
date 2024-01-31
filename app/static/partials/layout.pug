@@ -64,6 +64,14 @@ html.no-js(lang="en")
       block css
         link(rel="stylesheet" href=`/css/app.${version}.css`)
 
+      //- This site is now proxied, so trailing slashes aren't always added
+      script(type="text/javascript").
+        (function() {
+          if (!location.href.endsWith('/')) {
+            window.location = location.href + '/'
+          }
+        }())
+
   body(class=page.class)
     block page
 
