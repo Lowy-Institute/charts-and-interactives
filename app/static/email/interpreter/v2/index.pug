@@ -7,18 +7,24 @@ mixin row()
     block
 
 mixin table(options)
-  - options = options || {}
-
-  table(
-    border="0"
-    cellpadding=options.padding || "0"
-    cellspacing=options.spacing || "0"
-    align=options.align || "center"
-    width=options.flex ? undefined : "100%"
-    style={
+  -
+    options = options || {}
+    style = {
       "min-width": options.flex ? "initial" : "100%",
       "text-align": options.align || "center",
     }
+
+    if (options.padding) {
+      style.padding = options.padding
+    }
+
+  table(
+    border="0"
+    cellpadding="0"
+    cellspacing=options.spacing || "0"
+    align=options.align || "center"
+    width=options.flex ? undefined : "100%"
+    style=style
   )
     block
 
@@ -83,13 +89,14 @@ head
       font-family: wide;
       src: url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyDisplay.woff2") format("woff2"),
            url("https://interactives.lowyinstitute.org/fonts/isomer/Isomer-LowyDisplay.woff") format("woff");
-      font-weight: 500;
+      font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
 
     body {
       margin: 0;
+      font-synthesis: none;
     }
 
     .wrapper {
@@ -149,7 +156,7 @@ head
 
 body
   -
-    var code = false
+    var code = !false
     var links = [
       {slug: "facebook", url: "https://www.facebook.com/LowyInstitute", title: "Facebook"},
       {slug: "twitter", url: "https://twitter.com/LowyInstitute", title: "Twitter"},
@@ -204,24 +211,27 @@ body
                   "padding-bottom": "28px",
                   "font-size": "15px",
                   "font-family": "sans, sans-serif",
+                  "border-bottom": "1px solid #27303b",
                 }
               })
                 | News, analysis, and commentary on international events from the&nbsp;week.
 
               +block({
+                align: "left",
+                padding: "16px 0",
                 style: {
-                  align: "left",
-                  "padding": "16px 0",
-                  "border-top": "1px solid #27303b",
-                  "border-bottom": "1px solid #27303b",
+                  "text-align": "left",
                 }
               })
                 if code
+                  //- The CRM behaves strangely unless the table's closing
+                  //- element is removed.
+                  != `<table border="0" cellpadding="0" cellspacing="0" align="left" width="100%" style="min-width:100%;text-align:left;">`
                   = "{{lowy_rssfeed(f2779e8a-55ba-ec11-983f-00224815997c).lowy_digestcontent}}"
 
                 else
                   //- Current format of RSS imports within CRM
-                  +table({ align: "left" })
+                  +table({ align: "left"})
                     each item, i in Array(3)
                       tr
                         td.mcnTextContent(valign="top" style="padding:8px 0;")
@@ -251,6 +261,7 @@ body
 
               +block({
                 style: {
+                  "border-top": "1px solid #27303b",
                   "padding": "28px 0 8px",
                   "font-family": "sans, sans-serif",
                   "font-size": "13px",
