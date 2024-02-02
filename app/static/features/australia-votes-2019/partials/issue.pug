@@ -1,7 +1,6 @@
 extend /partials/layout
 
 block append config
-  - page.includeFonts = false
   - page.class = "page-issue page-0"
   - page.image = "./img/thumbnail.png"
   - page.issue = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
@@ -58,7 +57,7 @@ block page
             if issue.href != page.issue
               li.col-1-2
                 a.txt-bare.p-sm(
-                  href=`/features/australia-votes-2019/issues/${issue.href}`
+                  href=`/features/australia-votes-2019/issues/${issue.href}/`
                 )
                   span.txt-xl!= typogr.typogrify(issue.title)
 

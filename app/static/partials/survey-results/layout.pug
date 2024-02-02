@@ -23,7 +23,7 @@ block page
         | &ensp;/&ensp;Question #{_q}
       .fl-r
         if _q < 31
-          a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q + 1}`)
+          a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q + 1}/`)
             | Question #{_q + 1}
             span.txt-bare.fl-r &ensp;&rarr;
 
@@ -65,7 +65,7 @@ block page
       .clearfix.pv-md
         .fl-l.txt-left
           if _q > 1
-            a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q - 1}`) 
+            a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q - 1}/`) 
               span.txt-bare.fl-l &larr;&ensp;
               | Question #{_q - 1}
           else
@@ -73,7 +73,7 @@ block page
         
         .fl-r.txt-right
           if _q < 31
-            a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q + 1}`)
+            a.txt-muted(href=`/charts/gender-diversity-and-australias-international-relations/survey-results/q${_q + 1}/`)
               | Question #{_q + 1}
               span.txt-bare.fl-r &ensp;&rarr;
           else

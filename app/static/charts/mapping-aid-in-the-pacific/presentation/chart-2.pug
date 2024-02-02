@@ -103,13 +103,9 @@ block page
       label.chart-title-label.loan
         | Loan
 
+
 block css
-  link(
-    type="text/css"
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
-    media="all"
-  )
+  link(rel="stylesheet" href=`/css/fonts.${version}.css`)
 
   style
     include:sass assets/_style.sass

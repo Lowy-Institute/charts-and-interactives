@@ -1,7 +1,6 @@
 extend /partials/layout
 
 block append config
-  - page.includeFonts = false
   - page.url = "https://interactives.lowyinstitute.org/features/covid19/"
   - page.class = "page-0 page-menu"
   - page.title = "The World After COVID19"
@@ -48,7 +47,7 @@ block page
               ul.list-bare.txt-links
                 for issue in page.feature.issues
                   li
-                    a.txt-bare(href=`issues/${issue.href}`)
+                    a.txt-bare(href=`issues/${issue.href}/`)
                       != issue.title
 
   .container

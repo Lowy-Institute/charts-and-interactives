@@ -3,7 +3,6 @@ extend /partials/layout
 block append config
   - 
     slug = "southeast-asia-economy"
-    page.includeFonts = false
     page.class = "postpage"
     page.posts = data.getOne(`static/features/${slug}/data`).posts
     post = page.posts.find(p => p && p.href === href) 

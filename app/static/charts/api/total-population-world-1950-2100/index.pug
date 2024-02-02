@@ -89,12 +89,5 @@ block page
       img(src="/img/lowyinstitute-logo.png")
 
 block css
-  link(
-    type="text/css"
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Montserrat:500,700"
-    media="all"
-  )
-
-  style
-    include:sass style.sass
+  link(rel="stylesheet" href=`/css/fonts.${version}.css`)
+  style: include:sass style.sass

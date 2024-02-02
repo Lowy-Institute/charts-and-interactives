@@ -5,7 +5,6 @@
 extend /partials/layout
 
 block append config
-  - page.includeFonts = false
   - page.image = "https://interactives.lowyinstitute.org/features/china-rules-based-order/img/thumbnail.jpg"
   - page.article = __.filepath.match(/([^\/]+)\/index.pug$/)[1]
   - page.feature = data.getOne("static/features/china-rules-based-order/data")

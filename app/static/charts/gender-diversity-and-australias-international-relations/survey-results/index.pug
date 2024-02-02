@@ -15,6 +15,8 @@ block page
     ol.list-bare
       for el, i in list
         li
-          a.question-btn.d-b.p-md.bg-lt.txt-bare(href=`/${el.path.replace(/^static\/|data$/g, "")}`)
+          a.question-btn.d-b.p-md.bg-lt.txt-bare(
+            href=`/${el.path.replace(/^static\/|data$/g, "")}/`
+          )
             strong.txt-uppercase.txt-sm Question #{i + 1}
             h2.p-v-xs!= el.question

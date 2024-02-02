@@ -3,7 +3,6 @@ include mixins
 block config
   - 
     var page = {};
-    page.includeFonts = true
     page.description  = "Lowy Institute charts & interactives";
     page.style        = {};
     page.author       = "Lowy Institute";
@@ -63,15 +62,15 @@ html.no-js(lang="en")
       link(rel="canonical" href=page.url)
 
       block css
-        if page.includeFonts
-          link(
-            type="text/css"
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat:500"
-            media="all"
-          )
-
         link(rel="stylesheet" href=`/css/app.${version}.css`)
+
+      //- This site is now proxied, so trailing slashes aren't always added
+      script(type="text/javascript").
+        (function() {
+          if (!location.href.endsWith('/')) {
+            window.location = location.href + '/'
+          }
+        }())
 
   body(class=page.class)
     block page
