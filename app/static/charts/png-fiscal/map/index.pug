@@ -6,8 +6,9 @@ block page
   .wrapper
     .txt-center.flex.flex-grow.flex-col
     
-      .chart-title Figure 1: Papua New Guinea by province
-      .chart-subtitle.p-sm Real revenue and spending (PGK) in 2021
+      small.chart-head-figure Figure 1
+      h1.chart-title Papua New Guinea by province
+      h2.chart-subtitle Real revenue and spending (PGK) in 2021
 
       svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2151 1281.04")
         g(id="basemap")
@@ -544,7 +545,9 @@ block page
             d="m1542.17,319.51h1.5l4.5-3h3v-1.5h3v-1.5h1.5v-1.5h4.5v-1.5h3l1.5-1.5h3v-1.5h4.5v-1.5h4.5v-1.5h6v-1.5h4.5v-1.5h3v-1.5h6l1.5-1.5h6l1.5-1.5h7.5l1.5-1.5h10.51l1.5-1.5h43.53l1.5,1.5h10.51l1.5,1.5h9.01v1.5h7.5l1.5,1.5h4.5v1.5h3l1.5,1.5h3l1.5,1.5h4.5l1.5,1.5h3v1.5h4.5v1.5h4.5l1.5,1.5h3v1.5h3v1.5h1.5l1.5,1.5h1.5l1.5,1.5h1.5l1.5,1.5h3v1.5h3l1.5,1.5h1.5v1.5h3v1.5h1.5l1.5,1.5h0l1.5,1.5h1.5l1.5,1.5h1.5v1.5h1.5l1.5,1.5h1.5v1.5h3v1.5h1.5l1.5,1.5h0l1.5,1.5h0l1.5,1.5h1.5v1.5h1.5v1.5h3v1.5h1.5v1.5h1.5l1.5,1.5h1.5v1.5h0l1.5,1.5h0v1.5h3v1.5h1.5v1.5h1.5v1.5h1.5v1.5h1.5v1.5h1.5v1.5h1.5v1.5h1.5l1.5,1.5h1.5v1.5h1.5v1.5h0l1.5,1.5h0l1.5,1.5h0l1.5,1.5v1.5h1.5v1.5h1.5v1.5h1.5v1.5h1.5v1.5h1.5v1.5h1.5v1.5h0l1.5,1.5v1.5h0l1.5,1.5h0l1.5,1.5h0v1.5h3v1.5h0v1.5h1.5v1.5h1.5v3h1.5v1.5h0l1.5,1.5h0v1.5h1.5v1.5h0l1.5,1.5h0v3h3v1.5h0v1.5h1.5v1.5h0v1.5h1.5v1.5h1.5v1.5h0v3h1.5v1.5h0l1.5,1.5h0v1.5h0l1.5,1.5h0l1.5,1.5h0v1.5h0l1.5,1.5v1.5h0v1.5h1.5v1.5h0v1.5h1.5v1.5h0v1.5h0l1.5,1.5h0v1.5h0v1.5h0v1.5h1.5v1.5h0v1.5h1.5v1.5h0v1.5h0v1.5l1.5,1.5h0v1.5h1.5v1.5h0v1.5h0l1.5,1.5v1.5h0v1.5h0v1.5l1.5,1.5h0v1.5h0v1.5h0v1.5h1.5v1.5h0v1.5h0v1.5h0l1.5,1.5v1.5h0v1.5h0v1.5h0v1.5h1.5v1.5h0v1.5h0v3h0v1.5h0v1.5h1.5v1.5h0v1.5h0v1.5h0v1.5h0v3h1.5v1.5h0v1.5l-159.1,40.53-153.1,9.01-150.1,115.57v7.5l-6,10.51-4.5,3-12.01,4.5-13.51,3-27.02,18.01-36.02,63.04-7.5-10.51h-31.52v-480.31l136.59,10.51h12.01l76.55,1.5,10.51,16.51,12.01,1.5,4.5,1.5,9.01,1.5Z")
 
     p
-      .chart-source.txt-left.txt-muted <strong>Source:</strong> Lowy Institute / ANU
+      .chart-source.txt-center
+        span Source 
+        | Lowy Institute / ANU
         
   .tooltip
     .tt-title.txt-tu
@@ -594,16 +597,34 @@ block append css
 
       .wrapper svg
         max-width: 100%
+        margin-top: .8em
       
+      .chart-head-figure,.chart-source
+        font-family: isomer-caption, isomer-text, sans-serif
+        font-size: 80%
+
+      .chart-source span
+        font-size: 80%
+        margin-inline-end: 0.25rem
+        text-transform: uppercase
+        letter-spacing: 0.05em
+
       .chart-title
         margin: auto
-        font-size: 20px
+        font-family: isomer-text, sans-serif
+        font-size: 16px
+        font-weight: 700
+        margin-top: 0
         
       .chart-subtitle
-        font-weight: normal
-        height: 10px
-        margin-top: -10px
-        font-size: 15px
+        font-family: isomer-text, sans-serif
+        font-size: 16px
+        font-weight: 400
+        margin-top: 0
+
+      h1,h2
+        margin: 0
+        line-height: normal
       
       .fixed-br
         position: absolute
