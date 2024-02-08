@@ -313,7 +313,7 @@ function addTooltip(el,i) {
     <div class="right-text">${commune.districts}</div>
     `;
     children[6].innerHTML = `
-    <div class="left-text">Local-level governments:</div>
+    <div class="left-text">Local level governments:</div>
     <div class="right-text">${commune.llg}</div>
     `;
     children[7].innerHTML = `
