@@ -1,0 +1,44 @@
+@media print
+  :root
+    font-size: 12.5px
+
+  html, body
+    font-size: 1em
+
+  body
+    display: flex
+    flex-direction: column
+  
+  .wrapper
+    padding-block: 14pt
+    flex-grow: 1
+    width: 100%
+
+  .wrapper, text, p
+    font-size: 8pt !important
+
+  .chart-title,
+  .page-title,
+  .chart-subtitle
+    font-size: 9pt !important
+    line-height: 1.25 !important
+
+  .chart-title,
+  .page-title
+    font-weight: 700
+  
+  .chart-subtitle
+    font-weight: 400 !important
+    text-transform: none
+    letter-spacing: 0
+    padding: 0 !important
+    margin: 0 0 14pt !important
+
+  .chart-source,
+  .chart-notes
+    text-align: left
+    font-size: 8pt !important
+    font-family: $font-caption-stack
+
+  .chart-container
+    clear: both
