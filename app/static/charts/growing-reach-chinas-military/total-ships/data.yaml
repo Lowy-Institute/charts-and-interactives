@@ -99,7 +99,7 @@ series:
       - 420
       - 425
 
-  - title: US Navy&nbsp;
+  - title: US Navy
     color: "blue-100"
     widen: true
     dashed: false
